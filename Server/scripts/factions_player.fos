@@ -601,7 +601,8 @@ uint r_CreateSite(Critter& player, Critter@ builder)
 bool d_OnSite(Critter& player, Critter@)
 {
     Map@ map = player.GetMap();
-    return valid(map) && map.GetProtoId() == MAP_HQ_BuildingSite;
+    //return valid(map) && map.GetProtoId() == MAP_HQ_BuildingSite;
+    return false;
 }
 bool d_CanTalkWithBuilder(Critter& player, Critter@)
 {

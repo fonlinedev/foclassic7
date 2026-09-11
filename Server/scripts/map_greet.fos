@@ -159,23 +159,7 @@ void InitGreet() {
     AddGreet(MAP_MilitaryBaseLevel4, "Mariposa Military Base - Level 4");
 
     //  New Reno
-    AddGreet(MAP_NewReno1, "New Reno - Virgin Street");
-    AddGreet(MAP_NewReno2, "New Reno - 2nd Street");
-    AddGreet(MAP_NewReno3, "New Reno - Commercial Row");
-    AddGreet(MAP_NewReno4, "New Reno - East Side");
-    AddGreet(MAP_NewRenoChopShop, "New Reno - Car Shop");
-    AddGreet(MAP_NewRenoSewers, "New Reno - Sewers");
-    AddGreet(MAP_NewReno_Golgotha, "New Reno - Golgotha");
-    AddGreet(MAP_NewReno_Basement, "New Reno - Basement");
-    AddGreet(MAP_NewReno_BishopFloor1, "New Reno - Bishop Floor 1");
-    AddGreet(MAP_NewReno_BishopFloor2, "New Reno - Bishop Floor 2");
-    AddGreet(MAP_NewReno_MordinoHQ, "New Reno - Mordino");
-    AddGreet(MAP_NewReno_Arms, "New Reno - Arms");
-    AddGreet(MAP_NewReno_SharkBoxing, "New Reno - Shark Boxing");
-    AddGreet(MAP_NewReno_Wright, "New Reno - Wright");
-    AddGreet(MAP_NewReno_Stables, "New Reno - Stables");
-    AddGreet(MAP_NewReno_Stables2, "New Reno - Another Stables");
-
+   
     AddGreet(MAP_TobaccoFarm, "Tobacco Farm");
 
     //  Redding
@@ -516,24 +500,7 @@ void GreetPlayer(Critter@ player, Map@ map) {
         case MAP_SanFransiscoTrainStation:
             repIndex = FACTION_COMMUNISTS;
             break;
-        case MAP_NewReno_BishopFloor1:
-        case MAP_NewReno_BishopFloor2:
-            repIndex = FACTION_BISHOPS;
-            break;
-        case MAP_NewRenoChopShop:
-        case MAP_NewReno_Arms:
-        case MAP_NewReno_SharkBoxing:
-        case MAP_NewReno_Golgotha:
-            repIndex = FACTION_NEW_RENO;
-            break;
-        case MAP_NewReno_MordinoHQ:
-        case MAP_NewReno_Stables:
-        case MAP_NewReno_Stables2:
-            repIndex = FACTION_MORDINOS;
-            break;
-        case MAP_NewReno_Wright:
-            repIndex = FACTION_WRIGHTS;
-            break;
+                
         case MAP_HubHeights:
             repIndex = FACTION_HEIGHTS;
             break;

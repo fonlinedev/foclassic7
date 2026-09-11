@@ -256,31 +256,6 @@
 {545}{}{08vats}
 {546}{}{elevato1:25, elevator:25, electri1:15, electric:15, clank:10, clank1:10}
 
-# Map 54, base 550
-{550}{}{New Reno 1}
-{555}{}{19reno}
-{556}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 55, base 560
-{560}{}{New Reno 2}
-{565}{}{19reno}
-{566}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 56, base 570
-{570}{}{New Reno 3}
-{575}{}{19reno}
-{576}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 57, base 580
-{580}{}{New Reno 4}
-{585}{}{19reno}
-{586}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 58, base 590
-{590}{}{New Reno Chop Shop}
-{595}{}{19reno}
-{596}{}{clank:20, clank1:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
 # Map 60, base 610
 {610}{}{Q Brahmin Willow}
 {615}{}{18modoc}
@@ -456,13 +431,6 @@
 {990}{}{Brahmin Ranch}
 {995}{}{18modoc}
 {996}{}{}
-
-# Map 99, base 1000
-{1000}{}{New Reno Sewers}
-{1005}{}{08vats}
-{1005}{}{13carvrn}
-{1005}{}{14necro}
-{1006}{}{animal:20, pebble:15, pebble1:15, water1:20, water:20, blank:15}
 
 # Map 100, base 1010
 {1010}{}{Ares Military Base: Entrance}
@@ -1222,41 +1190,6 @@
 {2535}{}{07desert}
 {2535}{}{05raider}
 {2536}{}{gntlwin1:25, gntlwind:25, brdchir1:10, brdchirp:10, blank:30}
-
-# Map 260, base 2610
-{2610}{}{New Reno: Basement}
-{2615}{}{19reno}
-{2616}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 261, base 2620
-{2620}{}{New Reno: Bishop Floor 1}
-{2625}{}{19reno}
-{2626}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 262, base 2630
-{2630}{}{New Reno: Bishop Floor 2}
-{2635}{}{19reno}
-{2636}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 263, base 2640
-{2640}{}{New Reno: Mordino HQ}
-{2645}{}{19reno}
-{2646}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 264, base 2650
-{2650}{}{New Reno: Arms}
-{2655}{}{19reno}
-{2656}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 265, base 2660
-{2660}{}{New Reno: Shark Boxing}
-{2665}{}{19reno}
-{2666}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 266, base 2670
-{2670}{}{New Reno: Wright}
-{2675}{}{19reno}
-{2676}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
 
 # Map 267, base 2680
 {2680}{}{New Reno: Stables}
@@ -2129,29 +2062,6 @@
 {106132}{}{230}
 {106133}{}{201}
 
-# New Reno, pid 7, base 107000
-{107000}{}{New Reno}
-{107005}{}{A town of casinos, drugs and debauchery.}
-{107010}{}{24}
-{107020}{}{art\intrface\twnreno.frm}
-{107030}{}{art\intrface\WM_RENO.FRM}
-{107090}{}{5}
-{107101}{}{Virgin Street}
-{107102}{}{230}
-{107103}{}{300}
-{107111}{}{2nd Street}
-{107112}{}{230}
-{107113}{}{210}
-{107121}{}{Commercial Row}
-{107122}{}{100}
-{107123}{}{210}
-{107131}{}{East side}
-{107132}{}{360}
-{107133}{}{210}
-{107141}{}{Gas station}
-{107142}{}{360}
-{107143}{}{100}
-
 # Sierra, pid 8, base 108000
 {108000}{}{Sierra}
 {108005}{}{An old military warehouse.}
@@ -2307,16 +2217,6 @@
 {119101}{}{Exterior}
 {119102}{}{352}
 {119103}{}{155}
-
-# Golgotha, pid 20, base 120000
-{120000}{}{Golgotha}
-{120005}{}{Golgotha.}
-{120010}{}{6}
-
-# New Reno Stables, pid 21, base 121000
-{121000}{}{New Reno Stables}
-{121005}{}{The New Reno Stables owned and operated by the Mordinos.}
-{121010}{}{6}
 
 # Ghost Farm, pid 22, base 122000
 {122000}{}{Ghost Farm}

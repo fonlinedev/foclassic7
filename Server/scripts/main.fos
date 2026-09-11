@@ -385,7 +385,7 @@ bool start()
     RegisterFaction(FACTION_NCR, "New California Republic", false);
     RegisterFaction(FACTION_VAULT_CITY, "Vault City", false);
     RegisterFaction(FACTION_RAIDERS, "Raiders", false);
-    RegisterFaction(FACTION_MORDINOS, "Mordinos", false);
+    //RegisterFaction(FACTION_MORDINOS, "Mordinos", false);
     // RegisterFaction(FACTION_GUNRUNNERS, "Gun Runners", false); <- screw it
 
     // and some fixed playerdriven factions
@@ -1048,7 +1048,7 @@ bool critter_stealing(Critter& cr, Critter& thief, Item& item, uint count)
         {
             case LOCATION_BarterGround:
             case LOCATION_Necropolis:
-            case LOCATION_NewRenoStables:
+            
             case LOCATION_Hub:
 			case LOCATION_LandersPoint:
             case LOCATION_NCR:

@@ -317,10 +317,7 @@ void SetAliases()
     SetMapId("gecko",               MAP_GeckoSettlement);
     SetMapId("bh",                  MAP_BrokenHills);
     SetMapId("broken",              MAP_BrokenHills);
-    SetMapId("nr",                  MAP_NewReno1);
-    SetMapId("gasstation",  MAP_NewRenoChopShop);
-    SetMapId("tray",                MAP_NewRenoChopShop);
-    SetMapId("t-ray",               MAP_NewRenoChopShop);
+    
     SetMapId("sad",                 MAP_SierraArmyDepot_TheBattlefield);
     SetMapId("v15",                 MAP_Vault15Surface);
     SetMapId("ncr",                 MAP_NCR);
