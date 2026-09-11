@@ -154,7 +154,7 @@ void InitializeGame()                  // Export
 
     // Registation values
     __StartSpecialPoints  = 40;
-    __StartTagSkillPoints = 1;
+    __StartTagSkillPoints = 3;
 
     // Skill modifiers
     __SkillMaxValue = 300;

@@ -576,19 +576,7 @@ bool CritterGenerateCheck(array<int>& data)     // Export to client_main@player_
         Message(GetMsgStr(TEXTMSG_GAME, STR_NET_WRONG_TAGSKILL));
         return false;
     }
-
-	for( uint t=TAG_SKILL1; t<=TAG_SKILL4; t++ )
-	{
-		if( IsPassiveSkill( _param_[t] ))
-		{
-			Message( "|0xC85050 Incorrect tag skill: |0xFF0000 " + GetMsgStr( TEXTMSG_GAME, STR_PARAM_NAME( _param_[t] )) + ". |0xC85050 Passive skills cannot be tagged and they will level up by related books or activities." );
-			return( false );
-		}
-		if (IsNonSpecializationSkill(_param_[t])) {
-			Message("|0xC85050 Incorrect tag skill: |0xFF0000 " + GetMsgStr(TEXTMSG_GAME, STR_PARAM_NAME(_param_[t])) + ". |0xC85050 First Aid, Speech and Stealing skills cannot be tagged as they do not serve a specialization and will be capped at level 200.");
-			return false;
-		}
-	}
+	
     return true;
 }
 #endif

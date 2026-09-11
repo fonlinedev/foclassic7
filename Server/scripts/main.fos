@@ -403,7 +403,7 @@ bool start()
     // InitRadiationEffects();
 
     // Mercenaries
-    InitMercs();
+    //InitMercs();
 
     // Patrol routes
     InitRoutes();
@@ -417,16 +417,16 @@ bool start()
     InitCaveRandomization();
 //    InitAmmoLog();
     InitCaveLog();
-    InitCaravans();     // Uncomment if you want to have one caravan running Hub-Adytum-Lost Hills
+    // InitCaravans();     // Uncomment if you want to have one caravan running Hub-Adytum-Lost Hills
     // reputations, alliances
     InitGroups();
     // scenariooos
     // InitScenarios();
-    InitTrains();
+    //InitTrains();
     InitAlertMaps();
     //InitWeather();
     InitReverseItem();
-    InitProduction();
+    //InitProduction();
     InitShufflingSpawns();
 //    ProcessCrippling();
 
@@ -2072,8 +2072,8 @@ void critter_init(Critter& cr, bool firstTime)
 
 			if( IsPassiveSkill( skill ))
 			{
-				cr.SkillBase[skill] = int(0x80000000);
-				cr.TagSkillBase[t] = 0;
+				// cr.SkillBase[skill] = int(0x80000000);
+				// cr.TagSkillBase[t] = 0;
 			}
 		}
 
@@ -4027,8 +4027,7 @@ void player_levelup(Critter& player, uint skillIndex, uint skillUp, uint perkInd
             } else if ((_CritIsTagSkill(player, skillIndex) && skillVal >= 300) ||
                        (_CritIsTagSkill(player, skillIndex) && skillVal >= 270 && skillIndex == SK_SNEAK)){
                 skillCap = true;
-            } else if (IsPassiveSkill(skillIndex)) {
-                skillCap = true;
+            } else if (IsPassiveSkill(skillIndex)) {                
             }
 			if (skillCap) break;
 

@@ -1347,7 +1347,7 @@ void _OpenURL(int, int, int, string@ url, array<int>@)
 
 void _ShowCarOwnerIndicator(int param1, int param2, int param3, string@ param4, array<int>@ data) {
     //Message("_ShowCarOwnerIndicator called");
-    RefreshCars(data, param4);
+    // RefreshCars(data, param4);
 }
 
 void _ViewImage(int param1, int param2, int param3, string@ param4, array<int>@ data) {

@@ -30,3 +30,7 @@ Server/extensions/**/Release/
 *.sdf
 *.suo
 *.vcxproj.user
+Client/
+*.exe
+*.pdb
+*.jar
