@@ -1,0 +1,1337 @@
+// shared client/server script for throwing objects
+#include "_macros.fos"
+#include "MsgStr.h"
+#include "_other_h.fos"
+
+#ifdef __SERVER
+# define CritterMutual       Critter
+# define ItemMutual          Item
+# include "utils_h.fos"
+# include "combat_h.fos"
+# include "combat_msg.fos"
+import uint GetAnimFlySpeedByAngle(float flyAngle) from "hexShot";
+import void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCritical, bool intentionally, array<CombatRes>& results, int CriticalChance) from "combat";
+#endif
+
+#ifdef __CLIENT
+#include "polygon_h.fos"
+# include "sprite.fos"
+# include "_colors.fos"
+# include "_client_defines.fos"
+# define CritterMutual       CritterCl
+# define ItemMutual          ItemCl
+#endif
+
+#define STR_THROWING_HIT     (10400)
+#define STR_THROWING_MISS    (10401)
+
+#define THROWABLE_SIZE      (8)
+
+bool IsHexThrowingWeapon(ItemMutual@ item)
+{
+    if(!valid(item))
+        return false;
+    if(item.GetType() != ITEM_TYPE_WEAPON)
+        return false;
+    uint8 use = _WeaponModeUse(item.Mode);
+    return _WeaponSkill(item.Proto, use) == SK_THROWING;
+}
+
+uint HexThrowGetMaxRange(CritterMutual& cr, ItemMutual@ item)
+{
+    if(!valid(item))
+        return 0;
+    uint bonus = 6 * cr.Perk[PE_HEAVE_HO];
+    uint max = 3 * cr.Stat[ST_STRENGTH];
+    if(IsGrenade(item) || IsDistractWeapon(item) || IsDetectHiddenWeapon(item))
+    {
+        uint8 use = _WeaponModeUse(item.Mode);
+        return bonus + MIN(_WeaponMaxDist(item.Proto, use), max);
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+bool IsHexThrowable(ProtoItem& weapon)
+{
+    if(!valid(weapon))
+        false;
+    if (weapon.ProtoId == PID_ROCK || weapon.ProtoId == PID_FLARE || weapon.ProtoId == PID_ACTIVE_FLARE) {
+        return true;
+    }
+    return !(weapon.Type == ITEM_TYPE_WEAPON && weapon.Weapon_IsUnarmed);
+}
+
+int HexThrowingToHit(CritterMutual& cr, uint16 tx, uint16 ty, ProtoItem& weapon)
+{
+    if (!valid(weapon))
+        return 0;
+    if (!cr.IsLife())
+        return 0;
+    if (weapon.Type == ITEM_TYPE_WEAPON && weapon.Weapon_IsUnarmed)
+        return 0;
+
+    int dist = GetDistantion(cr.HexX, cr.HexY, tx, ty);
+
+    int toHit = int(cr.Skill[SK_THROWING]);
+    int weaponPerk = weapon.Weapon_Perk;
+    int blockers = 0;
+
+    // cr.Say(SAY_NETMSG, "Applying range modifiers.");
+    // ranged attack modifiers
+    int distmod1 = 2;   // used for initial weapon bonus
+    int distmod2 = 0;   // minimal distance
+
+    int perception = cr.Stat[ST_PERCEPTION];
+    int acc = dist;
+
+    if(dist < distmod2)
+        acc += distmod2;
+    else
+    {
+        if(cr.IsPlayer())
+            acc -= (perception - 2) * distmod1;                  // we want to keep it, because fo2238 might use it to display NPCs chance (via possessing)
+        else
+            acc -= perception * distmod1;
+    }
+
+    if(-2 * perception > acc)
+        acc = -2 * perception;
+
+    acc -= 2 * cr.Perk[PE_SHARPSHOOTER];
+
+    if(acc >= 0)
+    {
+        if(cr.Damage[DAMAGE_EYE] != 0)
+            acc *= -12;
+        else
+            acc *= -4;
+    }
+    else
+        acc *= -4;
+
+    toHit += acc;
+
+    #ifdef __SERVER
+    Map@ map = cr.GetMap();
+    blockers = map.GetCrittersPath(cr.HexX, cr.HexY, tx, ty, 0.0f, dist, FIND_LIFE, null);
+    #endif
+    #ifdef __CLIENT
+    blockers = GetCrittersPath(cr.HexX, cr.HexY, tx, ty, 0.0f, dist, FIND_LIFE, null);
+    #endif
+
+    toHit -= 10 * blockers;
+
+    if(cr.Damage[DAMAGE_EYE] != 0)
+        toHit -= 25;
+    toHit = CLAMP(toHit, 5, _MaxToHit(cr));
+
+    return toHit;
+}
+
+int HexThrowActionPointsCost(ItemMutual& item, CritterMutual& cr) {
+    if (IsGrenade(item) || IsDistractWeapon(item) || IsDetectHiddenWeapon(item)) {
+        uint8 use = _WeaponModeUse(item.Mode);
+        int apCost = (cr.Perk[PE_BONUS_RATE_OF_ATTACK]>0)?-1:0;
+        apCost += _WeaponApCost(item.Proto, use);
+
+        return apCost;
+    }
+    return 0;
+}
+
+bool IsHexThrowableThere(CritterMutual& cr, ItemMutual@ item, uint16 tx, uint16 ty)
+{
+    if(!valid(item) || !IsHexThrowable(item.Proto) || !cr.IsLife())
+        return false;
+    #ifdef __SERVER
+    if(cr.Stat[ST_CURRENT_AP] < HexThrowActionPointsCost(item, cr))
+        return false;
+    if(HexThrowActionPointsCost(item, cr) == 0)
+        return false;
+    #endif
+    if(cr.Damage[DAMAGE_RIGHT_ARM] != 0 && cr.Damage[DAMAGE_LEFT_ARM] != 0)
+        return false;
+    if(HexThrowGetMaxRange(cr, item) == 0 || GetDistantion(cr.HexX, cr.HexY, tx, ty) == 0)
+        return false;
+
+    // wallcheck
+    uint16 pbx = tx;
+    uint16 pby = ty;
+    uint16 bx = tx;
+    uint16 by = ty;
+
+    #ifdef __SERVER
+    Map@ map = cr.GetMap();
+    map.GetCrittersPath(cr.HexX, cr.HexY, tx, ty, 0.0f, 0, 0, null, pbx, pby, bx, by);
+    #endif
+    #ifdef __CLIENT
+    GetCrittersPath(cr.HexX, cr.HexY, tx, ty, 0.0f, 0, 0, null, pbx, pby, bx, by);
+    #endif
+
+    if(bx != tx || by != ty)
+        return false;
+
+    return HexThrowGetMaxRange(cr, item) >= GetDistantion(cr.HexX, cr.HexY, tx, ty);
+    // todo: wall tracing on the client side
+}
+
+bool IsDetectHiddenWeapon(ItemMutual& item) {
+    if (item.GetProtoId() == PID_FLARE || item.GetProtoId() == PID_ACTIVE_FLARE) {
+        return true;
+    }
+    return false;
+}
+
+bool IsDistractWeapon(ItemMutual& item) {
+    if (item.GetProtoId() == PID_ROCK) {
+        return true;
+    }
+    return false;
+}
+
+bool IsSpearWeapon(ItemMutual& item) {
+    if (item.GetProtoId() == PID_SHARPENED_POLE || item.GetProtoId() == PID_SPEAR || item.GetProtoId() == PID_SHARP_SPEAR) {
+        return true;
+    }
+    return false;
+}
+
+bool IsGrenade(ItemMutual& item)
+{
+    if(!IsHexThrowingWeapon(item))
+        return false;
+    uint8 use = _WeaponModeUse(item.Mode);
+    uint8 dmgType = _WeaponDmgType(item.Proto, use);
+    return dmgType == DAMAGE_TYPE_PLASMA || dmgType == DAMAGE_TYPE_EMP || dmgType == DAMAGE_TYPE_EXPLODE || dmgType == DAMAGE_TYPE_FIRE;
+}
+
+#ifdef __SERVER
+
+import void CommenceExplosionHexEx(Critter@ attacker, Map@ map, uint16 tx, uint16 ty, Critter@ target, uint weapPid, Item@ usedWeapon, uint ammoPid, bool isCritical, uint intentionallyId, bool isRocket, bool isExplodeRocket) from "combat";
+
+uint e_DeleteFlare(array<uint>@ data) {
+    if (data.length() < 1) {
+        Log("Flare removing fail: !id");
+        return 0;
+    }
+    if (data[0] == 0) {
+        Log("Flare removing fail: id == 0");
+        return 0;
+    }
+    Item@ flare = GetItem(data[0]);
+    if (!valid(flare) || flare.IsNotValid) {
+        // item is gone already - don't panic!
+        DLog("Flare already removed");
+        return 0;
+    }
+    DLog("Removing flare <" + flare.Id + ">");
+    DeleteItem(flare);
+    return 0;
+}
+
+void unsafe_HexThrow(Critter& player, int px, int py, int p2, string@ param3, array<int>@ param4)
+{
+    if(!player.IsLife())
+    {
+        player.RunClientScript("hexThrow@_UpdateWeapons", 0, 0, 0, null, null);
+        return;
+    }
+    Map@ map = player.GetMap();
+    if(!valid(map))
+    {
+        player.RunClientScript("hexThrow@_UpdateWeapons", 0, 0, 0, null, null);
+        return;
+    }
+    if(px < 0 || px >= int(map.GetWidth()) || py < 0 || py >= int(map.GetHeight()))
+    {
+        player.RunClientScript("hexThrow@_UpdateWeapons", 0, 0, 0, null, null);
+        return;
+    }
+
+    Item@ item = player.GetItemById(p2);
+    if(!IsHexThrowableThere(player, item, px, py))
+    {
+        player.RunClientScript("hexThrow@_UpdateWeapons", 0, 0, 0, null, null);
+        return;
+    }
+
+    uint16 tx = px;
+    uint16 ty = py;
+
+    // wallcheck
+    uint16 pbx = tx;
+    uint16 pby = ty;
+    uint16 bx = tx;
+    uint16 by = ty;
+    if (IsGrenade(item)) {
+        map.GetCrittersPath(player.HexX, player.HexY, tx, ty, 0.0f, 0, FIND_LIFE_AND_KO, null, pbx, pby, bx, by);
+        tx = pbx;
+        ty = pby;
+    } else if (IsDistractWeapon(item)) {
+        map.GetCrittersPath(player.HexX, player.HexY, tx, ty, 0.0f, 0, FIND_LIFE_AND_KO, null, pbx, pby, bx, by);
+        tx = pbx;
+        ty = pby;
+    } else if (IsDetectHiddenWeapon(item)) {
+        if (item.GetProtoId() == PID_FLARE) {
+            player.DeleteItem(PID_FLARE, 1);
+            @item = player.AddItem(PID_ACTIVE_FLARE, 1);
+        }
+        map.GetCrittersPath(player.HexX, player.HexY, tx, ty, 0.0f, 0, FIND_LIFE_AND_KO, null, pbx, pby, bx, by);
+        tx = pbx;
+        ty = pby;
+    } else {
+        player.RunClientScript("hexThrow@_UpdateWeapons", 0, 0, 0, null, null);
+        return;
+    }
+
+    int tohit = HexThrowingToHit(player, tx, ty, item.Proto);
+    if (tohit < Random(1, 100)) {
+        uint dist = GetDistantion(player.HexX, player.HexY, tx, ty) + 1;
+        map.MoveHexByDir(tx, ty, Random(0, 5), Random(1, dist / 2));
+        map.GetCrittersPath(player.HexX, player.HexY, tx, ty, 0.0f, 0, FIND_LIFE_AND_KO, null, pbx, pby, bx, by);
+        tx = pbx;
+        ty = pby;
+        player.Say(SAY_NETMSG, "You missed.");
+    }
+
+    uint currentWeaponId = 0;
+    if (IsDetectHiddenWeapon(item)) {
+        Item@ currentWeaponTarget = _CritGetItemHand(player);
+        if (valid(currentWeaponTarget)) {
+            player.MoveItem(currentWeaponTarget.Id, currentWeaponTarget.GetCount(), SLOT_INV);
+            currentWeaponId = currentWeaponTarget.Id;
+        }
+        player.MoveItem(item.Id, item.GetCount(), SLOT_HAND1);
+        item.Update();
+        if (player.IsPlayer()) {
+            player.RunClientScript("hexThrow@_UpdateFlareEffect", 0, 0, 0, null, null);
+        }
+        array<Critter@> playersToUpdateFlareEffect;
+        int cnt = player.GetCritters(true, FIND_LIFE | FIND_ONLY_PLAYERS, playersToUpdateFlareEffect);
+        if (cnt > 0) {
+            for (int i = 0; i < cnt; i++) {
+                playersToUpdateFlareEffect[i].RunClientScript("hexThrow@_UpdateFlareEffect", 0, 0, 0, null, null);
+            }
+        }
+        RevealHidden(map, player.HexX, player.HexY, FLARELIT_REVEAL_RADIUS);
+        //  here we would have animation desync, so it would be good to wait and let engine transmit weapon swap, but for now it's good enough, as it is more responsive
+        //  the downside being that if current weapon is not unarmed weapon, the end of the throw animation is clipped by weapon prep animation
+        //  this animation 'bug' only visible from other players, not on self
+        CommenceHexThrowing(player, map, item, currentWeaponId, tx, ty);
+    } else {
+        //  no need to wait in other cases than flare throwing, because no animation desync, read comments above
+        CommenceHexThrowing(player, map, item, currentWeaponId, tx, ty);
+    }
+}
+
+void CommenceHexThrowing(Critter& cr, Map& map, Item& item, uint realWeaponId, uint16 tx, uint16 ty, bool ignoreApCost = false) {
+    if (ignoreApCost) {
+        CommenceHexThrowingEffectAfterAnimation(cr, map, item, 0, tx, ty, true);
+    } else {
+        uint8 dir = GetDirection(cr.HexX, cr.HexY, tx, ty);
+        cr.SetDir(dir);
+        //cr.Say(SAY_NORM, "Animate");
+        cr.PlaySound('W', SOUND_WEAPON_USE, _WeaponSoundId(item.Proto, 0), '1', true);
+        cr.Animate(ANIM1_UNARMED, ANIM2_THROW, null, true, true);
+        cr.Wait(__Breaktime);
+        uint[] values = { cr.Id, map.Id, item.Id, realWeaponId, tx, ty };
+        CreateTimeEvent(AFTER(REAL_MS(400)), "e_AnimateHexThrow", values, false);
+    }
+}
+
+void CommenceSpearHexThrowing(Critter& attacker, Critter& target, Map& map, Item& item, uint16 tx, uint16 ty, bool isCritical, bool ignoreApCost = false) {
+    if ((attacker.Param[TO_EX_ANIM_INTERRUPT] > int(GetTick()) - ANIM_ACTION_TIME_DEFAULT) || attacker.IsDead() || attacker.IsKnockout()) {
+        return;
+    }
+
+    uint16 weaponPid = item.GetProtoId();
+    ProtoItem@ protoWeapon = GetProtoItem(weaponPid);
+    uint8 use;
+    switch (weaponPid) {
+        case PID_SPEAR:
+        case PID_SHARP_SPEAR:
+        case PID_SHARPENED_POLE:
+            use = 1;
+            break;
+        default:
+            use = 0;
+    }
+    uint itemFlyingPid = _WeaponEffect(protoWeapon, use);
+
+    uint8 dir = GetDirection(attacker.HexX, attacker.HexY, tx, ty);
+    attacker.SetDir(dir);
+    if(attacker.Mode[MODE_HIDE] != 0) {
+        if (!attacker.IsPlayer() || attacker.GetAccess() == ACCESS_CLIENT)
+            //attacker.Say(SAY_NORM, "Desneak - Throwing spear!");
+            _Desneak(attacker);
+    }
+    attacker.Wait(__Breaktime);
+    if (!ignoreApCost) {
+        attacker.StatBase[ST_CURRENT_AP] -= 100 * HexThrowActionPointsCost(item, attacker) - (attacker.Perk[PE_BONUS_RATE_OF_ATTACK] > 0 ? 0 : 10 * attacker.Stat[ST_AGILITY]);
+    }
+
+    uint16 fixedStartX = attacker.HexX;
+    uint16 fixedStartY = attacker.HexY;
+    uint16 fixedTargetX = tx;
+    uint16 fixedTargetY = ty;
+    //map.MoveHexByDir(fixedTargetX, fixedTargetY, 2, 1);
+    //map.MoveHexByDir(fixedTargetX, fixedTargetY, 3, 1);
+    uint dist = GetDistantion(fixedStartX, fixedStartY, fixedTargetX, fixedTargetY);
+
+    uint distSourceFromTarget = GetDistantion(attacker.HexX, attacker.HexY, tx, ty);
+    if (distSourceFromTarget > 1) {
+        map.MoveHexByDir(fixedStartX, fixedStartY, dir, 1);
+    }
+
+    map.RunFlyEffect(itemFlyingPid, null, null, fixedStartX, fixedStartY, fixedTargetX, fixedTargetY);
+
+    if(attacker.Timeout[TO_BATTLE] < int(__TimeoutBattle))
+        _SetTimeout(attacker, TO_BATTLE, __TimeoutBattle);
+    if(!map.IsTurnBased() && map.IsTurnBasedAvailability())
+        map.BeginTurnBased(attacker);
+
+    int dx = fixedTargetX - fixedStartX;
+    int dy = fixedTargetY - fixedStartY;
+    float flyAngle = atan2(dy, dx);
+    int animFlySpeed = GetAnimFlySpeedByAngle(flyAngle);
+    int animationTimeToWait = CLAMP(animFlySpeed * dist - 50, 0, 5000);
+    uint criticalHit = isCritical ? 1 : 0;
+
+    uint[] values2 = { map.Id, fixedStartX, fixedStartY, tx, ty, weaponPid, attacker.Id, target.Id , criticalHit};
+    CreateTimeEvent(AFTER(REAL_MS(animationTimeToWait)), "e_HexThrowSpear", values2, false);
+
+}
+
+void CommenceHexThrowingEffectAfterAnimation(Critter& cr, Map& map, Item& item, uint realWeaponId, uint16 tx, uint16 ty, bool ignoreApCost = false) {
+    //  swap back the real weapon, before canceling/finishing animation
+    if (realWeaponId != 0) {
+        Item@ currentWeaponTarget = _CritGetItemHand(cr);
+        if (valid(currentWeaponTarget)) {
+            cr.MoveItemSilently(currentWeaponTarget.Id, currentWeaponTarget.GetCount(), SLOT_INV);
+        }
+        Item@ realWeapon = GetItem(realWeaponId);
+        if (valid(realWeapon)) {
+            cr.MoveItemSilently(realWeapon.Id, realWeapon.GetCount(), SLOT_HAND1);
+        }
+        realWeapon.Update();
+        if (cr.IsPlayer()) {
+            cr.RunClientScript("hexThrow@_UpdateFlareEffect", 0, 0, 0, null, null);
+        }
+    }
+
+    //  player interrupts with S or is not able to perform action
+    if ((cr.Param[TO_EX_ANIM_INTERRUPT] > int(GetTick()) - ANIM_ACTION_TIME_DEFAULT) || cr.IsDead() || cr.IsKnockout()) {
+        return;
+    }
+
+    uint16 weaponPid = item.GetProtoId();
+    ProtoItem@ protoWeapon = GetProtoItem(weaponPid);
+    uint8 use;
+    switch (weaponPid) {
+        case PID_SPEAR:
+        case PID_SHARP_SPEAR:
+        case PID_SHARPENED_POLE:
+            use = 1;
+            break;
+        default:
+            use = 0;
+    }
+    uint itemFlyingPid = _WeaponEffect(protoWeapon, use);
+    //cr.Say(SAY_NORM, "WEAPON PID = " + weaponPid + ", FLYING PID = " + itemFlyingPid);
+    if (IsGrenade(item)) {
+        uint8 dir = GetDirection(cr.HexX, cr.HexY, tx, ty);
+        cr.SetDir(dir);
+        if(cr.Mode[MODE_HIDE] != 0) {
+            if(!cr.IsPlayer() || cr.GetAccess() == ACCESS_CLIENT)
+                //cr.Say(SAY_NORM, "Desneak - Throwing grenade!");
+                _Desneak(cr);
+        }
+        cr.Wait(__Breaktime);
+        if (!ignoreApCost) {
+            cr.StatBase[ST_CURRENT_AP] -= 100 * HexThrowActionPointsCost(item, cr) - (cr.Perk[PE_BONUS_RATE_OF_ATTACK] > 0 ? 0 : 10 * cr.Stat[ST_AGILITY]);
+        }
+
+        uint16 fixedStartX = cr.HexX;
+        uint16 fixedStartY = cr.HexY;
+        uint16 fixedTargetX = tx;
+        uint16 fixedTargetY = ty;
+        map.MoveHexByDir(fixedTargetX, fixedTargetY, 2, 1);
+        map.MoveHexByDir(fixedTargetX, fixedTargetY, 3, 1);
+        uint dist = GetDistantion(fixedStartX, fixedStartY, fixedTargetX, fixedTargetY);
+
+        uint distSourceFromTarget = GetDistantion(cr.HexX, cr.HexY, tx, ty);
+        if (distSourceFromTarget > 1) {
+            map.MoveHexByDir(fixedStartX, fixedStartY, dir, 1);
+        }
+
+        map.RunFlyEffect(itemFlyingPid, null, null, fixedStartX, fixedStartY, fixedTargetX, fixedTargetY);
+
+        if(cr.Timeout[TO_BATTLE] < int(__TimeoutBattle))
+            _SetTimeout(cr, TO_BATTLE, __TimeoutBattle);
+        if(!map.IsTurnBased() && map.IsTurnBasedAvailability())
+            map.BeginTurnBased(cr);
+
+        int dx = fixedTargetX - fixedStartX;
+        int dy = fixedTargetY - fixedStartY;
+        float flyAngle = atan2(dy, dx);
+        int animFlySpeed = GetAnimFlySpeedByAngle(flyAngle);
+        uint animationTimeToWait = animFlySpeed * dist;
+
+        uint[] values2 = { map.Id, tx, ty, weaponPid, cr.Id };
+        CreateTimeEvent(AFTER(REAL_MS(animationTimeToWait)), "e_HexThrowExplode", values2, false);
+
+        cr.DeleteItem(item.GetProtoId(), 1);
+    } else if (IsSpearWeapon(item)) {
+        //  spears special throw - this is handled elsewhere
+        //cr.DeleteItem(item.GetProtoId(), 1);
+    } else if (IsDistractWeapon(item) || IsDetectHiddenWeapon(item)) {
+        uint8 dir = GetDirection(cr.HexX, cr.HexY, tx, ty);
+        cr.SetDir(dir);
+        cr.Wait(__Breaktime);
+        if (!ignoreApCost) {
+            cr.StatBase[ST_CURRENT_AP] -= 100 * HexThrowActionPointsCost(item, cr) - (cr.Perk[PE_BONUS_RATE_OF_ATTACK] > 0 ? 0 : 10 * cr.Stat[ST_AGILITY]);
+        }
+
+        uint16 fixedStartX = cr.HexX;
+        uint16 fixedStartY = cr.HexY;
+        uint16 fixedTargetX = tx;
+        uint16 fixedTargetY = ty;
+        map.MoveHexByDir(fixedTargetX, fixedTargetY, 2, 1);
+        map.MoveHexByDir(fixedTargetX, fixedTargetY, 3, 1);
+        uint dist = GetDistantion(fixedStartX, fixedStartY, fixedTargetX, fixedTargetY);
+
+        map.RunFlyEffect(itemFlyingPid, null, null, fixedStartX, fixedStartY, fixedTargetX, fixedTargetY);
+
+        int dx = fixedTargetX - fixedStartX;
+        int dy = fixedTargetY - fixedStartY;
+        float flyAngle = atan2(dy, dx);
+        int animFlySpeed = GetAnimFlySpeedByAngle(flyAngle);
+        uint animationTimeToWait = animFlySpeed * dist;
+
+        if (IsDistractWeapon(item)) {
+            uint[] values2 = { map.Id, tx, ty, weaponPid, cr.Id };
+            CreateTimeEvent(AFTER(REAL_MS(animationTimeToWait)), "e_HexThrowDistract", values2, false);
+        } else {
+            // IsDetectHiddenWeapon(item)
+            if (cr.IsPlayer()) {
+                cr.RunClientScript("hexThrow@_UpdateFlareEffect", 0, 0, 0, null, null);
+            }
+            uint[] values2 = { map.Id, tx, ty, item.GetProtoId(), cr.Id };
+            CreateTimeEvent(AFTER(REAL_MS(animationTimeToWait)), "e_HexThrowDetectHidden", values2, false);
+        }
+    } else {
+        cr.RunClientScript("hexThrow@_UpdateWeapons", 0, 0, 0, null, null);
+    }
+}
+
+uint e_AnimateHexThrow(array<uint>@ values) {     // critter_id, map_id, weapon_id, real_weapon_id, toX, toY
+    Critter@ cr = GetCritter(values[0]);
+    if (!valid(cr)) {
+        return 0;
+    }
+    Map@ map = GetMap(values[1]);
+    if (!valid(map)) {
+        return 0;
+    }
+    Item@ weapon =  GetItem(values[2]);
+    if (!valid(weapon)) {
+        return 0;
+    }
+    uint realWeaponId = values[3];
+    int tx = values[4];
+    int ty = values[5];
+    CommenceHexThrowingEffectAfterAnimation(cr, map, weapon, realWeaponId, tx, ty, false);
+    return 0;
+}
+
+
+uint e_HexThrowFly(array<uint>@ values) {     // map id, fromX, fromY, toX, toY, pid
+    Map@ map = GetMap(values[0]);
+    if (valid(map)) {
+        map.RunFlyEffect(values[5], null, null, values[1], values[2], values[3], values[4]);
+    }
+    return 0;
+}
+
+//  not really a hex throw as it flies to a critter, could be bugged tho in engine and does not follow critter over the fly time
+uint e_HexThrowFlyCritter(array<uint>@ values) {     // mapId, fromCritter, toCritter, fromX, fromY, toX, toY, pid
+    Map@ map = GetMap(values[0]);
+    Critter@ crFrom = GetCritter(values[1]);
+    Critter@ crTo = GetCritter(values[2]);
+    if (values[3] == 0 || values[4] == 0) {
+        if (valid(crFrom)) {
+            values[3] = crFrom.HexX;
+            values[4] = crFrom.HexY;
+            //Log("Readjusting x, y values for attacker: X = " + values[3] + ", Y = " + values[4]);
+        } else {
+            Log("Invalid throw FROM, both critter id and hex are missing.");
+        }
+    }
+    if (values[5] == 0 || values[6] == 0) {
+        if (valid(crTo)) {
+            values[5] = crTo.HexX;
+            values[6] = crTo.HexY;
+            //Log("Readjusting x, y values for target: X = " + values[5] + ", Y = " + values[6]);
+        } else {
+            Log("Invalid throw TO, both critter id and hex are missing.");
+        }
+    }
+    if (valid(map)) {
+        map.RunFlyEffect(values[7], crFrom, crTo, values[3], values[4], values[5], values[6]);
+    }
+    return 0;
+}
+
+uint e_HexThrowExplode(array<uint>@ values)     // map id, tx, ty, pid, attacker id
+{
+    Map@ map = GetMap(values[0]);
+    Critter@ cr = GetCritter(values[4]);
+    if(!valid(map))
+    {
+        cr.RunClientScript("hexThrow@_UpdateWeapons", 0, 0, 0, null, null);
+        return 0;
+    }
+
+    Item@ usedWeapon = cr.GetItem(values[3], -1);
+
+    CommenceExplosionHexEx(GetCritter(values[4]), map, values[1], values[2], null, values[3], usedWeapon, 0, false, 0, false, false);
+    cr.RunClientScript("hexThrow@_UpdateWeapons", 0, 0, 0, null, null);
+    return 0;
+}
+
+// map_id, fromX, fromY, toX, toY, weapon_pid, attacker_id, target_id, isCriticalHit
+uint e_HexThrowSpear(array<uint>@ values) {
+    Map@ map = GetMap(values[0]);
+    Critter@ attacker = GetCritter(values[6]);
+    Critter@ target = GetCritter(values[7]);
+    Item@ usedWeapon = attacker.GetItem(values[5], -1);
+    uint fromX = values[1];
+    uint fromY = values[2];
+    uint toX = values[3];
+    uint toY = values[4];
+    bool isCritical = values[8] > 0;
+
+    attacker.PlaySound('W', SOUND_WEAPON_USE, '4', '2', true);         // '1'?
+
+    array<Critter@> critsCentralLine;
+    array<Critter@> critsLeftLine;
+    array<Critter@> critsRightLine;
+
+    int closestDist = 160;
+    bool directHit = false;
+    Critter@ critterHit;
+
+    int dist = GetDistantion(fromX, fromY, toX, toY);
+    uint16 posX = 0, posY = 0;
+    posX = toX + (toX - fromX) * 3 / dist;
+    posY = toY + (toY - fromY) * 3 / dist;
+    //map.RunEffect(PID_EXPLODE_ROCKET, posX, posY, 0);
+
+    //  central line
+    uint foundCentralCritters = map.GetCrittersPath(fromX, fromY, toX, toY, 0.0f, dist + 2, FIND_LIFE_AND_KO, critsCentralLine);
+    if (foundCentralCritters > 0) {
+        for (uint i = 0; i < foundCentralCritters; i++) {
+            int tempDist = int(GetDistantion(fromX, fromY, critsCentralLine[i].HexX, critsCentralLine[i].HexY));
+            if (tempDist > dist - 4) {
+                //critsCentralLine[i].Say(SAY_NORM, "Spear Hit Central! dist: " + tempDist + ", closestDist = " + closestDist);
+                if (closestDist > tempDist) {
+                    @critterHit = critsCentralLine[i];
+                    closestDist = tempDist;
+                    directHit = true;
+                    //critsCentralLine[i].Say(SAY_NORM, "Setting closest NPC, dist: " + tempDist + ", closestDist = " + closestDist);
+                }
+            } else {
+                //  too close, spear would travel too far, so animation glitch on hit
+                //critsCentralLine[i].Say(SAY_NORM, "Too close: Central! dist: " + tempDist + ", closestDist = " + closestDist);
+            }
+        }
+    }
+
+    //  left line
+    uint8  leftDir = GetOffsetDir(fromX, fromY, toX, toY, 90.0f);
+    uint16 leftStartX = fromX;
+    uint16 leftStartY = fromY;
+    uint16 leftEndX = posX;
+    uint16 leftEndY = posY;
+    //map.MoveHexByDir(leftStartX, leftStartY, leftDir, 1);
+    map.MoveHexByDir(leftEndX, leftEndY, leftDir, 1);
+    int distLeft = GetDistantion(fromX, fromY, leftEndX, leftEndY);
+    uint foundLeftCritters = map.GetCrittersPath(leftStartX, leftStartY, leftEndX, leftEndY, 0.0f, dist + 2, FIND_LIFE_AND_KO, critsLeftLine);
+    if (foundLeftCritters > 0) {
+        for (uint i = 0; i < foundLeftCritters; i++) {
+            int tempDist = int(GetDistantion(fromX, fromY, critsLeftLine[i].HexX, critsLeftLine[i].HexY));
+            if (tempDist > dist - 3) {
+                //critsLeftLine[i].Say(SAY_NORM, "Spear Hit Left! dist: " + tempDist + ", closestDist = " + closestDist);
+                if (closestDist > tempDist) {
+                    @critterHit = critsLeftLine[i];
+                    closestDist = tempDist;
+                    directHit = false;
+                }
+            } else {
+                //  too close, spear would travel too far, so animation glitch on hit
+                //critsLeftLine[i].Say(SAY_NORM, "Too close: Left! dist: " + tempDist + ", closestDist = " + closestDist);
+            }
+        }
+    }
+
+    //  right line
+    uint8  rightDir = GetOffsetDir(fromX, fromY, toX, toY, -90.0f);
+    uint16 rightStartX = fromX;
+    uint16 rightStartY = fromY;
+    uint16 rightEndX = posX;
+    uint16 rightEndY = posY;
+    //map.MoveHexByDir(rightStartX, rightStartY, rightDir, 1);
+    map.MoveHexByDir(rightEndX, rightEndY, rightDir, 1);
+    int distRight = GetDistantion(fromX, fromY, rightEndX, rightEndY);
+    uint foundRightCritters = map.GetCrittersPath(rightStartX, rightStartY, rightEndX, rightEndY, 0.0f, dist + 2, FIND_LIFE_AND_KO, critsRightLine);
+    if (foundRightCritters > 0) {
+        for (uint i = 0; i < foundRightCritters; i++) {
+            int tempDist = int(GetDistantion(fromX, fromY, critsRightLine[i].HexX, critsRightLine[i].HexY));
+            if (tempDist > dist - 3) {
+                //critsRightLine[i].Say(SAY_NORM, "Spear Hit Right! dist: " + tempDist + ", closestDist = " + closestDist);
+                if (closestDist > tempDist) {
+                    @critterHit = critsRightLine[i];
+                    closestDist = tempDist;
+                    directHit = false;
+                }
+            } else {
+                //  too close, spear would travel too far, so animation glitch on hit
+                //critsRightLine[i].Say(SAY_NORM, "Too close: Right! dist: " + tempDist + ", closestDist = " + closestDist);
+            }
+        }
+    }
+
+    if (valid(critterHit)) {
+        //attacker.Say(SAY_NORM, "Closest critter hit: " + critterHit.Name + ", directHit: " + directHit + ", dist: " + closestDist);
+        array<CombatRes> results;
+        // Fill the main attack structure
+        AttackStruct attack;
+        @attack.Attacker = attacker;
+        @attack.RealWeapon = usedWeapon;
+        attack.Hx = fromX;
+        attack.Hy = fromY;
+        attack.Tx = toX;
+        attack.Ty = toY;
+        attack.set_Aim(HIT_LOCATION_UNCALLED);
+        attack.IsBurst = false;
+        attack.BloodyMess = attacker.Trait[TRAIT_BLOODY_MESS] != 0;
+        attack.CombatMessage = true;
+        attack.IsUnarmed = false;
+        attack.WeaponPerk = usedWeapon.Proto.Weapon_Perk;
+        attack.DmgMin = _WeaponDmgMin(usedWeapon.Proto, 1);   //  for spear throw use is 1
+        attack.DmgMax = _WeaponDmgMax(usedWeapon.Proto, 1);
+        attack.DmgType = DAMAGE_TYPE_NORMAL;
+        attack.BonusDmg = 0;
+        attack.weaponMode = 1;  //  spear throw?
+        attack.weaponPid = usedWeapon.GetProtoId();
+
+        if (attacker.Perk[PE_HEAVE_HO] > 0) {
+            attack.DmgMin += attacker.Stat[ST_STRENGTH] + attacker.Stat[ST_MELEE_DAMAGE];
+            attack.DmgMax += 2 * attacker.Stat[ST_STRENGTH] + attacker.Stat[ST_MELEE_DAMAGE];
+        } else {
+            attack.DmgMin += attacker.Stat[ST_STRENGTH] / 2;
+            attack.DmgMax += attacker.Stat[ST_STRENGTH];
+        }
+        attack.DRMod = int(attacker.Skill[SK_THROWING] / -10);
+
+        attack.DmgMul = 4;
+
+        ApplyDamage(attack, critterHit, 1, isCritical, false, results, (closestDist > 8 ? directHit ? 2 : 1 : 0));
+        FlushResults(results);
+    }
+    return 0;
+}
+
+
+uint e_HexThrowDistract(array<uint>@ values) {    // map id, tx, ty, pid, thrower id
+    Map@ map = GetMap(values[0]);
+    Critter@ cr = GetCritter(values[4]);
+    if (!valid(map)) {
+        cr.RunClientScript("hexThrow@_UpdateWeapons", 0, 0, 0, null, null);
+        return 0;
+    }
+
+    Item@ usedWeapon = cr.GetItem(values[3], -1);
+
+    uint tx = values[1];
+    uint ty = values[2];
+
+    cr.PlaySound('W', SOUND_WEAPON_USE, 'O', '1', true);         // '1'?
+    MoveItem(usedWeapon, 1, map, tx, ty);
+    usedWeapon.EventDrop(cr);
+    cr.EventDropItem(usedWeapon);
+
+    cr.RunClientScript("hexThrow@_UpdateWeapons", 0, 0, 0, null, null);
+
+    array<Critter@> crits;
+    uint foundCritters = map.GetCrittersHex(tx, ty, 12, FIND_LIFE | FIND_ONLY_NPC, crits);
+    for (uint i = 0; i < foundCritters; i++) {
+        /*
+        if (valid(crits[i].GetCurPlane())) {
+            crits[i].Say(SAY_NORM, "Current plane type = " + crits[i].GetCurPlane().Type + ", priority = " + crits[i].GetCurPlane().Priority);
+        } else {
+            crits[i].Say(SAY_NORM, "No current plane");
+        }
+        */
+        if (!valid(crits[i].GetCurPlane()) || crits[i].IsCurPlane(AI_PLANE_WALK)) {
+            if (!IsHumanoid(crits[i])) {
+                uint8 dir = GetDirection(crits[i].HexX, crits[i].HexY, tx, ty);
+                crits[i].SetDir(dir);
+                crits[i].Say(SAY_EMOTE_ON_HEAD, "distracted");
+                crits[i].Wait(10000 - crits[i].Stat[ST_INTELLECT]*500);
+            } else {
+                if (crits[i].Stat[ST_INTELLECT] < 6) {
+                    uint8 dir = GetDirection(crits[i].HexX, crits[i].HexY, tx, ty);
+                    crits[i].SetDir(dir);
+                    crits[i].Say(SAY_NORM_ON_HEAD, "Huh?");
+                    crits[i].Wait(10000 - crits[i].Stat[ST_INTELLECT]*500);
+                } else {
+                    crits[i].Say(SAY_NORM_ON_HEAD, "Just some rocks.");
+                }
+            }
+        }
+    }
+
+    return 0;
+}
+
+uint e_HexThrowDetectHidden(array<uint>@ values) {    // map id, tx, ty, pid, thrower id
+    Map@ map = GetMap(values[0]);
+    Critter@ cr = GetCritter(values[4]);
+    if (!valid(map)) {
+        cr.RunClientScript("hexThrow@_UpdateWeapons", 0, 0, 0, null, null);
+        return 0;
+    }
+
+    Item@ usedWeapon = cr.GetItem(values[3], -1);
+
+    uint tx = values[1];
+    uint ty = values[2];
+
+    //cr.PlaySound('W', SOUND_WEAPON_USE, 'O', '1', true);         // '1'?
+    MoveItem(usedWeapon, 1, map, tx, ty);
+
+    usedWeapon.EventDrop(cr);
+    cr.EventDropItem(usedWeapon);
+
+    cr.RunClientScript("hexThrow@_UpdateWeapons", 0, 0, 0, null, null);
+
+    RevealHidden(map, tx, ty, FLARELIT_REVEAL_RADIUS);
+    return 0;
+}
+
+void RevealHidden(Map& map, uint16 tx, uint16 ty, int radius) {
+    array<Critter@> crits;
+    uint foundCritters = map.GetCrittersHex(tx, ty, radius, FIND_LIFE, crits);
+    for (uint i = 0; i < foundCritters; i++) {
+        if (crits[i].Mode[MODE_HIDE] != 0 && crits[i].GetAccess() <= ACCESS_TESTER) {
+            uint16 pbx = tx;
+            uint16 pby = ty;
+            uint16 bx = tx;
+            uint16 by = ty;
+            map.GetCrittersPath(crits[i].HexX, crits[i].HexY, tx, ty, 0.0f, 0, 0, null, pbx, pby, bx, by);
+            if (bx == tx && by == ty) {
+                //crits[i].Say(SAY_NORM, "I was hiding! (" + flare.Id + ")");
+                _Desneak(crits[i]);
+            } else {
+                //crits[i].Say(SAY_NORM, "Hiding behind wall! (" + flare.Id + ")");
+            }
+        }
+    }
+}
+#endif
+
+#ifdef __CLIENT
+
+bool Active = false;
+bool currentHandActive = false;
+ItemCl@ currentHandItem;
+int  LastCursor = 0;
+int  itemPos = 0;
+uint availableCnt = 0;
+array<ItemCl@> availableItems;
+bool isFlare, isRock, isPlasma, isFrag, isDynacord, isMolotov, isPulse, isFire;
+uint16 lastH = 0, lastM = 0, lastS = 0, lastMS = 0;
+
+void _UpdateFlareEffect(int param1, int param2, int param3, string@ param4, array<int>@ param5) {
+    RefreshMap(false, false, true);
+}
+
+void _UpdateWeapons(int param1, int param2, int param3, string@ param4, array<int>@ param5)
+{
+    if(Active)
+        Active = FindAvailableWeapons();
+    else
+        FindAvailableWeapons();
+}
+
+bool FindAvailableWeapons()
+{
+    CritterCl@ chosen = GetChosen();
+    array<ItemCl@> allItems;
+
+    int count = chosen.GetItems(SLOT_INV, allItems);
+
+    isFlare = isRock = isPlasma = isFrag = isDynacord = isMolotov = isPulse = false;
+    availableCnt = 0;
+    availableItems.resize(0);
+    // 6 = plasma, frag, dynacord, molotov, pulse, fire
+    availableItems.resize(THROWABLE_SIZE);
+    for (int i=0; i < count; ++i) {
+        if (valid(allItems[i])) {
+            switch(allItems[i].GetProtoId()) {
+                case PID_FAKE_PLASMA_GRENADE:
+                case PID_PLASMA_GRENADE:
+                    isPlasma = true;
+                    availableItems.removeAt(0);
+                    availableItems.insertAt(0, allItems[i]);
+                    ++availableCnt;
+                    break;
+                case PID_FAKE_FRAG_GRENADE:
+                case PID_FRAG_GRENADE:
+                    isFrag = true;
+                    availableItems.removeAt(1);
+                    availableItems.insertAt(1, allItems[i]);
+                    ++availableCnt;
+                    break;
+                case PID_DYNACORD:
+                    isDynacord = true;
+                    availableItems.removeAt(2);
+                    availableItems.insertAt(2, allItems[i]);
+                    ++availableCnt;
+                    break;
+                case PID_MOLOTOV_COCKTAIL:
+                    isMolotov = true;
+                    availableItems.removeAt(3);
+                    availableItems.insertAt(3, allItems[i]);
+                    ++availableCnt;
+                    break;
+                case PID_PULSE_GRENADE:
+                    isPulse = true;
+                    availableItems.removeAt(4);
+                    availableItems.insertAt(4, allItems[i]);
+                    ++availableCnt;
+                    break;
+                case PID_FAKE_FIRE_GRENADE:
+                case PID_FIRE_GRENADE:
+                    isFire = true;
+                    availableItems.removeAt(5);
+                    availableItems.insertAt(5, allItems[i]);
+                    ++availableCnt;
+                    break;
+                case PID_ROCK:
+                    isRock = true;
+                    availableItems.removeAt(6);
+                    availableItems.insertAt(6, allItems[i]);
+                    ++availableCnt;
+                    break;
+                case PID_FLARE:
+                case PID_ACTIVE_FLARE:
+                    isFlare = true;
+                    availableItems.removeAt(7);
+                    availableItems.insertAt(7, allItems[i]);
+                    ++availableCnt;
+                    break;
+            }
+        }
+    }
+
+    //Message("i "+availableCnt);
+    if(availableCnt > 0)
+    {
+        bool next = false;
+        do
+        {
+            switch(itemPos)
+            {
+            case 0:
+                next = isPlasma;
+            break;
+            case 1:
+                next = isFrag;
+            break;
+            case 2:
+                next = isDynacord;
+            break;
+            case 3:
+                next = isMolotov;
+            break;
+            case 4:
+                next = isPulse;
+            break;
+            case 5:
+                next = isFire;
+            break;
+            case 6:
+                next = isRock;
+            break;
+            case 7:
+                next = isFlare;
+            break;
+            }
+            if(!next)
+                itemPos = (itemPos+1)%THROWABLE_SIZE;
+        } while(!next);
+        return true;
+    }
+    else
+        return false;
+}
+
+bool IsHandWeaponThrowable() {
+    CritterCl@ chosen = GetChosen();
+    ItemCl@ throwable = chosen.GetItem(0, SLOT_HAND1);
+    if (valid(throwable)) {
+        //Message("IsHandWeaponThrowable() :: HAND1 (" + throwable.Id + ", " + throwable.GetProtoId() + ")");
+        if (_WeaponSkill(throwable.Proto, 0) == SK_THROWING) {
+            @currentHandItem = throwable;
+            return true;
+        } else {
+            @throwable = chosen.GetItem(0, SLOT_HAND2);
+            if (valid(throwable) && _WeaponSkill(throwable.Proto, 0) == SK_THROWING) {
+                //Message("IsHandWeaponThrowable() :: HAND2 (" + throwable.Id + ", " + throwable.GetProtoId() + ")");
+                @currentHandItem = throwable;
+                return true;
+            }
+        }
+    } else {
+        @throwable = chosen.GetItem(0, SLOT_HAND2);
+        if (valid(throwable) && _WeaponSkill(throwable.Proto, 0) == SK_THROWING) {
+            //Message("IsHandWeaponThrowable() :: HAND2 (unarmed hand1) (" + throwable.Id + ", " + throwable.GetProtoId() + ")");
+            @currentHandItem = throwable;
+            return true;
+        }
+    }
+    return false;
+}
+
+bool HexThrowingMouseDown(int click) {
+    /*
+    if (IsHexThrowingActive()) {
+        Message("HexThrowingMouseDown() :: IsHexThrowingActive() = TRUE");
+    }
+    if (IsHexThrowingCurrentHandActive()) {
+        Message("HexThrowingMouseDown() :: IsHexThrowingCurrentHandActive() = TRUE");
+    }*/
+    if (IsHexThrowingActive() && click == MOUSE_CLICK_RIGHT) {
+        if (availableCnt > 0) {
+            bool next = false;
+            do {
+                itemPos = (itemPos+1)%THROWABLE_SIZE;
+                switch(itemPos) {
+                    case 0:
+                        next = isPlasma;
+                        break;
+                    case 1:
+                        next = isFrag;
+                        break;
+                    case 2:
+                        next = isDynacord;
+                        break;
+                    case 3:
+                        next = isMolotov;
+                        break;
+                    case 4:
+                        next = isPulse;
+                        break;
+                    case 5:
+                        next = isFire;
+                        break;
+                    case 6:
+                        next = isRock;
+                        break;
+                    case 7:
+                        next = isFlare;
+                        break;
+                }
+            } while (!next);
+        } else {
+            itemPos = 0;
+            //Message("pos "+itemPos);
+        }
+        return true;
+    }
+
+    if ((IsHexThrowingActive() || IsHexThrowingCurrentHandActive()) && click == MOUSE_CLICK_LEFT) {
+        CritterCl@ chosen = GetChosen();
+
+        array<uint> actions;
+        uint        cnt = GetChosenActions(actions);
+
+        if(actions.length() > 0)
+        {
+            if(actions[0] == 1)
+                TryHexThrow();
+        }
+        else
+        {
+            if(!chosen.IsAnimPlaying())
+                TryHexThrow();
+        }
+        return true;
+    }
+
+    return false;
+}
+
+bool IsHexThrowingActive() // export?
+{
+    return Active;
+}
+
+bool IsHexThrowingCurrentHandActive() {
+    return currentHandActive;
+}
+
+
+void HexThrowingKeyDown(uint8 key)   // export
+{
+    if (key == DIK_LMENU && !__ConsoleActive)
+        SetHexThrowing(true);
+    if (key == DIK_LCONTROL && !__ConsoleActive) {
+        SetHexThrowingCurrentHand(true);
+    }
+}
+
+void HexThrowingKeyUp(uint8 key)   // export
+{
+    if(key == DIK_LMENU)
+        SetHexThrowing(false);
+    if(key == DIK_LCONTROL)
+        SetHexThrowingCurrentHand(false);
+}
+
+void HexThrowingInputLost() // export
+{
+    SetHexThrowing(false);
+    SetHexThrowingCurrentHand(false);
+}
+
+void SetHexThrowing(bool enabled) {
+    if (enabled) {
+        //Active = true;
+        LastCursor = ::GetCurrentCursor();
+        if (LastCursor == CURSOR_USE_WEAPON) {
+            if (FindAvailableWeapons()) {
+                Active = true;
+                currentHandActive = false;
+            } else {
+                Active = false;
+            }
+        }
+        //ChangeCursor(1);         // todo
+    } else {
+        Active = false;
+        //ChangeCursor(LastCursor);
+    }
+}
+
+void SetHexThrowingCurrentHand(bool enabled) {
+    if (enabled) {
+        //Active = true;
+        LastCursor = ::GetCurrentCursor();
+        if (LastCursor == CURSOR_USE_WEAPON) {
+            if (IsHandWeaponThrowable()) {
+                currentHandActive = true;
+                Active = false;
+            } else {
+                currentHandActive = false;
+            }
+        }
+    } else {
+        currentHandActive = false;
+    }
+}
+
+void RenderHexThrowing() {
+    //Message("RenderHexThrowing()");
+    if (IsHexThrowingActive()) {
+        ItemCl@ item = availableItems[itemPos];
+        RenderHexThrowing(item);
+    }
+    if (IsHexThrowingCurrentHandActive()) {
+        RenderHexThrowing(currentHandItem);
+    }
+}
+
+void RenderHexThrowing(ItemCl@ item) // export
+{
+    CritterCl@ chosen = GetChosen();
+    if (!valid(chosen))
+        return;
+
+    uint16 hx = 0, hy = 0;
+    if (!GetMonitorHex(__MouseX, __MouseY, hx, hy))
+        return;
+    // todo: check for sanity?
+
+    //throw indicator
+    //Message("HexThrow :: ItemProto = " + item.GetProtoId());
+    int radius = HexThrowGetMaxRange(chosen, item);
+    //Message("HexThrow :: Radius = " + radius);
+
+    array<uint16> radiusVert =
+    {
+        chosen.HexX, chosen.HexY,
+        chosen.HexX, chosen.HexY,
+        chosen.HexX, chosen.HexY,
+        chosen.HexX, chosen.HexY,
+        chosen.HexX, chosen.HexY,
+        chosen.HexX, chosen.HexY
+    };
+    MoveHexByDir(radiusVert[0], radiusVert[1], 0, radius);
+    MoveHexByDir(radiusVert[2], radiusVert[3], 1, radius);
+    MoveHexByDir(radiusVert[4], radiusVert[5], 2, radius);
+    MoveHexByDir(radiusVert[6], radiusVert[7], 3, radius);
+    MoveHexByDir(radiusVert[8], radiusVert[9], 4, radius);
+    MoveHexByDir(radiusVert[10], radiusVert[11], 5, radius);
+
+    #define RANGE_BORDER      (0x77FF7777)
+
+    DrawHexArea(radiusVert, false, RANGE_BORDER);
+
+    if(!IsHexThrowableThere(chosen, item, hx, hy))
+        return;
+
+    //splash indicator
+    uint splashRadius = 2;
+    if (item.GetProtoId() == PID_FIRE_GRENADE || item.GetProtoId() == PID_FAKE_FIRE_GRENADE) {
+        splashRadius = 3;
+    } else if (item.GetProtoId() == PID_DYNACORD) {
+        splashRadius = 4;
+    } else if (item.GetProtoId() == PID_FLARE || item.GetProtoId() == PID_ACTIVE_FLARE) {
+        splashRadius = FLARELIT_REVEAL_RADIUS;
+    }
+    //Message("HexThrow :: Splash Radius = " + splashRadius);
+
+    array<uint16> splashRadiusVert =
+    {
+        hx, hy,
+        hx, hy,
+        hx, hy,
+        hx, hy,
+        hx, hy,
+        hx, hy
+    };
+    MoveHexByDir(splashRadiusVert[0], splashRadiusVert[1], 0, splashRadius);
+    MoveHexByDir(splashRadiusVert[2], splashRadiusVert[3], 1, splashRadius);
+    MoveHexByDir(splashRadiusVert[4], splashRadiusVert[5], 2, splashRadius);
+    MoveHexByDir(splashRadiusVert[6], splashRadiusVert[7], 3, splashRadius);
+    MoveHexByDir(splashRadiusVert[8], splashRadiusVert[9], 4, splashRadius);
+    MoveHexByDir(splashRadiusVert[10], splashRadiusVert[11], 5, splashRadius);
+
+    #define SPLASH_RADIUS_BORDER      (0x77FF0000)
+
+    DrawHexArea(splashRadiusVert, false, SPLASH_RADIUS_BORDER);
+
+    // now we actually render the info
+    int x = 0, y = 0;
+    if(!GetHexPos(hx, hy, x, y))
+        return;                           // should not happen
+
+    uint tohit = ::HexThrowingToHit(chosen, hx, hy, item.Proto);
+    int  ap = ::HexThrowActionPointsCost(item, chosen);
+    bool hasAp = ap <= chosen.Stat[ST_CURRENT_AP];
+
+    // todo: adjust offsets
+    int sprite = LoadSprite(item.Proto.PicInv, 0);
+    ::DrawSprite(sprite, -1, x - 50, y - 15, 30, 30, false, false, COLOR_WHITE);
+    DrawText(tohit + "%", x + 20, y - 10, 40, 20, hasAp ? COLOR_GREEN : COLOR_RED, FONT_TYPE_DEFAULT, FONT_FLAG_BORDERED);
+    DrawText(ap + " AP", x + 20, y, 40, 20, hasAp ? COLOR_LGRAY : COLOR_RED, FONT_TYPE_DEFAULT, FONT_FLAG_BORDERED);
+    DrawText(item.GetCount()+"", x - 30, y-10, 40, 20, hasAp ? COLOR_LGRAY : COLOR_RED, FONT_TYPE_DEFAULT, FONT_FLAG_BORDERED);
+
+}
+
+void TryHexThrow() {
+    //Message("TryHexThrow()");
+    if (IsHexThrowingActive()) {
+        ItemCl@ item = availableItems[itemPos];
+        TryHexThrow(item);
+    }
+    if (IsHexThrowingCurrentHandActive()) {
+        TryHexThrow(currentHandItem);
+    }
+}
+
+void TryHexThrow(ItemCl@ item)
+{
+    CritterCl@ chosen = GetChosen();
+    if(!valid(chosen))
+        return;
+
+    uint16 hx = 0, hy = 0;
+    if(!GetMonitorHex(__MouseX, __MouseY, hx, hy))
+        return;
+    // todo: check for sanity?
+    if(!IsHexThrowableThere(chosen, item, hx, hy))
+        return;
+
+    if(::HexThrowActionPointsCost(item, chosen) > chosen.Stat[ST_CURRENT_AP])
+    {
+        array<uint> actions;
+        uint        cnt = GetChosenActions(actions);
+        if(actions.length() > 0 && actions[0] == CHOSEN_MOVE)
+        {
+            uint[] action = { CHOSEN_NONE, 0, 0, 0, 0, 0, 0 };
+            SetChosenActions(action);
+        }
+        return;
+    }
+
+    // throw
+    if(CheckTimeDiff(lastH, lastM, lastS, lastMS))
+        RunServerScriptUnsafe("hexThrow@unsafe_HexThrow", hx, hy, item.Id, null, null);
+}
+
+bool CheckTimeDiff(uint16 lh, uint16 lm, uint16 ls, uint16 lms)
+{
+    uint16 undef;
+    uint16 hour = 0;
+    uint16 second = 0;
+    uint16 msecond = 0;
+    uint16 minute = 0;
+
+    GetTime(undef, undef, undef, undef, hour, minute, second, msecond);
+
+    lastH = hour;
+    lastM = minute;
+    lastS = second;
+    lastMS = msecond;
+
+    if(lh > hour)
+        hour += 24;
+    if(lm > minute)
+    {
+        minute += 60;
+        hour--;
+    }
+    if(ls > second)
+    {
+        second += 60;
+        minute--;
+    }
+    if(lms > msecond)
+    {
+        msecond += 1000;
+        second--;
+    }
+
+    uint td = (second-ls)*1000;
+    td = (msecond-lms+td);
+
+    if(td >= __Breaktime || lh != hour || lm != minute)
+        return true;
+    else
+    {
+        lastH = lh;
+        lastM = lm;
+        lastS = ls;
+        lastMS = lms;
+        return false;
+    }
+}
+
+#endif

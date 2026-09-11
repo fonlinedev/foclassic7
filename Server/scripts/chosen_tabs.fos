@@ -1,0 +1,270 @@
+//
+// FOnline: 2238
+// Rotators
+//
+// chosen_tabs.fos
+//
+
+#include "_macros.fos"
+#include "_client_defines.fos"
+#include "_colors.fos"
+#include "MsgStr.h"
+#include "sprite.fos"
+
+#define RADIATION_DEATH    (1800) // from radiation.fos
+
+import int GUI_GetActiveMainScreen() from "client_gui";
+import int GUI_GetActiveScreen() from "client_gui";
+import int GetIniValue(string& iniKey, int defaultValue) from "ini_parser";
+import     array<int>@ GetIniValues2(string & iniKey, array<int>@ defaultValues) from "ini_parser";
+
+import bool Critter_IsOverweight(CritterCl& cr) from "parameters";
+
+import int stringReplaceText(string& s, string@ f, string@ t) from "config_file";
+import uint GetRadiationLevelColor(int level) from "client/client_buffs";
+import uint GetRadiationStage(int level) from "client/client_buffs";
+
+Sprite     TabPic;
+array<int> Position;
+int        StepX;
+int        StepY;
+bool       LevelUp;
+int        CurTab;
+
+
+void InitChosenTabs() // Export
+{
+    TabPic.LoadByIni("ChosenTabPic", PATH_ART_INTRFACE);
+    Position = GetIniValues2("ChosenTab", null);
+    StepX = GetIniValue("ChosenTabStepX", 0);
+    StepY = GetIniValue("ChosenTabStepY", 5);
+    if(StepX != 0)
+        StepX += TabPic.Width;
+    if(StepY != 0)
+        StepY += TabPic.Height;
+    LevelUp = false;
+    CurTab = 0;
+}
+
+Sprite ChosenTabSprite()
+{
+    return(TabPic);
+}
+
+int ChosenTabsDrawn()
+{
+    return(CurTab);
+}
+
+void SetChosenTabLevelUp(bool enable)   // Export
+{
+    LevelUp = enable;
+}
+
+uint PercentColor(uint percent, bool clamp = true)
+{
+    if(!clamp || (clamp && percent < 100))
+        return(COLOR_RGB((0xFF * percent) / 100, (0xFF * (100 - percent)) / 100, 0));
+    else
+        return(COLOR_RGB(0xFF, 0, 0));
+}
+
+void DrawChosenTabs() // Export
+{
+    if(GUI_GetActiveMainScreen() != CLIENT_MAIN_SCREEN_GAME)
+        return;
+
+    CritterCl@ chosen = GetChosen();
+    if(!valid(chosen))
+        return;
+
+    // duplicated later
+    if(chosen.Stat[ST_UNSPENT_PERKS] > 0 || chosen.Stat[ST_UNSPENT_SKILL_POINTS] > 0)
+        LevelUp = true;
+    else
+        LevelUp = false;
+
+    if(LevelUp && (GUI_GetActiveMainScreen() != CLIENT_MAIN_SCREEN_GAME ||
+                   GUI_GetActiveScreen() == CLIENT_SCREEN_CHARACTER || GUI_GetActiveScreen() == CLIENT_SCREEN_PERK))
+        LevelUp = false;
+
+    CurTab = 0;
+
+    if(chosen.Mode[MODE_HIDE] != 0)
+        DrawTab(GetMsgStr(TEXTMSG_GAME, STR_HIDEMODE_TITLE), COLOR_DGREEN);
+
+    /*
+    if (chosen.ParamBase[ST_TO_MUTATE_TIMER] > int(GetTick())) {
+        string@ ex = "";
+        uint color = COLOR_DGREEN;
+        //  cr.ParamBase[ST_TO_MUTATE_TIMER]  > int(GetTick())
+        int time = chosen.ParamBase[ST_TO_MUTATE_TIMER] - int(GetTick());
+        ex = "You are affected by a mutagen: ";
+        int minute = time / 60000;
+        int second = (time / 1000) % 60;
+        ex += "" + minute + ":";
+        if (second > 9) {
+            ex += "" + second;
+        } else {
+            ex += "0" + second;
+        }
+        //Message("Tick = " + int(GetTick()) + ", ParamBase = " + chosen.ParamBase[ST_TO_MUTATE_TIMER] + ", time = " + time + ", minute = " + minute + ", second = " + second);
+        string@ caption = "Mutate!";
+        DrawTab(caption, color, ex);
+    }
+    */
+
+    if(LevelUp)
+    {
+        string ex = "";
+
+        // duplicated earlier
+        for(uint u = ST_UNSPENT_SKILL_POINTS; u <= ST_UNSPENT_PERKS; u++)
+        {
+            if(chosen.Stat[u] > 0)
+                ex += GetMsgStr(TEXTMSG_GAME, 100000 + (u * 10) + 1) + ": " + chosen.Stat[u] + "\n";
+        }
+
+        DrawTab(GetMsgStr(TEXTMSG_GAME, STR_LEVELUP_TITLE), COLOR_DGREEN, ex);
+    }
+
+    if (Critter_IsOverweight(chosen)) {
+        bool isDouble = chosen.ItemsWeight() > uint(chosen.Stat[ST_CARRY_WEIGHT]) * 2;
+        int excess = chosen.ItemsWeight() - (uint(chosen.Stat[ST_CARRY_WEIGHT]));
+        string ex = "";
+        ex = "|" + (isDouble ? COLOR_DRED : COLOR_DORANGE) + " " + chosen.ItemsWeight()/1000 + " / " + uint(chosen.Stat[ST_CARRY_WEIGHT])/1000
+            + " kg (+" + excess/1000 + " kg)";
+        DrawTab(GetMsgStr(TEXTMSG_GAME, STR_OVERWEIGHT_TITLE), isDouble ? COLOR_DRED : COLOR_DORANGE, ex);
+    }
+
+    if(chosen.Damage[DAMAGE_POISONED] != 0)
+    {
+        string@ ex = "";
+        uint    color = COLOR_DRED, percent = 0;
+
+        if((percent = chosen.Stat[ST_POISONING_LEVEL]) > 0)
+        {
+            ex = "Poisoning level: " + percent + "%";
+            color = PercentColor(percent);
+        }
+
+        DrawTab(GetMsgStr(TEXTMSG_GAME, STR_POISONED_TITLE), color, ex);
+    }
+
+    if(chosen.Damage[DAMAGE_RADIATED] != 0)
+    {
+        string ex = "";
+        uint   color = COLOR_DRED, percent = 0;
+        int radiationLevel = chosen.Stat[ST_RADIATION_LEVEL];
+        if((percent = (radiationLevel * 100) / RADIATION_DEATH) > 0)
+        {
+            //  nice feature of color usage, but having it based on stages is just better for players
+            //color = PercentColor(percent);
+
+            color = GetRadiationLevelColor(radiationLevel);
+
+            ex = "|" + color + " Radiation level: " + percent + "% (Stage " + GetRadiationStage(radiationLevel) + ": " + radiationLevel + " Rem)";
+        }
+
+        DrawTab(GetMsgStr(TEXTMSG_GAME, STR_RADIATED_TITLE), color, ex);
+    }
+
+    if(chosen.IsInjured())
+    {
+        string ex = "";
+
+        for(uint d = DAMAGE_EYE; d <= DAMAGE_LEFT_LEG; d++)
+        {
+            if(chosen.Damage[d] > 0)
+                ex += GetMsgStr(TEXTMSG_GAME, 100000 + (d * 10) + 1) + "\n";
+        }
+
+        DrawTab(GetMsgStr(TEXTMSG_GAME, STR_INJURED_TITLE), COLOR_DRED, ex);
+    }
+
+    if(chosen.IsAddicted())
+    {
+        string ex = "";
+
+        for(uint a = ADDICTION_BEGIN; a < ADDICTION_END; a++)
+        {
+            if(chosen.Addiction[a] > 0)
+                ex += GetMsgStr(TEXTMSG_GAME, 100000 + (a * 10) + 1) + "\n";
+        }
+
+        DrawTab(GetMsgStr(TEXTMSG_GAME, STR_ADDICTED_TITLE), COLOR_DRED, ex);
+    }
+
+    ItemCl@ armor = chosen.GetItem(0, SLOT_ARMOR);
+    if(valid(armor))
+    {
+
+        uint8 wearMin = 100 - armor.Deterioration * 100 / MAX_DETERIORATION;
+        uint8 wearMax = 100 - armor.BrokenCount;
+        uint8 procent = 100 - wearMin;
+        uint color = PercentColor(procent);
+
+        if(procent >= 40)
+        {
+            string ex = ReplaceText(ReplaceText(GetMsgStr(TEXTMSG_GAME, STR_DETERIORATION_PROCENT), "VALUE", wearMin), "MAXVALUE", wearMax);
+            DrawTab(GetMsgStr(TEXTMSG_GAME, STR_ARMOR_TITLE), color, ex);
+        }
+    }
+
+    #ifdef __DEBUG__ // public-hidden for maps under `disablegrids effect
+    if(chosen.Timeout[TO_TRANSFER] > 0)
+        DrawTab(GetMsgStr(TEXTMSG_GAME, STR_TIMEOUT_TITLE), chosen.Timeout[TO_TRANSFER] / __TimeMultiplier, COLOR_DRED);
+    #endif
+
+    if(IsTurnBased())
+    {
+        if(chosen.IsTurnBasedTurn())
+            DrawTab(GetMsgStr(TEXTMSG_GAME, STR_YOU_TURN_TITLE), int(GetTurnBasedTime() / 1000), COLOR_DGREEN);
+        else
+            DrawTab(GetMsgStr(TEXTMSG_GAME, STR_TURN_BASED_TITLE), COLOR_DRED);
+    }
+}
+
+void DrawTab(string@ text, uint color, string@ onText = null, uint onColor = 0)
+{
+    int x1 = Position[0] + CurTab * StepX, y1 = Position[1] + CurTab * StepY,
+        x2 = x1 + TabPic.Width,            y2 = y1 + TabPic.Height;
+
+    TabPic.Draw(x1, y1);
+    DrawText(valid(text) ? text : "", x1, y1, x2 - x1, y2 - y1, color, FONT_TYPE_DEFAULT, FT_CENTERXY);
+
+    if(valid(onText) && onText.length() > 0 &&
+       GetCurrentCursor() == CURSOR_DEFAULT &&                                 // avoid crap on screen durring battle
+       (__MouseX > x1 && __MouseX < x2) && (__MouseY > y1 && __MouseY < y2))   // sic! don't use <= / >=
+    {
+        int w = 0, h = 0, l = 0;
+        GetTextInfo(onText, 0, 0, FONT_TYPE_DEFAULT, FONT_FLAG_BORDERED, w, h, l);
+        DrawText(onText, __MouseX + 30, __MouseY + 18, w, h, onColor, FONT_TYPE_DEFAULT, FONT_FLAG_BORDERED);
+    }
+
+    CurTab++;
+}
+
+void DrawTab(string@ text, int value, uint color, string@ onText = null, uint onColor = 0)
+{
+    if(valid(text))
+        text = ReplaceText(text, "VALUE", value);
+    DrawTab(text, color, onText, onColor);
+}
+
+//  export
+bool IsMouseInMutateTabDrawArea() {
+    CritterCl@ chosen = GetChosen();
+    if (!valid(chosen))
+        return false;
+    if (chosen.Param[ST_TO_MUTATE_TIMER] > int(GetTick())) {
+        int x1 = Position[0];
+        int x2 = x1 + TabPic.Width;
+        int y1 = Position[1];
+        int y2 = y1 + TabPic.Height;
+        if ((__MouseX > x1 && __MouseX < x2) && (__MouseY > y1 && __MouseY < y2)) {
+            return true;
+        }
+    }
+    return false;
+}

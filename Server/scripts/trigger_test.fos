@@ -1,0 +1,42 @@
+#include "_defines.fos"
+#include "_macros.fos"
+
+#define DIALOG_1 (2911)
+#define DIALOG_2 (2912)
+#define DIALOG_3 (2913)
+
+void t_NearTrigger1(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
+{
+    if(!critter.IsPlayer() || !entered)
+        return;
+    
+    if(entered && (dir==0 || dir==4 || dir==5))
+    {
+		critter.Wait( 0 );
+		RunDialog(critter, DIALOG_1, trigger.HexX, trigger.HexY, false);
+    }
+}
+
+void t_NearTrigger2(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
+{
+    if(!critter.IsPlayer() || !entered)
+        return;
+    
+    if(entered && (dir==0 || dir==4 || dir==5))
+    {
+		critter.Wait( 0 );
+		RunDialog(critter, DIALOG_2, trigger.HexX, trigger.HexY, false);
+    }    
+}
+
+void t_NearTrigger3(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
+{
+    if(!critter.IsPlayer() || !entered)
+        return;
+    
+    if(entered && (dir==0 || dir==4 || dir==5))
+    {
+		critter.Wait( 0 );
+		RunDialog(critter, DIALOG_3, trigger.HexX, trigger.HexY, false);
+    }    
+}

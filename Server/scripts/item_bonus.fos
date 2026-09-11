@@ -1,0 +1,928 @@
+// Item bonuses
+//
+
+#include "_defines.fos"
+#include "_macros.fos"
+#include "_colors.fos"
+
+#ifdef __CLIENT // Macro defined in client_main.fos
+#define Item    ItemCl
+#endif
+
+//  shared between client and server scripts
+
+// Returns the number of item bonuses
+uint BonusNumber(Item@ it)
+{
+	uint number=0;
+	if(it.Val4!=0) return 5;
+	else if(it.Val3!=0) return 4;
+	else if(it.Val2!=0) return 3;
+	else if(it.Val1!=0) return 2;
+	else if(it.Val0!=0) return 1;
+	else return 0;
+}
+
+string itemBonusColor(uint itemType, uint bonusType, int value) {
+    string result = "";
+    int minRoll = 0;
+    int maxRoll = 0;
+    int roll = 0;
+    if (itemType == ITEM_TYPE_ARMOR) {
+        roll = getMinMaxRollArmor(bonusType, minRoll, maxRoll, 100);
+    }
+    if (itemType == ITEM_TYPE_WEAPON) {
+        roll = getMinMaxRollWeapon(bonusType, minRoll, maxRoll, 100);
+    }
+    if (roll > 0) {
+        int dif = maxRoll - minRoll + 1;
+        if (value < minRoll + (dif * 25) / 100) {
+            result = "|" + COLOR_GRAY + " ";
+        } else if (value < minRoll + (dif * 45) / 100) {
+            result = "|" + COLOR_LGRAY + " ";
+        } else if (value < minRoll + (dif * 65) / 100) {
+            result = "|" + COLOR_WHITE + " ";
+        } else if (value < minRoll + (dif * 85) / 100) {
+            result = "|" + COLOR_GREEN_RED + " ";
+        } else {
+            result = "|" + COLOR_SAND + " ";
+        }
+    }
+    return result;
+}
+
+int getMinMaxRollArmor(uint bonusType, int& minRoll, int& maxRoll, int effectValueRollPercent) {
+    minRoll = 1;
+    maxRoll = 0;
+    int bonus = 0;
+    //  armors
+	switch (bonusType) {
+		// Armors and helmets
+		case BONUS_ARMOR_CRIT_CHANCE:   {minRoll=2; maxRoll=6; bonus = 1; break;}
+		case BONUS_ARMOR_CRIT_POWER:    {minRoll=2; maxRoll=6; bonus = 1; break;}
+		case BONUS_ARMOR_NORMAL_DT:     {minRoll=2; maxRoll=6; bonus = 1; break;}
+		case BONUS_ARMOR_LASER_DT:      {minRoll=2; maxRoll=6; bonus = 1; break;}
+		case BONUS_ARMOR_FIRE_DT:       {minRoll=2; maxRoll=6; bonus = 1; break;}
+		case BONUS_ARMOR_PLASMA_DT:     {minRoll=2; maxRoll=6; bonus = 1; break;}
+		case BONUS_ARMOR_NORMAL_DR:     {minRoll=2; maxRoll=6; bonus = 1; break;}
+		case BONUS_ARMOR_LASER_DR:      {minRoll=2; maxRoll=6; bonus = 1; break;}
+		case BONUS_ARMOR_FIRE_DR:       {minRoll=2; maxRoll=6; bonus = 1; break;}
+		case BONUS_ARMOR_PLASMA_DR:     {minRoll=2; maxRoll=6; bonus = 1; break;}
+		case BONUS_ARMOR_PERCEPTION:    {minRoll=1; maxRoll=1; break;}
+		case BONUS_ARMOR_INTELLIGENCE:  {minRoll=1; maxRoll=1; break;}
+
+		// Both body armor and helmet bonuses
+		case BONUS_ARMOR_CHARISMA:      {minRoll=1; maxRoll=1; break;}
+		case BONUS_ARMOR_LUCK:          {minRoll=1; maxRoll=1; break;}
+
+		// Only armors
+		case BONUS_ARMOR_EXPLODE_DT:    {minRoll=3; maxRoll=9; bonus = 2; break;}
+		case BONUS_ARMOR_EXPLODE_DR:    {minRoll=3; maxRoll=9; bonus = 2; break;}
+		case BONUS_ARMOR_MAX_AP:        {minRoll=1; maxRoll=1; break;}
+		case BONUS_ARMOR_RAD_RES:       {minRoll=10;maxRoll=30;break;}
+		case BONUS_ARMOR_POISON_RES:    {minRoll=10;maxRoll=30;break;}
+		case BONUS_ARMOR_STRENGTH:      {minRoll=1; maxRoll=1; break;}
+		case BONUS_ARMOR_ENDURANCE:     {minRoll=1; maxRoll=1; break;}
+		case BONUS_ARMOR_AGILITY:       {minRoll=1; maxRoll=1; break;}
+		case BONUS_ARMOR_CARRY_WEIGHT:  {minRoll=20;maxRoll=60;break;}
+		case BONUS_ARMOR_HEALING_RATE:  {minRoll=2; maxRoll=6; bonus = 1; break;}
+		default: break;
+	}
+
+	if (maxRoll > minRoll) {
+        int roll = Random(minRoll, maxRoll);
+        int rollWithBonus = roll;
+        if (bonus > 0) {
+            rollWithBonus = roll + bonus;
+        } else {
+            rollWithBonus = roll * effectValueRollPercent / 100;
+        }
+        //Log("\tArmor bonus roll = " + roll + ", rollWithBonus = " + rollWithBonus);
+        return CLAMP(rollWithBonus, minRoll, maxRoll);
+	} else {
+	    return minRoll;
+	}
+}
+
+int getMinMaxRollWeapon(uint bonusType, int& minRoll, int& maxRoll, int effectValueRollPercent) {
+    minRoll = 1;
+    maxRoll = 0;
+    int bonus = 0;
+    switch (bonusType) {
+		case BONUS_WEAPON_CRITICAL_ROLL:    {minRoll=2; maxRoll=6; bonus = 1; break;}
+		case BONUS_WEAPON_CRITICAL_CHANCE:  {minRoll=2; maxRoll=6; bonus = 1; break;}
+		case BONUS_WEAPON_MIN_DMG:          {minRoll=10;maxRoll=25;break;}
+		case BONUS_WEAPON_MAX_DMG:          {minRoll=10;maxRoll=25;break;}
+		case BONUS_WEAPON_ACCURACY:         {minRoll=10;maxRoll=25;break;}
+		case BONUS_WEAPON_MAX_RANGE:        {minRoll=1; maxRoll=3; bonus = 1; break;}
+		case BONUS_WEAPON_MAX_AP:           {minRoll=1; maxRoll=1; break;}
+		default: break;
+	}
+
+	if (maxRoll > minRoll) {
+        int roll = Random(minRoll, maxRoll);
+        int rollWithBonus = roll;
+        if (bonus > 0) {
+            rollWithBonus = roll + bonus;
+        } else {
+            rollWithBonus = roll * effectValueRollPercent / 100;
+        }
+        //Log("\tWeapon bonus roll = " + roll + ", rollWithBonus = " + rollWithBonus);
+        return CLAMP(rollWithBonus, minRoll, maxRoll);
+	} else {
+	    return minRoll;
+	}
+}
+
+string getWeaponBonusName(uint bonusType) {
+	switch (bonusType) {
+		case BONUS_WEAPON_CRITICAL_ROLL:    return "Critical Power";
+		case BONUS_WEAPON_CRITICAL_CHANCE:  return "Critical Chance";
+		case BONUS_WEAPON_MIN_DMG:          return "Minimum Damage";
+		case BONUS_WEAPON_MAX_DMG:          return "Maximum Damage";
+		case BONUS_WEAPON_ACCURACY:         return "Accuracy";
+		case BONUS_WEAPON_MAX_AP:           return "Action Points";
+		case BONUS_WEAPON_MAX_RANGE:        return "Maximum Range";
+		default:
+		    break;
+	}
+	return "Unknown";
+}
+
+
+bool isBonusForBodyArmor(uint bonusType) {
+	switch (bonusType) {
+		// Armors and helmets
+		case BONUS_ARMOR_CRIT_CHANCE:
+		case BONUS_ARMOR_CRIT_POWER:
+		case BONUS_ARMOR_NORMAL_DT:
+		case BONUS_ARMOR_LASER_DT:
+		case BONUS_ARMOR_FIRE_DT:
+		case BONUS_ARMOR_PLASMA_DT:
+		case BONUS_ARMOR_NORMAL_DR:
+		case BONUS_ARMOR_LASER_DR:
+		case BONUS_ARMOR_FIRE_DR:
+		case BONUS_ARMOR_PLASMA_DR:
+		// Both body armor and helmet
+		case BONUS_ARMOR_CHARISMA:
+		case BONUS_ARMOR_LUCK:
+		// Only armors
+		case BONUS_ARMOR_EXPLODE_DT:
+		case BONUS_ARMOR_EXPLODE_DR:
+		case BONUS_ARMOR_MAX_AP:
+		case BONUS_ARMOR_RAD_RES:
+		case BONUS_ARMOR_POISON_RES:
+		case BONUS_ARMOR_STRENGTH:
+		case BONUS_ARMOR_ENDURANCE:
+		case BONUS_ARMOR_AGILITY:
+		case BONUS_ARMOR_CARRY_WEIGHT:
+		case BONUS_ARMOR_HEALING_RATE:
+            return true;
+		default:
+		    break;
+	}
+    return false;
+}
+
+uint getRandomBodyArmorBonusType() {
+    int roll = Random(0, 21);
+	switch (roll) {
+		case 0:  return BONUS_ARMOR_CRIT_CHANCE;
+		case 1:  return BONUS_ARMOR_CRIT_POWER;
+		case 2:  return BONUS_ARMOR_NORMAL_DT;
+		case 3:  return BONUS_ARMOR_LASER_DT;
+		case 4:  return BONUS_ARMOR_FIRE_DT;
+		case 5:  return BONUS_ARMOR_PLASMA_DT;
+		case 6:  return BONUS_ARMOR_NORMAL_DR;
+		case 7:  return BONUS_ARMOR_LASER_DR;
+		case 8:  return BONUS_ARMOR_FIRE_DR;
+		case 9:  return BONUS_ARMOR_PLASMA_DR;
+		case 10: return BONUS_ARMOR_CHARISMA;
+		case 11: return BONUS_ARMOR_LUCK;
+		case 12: return BONUS_ARMOR_EXPLODE_DT;
+		case 13: return BONUS_ARMOR_EXPLODE_DR;
+		case 14: return BONUS_ARMOR_MAX_AP;
+		case 15: return BONUS_ARMOR_RAD_RES;
+		case 16: return BONUS_ARMOR_POISON_RES;
+		case 17: return BONUS_ARMOR_STRENGTH;
+		case 18: return BONUS_ARMOR_ENDURANCE;
+		case 19: return BONUS_ARMOR_AGILITY;
+		case 20: return BONUS_ARMOR_CARRY_WEIGHT;
+		case 21: return BONUS_ARMOR_HEALING_RATE;
+		default:
+		    break;
+	}
+    return BONUS_ARMOR_CRIT_CHANCE;
+}
+
+
+bool isBonusForHelmet(uint bonusType) {
+	switch (bonusType) {
+		case BONUS_ARMOR_CRIT_CHANCE:
+		case BONUS_ARMOR_CRIT_POWER:
+		case BONUS_ARMOR_NORMAL_DT:
+		case BONUS_ARMOR_LASER_DT:
+		case BONUS_ARMOR_FIRE_DT:
+		case BONUS_ARMOR_PLASMA_DT:
+		case BONUS_ARMOR_NORMAL_DR:
+		case BONUS_ARMOR_LASER_DR:
+		case BONUS_ARMOR_FIRE_DR:
+		case BONUS_ARMOR_PLASMA_DR:
+		case BONUS_ARMOR_PERCEPTION:
+		case BONUS_ARMOR_CHARISMA:
+		case BONUS_ARMOR_INTELLIGENCE:
+		case BONUS_ARMOR_LUCK:
+            return true;
+		default:
+		    break;
+	}
+    return false;
+}
+
+uint getRandomHelmetBonusType() {
+    int roll = Random(0, 13);
+	switch (roll) {
+		case 0:  return BONUS_ARMOR_CRIT_CHANCE;
+		case 1:  return BONUS_ARMOR_CRIT_POWER;
+		case 2:  return BONUS_ARMOR_NORMAL_DT;
+		case 3:  return BONUS_ARMOR_LASER_DT;
+		case 4:  return BONUS_ARMOR_FIRE_DT;
+		case 5:  return BONUS_ARMOR_PLASMA_DT;
+		case 6:  return BONUS_ARMOR_NORMAL_DR;
+		case 7:  return BONUS_ARMOR_LASER_DR;
+		case 8:  return BONUS_ARMOR_FIRE_DR;
+		case 9:  return BONUS_ARMOR_PLASMA_DR;
+		case 10: return BONUS_ARMOR_PERCEPTION;
+		case 11: return BONUS_ARMOR_CHARISMA;
+		case 12: return BONUS_ARMOR_INTELLIGENCE;
+		case 13: return BONUS_ARMOR_LUCK;
+		default:
+		    break;
+	}
+    return BONUS_ARMOR_CRIT_CHANCE;
+}
+
+string getArmorBonusName(uint bonusType) {
+	switch (bonusType) {
+		case BONUS_ARMOR_CRIT_CHANCE:  return "Critical Chance";
+		case BONUS_ARMOR_CRIT_POWER:  return "Critical Power";
+		case BONUS_ARMOR_NORMAL_DT:  return "Normal DT";
+		case BONUS_ARMOR_LASER_DT:  return "Laser DT";
+		case BONUS_ARMOR_FIRE_DT:  return "Fire DT";
+		case BONUS_ARMOR_PLASMA_DT:  return "Plasma DT";
+		case BONUS_ARMOR_NORMAL_DR:  return "Normal DR";
+		case BONUS_ARMOR_LASER_DR:  return "Laser DR";
+		case BONUS_ARMOR_FIRE_DR:  return "Fire DR";
+		case BONUS_ARMOR_PLASMA_DR:  return "Plasma DR";
+		case BONUS_ARMOR_PERCEPTION: return "Perception";
+		case BONUS_ARMOR_CHARISMA: return "Charisma";
+		case BONUS_ARMOR_INTELLIGENCE: return "Intelligence";
+		case BONUS_ARMOR_LUCK: return "Luck";
+		case BONUS_ARMOR_EXPLODE_DT: return "Explode DT";
+		case BONUS_ARMOR_EXPLODE_DR: return "Explode DR";
+		case BONUS_ARMOR_MAX_AP: return "Action Points";
+		case BONUS_ARMOR_RAD_RES: return "Radiation Resist";
+		case BONUS_ARMOR_POISON_RES: return "Poison Resist";
+		case BONUS_ARMOR_STRENGTH: return "Strength";
+		case BONUS_ARMOR_ENDURANCE: return "Endurance";
+		case BONUS_ARMOR_AGILITY: return "Agility";
+		case BONUS_ARMOR_CARRY_WEIGHT: return "Carry Weight";
+		case BONUS_ARMOR_HEALING_RATE: return "Healing Rate";
+		default:
+		    break;
+	}
+	return "Unknown";
+}
+
+array<array<uint16>> WeaponUpgrades = {
+    //  pistols                     Range                           Accuracy                    Max AP                      Critical Chance          Critical Power             Minimum Damage              Maximum Damage
+    {PID_9MM_MAUSER,                PID_WU_BARREL_SUPPORT_M,        PID_WU_RECOIL_SPRINGS,      PID_WU_SMALL_GRIP_STRAPS,   PID_WU_SHORT_REAR_SIGHT, PID_WU_SHORT_FRONT_SIGHT,  PID_WU_HAMMER,              PID_WU_MUZZLE_M         },
+    {PID_10MM_PISTOL,               PID_WU_BARREL_SUPPORT_M,        PID_WU_RECOIL_SPRINGS,      PID_WU_SMALL_GRIP_STRAPS,   PID_WU_SHORT_REAR_SIGHT, PID_WU_SHORT_FRONT_SIGHT,  PID_WU_HAMMER,              PID_WU_MUZZLE_M         },
+    {PID_44_MAGNUM_REVOLVER,        PID_WU_BARREL_SUPPORT_L,        PID_WU_RECOIL_SPRINGS,      PID_WU_SMALL_GRIP_STRAPS,   PID_WU_SHORT_REAR_SIGHT, PID_WU_SHORT_FRONT_SIGHT,  PID_WU_HAMMER,              PID_WU_MUZZLE_L         },
+    {PID_44_MAGNUM_SPEEDLOADER,     PID_WU_BARREL_SUPPORT_L,        PID_WU_RECOIL_SPRINGS,      PID_WU_SMALL_GRIP_STRAPS,   PID_WU_SHORT_REAR_SIGHT, PID_WU_SHORT_FRONT_SIGHT,  PID_WU_HAMMER,              PID_WU_MUZZLE_L         },
+    {PID_DESERT_EAGLE,              PID_WU_BARREL_SUPPORT_L,        PID_WU_RECOIL_SPRINGS,      PID_WU_SMALL_GRIP_STRAPS,   PID_WU_SHORT_REAR_SIGHT, PID_WU_SHORT_FRONT_SIGHT,  PID_WU_HAMMER,              PID_WU_MUZZLE_L         },
+    {PID_DESERT_EAGLE_EXT_MAG,      PID_WU_BARREL_SUPPORT_L,        PID_WU_RECOIL_SPRINGS,      PID_WU_SMALL_GRIP_STRAPS,   PID_WU_SHORT_REAR_SIGHT, PID_WU_SHORT_FRONT_SIGHT,  PID_WU_HAMMER,              PID_WU_MUZZLE_L         },
+    {PID_14MM_PISTOL,               PID_WU_BARREL_SUPPORT_L,        PID_WU_RECOIL_SPRINGS,      PID_WU_SMALL_GRIP_STRAPS,   PID_WU_SHORT_REAR_SIGHT, PID_WU_SHORT_FRONT_SIGHT,  PID_WU_HAMMER,              PID_WU_MUZZLE_L         },
+    {PID_223_PISTOL,                PID_WU_BARREL_SUPPORT_S,        PID_WU_RECOIL_SPRINGS,      PID_WU_SMALL_GRIP_STRAPS,   PID_WU_SHORT_REAR_SIGHT, PID_WU_SHORT_FRONT_SIGHT,  PID_WU_HAMMER,              PID_WU_MUZZLE_S         },
+    {PID_WS_M350_LEGEND,            PID_WU_BARREL_SUPPORT_L,        PID_WU_RECOIL_SPRINGS,      PID_WU_SMALL_GRIP_STRAPS,   PID_WU_SHORT_REAR_SIGHT, PID_WU_SHORT_FRONT_SIGHT,  PID_WU_HAMMER,              PID_WU_MUZZLE_L         },
+    {PID_PK12_GAUSS_PISTOL,         PID_WU_BARREL_SUPPORT_XS,       PID_WU_RECOIL_SPRINGS,      PID_WU_PRIMARY_COIL,        PID_WU_CONTROL_SYSTEM,   PID_WU_SHORT_FRONT_SIGHT,  PID_WU_HAMMER,              PID_WU_MUZZLE_XS        },
+    {PID_LASER_PISTOL,              PID_WU_FOCUSING_ARRAY_SUPPORT,  PID_WU_RECOIL_SPRINGS,      PID_WU_PRIMARY_COIL,        PID_WU_CONTROL_SYSTEM,   PID_WU_CAPACITOR,          PID_WU_HEAT_VENT,           PID_BOLT_COMPRESSOR     },
+    {PID_MAGNETO_LASER_PISTOL,      PID_WU_FOCUSING_ARRAY_SUPPORT,  PID_WU_RECOIL_SPRINGS,      PID_WU_PRIMARY_COIL,        PID_WU_CONTROL_SYSTEM,   PID_WU_CAPACITOR,          PID_WU_HEAT_VENT,           PID_BOLT_COMPRESSOR     },
+    {PID_PLASMA_PISTOL,             PID_WU_FOCUSING_ARRAY_SUPPORT,  PID_WU_RECOIL_SPRINGS,      PID_WU_PRIMARY_COIL,        PID_WU_CONTROL_SYSTEM,   PID_WU_CAPACITOR,          PID_WU_HEAT_VENT,           PID_BOLT_COMPRESSOR     },
+    {PID_PLASMA_PISTOL_EXT_CART,    PID_WU_FOCUSING_ARRAY_SUPPORT,  PID_WU_RECOIL_SPRINGS,      PID_WU_PRIMARY_COIL,        PID_WU_CONTROL_SYSTEM,   PID_WU_CAPACITOR,          PID_WU_HEAT_VENT,           PID_BOLT_COMPRESSOR     },
+    {PID_YK32_PULSE_PISTOL,         PID_WU_FOCUSING_ARRAY_SUPPORT,  PID_WU_RECOIL_SPRINGS,      PID_WU_PRIMARY_COIL,        PID_WU_CONTROL_SYSTEM,   PID_WU_CAPACITOR,          PID_WU_HEAT_VENT,           PID_BOLT_COMPRESSOR     },
+
+    //  single shot rifles
+    {PID_HUNTING_RIFLE,             PID_WU_BARREL_SUPPORT_S,        PID_WU_STOCK_STRAPS,        PID_WU_BOLT_HANDLE,         PID_WU_LONG_REAR_SIGHT,  PID_WU_LONG_FRONT_SIGHT,   PID_WU_BOLT_HAMMER,         PID_WU_MUZZLE_S         },
+    {PID_SCOPED_HUNTING_RIFLE,      PID_WU_BARREL_SUPPORT_S,        PID_WU_STOCK_STRAPS,        PID_WU_BOLT_HANDLE,         PID_WU_TELESCOPE_LENSES, PID_WU_ANTI_GLARE,         PID_WU_BOLT_HAMMER,         PID_WU_MUZZLE_S         },
+    {PID_SNIPER_RIFLE,              PID_WU_BARREL_SUPPORT_S,        PID_WU_STOCK_STRAPS,        PID_WU_BOLT_HANDLE,         PID_WU_TELESCOPE_LENSES, PID_WU_ANTI_GLARE,         PID_WU_BOLT_HAMMER,         PID_WU_MUZZLE_S         },
+    {PID_LASER_RIFLE,               PID_WU_FOCUSING_ARRAY_SUPPORT,  PID_WU_BUTT_PLATE_STRAPS,   PID_WU_PRIMARY_COIL,        PID_WU_CONTROL_SYSTEM,   PID_WU_CAPACITOR,          PID_WU_HEAT_VENT,           PID_BOLT_COMPRESSOR     },
+    {PID_LASER_RIFLE_EXT_CAP,       PID_WU_FOCUSING_ARRAY_SUPPORT,  PID_WU_BUTT_PLATE_STRAPS,   PID_WU_PRIMARY_COIL,        PID_WU_CONTROL_SYSTEM,   PID_WU_CAPACITOR,          PID_WU_HEAT_VENT,           PID_BOLT_COMPRESSOR     },
+    {PID_PLASMA_RIFLE,              PID_WU_FOCUSING_ARRAY_SUPPORT,  PID_WU_BUTT_PLATE_STRAPS,   PID_WU_PRIMARY_COIL,        PID_WU_CONTROL_SYSTEM,   PID_WU_CAPACITOR,          PID_WU_HEAT_VENT,           PID_BOLT_COMPRESSOR     },
+    {PID_TURBO_PLASMA_RIFLE,        PID_WU_FOCUSING_ARRAY_SUPPORT,  PID_WU_BUTT_PLATE_STRAPS,   PID_WU_PRIMARY_COIL,        PID_WU_CONTROL_SYSTEM,   PID_WU_CAPACITOR,          PID_WU_HEAT_VENT,           PID_BOLT_COMPRESSOR     },
+    {PID_YK42B_PULSE_RIFLE,         PID_WU_FOCUSING_ARRAY_SUPPORT,  PID_WU_BUTT_PLATE_STRAPS,   PID_WU_PRIMARY_COIL,        PID_WU_CONTROL_SYSTEM,   PID_WU_CAPACITOR,          PID_WU_HEAT_VENT,           PID_BOLT_COMPRESSOR     },
+    {PID_M72_GAUSS_RIFLE,           PID_WU_BARREL_SUPPORT_XS,       PID_WU_BUTT_PLATE_STRAPS,   PID_WU_TRIGGER,             PID_WU_LONG_REAR_SIGHT,  PID_WU_LONG_FRONT_SIGHT,   PID_WU_RECEIVER_ASSIST,     PID_WU_MUZZLE_XS        },
+
+    //  SMGs
+    {PID_10MM_SMG,                  PID_WU_BARREL_SUPPORT_M,        PID_WU_BUTT_PLATE_STRAPS,   PID_WU_TRIGGER,             PID_WU_SHORT_REAR_SIGHT, PID_WU_SHORT_FRONT_SIGHT,  PID_WU_RECEIVER_ASSIST,     PID_WU_MUZZLE_M         },
+    {PID_GREASE_GUN,                PID_WU_BARREL_SUPPORT_L,        PID_WU_BUTT_PLATE_STRAPS,   PID_WU_TRIGGER,             PID_WU_SHORT_REAR_SIGHT, PID_WU_SHORT_FRONT_SIGHT,  PID_WU_RECEIVER_ASSIST,     PID_WU_MUZZLE_L         },
+    {PID_HK_P90C,                   PID_WU_BARREL_SUPPORT_M,        PID_WU_BUTT_PLATE_STRAPS,   PID_WU_TRIGGER,             PID_WU_SHORT_REAR_SIGHT, PID_WU_SHORT_FRONT_SIGHT,  PID_WU_RECEIVER_ASSIST,     PID_WU_MUZZLE_M         },
+    {PID_LASER_SMG,                 PID_WU_FOCUSING_ARRAY_SUPPORT,  PID_WU_BUTT_PLATE_STRAPS,   PID_WU_PRIMARY_COIL,        PID_WU_CONTROL_SYSTEM,   PID_WU_CAPACITOR,          PID_WU_HEAT_VENT,           PID_BOLT_COMPRESSOR     },
+
+    //  shotguns
+    {PID_SHOTGUN,                   PID_WU_BARREL_SUPPORT_XL,       PID_WU_STOCK_STRAPS,        PID_WU_ACTION_RECEIVER,     PID_WU_LONG_REAR_SIGHT,  PID_WU_LONG_FRONT_SIGHT,   PID_WU_FIRING_PINS,         PID_WU_MUZZLE_XL        },
+    {PID_SAWED_OFF_SHOTGUN,         PID_WU_BARREL_SUPPORT_XL,       PID_WU_STOCK_STRAPS,        PID_WU_ACTION_RECEIVER,     PID_WU_SHORT_REAR_SIGHT, PID_WU_SHORT_FRONT_SIGHT,  PID_WU_FIRING_PINS,         PID_WU_MUZZLE_XL        },
+    {PID_COMBAT_SHOTGUN,            PID_WU_BARREL_SUPPORT_XL,       PID_WU_STOCK_STRAPS,        PID_WU_ACTION_RECEIVER,     PID_WU_LONG_REAR_SIGHT,  PID_WU_LONG_FRONT_SIGHT,   PID_WU_FIRING_PINS,         PID_WU_MUZZLE_XL        },
+    {PID_HK_CAWS,                   PID_WU_BARREL_SUPPORT_XL,       PID_WU_STOCK_STRAPS,        PID_WU_ACTION_RECEIVER,     PID_WU_LONG_REAR_SIGHT,  PID_WU_LONG_FRONT_SIGHT,   PID_WU_FIRING_PINS,         PID_WU_MUZZLE_XL        },
+    {PID_PANCOR_JACKHAMMER,         PID_WU_BARREL_SUPPORT_XL,       PID_WU_STOCK_STRAPS,        PID_WU_ACTION_RECEIVER,     PID_WU_LONG_REAR_SIGHT,  PID_WU_LONG_FRONT_SIGHT,   PID_WU_FIRING_PINS,         PID_WU_MUZZLE_XL        },
+
+    //  assault rifles
+    {PID_TOMMY_GUN,                 PID_WU_BARREL_SUPPORT_L,        PID_WU_STOCK_STRAPS,        PID_WU_TRIGGER,             PID_WU_LONG_REAR_SIGHT,  PID_WU_LONG_FRONT_SIGHT,   PID_WU_RECEIVER_ASSIST,     PID_WU_MUZZLE_L         },
+    {PID_ASSAULT_RIFLE,             PID_WU_BARREL_SUPPORT_XS,       PID_WU_STOCK_STRAPS,        PID_WU_TRIGGER,             PID_WU_LONG_REAR_SIGHT,  PID_WU_LONG_FRONT_SIGHT,   PID_WU_RECEIVER_ASSIST,     PID_WU_MUZZLE_XS        },
+    {PID_ASSAULT_RIFLE_EXT_MAG,     PID_WU_BARREL_SUPPORT_XS,       PID_WU_STOCK_STRAPS,        PID_WU_TRIGGER,             PID_WU_LONG_REAR_SIGHT,  PID_WU_LONG_FRONT_SIGHT,   PID_WU_RECEIVER_ASSIST,     PID_WU_MUZZLE_XS        },
+    {PID_FN_FAL,                    PID_WU_BARREL_SUPPORT_S,        PID_WU_STOCK_STRAPS,        PID_WU_TRIGGER,             PID_WU_LONG_REAR_SIGHT,  PID_WU_LONG_FRONT_SIGHT,   PID_WU_RECEIVER_ASSIST,     PID_WU_MUZZLE_S         },
+    {PID_FN_FAL_NIGHT_SCOPE,        PID_WU_BARREL_SUPPORT_S,        PID_WU_STOCK_STRAPS,        PID_WU_TRIGGER,             PID_WU_TELESCOPE_LENSES, PID_WU_ANTI_GLARE,         PID_WU_RECEIVER_ASSIST,     PID_WU_MUZZLE_S         },
+    {PID_FN_FAL_HPFA,               PID_WU_BARREL_SUPPORT_S,        PID_WU_STOCK_STRAPS,        PID_WU_TRIGGER,             PID_WU_LONG_REAR_SIGHT,  PID_WU_LONG_FRONT_SIGHT,   PID_WU_RECEIVER_ASSIST,     PID_WU_MUZZLE_S         },
+    {PID_INDEPENDENT,               PID_WU_BARREL_SUPPORT_XS,       PID_WU_STOCK_STRAPS,        PID_WU_TRIGGER,             PID_WU_TELESCOPE_LENSES, PID_WU_ANTI_GLARE,         PID_WU_RECEIVER_ASSIST,     PID_WU_MUZZLE_XS        },
+    {PID_HK_G11,                    PID_WU_BARREL_SUPPORT_XS,       PID_WU_STOCK_STRAPS,        PID_WU_TRIGGER,             PID_WU_TELESCOPE_LENSES, PID_WU_ANTI_GLARE,         PID_WU_RECEIVER_ASSIST,     PID_WU_MUZZLE_XS        },
+    {PID_HK_G11E,                   PID_WU_BARREL_SUPPORT_XS,       PID_WU_STOCK_STRAPS,        PID_WU_TRIGGER,             PID_WU_TELESCOPE_LENSES, PID_WU_ANTI_GLARE,         PID_WU_RECEIVER_ASSIST,     PID_WU_MUZZLE_XS        },
+
+    //  MGs
+    {PID_M60,                       PID_WU_BARREL_SUPPORT_S,        PID_WU_BUTT_PLATE_STRAPS,   PID_WU_TRIGGER,             PID_WU_REAR_SIGHT_BASE,  PID_WU_FRONT_SIGHT_BLADE,  PID_WU_BOLT_LATCH,          PID_WU_MUZZLE_COMPENSATOR   },
+    {PID_LIGHT_SUPPORT_WEAPON,      PID_WU_BARREL_SUPPORT_S,        PID_WU_BUTT_PLATE_STRAPS,   PID_WU_TRIGGER,             PID_WU_REAR_SIGHT_BASE,  PID_WU_FRONT_SIGHT_BLADE,  PID_WU_BOLT_LATCH,          PID_WU_MUZZLE_COMPENSATOR   },
+    {PID_LASER_SUPPORT_WEAPON,      PID_WU_FOCUSING_ARRAY_SUPPORT,  PID_WU_BUTT_PLATE_STRAPS,   PID_WU_PRIMARY_COIL,        PID_WU_CONTROL_SYSTEM,   PID_WU_CAPACITOR,          PID_WU_HEAT_VENT,           PID_BOLT_COMPRESSOR         },
+    {PID_MINIGUN,                   PID_WU_BARREL_CLAMP,            PID_WU_SPADE_GRIP_STRAPS,   PID_WU_FRONT_ROTOR,         PID_WU_BOLT_TRACKS,      PID_WU_BOLT_ASSEMBLIES,    PID_WU_FIRE_CONTROL_UNIT,   PID_WU_FLASH_SUPPRESSOR     },
+    {PID_AVENGER_MINIGUN,           PID_WU_BARREL_CLAMP,            PID_WU_SPADE_GRIP_STRAPS,   PID_WU_FRONT_ROTOR,         PID_WU_BOLT_TRACKS,      PID_WU_BOLT_ASSEMBLIES,    PID_WU_FIRE_CONTROL_UNIT,   PID_WU_FLASH_SUPPRESSOR     },
+    {PID_VINDICATOR_MINIGUN,        PID_WU_BARREL_CLAMP,            PID_WU_SPADE_GRIP_STRAPS,   PID_WU_FRONT_ROTOR,         PID_WU_BOLT_TRACKS,      PID_WU_BOLT_ASSEMBLIES,    PID_WU_FIRE_CONTROL_UNIT,   PID_WU_FLASH_SUPPRESSOR     },
+    {PID_GATLING_LASER,             PID_WU_BARREL_CLAMP,            PID_WU_SPADE_GRIP_STRAPS,   PID_WU_FRONT_ROTOR,         PID_WU_CONTROL_SYSTEM,   PID_WU_CAPACITOR,          PID_WU_HEAT_VENT,           PID_BOLT_COMPRESSOR         },
+    {PID_PLASMA_GATLING,            PID_WU_BARREL_CLAMP,            PID_WU_SPADE_GRIP_STRAPS,   PID_WU_FRONT_ROTOR,         PID_WU_CONTROL_SYSTEM,   PID_WU_CAPACITOR,          PID_WU_HEAT_VENT,           PID_BOLT_COMPRESSOR         },
+    {PID_BOZAR,                     PID_WU_BARREL_SUPPORT_S,        PID_WU_SPADE_GRIP_STRAPS,   PID_WU_TRIGGER,             PID_WU_TELESCOPE_LENSES, PID_WU_ANTI_GLARE,         PID_WU_BOLT_LATCH,          PID_WU_MUZZLE_COMPENSATOR   }
+};
+
+array<array<uint16>> UpgradeTypes = {
+
+    //  Maximum Range (7)
+    {PID_WU_BARREL_SUPPORT_XS,          BONUS_WEAPON_MAX_RANGE},
+    {PID_WU_BARREL_SUPPORT_S,           BONUS_WEAPON_MAX_RANGE},
+    {PID_WU_BARREL_SUPPORT_M,           BONUS_WEAPON_MAX_RANGE},
+    {PID_WU_BARREL_SUPPORT_L,           BONUS_WEAPON_MAX_RANGE},
+    {PID_WU_BARREL_SUPPORT_XL,          BONUS_WEAPON_MAX_RANGE},
+    {PID_WU_BARREL_CLAMP,               BONUS_WEAPON_MAX_RANGE},
+    {PID_WU_FOCUSING_ARRAY_SUPPORT,     BONUS_WEAPON_MAX_RANGE},
+
+    //  Accuracy (4)
+    {PID_WU_RECOIL_SPRINGS,             BONUS_WEAPON_ACCURACY},
+    {PID_WU_BUTT_PLATE_STRAPS,          BONUS_WEAPON_ACCURACY},
+    {PID_WU_STOCK_STRAPS,               BONUS_WEAPON_ACCURACY},
+    {PID_WU_SPADE_GRIP_STRAPS,          BONUS_WEAPON_ACCURACY},
+
+    //  Max Action Points (6)
+    {PID_WU_SMALL_GRIP_STRAPS,          BONUS_WEAPON_MAX_AP},
+    {PID_WU_ACTION_RECEIVER,            BONUS_WEAPON_MAX_AP},
+    {PID_WU_BOLT_HANDLE,                BONUS_WEAPON_MAX_AP},
+    {PID_WU_TRIGGER,                    BONUS_WEAPON_MAX_AP},
+    {PID_WU_FRONT_ROTOR,                BONUS_WEAPON_MAX_AP},
+    {PID_WU_PRIMARY_COIL,               BONUS_WEAPON_MAX_AP},
+
+    //  Critical Chance (6)
+    {PID_WU_SHORT_REAR_SIGHT,           BONUS_WEAPON_CRITICAL_CHANCE},
+    {PID_WU_LONG_REAR_SIGHT,            BONUS_WEAPON_CRITICAL_CHANCE},
+    {PID_WU_TELESCOPE_LENSES,           BONUS_WEAPON_CRITICAL_CHANCE},
+    {PID_WU_REAR_SIGHT_BASE,            BONUS_WEAPON_CRITICAL_CHANCE},
+    {PID_WU_BOLT_TRACKS,                BONUS_WEAPON_CRITICAL_CHANCE},
+    {PID_WU_CONTROL_SYSTEM,             BONUS_WEAPON_CRITICAL_CHANCE},
+
+    //  Critical Power (6)
+    {PID_WU_SHORT_FRONT_SIGHT,          BONUS_WEAPON_CRITICAL_ROLL},
+    {PID_WU_LONG_FRONT_SIGHT,           BONUS_WEAPON_CRITICAL_ROLL},
+    {PID_WU_ANTI_GLARE,                 BONUS_WEAPON_CRITICAL_ROLL},
+    {PID_WU_FRONT_SIGHT_BLADE,          BONUS_WEAPON_CRITICAL_ROLL},
+    {PID_WU_BOLT_ASSEMBLIES,            BONUS_WEAPON_CRITICAL_ROLL},
+    {PID_WU_CAPACITOR,                  BONUS_WEAPON_CRITICAL_ROLL},
+
+    //  Minimum Damage (7)
+    {PID_WU_HAMMER,                     BONUS_WEAPON_MIN_DMG},
+    {PID_WU_FIRING_PINS,                BONUS_WEAPON_MIN_DMG},
+    {PID_WU_BOLT_HAMMER,                BONUS_WEAPON_MIN_DMG},
+    {PID_WU_RECEIVER_ASSIST,            BONUS_WEAPON_MIN_DMG},
+    {PID_WU_BOLT_LATCH,                 BONUS_WEAPON_MIN_DMG},
+    {PID_WU_FIRE_CONTROL_UNIT,          BONUS_WEAPON_MIN_DMG},
+    {PID_WU_HEAT_VENT,                  BONUS_WEAPON_MIN_DMG},
+
+    //  Maximum Damage (7)
+    {PID_WU_MUZZLE_XS,                  BONUS_WEAPON_MAX_DMG},
+    {PID_WU_MUZZLE_S,                   BONUS_WEAPON_MAX_DMG},
+    {PID_WU_MUZZLE_M,                   BONUS_WEAPON_MAX_DMG},
+    {PID_WU_MUZZLE_L,                   BONUS_WEAPON_MAX_DMG},
+    {PID_WU_MUZZLE_XL,                  BONUS_WEAPON_MAX_DMG},
+    {PID_WU_MUZZLE_COMPENSATOR,         BONUS_WEAPON_MAX_DMG},
+    {PID_WU_FLASH_SUPPRESSOR,           BONUS_WEAPON_MAX_DMG},
+    {PID_BOLT_COMPRESSOR,               BONUS_WEAPON_MAX_DMG}
+};
+
+
+uint getWeaponsUpgradeType(uint upgradePid, uint weaponPid) {
+
+    int index = -1;
+    for (uint i = 0; i < WeaponUpgrades.length(); i++) {
+        if (WeaponUpgrades[i][0] == weaponPid) {
+            index = int(i);
+        }
+    }
+    if (index >= 0) {
+        int foundIndex = WeaponUpgrades[index].find(upgradePid);
+        switch (foundIndex) {
+            case 1: return BONUS_WEAPON_MAX_RANGE;
+            case 2: return BONUS_WEAPON_ACCURACY;
+            case 3: return BONUS_WEAPON_MAX_AP;
+            case 4: return BONUS_WEAPON_CRITICAL_CHANCE;
+            case 5: return BONUS_WEAPON_CRITICAL_ROLL;
+            case 6: return BONUS_WEAPON_MIN_DMG;
+            case 7: return BONUS_WEAPON_MAX_DMG;
+        }
+    }
+    return 0;
+}
+
+uint getUpgradeType(uint upgradeWeaponPartPid) {
+    for (uint i = 0; i < UpgradeTypes.length(); i++) {
+        if (UpgradeTypes[i][0] == upgradeWeaponPartPid) {
+            return UpgradeTypes[i][1];
+        }
+    }
+    return 0;
+}
+
+uint getDecraftComponentPid(uint weaponPid, uint bonusType) {
+    int index = -1;
+    for (uint i = 0; i < WeaponUpgrades.length(); i++) {
+        if (WeaponUpgrades[i][0] == weaponPid) {
+            index = int(i);
+        }
+    }
+    if (index >= 0) {
+        switch (bonusType) {
+            case BONUS_WEAPON_MAX_RANGE:        return WeaponUpgrades[index][1];
+            case BONUS_WEAPON_ACCURACY:         return WeaponUpgrades[index][2];
+            case BONUS_WEAPON_MAX_AP:           return WeaponUpgrades[index][3];
+            case BONUS_WEAPON_CRITICAL_CHANCE:  return WeaponUpgrades[index][4];
+            case BONUS_WEAPON_CRITICAL_ROLL:    return WeaponUpgrades[index][5];
+            case BONUS_WEAPON_MIN_DMG:          return WeaponUpgrades[index][6];
+            case BONUS_WEAPON_MAX_DMG:          return WeaponUpgrades[index][7];
+        }
+    }
+    return 0;
+}
+
+//  this part is not shared with client, server only
+
+#ifndef __CLIENT
+
+import void   SetLexem(Item& item, string& lex, string& value) from "lexems";
+
+int CheckBonus( Item@ item, int bonusType )
+{
+	if( valid(item) )
+	{
+		if( item.Val0 == bonusType ) return item.Val5;
+		if( item.Val1 == bonusType ) return item.Val6;
+		if( item.Val2 == bonusType ) return item.Val7;
+		if( item.Val3 == bonusType ) return item.Val8;
+		if( item.Val4 == bonusType ) return item.Val9;
+	}
+
+	return( 0 );
+}
+
+//used to add bonuses to gear used by raiders in farm locations
+void AddSpecialBonusRaidersFarm(Item@ it)
+{
+	if(it.GetType() == ITEM_TYPE_WEAPON && !it.IsStackable())
+	{
+	int roll = Random(0,99);
+	if(roll>=0) AddWeaponBonus(it, 1, 100, true); // 100%
+	if(roll>34)	AddWeaponBonus(it, 2, 100, true); // 65%
+	if(roll>59)	AddWeaponBonus(it, 3, 100, true); // 40%
+	if(roll>74)	AddWeaponBonus(it, 4, 100, true); // 25%
+	if(roll>84) AddWeaponBonus(it, 5, 100, true); // 15%
+	}
+
+	else if(it.GetType() == ITEM_TYPE_ARMOR)
+	{
+	int roll = Random(0,99);
+	if(roll>=0) AddArmorBonus(it, 1);
+	if(roll>34)	AddArmorBonus(it, 2);
+	if(roll>59)	AddArmorBonus(it, 3);
+	if(roll>74)	AddArmorBonus(it, 4);
+	if(roll>84) AddArmorBonus(it, 5);
+	}
+	return;
+}
+
+//used to add bonuses to gear used by boss in encounters
+void AddSpecialBonusEncounterBoss(Item@ it)
+{
+	if(it.GetType() == ITEM_TYPE_WEAPON && !it.IsStackable())
+	{
+        int roll = Random(0,99);
+        if(roll>=0) AddWeaponBonus(it, 1, 100, true); // 100%
+        if(roll>29)	AddWeaponBonus(it, 2, 100, true); // 70%
+        if(roll>59)	AddWeaponBonus(it, 3, 100, true); // 40%
+        if(roll>89)	AddWeaponBonus(it, 4, 100, true); // 10%
+        if(roll>94) AddWeaponBonus(it, 5, 100, true); // 5%
+	}
+
+	else if(it.GetType() == ITEM_TYPE_ARMOR)
+	{
+        int roll = Random(0,99);
+        if(roll>=0) AddArmorBonus(it, 1);
+        if(roll>29)	AddArmorBonus(it, 2);
+        if(roll>59)	AddArmorBonus(it, 3);
+        if(roll>89)	AddArmorBonus(it, 4);
+        if(roll>94) AddArmorBonus(it, 5);
+	}
+	return;
+}
+
+//  03-03-2014 Cubik: funkcja dla skrzynek spawnujacych bonusowe bronie/armory o nizјszej jakosci (rzadziej unique, czesciej advanced) - GORSZA WERSJA AddSpecialBonus
+//  03-03-2014 Cubik: function for boxes spawning bonus weapons/armor of lower quality (less often unique, more often advanced) - WORSE VERSION of AddSpecialBonus
+void AddSpecialBonusLow(Item@ it)
+{
+	if(it.GetType() == ITEM_TYPE_WEAPON && !it.IsStackable())
+	{
+		int roll = Random(0,99);
+		if(roll>=0) AddWeaponBonus(it, 1); // 100%
+		if(roll>34)	AddWeaponBonus(it, 2); // 65%
+		if(roll>59)	AddWeaponBonus(it, 3); // 40%
+		if(roll>74)	AddWeaponBonus(it, 4); // 25%
+		if(roll>84) AddWeaponBonus(it, 5); // 15%
+	}
+
+	else if(it.GetType() == ITEM_TYPE_ARMOR)
+	{
+		int roll = Random(0,99);
+		if(roll>=0) AddArmorBonus(it, 1);
+		if(roll>34)	AddArmorBonus(it, 2);
+		if(roll>59)	AddArmorBonus(it, 3);
+		if(roll>74)	AddArmorBonus(it, 4);
+		if(roll>84) AddArmorBonus(it, 5);
+	}
+	return;
+}
+
+void AddSpecialBonus(Item@ it)
+{
+	if(it.GetType() == ITEM_TYPE_WEAPON && !it.IsStackable())
+	{
+		AddWeaponBonus(it, 1);
+		AddWeaponBonus(it, 2);
+		AddWeaponBonus(it, 3);
+		AddWeaponBonus(it, 4);
+		if(Random(0,1)==0) 	AddWeaponBonus(it, 5);
+	}
+
+	else if(it.GetType() == ITEM_TYPE_ARMOR)
+	{
+		AddArmorBonus(it, 1);
+		AddArmorBonus(it, 2);
+		AddArmorBonus(it, 3);
+		AddArmorBonus(it, 4);
+		if(Random(0,1)==0) AddArmorBonus(it, 5);
+	}
+	return;
+}
+/***
+ *  qualityRollBonus - if crafted in danger zone, add some bonus
+ *  minQuality - if crafted in danger zone or event, do not allow to be normal item
+ *  maxQuality - if crafted in safe zone, like a tent, do not allow to be high rarity item
+ *  effectValueRollPercent - if crafted in danger zone or event, allow to never be normal item
+*/
+
+void AddBonuses(Item@ it, string@ crafter, int qualityRollBonus, int minQuality, int maxQuality, int effectValueRollPercent) {
+    int tresholdQuality = 50;
+    int tresholdImproved = 75;
+    int tresholdSuperior = 87;
+    int tresholdAdvanced = 95;
+    int tresholdUnique = 99;
+    qualityRollBonus = CLAMP(qualityRollBonus, -99, 99);
+    minQuality = CLAMP(minQuality, 0, 5);
+    maxQuality = CLAMP(maxQuality, 0, 5);
+    effectValueRollPercent = CLAMP(effectValueRollPercent, 0, 1000);
+
+    int roll = Random(1, 100);
+    roll = CLAMP(roll + qualityRollBonus, 1, 100);
+    switch (minQuality) {
+        case 1: roll = CLAMP(roll, tresholdQuality + 1, 100); break;
+        case 2: roll = CLAMP(roll, tresholdImproved + 1, 100); break;
+        case 3: roll = CLAMP(roll, tresholdSuperior + 1, 100); break;
+        case 4: roll = CLAMP(roll, tresholdAdvanced + 1, 100); break;
+        case 5: roll = CLAMP(roll, tresholdUnique + 1, 100); break;
+    }
+    switch (maxQuality) {
+        case 1: roll = CLAMP(roll, 1, tresholdQuality + 1); break;
+        case 2: roll = CLAMP(roll, 1, tresholdImproved + 1); break;
+        case 3: roll = CLAMP(roll, 1, tresholdSuperior + 1); break;
+        case 4: roll = CLAMP(roll, 1, tresholdAdvanced + 1); break;
+        case 5: roll = CLAMP(roll, 1, tresholdUnique + 1); break;
+    }
+
+	if (it.GetType() == ITEM_TYPE_WEAPON && !it.IsStackable()) {
+		if (roll > tresholdQuality) AddWeaponBonus(it, 1, effectValueRollPercent, true);
+		if (roll > tresholdImproved) AddWeaponBonus(it, 2, effectValueRollPercent, true);
+		if (roll > tresholdSuperior) AddWeaponBonus(it, 3, effectValueRollPercent, true);
+		if (roll > tresholdAdvanced) AddWeaponBonus(it, 4, effectValueRollPercent, true);
+		if (roll > tresholdUnique) AddWeaponBonus(it, 5, effectValueRollPercent, true);
+		if (valid(crafter)) {
+            SetLexem(it, "$crafter", crafter);
+		}
+	} else if (it.GetType() == ITEM_TYPE_ARMOR) {
+		if (roll > tresholdQuality) AddArmorBonus(it, 1, effectValueRollPercent);
+		if (roll > tresholdImproved) AddArmorBonus(it, 2, effectValueRollPercent);
+		if (roll > tresholdSuperior) AddArmorBonus(it, 3, effectValueRollPercent);
+		if (roll > tresholdAdvanced) AddArmorBonus(it, 4, effectValueRollPercent);
+		if (roll > tresholdUnique) AddArmorBonus(it, 5, effectValueRollPercent);
+		if (valid(crafter)) {
+            SetLexem(it, "$crafter", crafter);
+		}
+	}
+	return;
+}
+
+bool AddAnotherBonus(Item@ it)
+{
+	if(!valid(it))
+		return false;
+
+	uint bonusCnt = BonusNumber(it);
+	if(bonusCnt > 4)
+		return false;
+
+	++bonusCnt;
+
+	if(it.GetType() == ITEM_TYPE_WEAPON && !it.IsStackable())
+		AddWeaponBonus(it, bonusCnt, 100, true);
+	else if(it.GetType() == ITEM_TYPE_ARMOR)
+		AddArmorBonus(it, bonusCnt, 100);
+	else
+		return false;
+
+	return true;
+}
+
+void AddArmorBonus(Item@ it, int number, int effectValueRollPercent = 100)
+{
+	int minRoll = 1;
+	int maxRoll = 1;
+	uint bonusType = 0;
+	bool isHelmet = (it.GetProtoId()>=725 && it.GetProtoId()<=741);
+
+	// Choose which bonus and specify bonus value range
+	do {
+        if (isHelmet) {
+            bonusType = getRandomHelmetBonusType();
+        } else {
+            bonusType = getRandomBodyArmorBonusType();
+        }
+	} while (HasBonusAlready(it, bonusType));
+
+    int roll = getMinMaxRollArmor(bonusType, minRoll, maxRoll, effectValueRollPercent);
+
+	// Choose which value
+	switch(number) {
+		case 1: {it.Val0=bonusType; it.Val5=roll;break;}
+		case 2: {it.Val1=bonusType; it.Val6=roll;break;}
+		case 3: {it.Val2=bonusType; it.Val7=roll;break;}
+		case 4: {it.Val3=bonusType; it.Val8=roll;break;}
+		case 5: {it.Val4=bonusType; it.Val9=roll;break;}
+		default: break;
+	}
+	//Log("Armor bonus: " + getArmorBonusName(bonusType) + ", Value: " + roll + ", Slot number: " + number);
+	it.Update();
+    return;
+}
+
+
+void AddWeaponBonus(Item@ it, int number, int effectValueRollPercent = 100, bool isCrafting = false) {
+	int minRoll=1;
+	int maxRoll=1;
+	uint bonusType=0;
+
+	int skillNum = it.Proto.Weapon_Skill_0;
+    bool isRangeWeapon = (skillNum == SK_SMALL_GUNS || skillNum == SK_BIG_GUNS || skillNum == SK_ENERGY_WEAPONS);
+	// Choose which bonus and specify bonus value range
+	do {
+		if (isRangeWeapon) {
+			bonusType=Random(100, BONUS_WEAPON_MAX_RANGE);
+		} else {
+			bonusType=Random(100, BONUS_WEAPON_MAX_AP);
+		}
+	} while (HasBonusAlready(it,bonusType) || IsBonusExcluded(isCrafting, bonusType));
+
+    uint roll = getMinMaxRollWeapon(bonusType, minRoll, maxRoll, effectValueRollPercent);
+
+	// Choose which value
+	switch(number) {
+		case 1: {it.Val0=bonusType; it.Val5=roll;break;}
+		case 2: {it.Val1=bonusType; it.Val6=roll;break;}
+		case 3: {it.Val2=bonusType; it.Val7=roll;break;}
+		case 4: {it.Val3=bonusType; it.Val8=roll;break;}
+		case 5: {it.Val4=bonusType; it.Val9=roll;break;}
+		default: break;
+	}
+	//Log("Weapon bonus: " + getWeaponBonusName(bonusType) + ", Value: " + roll + ", Slot number: " + number);
+	it.Update();
+    return;
+}
+
+uint UpgradeWeaponWithBonus(Critter& player, Item@ weapon, Item@ upgrade, int& oldValue, int& newValue) {
+
+    uint bonusType = getWeaponsUpgradeType(upgrade.GetProtoId(), weapon.GetProtoId());
+
+    //  already has that bonus
+	if (HasBonusAlready(weapon, bonusType)) {
+        return 1;
+	}
+
+	int number = -1;
+    if (weapon.Val0 == 0) {
+        number = 0;
+    } else if (weapon.Val1 == 0) {
+        number = 1;
+    } else if (weapon.Val2 == 0) {
+        number = 2;
+    } else if (weapon.Val3 == 0) {
+        number = 3;
+    } else if (weapon.Val4 == 0) {
+        number = 4;
+    }
+
+    //  no free slots for bonus
+    if (number < 0) {
+        return 2;
+    }
+	int minRoll = 1;
+	int maxRoll = 1;
+    uint roll = getMinMaxRollWeapon(bonusType, minRoll, maxRoll, 100);
+    if (upgrade.Val0 > 0) {
+        roll = CLAMP(upgrade.Val0, minRoll, maxRoll);
+        int percentMin = CLAMP(100 - upgrade.Val1, 25, 75);
+        int percentMax = CLAMP(100 - upgrade.Val2 + 25, 50, 125);
+        int successPercent = Random(percentMin, percentMax);
+        oldValue = roll;
+        roll = CLAMP(roll * successPercent / 100, minRoll, maxRoll);
+        newValue = roll;
+        if (player.GetAccess() > ACCESS_CLIENT) {
+            Log("successPercent = " + successPercent + ", (" + (percentMin) + " - " + (percentMax) + "), oldValue = " + oldValue + "    FINAL VALUE = " + roll);
+            player.Say(SAY_NETMSG, "successPercent = " + successPercent + ", (" + (percentMin) + " - " + (percentMax) + "), oldValue = " + oldValue + "    FINAL VALUE = " + roll);
+        }
+    }
+
+	// Choose which value
+	switch (number) {
+		case 0: { weapon.Val0 = bonusType; weapon.Val5 = roll; break; }
+		case 1: { weapon.Val1 = bonusType; weapon.Val6 = roll; break; }
+		case 2: { weapon.Val2 = bonusType; weapon.Val7 = roll; break; }
+		case 3: { weapon.Val3 = bonusType; weapon.Val8 = roll; break; }
+		case 4: { weapon.Val4 = bonusType; weapon.Val9 = roll; break; }
+		default: break;
+	}
+
+	//Log("Weapon ID: " + weapon.Id + ", PID:" + weapon.GetProtoId() + ", Weapon bonus: " + getWeaponBonusName(bonusType) + ", Value: " + roll + ", Slot number: " + number);
+	//Log("\tWeapon ID: " + weapon.Id + ", PID:" + weapon.GetProtoId() + ", Weapon bonus at slot[" + number + "]: " + getWeaponBonusName(weapon.Val0) + ", Value: " + weapon.Val5);
+	DeleteItem(upgrade);
+	weapon.Update();
+    return 0;
+}
+
+// Checks if given bonus is allowed - used to exclude some bonuses from crafting
+bool IsBonusExcluded(bool isCrafting, int bonusType)
+{
+	if(!isCrafting)
+		return false;
+
+	if(bonusType == BONUS_WEAPON_MAX_AP)
+		return true;
+
+	return false;
+}
+
+// Checks if there is no such bonus already on an item
+bool HasBonusAlready(Item@ it, int bonusType)
+{
+	if(it.Val0==bonusType) return true;
+	if(it.Val1==bonusType) return true;
+	if(it.Val2==bonusType) return true;
+	if(it.Val3==bonusType) return true;
+	if(it.Val4==bonusType) return true;
+	return false;
+}
+
+// Checks value of specified bonus type
+
+int checkBonus(Item@ it, int bonusType)
+{
+	if(it.Val0==bonusType) return it.Val5;
+	if(it.Val1==bonusType) return it.Val6;
+	if(it.Val2==bonusType) return it.Val7;
+	if(it.Val3==bonusType) return it.Val8;
+	if(it.Val4==bonusType) return it.Val9;
+	return 0;
+}
+
+
+//  BNW: Weapon Upgrade components
+
+void _UpgradeInit(Item& item, bool firstTime) {
+    /*
+    if (firstTime) {
+        Log("Upgrade components: FIRSTIME");
+    } else {
+        Log("Upgrade components.");
+    }*/
+    item.SetEvent(ITEM_EVENT_USE, "_UseUpgradeComponent");
+    //item.SetEvent(ITEM_EVENT_USE_ON_ME, "_UseItemOnUpgradeComponent");
+}
+
+bool _UseUpgradeComponent(Item& component, Critter& player, Critter@ onCritter, Item@ onItem, Scenery@ onScenery) {
+    //Log("Use upgrade component!");
+    if (valid(onCritter) || valid(onItem) || valid(onScenery)) {
+        if (player.GetAccess() > ACCESS_CLIENT) {
+            player.Say(SAY_NETMSG, "Can only be used without target, affecting the weapon in main hand.");
+        }
+        return false;
+    }
+    if (player.GetAccess() > ACCESS_CLIENT) {
+        player.Say(SAY_NETMSG, "Component used: " + component.GetProtoId());
+    }
+
+    Item@ targetWeapon = player.GetItem(0, SLOT_HAND1);
+    if (!valid(targetWeapon)) {
+        player.Say(SAY_NETMSG, "|" + COLOR_DTEXT_CAPTION + " ::Pip-Boy:: |" + COLOR_DYELLOW + " To enhance a weapon with an upgrade component, equip the weapon in the active hand slot.");
+        return true;
+    }
+
+    if (targetWeapon.GetType() != ITEM_TYPE_WEAPON) {
+        player.Say(SAY_NETMSG, "|" + COLOR_DTEXT_CAPTION + " ::Pip-Boy:: |" + COLOR_DYELLOW + " Only weapons can be enhanced with such upgrade components! You must have the weapon in the active hand slot.");
+        return true;
+    }
+
+    uint bonusType = getWeaponsUpgradeType(component.GetProtoId(), targetWeapon.GetProtoId());
+    if (bonusType > 0) {
+        if (HasBonusAlready(targetWeapon, bonusType)) {
+            player.Say(SAY_NETMSG, "|" + COLOR_DTEXT_CAPTION + " ::Pip-Boy:: |" + COLOR_DYELLOW + " Your weapon already has this type of bonus: " + getWeaponBonusName(bonusType));
+        } else {
+            int oldValue = 0;
+            int newValue = 0;
+            int errorCode = UpgradeWeaponWithBonus(player, targetWeapon, component, oldValue, newValue);
+            if (errorCode == 0) {
+                if (newValue == oldValue) {
+                    player.Say(SAY_NETMSG, "|" + COLOR_DTEXT_CAPTION + " ::Pip-Boy:: |" + COLOR_DTEXT_BONUS + " The upgrade went without any issues and you upgraded your weapon with " + getWeaponBonusName(bonusType) + " bonus.");
+                } else if (newValue > oldValue) {
+                    player.Say(SAY_NETMSG, "|" + COLOR_DTEXT_CAPTION + " ::Pip-Boy:: |" + COLOR_DTEXT_BONUS + " The upgrade went smoother than expected and you upgraded your weapon with " + getWeaponBonusName(bonusType) + " bonus.");
+                } else {
+                    player.Say(SAY_NETMSG, "|" + COLOR_DTEXT_CAPTION + " ::Pip-Boy:: |" + COLOR_DTEXT_BONUS + " The upgrade went worse than usual but you were able to upgrade your weapon with " + getWeaponBonusName(bonusType) + " bonus.");
+                }
+            } else {
+                if (errorCode == 2) {
+                    player.Say(SAY_NETMSG, "|" + COLOR_DTEXT_CAPTION + " ::Pip-Boy:: |" + COLOR_DYELLOW + " Your weapon already has the maximum number of bonuses.");
+                } else {
+                    player.Say(SAY_NETMSG, "|" + COLOR_DTEXT_CAPTION + " ::Pip-Boy:: |" + COLOR_DYELLOW + " You failed up upgrade your weapon for an unknown reason with bonus: " + getWeaponBonusName(bonusType));
+                }
+            }
+        }
+    } else {
+        player.Say(SAY_NETMSG, "|" + COLOR_DTEXT_CAPTION + " ::Pip-Boy:: |" + COLOR_DYELLOW + " This upgrade component does not match your weapon. Try a different weapon or different upgrade component. ");
+    }
+
+    player.PlaySound("CARREPAR.ACM", true);
+    return true;
+}
+
+//  not used
+bool _UseItemOnUpgradeComponent(Item& component, Critter& player, Item@ item) {
+    if (!valid(item)) {
+        return false;
+    }
+    if (player.GetAccess() > ACCESS_CLIENT) {
+        player.Say(SAY_NETMSG, "Item used on component: " + item.GetProtoId());
+    }
+    player.PlaySound("GEIGER.ACM", true);
+    return true;
+}
+
+void CloneItemBonus(Item& from, Item& to) {
+    to.Val0 = from.Val0;
+    to.Val1 = from.Val1;
+    to.Val2 = from.Val2;
+    to.Val3 = from.Val3;
+    to.Val4 = from.Val4;
+    to.Val5 = from.Val5;
+    to.Val6 = from.Val6;
+    to.Val7 = from.Val7;
+    to.Val8 = from.Val8;
+    to.Val9 = from.Val9;
+    // TODO SetPictureWear( to );
+    to.Update();
+}
+
+#endif //__NO-CLIENT

@@ -1,0 +1,101 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 0 #
+2 1010 D _var n name_mem_player_npc = 0 R _var n name_mem_player_npc = 1 #
+3 1020 D _var n name_mem_player_npc = 1 #
+4 1030 D _param p ST_INTELLECT < 4 @
+2 2000 None 0 #
+5 2010 #
+6 2020 D _script dialog@d_IsToHeal 0  #
+0 2030 @
+3 3000 None 0 #
+5 3010 #
+6 3020 D _script dialog@d_IsToHeal 0  #
+0 3030 @
+4 4000 None 0 @
+5 5000 None 0 #
+7 5010 #
+6 5020 D _script dialog@d_IsToHeal 0  #
+0 5030 @
+6 6000 dialog@dlg_ShowHealingPrice 0 #
+13 6010 D _script dialog@d_HealingMoney 0  #
+0 6020 @
+7 7000 None 0 #
+8 7010 #
+500 7020 D _script mutationFeature@d_CanSwapTagSkill 1 207 R _script mutationFeature@r_SwapTagSkill 1 207 #
+0 7030 @
+8 8000 None 0 #
+9 8010 #
+0 8020 @
+9 9000 None 0 #
+10 9010 #
+0 9020 @
+10 10000 None 0 #
+11 10010 #
+0 10020 @
+11 11000 None 0 #
+12 11010 #
+0 11020 @
+12 12000 None 0 #
+3 12010 #
+0 12020 @
+13 13000 None 0 #
+0 13010 R _script dialog@r_DocHeal 0  @
+500 14000 None 0 #
+0 14010 &
+
+[engl]
+{100}{}{Lenny}
+{200}{}{You see an especially short, older ghoul.}
+{210}{}{You see Lenny, Harold’s assistant.}
+{210}{}{You see a short, older ghoul. He appears to be preoccupied.}
+{1000}{}{Predialogue installations}
+{1010}{}{Unknown}
+{1020}{}{Known}
+{1030}{}{Idiot}
+{2000}{}{Hello there, my nameï¿½s Lenny. Hï¿½how can I hï¿½help you?}
+{2010}{}{What do you do here?}
+{2020}{}{Iï¿½m wounded. Can you help me?}
+{2030}{}{Iï¿½m just looking around. Goodbye.}
+{3000}{}{How cï¿½can I help you?}
+{3010}{}{What do you do here?}
+{3020}{}{Iï¿½m wounded. Can you help me?}
+{3030}{}{Iï¿½m just looking around. Goodbye.}
+{4000}{}{Yï¿½you shï¿½should go home.@@I cï¿½canï¿½t take time for you.@@Shï¿½shoo. Go away!}
+{5000}{}{Wï¿½well, I hï¿½help Hï¿½harold mostly. Whï¿½when people get hurt, I hï¿½help them out.}
+{5010}{}{You can heal people?}
+{5020}{}{Iï¿½m wounded. Can you help me?}
+{5030}{}{Iï¿½ll have to keep that in mind, if I get hurt. Thanks. Goodbye.}
+{6000}{}{Lï¿½let me tï¿½take a look at that. I thï¿½think I cï¿½can help you. I c'can h'help you. B'but it'll c'cost you $@lex price@. F'for supplies.}
+{6010}{}{Well... all right. That sounds fair.}
+{6020}{}{I don't think I need your help right now. Goodbye.}
+{7000}{}{Well, bï¿½before the Wï¿½war I wï¿½was a doctor.}
+{7010}{}{Before the war? But that must have been almost 160 years ago.}
+{7020}{}{Do you think you still remember enough to teach me? [Swap Tag skill to Doctor]}
+{7030}{}{Oh; well, that explains it. Thanks. Goodbye.}
+{8000}{}{That's tï¿½true. Bï¿½but the radiation seems to have gï¿½given us gï¿½ghouls a longer life-span. ï¿½Course, it took almost eveything else away.}
+{8010}{}{Took things away?}
+{8020}{}{Everything seems to have good and bad mixed together. Goodbye.}
+{9000}{}{Wï¿½well, yï¿½yes. We look lï¿½like fï¿½frigginï¿½ fï¿½freaks. We dï¿½donï¿½t have any skin, for Chrisakes.}
+{9010}{}{Well, I guess you have seen better days.}
+{9020}{}{As a group, youï¿½re not the most attractive bunch on the planet. Goodbye.}
+{10000}{}{Yï¿½you cï¿½could say that. Iï¿½d trade in all those years to bï¿½be a ï¿½normal person again.}
+{10010}{}{Well, not much hope of that, I suppose.}
+{10020}{}{I bet you would. Goodbye.}
+{11000}{}{If those fï¿½fools in Vault City wï¿½would share their medical technology, Iï¿½m sure we could cï¿½cleanse the excess rï¿½radiation and heal ourselves.}
+{11010}{}{They wonï¿½t help you?}
+{11020}{}{I think Iï¿½ve heard enough. Goodbye.}
+{12000}{}{Yï¿½youï¿½ve been to Vault City? Then you tï¿½tell me whï¿½what you think the chances of g'getting hï¿½help from those bigots is. Mï¿½might as well watch a pï¿½paper dog chase an asbestos cï¿½cat through hell.}
+{12010}{}{Iï¿½m sorry to hear that, but I think youï¿½re right. Let me ask you about something else.}
+{12020}{}{Iï¿½m sorry to hear that. Goodbye.}
+{13000}{}{I cï¿½can fix you up. H'hold still.}
+{13010}{}{Thanks Lenny. Goodbye.}
+{14000}{}{Look, if you were long enough in this business as I am, you'd know it yourself already. Now, all I usually do is... [Listen to Lenny and learn]}
+{14010}{}{Thanks a lot, I really needed this.}
+

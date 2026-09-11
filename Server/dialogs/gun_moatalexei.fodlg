@@ -1,0 +1,66 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 0 #
+9 1010 D _param p ST_CHARISMA > 99 #
+10 1020 D _param p SK_SMALL_GUNS < 50 D _param p SK_BIG_GUNS < 50 D _param p SK_ENERGY_WEAPONS < 50 #
+4 1030 D _param p ST_INTELLECT < 4 #
+2 1040 D _var n name_mem_npc_player = 0 #
+7 1050 D _var n name_mem_npc_player = 1 @
+2 2000 None 0 #
+4 2010 D _param p ST_INTELLECT < 4 #
+6 2020 D _param p ST_INTELLECT > 3 #
+5 2030 D _param p ST_INTELLECT > 3 R _var n name_mem_npc_player = 1 #
+3 2040 D _param p ST_INTELLECT > 3 @
+3 3000 None 0 @
+4 4000 None 0 @
+5 5000 None 0 @
+6 6000 None 0 @
+7 7000 None 0 #
+500 7010 D _script mutationFeature@d_CanSwapTagSkill 1 202 D _item p PID_LASER_RIFLE > 0 #
+500 7020 D _item p PID_LASER_RIFLE_EXT_CAP > 0 D _script mutationFeature@d_CanSwapTagSkill 1 202 #
+0 7030 @
+9 8000 None 0 @
+10 9000 None 0 @
+500 10000 None 0 #
+501 10010 D _script mutationFeature@d_CanSwapTagSkill 1 202 D _item p PID_BOTTLE_CAPS } 1000 R _script mutationFeature@r_SwapTagSkill 1 202 R _item p PID_BOTTLE_CAPS - 1000 #
+0 10020 @
+501 11000 None 0 #
+0 11010 &
+
+[engl]
+{100}{}{Alexei}
+{200}{}{You see Alexei.}
+{210}{}{You see Alexei, he's guarding the "bridge" across the moat.}
+{1000}{}{Predialogue installations}
+{1010}{}{No charisma}
+{1020}{}{No gun skills}
+{1030}{}{No intelligence}
+{1040}{}{Not talked to}
+{1050}{}{Talked to}
+{2000}{}{What is your business here?}
+{2010}{}{Urr?}
+{2020}{}{I'm just looking around.}
+{2030}{}{I want to buy some equipment.}
+{2040}{}{I'm running a campaign to increase the number of hugs in the wasteland, would you like a free hug..?}
+{3000}{}{A comedian, huh? Fuck off, I have no time for your inane faggotry.}
+{4000}{}{You may smell like a brahmam, but they're obviously more intelligent than you are. Get the hell out of here!}
+{5000}{}{I see, very good. Talk to Ralph, he'll set you up with anything you need.}
+{6000}{}{I don't like nosy people. Go away blow your head off.}
+{7000}{}{Yeah, I remember you.  Go on in.}
+{7010}{}{Say, would you know what this red button on the laser rifle do?}
+{7020}{}{Say, how do I eject the extended mags from this laser rifle?}
+{7030}{}{On my way.}
+{8000}{}{What the hell is wrong with your face? You look worse than a mutant! Get the fuck out of here you freak!}
+{9000}{}{I can tell just by looking at you that you've no skill whatsoever, come back when you've trained some.}
+{10000}{}{That will take some time. My time! But you for 1000 caps, I'll give you some pointers on energy weaponry.}
+{10010}{}{Let's play! [Swap Tag skill to Energy Weapons]}
+{10020}{}{Thanks, but I have changed my mind.}
+{11000}{}{Look, if you were long enough in this business as I am, you'd know it yourself already. Now, all I usually do is... [Listen to Alexei and learn]}
+{11010}{}{Thanks, I really needed this,}
+

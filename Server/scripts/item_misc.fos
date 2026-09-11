@@ -1,0 +1,350 @@
+//
+// FOnline: 2238
+// Rotators
+//
+// item_misc.fos
+//
+
+// Various item scripts not worth own module
+
+#ifndef __ITEM_MISC__
+#define __ITEM_MISC__
+
+#include "_defines.fos"
+#include "_macros.fos"
+#include "_dialogs.fos"
+#include "MsgStr.h"
+
+#include "lexems_h.fos"
+
+#include "item_misc_h.fos"
+
+import void FlushScreen(Critter& cr, bool fadeOut, uint timeMs) from "effects";
+import bool IsBase(Map@ map) from "world_common";
+import bool IsTent(Map@ map) from "world_common";
+
+#define MUTIE_DRUG_FADE_IN_MS           (1000)
+#define MUTIE_DRUG_FADE_OUT_MS          (2500)
+#define MUTIE_DRUG_DURATION_MINUTES     (30)
+
+void _Waterpipe(Item& item, bool firstTime)
+{
+    item.SetEvent(ITEM_EVENT_SKILL, "_SkillWaterpipe");
+    item.SetEvent(ITEM_EVENT_USE, "_UseWaterpipe");
+}
+
+bool _SkillWaterpipe(Item& item, Critter& cr, int skill)
+{
+    return(_WaterpipeReal(cr));
+}
+
+bool _UseWaterpipe(Item& item, Critter& cr, Critter@ onCritter, Item@ onItem, Scenery@ onScenery)
+{
+    return(_WaterpipeReal(cr));
+}
+
+bool _WaterpipeReal(Critter& cr)
+{
+    uint countBags = _CritCountItem(cr, PID_WATERBAG_EMPTY);
+    uint countBottles = _CritCountItem(cr, PID_BOTTLE_EMPTY);
+    if((countBags + countBottles) > 0)
+    {
+        string what = "";
+        if(countBags > 0)
+        {
+            cr.DeleteItem(PID_WATERBAG_EMPTY, countBags);
+            cr.AddItem(PID_WATERBAG, countBags);
+            what += "bag" + (countBags > 1 ? "s" : "");
+        }
+
+        if(countBags > 0 && countBottles > 0)
+            what += " and ";
+
+        if(countBottles > 0)
+        {
+            cr.DeleteItem(PID_BOTTLE_EMPTY, countBottles);
+            cr.AddItem(PID_BOTTLE_FULL, countBottles);
+            what += "bottle" + (countBags > 1 ? "s" : "");
+        }
+
+        cr.Say(SAY_NETMSG, "You've filled the " + what + " with water.");
+    }
+
+    return(true);
+}
+
+// template for rechargeable items with start value set in proto
+void _Charge(Item& item, bool firstTime)
+{
+    if(firstTime && item.Proto.Misc_ChargeMax > 0 && item.Proto.Misc_ChargeStart > 0)
+    {
+        if(item.Proto.Misc_ChargeStart > item.Proto.Misc_ChargeMax)
+            item.Charge = item.Proto.Misc_ChargeMax;
+        else
+            item.Charge = item.Proto.Misc_ChargeStart;
+    }
+}
+
+uint16[] NpcSkinArmors =
+{
+    PID_WORN_ROBE,
+//	PID_BLUE_ROBE,
+//	PID_RED_ROBE,
+//	PID_GRAY_ROBE,
+    PID_MOBSTER_BLUE,
+    PID_MOBSTER_GRAY,
+    PID_CLOTHES_POLICE,
+    PID_CLOTHES_GENERIC1,
+    PID_CLOTHES_GENERIC2,
+    PID_CLOTHES_SCIENTIST1,
+    PID_CLOTHES_SCIENTIST2,
+    PID_CLOTHES_ELEGANT_SUIT,
+    PID_CLOTHES_RAGS,
+    PID_CLOTHES_DWARF,
+    PID_CLOTHES_RED_SHIRT,
+    PID_CLOTHES_DOCTOR,
+    PID_CLOTHES_CHILD,
+    PID_CLOTHES_GRAY_SHIRT,
+    PID_CLOTHES_FAT1,
+    PID_CLOTHES_BOXER,
+    PID_SF_COMBAT_JACKET,
+    PID_MORDINO_METAL_JACKET,
+    PID_CLOTHES_GENERIC3
+};
+
+void _NpcSkinArmor(Item& item, bool firstTime)
+{
+    if(firstTime)
+    {
+        item.ChangeProto(NpcSkinArmors[Random(0, NpcSkinArmors.length() - 1)]);
+    }
+}
+
+Item@ CreateMapTo(Critter& cr, Location& location, uint flags)
+{
+    return(CreateMapTo(cr, location, flags, ""));
+}
+
+Item@ CreateMapTo(Critter& cr, Location& location, uint flags, string& info)
+{
+    Item@ mapItem = cr.AddItem(PID_MAP_TO_LOCATION, 1);
+    if(valid(mapItem))
+    {
+        if(info.length() > 0)
+            SetLexem(mapItem, "$+", info);
+        ITEM_MAP_TARGET(mapItem) = location.Id;
+        ITEM_MAP_FLAGS(mapItem)  = flags;
+
+        SETFLAG(mapItem.Flags, ITEM_FLAG_CAN_USE);
+        mapItem.Update();
+
+        return(mapItem);
+    }
+
+    return(null);
+}
+
+void _MapToLocation(Item& item, bool firstTime)
+{
+    item.SetEvent(ITEM_EVENT_USE, "_MapToLocationUse");
+    if(firstTime)
+        UNSETFLAG(item.Flags, ITEM_FLAG_CAN_USE);
+}
+
+bool _MapToLocationUse(Item& item, Critter& cr, Critter@ onCritter, Item@ onItem, Scenery@ onScenery)
+{
+    if(valid(onCritter) || valid(onItem) || valid(onScenery))
+    {
+        cr.SayMsg(SAY_NETMSG, TEXTMSG_GAME, STR_USE_NOTHING);
+        return(true);
+    }
+
+    if(ITEM_MAP_TARGET(item) == 0)
+    {
+        cr.Say(SAY_NETMSG, "Map does not contain any coordinates.");
+        return(true);
+    }
+
+    Location@ location = GetLocation(ITEM_MAP_TARGET(item));
+    if(!valid(location))
+    {
+        cr.Say(SAY_DIALOGBOX_TEXT, "This map is heavily damaged, it's impossible to read anything from it.");
+        return(true);
+    }
+
+    bool   textOnly = false;
+    string text = "";
+
+    if(cr.IsKnownLoc(true, ITEM_MAP_TARGET(item)))
+    {
+        text = "You already marked that position in your Pip-Boy";
+        textOnly = true;
+    }
+
+    if(text.length() > 0)
+    {
+        cr.ShowScreen(SHOW_SCREEN_CLOSE, 0, "");
+        cr.ShowScreen(SHOW_SCREEN_DIALOGBOX, 0, "");
+        cr.Say(SAY_DIALOGBOX_TEXT, text);
+    }
+    if(textOnly)
+        return(true);
+
+    cr.SetKnownLoc(true, ITEM_MAP_TARGET(item));
+    cr.ShowScreen(SHOW_SCREEN_CLOSE, 0, "");
+    cr.ShowScreen(SHOW_SCREEN_DIALOGBOX, 0, "");
+    cr.Say(SAY_DIALOGBOX_TEXT, "You've marked the position in your Pip-Boy");
+
+    if(FLAG(ITEM_MAP_FLAGS(item), ITEM_MAP_DELETE_ON_USE))
+        DeleteItem(item);
+
+    return(true);
+}
+
+/**
+ *  Sasabmeg:
+    - this will not trigger map read dialog, just say in net message how many maps read successfully
+    - used for science at hex to read all maps fast
+**/
+bool ReadMapToLocationSilently(Item& item, Critter& cr) {
+    Log("ReadMapToLocationSilently() called");
+    if (ITEM_MAP_TARGET(item) == 0) {
+        cr.Say(SAY_NETMSG, "Not map item.");
+        return false;
+    }
+
+    Location@ location = GetLocation(ITEM_MAP_TARGET(item));
+    if(!valid(location)) {
+        cr.Say(SAY_NETMSG, "This map is heavily damaged, it's impossible to read anything from it.");
+        return false;
+    }
+
+    string tentName = "Unnamed Tent";
+
+    if(cr.IsKnownLoc(true, ITEM_MAP_TARGET(item))) {
+        if(IsLexem(item, "$+")) {
+            tentName = GetLexem(item, "$+");
+            cr.Say(SAY_NETMSG, "You already have " + tentName + " position marked in your Pip-Boy.");
+        } else {
+            cr.Say(SAY_NETMSG, "You already have that position marked in your Pip-Boy.");
+        }
+        return false;
+    } else {
+        cr.SetKnownLoc(true, ITEM_MAP_TARGET(item));
+        if(IsLexem(item, "$+")) {
+            tentName = GetLexem(item, "$+");
+            cr.Say(SAY_NETMSG, "You've marked " + tentName + " position in your Pip-Boy.");
+        } else {
+            cr.Say(SAY_NETMSG, "You've marked the position in your Pip-Boy.");
+        }
+
+        if(FLAG(ITEM_MAP_FLAGS(item), ITEM_MAP_DELETE_ON_USE))
+            DeleteItem(item);
+
+        return true;
+    }
+}
+
+void _MutationKit(Item& item, bool firstTime) {
+    // bind use event
+    item.SetEvent(ITEM_EVENT_USE, "_UseMutationKit");
+
+    if (firstTime) {
+        SETFLAG(item.Flags, ITEM_FLAG_CAN_USE);
+    }
+}
+
+bool _UseMutationKit(Item& item, Critter& cr, Critter@ onCritter, Item@ onItem, Scenery@ onScenery) {
+
+    if (!cr.IsPlayer()) {
+        return true;
+    }
+
+    if (valid(onCritter) || valid(onItem) || valid(onScenery)) {
+        cr.Say(SAY_NETMSG, "Self medication only!");
+        return true;
+    }
+
+    if (cr.Stat[ST_CURRENT_HP] <= 0) {
+        cr.Say(SAY_NETMSG, "Not while you are dead!");
+        return true;
+    }
+
+    if (IS_TURN_BASED_TIMEOUT(cr)) {
+        cr.SayMsg(SAY_NETMSG, TEXTMSG_GAME, STR_TIMEOUT_BATTLE_WAIT);
+        return true;
+    }
+
+    Map@ map = cr.GetMap();
+    if (!valid(map)) {
+        cr.Say(SAY_NETMSG, "Not while traveling!");
+        return true;
+    }
+
+    if (cr.ParamBase[ST_TO_MUTATE_TIMER] > int(GetTick())) {
+        cr.Say(SAY_NETMSG, "You are already under the effect of mutation!");
+        return true;
+    }
+
+    //  let's see how players can abuse this in PVE or PVP situations, this drug is rare/expensive, right?
+    /*
+    bool safeLoc = IsTent(map) || IsBase(map);
+    if (!safeLoc) {
+        cr.Say(SAY_NETMSG, "You need to be in a safe area (tent/base) to apply the mutation kit.");
+        return true;
+    }*/
+
+    cr.PlaySound("Stimpack.ogg", true);
+    cr.StatBase[ST_CURRENT_AP] = (cr.Perk[PE_QUICK_RECOVERY] > 0 ? (-100 * cr.Stat[ST_ACTION_POINTS]) / 3 : -100 * cr.Stat[ST_ACTION_POINTS]);
+    cr.StatBase[ST_MOVE_AP] = 0;
+    cr.ToKnockout(KNOCKOUT_ANIM2_DEFAULT(true), cr.Perk[PE_QUICK_RECOVERY] != 0 ? 1 : 3, cr.HexX, cr.HexY);
+    //FlushScreen(cr, false, 1000);
+
+    cr.ParamBase[ST_TO_MUTATE_TIMER] = int(GetTick()) + MUTIE_DRUG_DURATION_MINUTES * 60000;
+
+    FlushScreen(cr, false, MUTIE_DRUG_FADE_IN_MS);
+    FlushScreen(cr, true, MUTIE_DRUG_FADE_OUT_MS);
+
+    // small wait to feel effect (server wait)
+    cr.Wait(500);
+
+    //RunDialog(cr, DIALOG_feat_mutie, cr.HexX, cr.HexY, true);
+    RunDialogDelayed(cr, DIALOG_feat_mutie, MUTIE_DRUG_FADE_IN_MS + MUTIE_DRUG_FADE_OUT_MS / 2);
+
+    if (item.IsStackable()) {
+        cr.DeleteItem(item.GetProtoId(), 1);
+    } else {
+        DeleteItem(item);
+    }
+    if (Random(0, 99) < 50) {
+        cr.AddItem(PID_HYPODERMIC_NEEDLE, 1);
+    }
+
+    return true;
+}
+
+void RunDialogDelayed(Critter& player, uint dialogId, uint afterDelayRealMS) {
+    //  close inventory if open
+    player.RunClientScript("client_interface@_CloseInventory", 0, 0, 0, null, null);
+
+    //  run dialog after the feint effect
+    array<uint> values = { player.Id, dialogId};
+    CreateTimeEvent(AFTER(REAL_MS(afterDelayRealMS)), "e_RunDialog", values, false);
+}
+
+uint e_RunDialog(array<uint>@ values) {
+    Critter@ player = GetCritter(values[0]);
+    if (!valid(player)) {
+        return 0;
+    }
+
+    uint dialogId = values[1];
+
+    RunDialog(player, dialogId, player.HexX, player.HexY, true);
+    return 0;
+}
+
+
+
+
+#endif // __ITEM_MISC__ //

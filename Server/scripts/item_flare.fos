@@ -1,0 +1,145 @@
+//
+// FOnline: 2238
+// Rotators
+//
+// item_flare.fos
+//
+
+// Author: flare fix by kamex
+// Thread: http://www.fonline.ru/forum/showthread.php?t=18316
+// rewritten for 2238
+
+#include "_colors.fos"
+#include "_macros.fos"
+#include "_other_h.fos"
+#include "utils_h.fos"
+
+#define STR_LIGHT_FLARE         (4070)
+
+import void RevealHidden(Map& map, uint16 tx, uint16 ty, int radius) from "hexThrow";
+
+
+void _FlareInit(Item& item, bool firstTime) {
+    item.SetEvent(ITEM_EVENT_USE, "_Used");
+}
+
+void _GroundFlareInit(Item& item, bool firstTime) {
+    if (firstTime) {
+        array<uint> values = {item.Id, FLARE_PULSE_COUNT};
+        CreateTimeEvent(AFTER(REAL_SECOND(Random(FLAREGROUND_PULSE_FREQ_MIN, FLAREGROUND_PULSE_FREQ_MAX))), "e_PulseFlare", values, true);
+    }
+}
+
+bool _Used(Item& item, Critter& crit, Critter@ onCritter, Item@ onItem, Scenery@ onScenery) {
+    uint old_pid = item.GetProtoId();
+    _SubItem(item, 1);
+
+	Map@ map = crit.GetMap();
+    if (valid(map) && IsEncounterMap(map)) {
+        Location@ loc = map.GetLocation();
+		if (loc.Visible != true) {
+            loc.Visible = true;
+		}
+        loc.Color = COLOR_CHANGE_ALPHA(COLOR_RGB(0xC8,0,0), 80);
+	}
+
+    uint new_pid = 0;
+    switch (old_pid) {
+        case PID_FLARE:
+            new_pid = PID_ACTIVE_FLARE;
+            break;
+        case PID_FLARE_GREEN:
+            new_pid = PID_ACTIVE_FLARE_GREEN;
+            break;
+        case PID_FLARE_WHITE:
+            new_pid = PID_ACTIVE_FLARE_WHITE;
+            break;
+        case PID_FLARE_YELLOW:
+            new_pid = PID_ACTIVE_FLARE_YELLOW;
+            break;
+        default:
+            break;
+    }
+
+    if (new_pid > 0) {
+        Item@ newItem = _CritAddItem(crit, new_pid, 1);
+        if (valid(newItem)) {
+            crit.SayMsg(SAY_NETMSG, TEXTMSG_TEXT, STR_LIGHT_FLARE);
+            if (new_pid == PID_ACTIVE_FLARE) {
+                array<uint> values = {newItem.Id, FLARE_PULSE_COUNT};
+                CreateTimeEvent(AFTER(REAL_SECOND(Random(FLARE_PULSE_FREQ_MIN, FLARE_PULSE_FREQ_MAX))), "e_PulseFlare", values, true);
+                RevealHidden(map, crit.HexX, crit.HexY, FLARELIT_REVEAL_RADIUS);
+            }
+            return true;
+        }
+    } else {
+        Log("Invalid new flare pid <" + new_pid + ">");
+    }
+
+    return false;
+}
+
+//  itemId, pulseCount
+uint e_PulseFlare(array<uint>@ data) {
+    //Log("Flare Pulse :: Enter (" + data[0] + ", " + data[1] + ")");
+    if (data.length() < 1) {
+        Log("Flare removing fail: !id");
+        return 0;
+    }
+    if (data[0] == 0) {
+        Log("Flare removing fail: id == 0");
+        return 0;
+    }
+    Item@ flare = GetItem(data[0]);
+    if (!valid(flare) || flare.IsNotValid) {
+        // item is gone already - don't panic!
+        DLog("Flare already removed");
+        return 0;
+    }
+    DLog("Removing flare <" + flare.Id + ">");
+    if (data.length() < 2 || data[1] <= 0) {
+        DeleteItem(flare);
+        return 0;
+    } else {
+        data[1]--;
+        Map@ map = GetMap(flare.MapId);
+        if (!valid(map)) {
+            DLog("Flare Pulse :: Invalid Map (maybe map got garbage collected?)");
+            DeleteItem(flare);
+            return 0;
+        }
+
+        //  only pulse when on ground or in slot1/2 of critters
+        bool allowReveal = false;
+        //Log("FLARE ::  " + flare.Id + " (Accessory = " + flare.Accessory + ", MapId = " + flare.MapId + ", CritId = " + flare.CritId + ", CritSlot = " + flare.CritSlot + ", ContainerId = " + flare.ContainerId + ")");
+        if (flare.Accessory == ACCESSORY_HEX || (flare.Accessory == ACCESSORY_CRITTER && (flare.CritSlot == 1 || flare.CritSlot == 2))) {
+            allowReveal = true;
+        }
+        if (allowReveal) {
+            //Log("REVEAL :: " + flare.Id + " (Accessory = " + flare.Accessory + ", MapId = " + flare.MapId + ", CritId = " + flare.CritId + ", CritSlot = " + flare.CritSlot + ", ContainerId = " + flare.ContainerId + ")");
+            RevealHidden(map, flare.HexX, flare.HexY, FLAREGROUND_REVEAL_RADIUS);
+        }
+
+        return REAL_SECOND(Random(FLARE_PULSE_FREQ_MIN, FLARE_PULSE_FREQ_MAX));
+    }
+}
+
+uint e_DeleteFlare(array<uint>@ data) {
+    if(data.length() < 1) {
+        Log("Flare removing fail: !id");
+        return 0;
+    }
+    if (data[0] == 0) {
+        Log("Flare removing fail: id == 0");
+        return 0;
+    }
+    Item@ flare = GetItem(data[0]);
+    if (!valid(flare) || flare.IsNotValid) {
+        // item is gone already - don't panic!
+        DLog("Flare already removed");
+        return 0;
+    }
+    DLog("Removing flare <" + flare.Id + ">");
+    DeleteItem(flare);
+    return 0;
+}

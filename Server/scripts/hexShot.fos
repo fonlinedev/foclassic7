@@ -1,0 +1,717 @@
+#include "_macros.fos"
+#include "MsgStr.h"
+
+#ifdef __SERVER
+# define CritterMutual       Critter
+# define ItemMutual          Item
+# include "utils_h.fos"
+# include "combat_h.fos"
+import void WearItem(Critter& cr, Item& item, int wearCount) from "repair";
+
+#endif
+#ifdef __CLIENT
+#include "polygon_h.fos"
+# include "sprite.fos"
+# include "_colors.fos"
+# include "_client_defines.fos"
+# define CritterMutual       CritterCl
+# define ItemMutual          ItemCl
+#endif
+
+
+int SelectWeaponBonus(ItemMutual@ RealWeapon, int Int_Val_WeaponBonus)
+{
+    if(valid(RealWeapon))
+    {
+        if(RealWeapon.Val0 == Int_Val_WeaponBonus) return  RealWeapon.Val5;
+        if(RealWeapon.Val1 == Int_Val_WeaponBonus) return  RealWeapon.Val6;
+        if(RealWeapon.Val2 == Int_Val_WeaponBonus) return  RealWeapon.Val7;
+        if(RealWeapon.Val3 == Int_Val_WeaponBonus) return  RealWeapon.Val8;
+        if(RealWeapon.Val4 == Int_Val_WeaponBonus) return  RealWeapon.Val9;
+        return 0;
+    }
+    else return 0;
+}
+
+bool IsHexShotWeapon(ItemMutual@ item)
+{
+    if(!valid(item))
+        return false;
+    if(item.GetType() != ITEM_TYPE_WEAPON)
+        return false;
+
+    return (item.GetProtoId() == PID_ROCKET_LAUNCHER
+            || item.GetProtoId() == PID_GRENADE_PISTOL
+            || item.GetProtoId() == PID_GRENADE_LAUNCHER);
+}
+
+uint HexShotGetMaxRange(CritterMutual& cr, ItemMutual@ item)
+{
+    if(!valid(item))
+        return 0;
+    uint viewRange = 20 + 3 * cr.Stat[ST_PERCEPTION] + 6 * cr.Perk[PE_SHARPSHOOTER];
+    if(IsHexShotWeapon(item))
+    {
+        uint8 use = _WeaponModeUse(item.Mode);
+        uint bonusRange = SelectWeaponBonus(item, BONUS_WEAPON_MAX_RANGE);
+        return MIN(_WeaponMaxDist(item.Proto, use) + bonusRange, viewRange);
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+bool IsHexShotable(ProtoItem& weapon)
+{
+    if(!valid(weapon))
+        false;
+    return true;
+}
+
+int HexShotingToHit(CritterMutual& cr, uint16 tx, uint16 ty, ProtoItem& weapon, ItemMutual& realWeapon)
+{
+    if(!valid(weapon))
+        return 0;
+    if(!cr.IsLife())
+        return 0;
+
+    int weaponPerk = weapon.Weapon_Perk;
+    int skillNum = _WeaponSkill(weapon, 0);
+    int toHit = int(cr.Skill[skillNum]);
+
+    if(cr.Damage[DAMAGE_EYE] != 0)
+        toHit -= 25;
+
+    //weapon handling modifiers
+    if(cr.Trait[TRAIT_ONE_HANDER] != 0)
+        toHit += (FLAG(weapon.Flags, ITEM_FLAG_TWO_HANDS) ? -40 : 20);
+    int handlingStrength = cr.Stat[ST_STRENGTH];
+    int reqStrength = weapon.Weapon_MinStrength;
+    if(cr.Perk[PE_WEAPON_HANDLING] != 0)
+        handlingStrength += 2;
+    if(handlingStrength < reqStrength)
+        toHit -= (reqStrength - handlingStrength) * 20;
+
+    if(weaponPerk == WEAPON_PERK_ACCURATE)
+        toHit += 20;
+
+    toHit += SelectWeaponBonus(realWeapon, BONUS_WEAPON_ACCURACY);
+
+    // ranged attack modifiers
+    int distmod1 = 2;   // used for initial weapon bonus
+    int distmod2 = 0;   // minimal distance
+    if(weaponPerk == WEAPON_PERK_LONG_RANGE)
+        distmod1 = 4;
+
+    int perception = cr.Stat[ST_PERCEPTION];
+    int dist = GetDistantion(cr.HexX, cr.HexY, tx, ty);
+
+    int acc = dist;
+
+    if(dist < distmod2)
+        acc += distmod2;
+    else
+        acc -= (perception - 2) * distmod1;
+
+    if(-2 * perception > acc)
+        acc = -2 * perception;
+
+    acc -= 2 * cr.Perk[PE_SHARPSHOOTER];
+
+    if(acc >= 0 && cr.Damage[DAMAGE_EYE] != 0)
+        acc *= -12;
+    else
+        acc *= -4;
+
+    toHit += acc;
+
+    int blockers = 0;
+
+    #ifdef __SERVER
+    Map@ map = cr.GetMap();
+    blockers = map.GetCrittersPath(cr.HexX, cr.HexY, tx, ty, 0.0f, dist, FIND_LIFE, null);
+    #endif
+    #ifdef __CLIENT
+    blockers = GetCrittersPath(cr.HexX, cr.HexY, tx, ty, 0.0f, dist, FIND_LIFE, null);
+    #endif
+
+    toHit -= 10 * blockers;
+
+    toHit = CLAMP(toHit, 5, _MaxToHit(cr));
+
+    return toHit;
+}
+
+int HexShotActionPointsCost(ItemMutual& item, CritterMutual& cr)
+{
+    if(IsHexShotWeapon(item))
+    {
+        uint8 use = _WeaponModeUse(item.Mode);
+        int apCost = (cr.Perk[PE_BONUS_RATE_OF_ATTACK]>0)?-1:0;
+        apCost += _WeaponApCost(item.Proto, use);
+        // -AP cost bonus changed to +AP bonus BONUS_WEAPON_MAX_AP
+        //apCost -= SelectWeaponBonus(item, BONUS_WEAPON_AP_COST);
+
+        return apCost;
+    }
+    return 0;
+}
+
+bool IsHexShotableThere(CritterMutual& cr, ItemMutual@ item, uint16 tx, uint16 ty)
+{
+    if(!valid(item) || !IsHexShotable(item.Proto) || !cr.IsLife())
+        return false;
+    #ifdef __SERVER
+    if(cr.Stat[ST_CURRENT_AP] < HexShotActionPointsCost(item, cr))
+        return false;
+    if(HexShotActionPointsCost(item, cr) == 0)
+        return false;
+    #endif
+    if(cr.Damage[DAMAGE_RIGHT_ARM] != 0 || cr.Damage[DAMAGE_LEFT_ARM] != 0)
+        return false;
+    if(HexShotGetMaxRange(cr, item) == 0 || GetDistantion(cr.HexX, cr.HexY, tx, ty) == 0)
+        return false;
+
+    // wallcheck
+    uint16 pbx = tx;
+    uint16 pby = ty;
+    uint16 bx = tx;
+    uint16 by = ty;
+
+    #ifdef __SERVER
+    Map@ map = cr.GetMap();
+    map.GetCrittersPath(cr.HexX, cr.HexY, tx, ty, 0.0f, 0, 0, null, pbx, pby, bx, by);
+    #endif
+    #ifdef __CLIENT
+    GetCrittersPath(cr.HexX, cr.HexY, tx, ty, 0.0f, 0, 0, null, pbx, pby, bx, by);
+    #endif
+
+    if(bx != tx || by != ty)
+        return false;
+
+    return (HexShotGetMaxRange(cr, item) >= GetDistantion(cr.HexX, cr.HexY, tx, ty));
+    // todo: wall tracing on the client side
+}
+
+#ifdef __SERVER
+
+import void CommenceExplosionHexEx(Critter@ attacker, Map@ map, uint16 tx, uint16 ty, Critter@ target, uint weapPid, Item@ usedWeapon, uint ammoPid, bool isCritical, uint intentionallyId, bool isRocket, bool isExplodeRocket) from "combat";
+
+void unsafe_HexShot(Critter& player, int px, int py, int p2, string@ param3, array<int>@ param4)
+{
+    if(!player.IsLife())
+        return;
+
+    Map@ map = player.GetMap();
+    if(!valid(map))
+        return;
+
+    if(px < 0 || px >= int(map.GetWidth()) || py < 0 || py >= int(map.GetHeight()))
+        return;
+
+    Item@ item = player.GetItem(0, SLOT_HAND1);
+    if(!IsHexShotableThere(player, item, px, py))
+        return;
+
+    if(item.AmmoCount <= 0)
+        return;
+
+    if(FLAG(item.BrokenFlags, BI_ETERNAL) || FLAG(item.BrokenFlags, BI_NOTRESC))
+    {
+        player.Say(SAY_NETMSG, "Your weapon is broken.");
+        return;
+    }
+
+    uint16 tx = px;
+    uint16 ty = py;
+
+    // wallcheck
+    uint16 pbx = tx;
+    uint16 pby = ty;
+    uint16 bx = tx;
+    uint16 by = ty;
+
+    map.GetCrittersPath(player.HexX, player.HexY, tx, ty, 0.0f, 0, 0, null, pbx, pby, bx, by);
+
+    int tohit = HexShotingToHit(player, pbx, pby, item.Proto, item);
+    if(tohit >= Random(1, 100))
+    {
+        CommenceHexShoting(player, map, item, pbx, pby);
+    }
+    else
+    {
+        uint dist = GetDistantion(player.HexX, player.HexY, tx, ty) + 1;
+        map.MoveHexByDir(tx, ty, Random(0, 5), Random(1, dist / 2));
+        map.GetCrittersPath(player.HexX, player.HexY, tx, ty, 0.0f, 0, FIND_LIFE_AND_KO, null, pbx, pby, bx, by);
+        tx = pbx;
+        ty = pby;
+        CommenceHexShoting(player, map, item, tx, ty);
+        player.Say(SAY_NETMSG, "You missed.");
+    }
+
+}
+
+void CommenceHexShoting(Critter& cr, Map& map, Item& item, uint16 tx, uint16 ty, bool ignoreApCost = false) {
+    uint8 dir = GetDirection(cr.HexX, cr.HexY, tx, ty);
+    cr.SetDir(dir);
+    //  ignoreApCost - also hex shot or normal shot, normal shot will translate to hex shot here, but 400 ms time difference bc animation already handled in combat.fos
+    if (!ignoreApCost) {
+        _CritAnimate(cr, ANIM2_PREPARE_WEAPON);
+        cr.Wait(__Breaktime);
+        uint[] values = { cr.Id, map.Id, item.Id, tx, ty };
+        CreateTimeEvent(AFTER(REAL_MS(400)), "e_AnimateHexShot", values, false);
+    } else {
+        CommenceHexShotingEffectAfterAnimation(cr, map, item, tx, ty, ignoreApCost);
+    }
+}
+
+void CommenceHexShotingEffectAfterAnimation(Critter& cr, Map& map, Item& item, uint16 tx, uint16 ty, bool ignoreApCost = false) {
+    //  player interrupts with S or is not able to perform action
+    if ((cr.Param[TO_EX_ANIM_INTERRUPT] > int(GetTick()) - ANIM_ACTION_TIME_DEFAULT) || cr.IsDead() || cr.IsKnockout()) {
+        return;
+    }
+    if (cr.Mode[MODE_HIDE] != 0) {
+        if (!cr.IsPlayer() || cr.GetAccess() == ACCESS_CLIENT) {
+            _Desneak(cr);
+        }
+    }
+    cr.Wait(__Breaktime);
+    if (!ignoreApCost) {
+        cr.StatBase[ST_CURRENT_AP] -= 100 * HexShotActionPointsCost(item, cr) - (cr.Perk[PE_BONUS_RATE_OF_ATTACK] > 0 ? 0 : 10 * cr.Stat[ST_AGILITY]);
+    }
+
+    uint16 fixedStartX = cr.HexX;
+    uint16 fixedStartY = cr.HexY;
+    uint16 fixedTargetX = tx;
+    uint16 fixedTargetY = ty;
+    map.MoveHexByDir(fixedTargetX, fixedTargetY, 2, 1);
+    map.MoveHexByDir(fixedTargetX, fixedTargetY, 3, 1);
+
+    uint dist = GetDistantion(cr.HexX, cr.HexY, tx, ty);
+    uint itemFlyingPid = _WeaponEffect(item.Proto, item.Mode);
+    uint[] values = { map.Id, fixedStartX, fixedStartY, fixedTargetX, fixedTargetY, itemFlyingPid };
+    CreateTimeEvent(AFTER(REAL_MS(200)), "e_HexShotFly", values, false);
+
+    uint16 pid = item.GetProtoId();
+
+    if(cr.Timeout[TO_BATTLE] < int(__TimeoutBattle))
+        _SetTimeout(cr, TO_BATTLE, __TimeoutBattle);
+    if(!map.IsTurnBased() && map.IsTurnBasedAvailability())
+        map.BeginTurnBased(cr);
+
+    int dx = fixedTargetX - fixedStartX;
+    int dy = fixedTargetY - fixedStartY;
+    float flyAngle = atan2(dy, dx);
+
+    int animFlySpeed = GetAnimFlySpeedByAngle(flyAngle);
+
+    uint[] values2 = { map.Id, tx, ty, pid, cr.Id, item.AmmoPid };
+    uint animationTimeToWait = 200 + animFlySpeed * dist;
+    CreateTimeEvent(AFTER(REAL_MS(animationTimeToWait)), "e_HexShotExplode", values2, false);
+
+    if (!ignoreApCost) {
+        item.AmmoCount -= 1;
+        item.Update();
+    }
+
+    uint rapidReloadRank = 0;
+    if (cr.Perk[PE_QUICK_POCKETS] > 0) {
+        rapidReloadRank++;
+    }
+    Item@ usedArmor = _GetCritterArmor(cr, false);
+    if (valid(usedArmor)) {
+        uint armorPerk = usedArmor.Proto.Armor_Perk;
+        if ((armorPerk >= ARMOR_PERK_LEATHER_JACKET  && armorPerk < ARMOR_PERK_COMBAT) || armorPerk == ARMOR_PERK_LIGHT) {
+            rapidReloadRank++;
+        }
+    }
+    if (cr.Perk[PE_WEAPON_HANDLING] > 0) {
+        if (HasItem(cr, item.AmmoPid)) {
+            uint[] values3 = { cr.Id, item.Id, 2 - rapidReloadRank };
+            CreateTimeEvent(AFTER(REAL_MS(300)), "e_HexShotAutoReloadRocket", values3, false);
+        }
+    }
+}
+
+uint GetAnimFlySpeedByAngle(float flyAngle) {
+    flyAngle *= 18000;
+    int rounded = int(flyAngle);
+    flyAngle = float(rounded);
+    flyAngle /= 314.15;
+    flyAngle = CLAMP(flyAngle, -180, 180);
+    //  smaller number is faster, not exactly speed, is it?
+    float[][] flySpeed = {
+        //  bottom left quarter on screen, second part
+        /*{150, 56}, {165, 49}, {180, 43}, */{-180, 43}, {-165, 36}, {-155, 30}, {-150, 26}, {-135, 22}, {-125, 21},
+        //  bottom right quarter on screen
+        {-120, 20}, {-115, 21}, {-105, 22}, {-90, 26}, {-85, 30}, {-75, 36}, {-60, 43}, {-45, 49},
+        //  top right quarter
+        {-30, 56}, {-15, 49}, {0, 43}, {15, 36}, {25, 30}, {30, 26}, {45, 22}, {55, 21},
+        //  top left quarter
+        {60, 20}, {65, 21}, {75, 22}, {90, 26}, {95, 30}, {105, 36}, {120, 43}, {135, 49},
+        //  bottom left quarter on screen, first part
+        {150, 56}, {165, 49}, {180, 43}
+    };
+    uint index = 1;
+    while ((index < flySpeed.length - 1) && (flyAngle > flySpeed[index][0])) {
+        index++;
+    }
+    if (index >= flySpeed.length) {
+        index = flySpeed.length - 1;
+    }
+    int animFlySpeed = flySpeed[index-1][1] + (flyAngle - flySpeed[index-1][0]) * (flySpeed[index][1] - flySpeed[index-1][1]) / (flySpeed[index][0] - flySpeed[index-1][0]);
+    //Log("Angle = " + flyAngle + ", speed = " + animFlySpeed + ", index = " + index);
+    return animFlySpeed;
+}
+
+uint e_HexShotAutoReloadRocket(array<uint>@ values) {     // critter id, item id, AP cost
+    Critter@ cr = GetCritter(values[0]);
+    if (!valid(cr)) {
+        Log("e_HexShotAutoReloadRocket :: Attacker not valid.");
+        return 0;
+    } else {
+        //Log("e_HexShotAutoReloadRocket :: Attacker = " + cr.Name);
+    }
+
+    //  player interrupts with S or is not able to perform action
+    if ((cr.Param[TO_EX_ANIM_INTERRUPT] > int(GetTick()) - ANIM_ACTION_TIME_DEFAULT) || cr.IsDead() || cr.IsKnockout()) {
+        return 0;
+    }
+
+    Item@ weapon =  GetItem(values[1]);
+    if (!valid(weapon)) {
+        Log("e_HexShotAutoReloadRocket :: weapon not valid.");
+        return 0;
+    } else {
+        //Log("e_HexShotAutoReloadRocket :: weapon = " + weapon.Proto.ProtoId);
+    }
+
+    if (HasItem(cr, weapon.AmmoPid)) {
+        Item@ ammo = cr.GetItem(weapon.AmmoPid, -1);
+        _SubItem(ammo, 1);
+        weapon.AmmoCount += 1;
+        weapon.Update();
+        _CritAnimateReload(cr);
+        cr.StatBase[ST_CURRENT_AP] -= 100 * values[2];
+        //cr.Say(SAY_NETMSG, "Rapid Reload Bazooka: AP cost = " + values[2]);
+        cr.PlaySound('W', SOUND_WEAPON_RELOAD, _WeaponSoundId(weapon.Proto, 1), '1', true);         // '1'?
+    } else {
+        //cr.Say(SAY_NETMSG, "Rapid Reload Bazooka: Out of same type rockets!");
+    }
+    return 0;
+}
+
+uint e_HexShotFly(array<uint>@ values) {     // map id, fromX, fromY, toX, toY, pid
+    Map@ map = GetMap(values[0]);
+    if (valid(map)) {
+        map.RunFlyEffect(values[5], null, null, values[1], values[2], values[3], values[4]);
+    }
+    return 0;
+}
+
+uint e_AnimateHexShot(array<uint>@ values) {     // critter id, map id, weapon id, toX, toY
+    Critter@ cr = GetCritter(values[0]);
+    if (!valid(cr)) {
+        return 0;
+    }
+    Map@ map = GetMap(values[1]);
+    if (!valid(map)) {
+        return 0;
+    }
+    Item@ weapon =  GetItem(values[2]);
+    if (!valid(weapon)) {
+        return 0;
+    }
+    int tx = values[3];
+    int ty = values[4];
+    //  player interrupts with S or is not able to perform action
+    if ((cr.Param[TO_EX_ANIM_INTERRUPT] > int(GetTick()) - ANIM_ACTION_TIME_DEFAULT) || cr.IsDead() || cr.IsKnockout()) {
+        return 0;
+    }
+    _CritAnimateSingle(cr);
+    cr.PlaySound('W', SOUND_WEAPON_USE, _WeaponSoundId(weapon.Proto, 1), '1', true);         // '1'?
+    CommenceHexShotingEffectAfterAnimation(cr, map, weapon, tx, ty, false);
+
+    return 0;
+}
+
+uint e_HexShotExplode(array<uint>@ values)     // map id, tx, ty, pid, attacker id, ammo pid
+{
+    Map@ map = GetMap(values[0]);
+    Critter@ cr = GetCritter(values[4]);
+    if(!valid(map) || !valid(cr))
+        return 0;
+
+    Item@ usedWeapon = _CritGetItemHand(cr);
+    if(!valid(usedWeapon))
+        return 0;
+    int   skillVal = cr.Skill[_WeaponSkill(usedWeapon.Proto, 0)];
+
+    bool isRocket = (values[5] == PID_ROCKET_AP
+                    || values[5] == PID_EXPLOSIVE_ROCKET
+                    || values[5] == PID_40MM_GRENADE);
+    bool isExplodeRocket = (values[5] == PID_EXPLOSIVE_ROCKET) || (values[5] == PID_40MM_GRENADE && usedWeapon.GetProtoId() == PID_GRENADE_LAUNCHER);
+
+    if(usedWeapon.IsDeteriorable() && !_CritHasExtMode(cr, MODE_EXT_NO_DETERIORATION))
+        WearItem(cr, usedWeapon, (MAX_SKILL_VAL - MIN(skillVal,200)) / 6);
+
+    CommenceExplosionHexEx(cr, map, values[1], values[2], null, values[3], usedWeapon, values[5], false, 0, isRocket, isExplodeRocket);
+    return 0;
+}
+
+#endif
+
+#ifdef __CLIENT
+
+bool Active = false;
+int  LastCursor = 0;
+uint16 lastH = 0, lastM = 0, lastS = 0, lastMS = 0;
+
+bool HexShotingMouseDown(int click)
+{
+    if(!IsHexShotingActive())
+        return false;
+
+    if (click != MOUSE_CLICK_LEFT) {
+        SetHexShoting(false);
+        return false;
+    } else {
+        CritterCl@ chosen = GetChosen();
+        ItemCl@ weapon = chosen.GetItem(0, SLOT_HAND1);
+        if (valid(weapon)) {
+            //Message("SetHexShoting() :: HAND1 (" + weapon.Id + ", " + weapon.GetProtoId() + ")");
+            if (!IsHexShotWeapon(weapon)) {
+                Active = false;
+            }
+        }
+    }
+
+    CritterCl@ chosen = GetChosen();
+
+    array<uint> actions;
+    uint        cnt = GetChosenActions(actions);
+
+    if(actions.length() > 0)
+    {
+        if(actions[0] == 1)
+            TryHexShot();
+    }
+    else
+    {
+        if(!chosen.IsAnimPlaying())
+            TryHexShot();
+    }
+
+    return true;
+}
+
+bool IsHexShotingActive() // export?
+{
+    return Active;
+}
+
+void HexShotingKeyDown(uint8 key)   // export
+{
+    if(key == DIK_LCONTROL && !__ConsoleActive)
+        SetHexShoting(true);
+}
+
+void HexShotingKeyUp(uint8 key)   // export
+{
+    if(key == DIK_LCONTROL)
+        SetHexShoting(false);
+}
+
+void HexShotingInputLost() // export
+{
+    SetHexShoting(false);
+}
+
+void SetHexShoting(bool enabled)
+{
+    if(enabled)
+    {
+        //Active = true;
+        LastCursor = ::GetCurrentCursor();
+        if(LastCursor == CURSOR_USE_WEAPON)
+            Active = true;
+        //ChangeCursor(CURSOR_USE_WEAPON);
+        //  if not hex shoot weapon, then false
+        CritterCl@ chosen = GetChosen();
+        ItemCl@ weapon = chosen.GetItem(0, SLOT_HAND1);
+        if (valid(weapon)) {
+            //Message("SetHexShoting() :: HAND1 (" + weapon.Id + ", " + weapon.GetProtoId() + ")");
+            if (!IsHexShotWeapon(weapon)) {
+                Active = false;
+            }
+        } else {
+            //Message("SetHexShoting() :: Invalid Weapon (" + weapon.Id + ", " + weapon.GetProtoId() + ")");
+            Active = false;
+        }
+    }
+    else
+    {
+        Active = false;
+        //ChangeCursor(LastCursor);
+    }
+}
+
+void RenderHexShoting() // export
+{
+    if(!IsHexShotingActive())
+        return;
+    CritterCl@ chosen = GetChosen();
+    if(!valid(chosen))
+        return;
+
+    uint16 hx = 0, hy = 0;
+    if(!GetMonitorHex(__MouseX, __MouseY, hx, hy))
+        return;
+    // todo: check for sanity?
+    ItemCl@ item = chosen.GetItem(0, SLOT_HAND1);
+    if(!IsHexShotableThere(chosen, item, hx, hy))
+        return;
+
+    // now we actually render the info
+    int x = 0, y = 0;
+    if(!GetHexPos(hx, hy, x, y))
+        return;                           // should not happen
+
+    int radius = (item.AmmoPid == PID_ROCKET_AP || item.GetProtoId() == PID_GRENADE_PISTOL) ? 3 : 4;
+
+    uint tohit = ::HexShotingToHit(chosen, hx, hy, item.Proto, item);
+    int  ap = ::HexShotActionPointsCost(item, chosen);
+    bool hasAp = ap <= chosen.Stat[ST_CURRENT_AP];
+    bool hasAmmo = item.AmmoCount > 0;
+
+    array<uint16> radiusVert =
+    {
+        hx, hy,
+        hx, hy,
+        hx, hy,
+        hx, hy,
+        hx, hy,
+        hx, hy
+    };
+    MoveHexByDir(radiusVert[0], radiusVert[1], 0, radius);
+    MoveHexByDir(radiusVert[2], radiusVert[3], 1, radius);
+    MoveHexByDir(radiusVert[4], radiusVert[5], 2, radius);
+    MoveHexByDir(radiusVert[6], radiusVert[7], 3, radius);
+    MoveHexByDir(radiusVert[8], radiusVert[9], 4, radius);
+    MoveHexByDir(radiusVert[10], radiusVert[11], 5, radius);
+
+    #define RADIUS_BORDER      (0x77FF0000)
+
+    DrawHexArea(radiusVert, false, RADIUS_BORDER);
+
+    string ammoType = (item.AmmoPid == PID_40MM_GRENADE ? "Ammo: 40mm" : (item.AmmoPid == PID_ROCKET_AP) ? "Ammo: AP" : "Ammo: Expl.");
+    int correctAp = ap; // + 1; // since we remove 1 AP for animation start, then the rest, or maybe not?
+
+    if(hasAp && hasAmmo) {
+        DrawText(tohit + "%", x + 20, y - 20, 40, 20, COLOR_GREEN, FONT_TYPE_DEFAULT, FONT_FLAG_BORDERED);
+        DrawText(correctAp + " AP", x + 20, y - 10, 40, 20, COLOR_WHITE, FONT_TYPE_DEFAULT, FONT_FLAG_BORDERED);
+        DrawText(ammoType, x + 20, y, 80, 20, COLOR_WHITE, FONT_TYPE_DEFAULT, FONT_FLAG_BORDERED);
+        //int sprite = LoadSprite(GetProtoItem(item.AmmoPid).PicInv, 0);
+        //::DrawSprite(sprite, -1, x - 50, y - 15, 50, 30, false, false, COLOR_WHITE);
+    } else {
+        if (hasAmmo) {
+            DrawText(tohit + "%", x + 20, y - 20, 40, 20, COLOR_RED, FONT_TYPE_DEFAULT, FONT_FLAG_BORDERED);
+            DrawText(correctAp + " AP", x + 20, y - 10, 40, 20, COLOR_WHITE, FONT_TYPE_DEFAULT, FONT_FLAG_BORDERED);
+            DrawText(ammoType, x + 20, y, 80, 20, COLOR_WHITE, FONT_TYPE_DEFAULT, FONT_FLAG_BORDERED);
+        } else {
+            DrawText("Reload", x + 20, y - 20, 40, 20, COLOR_RED, FONT_TYPE_DEFAULT, FONT_FLAG_BORDERED);
+            DrawText(correctAp + " AP", x + 20, y - 10, 40, 20, COLOR_WHITE, FONT_TYPE_DEFAULT, FONT_FLAG_BORDERED);
+            DrawText(ammoType, x + 20, y, 80, 20, COLOR_WHITE, FONT_TYPE_DEFAULT, FONT_FLAG_BORDERED);
+        }
+    }
+
+}
+
+void TryHexShot()
+{
+    // sanity check
+    if(!IsHexShotingActive())
+        return;
+    CritterCl@ chosen = GetChosen();
+    if(!valid(chosen))
+        return;
+
+    uint16 hx = 0, hy = 0;
+    if(!GetMonitorHex(__MouseX, __MouseY, hx, hy))
+        return;
+    // todo: check for sanity?
+    ItemCl@ item = chosen.GetItem(0, SLOT_HAND1);
+    if(!IsHexShotableThere(chosen, item, hx, hy))
+        return;
+
+    if(item.AmmoCount <= 0)
+        PlaySound('W', SOUND_WEAPON_EMPTY, item.Proto.Weapon_SoundId_0, '1');
+
+    if(item.AmmoCount <= 0 || (::HexShotActionPointsCost(item, chosen) > chosen.Stat[ST_CURRENT_AP]))
+    {
+        array<uint> actions;
+        uint        cnt = GetChosenActions(actions);
+        if(actions.length() > 0 && actions[0] == CHOSEN_MOVE)
+        {
+            uint[] action = { CHOSEN_NONE, 0, 0, 0, 0, 0, 0 };
+            SetChosenActions(action);
+        }
+        return;
+    }
+
+    // shot
+    if(CheckTimeDiff(lastH, lastM, lastS, lastMS))
+        RunServerScriptUnsafe("hexShot@unsafe_HexShot", hx, hy, 0, null, null);
+
+}
+
+bool CheckTimeDiff(uint16 lh, uint16 lm, uint16 ls, uint16 lms)
+{
+    uint16 undef;
+    uint16 hour = 0;
+    uint16 second = 0;
+    uint16 msecond = 0;
+    uint16 minute = 0;
+
+    GetTime(undef, undef, undef, undef, hour, minute, second, msecond);
+
+    lastH = hour;
+    lastM = minute;
+    lastS = second;
+    lastMS = msecond;
+
+    if(lh > hour)
+        hour += 24;
+    if(lm > minute)
+    {
+        minute += 60;
+        hour--;
+    }
+    if(ls > second)
+    {
+        second += 60;
+        minute--;
+    }
+    if(lms > msecond)
+    {
+        msecond += 1000;
+        second--;
+    }
+
+    uint td = (second-ls)*1000;
+    td = (msecond-lms+td);
+
+    if(td >= __Breaktime || lh != hour || lm != minute)
+        return true;
+    else
+    {
+        lastH = lh;
+        lastM = lm;
+        lastS = ls;
+        lastMS = lms;
+        return false;
+    }
+}
+
+#endif
