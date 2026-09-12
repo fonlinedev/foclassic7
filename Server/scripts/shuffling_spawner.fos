@@ -272,9 +272,7 @@ uint e_InitSpot(array<uint>@ values)
 	    case MAP_HubOldtown:
 		item.Val0 = 14;
 		break;
-	    case MAP_DenBusiness:
-	    item.Val0 = 15;
-		break;
+	    
 	    case MAP_ModocLarge:
 	    item.Val0 = 16;
 		break;

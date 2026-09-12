@@ -125,9 +125,7 @@ void InitGreet() {
 
 
     //  Den
-    AddGreet(MAP_DenBusiness, "Den - Business Area");
-    AddGreet(MAP_DenBoS, "Den - BoS Outpost");
-
+    
     //  Mariposa Military Base
     AddGreet(MAP_MilitaryBaseEntrance, "Mariposa Military Base - Entrance");
     AddGreet(MAP_MilitaryBaseLevel1, "Mariposa Military Base - Level 1");
@@ -447,7 +445,7 @@ void GreetPlayer(Critter@ player, Map@ map) {
     switch (mapPid) {
         //  reputation based
         
-        case MAP_DenBoS:
+        
         case MAP_SanFranBoS:
             repIndex = FACTION_BOS;
             break;

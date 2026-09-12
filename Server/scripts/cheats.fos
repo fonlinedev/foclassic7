@@ -309,7 +309,7 @@ void SetAliases()
 
     // Fallout 2
     SetMapId("arroyo",              MAP_ArroyoTemple);
-    SetMapId("den",                 MAP_DenBusiness);
+    
     SetMapId("modoc",               MAP_ModocLarge);
     
     SetMapId("gecko",               MAP_GeckoSettlement);

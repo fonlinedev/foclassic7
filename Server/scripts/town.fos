@@ -566,8 +566,6 @@ int GetMilitiaPid(uint MapProtoId)
 {
     switch(MapProtoId)
     {
-    case MAP_DenBusiness:
-        return random_from_array(mil_den_pids);
     case MAP_ModocLarge:
         return random_from_array(mil_modoc_pids);
     case MAP_GeckoSettlement:
@@ -1456,9 +1454,7 @@ class CTown : ITown
         {
             uint locpid = cr.GetMap().GetLocation().GetProtoId();
             if(locpid == LOCATION_BrokenHills)
-                SetGroupInfo(cr, FACTION_BH_MUTANTS, 3, FACTION_MODE_ALWAYS);
-            else if(locpid == LOCATION_TheDen)
-                SetGroupInfo(cr, FACTION_SLAVERS_GUILD, 3, FACTION_MODE_ALWAYS);
+                SetGroupInfo(cr, FACTION_BH_MUTANTS, 3, FACTION_MODE_ALWAYS);            
             else
             SetGroupInfo(cr, ReputationIndex(locpid), 3, FACTION_MODE_ALWAYS);
         }

@@ -37,16 +37,6 @@
 {85}{}{12junktn}
 {86}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 8, base 90
-{90}{}{Klamath Canyon}
-{95}{}{03wrldmp}
-{96}{}{gntlwin1:30, gntlwind:30, gustwin1:10, gustwind:10, vulture:10, vulture1:10}
-
-# Map 9, base 100
-{100}{}{Klamath Downtown}
-{105}{}{03wrldmp}
-{106}{}{laughter:10, laughte1:10, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
-
 # Map 10, base 110
 {110}{}{Mountains Encounter Khans 2}
 {115}{}{07desert}
@@ -1587,18 +1577,6 @@
 {5720}{}{Barter Ground}
 {5726}{}{}
 
-# Map 572, base 5730
-{5730}{}{Klamath Rat1}
-{5736}{}{}
-
-# Map 573, base 5740
-{5740}{}{Klamath Rat2}
-{5746}{}{}
-
-# Map 574, base 5750
-{5750}{}{Klamath Rat3}
-{5756}{}{}
-
 # Map 575, base 5760
 {5760}{}{Ares level3}
 {5766}{}{}
@@ -3039,26 +3017,6 @@
 {598121}{}{East}
 {598122}{}{360}
 {598123}{}{136}
-
-# The Den, pid 499, base 599000
-{599000}{}{The Den}
-{599005}{}{A town of junkies and slavers.}
-{599010}{}{24}
-{599020}{}{art\intrface\twnden.frm}
-{599030}{}{art\intrface\WM_DEN.FRM}
-{599090}{}{4}
-{599101}{}{Downtown}
-{599102}{}{124}
-{599103}{}{293}
-{599111}{}{East Side}
-{599112}{}{262}
-{599113}{}{330}
-{599121}{}{South Side}
-{599122}{}{205}
-{599123}{}{357}
-{599131}{}{Southwest}
-{599132}{}{135}
-{599133}{}{347}
 
 #
 # Worldmap Encounter messages

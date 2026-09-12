@@ -419,12 +419,7 @@ bool LockState = true;
 uint[] LockedLocations =
 {
     // TC
-    
-    LOCATION_Modoc,
-    LOCATION_Gecko,
-    LOCATION_BrokenHills,
-    LOCATION_TheDen
-    
+        
 };
 
 bool IsLocked(uint location_pid)

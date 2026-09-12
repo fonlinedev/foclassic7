@@ -71,11 +71,10 @@ void InitTowns()
     Map@ map_modoc = GetMapByPid(MAP_ModocLarge, 0);
     
     Map@ map_broken = GetMapByPid(MAP_BrokenHills, 0);
-    
-    Map@ map_den = GetMapByPid(MAP_DenBusiness, 0);
+        
     Map@ map_gecko = GetMapByPid(MAP_GeckoSettlement, 0);
 
-    Map@[] maps = { map_modoc, map_broken, map_den, map_gecko };
+    Map@[] maps = { map_modoc, map_broken, map_gecko };
 
     if(!VerifyMaps(maps))
     {
@@ -176,37 +175,7 @@ void InitTowns()
              .SetInfluenceMemberRequirement(99)
              .SetVersion(TOWN_VERSION_CAPTURE_COUNTDOWN)
 			 .SetMilitiaEnabled()
-             );
-
-    GET_CONT_POSITIONS(map_den);
-
-    // Den
-    IPolygon@ den_area = NewPolygon();
-    den_area.AddVertices(den_area_v);
-    ADD_TOWN(Den, "Den", SetMapID(map_den.Id)
-             .SetTownID(5)
-             .SetBaseRewardValue(9)
-             #ifdef __DEBUG__
-             .SetNearbyMemberRequirement(1)
-             .SetTotalMemberRequirement(1)
-			 .SetControlMemberRequirement(1)
-             #endif
-
-             #ifndef __DEBUG__
-             .SetNearbyMemberRequirement(1) // 1 test, default 3
-             .SetTotalMemberRequirement(1) // 1 test, default 3
-			 .SetControlMemberRequirement(1) // 1 test, default 3
-             #endif
-             .SetSpeechModifier(0)
-             .SetLimboContainer(map_den.GetItem(lx, ly, PID_FOOTLOCKER_CLEAN_LEFT))
-             .SetRewardContainer(map_den.GetItem(rx, ry, PID_FOOTLOCKER_CLEAN_LEFT))
-             .SetHour(22)
-             .SetCaptureArea(den_area)
-             .SetRewardStartCaps(1500)
-             .SetInfluenceMemberRequirement(99)
-             .SetVersion(TOWN_VERSION_CAPTURE_COUNTDOWN)
-			 .SetMilitiaEnabled()
-             );
+             );    
     
 
     for(uint i = 0; i < Towns.length(); i++)
