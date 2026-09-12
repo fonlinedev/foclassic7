@@ -825,7 +825,7 @@ string checkCaravanPosition(uint carNr)
 				
 				
 				case LOCATION_Junktown: {locName="Junktown"; break;}
-				case LOCATION_Gecko: {locName="Gecko"; break;}
+				
 				case LOCATION_Fortress: {locName="Fortress"; break;}
 				default: locName="Unknown";
 				}

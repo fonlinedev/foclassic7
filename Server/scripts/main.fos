@@ -1072,8 +1072,7 @@ bool critter_stealing(Critter& cr, Critter& thief, Item& item, uint count)
 						
 			case LOCATION_Navarro:
 			case LOCATION_Cathedral:
-			case LOCATION_BrokenHills:
-			case LOCATION_Gecko:
+			case LOCATION_BrokenHills:			
                 thief.Say(SAY_NETMSG, "|4291317840 " + "You cannot steal here.");
                 success = false;
                 break;
@@ -3022,7 +3021,7 @@ void critter_dead(Critter& cr, Critter@ killer)
     // additional stuff
     if(cr.IsNpc())
     {
-        TownCitizenKilled(cr, killer);    // Check if its a town citizen, if so, add npc death penalty
+        // TownCitizenKilled(cr, killer);    // Check if its a town citizen, if so, add npc death penalty
 
         if(valid(map) && (cr.CrType == CRTYPE_BRAHMIN) && IsBase(map))
             cr.StatBase[ST_REPLICATION_TIME] = REPLICATION_DELETE;

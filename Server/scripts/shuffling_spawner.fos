@@ -262,10 +262,7 @@ uint e_InitSpot(array<uint>@ values)
             case MAP_LandersPoint_Scorpioncave:
                 item.Val0 = 11;
                 break;
-	    case MAP_GeckoSettlement:
-		item.Val0 = 12;
-		break;
-            
+	        
 	    case MAP_HubOldtown:
 		item.Val0 = 14;
 		break;

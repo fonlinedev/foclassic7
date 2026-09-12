@@ -312,7 +312,6 @@ void SetAliases()
     
     
     
-    SetMapId("gecko",               MAP_GeckoSettlement);
     SetMapId("bh",                  MAP_BrokenHills);
     SetMapId("broken",              MAP_BrokenHills);
     

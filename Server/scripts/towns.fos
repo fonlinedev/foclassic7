@@ -71,10 +71,8 @@ void InitTowns()
     
     
     Map@ map_broken = GetMapByPid(MAP_BrokenHills, 0);
-        
-    Map@ map_gecko = GetMapByPid(MAP_GeckoSettlement, 0);
-
-    Map@[] maps = { map_broken, map_gecko };
+    
+    Map@[] maps = { map_broken };
 
     if(!VerifyMaps(maps))
     {
@@ -83,38 +81,6 @@ void InitTowns()
 
     uint16 rx, ry, lx, ly;
     rx = ry = lx = ly = 0;
-
-
-    GET_CONT_POSITIONS(map_gecko);
-
-    // Gecko
-    IPolygon@ gecko_area = NewPolygon();
-    gecko_area.AddVertices(gecko_area_v);
-    ADD_TOWN(Gecko, "Gecko", SetMapID(map_gecko.Id)
-             .SetTownID(3)
-             .SetBaseRewardValue(9)
-             #ifdef __DEBUG__
-             .SetNearbyMemberRequirement(1)
-             .SetTotalMemberRequirement(1)
-			 .SetControlMemberRequirement(1)
-             #endif
-
-             #ifndef __DEBUG__
-             .SetNearbyMemberRequirement(1) // 1 test, default 3
-             .SetTotalMemberRequirement(1) // 1 test, default 3
-			 .SetControlMemberRequirement(1) // 1 test, default 3
-             #endif
-             .SetSpeechModifier(0)
-             .SetLimboContainer(map_gecko.GetItem(lx, ly, PID_FOOTLOCKER_CLEAN_LEFT))
-             .SetRewardContainer(map_gecko.GetItem(rx, ry, PID_FOOTLOCKER_CLEAN_RIGHT))
-             .SetHour(21)
-             .SetCaptureArea(gecko_area)
-
-             .SetRewardStartCaps(1500)
-             .SetInfluenceMemberRequirement(99)
-             .SetVersion(TOWN_VERSION_CAPTURE_COUNTDOWN)
-			 .SetMilitiaEnabled()
-             );
 
     GET_CONT_POSITIONS(map_broken);
 

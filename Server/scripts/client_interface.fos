@@ -2923,10 +2923,7 @@ void DrawArea(uint mappid, uint8 mode)
         DrawInsideStatus(bh_area.IsWithin(chosen.HexX, chosen.HexY));
         break;
     
-    case MAP_gecko_settlement:
-        DrawHexArea(gecko_area_v, false, COLOR_TOWN_AREA_BORDER);
-        DrawInsideStatus(gecko_area.IsWithin(chosen.HexX, chosen.HexY));
-        break;
+    
     default:
         return;
     }
@@ -2940,10 +2937,7 @@ void DrawArea(uint mappid, uint8 mode)
     case MAP_broken:
         DrawHexArea(bh_area_t, true, COLOR_TOWN_AREA_INTERIOR);
         break;
-    
-    case MAP_gecko_settlement:
-        DrawHexArea(gecko_area_t, true, COLOR_TOWN_AREA_INTERIOR);
-        break;
+        
     }
 }
 

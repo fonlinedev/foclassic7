@@ -106,8 +106,8 @@ uint ReputationIndex(uint locid)
     //case LOCATION_Modoc:
     //    return FACTION_MODOC;
     
-    case LOCATION_Gecko:
-        return FACTION_GECKO;
+    //case LOCATION_Gecko:
+    //    return FACTION_GECKO;
     case LOCATION_BrokenHills:
         return FACTION_BH_HUMANS;                        // oh well. Indeed
     

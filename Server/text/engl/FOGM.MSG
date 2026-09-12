@@ -44,21 +44,6 @@
 {115}{}{12junktn}
 {116}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 11, base 120
-{120}{}{Klamath Toxic Caves 1}
-{125}{}{13carvrn}
-{126}{}{puddle1:30, puddle:30, water:5, water1:5, pebble:5, pebble1:5}
-
-# Map 12, base 130
-{130}{}{Klamath Toxic Caves 2}
-{135}{}{13carvrn}
-{136}{}{puddle1:30, puddle:30, water:5, water1:5, pebble:5, pebble1:5}
-
-# Map 13, base 140
-{140}{}{Klamath Toxic Caves 3}
-{145}{}{13carvrn}
-{146}{}{puddle1:30, puddle:30, water:5, water1:5, pebble:5, pebble1:5}
-
 # Map 14, base 150
 {150}{}{Mountains Encounter Khans 3}
 {155}{}{07desert}
@@ -72,11 +57,6 @@
 {185}{}{05raider}
 {185}{}{12junktn}
 {186}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
-
-# Map 18, base 190
-{190}{}{Modoc Large}
-{195}{}{18modoc}
-{196}{}{brdchir1:25, brdchirp:25, chimes:15, chimes1:15, dogbark:10, dogbark1:10}
 
 # Map 23, base 240
 {240}{}{LA Warehouse}
@@ -1559,19 +1539,10 @@
 {5675}{}{07desert}
 {5676}{}{gntlwin1:20, gntlwind:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
 
-# Map 568, base 5690
-{5690}{}{Slaver Camp}
-{5695}{}{07desert}
-{5696}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
 # Map 569, base 5700
 {5700}{}{Military Camp}
 {5705}{}{07desert}
 {5706}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 571, base 5720
-{5720}{}{Barter Ground}
-{5726}{}{}
 
 # Map 575, base 5760
 {5760}{}{Ares level3}
@@ -1876,26 +1847,6 @@
 {104000}{}{Start Caravan}
 {104005}{}{}
 {104010}{}{8}
-
-# Gecko, pid 5, base 105000
-{105000}{}{Gecko}
-{105005}{}{A town of ghouls built around a leaking nuclear power plant.}
-{105010}{}{24}
-{105020}{}{art\intrface\twngecko.frm}
-{105030}{}{art\intrface\WM_GECKO.FRM}
-{105090}{}{4}
-{105101}{}{Settlement}
-{105102}{}{155}
-{105103}{}{246}
-{105111}{}{South West}
-{105112}{}{40}
-{105113}{}{156}
-{105121}{}{Scrapyard}
-{105122}{}{279}
-{105123}{}{169}
-{105131}{}{Reactor}
-{105132}{}{168}
-{105133}{}{147}
 
 # Broken Hills, pid 6, base 106000
 {106000}{}{Broken Hills}

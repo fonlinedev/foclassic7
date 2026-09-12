@@ -566,8 +566,6 @@ int GetMilitiaPid(uint MapProtoId)
 {
     switch(MapProtoId)
     {
-    case MAP_GeckoSettlement:
-        return random_from_array(mil_gecko_pids);
     
     case MAP_BrokenHills:
         return random_from_array(mil_bh_pids);
