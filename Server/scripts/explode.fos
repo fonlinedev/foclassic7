@@ -680,7 +680,7 @@ void _OnExplDrop(Item& item, Critter& crit)
             {
                 
                 
-                case LOCATION_SanFrancisco:
+                
                 case LOCATION_Junktown:
                 case LOCATION_BrotherhoodofSteel:
                 case LOCATION_Hub:

@@ -97,8 +97,6 @@ void InitGreet() {
     AddGreet(MAP_SierraArmyDepot_Level4, "Sierra Army Depot - Level 4");
 
     //  Gecko
-    AddGreet(MAP_GeckoSettlement, "Gecko Settlement");
-    AddGreet(MAP_GeckoPowerPlant, "Gecko - Power Plant");
 
     //  Vault15
     AddGreet(MAP_Vault15Surface, "Vault 15 - Surface");
@@ -107,7 +105,7 @@ void InitGreet() {
     AddGreet(MAP_Vault15Level3, "Vault 15 - Level 3");
 
     //  NCR
-    AddGreet(MAP_MilitaryCamp, "New California Republic - Fort Seth Military Camp");
+    
 
     //  Hub
     AddGreet(MAP_HubDowntown, LVAR_greet_hub, "Hub - Downtown", "You have entered the dusty streets of the Hub, the main stop-off point for every caravan that is on its way to the north or the south.");
@@ -182,10 +180,10 @@ void InitGreet() {
     AddGreet(MAP_BrokenHillsDungeon, "Broken Hills - Dungeon");
 
     //  San Francisco
-    AddGreet(MAP_SanFranTanker, "San Francisco - Tanker");
-    AddGreet(MAP_SanFranChina, "San Francisco - Chinatown");
-    AddGreet(MAP_ShiTemple, "San Francisco - Shi Temple");
-    AddGreet(MAP_SanFranBoS, "San Francisco - Brother of Steel Outpost");
+    //AddGreet(MAP_SanFranTanker, "San Francisco - Tanker");
+    //AddGreet(MAP_SanFranChina, "San Francisco - Chinatown");
+    //AddGreet(MAP_ShiTemple, "San Francisco - Shi Temple");
+    //AddGreet(MAP_SanFranBoS, "San Francisco - Brother of Steel Outpost");
     
     //  Necropolis
     AddGreet(MAP_NecropolisHotel, "Necropolis - Hotel");

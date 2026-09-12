@@ -98,16 +98,6 @@
 {315}{}{08vats}
 {316}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
 
-# Map 31, base 320
-{320}{}{Gecko Settlement}
-{325}{}{12junktn}
-{326}{}{electri1:20, electric:20, gntlwind:20, gntlwin1:20, steam:20, steam1:20}
-
-# Map 32, base 330
-{330}{}{Gecko Power Plant}
-{335}{}{12junktn}
-{336}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
-
 # Map 33, base 340
 {340}{}{Q Cathedral Basement 2}
 {345}{}{08vats}
@@ -1911,23 +1901,6 @@
 {112101}{}{Entrance}
 {112102}{}{125}
 {112103}{}{58}
-
-# San Francisco, pid 14, base 114000
-{114000}{}{San Francisco}
-{114005}{}{A high-tech city built by the descendants of a Chinese submarine.}
-{114010}{}{24}
-{114020}{}{art\intrface\twnsanfr.frm}
-{114030}{}{art\intrface\WM_SANFN.FRM}
-{114090}{}{3}
-{114101}{}{Downtown}
-{114102}{}{339}
-{114103}{}{147}
-{114111}{}{Ruins}
-{114112}{}{301}
-{114113}{}{164}
-{114121}{}{Tanker}
-{114122}{}{344}
-{114123}{}{115}
 
 # Navarro, pid 15, base 115000
 {115000}{}{Navarro}

@@ -1363,9 +1363,6 @@ void dlg_ShrenRumour(Critter& player, Critter@ npc, string@ text)
     case BANK_BROKENHILLS:
         text += "Broken Hills";
         break;
-    case BANK_SANFRANCISCO:
-        text += "San Francisco";
-        break;
     case BANK_NCR:
         text += "NCR";
         break;
@@ -1394,7 +1391,7 @@ bool d_ExploredWasteland(Critter& player, Critter@ npc)
         
         
         
-        player.IsKnownLoc(false, LOCATION_SanFrancisco) &&
+        
         player.IsKnownLoc(false, LOCATION_Junktown)     &&
         player.IsKnownLoc(false, LOCATION_Necropolis)   &&
         player.IsKnownLoc(false, LOCATION_Hub)          &&

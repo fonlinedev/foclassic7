@@ -29,7 +29,7 @@ bool _SkillPlantBroc(Item& item, Critter& cr, int skill)
     if(!valid(map))
         return false;
 
-    if(map.GetProtoId() == MAP_LandersPoint_Geckofields || map.GetProtoId() == MAP_GeckoSettlement || map.GetProtoId() == MAP_HubOldtown )
+    if(map.GetProtoId() == MAP_HubOldtown )
     {
         _Desneak(cr);
 
