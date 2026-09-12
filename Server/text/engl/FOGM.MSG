@@ -403,26 +403,6 @@
 {1155}{}{14necro}
 {1156}{}{gntlwin1:25, gntlwind:25, gustwind:10, blank:40}
 
-# Map 115, base 1160
-{1160}{}{Broken Hills}
-{1165}{}{08vats}
-{1166}{}{brdchir1:20, brdchirp:20, gntlwind:20, gntlwin1:20, gustwind:10, blank:10}
-
-# Map 116, base 1170
-{1170}{}{Broken Hills Basement}
-{1175}{}{08vats}
-{1176}{}{brdchir1:20, brdchirp:20, gntlwind:20, gntlwin1:20, gustwind:10, blank:10}
-
-# Map 117, base 1180
-{1180}{}{Broken Hills Mine}
-{1185}{}{08vats}
-{1186}{}{brdchir1:20, brdchirp:20, gntlwind:20, gntlwin1:20, gustwind:10, blank:10}
-
-# Map 118, base 1190
-{1190}{}{Broken Hills Dungeon}
-{1195}{}{08vats}
-{1196}{}{brdchir1:20, brdchirp:20, gntlwind:20, gntlwin1:20, gustwind:10, blank:10}
-
 # Map 119, base 1200
 {1200}{}{Old Warehouse Cave}
 {1205}{}{16follow}
@@ -1300,11 +1280,6 @@
 {3725}{}{08vats}
 {3726}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 379, base 3800
-{3800}{}{Junktown Mining Site}
-{3805}{}{12junktn}
-{3806}{}{gntlwin1:25, gntlwind:25, animal1:20, animal:20, gustwind:5, gustwin1:5}
-
 # Map 380, base 3810
 {3810}{}{Jail}
 {3815}{}{07desert}
@@ -1522,18 +1497,6 @@
 {5770}{}{Ares level4}
 {5776}{}{}
 
-# Map 577, base 5780
-{5780}{}{Talchem Surface}
-{5786}{}{}
-
-# Map 578, base 5790
-{5790}{}{Talchem level1}
-{5796}{}{}
-
-# Map 579, base 5800
-{5800}{}{Talchem level2}
-{5806}{}{}
-
 # Map 580, base 5810
 {5810}{}{Bounty Hunters HQ Entrance}
 {5816}{}{}
@@ -1560,11 +1523,6 @@
 {5980}{}{Landers Point: Scorpion cave}
 {5985}{}{18modoc}
 {5986}{}{}
-
-# Map 600, base 6010
-{6010}{}{Fishing Zone}
-{6015}{}{17arroyo}
-{6016}{}{gntlwin1:25, gntlwind:25, animal1:20, animal:20, gustwind:5, gustwin1:5}
 
 # Map 1111, base 11120
 {11120}{}{Arroyo Temple}

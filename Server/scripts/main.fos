@@ -271,7 +271,7 @@ bool start()
     SetSendParameter(PE_LIVEWIRE, true);
     //SetSendParameter(PE_HTH_EVADE, true);
     //SetSendParameter(PE_HTH_EVADE_II, true);
-    // SetSendParameter(ST_TURN_BASED_AC,true);
+    SetSendParameter(ST_TURN_BASED_AC,true);
     // Perks for client_combat hit chance
     SetSendParameter(PE_DODGER, true);
     SetSendParameter(PE_IN_YOUR_FACE, true);
@@ -1970,7 +1970,7 @@ void critter_init(Critter& cr, bool firstTime)
         cr.ModeBase[MODE_NO_RUN] = modeRun;
 
 		if( cr.Mode[MODE_DEFAULT_COMBAT] == COMBAT_MODE_ANY )
-			cr.ModeBase[MODE_DEFAULT_COMBAT] = COMBAT_MODE_REAL_TIME;
+			cr.ModeBase[MODE_DEFAULT_COMBAT] = COMBAT_MODE_TURN_BASED;
 
         UpdateFactionsInfo(cr);
 

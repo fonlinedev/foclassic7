@@ -2547,14 +2547,17 @@ void InviteToEncounter(array<Critter@>& group, Item@ car, uint encounterDescript
     Location@ loc = map.GetLocation();
 
     // set turnbased for all maps in location (if appies)
-    if(!isGenerated && combatMode == COMBAT_MODE_TURN_BASED)     // || (combatMode==COMBAT_MODE_ANY && Random(0,1)==0)))
-    {
+    //if(!isGenerated && combatMode == COMBAT_MODE_TURN_BASED)     // || (combatMode==COMBAT_MODE_ANY && Random(0,1)==0)))
+    //{
         for(uint i = 0, j = loc.GetMapCount(); i < j; i++)
             loc.GetMapByIndex(i).SetTurnBasedAvailability(true);
         fe.TurnBased = true;
-    }
+    //}
 
     Critter@ leader = group[0];
+    bool isCaravanEncounter = valid(car) && _IsCaravanCar(car.GetProtoId());
+    if(!isCaravanEncounter)
+        combatMode = COMBAT_MODE_TURN_BASED;
 
     mapId = map.Id;
     hexX = fe.StartHexX;
