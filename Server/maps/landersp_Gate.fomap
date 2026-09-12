@@ -54019,7 +54019,7 @@ MapObjType           1
 ProtoId              3228
 MapX                 123
 MapY                 78
-ScriptName           prod_fishing
+ScriptName           
 FuncName             item_init
 
 MapObjType           1
@@ -54033,7 +54033,7 @@ MapX                 132
 MapY                 83
 LightDistance        5
 LightIntensity       50
-ScriptName           prod_fishing
+ScriptName           
 FuncName             item_init
 
 

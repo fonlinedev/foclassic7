@@ -45,9 +45,7 @@ void r_BecomeMilitia(Critter& player, Critter@ cr)
 uint GetMilitiaTeamByLoc(Location@ loc)
 {
     uint locpid = loc.GetProtoId();
-    if(locpid == LOCATION_BrokenHills)
-        return FACTION_BH_MUTANTS;    
-    else
+    
     return ReputationIndex(locpid);
 }
 

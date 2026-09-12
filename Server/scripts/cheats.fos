@@ -312,8 +312,7 @@ void SetAliases()
     
     
     
-    SetMapId("bh",                  MAP_BrokenHills);
-    SetMapId("broken",              MAP_BrokenHills);
+    
     
     SetMapId("sad",                 MAP_SierraArmyDepot_TheBattlefield);
     SetMapId("v15",                 MAP_Vault15Surface);
@@ -339,8 +338,6 @@ void SetAliases()
     SetMapId("repl8",               MAP_SalvagerCamp);
 
     // Fixed Mining Sides
-    SetMapId("bh_mine",             MAP_BrokenHillsMine);
-    SetMapId("broken_mine", MAP_BrokenHillsMine);
     
 
     // Trainyards

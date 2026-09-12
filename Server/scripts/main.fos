@@ -53,7 +53,7 @@
 #include "worldmap_h.fos"
 
 // Imports
-import bool OpenBottleWithMessage(Critter& player, Item& item) from "prod_fishing";
+//import bool OpenBottleWithMessage(Critter& player, Item& item) from "prod_fishing";
 import void DropDrugEffects(Critter& cr) from "drugs";
 import bool FindBaseEncounter(array<Critter@>& group, Item@ car, uint x, uint y, uint& encounterDescriptor, bool& waitForAnswer) from "factions_player";
 import bool IsCarTrunk(Item@ item) from "car";
@@ -1071,8 +1071,7 @@ bool critter_stealing(Critter& cr, Critter& thief, Item& item, uint count)
 			case LOCATION_Trainyard4:
 						
 			case LOCATION_Navarro:
-			case LOCATION_Cathedral:
-			case LOCATION_BrokenHills:			
+			case LOCATION_Cathedral:			
                 thief.Say(SAY_NETMSG, "|4291317840 " + "You cannot steal here.");
                 success = false;
                 break;
@@ -1178,9 +1177,7 @@ bool critter_use_item(Critter& cr, Item& item, Critter@ targetCr, Item@ targetIt
     }
 
     //  fishing items
-    if (pid == PID_MESSAGE_IN_A_BOTTLE) {
-        return OpenBottleWithMessage(cr, item);
-    }
+    
     if (pid == PID_FISH_SALMON) {
         UseDrug(cr, item);
         return true;

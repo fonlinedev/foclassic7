@@ -1360,9 +1360,7 @@ void dlg_ShrenRumour(Critter& player, Critter@ npc, string@ text)
     case BANK_REDDING:
         text += "Redding";
         break;
-    case BANK_BROKENHILLS:
-        text += "Broken Hills";
-        break;
+    
     case BANK_NCR:
         text += "NCR";
         break;
@@ -1387,7 +1385,7 @@ bool d_ExploredWasteland(Critter& player, Critter@ npc)
         
         
         
-        player.IsKnownLoc(false, LOCATION_BrokenHills)  &&
+        
         
         
         

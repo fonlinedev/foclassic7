@@ -487,8 +487,6 @@ uint GetPid(uint locpid, uint mappid, uint type)
         {
         case LOCATION_Trainyard4:
         
-        case LOCATION_BrokenHills:
-            return 119;
         
         
         
@@ -513,8 +511,7 @@ uint GetPid(uint locpid, uint mappid, uint type)
         {
         case LOCATION_Trainyard4:
         
-        case LOCATION_BrokenHills:
-            return 119;
+        
         case LOCATION_Trainyard3:
         
         
@@ -564,8 +561,7 @@ uint GetBag(uint locpid, uint mappid, uint type)
 
         
         
-        case LOCATION_BrokenHills:
-            return Random(0, 1) == 0 ? 307 : 312;                       // Laser Rifle, Flamer
+        
         case LOCATION_Fortress:
             return Random(0, 1) == 0 ? 221 : 13;                        // P90, Assault Rifle
         case LOCATION_Junktown:
@@ -593,8 +589,7 @@ uint GetBag(uint locpid, uint mappid, uint type)
 
         
         
-        case LOCATION_BrokenHills:
-            return Random(0, 1) == 0 ? 306 : 308;                               // Avenger Minigun, Plasma Rifle
+        
         case LOCATION_Fortress:
             return Random(0, 1) == 0 ? 271 : 194;                               // Turbo Plasma, Light Support Weapon
         case LOCATION_Junktown:

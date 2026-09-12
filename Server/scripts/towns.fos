@@ -68,11 +68,9 @@ bool VerifyMaps(array<Map@>& maps)
 
 void InitTowns()
 {
+       
     
-    
-    Map@ map_broken = GetMapByPid(MAP_BrokenHills, 0);
-    
-    Map@[] maps = { map_broken };
+    Map@[] maps = {  };
 
     if(!VerifyMaps(maps))
     {
@@ -81,43 +79,11 @@ void InitTowns()
 
     uint16 rx, ry, lx, ly;
     rx = ry = lx = ly = 0;
-
-    GET_CONT_POSITIONS(map_broken);
-
-    // Broken Hills
-    IPolygon@ bh_area = NewPolygon();
-    bh_area.AddVertices(bh_area_v);
-    ADD_TOWN(Broken, "Broken Hills", SetMapID(map_broken.Id)
-             .SetTownID(4)
-             .SetBaseRewardValue(11)
-             #ifdef __DEBUG__
-             .SetNearbyMemberRequirement(1)
-             .SetTotalMemberRequirement(1)
-			 .SetControlMemberRequirement(1)
-             #endif
-
-             #ifndef __DEBUG__
-             .SetNearbyMemberRequirement(1) // 1 test, default 5
-             .SetTotalMemberRequirement(1) // 1 test, default 5
-			 .SetControlMemberRequirement(1) // 1 test, default 5
-             #endif
-             .SetSpeechModifier(0)
-             .SetLimboContainer(map_broken.GetItem(lx, ly, PID_FOOTLOCKER_CLEAN_LEFT))
-             .SetRewardContainer(map_broken.GetItem(rx, ry, PID_FOOTLOCKER_CLEAN_RIGHT))
-             .SetHour(22)
-             .SetCaptureArea(bh_area)
-             .SetRewardStartCaps(2000)
-             .SetInfluenceMemberRequirement(99)
-             .SetVersion(TOWN_VERSION_CAPTURE_COUNTDOWN)
-			 .SetMilitiaEnabled()
-             );    
-    
-
+ 
     for(uint i = 0; i < Towns.length(); i++)
     {
         Towns[i].SetScore();
     }
-
-    InitMilitia();
+    
 }
 #endif

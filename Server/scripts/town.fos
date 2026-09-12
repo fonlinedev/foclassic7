@@ -562,18 +562,6 @@ int CountMilitia(Map@ map)
     return count;
 }
 
-int GetMilitiaPid(uint MapProtoId)
-{
-    switch(MapProtoId)
-    {
-    
-    case MAP_BrokenHills:
-        return random_from_array(mil_bh_pids);
-    default:
-        return -1;
-    }
-    return -1;
-}
 
 void r_ModifyInfluenceBuffer(Critter& cr, Critter@ npc, int value)
 {
@@ -648,84 +636,12 @@ void FlushInfluenceBuffer(Critter& cr, ITown@ town)
 
 bool AddMilitia(Map@ map)
 {
-    if(!valid(map))
-        return false;
-
-    if(mil_den_pids.length() == 0)
-        InitMilitia();
-
-
-    int pid = GetMilitiaPid(map.GetProtoId());
-    if(pid == -1)
-    {
-        string name = "";
-        map.ProtoName(name);
-        Log("Unknown town, can't create militia at map proto = (" + map.GetProtoId() + ") " + name);
-        return false;
-    }
-
-    uint count = CountMilitia(map);
-    if(count >= TOWN_MILITIA_MAX)
-        return false;
-
-    uint          bag = SelectBag(pid);
-
-    array<Entire> entires;
-    ParseEntires(map, entires, ENTIRE_DEFAULT);
-    uint          r = Random(0, entires.length() - 1);
-    Critter@      SpawnedNpc = AddNpc(map, pid, entires[r].HexX, entires[r].HexY, Random(0, 5), DIALOG_militia, "town_militia@critter_init", 0, bag, FACTION_NONE, false, Random(5, 20));
-    if(!valid(SpawnedNpc))
-        return false;
-
-    return true;
+    return false;
 }
 
 uint r_RecruitMilitia(Critter& player, Critter@ npc)
 {
-    ITown@ town = RetrieveTown(player);
-    if(!valid(town))
-    {
-        Log("Unknown town, can't create militia");
-        return FORCE_DIALOG_RECRUIT_ERROR;
-    }
-
-    if(town.GetCountdown() > 0)
-    {
-        return FORCE_DIALOG_RECRUIT_COMBAT;
-    }
-
-    if(TOWN_MILITIA_COST > _CritCountItem(player, PID_BOTTLE_CAPS))
-    {
-        return FORCE_DIALOG_RECRUIT_CANT_AFFORD;
-    }
-
-    Map@ map = player.GetMap();
-
-    uint count = CountMilitia(map);
-
-    if(count >= town.GetMilitiaMax())
-    {
-        return FORCE_DIALOG_RECRUIT_TOO_MANY;
-    }
-
-    int pid = GetMilitiaPid(map.GetProtoId());
-    if(pid == -1)
-    {
-        Log("Unknown town, can't create militia");
-        return FORCE_DIALOG_RECRUIT_ERROR;
-    }
-
-    uint bag = SelectBag(pid);
-
-    if(!BanksTransferFromCritter(player, TOWN_MILITIA_COST, TRANSACTION_MERCBUY, false))
-    {
-        Log("Couldn't remove money");
-        return FORCE_DIALOG_RECRUIT_ERROR;
-    }
-
-    Critter@ SpawnedNpc = AddNpc(player.GetMap(), pid, player.HexX, player.HexY, Random(0, 5), DIALOG_militia, "town_militia@critter_init", 0, bag, FACTION_NONE, false, Random(10, 40));
-
-    return FORCE_DIALOG_RECRUIT_SUCCESS;
+    return FORCE_DIALOG_RECRUIT_ERROR;    
 }
 
 void r_GainControl(Critter& player, Critter@ npc, int val)
@@ -1449,9 +1365,7 @@ class CTown : ITown
         else
         {
             uint locpid = cr.GetMap().GetLocation().GetProtoId();
-            if(locpid == LOCATION_BrokenHills)
-                SetGroupInfo(cr, FACTION_BH_MUTANTS, 3, FACTION_MODE_ALWAYS);            
-            else
+            
             SetGroupInfo(cr, ReputationIndex(locpid), 3, FACTION_MODE_ALWAYS);
         }
     }

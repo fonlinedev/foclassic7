@@ -456,26 +456,6 @@
 {1265}{}{03wrldmp}
 {1266}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
 
-# Map 135, base 1360
-{1360}{}{San Fran Tanker}
-{1365}{}{21sf}
-{1366}{}{seawind1:25, clang:10, waves1:15, clangl:15, waves:15, seawind:20}
-
-# Map 137, base 1380
-{1380}{}{San Fran China}
-{1385}{}{21sf}
-{1386}{}{seawind1:25, seawind:25, chimes1:15, chimes:15, blank:20}
-
-# Map 139, base 1400
-{1400}{}{Shi Temple}
-{1405}{}{21sf}
-{1406}{}{}
-
-# Map 140, base 1410
-{1410}{}{San Fran BoS}
-{1415}{}{}
-{1416}{}{}
-
 # Map 141, base 1420
 {1420}{}{Necropolis Hotel}
 {1425}{}{14necro}
@@ -1838,26 +1818,6 @@
 {104005}{}{}
 {104010}{}{8}
 
-# Broken Hills, pid 6, base 106000
-{106000}{}{Broken Hills}
-{106005}{}{A town of humans, mutants and ghouls. Racism is rampant.}
-{106010}{}{24}
-{106020}{}{art\intrface\twnbrokn.frm}
-{106030}{}{art\intrface\WM_HILLS.FRM}
-{106090}{}{4}
-{106101}{}{Downtown}
-{106102}{}{125}
-{106103}{}{276}
-{106111}{}{Residental}
-{106112}{}{367}
-{106113}{}{284}
-{106121}{}{South Side}
-{106122}{}{246}
-{106123}{}{359}
-{106131}{}{North Side}
-{106132}{}{230}
-{106133}{}{201}
-
 # Sierra, pid 8, base 108000
 {108000}{}{Sierra}
 {108005}{}{An old military warehouse.}
@@ -2871,30 +2831,15 @@
 {464005}{}{A small gas station in the middle of the desert.}
 {464010}{}{6}
 
-# Quarry, pid 365, base 465000
-{465000}{}{Quarry}
-{465005}{}{A well guarded quarry, run by the Junktown town folks.}
-{465010}{}{6}
-
 # Fort Seth, pid 368, base 468000
 {468000}{}{Fort Seth}
 {468005}{}{A military outpost of the NCR, composed of a few barracks and protective walls.}
 {468010}{}{6}
 
-# Talchem California HQ, pid 371, base 471000
-{471000}{}{Talchem California HQ}
-{471005}{}{An abandoned compound.}
-{471010}{}{6}
-
 # Bounty Hunters HQ, pid 372, base 472000
 {472000}{}{Bounty Hunters HQ}
 {472005}{}{A hidden base of Bounty Hunters.}
 {472010}{}{6}
-
-# Fishing Shore, pid 450, base 550000
-{550000}{}{Fishing Shore}
-{550005}{}{A quiet and peaceful place.}
-{550010}{}{12}
 
 # Sierra Caves, pid 460, base 560000
 {560000}{}{Sierra Caves}

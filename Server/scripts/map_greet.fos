@@ -174,11 +174,7 @@ void InitGreet() {
     AddGreet(MAP_Navarro, "Enclave: Navarro Military Base - Basement");
 
     //  Broken Hills
-    AddGreet(MAP_BrokenHills, "Broken Hills");
-    AddGreet(MAP_BrokenHillsBasement, "Broken Hills - Basement");
-    AddGreet(MAP_BrokenHillsMine, "Broken Hills - Mine");
-    AddGreet(MAP_BrokenHillsDungeon, "Broken Hills - Dungeon");
-
+    
     //  San Francisco
     //AddGreet(MAP_SanFranTanker, "San Francisco - Tanker");
     //AddGreet(MAP_SanFranChina, "San Francisco - Chinatown");
@@ -440,18 +436,11 @@ void GreetPlayer(Critter@ player, Map@ map) {
     switch (mapPid) {
         //  reputation based
         
-        
-        case MAP_SanFranBoS:
-            repIndex = FACTION_BOS;
-            break;
-        
+                
         case MAP_BoneyardTrainStation:
             repIndex = FACTION_REGULATORS;
             break;
         
-        case MAP_SanFransiscoTrainStation:
-            repIndex = FACTION_COMMUNISTS;
-            break;
                 
         case MAP_HubHeights:
             repIndex = FACTION_HEIGHTS;
@@ -519,7 +508,7 @@ void GreetPlayer(Critter@ player, Map@ map) {
         case MAP_StrandedTanker_Level2:
         case MAP_StrandedTanker_Level3:
         //  BH dungeon
-        case MAP_BrokenHillsDungeon:
+        
         //  LA warehouse
         case MAP_Ripper:
         case MAP_RipperSub:
@@ -543,7 +532,7 @@ void GreetPlayer(Critter@ player, Map@ map) {
         case MAP_Vault13Level1:
         case MAP_LAWarehouse:
         case MAP_MilitaryBaseEntrance:
-        case MAP_BrokenHillsMine:
+        
         case MAP_StrandedTanker_Outside:
         case MAP_TalchemSurface:
         case MAP_SierraCavesLevel1Scene1:
