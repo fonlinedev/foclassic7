@@ -678,7 +678,7 @@ void _OnExplDrop(Item& item, Critter& crit)
 
             switch(map.GetLocation().GetProtoId())
             {
-                case LOCATION_VaultCity:
+                
                 
                 case LOCATION_SanFrancisco:
                 case LOCATION_Junktown:

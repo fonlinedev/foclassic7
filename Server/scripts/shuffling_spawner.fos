@@ -252,9 +252,7 @@ uint e_InitSpot(array<uint>@ values)
             case MAP_HQ_BunkerIndoor:
                 item.Val0 = 3;
                 break;
-            case MAP_VaultCityMineInside:
-                item.Val0 = 4;
-                break;
+            
             
             case MAP_BrokenHillsMine:
                 item.Val0 = 6;

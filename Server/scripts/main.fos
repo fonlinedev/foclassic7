@@ -1074,7 +1074,7 @@ bool critter_stealing(Critter& cr, Critter& thief, Item& item, uint count)
 			case LOCATION_Trainyard2:
 			case LOCATION_Trainyard3:
 			case LOCATION_Trainyard4:
-			case LOCATION_VaultCity:
+			
 			case LOCATION_Modoc:
 			case LOCATION_TheDen:
 			case LOCATION_Klamath:

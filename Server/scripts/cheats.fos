@@ -313,7 +313,7 @@ void SetAliases()
     SetMapId("klamath",             MAP_KlamathDowntown);
     SetMapId("klamcave",    MAP_KlamathToxicCaves1);
     SetMapId("modoc",               MAP_ModocLarge);
-    SetMapId("vc",                  MAP_VaultCityDowntown);
+    
     SetMapId("gecko",               MAP_GeckoSettlement);
     SetMapId("bh",                  MAP_BrokenHills);
     SetMapId("broken",              MAP_BrokenHills);
@@ -349,18 +349,16 @@ void SetAliases()
     
     SetMapId("sf_mine",             MAP_SanFranciscoMiningSite);
     SetMapId("jt_mine",             MAP_JunktownMiningSite);
-    SetMapId("vc_mine",             MAP_VaultCityMiningSite);
+    
 
     // Trainyards
     SetMapId("sf_train",    MAP_SanFransiscoTrainStation);
     SetMapId("la_train",    MAP_BoneyardTrainStation);
     
-    SetMapId("vc_train",    MAP_VaultCityTrainStation);
-
-    SetMapId("train1",              MAP_SanFransiscoTrainStation);
-    SetMapId("train2",              MAP_BoneyardTrainStation);
     
-    SetMapId("train4",              MAP_VaultCityTrainStation);
+
+    
+    
 
     // Slaver Camps
     SetMapId("slaver1",             MAP_SlaverCamp);

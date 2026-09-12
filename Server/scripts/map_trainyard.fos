@@ -36,10 +36,6 @@ void map_init(Map& map, bool firstTime)
             uint[] maxes = { 10, 20 };
             SetAlertMap(map, maxes);
         }
-        else if(proto == MAP_VaultCityTrainStation)
-        {
-            uint[] maxes = { 10, 16 };
-            SetAlertMap(map, maxes);
-        }
+        
     }
 }

@@ -105,8 +105,7 @@ uint ReputationIndex(uint locid)
         return FACTION_KLAMATH;
     case LOCATION_Modoc:
         return FACTION_MODOC;
-    case LOCATION_VaultCity:
-        return FACTION_VAULT_CITY;
+    
     case LOCATION_Gecko:
         return FACTION_GECKO;
     case LOCATION_BrokenHills:

@@ -76,16 +76,6 @@
 {155}{}{12junktn}
 {156}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 15, base 160
-{160}{}{Vault City HQ}
-{165}{}{22vcity}
-{166}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
-
-# Map 16, base 170
-{170}{}{Vault City Downtown}
-{175}{}{22vcity}
-{176}{}{blank:40, brdchirp:25, brdchir1:25, potspans:5, potspan1:5}
-
 # Map 17, base 180
 {180}{}{Desert Encounter Khans 4}
 {185}{}{07desert}
@@ -97,21 +87,6 @@
 {190}{}{Modoc Large}
 {195}{}{18modoc}
 {196}{}{brdchir1:25, brdchirp:25, chimes:15, chimes1:15, dogbark:10, dogbark1:10}
-
-# Map 20, base 210
-{210}{}{Vault City Vault Level 1}
-{215}{}{22vcity}
-{216}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
-
-# Map 21, base 220
-{220}{}{Vault City Vault Level 2}
-{225}{}{22vcity}
-{226}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
-
-# Map 22, base 230
-{230}{}{Vault City Vault Level 3}
-{235}{}{22vcity}
-{236}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
 
 # Map 23, base 240
 {240}{}{LA Warehouse}
@@ -203,11 +178,6 @@
 {425}{}{12junktn}
 {426}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 42, base 430
-{430}{}{NCR Residental Area}
-{435}{}{01hub}
-{436}{}{gntlwin1:25, gntlwind:25, brdchir1:10, brdchirp:10, blank:30}
-
 # Map 43, base 440
 {440}{}{Q Gun Runners Caravan 2}
 {445}{}{13carvrn}
@@ -218,18 +188,9 @@
 {455}{}{14necro}
 {456}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
 
-# Map 45, base 460
-{460}{}{NCR}
-{465}{}{01hub}
-{466}{}{gntlwin1:25, gntlwind:25, brdchir1:10, brdchirp:10, blank:30}
-
 # Map 47, base 480
 {480}{}{Den BoS}
 {486}{}{blank:10}
-
-# Map 48, base 490
-{490}{}{NCR BoS}
-{496}{}{blank:10}
 
 # Map 49, base 500
 {500}{}{Military Base Entrance}
@@ -2395,11 +2356,6 @@
 {153005}{}{}
 {153010}{}{6}
 
-# Prison, pid 54, base 154000
-{154000}{}{Prison}
-{154005}{}{A New California Republic Correctional Facility.}
-{154010}{}{10}
-
 # Khan Mountains, pid 57, base 157000
 {157000}{}{Khan Mountains}
 {157005}{}{}
@@ -3139,17 +3095,6 @@
 {560000}{}{Sierra Caves}
 {560005}{}{A narrow path leading down deep into the caves.}
 {560010}{}{12}
-
-# Vault City, pid 497, base 597000
-{597000}{}{Vault City}
-{597005}{}{A high-tech settlement. Established by the inhabitants of Vault 8.}
-{597010}{}{24}
-{597020}{}{art\intrface\twnvcity.frm}
-{597030}{}{art\intrface\WM_VLTCT.FRM}
-{597090}{}{1}
-{597101}{}{Vault City}
-{597102}{}{306}
-{597103}{}{246}
 
 # Modoc, pid 498, base 598000
 {598000}{}{Modoc}

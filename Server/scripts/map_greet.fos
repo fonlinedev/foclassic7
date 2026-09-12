@@ -85,14 +85,7 @@ void InitGreet() {
     AddGreet(MAP_KlamathRat3, "Klamath - Rat Caves Level 3");
 
     //  Vault City
-    AddGreet(MAP_VaultCityHQ, "Vault City - Outer");
-    AddGreet(MAP_VaultCityDowntown, "Vault City - Inner");
-    AddGreet(MAP_VaultCityVaultLevel1, "Vault City - Vault Level 1");
-    AddGreet(MAP_VaultCityVaultLevel2, "Vault City - Vault Level 2");
-    AddGreet(MAP_VaultCityVaultLevel3, "Vault City - Vault Level 3");
-    AddGreet(MAP_VaultCityMiningSite, "Vault City - Mining Site Outside");
-    AddGreet(MAP_VaultCityMineInside, "Vault City - Mining Site Inside");
-
+    
     //  LA
     AddGreet(MAP_Gunrunner, LVAR_greet_gunrunner, "Los Angeles - Gun Runners", "You have entered the territory of the Gun Runners. A strange feeling of peace by oversized weapons is surrounding you...");
     AddGreet(MAP_Library, LVAR_greet_library, "Los Angeles - Library", "From the distance you can see the old public library that serves as the headquarter of the Follower of the Apocalypse. In the west of it, a small settlement build from self made tents adorns the skyline.");
@@ -476,11 +469,7 @@ void GreetPlayer(Critter@ player, Map@ map) {
         case MAP_KlamathMiningSiteInside:
             repIndex = FACTION_KLAMATH;
             break;
-        case MAP_VaultCityMiningSite:
-        case MAP_VaultCityMineInside:
-        case MAP_VaultCityTrainStation:
-            repIndex = FACTION_VAULT_CITY;
-            break;
+        
         case MAP_BoneyardTrainStation:
             repIndex = FACTION_REGULATORS;
             break;

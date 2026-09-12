@@ -486,8 +486,7 @@ uint GetPid(uint locpid, uint mappid, uint type)
         switch(locpid)
         {
         case LOCATION_Trainyard4:
-        case LOCATION_VaultCity:
-            return Random(0, 1) == 0 ? 134 : 135;
+        
         case LOCATION_BrokenHills:
             return 119;
         case LOCATION_MiningSiteSF:
@@ -495,8 +494,7 @@ uint GetPid(uint locpid, uint mappid, uint type)
             return 386;
         
         
-        case LOCATION_Prison:
-            return Random(0, 1) == 0 ? 518 : 519;
+        
         case LOCATION_Trainyard1:
         case LOCATION_Trainyard3:
         case LOCATION_Hub:
@@ -520,15 +518,13 @@ uint GetPid(uint locpid, uint mappid, uint type)
         switch(locpid)
         {
         case LOCATION_Trainyard4:
-        case LOCATION_VaultCity:
-            return Random(0, 1) == 0 ? 222 : 223;
+        
         case LOCATION_BrokenHills:
             return 119;
         case LOCATION_Trainyard3:
         case LOCATION_MiningSiteNCR:
         
-        case LOCATION_Prison:
-            return Random(0, 1) == 0 ? 475 : 476;
+        
         case LOCATION_Trainyard1:
         case LOCATION_MiningSiteSF:
         case LOCATION_SanFrancisco:
@@ -585,10 +581,7 @@ uint GetBag(uint locpid, uint mappid, uint type)
             return Random(0, 1) == 0 ? 15 : 212;                        // 10mm SMG, 14mm pistol
 
         
-        case LOCATION_Prison:
-            return Random(0, 1) == 0 ? 332 : 327;                       // 10mm SMG, Combat Shotgun
-        case LOCATION_VaultCity:
-            return Random(0, 1) == 0 ? 211 : 13;                        // Combat Shotgun, Assault Rifle
+        
         case LOCATION_BrokenHills:
             return Random(0, 1) == 0 ? 307 : 312;                       // Laser Rifle, Flamer
         case LOCATION_SanFrancisco:
@@ -628,10 +621,7 @@ uint GetBag(uint locpid, uint mappid, uint type)
             return Random(0, 1) == 0 ? 221 : 16;                                // P90, G11
 
         
-        case LOCATION_Prison:
-            return Random(0, 1) == 0 ? 14 : 396;                                // FNFAL, M60
-        case LOCATION_VaultCity:
-            return Random(0, 9) == 0 ? 16 : 203;                                // G11, PancorJackhammer
+        
         case LOCATION_BrokenHills:
             return Random(0, 1) == 0 ? 306 : 308;                               // Avenger Minigun, Plasma Rifle
         case LOCATION_SanFrancisco:
@@ -704,8 +694,7 @@ uint GetTeamId(uint locpid, uint mappid, uint type)
     case MAP_BoneyardTrainStation:
         return FACTION_REGULATORS;
     
-    case MAP_VaultCityTrainStation:
-        return FACTION_VAULT_CITY;
+    
     case MAP_MilitaryCamp:
         return FACTION_NCR;
     case MAP_SanFranciscoMiningSite:
@@ -757,10 +746,7 @@ uint GetDialog(uint locpid, uint mappid, uint type)
             return 1401;
 
         
-        case LOCATION_Prison:
-            return 11000;                                       // ncr soldier
-        case LOCATION_VaultCity:
-            return 402;
+        
         case LOCATION_SanFrancisco:
             return 1401;
         case LOCATION_Fortress:
@@ -800,10 +786,7 @@ uint GetDialog(uint locpid, uint mappid, uint type)
             return 1401;
 
         
-        case LOCATION_Prison:
-            return 83;                                                  // ncr ranger
-        case LOCATION_VaultCity:
-            return 402;
+        
         case LOCATION_SanFrancisco:
             return 1401;
         case LOCATION_Fortress:
