@@ -27890,63 +27890,63 @@ MapObjType           1
 ProtoId              1820
 MapX                 66
 MapY                 104
-ScriptName           prod_tree_firewood
+ScriptName           
 FuncName             item_init
 
 MapObjType           1
 ProtoId              1820
 MapX                 20
 MapY                 53
-ScriptName           prod_tree_firewood
+ScriptName           
 FuncName             item_init
 
 MapObjType           1
 ProtoId              1820
 MapX                 38
 MapY                 51
-ScriptName           prod_tree_firewood
+ScriptName           
 FuncName             item_init
 
 MapObjType           1
 ProtoId              1821
 MapX                 31
 MapY                 71
-ScriptName           prod_tree_firewood
+ScriptName           
 FuncName             item_init
 
 MapObjType           1
 ProtoId              1822
 MapX                 37
 MapY                 45
-ScriptName           prod_tree_firewood
+ScriptName           
 FuncName             item_init
 
 MapObjType           1
 ProtoId              1822
 MapX                 59
 MapY                 102
-ScriptName           prod_tree_firewood
+ScriptName           
 FuncName             item_init
 
 MapObjType           1
 ProtoId              1821
 MapX                 122
 MapY                 82
-ScriptName           prod_tree_firewood
+ScriptName           
 FuncName             item_init
 
 MapObjType           1
 ProtoId              1822
 MapX                 120
 MapY                 86
-ScriptName           prod_tree_firewood
+ScriptName           
 FuncName             item_init
 
 MapObjType           1
 ProtoId              1821
 MapX                 91
 MapY                 31
-ScriptName           prod_tree_firewood
+ScriptName           
 FuncName             item_init
 
 MapObjType           0

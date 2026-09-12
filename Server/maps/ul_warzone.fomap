@@ -15622,7 +15622,7 @@ MapObjType           1
 ProtoId              1821
 MapX                 64
 MapY                 119
-ScriptName           prod_tree_firewood
+ScriptName           
 FuncName             item_init
 
 MapObjType           2
