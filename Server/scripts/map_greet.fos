@@ -78,8 +78,6 @@ void InitGreet() {
     AddGreet(MAP_KlamathToxicCaves1, "Klamath: Toxic Caves - Inside");
     AddGreet(MAP_KlamathToxicCaves2, "Klamath: Toxic Caves - Further Down");
     AddGreet(MAP_KlamathToxicCaves3, "Klamath: Toxic Caves - Deep Under");
-    AddGreet(MAP_KlamathMiningSite, "Klamath - Mining Site Outside");
-    AddGreet(MAP_KlamathMiningSiteInside, "Klamath - Mining Site Inside");
     AddGreet(MAP_KlamathRat1, "Klamath - Rat Caves Level 1");
     AddGreet(MAP_KlamathRat2, "Klamath - Rat Caves Level 2");
     AddGreet(MAP_KlamathRat3, "Klamath - Rat Caves Level 3");
@@ -132,7 +130,7 @@ void InitGreet() {
     //  Junktown
     AddGreet(MAP_Junktown, "Junktown");
     AddGreet(MAP_JunktownSub, "Junktown - Basement");
-    AddGreet(MAP_JunktownMiningSite, "Junktown - Mining Site");
+
 
     //  Den
     AddGreet(MAP_DenBusiness, "Den - Business Area");
@@ -198,9 +196,7 @@ void InitGreet() {
     AddGreet(MAP_SanFranChina, "San Francisco - Chinatown");
     AddGreet(MAP_ShiTemple, "San Francisco - Shi Temple");
     AddGreet(MAP_SanFranBoS, "San Francisco - Brother of Steel Outpost");
-    AddGreet(MAP_SanFranciscoMiningSite, "San Francisco - Mining Site Outside");
-    AddGreet(MAP_SanFranciscoMiningSiteInside, "San Francisco - Mining Site Inside");
-
+    
     //  Necropolis
     AddGreet(MAP_NecropolisHotel, "Necropolis - Hotel");
     AddGreet(MAP_NecropolisSeth, "Necropolis - Seth's ");
@@ -437,9 +433,7 @@ void InitGreet() {
     }
 
     //  Mining site (player mine)
-    AddGreet(MAP_MiningSite, "Mining Site - Outside");
-    AddGreet(MAP_MiningSiteInside, "Mining Site - Inside");
-
+    
 
     //Log("Greetings: " + Greet.length());
     GreetInitialized = true;
@@ -465,17 +459,11 @@ void GreetPlayer(Critter@ player, Map@ map) {
         case MAP_SanFranBoS:
             repIndex = FACTION_BOS;
             break;
-        case MAP_KlamathMiningSite:
-        case MAP_KlamathMiningSiteInside:
-            repIndex = FACTION_KLAMATH;
-            break;
         
         case MAP_BoneyardTrainStation:
             repIndex = FACTION_REGULATORS;
             break;
         
-        case MAP_SanFranciscoMiningSite:
-        case MAP_SanFranciscoMiningSiteInside:
         case MAP_SanFransiscoTrainStation:
             repIndex = FACTION_COMMUNISTS;
             break;

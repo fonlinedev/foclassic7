@@ -344,11 +344,6 @@ void SetAliases()
     // Fixed Mining Sides
     SetMapId("bh_mine",             MAP_BrokenHillsMine);
     SetMapId("broken_mine", MAP_BrokenHillsMine);
-    SetMapId("klamath_mine", MAP_KlamathMiningSite);
-    
-    
-    SetMapId("sf_mine",             MAP_SanFranciscoMiningSite);
-    SetMapId("jt_mine",             MAP_JunktownMiningSite);
     
 
     // Trainyards
@@ -376,9 +371,7 @@ void SetAliases()
     SetMapId("themepark",   MAP_Themepark);
     SetMapId("waterworks",  MAP_Waterworks);
     SetMapId("ncr_army",    MAP_MilitaryCamp);
-    SetMapId("ncrcf",               MAP_NCRCF);
-    SetMapId("prison",              MAP_NCRCF);
-    SetMapId("ncr_rails",   MAP_Rails);
+    
 
     // Special maps
     SetMapId("npcmap",              MAP_BufferMap);

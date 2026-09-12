@@ -489,7 +489,7 @@ uint GetPid(uint locpid, uint mappid, uint type)
         
         case LOCATION_BrokenHills:
             return 119;
-        case LOCATION_MiningSiteSF:
+        
         case LOCATION_SanFrancisco:
             return 386;
         
@@ -499,9 +499,6 @@ uint GetPid(uint locpid, uint mappid, uint type)
         case LOCATION_Trainyard3:
         case LOCATION_Hub:
         case LOCATION_Junktown:
-        case LOCATION_MiningSiteJunktown:
-        case LOCATION_MiningSiteKlamath:
-            return Random(0, 1) == 0 ? 71 : 72;
         case LOCATION_Trainyard2:
         case LOCATION_Library:
         case LOCATION_Scavenger:
@@ -522,18 +519,16 @@ uint GetPid(uint locpid, uint mappid, uint type)
         case LOCATION_BrokenHills:
             return 119;
         case LOCATION_Trainyard3:
-        case LOCATION_MiningSiteNCR:
+        
         
         
         case LOCATION_Trainyard1:
-        case LOCATION_MiningSiteSF:
+        
         case LOCATION_SanFrancisco:
             return 386;
         case LOCATION_Hub:
         case LOCATION_Junktown:
-        case LOCATION_MiningSiteJunktown:
-        case LOCATION_MiningSiteKlamath:
-            return Random(0, 1) == 0 ? 71 : 72;
+        
         case LOCATION_Trainyard2:
         case LOCATION_Library:
         case LOCATION_Scavenger:
@@ -571,14 +566,6 @@ uint GetBag(uint locpid, uint mappid, uint type)
         case LOCATION_Trainyard4:
             return Random(0, 1) == 0 ? 12 : 11;                         // VAULT CITY	Sniper Rifle, Hunting Rifle
 
-        case LOCATION_MiningSiteNCR:
-            return Random(0, 1) == 0 ? 212 : 327;                       // 14mm Pistol, Combat Shotgun
-        case LOCATION_MiningSiteJunktown:
-            return Random(0, 1) == 0 ? 15 : 11;                         // 10mm SMG, Hunting Rifle
-        case LOCATION_MiningSiteKlamath:
-            return Random(0, 1) == 0 ? 234 : 11;                        // 10mm Pistol, Hunting Rifle
-        case LOCATION_MiningSiteSF:
-            return Random(0, 1) == 0 ? 15 : 212;                        // 10mm SMG, 14mm pistol
 
         
         
@@ -610,15 +597,6 @@ uint GetBag(uint locpid, uint mappid, uint type)
             return Random(0, 1) == 0 ? 14 : 396;                                // NCR			FNFAL, M60
         case LOCATION_Trainyard4:
             return Random(0, 1) == 0 ? 211 : 13;                                // VAULT CITY	Combat Shotgun, Assault Rifle
-
-        case LOCATION_MiningSiteNCR:
-            return Random(0, 1) == 0 ? 14 : 396;                                // FNFAL, M60
-        case LOCATION_MiningSiteJunktown:
-            return Random(0, 1) == 0 ? 211 : 13;                                // Combat Shotgun, Assault Rifle
-        case LOCATION_MiningSiteKlamath:
-            return Random(0, 1) == 0 ? 15 : 13;                                 // 10mm SMG, Assault Rifle
-        case LOCATION_MiningSiteSF:
-            return Random(0, 1) == 0 ? 221 : 16;                                // P90, G11
 
         
         
@@ -681,8 +659,6 @@ uint GetTeamId(uint locpid, uint mappid, uint type)
     {
     case MAP_SanFranTanker:
         return FACTION_VAGRANTS;
-    case MAP_NCRCF:
-        return FACTION_NCR;
     case MAP_Gunrunner:
         return FACTION_GUNRUNNERS;
     case MAP_Blade:
@@ -697,17 +673,7 @@ uint GetTeamId(uint locpid, uint mappid, uint type)
     
     case MAP_MilitaryCamp:
         return FACTION_NCR;
-    case MAP_SanFranciscoMiningSite:
-        return FACTION_COMMUNISTS;
-    case MAP_SanFranciscoMiningSiteInside:
-        return FACTION_COMMUNISTS;
-    case MAP_KlamathMiningSite:
-        return FACTION_KLAMATH;
-    case MAP_KlamathMiningSiteInside:
-        return FACTION_KLAMATH;
     
-    case MAP_JunktownMiningSite:
-        return FACTION_JUNKTOWN;
         // default: return ReputationIndex(locpid);
     }
     return ReputationIndex(locpid);
@@ -736,15 +702,7 @@ uint GetDialog(uint locpid, uint mappid, uint type)
         case LOCATION_Trainyard4:
             return 449;
 
-        case LOCATION_MiningSiteNCR:
-            return 11000;                                       // ncr soldier
-        case LOCATION_MiningSiteJunktown:
-            return 1700;
-        case LOCATION_MiningSiteKlamath:
-            return 226;
-        case LOCATION_MiningSiteSF:
-            return 1401;
-
+        
         
         
         case LOCATION_SanFrancisco:
@@ -776,15 +734,7 @@ uint GetDialog(uint locpid, uint mappid, uint type)
         case LOCATION_Trainyard4:
             return 449;
 
-        case LOCATION_MiningSiteNCR:
-            return 83;                                                  // ncr ranger
-        case LOCATION_MiningSiteJunktown:
-            return 1700;
-        case LOCATION_MiningSiteKlamath:
-            return 226;
-        case LOCATION_MiningSiteSF:
-            return 1401;
-
+        
         
         
         case LOCATION_SanFrancisco:

@@ -227,16 +227,6 @@
 {625}{}{14necro}
 {626}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
 
-# Map 65, base 660
-{660}{}{NCRCF}
-{665}{}{10labone}
-{666}{}{gntlwin1:20, gntlwind:20, dogbark:20, dogbark:20, gustwin1:10, gustwind:10}
-
-# Map 66, base 670
-{670}{}{Rails}
-{675}{}{07desert}
-{676}{}{gntlwin1:20, gntlwind:20, dogbark:20, dogbark:20, gustwin1:10, gustwind:10}
-
 # Map 67, base 680
 {680}{}{Q Radscorpion Cave}
 {685}{}{12junktn}
@@ -2211,34 +2201,6 @@
 {129101}{}{Camp}
 {129102}{}{210}
 {129103}{}{300}
-
-# Quarry, pid 30, base 130000
-{130000}{}{Quarry}
-{130005}{}{A well guarded NCR quarry.}
-{130010}{}{6}
-
-# Mining Site, pid 31, base 131000
-{131000}{}{Mining Site}
-{131005}{}{This mining site has been closed many years ago.}
-{131010}{}{6}
-{131020}{}{art\intrface\TWNMAP12.png}
-{131090}{}{2}
-{131101}{}{East}
-{131102}{}{206}
-{131103}{}{176}
-{131111}{}{West}
-{131112}{}{138}
-{131113}{}{189}
-
-# Mining Site, pid 32, base 132000
-{132000}{}{Mining Site}
-{132005}{}{This small mining site is run by a bunch of trappers from Klamath.}
-{132010}{}{6}
-
-# Mining Site, pid 33, base 133000
-{133000}{}{Mining Site}
-{133005}{}{A small industrial mining site, run by the San Francisco Communist Party.}
-{133010}{}{6}
 
 # Mining Site, pid 34, base 134000
 {134000}{}{Mining Site}

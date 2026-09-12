@@ -240,12 +240,9 @@ uint e_InitSpot(array<uint>@ values)
         {
             switch(map.GetProtoId())
             {
-            case MAP_KlamathMiningSiteInside:
             
-            case MAP_JunktownMiningSite:
-            case MAP_SanFranciscoMiningSiteInside:
-                item.Val0 = 1;
-                break;
+            
+            
             case MAP_Modoc_Ghostcave:
                 item.Val0 = 2;
                 break;
@@ -257,9 +254,7 @@ uint e_InitSpot(array<uint>@ values)
             case MAP_BrokenHillsMine:
                 item.Val0 = 6;
                 break;
-            case MAP_MiningSiteInside:
-                item.Val0 = 7;
-                break;
+            
             case MAP_KlamathToxicCaves2:
             case MAP_Waterworks:
                 item.Val0 = 8;
