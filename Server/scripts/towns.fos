@@ -71,11 +71,11 @@ void InitTowns()
     Map@ map_modoc = GetMapByPid(MAP_ModocLarge, 0);
     Map@ map_klamath = GetMapByPid(MAP_KlamathDowntown, 0);
     Map@ map_broken = GetMapByPid(MAP_BrokenHills, 0);
-    Map@ map_redding = GetMapByPid(MAP_Redding, 0);
+    
     Map@ map_den = GetMapByPid(MAP_DenBusiness, 0);
     Map@ map_gecko = GetMapByPid(MAP_GeckoSettlement, 0);
 
-    Map@[] maps = { map_modoc, map_klamath, map_broken, map_redding, map_den, map_gecko };
+    Map@[] maps = { map_modoc, map_klamath, map_broken, map_den, map_gecko };
 
     if(!VerifyMaps(maps))
     {
@@ -236,36 +236,7 @@ void InitTowns()
              .SetVersion(TOWN_VERSION_CAPTURE_COUNTDOWN)
 			 .SetMilitiaEnabled()
              );
-
-    GET_CONT_POSITIONS(map_redding);
-
-    // Redding
-    IPolygon@ redding_area = NewPolygon();
-    redding_area.AddVertices(redding_area_v);
-    ADD_TOWN(Redding, "Redding", SetMapID(map_redding.Id)
-             .SetTownID(6)
-             .SetBaseRewardValue(11)
-             #ifdef __DEBUG__
-             .SetNearbyMemberRequirement(1)
-             .SetTotalMemberRequirement(1)
-			 .SetControlMemberRequirement(1)
-             #endif
-
-             #ifndef __DEBUG__
-             .SetNearbyMemberRequirement(1) // 1 test, default 5
-             .SetTotalMemberRequirement(1) // 1 test, default 5
-			 .SetControlMemberRequirement(1) // 1 test, default 5
-             #endif
-             .SetSpeechModifier(0)
-             .SetLimboContainer(map_redding.GetItem(lx, ly, PID_FOOTLOCKER_CLEAN_LEFT))
-             .SetRewardContainer(map_redding.GetItem(rx, ry, PID_FOOTLOCKER_CLEAN_RIGHT))
-             .SetHour(21)
-             .SetCaptureArea(redding_area)
-             .SetRewardStartCaps(1700)
-             .SetInfluenceMemberRequirement(99)
-             .SetVersion(TOWN_VERSION_CAPTURE_COUNTDOWN)
-			 .SetMilitiaEnabled()
-             );
+    
 
     for(uint i = 0; i < Towns.length(); i++)
     {

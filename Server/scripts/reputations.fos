@@ -116,8 +116,8 @@ uint ReputationIndex(uint locid)
         return FACTION_NCR;
     case LOCATION_Cathedral:
         return FACTION_UNITY;
-    case LOCATION_Redding:
-        return FACTION_REDDING;
+    //case LOCATION_Redding:
+    //    return FACTION_REDDING;
     case LOCATION_SanFrancisco:
         return FACTION_COMMUNISTS;
     case LOCATION_Navarro:

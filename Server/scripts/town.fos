@@ -574,8 +574,7 @@ int GetMilitiaPid(uint MapProtoId)
         return random_from_array(mil_modoc_pids);
     case MAP_GeckoSettlement:
         return random_from_array(mil_gecko_pids);
-    case MAP_Redding:
-        return random_from_array(mil_redding_pids);
+    
     case MAP_BrokenHills:
         return random_from_array(mil_bh_pids);
     default:

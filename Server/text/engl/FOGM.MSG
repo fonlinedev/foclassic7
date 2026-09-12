@@ -266,21 +266,6 @@
 {625}{}{14necro}
 {626}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
 
-# Map 62, base 630
-{630}{}{Redding}
-{635}{}{24redd}
-{636}{}{saloon:25, saloon1:25, gustwind:10, laughter:20, footste1:10, footstep:10}
-
-# Map 63, base 640
-{640}{}{Redding Mine}
-{645}{}{24redd}
-{646}{}{animal1:20, animal:20, elevator:15, ore:15, mechpump:20, ore1:10}
-
-# Map 64, base 650
-{650}{}{Wanamingo Mine Entrance}
-{655}{}{24redd}
-{656}{}{animal1:20, animal:20, elevator:15, ore:15, mechpump:20, ore1:10}
-
 # Map 65, base 660
 {660}{}{NCRCF}
 {665}{}{10labone}
@@ -1168,11 +1153,6 @@
 {2475}{}{09glow}
 {2476}{}{electri1:15, electric:15, clank:10, clank1:10, steam:15, steam:10}
 
-# Map 247, base 2480
-{2480}{}{New Reno: Golgotha}
-{2485}{}{10labone}
-{2486}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
 # Map 250, base 2510
 {2510}{}{HQ: Tents}
 {2515}{}{07desert}
@@ -1190,16 +1170,6 @@
 {2535}{}{07desert}
 {2535}{}{05raider}
 {2536}{}{gntlwin1:25, gntlwind:25, brdchir1:10, brdchirp:10, blank:30}
-
-# Map 267, base 2680
-{2680}{}{New Reno: Stables}
-{2685}{}{05raider}
-{2686}{}{gntlwin1:25, gntlwind:25, gustwind:10, blank:40}
-
-# Map 268, base 2690
-{2690}{}{New Reno: Stables 2}
-{2695}{}{05raider}
-{2696}{}{gntlwin1:25, gntlwind:25, gustwind:10, blank:40}
 
 # Map 269, base 2700
 {2700}{}{Modoc: Ghostcave}
@@ -2122,26 +2092,6 @@
 {112101}{}{Entrance}
 {112102}{}{125}
 {112103}{}{58}
-
-# Redding, pid 13, base 113000
-{113000}{}{Redding}
-{113005}{}{A mining town. The primary producer and distributor of gold in the wasteland.}
-{113010}{}{24}
-{113020}{}{art\intrface\twnredng.frm}
-{113030}{}{art\intrface\WM_RED.FRM}
-{113090}{}{4}
-{113101}{}{Downtown}
-{113102}{}{160}
-{113103}{}{231}
-{113111}{}{South Side}
-{113112}{}{82}
-{113113}{}{304}
-{113121}{}{Mine}
-{113122}{}{115}
-{113123}{}{204}
-{113131}{}{Wanamingo}
-{113132}{}{64}
-{113133}{}{252}
 
 # San Francisco, pid 14, base 114000
 {114000}{}{San Francisco}

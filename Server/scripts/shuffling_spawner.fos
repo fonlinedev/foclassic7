@@ -255,9 +255,7 @@ uint e_InitSpot(array<uint>@ values)
             case MAP_VaultCityMineInside:
                 item.Val0 = 4;
                 break;
-            case MAP_ReddingMine:
-                item.Val0 = 5;
-                break;
+            
             case MAP_BrokenHillsMine:
                 item.Val0 = 6;
                 break;
@@ -292,9 +290,7 @@ uint e_InitSpot(array<uint>@ values)
 	    case MAP_ModocLarge:
 	    item.Val0 = 16;
 		break;
-	    case MAP_Redding:
-	    item.Val0 = 17;
-		break;
+	    
             }
         }
     }

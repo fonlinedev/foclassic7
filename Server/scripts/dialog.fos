@@ -1393,7 +1393,7 @@ bool d_ExploredWasteland(Critter& player, Critter@ npc)
         player.IsKnownLoc(false, LOCATION_BrokenHills)  &&
         
         player.IsKnownLoc(false, LOCATION_NCR)          &&
-        player.IsKnownLoc(false, LOCATION_Redding)      &&
+        
         player.IsKnownLoc(false, LOCATION_SanFrancisco) &&
         player.IsKnownLoc(false, LOCATION_Junktown)     &&
         player.IsKnownLoc(false, LOCATION_Necropolis)   &&

@@ -423,8 +423,8 @@ uint[] LockedLocations =
     LOCATION_Modoc,
     LOCATION_Gecko,
     LOCATION_BrokenHills,
-    LOCATION_TheDen,
-    LOCATION_Redding
+    LOCATION_TheDen
+    
 };
 
 bool IsLocked(uint location_pid)

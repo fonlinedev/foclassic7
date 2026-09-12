@@ -163,9 +163,7 @@ void InitGreet() {
     AddGreet(MAP_TobaccoFarm, "Tobacco Farm");
 
     //  Redding
-    AddGreet(MAP_Redding, LVAR_greet_redding, "Redding", "You have entered the mining community of Redding. A glimmer of western city-feeling wafts into your face with the hot desert wind.");
-    AddGreet(MAP_ReddingMine, "Redding - Mine");
-    AddGreet(MAP_WanamingoMineEntrance, "Redding - Wanamingo Mine Entrance");
+           
 
     //  Cathedral
     AddGreet(MAP_Cathedral_Enter, "Cathedral - Outside");
