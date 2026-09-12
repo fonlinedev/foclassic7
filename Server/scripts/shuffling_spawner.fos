@@ -243,9 +243,6 @@ uint e_InitSpot(array<uint>@ values)
             
             
             
-            case MAP_Modoc_Ghostcave:
-                item.Val0 = 2;
-                break;
             case MAP_HQ_BunkerIndoor:
                 item.Val0 = 3;
                 break;
@@ -273,9 +270,6 @@ uint e_InitSpot(array<uint>@ values)
 		item.Val0 = 14;
 		break;
 	    
-	    case MAP_ModocLarge:
-	    item.Val0 = 16;
-		break;
 	    
             }
         }

@@ -310,7 +310,7 @@ void SetAliases()
     // Fallout 2
     SetMapId("arroyo",              MAP_ArroyoTemple);
     
-    SetMapId("modoc",               MAP_ModocLarge);
+    
     
     SetMapId("gecko",               MAP_GeckoSettlement);
     SetMapId("bh",                  MAP_BrokenHills);
@@ -354,7 +354,7 @@ void SetAliases()
     
 
     // Slaver Camps
-    SetMapId("slaver1",             MAP_SlaverCamp);
+    
     /* Used in future
        SetMapId("slaver2",		569);
        SetMapId("slaver3",		570);
@@ -374,9 +374,7 @@ void SetAliases()
     // Special maps
     SetMapId("npcmap",              MAP_BufferMap);
     SetMapId("jail",                MAP_Jail);
-	SetMapId("bg", MAP_BarterGround);
-	SetMapId("barterground", MAP_BarterGround);
-    SetMapId("lp", MAP_LandersPoint_Gate);
+	SetMapId("lp", MAP_LandersPoint_Gate);
     SetMapId("landerspoint", MAP_LandersPoint_Gate);
     SetMapId("warehouse", MAP_Ripper);
     SetMapId("wh", MAP_Ripper);

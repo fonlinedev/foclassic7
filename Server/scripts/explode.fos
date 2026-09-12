@@ -686,7 +686,7 @@ void _OnExplDrop(Item& item, Critter& crit)
                 case LOCATION_Hub:
                 case LOCATION_Boneyard:
                 case LOCATION_Fortress:
-                case LOCATION_BarterGround:
+                
                 case LOCATION_LandersPoint:
                     DeleteItem(item);
                     break;

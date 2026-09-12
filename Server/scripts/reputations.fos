@@ -103,8 +103,8 @@ uint ReputationIndex(uint locid)
     //    return FACTION_DEN;
     //case LOCATION_Klamath:
     //    return FACTION_KLAMATH;
-    case LOCATION_Modoc:
-        return FACTION_MODOC;
+    //case LOCATION_Modoc:
+    //    return FACTION_MODOC;
     
     case LOCATION_Gecko:
         return FACTION_GECKO;
@@ -125,8 +125,8 @@ uint ReputationIndex(uint locid)
         return FACTION_JUNKTOWN;
     case LOCATION_BrotherhoodofSteel:
         return FACTION_BOS;
-    case LOCATION_GhostFarm:
-        return FACTION_SLAGS;
+    //case LOCATION_GhostFarm:
+    //    return FACTION_SLAGS;
     case LOCATION_Necropolis:
         return FACTION_NECROPOLIS;
     case LOCATION_Hub:

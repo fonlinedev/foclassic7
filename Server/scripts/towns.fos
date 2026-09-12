@@ -68,13 +68,13 @@ bool VerifyMaps(array<Map@>& maps)
 
 void InitTowns()
 {
-    Map@ map_modoc = GetMapByPid(MAP_ModocLarge, 0);
+    
     
     Map@ map_broken = GetMapByPid(MAP_BrokenHills, 0);
         
     Map@ map_gecko = GetMapByPid(MAP_GeckoSettlement, 0);
 
-    Map@[] maps = { map_modoc, map_broken, map_gecko };
+    Map@[] maps = { map_broken, map_gecko };
 
     if(!VerifyMaps(maps))
     {
@@ -84,37 +84,6 @@ void InitTowns()
     uint16 rx, ry, lx, ly;
     rx = ry = lx = ly = 0;
 
-    GET_CONT_POSITIONS(map_modoc);
-
-    // Modoc
-    IPolygon@ modoc_area = NewPolygon();
-    modoc_area.AddVertices(modoc_area_v);
-    ADD_TOWN(Modoc, "Modoc", SetMapID(map_modoc.Id)
-             .SetTownID(1)
-             .SetBaseRewardValue(9)
-             #ifdef __DEBUG__
-             .SetNearbyMemberRequirement(1)
-             .SetTotalMemberRequirement(1)
-			 .SetControlMemberRequirement(1)
-             .SetInfluenceMemberRequirement(1)
-             #endif
-
-             #ifndef __DEBUG__
-             .SetNearbyMemberRequirement(1) // 1 test, default 3
-             .SetTotalMemberRequirement(1) // 1 test, default 3
-			 .SetControlMemberRequirement(1) // 1 test, default 3
-             .SetInfluenceMemberRequirement(99)
-             #endif
-             .SetSpeechModifier(0)
-             .SetLimboContainer(map_modoc.GetItem(lx, ly, PID_FOOTLOCKER_CLEAN_LEFT))
-             .SetRewardContainer(map_modoc.GetItem(rx, ry, PID_FOOTLOCKER_CLEAN_RIGHT))
-             .SetHour(21)
-             .SetCaptureArea(modoc_area)    // General store + church + area near well and water tank
-             .SetRewardStartCaps(900)
-             .SetVersion(TOWN_VERSION_CAPTURE_COUNTDOWN)
-			 .SetMilitiaEnabled()
-             );
-    
 
     GET_CONT_POSITIONS(map_gecko);
 

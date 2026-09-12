@@ -2917,10 +2917,7 @@ void DrawArea(uint mappid, uint8 mode)
         return;
     switch(mappid)
     {
-    case MAP_modoc:
-        DrawHexArea(modoc_area_v, false, COLOR_TOWN_AREA_BORDER);
-        DrawInsideStatus(modoc_area.IsWithin(chosen.HexX, chosen.HexY));
-        break;
+    
     case MAP_broken:
         DrawHexArea(bh_area_v, false, COLOR_TOWN_AREA_BORDER);
         DrawInsideStatus(bh_area.IsWithin(chosen.HexX, chosen.HexY));
@@ -2940,9 +2937,6 @@ void DrawArea(uint mappid, uint8 mode)
     // triangles
     switch(mappid)
     {
-    case MAP_modoc:
-        DrawHexArea(modoc_area_t, true, COLOR_TOWN_AREA_INTERIOR);
-        break;
     case MAP_broken:
         DrawHexArea(bh_area_t, true, COLOR_TOWN_AREA_INTERIOR);
         break;

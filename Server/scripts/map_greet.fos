@@ -206,9 +206,7 @@ void InitGreet() {
     AddGreet(MAP_Glow_Floor6, "Glow - Floor 6");
 
     //  Modoc
-    AddGreet(MAP_Modoc_Ghostcave, "Modoc - Ghost Cave");
-    AddGreet(MAP_Modoc_Ghostfarm, "Modoc - Ghost Farm");
-
+    
     //  Stranded Tanker
     AddGreet(MAP_StrandedTanker_Outside, "Stranded Tanker - Outside");
     AddGreet(MAP_StrandedTanker_Level1, "Stranded Tanker - Level 1");
@@ -225,8 +223,7 @@ void InitGreet() {
     AddGreet(MAP_Themepark, "Theme Park");
     AddGreet(MAP_Waterworks, "Waterworks");
     AddGreet(MAP_GordonsGasStation, "Gordon's Gas Station");
-    AddGreet(MAP_SlaverCamp, "Slaver Camp");
-    AddGreet(MAP_BarterGround, "Barter Ground");
+        
 
     //  Talchem
     AddGreet(MAP_TalchemSurface, "Talchem - Surface");

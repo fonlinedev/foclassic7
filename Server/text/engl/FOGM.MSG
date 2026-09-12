@@ -178,10 +178,6 @@
 {455}{}{14necro}
 {456}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
 
-# Map 47, base 480
-{480}{}{Den BoS}
-{486}{}{blank:10}
-
 # Map 49, base 500
 {500}{}{Military Base Entrance}
 {505}{}{07desert}
@@ -1639,11 +1635,6 @@
 {11135}{}{08vats}
 {11136}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 1116, base 11170
-{11170}{}{Den Business}
-{11175}{}{05raider}
-{11176}{}{dogbark:10, dogbark1:10, gntlwind:20, gntlwin1:20, blank:40}
-
 # Map 2500, base 25010
 {25010}{}{Sierra Caves Entrance}
 {25015}{}{07desert}
@@ -2951,11 +2942,6 @@
 {462005}{}{An abandoned industrial facility for water purification.}
 {462010}{}{6}
 
-# Klamath Toxic Caves, pid 363, base 463000
-{463000}{}{Klamath Toxic Caves}
-{463005}{}{A radioactive cave inhabited by Geckos.}
-{463010}{}{6}
-
 # Gordon's Gas Station, pid 364, base 464000
 {464000}{}{Gordon's Gas Station}
 {464005}{}{A small gas station in the middle of the desert.}
@@ -2966,20 +2952,10 @@
 {465005}{}{A well guarded quarry, run by the Junktown town folks.}
 {465010}{}{6}
 
-# Slaver Camp, pid 367, base 467000
-{467000}{}{Slaver Camp}
-{467005}{}{A hidden slaver breakpoint.}
-{467010}{}{8}
-
 # Fort Seth, pid 368, base 468000
 {468000}{}{Fort Seth}
 {468005}{}{A military outpost of the NCR, composed of a few barracks and protective walls.}
 {468010}{}{6}
-
-# Barter Ground, pid 370, base 470000
-{470000}{}{Barter Ground}
-{470005}{}{A small camp of traders.}
-{470010}{}{12}
 
 # Talchem California HQ, pid 371, base 471000
 {471000}{}{Talchem California HQ}
@@ -3000,23 +2976,6 @@
 {560000}{}{Sierra Caves}
 {560005}{}{A narrow path leading down deep into the caves.}
 {560010}{}{12}
-
-# Modoc, pid 498, base 598000
-{598000}{}{Modoc}
-{598005}{}{A small farming community.}
-{598010}{}{24}
-{598020}{}{art\intrface\twnmodoc.frm}
-{598030}{}{art\intrface\WM_MODOC.FRM}
-{598090}{}{3}
-{598101}{}{South}
-{598102}{}{312}
-{598103}{}{212}
-{598111}{}{North}
-{598112}{}{258}
-{598113}{}{69}
-{598121}{}{East}
-{598122}{}{360}
-{598123}{}{136}
 
 #
 # Worldmap Encounter messages
