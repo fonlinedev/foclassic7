@@ -1364,41 +1364,6 @@
 {3725}{}{08vats}
 {3726}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 372, base 3730
-{3730}{}{San Francisco Mining Site}
-{3735}{}{21sf}
-{3736}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 373, base 3740
-{3740}{}{San Francisco Mining Site Inside}
-{3745}{}{08vats}
-{3746}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 374, base 3750
-{3750}{}{Klamath Mining Site}
-{3755}{}{15shady}
-{3756}{}{gntlwin1:25, gntlwind:25, gustwind:10, brdchirp:10, rattle1:15, vulture:10}
-
-# Map 375, base 3760
-{3760}{}{Klamath Mining Site Inside}
-{3765}{}{08vats}
-{3766}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 376, base 3770
-{3770}{}{NCR Mining Site}
-{3775}{}{01hub}
-{3776}{}{gntlwin1:25, gntlwind:25, gustwind:10, brdchirp:10, rattle1:15, vulture:10}
-
-# Map 377, base 3780
-{3780}{}{Vault City Mining Site}
-{3785}{}{07desert}
-{3786}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 378, base 3790
-{3790}{}{Vault City Mine Inside}
-{3795}{}{08vats}
-{3796}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
 # Map 379, base 3800
 {3800}{}{Junktown Mining Site}
 {3805}{}{12junktn}
@@ -3094,26 +3059,6 @@
 {599131}{}{Southwest}
 {599132}{}{135}
 {599133}{}{347}
-
-# Klamath, pid 500, base 600000
-{600000}{}{Klamath}
-{600005}{}{A small town of trappers. Geckos are the lifeblood of this small community.}
-{600010}{}{24}
-{600020}{}{art\intrface\twnklama.frm}
-{600030}{}{art\intrface\WM_KLAM.FRM}
-{600090}{}{4}
-{600101}{}{Downtown}
-{600102}{}{363}
-{600103}{}{186}
-{600111}{}{Hunting Ground}
-{600112}{}{377}
-{600113}{}{297}
-{600121}{}{Trapper Town}
-{600122}{}{191}
-{600123}{}{320}
-{600131}{}{Forest}
-{600132}{}{207}
-{600133}{}{134}
 
 #
 # Worldmap Encounter messages

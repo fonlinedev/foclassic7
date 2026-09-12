@@ -255,12 +255,9 @@ uint e_InitSpot(array<uint>@ values)
                 item.Val0 = 6;
                 break;
             
-            case MAP_KlamathToxicCaves2:
+            
             case MAP_Waterworks:
                 item.Val0 = 8;
-                break;
-            case MAP_KlamathDowntown:
-                item.Val0 = 9;
                 break;
             case MAP_LandersPoint_Geckofields:
                 item.Val0 = 10;

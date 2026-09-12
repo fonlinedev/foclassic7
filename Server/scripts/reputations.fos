@@ -101,8 +101,8 @@ uint ReputationIndex(uint locid)
     {
     case LOCATION_TheDen:
         return FACTION_DEN;
-    case LOCATION_Klamath:
-        return FACTION_KLAMATH;
+    //case LOCATION_Klamath:
+    //    return FACTION_KLAMATH;
     case LOCATION_Modoc:
         return FACTION_MODOC;
     

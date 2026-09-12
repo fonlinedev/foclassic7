@@ -568,8 +568,6 @@ int GetMilitiaPid(uint MapProtoId)
     {
     case MAP_DenBusiness:
         return random_from_array(mil_den_pids);
-    case MAP_KlamathDowntown:
-        return random_from_array(mil_klamath_pids);
     case MAP_ModocLarge:
         return random_from_array(mil_modoc_pids);
     case MAP_GeckoSettlement:

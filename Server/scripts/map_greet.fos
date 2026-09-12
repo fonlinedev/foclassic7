@@ -73,15 +73,7 @@ void InitGreet() {
     AddGreet(MAP_KhansHQ, "Khans - Headquarters");
 
     //  Klamath
-    AddGreet(MAP_KlamathDowntown, "Klamath - Downtown");
-    AddGreet(MAP_KlamathCanyon, "Klamath - Canyon");
-    AddGreet(MAP_KlamathToxicCaves1, "Klamath: Toxic Caves - Inside");
-    AddGreet(MAP_KlamathToxicCaves2, "Klamath: Toxic Caves - Further Down");
-    AddGreet(MAP_KlamathToxicCaves3, "Klamath: Toxic Caves - Deep Under");
-    AddGreet(MAP_KlamathRat1, "Klamath - Rat Caves Level 1");
-    AddGreet(MAP_KlamathRat2, "Klamath - Rat Caves Level 2");
-    AddGreet(MAP_KlamathRat3, "Klamath - Rat Caves Level 3");
-
+    
     //  Vault City
     
     //  LA

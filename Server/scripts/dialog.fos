@@ -1386,7 +1386,7 @@ bool d_ExploredWasteland(Critter& player, Critter@ npc)
     if
     (
         player.IsKnownLoc(false, LOCATION_TheDen)       &&
-        player.IsKnownLoc(false, LOCATION_Klamath)      &&
+        
         player.IsKnownLoc(false, LOCATION_Modoc)        &&
         
         player.IsKnownLoc(false, LOCATION_Gecko)        &&
