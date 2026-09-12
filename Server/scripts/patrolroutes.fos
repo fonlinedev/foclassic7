@@ -170,17 +170,7 @@ void InitRoutes()
     // ===================================
     // NCR routes
     // ===================================
-    ADD_ROUTE(NCR_GUARD_PATROL1, MAP_NCR, AddNode(1, 0, 60000)
-              .AddNode(2, 5, 30000)
-              .AddNode(3, 0, 30000)
-              .AddNode(4, 4, 40000)
-              .AddNode(5, 3, 40000)
-              .AddNode(6, 2, 40000)
-              .AddNode(7, 2, 40000)
-              .AddNode(8, 3, 30000)
-              .AddNode(9, 2, 10000)
-              .AddNode(10, 2, 50000));     // id 20
-
+    
     // ===================================
     // NCR Prison routes
     // ===================================

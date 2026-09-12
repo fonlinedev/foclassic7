@@ -2054,23 +2054,6 @@
 {109102}{}{80}
 {109103}{}{256}
 
-# NCR, pid 10, base 110000
-{110000}{}{NCR}
-{110005}{}{Shady Sands, the central government of the New California Republic. The most powerful city in the wastes.}
-{110010}{}{24}
-{110020}{}{art\intrface\twnncr.frm}
-{110030}{}{art\intrface\WM_NCR.FRM}
-{110090}{}{3}
-{110101}{}{Bazaar}
-{110102}{}{258}
-{110103}{}{175}
-{110111}{}{Vortis Holding Center}
-{110112}{}{183}
-{110113}{}{134}
-{110121}{}{Residence}
-{110122}{}{318}
-{110123}{}{241}
-
 # Cathedral, pid 11, base 111000
 {111000}{}{Cathedral}
 {111005}{}{An old Cathedral among city ruins, lighted up by burning barrels. People are wandering outside in a large crowd.}

@@ -815,7 +815,7 @@ string checkCaravanPosition(uint carNr)
 				{
 				case LOCATION_Hub: {locName="Hub"; break;}
 				case LOCATION_Boneyard: {locName="Adytum"; break;}
-				case LOCATION_NCR: {locName="New California Republic"; break;}
+				
 				case LOCATION_BrokenHills: {locName="Broken Hills"; break;}
 				
 				case LOCATION_VaultCity: {locName="Vault City"; break;}

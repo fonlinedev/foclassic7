@@ -112,8 +112,8 @@ uint ReputationIndex(uint locid)
     case LOCATION_BrokenHills:
         return FACTION_BH_HUMANS;                        // oh well. Indeed
     
-    case LOCATION_NCR:
-        return FACTION_NCR;
+    //case LOCATION_NCR:
+    //    return FACTION_NCR;
     case LOCATION_Cathedral:
         return FACTION_UNITY;
     //case LOCATION_Redding:

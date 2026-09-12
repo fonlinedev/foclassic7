@@ -493,8 +493,8 @@ uint GetPid(uint locpid, uint mappid, uint type)
         case LOCATION_MiningSiteSF:
         case LOCATION_SanFrancisco:
             return 386;
-        case LOCATION_NCR:
-        case LOCATION_MiningSiteNCR:
+        
+        
         case LOCATION_Prison:
             return Random(0, 1) == 0 ? 518 : 519;
         case LOCATION_Trainyard1:
@@ -526,7 +526,7 @@ uint GetPid(uint locpid, uint mappid, uint type)
             return 119;
         case LOCATION_Trainyard3:
         case LOCATION_MiningSiteNCR:
-        case LOCATION_NCR:
+        
         case LOCATION_Prison:
             return Random(0, 1) == 0 ? 475 : 476;
         case LOCATION_Trainyard1:
@@ -584,8 +584,7 @@ uint GetBag(uint locpid, uint mappid, uint type)
         case LOCATION_MiningSiteSF:
             return Random(0, 1) == 0 ? 15 : 212;                        // 10mm SMG, 14mm pistol
 
-        case LOCATION_NCR:
-            return Random(0, 1) == 0 ? 332 : 327;                       // 10mm SMG, Combat Shotgun
+        
         case LOCATION_Prison:
             return Random(0, 1) == 0 ? 332 : 327;                       // 10mm SMG, Combat Shotgun
         case LOCATION_VaultCity:
@@ -628,8 +627,7 @@ uint GetBag(uint locpid, uint mappid, uint type)
         case LOCATION_MiningSiteSF:
             return Random(0, 1) == 0 ? 221 : 16;                                // P90, G11
 
-        case LOCATION_NCR:
-            return Random(0, 1) == 0 ? 14 : 396;                                // FNFAL, M60
+        
         case LOCATION_Prison:
             return Random(0, 1) == 0 ? 14 : 396;                                // FNFAL, M60
         case LOCATION_VaultCity:
@@ -705,8 +703,7 @@ uint GetTeamId(uint locpid, uint mappid, uint type)
         return FACTION_COMMUNISTS;
     case MAP_BoneyardTrainStation:
         return FACTION_REGULATORS;
-    case MAP_NCRTrainStation:
-        return FACTION_NCR;
+    
     case MAP_VaultCityTrainStation:
         return FACTION_VAULT_CITY;
     case MAP_MilitaryCamp:
@@ -719,8 +716,7 @@ uint GetTeamId(uint locpid, uint mappid, uint type)
         return FACTION_KLAMATH;
     case MAP_KlamathMiningSiteInside:
         return FACTION_KLAMATH;
-    case MAP_NCRMiningSite:
-        return FACTION_NCR;
+    
     case MAP_JunktownMiningSite:
         return FACTION_JUNKTOWN;
         // default: return ReputationIndex(locpid);
@@ -760,8 +756,7 @@ uint GetDialog(uint locpid, uint mappid, uint type)
         case LOCATION_MiningSiteSF:
             return 1401;
 
-        case LOCATION_NCR:
-            return 11000;                                       // ncr soldier
+        
         case LOCATION_Prison:
             return 11000;                                       // ncr soldier
         case LOCATION_VaultCity:
@@ -804,8 +799,7 @@ uint GetDialog(uint locpid, uint mappid, uint type)
         case LOCATION_MiningSiteSF:
             return 1401;
 
-        case LOCATION_NCR:
-            return 83;                                                  // ncr ranger
+        
         case LOCATION_Prison:
             return 83;                                                  // ncr ranger
         case LOCATION_VaultCity:

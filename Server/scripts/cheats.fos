@@ -320,9 +320,7 @@ void SetAliases()
     
     SetMapId("sad",                 MAP_SierraArmyDepot_TheBattlefield);
     SetMapId("v15",                 MAP_Vault15Surface);
-    SetMapId("ncr",                 MAP_NCR);
-    SetMapId("shady",               MAP_NCR);
-    SetMapId("shadysands",  MAP_NCR);
+    
     SetMapId("cathedral",   MAP_Cathedral_Enter);
     SetMapId("mariposa",    MAP_MilitaryBaseEntrance);
     
@@ -347,8 +345,8 @@ void SetAliases()
     SetMapId("bh_mine",             MAP_BrokenHillsMine);
     SetMapId("broken_mine", MAP_BrokenHillsMine);
     SetMapId("klamath_mine", MAP_KlamathMiningSite);
-    SetMapId("ncr_mine",    MAP_NCRMiningSite);
-    SetMapId("redding_mine", MAP_ReddingMine);
+    
+    
     SetMapId("sf_mine",             MAP_SanFranciscoMiningSite);
     SetMapId("jt_mine",             MAP_JunktownMiningSite);
     SetMapId("vc_mine",             MAP_VaultCityMiningSite);
@@ -356,12 +354,12 @@ void SetAliases()
     // Trainyards
     SetMapId("sf_train",    MAP_SanFransiscoTrainStation);
     SetMapId("la_train",    MAP_BoneyardTrainStation);
-    SetMapId("ncr_train",   MAP_NCRTrainStation);
+    
     SetMapId("vc_train",    MAP_VaultCityTrainStation);
 
     SetMapId("train1",              MAP_SanFransiscoTrainStation);
     SetMapId("train2",              MAP_BoneyardTrainStation);
-    SetMapId("train3",              MAP_NCRTrainStation);
+    
     SetMapId("train4",              MAP_VaultCityTrainStation);
 
     // Slaver Camps

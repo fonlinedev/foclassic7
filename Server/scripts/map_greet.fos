@@ -124,12 +124,6 @@ void InitGreet() {
     AddGreet(MAP_Vault15Level3, "Vault 15 - Level 3");
 
     //  NCR
-    AddGreet(MAP_NCR, LVAR_greet_ncr, "New California Republic - Bazaar", "You have entered Shady Sands, the capital of the New California Republic. Its streets are busy and filled with traders and travelers of various kind.");
-    AddGreet(MAP_NCRResidentalArea, "New California Republic - Residential Area");
-    AddGreet(MAP_NCRMiningSite, "New California Republic - Public Mining Site");
-    AddGreet(MAP_Rails, "New California Republic - Rails");
-    AddGreet(MAP_NCRCF, "New California Republic - Prison");
-    AddGreet(MAP_NCRBoS, "New California Republic - BoS Outpost");
     AddGreet(MAP_MilitaryCamp, "New California Republic - Fort Seth Military Camp");
 
     //  Hub
@@ -395,7 +389,7 @@ void InitGreet() {
     // Train stations
     AddGreet(MAP_SanFransiscoTrainStation, LVAR_greet_train1, "San Francisco - Train Station", "You have encountered the San Francisco train station.");
     AddGreet(MAP_BoneyardTrainStation, LVAR_greet_train2, "L.A.: Boneyard - Train Station", "You have encountered the Angel's Boneyard train station.");
-    AddGreet(MAP_NCRTrainStation, LVAR_greet_train3, "New California Republic - Train Station", "You have encountered the New California Republic train station.");
+    
     AddGreet(MAP_VaultCityTrainStation, LVAR_greet_train4, "Vault City - Train Station", "You have encountered the Vault City train station.");
 
     // Quest locations
@@ -473,7 +467,7 @@ void GreetPlayer(Critter@ player, Map@ map) {
     //  reputation based maps, but not included in the default location or multi-faction locations, line New Reno
     switch (mapPid) {
         //  reputation based
-        case MAP_NCRBoS:
+        
         case MAP_DenBoS:
         case MAP_SanFranBoS:
             repIndex = FACTION_BOS;
@@ -490,9 +484,7 @@ void GreetPlayer(Critter@ player, Map@ map) {
         case MAP_BoneyardTrainStation:
             repIndex = FACTION_REGULATORS;
             break;
-        case MAP_NCRTrainStation:
-            repIndex = FACTION_NCR;
-            break;
+        
         case MAP_SanFranciscoMiningSite:
         case MAP_SanFranciscoMiningSiteInside:
         case MAP_SanFransiscoTrainStation:

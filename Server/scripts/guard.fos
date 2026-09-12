@@ -65,12 +65,7 @@ bool InWeaponAllowedZone(Critter@ cr)
 
 bool InDrugsAllowedZone(Critter@ cr)
 {
-    /*
-    uint pid = cr.GetMap().GetProtoId();
-    if(pid == MAP_NCR && cr.HexY >= 158))
-        return false;
-    */
-    
+       
     return true;
 }
 
