@@ -22,7 +22,10 @@ import void critter_init(Critter& mob, bool firstTime) from "mob";
 #define Q_FIRST_TENT_FINISHED       (4)
 #define Q_FIRST_TENT_FAILED         (5)
 
-
+void r_StartFirstTentQuest(Critter& player, Critter@ npc)
+{
+    StartFirstTentQuest(player);
+}
 
 void StartFirstTentQuest(Critter& player)
 {
@@ -84,10 +87,8 @@ void r_SpawnFarmhouse(Critter& player, Critter@ npc)
     array<Critter@> critters = { player };
     uint            locId = CreateLocation(LOCATION_Q_FirstTent2, farmX, farmY, critters);
     SetRootMapData(GetLocation(locId), MAP_DATA_OWNER, player.Id);
-    if(player.Mode[MODE_DEFAULT_COMBAT] == COMBAT_MODE_TURN_BASED)
-    {
-        SetTurnBasedAvailability(GetLocation(locId));
-    }
+    SetTurnBasedAvailability(GetLocation(locId));
+    
 
     Location@ location = GetLocation(locId);
     location.Color = COLOR_WM_QUEST;

@@ -54,44 +54,14 @@ uint cte_UpdateLoyality(Critter& follower, int identifier, uint& rate)
     if(IsAnimal(follower))
         return 0;
 
-    UpdateLoyality(follower);
-
-    if(_IsSlave(follower) && GetLoyality(follower) < FOLLOWER_SLAVE_FLEE_THRESHOLD && Random(0, 2) == 0)
-    {
-        Critter@ master = GetMaster(follower);
-        if(!valid(master))
-            return FOLLOWER_LOYALITY_INTERVAL;
-        Map@ map = master.GetMap();
-
-        if(valid(map) && map.Id != 0 && master.GetMapId() == follower.GetMapId() && !IsTown(map))
-        {
-            DLog("Slave is rebelling");
-            DisbandFollower(master, follower, true);
-            follower.AddEnemyInStack(master.Id);
-            AttackCritter(follower, master);
-            master.Say(SAY_NETMSG, "One of your slaves have become disloyal and has rebelled!");
-            switch(Random(0, 3))
-            {
-            case 0:
-                follower.Say(SAY_SHOUT, "I've had enough with you!");
-            case 1:
-                follower.Say(SAY_SHOUT, "Death before dishonour!");
-            case 2:
-                follower.Say(SAY_SHOUT, "I should have done this a long time ago!");
-            case 3:
-                follower.Say(SAY_SHOUT, "Die, you fucker!!!");
-            }
-        }
-    }
-
-    return FOLLOWER_LOYALITY_INTERVAL;
+    return 0;    
 }
 
 bool HasMasterSpeakerPerk(Critter& follower) { return FLAG(follower.FollowerVar[FV_FLAGS], FV_FLAG_MASTER_SPEAKER); }
 
 void UpdateLoyality(Critter& follower)
 {
-    ModifyLoyality(follower, HasMasterSpeakerPerk(follower) ? (Random(-5, -15) / 2) : Random(-5, -15));
+    //  ModifyLoyality(follower, HasMasterSpeakerPerk(follower) ? (Random(-5, -15) / 2) : Random(-5, -15));
     DSay(follower, "Loyality == " + follower.FollowerVar[FV_LOYALITY] + "%");
 }
 
@@ -185,7 +155,7 @@ uint GetLoyality(Critter& follower) { return follower.FollowerVar[FV_LOYALITY]; 
 
 void ModifyLoyality(Critter& cr, int value)
 {
-    cr.FollowerVarBase[FV_LOYALITY] = CLAMP(GetLoyality(cr) + value, 0, 100);
+    cr.FollowerVarBase[FV_LOYALITY] = 100;
     DSay(cr, "Loyality == " + GetLoyality(cr) + "%");
 }
 

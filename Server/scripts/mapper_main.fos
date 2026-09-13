@@ -1004,8 +1004,8 @@ string chopchopchop(string)
 	if( !valid(map) )
 		return "Map not loaded.";
 
-	array<uint16> scen_tree = { 2945, 2946, 2947 };
-	array<uint16> item_tree = { PID_TREE1_FIREWOOD, PID_TREE2_FIREWOOD, PID_TREE3_FIREWOOD };
+	array<uint16> scen_tree = {  };
+	array<uint16> item_tree = {  };
 
 	array<MapperObject@> sceneries;
 	for(uint s = 0, sLen = map.GetObjects(1, 1, 10000, MAP_OBJECT_SCENERY, 0, sceneries); s<sLen ; s++)

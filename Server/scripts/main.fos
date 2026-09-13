@@ -478,11 +478,11 @@ void GotoTent(Critter& cr, int p0, int p1, int p2)
 void get_start_time(uint16& multiplier, uint16& year, uint16& month, uint16& day, uint16& hour, uint16& minute)
 {
     multiplier = 20;
-    year = 2254;
-    month = 1;
-    day = 9;
-    hour = 6;
-    minute = 3;
+    year = 2161;
+    month = 12;
+    day = 5;
+    hour = 7;
+    minute = 21;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
