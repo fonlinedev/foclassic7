@@ -1,0 +1,20 @@
+#include "_animation.fos"
+#include "_macros.fos"
+#include "npc_common_h.fos"
+#include "npc_planes_h.fos"
+#include "utils_h.fos"
+
+#define DIALOG_ID    (4018)
+
+void critter_init(Critter& npc, bool firstTime)
+{
+    npc.SetEvent(CRITTER_EVENT_IDLE, "_Idle");
+}
+
+void _Idle(Critter& npc)
+{
+    if(Random(0, 3) == 0)
+        npc.SayMsg(SAY_NORM_ON_HEAD, TEXTMSG_DLG, DLGSTR(DIALOG_ID, 1));
+    // till next move
+    npc.Wait(Random(500, 20000));
+}

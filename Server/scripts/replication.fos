@@ -87,9 +87,10 @@ Map@ GetRandomReplicatorMap(Critter& player)
 void SetStartLocation(Critter& cr)   // Export
 {
     uint x, y = 0;
-    uint startloc = LOCATION_StartVault24;
-    x = 1522;
-    y = 2028;
+    uint startloc = LOCATION_Vault13;
+    x = 1425;
+    y = 1375;    
+
     uint      locId = CreateLocation(startloc, x, y, null);
     Location@ loc = GetLocation(locId);
     Map@      map = loc.GetMapByIndex(0);
@@ -109,7 +110,8 @@ void SetStartLocation(Critter& cr)   // Export
     cr.SetFog(zoneX, zoneY + 1, WORLDMAP_FOG_FULL);
     cr.SetFog(zoneX + 1, zoneY + 1, WORLDMAP_FOG_FULL);
 
-    cr.TransitToMap(map.Id, 0);
+    //cr.TransitToMap(map.Id, 9);
+    cr.TransitToMap(map.Id, 106, 97, 5);
 
     zoneX = cr.WorldX / __GlobalMapZoneLength;
     zoneY = cr.WorldY / __GlobalMapZoneLength;

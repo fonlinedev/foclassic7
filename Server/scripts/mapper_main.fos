@@ -1015,8 +1015,8 @@ string chopchopchop(string)
 		if( scen_tree.find( scenery.ProtoId ) >= 0 )
 		{
 			MapperObject@ obj = map.AddObject( scenery.MapX, scenery.MapY, MAP_OBJECT_ITEM, item_tree[Random( 0, item_tree.length()-1 )] );
-			obj.ScriptName = "prod_tree_firewood";
-			obj.FuncName   = "item_init";
+			//obj.ScriptName = "prod_tree_firewood";
+			//obj.FuncName   = "item_init";
 
 			DeleteObject( scenery );
 		}
