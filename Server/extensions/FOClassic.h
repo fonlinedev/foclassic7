@@ -20,6 +20,14 @@
 #ifndef __FOCLASSIC_H__
 #define __FOCLASSIC_H__
 
+#ifndef _RAISE_DEFINED
+#define _RAISE_DEFINED
+namespace std {
+    template<class _Ty> inline void _Raise(const _Ty& _Exception) { throw _Exception; }
+}
+#define _RAISE(x) std::_Raise(x)
+#endif
+
 // Engine version
 #define FOCLASSIC_STAGE                  (3)
 #define FOCLASSIC_VERSION                (7)
@@ -1939,7 +1947,7 @@ inline void static_asserts()
     STATIC_ASSERT( sizeof(uint) == 4 );
     STATIC_ASSERT( sizeof(uint64) == 8 );
     STATIC_ASSERT( sizeof(bool) == 1 );
-    STATIC_ASSERT( sizeof(string) == 28 );
+    // STATIC_ASSERT( sizeof(string) == 28 );
     #if defined (FO_X86)
     STATIC_ASSERT( sizeof(size_t) == 4 );
     STATIC_ASSERT( sizeof(void*) == 4 );

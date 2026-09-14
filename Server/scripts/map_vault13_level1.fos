@@ -1,0 +1,46 @@
+#include "_macros.fos"
+#include "_vars.fos"
+#include "ITEMPID.H"
+#include "mapdata_h.fos"
+#include "_defines.fos"
+#include "factions_h.fos"
+#include "_entires.fos"
+#include "_maps.fos"
+#include "utils_h.fos"
+
+#define PID_SKELETON       211
+#define V13_GUARD_DIALOG1   4018
+#define V13_GUARD_PID       92
+#define V13_GUARD_BAG_ID    426
+
+void map_init(Map& map, bool firstTime)
+{
+    map.SetEvent(MAP_EVENT_OUT_CRITTER, "_CritterOut");
+
+    if (firstTime)
+    {
+        map.SetData(MAP_DATA_FACTION, FACTION_VAULT_CITY);
+
+        // Find the skeleton container at its map hex
+        Item@ skeleton = map.GetItem(104, 89, PID_SKELETON);
+        if (valid(skeleton))
+        {
+            skeleton.AddItem(PID_STIMPAK, 3, 0);
+        }
+        // spanw the V13_GUARD at entrance
+        int[] params = { ST_DIALOG_ID, V13_GUARD_DIALOG1, ST_BAG_ID, V13_GUARD_BAG_ID, ST_TEAM_ID, FACTION_VAULT_CITY, ST_FACTION_MODE, 1, MODE_NO_LOOT, 1, MODE_NO_STEAL, 1 };
+        uint16           x = 0;
+        uint16           y = 0;
+        map.GetEntireCoords(9, 0, x, y);
+        Critter@         cr = map.AddNpc(V13_GUARD_PID, x, y, 2, params, null, "npc_v13_guard@critter_init");
+
+        if(!valid(cr))
+            return;
+
+    }
+}
+
+void _CritterOut(Map& map, Critter& cr)
+{
+
+}

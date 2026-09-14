@@ -2917,30 +2917,13 @@ void DrawArea(uint mappid, uint8 mode)
         return;
     switch(mappid)
     {
-    case MAP_modoc:
-        DrawHexArea(modoc_area_v, false, COLOR_TOWN_AREA_BORDER);
-        DrawInsideStatus(modoc_area.IsWithin(chosen.HexX, chosen.HexY));
-        break;
+    
     case MAP_broken:
         DrawHexArea(bh_area_v, false, COLOR_TOWN_AREA_BORDER);
         DrawInsideStatus(bh_area.IsWithin(chosen.HexX, chosen.HexY));
         break;
-    case MAP_klamath:
-        DrawHexArea(klamath_area_v, false, COLOR_TOWN_AREA_BORDER);
-        DrawInsideStatus(klamath_area.IsWithin(chosen.HexX, chosen.HexY));
-        break;
-    case MAP_den:
-        DrawHexArea(den_area_v, false, COLOR_TOWN_AREA_BORDER);
-        DrawInsideStatus(den_area.IsWithin(chosen.HexX, chosen.HexY));
-        break;
-    case MAP_redding:
-        DrawHexArea(redding_area_v, false, COLOR_TOWN_AREA_BORDER);
-        DrawInsideStatus(redding_area.IsWithin(chosen.HexX, chosen.HexY));
-        break;
-    case MAP_gecko_settlement:
-        DrawHexArea(gecko_area_v, false, COLOR_TOWN_AREA_BORDER);
-        DrawInsideStatus(gecko_area.IsWithin(chosen.HexX, chosen.HexY));
-        break;
+    
+    
     default:
         return;
     }
@@ -2951,24 +2934,10 @@ void DrawArea(uint mappid, uint8 mode)
     // triangles
     switch(mappid)
     {
-    case MAP_modoc:
-        DrawHexArea(modoc_area_t, true, COLOR_TOWN_AREA_INTERIOR);
-        break;
     case MAP_broken:
         DrawHexArea(bh_area_t, true, COLOR_TOWN_AREA_INTERIOR);
         break;
-    case MAP_klamath:
-        DrawHexArea(klamath_area_t, true, COLOR_TOWN_AREA_INTERIOR);
-        break;
-    case MAP_den:
-        DrawHexArea(den_area_t, true, COLOR_TOWN_AREA_INTERIOR);
-        break;
-    case MAP_redding:
-        DrawHexArea(redding_area_t, true, COLOR_TOWN_AREA_INTERIOR);
-        break;
-    case MAP_gecko_settlement:
-        DrawHexArea(gecko_area_t, true, COLOR_TOWN_AREA_INTERIOR);
-        break;
+        
     }
 }
 

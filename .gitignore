@@ -34,3 +34,5 @@ Client/
 *.exe
 *.pdb
 *.jar
+*.log
+Tools/WorldEditor/Cache.dat

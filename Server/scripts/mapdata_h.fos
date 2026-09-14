@@ -79,6 +79,15 @@
 #define MAP_DATA_GUY                            (26)
 #define MAP_DATA_GUYTALKED                      (27)
 
+// Shady sands radscorpion cave
+#define MAP_DATA_NESTCAVE_OWNER            (20)
+#define MAP_DATA_NESTCAVE_SCORPIONS        (21)
+#define MAP_DATA_SHADYSANDS_OWNER          (22)
+
+// Shady sands raiders camp
+#define MAP_DATA_CAMP_OWNER            (20)
+#define MAP_DATA_TANDI_ESCAPED         (21)
+
 // railgang quest
 #define MAP_DATA_RAILGANG_OWNER                 (20)
 #define MAP_DATA_RAILGANG_THUGS                 (21)

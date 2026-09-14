@@ -221,15 +221,7 @@ void _SpawnFishOnMap(Map& map) {
 }
 
 //  add public fishing locations here
-bool isPublicFishingZone(Map& map) {
-    if(valid(map))
-    {
-        switch(map.GetLocation().GetProtoId())
-        {
-            case LOCATION_FishingShore:
-                return true;
-        }
-    }
+bool isPublicFishingZone(Map& map) {    
     return false;
 }
 

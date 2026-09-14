@@ -74,31 +74,31 @@ uint GetPartyPoints(uint FollowerType)
     switch(FollowerType)
     {
     case FOLLOWER_TYPE_MERC_MUTANT_BG:
-        return 90;
+        return 9;
     case FOLLOWER_TYPE_MERC_MUTANT_UNARMED:
-        return 90;
+        return 9;
     case FOLLOWER_TYPE_COMPANION:
-        return 70;
+        return 10;
     case FOLLOWER_TYPE_MERC_HUMAN_BG:
-        return 80;
+        return 8;
     case FOLLOWER_TYPE_MERC_HUMAN_EW:
-        return 80;
+        return 8;
     case FOLLOWER_TYPE_MERC_HUMAN_SG:
-        return 80;
+        return 8;
     case FOLLOWER_TYPE_MERC_GHOUL_SG:
-        return 60;
+        return 6;
     case FOLLOWER_TYPE_MERC_GHOUL_MELEE:
-        return 60;
+        return 6;
     case FOLLOWER_TYPE_MERC_HUMAN_MELEE:
-        return 80;
+        return 8;
     case FOLLOWER_TYPE_MERC_HUMAN_UNARMED:
-        return 80;
+        return 8;
     case FOLLOWER_TYPE_DOG:
-        return 40;
+        return 4;
     case FOLLOWER_TYPE_PIGRAT:
-        return 40;
+        return 4;
     case FOLLOWER_TYPE_MOLERAT:
-        return 40;
+        return 4;
     case FOLLOWER_TYPE_SLAVE:
         return 0;
     case FOLLOWER_TYPE_BRAHMIN:
@@ -184,6 +184,8 @@ uint GetPartyPointsUsed(Critter& player)
  */
 bool CanHaveMoreFollowers(Critter& player, uint FollowerType)
 {
+
+    Log("FollowerType "+FollowerType);
     if(player.Trait[TRAIT_LONER] == 1)
         return false;
 
@@ -220,7 +222,11 @@ bool CanHaveMoreFollowers(Critter& player, uint FollowerType)
     }
     else
     {
-        return GetPartyPointsUsed(player) + GetPartyPoints(FollowerType) <= GetPartyPointsMax(player);
+        // return GetPartyPointsUsed(player) + GetPartyPoints(FollowerType) <= GetPartyPointsMax(player);
+        // New rule: regardless of party points limit follower number to 3.
+        uint companions = GetNumberOfType(player, FOLLOWER_TYPE_COMPANION);
+        Log("number of companions " + companions + "< 3");
+        return (companions < 3);
     }
 }
 

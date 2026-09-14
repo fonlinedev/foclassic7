@@ -1,0 +1,24 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+3 2010 D _var p q_first_tent = 0 R _script quest_first_tent@r_StartFirstTentQuest 0  R _script quest_first_tent@r_SpawnFarmhouse 0  #
+65505 2020 @
+3 3000 None 0 &
+
+[engl]
+{100}{}{none}
+{1000}{}{Predialogue installations}
+{1010}{}{begin}
+{2000}{}{State your busines}
+{2010}{}{spawn first tent farm.}
+{2020}{}{Maybe next time.}
+{3000}{}{Done!}
+

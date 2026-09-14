@@ -126,8 +126,8 @@ extern "C" __declspec( dllexport ) void DllMainEx(bool compiler)
 		enum_->ValueValMax = 0;
 		enum_->ValueAsFlag = false;
 
-		if( find( data->enumAsFlags.begin(), data->enumAsFlags.end(), typeId) != data->enumAsFlags.end() )
-			enum_->ValueAsFlag = true;
+		//if (std::find(data->EnumsAsFlags.begin(), data->EnumsAsFlags.end(), typeId) != data->EnumsAsFlags.end())
+		//	enum_->ValueAsFlag = true;
 
 		for( int e=0; e < eLen; e++ )
 		{

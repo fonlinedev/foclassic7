@@ -87,6 +87,9 @@
 #define ROLE_NCR_ROOMKEEPER                (2)
 #define ROLE_NCR_CIVI		               (33)
 
+// SHADY SANDS
+#define ROLE_SANDS_GUARD                   (3)
+
 // NCR Mine
 #define ROLE_NCR_MINE_OVERSEER             (1)
 

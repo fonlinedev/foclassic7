@@ -21470,36 +21470,36 @@ MapObjType           1
 ProtoId              26770
 MapX                 100
 MapY                 94
-ScriptName           prod_fishing
-FuncName             _EncFish
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              26770
 MapX                 100
 MapY                 96
-ScriptName           prod_fishing
-FuncName             _EncFish
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              26770
 MapX                 100
 MapY                 92
-ScriptName           prod_fishing
-FuncName             _EncFish
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              26770
 MapX                 100
 MapY                 98
-ScriptName           prod_fishing
-FuncName             _EncFish
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              26770
 MapX                 100
 MapY                 100
-ScriptName           prod_fishing
-FuncName             _EncFish
+ScriptName           
+FuncName             
 
 MapObjType           2
 ProtoId              3853
@@ -22242,36 +22242,36 @@ MapObjType           1
 ProtoId              26770
 MapX                 100
 MapY                 76
-ScriptName           prod_fishing
-FuncName             _EncFish
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              26770
 MapX                 100
 MapY                 78
-ScriptName           prod_fishing
-FuncName             _EncFish
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              26770
 MapX                 100
 MapY                 80
-ScriptName           prod_fishing
-FuncName             _EncFish
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              26770
 MapX                 100
 MapY                 82
-ScriptName           prod_fishing
-FuncName             _EncFish
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              26770
 MapX                 100
 MapY                 84
-ScriptName           prod_fishing
-FuncName             _EncFish
+ScriptName           
+FuncName             
 
 MapObjType           2
 ProtoId              3853

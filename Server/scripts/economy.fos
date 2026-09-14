@@ -54,7 +54,7 @@ void InitEconomy()
 
     _BankLog("The bank in Vault City has $" + BankGetTotalMoney(BANK_VAULTCITY));
     _BankLog("The bank in Redding has $" + BankGetTotalMoney(BANK_REDDING));
-    _BankLog("The bank in Broken Hills has $" + BankGetTotalMoney(BANK_BROKENHILLS));
+    
     _BankLog("The bank in San Francisco $" + BankGetTotalMoney(BANK_SANFRANCISCO));
     _BankLog("The bank in NCR has $" + BankGetTotalMoney(BANK_NCR));
     _BankLog("The bank in Hub has $" + BankGetTotalMoney(BANK_HUB));

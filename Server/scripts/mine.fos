@@ -57,16 +57,9 @@ void r_PurchaseMine(Critter& player, Critter@ npc)
     Critter@[] players = { player };
     uint x, y = 0;
 
-    if(player.GetMap().GetLocation().GetProtoId() == LOCATION_MiningSiteKlamath)
-    {
-        x = Random(130, 250);
-        y = Random(100, 250);
-    }
-    else
-    {
-        x = Random(500, 695);
-        y = Random(500, 672);
-    }
+     x = Random(500, 695);
+     y = Random(500, 672);
+    
 
     uint      locId = CreateLocation(LOCATION_MiningSitePlayer, x, y, players);
     Location@ loc = GetLocation(locId);

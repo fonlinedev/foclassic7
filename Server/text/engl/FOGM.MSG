@@ -25,6 +25,18 @@
 {30}{}{Start Vault}
 {36}{}{}
 
+# Map 3, base 40
+{40}{}{Shady Sands West}
+{46}{}{}
+
+# Map 4, base 50
+{50}{}{Shady Sands East}
+{56}{}{}
+
+# Map 5, base 60
+{60}{}{Rascorpion nest cave}
+{66}{}{}
+
 # Map 6, base 70
 {70}{}{Start Caravan}
 {75}{}{01hub}
@@ -37,37 +49,12 @@
 {85}{}{12junktn}
 {86}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 8, base 90
-{90}{}{Klamath Canyon}
-{95}{}{03wrldmp}
-{96}{}{gntlwin1:30, gntlwind:30, gustwin1:10, gustwind:10, vulture:10, vulture1:10}
-
-# Map 9, base 100
-{100}{}{Klamath Downtown}
-{105}{}{03wrldmp}
-{106}{}{laughter:10, laughte1:10, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
-
 # Map 10, base 110
 {110}{}{Mountains Encounter Khans 2}
 {115}{}{07desert}
 {115}{}{05raider}
 {115}{}{12junktn}
 {116}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 11, base 120
-{120}{}{Klamath Toxic Caves 1}
-{125}{}{13carvrn}
-{126}{}{puddle1:30, puddle:30, water:5, water1:5, pebble:5, pebble1:5}
-
-# Map 12, base 130
-{130}{}{Klamath Toxic Caves 2}
-{135}{}{13carvrn}
-{136}{}{puddle1:30, puddle:30, water:5, water1:5, pebble:5, pebble1:5}
-
-# Map 13, base 140
-{140}{}{Klamath Toxic Caves 3}
-{145}{}{13carvrn}
-{146}{}{puddle1:30, puddle:30, water:5, water1:5, pebble:5, pebble1:5}
 
 # Map 14, base 150
 {150}{}{Mountains Encounter Khans 3}
@@ -76,42 +63,12 @@
 {155}{}{12junktn}
 {156}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 15, base 160
-{160}{}{Vault City HQ}
-{165}{}{22vcity}
-{166}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
-
-# Map 16, base 170
-{170}{}{Vault City Downtown}
-{175}{}{22vcity}
-{176}{}{blank:40, brdchirp:25, brdchir1:25, potspans:5, potspan1:5}
-
 # Map 17, base 180
 {180}{}{Desert Encounter Khans 4}
 {185}{}{07desert}
 {185}{}{05raider}
 {185}{}{12junktn}
 {186}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
-
-# Map 18, base 190
-{190}{}{Modoc Large}
-{195}{}{18modoc}
-{196}{}{brdchir1:25, brdchirp:25, chimes:15, chimes1:15, dogbark:10, dogbark1:10}
-
-# Map 20, base 210
-{210}{}{Vault City Vault Level 1}
-{215}{}{22vcity}
-{216}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
-
-# Map 21, base 220
-{220}{}{Vault City Vault Level 2}
-{225}{}{22vcity}
-{226}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
-
-# Map 22, base 230
-{230}{}{Vault City Vault Level 3}
-{235}{}{22vcity}
-{236}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
 
 # Map 23, base 240
 {240}{}{LA Warehouse}
@@ -153,16 +110,6 @@
 {315}{}{08vats}
 {316}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
 
-# Map 31, base 320
-{320}{}{Gecko Settlement}
-{325}{}{12junktn}
-{326}{}{electri1:20, electric:20, gntlwind:20, gntlwin1:20, steam:20, steam1:20}
-
-# Map 32, base 330
-{330}{}{Gecko Power Plant}
-{335}{}{12junktn}
-{336}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
-
 # Map 33, base 340
 {340}{}{Q Cathedral Basement 2}
 {345}{}{08vats}
@@ -203,11 +150,6 @@
 {425}{}{12junktn}
 {426}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 42, base 430
-{430}{}{NCR Residental Area}
-{435}{}{01hub}
-{436}{}{gntlwin1:25, gntlwind:25, brdchir1:10, brdchirp:10, blank:30}
-
 # Map 43, base 440
 {440}{}{Q Gun Runners Caravan 2}
 {445}{}{13carvrn}
@@ -217,19 +159,6 @@
 {450}{}{Q: SanFran Subway}
 {455}{}{14necro}
 {456}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
-
-# Map 45, base 460
-{460}{}{NCR}
-{465}{}{01hub}
-{466}{}{gntlwin1:25, gntlwind:25, brdchir1:10, brdchirp:10, blank:30}
-
-# Map 47, base 480
-{480}{}{Den BoS}
-{486}{}{blank:10}
-
-# Map 48, base 490
-{490}{}{NCR BoS}
-{496}{}{blank:10}
 
 # Map 49, base 500
 {500}{}{Military Base Entrance}
@@ -256,31 +185,6 @@
 {545}{}{08vats}
 {546}{}{elevato1:25, elevator:25, electri1:15, electric:15, clank:10, clank1:10}
 
-# Map 54, base 550
-{550}{}{New Reno 1}
-{555}{}{19reno}
-{556}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 55, base 560
-{560}{}{New Reno 2}
-{565}{}{19reno}
-{566}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 56, base 570
-{570}{}{New Reno 3}
-{575}{}{19reno}
-{576}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 57, base 580
-{580}{}{New Reno 4}
-{585}{}{19reno}
-{586}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 58, base 590
-{590}{}{New Reno Chop Shop}
-{595}{}{19reno}
-{596}{}{clank:20, clank1:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
 # Map 60, base 610
 {610}{}{Q Brahmin Willow}
 {615}{}{18modoc}
@@ -290,31 +194,6 @@
 {620}{}{Tobacco Farm}
 {625}{}{14necro}
 {626}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
-
-# Map 62, base 630
-{630}{}{Redding}
-{635}{}{24redd}
-{636}{}{saloon:25, saloon1:25, gustwind:10, laughter:20, footste1:10, footstep:10}
-
-# Map 63, base 640
-{640}{}{Redding Mine}
-{645}{}{24redd}
-{646}{}{animal1:20, animal:20, elevator:15, ore:15, mechpump:20, ore1:10}
-
-# Map 64, base 650
-{650}{}{Wanamingo Mine Entrance}
-{655}{}{24redd}
-{656}{}{animal1:20, animal:20, elevator:15, ore:15, mechpump:20, ore1:10}
-
-# Map 65, base 660
-{660}{}{NCRCF}
-{665}{}{10labone}
-{666}{}{gntlwin1:20, gntlwind:20, dogbark:20, dogbark:20, gustwin1:10, gustwind:10}
-
-# Map 66, base 670
-{670}{}{Rails}
-{675}{}{07desert}
-{676}{}{gntlwin1:20, gntlwind:20, dogbark:20, dogbark:20, gustwin1:10, gustwind:10}
 
 # Map 67, base 680
 {680}{}{Q Radscorpion Cave}
@@ -457,13 +336,6 @@
 {995}{}{18modoc}
 {996}{}{}
 
-# Map 99, base 1000
-{1000}{}{New Reno Sewers}
-{1005}{}{08vats}
-{1005}{}{13carvrn}
-{1005}{}{14necro}
-{1006}{}{animal:20, pebble:15, pebble1:15, water1:20, water:20, blank:15}
-
 # Map 100, base 1010
 {1010}{}{Ares Military Base: Entrance}
 {1015}{}{07desert}
@@ -543,26 +415,6 @@
 {1155}{}{14necro}
 {1156}{}{gntlwin1:25, gntlwind:25, gustwind:10, blank:40}
 
-# Map 115, base 1160
-{1160}{}{Broken Hills}
-{1165}{}{08vats}
-{1166}{}{brdchir1:20, brdchirp:20, gntlwind:20, gntlwin1:20, gustwind:10, blank:10}
-
-# Map 116, base 1170
-{1170}{}{Broken Hills Basement}
-{1175}{}{08vats}
-{1176}{}{brdchir1:20, brdchirp:20, gntlwind:20, gntlwin1:20, gustwind:10, blank:10}
-
-# Map 117, base 1180
-{1180}{}{Broken Hills Mine}
-{1185}{}{08vats}
-{1186}{}{brdchir1:20, brdchirp:20, gntlwind:20, gntlwin1:20, gustwind:10, blank:10}
-
-# Map 118, base 1190
-{1190}{}{Broken Hills Dungeon}
-{1195}{}{08vats}
-{1196}{}{brdchir1:20, brdchirp:20, gntlwind:20, gntlwin1:20, gustwind:10, blank:10}
-
 # Map 119, base 1200
 {1200}{}{Old Warehouse Cave}
 {1205}{}{16follow}
@@ -595,26 +447,6 @@
 {1260}{}{Bus Stop}
 {1265}{}{03wrldmp}
 {1266}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
-
-# Map 135, base 1360
-{1360}{}{San Fran Tanker}
-{1365}{}{21sf}
-{1366}{}{seawind1:25, clang:10, waves1:15, clangl:15, waves:15, seawind:20}
-
-# Map 137, base 1380
-{1380}{}{San Fran China}
-{1385}{}{21sf}
-{1386}{}{seawind1:25, seawind:25, chimes1:15, chimes:15, blank:20}
-
-# Map 139, base 1400
-{1400}{}{Shi Temple}
-{1405}{}{21sf}
-{1406}{}{}
-
-# Map 140, base 1410
-{1410}{}{San Fran BoS}
-{1415}{}{}
-{1416}{}{}
 
 # Map 141, base 1420
 {1420}{}{Necropolis Hotel}
@@ -1200,11 +1032,6 @@
 {2475}{}{09glow}
 {2476}{}{electri1:15, electric:15, clank:10, clank1:10, steam:15, steam:10}
 
-# Map 247, base 2480
-{2480}{}{New Reno: Golgotha}
-{2485}{}{10labone}
-{2486}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
 # Map 250, base 2510
 {2510}{}{HQ: Tents}
 {2515}{}{07desert}
@@ -1222,51 +1049,6 @@
 {2535}{}{07desert}
 {2535}{}{05raider}
 {2536}{}{gntlwin1:25, gntlwind:25, brdchir1:10, brdchirp:10, blank:30}
-
-# Map 260, base 2610
-{2610}{}{New Reno: Basement}
-{2615}{}{19reno}
-{2616}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 261, base 2620
-{2620}{}{New Reno: Bishop Floor 1}
-{2625}{}{19reno}
-{2626}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 262, base 2630
-{2630}{}{New Reno: Bishop Floor 2}
-{2635}{}{19reno}
-{2636}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 263, base 2640
-{2640}{}{New Reno: Mordino HQ}
-{2645}{}{19reno}
-{2646}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 264, base 2650
-{2650}{}{New Reno: Arms}
-{2655}{}{19reno}
-{2656}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 265, base 2660
-{2660}{}{New Reno: Shark Boxing}
-{2665}{}{19reno}
-{2666}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 266, base 2670
-{2670}{}{New Reno: Wright}
-{2675}{}{19reno}
-{2676}{}{drunkla1:20, drunklaf:20, laughter:15, laughte1:15, shots1:15, shots:10}
-
-# Map 267, base 2680
-{2680}{}{New Reno: Stables}
-{2685}{}{05raider}
-{2686}{}{gntlwin1:25, gntlwind:25, gustwind:10, blank:40}
-
-# Map 268, base 2690
-{2690}{}{New Reno: Stables 2}
-{2695}{}{05raider}
-{2696}{}{gntlwin1:25, gntlwind:25, gustwind:10, blank:40}
 
 # Map 269, base 2700
 {2700}{}{Modoc: Ghostcave}
@@ -1510,46 +1292,6 @@
 {3725}{}{08vats}
 {3726}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
-# Map 372, base 3730
-{3730}{}{San Francisco Mining Site}
-{3735}{}{21sf}
-{3736}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 373, base 3740
-{3740}{}{San Francisco Mining Site Inside}
-{3745}{}{08vats}
-{3746}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 374, base 3750
-{3750}{}{Klamath Mining Site}
-{3755}{}{15shady}
-{3756}{}{gntlwin1:25, gntlwind:25, gustwind:10, brdchirp:10, rattle1:15, vulture:10}
-
-# Map 375, base 3760
-{3760}{}{Klamath Mining Site Inside}
-{3765}{}{08vats}
-{3766}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 376, base 3770
-{3770}{}{NCR Mining Site}
-{3775}{}{01hub}
-{3776}{}{gntlwin1:25, gntlwind:25, gustwind:10, brdchirp:10, rattle1:15, vulture:10}
-
-# Map 377, base 3780
-{3780}{}{Vault City Mining Site}
-{3785}{}{07desert}
-{3786}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 378, base 3790
-{3790}{}{Vault City Mine Inside}
-{3795}{}{08vats}
-{3796}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 379, base 3800
-{3800}{}{Junktown Mining Site}
-{3805}{}{12junktn}
-{3806}{}{gntlwin1:25, gntlwind:25, animal1:20, animal:20, gustwind:5, gustwin1:5}
-
 # Map 380, base 3810
 {3810}{}{Jail}
 {3815}{}{07desert}
@@ -1754,31 +1496,10 @@
 {5675}{}{07desert}
 {5676}{}{gntlwin1:20, gntlwind:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
 
-# Map 568, base 5690
-{5690}{}{Slaver Camp}
-{5695}{}{07desert}
-{5696}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
 # Map 569, base 5700
 {5700}{}{Military Camp}
 {5705}{}{07desert}
 {5706}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 571, base 5720
-{5720}{}{Barter Ground}
-{5726}{}{}
-
-# Map 572, base 5730
-{5730}{}{Klamath Rat1}
-{5736}{}{}
-
-# Map 573, base 5740
-{5740}{}{Klamath Rat2}
-{5746}{}{}
-
-# Map 574, base 5750
-{5750}{}{Klamath Rat3}
-{5756}{}{}
 
 # Map 575, base 5760
 {5760}{}{Ares level3}
@@ -1787,18 +1508,6 @@
 # Map 576, base 5770
 {5770}{}{Ares level4}
 {5776}{}{}
-
-# Map 577, base 5780
-{5780}{}{Talchem Surface}
-{5786}{}{}
-
-# Map 578, base 5790
-{5790}{}{Talchem level1}
-{5796}{}{}
-
-# Map 579, base 5800
-{5800}{}{Talchem level2}
-{5806}{}{}
 
 # Map 580, base 5810
 {5810}{}{Bounty Hunters HQ Entrance}
@@ -1827,11 +1536,6 @@
 {5985}{}{18modoc}
 {5986}{}{}
 
-# Map 600, base 6010
-{6010}{}{Fishing Zone}
-{6015}{}{17arroyo}
-{6016}{}{gntlwin1:25, gntlwind:25, animal1:20, animal:20, gustwind:5, gustwin1:5}
-
 # Map 1111, base 11120
 {11120}{}{Arroyo Temple}
 {11125}{}{17arroyo}
@@ -1841,11 +1545,6 @@
 {11130}{}{Tesla Tower}
 {11135}{}{08vats}
 {11136}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
-
-# Map 1116, base 11170
-{11170}{}{Den Business}
-{11175}{}{05raider}
-{11176}{}{dogbark:10, dogbark1:10, gntlwind:20, gntlwin1:20, blank:40}
 
 # Map 2500, base 25010
 {25010}{}{Sierra Caves Entrance}
@@ -2089,68 +1788,15 @@
 {104005}{}{}
 {104010}{}{8}
 
-# Gecko, pid 5, base 105000
-{105000}{}{Gecko}
-{105005}{}{A town of ghouls built around a leaking nuclear power plant.}
+# Shady Sands, pid 5, base 105000
+{105000}{}{Shady Sands}
+{105005}{}{A village in the sands}
 {105010}{}{24}
-{105020}{}{art\intrface\twngecko.frm}
-{105030}{}{art\intrface\WM_GECKO.FRM}
-{105090}{}{4}
-{105101}{}{Settlement}
-{105102}{}{155}
-{105103}{}{246}
-{105111}{}{South West}
-{105112}{}{40}
-{105113}{}{156}
-{105121}{}{Scrapyard}
-{105122}{}{279}
-{105123}{}{169}
-{105131}{}{Reactor}
-{105132}{}{168}
-{105133}{}{147}
 
-# Broken Hills, pid 6, base 106000
-{106000}{}{Broken Hills}
-{106005}{}{A town of humans, mutants and ghouls. Racism is rampant.}
-{106010}{}{24}
-{106020}{}{art\intrface\twnbrokn.frm}
-{106030}{}{art\intrface\WM_HILLS.FRM}
-{106090}{}{4}
-{106101}{}{Downtown}
-{106102}{}{125}
-{106103}{}{276}
-{106111}{}{Residental}
-{106112}{}{367}
-{106113}{}{284}
-{106121}{}{South Side}
-{106122}{}{246}
-{106123}{}{359}
-{106131}{}{North Side}
-{106132}{}{230}
-{106133}{}{201}
-
-# New Reno, pid 7, base 107000
-{107000}{}{New Reno}
-{107005}{}{A town of casinos, drugs and debauchery.}
-{107010}{}{24}
-{107020}{}{art\intrface\twnreno.frm}
-{107030}{}{art\intrface\WM_RENO.FRM}
-{107090}{}{5}
-{107101}{}{Virgin Street}
-{107102}{}{230}
-{107103}{}{300}
-{107111}{}{2nd Street}
-{107112}{}{230}
-{107113}{}{210}
-{107121}{}{Commercial Row}
-{107122}{}{100}
-{107123}{}{210}
-{107131}{}{East side}
-{107132}{}{360}
-{107133}{}{210}
-{107141}{}{Gas station}
-{107142}{}{360}
-{107143}{}{100}
+# Radscorpions Nest, pid 6, base 106000
+{106000}{}{Radscorpions Nest}
+{106005}{}{Radscorpions cave}
+{106010}{}{12}
 
 # Sierra, pid 8, base 108000
 {108000}{}{Sierra}
@@ -2174,23 +1820,6 @@
 {109102}{}{80}
 {109103}{}{256}
 
-# NCR, pid 10, base 110000
-{110000}{}{NCR}
-{110005}{}{Shady Sands, the central government of the New California Republic. The most powerful city in the wastes.}
-{110010}{}{24}
-{110020}{}{art\intrface\twnncr.frm}
-{110030}{}{art\intrface\WM_NCR.FRM}
-{110090}{}{3}
-{110101}{}{Bazaar}
-{110102}{}{258}
-{110103}{}{175}
-{110111}{}{Vortis Holding Center}
-{110112}{}{183}
-{110113}{}{134}
-{110121}{}{Residence}
-{110122}{}{318}
-{110123}{}{241}
-
 # Cathedral, pid 11, base 111000
 {111000}{}{Cathedral}
 {111005}{}{An old Cathedral among city ruins, lighted up by burning barrels. People are wandering outside in a large crowd.}
@@ -2212,43 +1841,6 @@
 {112101}{}{Entrance}
 {112102}{}{125}
 {112103}{}{58}
-
-# Redding, pid 13, base 113000
-{113000}{}{Redding}
-{113005}{}{A mining town. The primary producer and distributor of gold in the wasteland.}
-{113010}{}{24}
-{113020}{}{art\intrface\twnredng.frm}
-{113030}{}{art\intrface\WM_RED.FRM}
-{113090}{}{4}
-{113101}{}{Downtown}
-{113102}{}{160}
-{113103}{}{231}
-{113111}{}{South Side}
-{113112}{}{82}
-{113113}{}{304}
-{113121}{}{Mine}
-{113122}{}{115}
-{113123}{}{204}
-{113131}{}{Wanamingo}
-{113132}{}{64}
-{113133}{}{252}
-
-# San Francisco, pid 14, base 114000
-{114000}{}{San Francisco}
-{114005}{}{A high-tech city built by the descendants of a Chinese submarine.}
-{114010}{}{24}
-{114020}{}{art\intrface\twnsanfr.frm}
-{114030}{}{art\intrface\WM_SANFN.FRM}
-{114090}{}{3}
-{114101}{}{Downtown}
-{114102}{}{339}
-{114103}{}{147}
-{114111}{}{Ruins}
-{114112}{}{301}
-{114113}{}{164}
-{114121}{}{Tanker}
-{114122}{}{344}
-{114123}{}{115}
 
 # Navarro, pid 15, base 115000
 {115000}{}{Navarro}
@@ -2307,16 +1899,6 @@
 {119101}{}{Exterior}
 {119102}{}{352}
 {119103}{}{155}
-
-# Golgotha, pid 20, base 120000
-{120000}{}{Golgotha}
-{120005}{}{Golgotha.}
-{120010}{}{6}
-
-# New Reno Stables, pid 21, base 121000
-{121000}{}{New Reno Stables}
-{121005}{}{The New Reno Stables owned and operated by the Mordinos.}
-{121010}{}{6}
 
 # Ghost Farm, pid 22, base 122000
 {122000}{}{Ghost Farm}
@@ -2417,34 +1999,6 @@
 {129101}{}{Camp}
 {129102}{}{210}
 {129103}{}{300}
-
-# Quarry, pid 30, base 130000
-{130000}{}{Quarry}
-{130005}{}{A well guarded NCR quarry.}
-{130010}{}{6}
-
-# Mining Site, pid 31, base 131000
-{131000}{}{Mining Site}
-{131005}{}{This mining site has been closed many years ago.}
-{131010}{}{6}
-{131020}{}{art\intrface\TWNMAP12.png}
-{131090}{}{2}
-{131101}{}{East}
-{131102}{}{206}
-{131103}{}{176}
-{131111}{}{West}
-{131112}{}{138}
-{131113}{}{189}
-
-# Mining Site, pid 32, base 132000
-{132000}{}{Mining Site}
-{132005}{}{This small mining site is run by a bunch of trappers from Klamath.}
-{132010}{}{6}
-
-# Mining Site, pid 33, base 133000
-{133000}{}{Mining Site}
-{133005}{}{A small industrial mining site, run by the San Francisco Communist Party.}
-{133010}{}{6}
 
 # Mining Site, pid 34, base 134000
 {134000}{}{Mining Site}
@@ -2561,11 +2115,6 @@
 {153000}{}{An Old Bunker}
 {153005}{}{}
 {153010}{}{6}
-
-# Prison, pid 54, base 154000
-{154000}{}{Prison}
-{154005}{}{A New California Republic Correctional Facility.}
-{154010}{}{10}
 
 # Khan Mountains, pid 57, base 157000
 {157000}{}{Khan Mountains}
@@ -3257,123 +2806,25 @@
 {462005}{}{An abandoned industrial facility for water purification.}
 {462010}{}{6}
 
-# Klamath Toxic Caves, pid 363, base 463000
-{463000}{}{Klamath Toxic Caves}
-{463005}{}{A radioactive cave inhabited by Geckos.}
-{463010}{}{6}
-
 # Gordon's Gas Station, pid 364, base 464000
 {464000}{}{Gordon's Gas Station}
 {464005}{}{A small gas station in the middle of the desert.}
 {464010}{}{6}
-
-# Quarry, pid 365, base 465000
-{465000}{}{Quarry}
-{465005}{}{A well guarded quarry, run by the Junktown town folks.}
-{465010}{}{6}
-
-# Slaver Camp, pid 367, base 467000
-{467000}{}{Slaver Camp}
-{467005}{}{A hidden slaver breakpoint.}
-{467010}{}{8}
 
 # Fort Seth, pid 368, base 468000
 {468000}{}{Fort Seth}
 {468005}{}{A military outpost of the NCR, composed of a few barracks and protective walls.}
 {468010}{}{6}
 
-# Barter Ground, pid 370, base 470000
-{470000}{}{Barter Ground}
-{470005}{}{A small camp of traders.}
-{470010}{}{12}
-
-# Talchem California HQ, pid 371, base 471000
-{471000}{}{Talchem California HQ}
-{471005}{}{An abandoned compound.}
-{471010}{}{6}
-
 # Bounty Hunters HQ, pid 372, base 472000
 {472000}{}{Bounty Hunters HQ}
 {472005}{}{A hidden base of Bounty Hunters.}
 {472010}{}{6}
 
-# Fishing Shore, pid 450, base 550000
-{550000}{}{Fishing Shore}
-{550005}{}{A quiet and peaceful place.}
-{550010}{}{12}
-
 # Sierra Caves, pid 460, base 560000
 {560000}{}{Sierra Caves}
 {560005}{}{A narrow path leading down deep into the caves.}
 {560010}{}{12}
-
-# Vault City, pid 497, base 597000
-{597000}{}{Vault City}
-{597005}{}{A high-tech settlement. Established by the inhabitants of Vault 8.}
-{597010}{}{24}
-{597020}{}{art\intrface\twnvcity.frm}
-{597030}{}{art\intrface\WM_VLTCT.FRM}
-{597090}{}{1}
-{597101}{}{Vault City}
-{597102}{}{306}
-{597103}{}{246}
-
-# Modoc, pid 498, base 598000
-{598000}{}{Modoc}
-{598005}{}{A small farming community.}
-{598010}{}{24}
-{598020}{}{art\intrface\twnmodoc.frm}
-{598030}{}{art\intrface\WM_MODOC.FRM}
-{598090}{}{3}
-{598101}{}{South}
-{598102}{}{312}
-{598103}{}{212}
-{598111}{}{North}
-{598112}{}{258}
-{598113}{}{69}
-{598121}{}{East}
-{598122}{}{360}
-{598123}{}{136}
-
-# The Den, pid 499, base 599000
-{599000}{}{The Den}
-{599005}{}{A town of junkies and slavers.}
-{599010}{}{24}
-{599020}{}{art\intrface\twnden.frm}
-{599030}{}{art\intrface\WM_DEN.FRM}
-{599090}{}{4}
-{599101}{}{Downtown}
-{599102}{}{124}
-{599103}{}{293}
-{599111}{}{East Side}
-{599112}{}{262}
-{599113}{}{330}
-{599121}{}{South Side}
-{599122}{}{205}
-{599123}{}{357}
-{599131}{}{Southwest}
-{599132}{}{135}
-{599133}{}{347}
-
-# Klamath, pid 500, base 600000
-{600000}{}{Klamath}
-{600005}{}{A small town of trappers. Geckos are the lifeblood of this small community.}
-{600010}{}{24}
-{600020}{}{art\intrface\twnklama.frm}
-{600030}{}{art\intrface\WM_KLAM.FRM}
-{600090}{}{4}
-{600101}{}{Downtown}
-{600102}{}{363}
-{600103}{}{186}
-{600111}{}{Hunting Ground}
-{600112}{}{377}
-{600113}{}{297}
-{600121}{}{Trapper Town}
-{600122}{}{191}
-{600123}{}{320}
-{600131}{}{Forest}
-{600132}{}{207}
-{600133}{}{134}
 
 #
 # Worldmap Encounter messages

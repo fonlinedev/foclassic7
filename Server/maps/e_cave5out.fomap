@@ -8214,15 +8214,15 @@ MapObjType           1
 ProtoId              1821
 MapX                 85
 MapY                 66
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1821
 MapX                 101
 MapY                 90
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           2
 ProtoId              2102
@@ -8233,22 +8233,22 @@ MapObjType           1
 ProtoId              1820
 MapX                 85
 MapY                 63
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1820
 MapX                 95
 MapY                 78
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1822
 MapX                 49
 MapY                 49
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           2
 ProtoId              2126
@@ -8274,8 +8274,8 @@ MapObjType           1
 ProtoId              1822
 MapX                 91
 MapY                 89
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           2
 ProtoId              2114
@@ -8301,85 +8301,85 @@ MapObjType           1
 ProtoId              1821
 MapX                 96
 MapY                 92
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1820
 MapX                 87
 MapY                 64
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1822
 MapX                 103
 MapY                 95
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1821
 MapX                 92
 MapY                 83
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1820
 MapX                 95
 MapY                 83
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1822
 MapX                 57
 MapY                 109
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1820
 MapX                 99
 MapY                 92
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1820
 MapX                 65
 MapY                 108
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1822
 MapX                 53
 MapY                 95
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1821
 MapX                 86
 MapY                 61
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1821
 MapX                 95
 MapY                 77
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1820
 MapX                 98
 MapY                 77
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           2
 ProtoId              2102
@@ -8405,8 +8405,8 @@ MapObjType           1
 ProtoId              1822
 MapX                 95
 MapY                 81
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           2
 ProtoId              2114
@@ -8427,57 +8427,57 @@ MapObjType           1
 ProtoId              1820
 MapX                 49
 MapY                 91
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1821
 MapX                 46
 MapY                 92
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1820
 MapX                 49
 MapY                 92
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1820
 MapX                 51
 MapY                 46
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1821
 MapX                 50
 MapY                 106
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1820
 MapX                 53
 MapY                 106
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1821
 MapX                 100
 MapY                 75
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1821
 MapX                 61
 MapY                 41
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           2
 ProtoId              2102
@@ -8488,15 +8488,15 @@ MapObjType           1
 ProtoId              1821
 MapX                 44
 MapY                 49
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1820
 MapX                 48
 MapY                 48
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           2
 ProtoId              2104
@@ -8507,8 +8507,8 @@ MapObjType           1
 ProtoId              1822
 MapX                 60
 MapY                 54
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           2
 ProtoId              2114
@@ -8529,50 +8529,50 @@ MapObjType           1
 ProtoId              1821
 MapX                 63
 MapY                 96
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1822
 MapX                 65
 MapY                 101
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1820
 MapX                 61
 MapY                 98
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1821
 MapX                 58
 MapY                 98
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1822
 MapX                 56
 MapY                 102
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1820
 MapX                 53
 MapY                 101
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1822
 MapX                 54
 MapY                 47
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           2
 ProtoId              2114
@@ -8583,29 +8583,29 @@ MapObjType           1
 ProtoId              1821
 MapX                 56
 MapY                 43
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1820
 MapX                 70
 MapY                 48
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1820
 MapX                 59
 MapY                 43
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           1
 ProtoId              1822
 MapX                 63
 MapY                 46
-ScriptName           prod_tree_firewood
-FuncName             _EncTree
+ScriptName           
+FuncName             
 
 MapObjType           2
 ProtoId              5622

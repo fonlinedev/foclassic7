@@ -14,7 +14,7 @@ lang=engl
 0 2020 D _param n ST_NPC_ROLE = 5 D _param p ST_STRENGTH > 99 R _script dialog@r_TeleportToMap 2 70 2 R _script dialog@r_TeleportToMapFollowers 2 70 2 #
 0 2030 @
 3 3000 None 0 #
-0 3010 D _param p ST_STRENGTH > 99 R _script dialog@r_TeleportToMap 2 54 5 R _script dialog@r_TeleportToMapFollowers 2 54 5 R _script map_newreno@r_TransferWeapons 1 0 #
+0 3010 D _param p ST_STRENGTH > 99 R _script dialog@r_TeleportToMap 2 54 5 R _script dialog@r_TeleportToMapFollowers 2 54 5 #
 0 3020 &
 
 [engl]

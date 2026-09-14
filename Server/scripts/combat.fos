@@ -5608,7 +5608,7 @@ void CommenceThrown(AttackStruct& attack, Map@ map, uint16 tx, uint16 ty, Critte
     ApplyDamage(attack, realTarget, 1, isCritical, !changedTarget, results, 0);
 }
 
-import void DamageTreeAtHexInRadius(Map@ map, uint16 x, uint16 y, uint16 dist) from "prod_tree_firewood";
+
 import void DamageRockAtHexInRadius(Map@ map, uint16 x, uint16 y, uint16 dist) from "dynamic_environment";
 import void DamageCrateAtHexInRadius(Map@ map, uint16 x, uint16 y, uint16 dist) from "dynamic_environment";
 import void DamageBarrelAtHexInRadius(Map@ map, uint16 x, uint16 y, uint16 dist) from "dynamic_environment";
@@ -5637,7 +5637,7 @@ void CommenceExplosion(AttackStruct& attack, Map@ map, uint16 tx, uint16 ty, Cri
         map.RunEffect(PID_EXPLODE_PLASMA, tx, ty, 2);
     } else if (isRocket) {
         map.RunEffect(PID_EXPLODE_ROCKET, tx, ty, radius);
-        DamageTreeAtHexInRadius(map, tx, ty, radius);
+        
         DamageRockAtHexInRadius(map, tx, ty, radius);
         DamageCrateAtHexInRadius(map, tx, ty, radius);
         DamageBarrelAtHexInRadius(map, tx, ty, radius);

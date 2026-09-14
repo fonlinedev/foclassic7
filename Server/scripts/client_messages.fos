@@ -862,43 +862,10 @@ bool out_message(string& message, int& sayType)
 
         if(words.length() > 0 && words[0] == "~combatmode")
         {
-            if(words.length() >= 2)
-            {
-                if(words[1] == "any" || words[1] == "both")
-                {
-					Message( "CombatMode 'Any'/'Both' is no longer supported" );
-					return(false);
-				}
-                else if(words[1] == "rt" || words[1] == "realtime")
-                    __DefaultCombatMode = 1;
-                else if(words[1] == "tb" || words[1] == "turnbased")
-                    __DefaultCombatMode = 2;
 
-                RunServerScriptUnsafe("unsafe_client@unsafe_CombatMode", __DefaultCombatMode, 0, 0, null, null);
-
-                SetConfigValue(CONFIG_FILE, CONFIG_RELOADED, "CombatMode", __DefaultCombatMode);
-
-                if(string2bool(GetConfigValue(CONFIG_FILE, CONFIG_RELOADED, "Autosave")))
-                    SaveConfig(CONFIG_FILE);
-            }
-            string cmode = "";
-            switch(__DefaultCombatMode)
-            {
-            case 0:
-                cmode = "Both";
-                break;
-            case 1:
-                cmode = "Real-Time";
-                break;
-            case 2:
-                cmode = "Turn-Based";
-                break;
-            default:
-                cmode = "Unknown (" + __DefaultCombatMode + ")";
-                break;
-            }
+            string cmode = "Turn-Based";
             Message("Combat Mode: " + cmode);
-            return(false);
+            return(false);            
         }
 
         string test = words[0];

@@ -22,16 +22,7 @@ void map_init(Map& map, bool firstTime)
 
     if(firstTime)
     {
-        if(proto == MAP_SanFranciscoMiningSite)
-        {
-            uint[] maxes = { 20, 15 };
-            SetAlertMap(map, maxes);
-        }
-        else if(proto == MAP_SanFranciscoMiningSiteInside)
-        {
-            uint[] maxes = { 5, 15 };
-            SetAlertMap(map, maxes);
-        }
+        
     }
 
     if(!ElevatorsAdded)

@@ -189,6 +189,25 @@ bool d_IsWearingScaryHelmet(Critter& player, Critter@ npc)
         return(false);
 }
 
+// Checks if the player has a weapon equipped in either hand.
+bool d_IsArmed(Critter& player, Critter@ npc)
+{
+    Item@ hand1 = player.GetItem(0, SLOT_HAND1);
+    if(valid(hand1) && hand1.GetType() == ITEM_TYPE_WEAPON) return true;
+
+    Item@ hand2 = player.GetItem(0, SLOT_HAND2);
+    if(valid(hand2) && hand2.GetType() == ITEM_TYPE_WEAPON) return true;
+
+    return false;
+}
+
+// Checks if the player is NOT armed.
+bool d_IsNotArmed(Critter& player, Critter@ npc)
+{
+    return !d_IsArmed(player, npc);
+}
+
+
 /**
  * Remove the items the player has in Slot1 and 2. 1 drops to ground, 2 goes to inv.
  */
@@ -1360,12 +1379,7 @@ void dlg_ShrenRumour(Critter& player, Critter@ npc, string@ text)
     case BANK_REDDING:
         text += "Redding";
         break;
-    case BANK_BROKENHILLS:
-        text += "Broken Hills";
-        break;
-    case BANK_SANFRANCISCO:
-        text += "San Francisco";
-        break;
+    
     case BANK_NCR:
         text += "NCR";
         break;
@@ -1385,16 +1399,16 @@ bool d_ExploredWasteland(Critter& player, Critter@ npc)
 {
     if
     (
-        player.IsKnownLoc(false, LOCATION_TheDen)       &&
-        player.IsKnownLoc(false, LOCATION_Klamath)      &&
-        player.IsKnownLoc(false, LOCATION_Modoc)        &&
-        player.IsKnownLoc(false, LOCATION_VaultCity)    &&
-        player.IsKnownLoc(false, LOCATION_Gecko)        &&
-        player.IsKnownLoc(false, LOCATION_BrokenHills)  &&
-        player.IsKnownLoc(false, LOCATION_NewReno)      &&
-        player.IsKnownLoc(false, LOCATION_NCR)          &&
-        player.IsKnownLoc(false, LOCATION_Redding)      &&
-        player.IsKnownLoc(false, LOCATION_SanFrancisco) &&
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
         player.IsKnownLoc(false, LOCATION_Junktown)     &&
         player.IsKnownLoc(false, LOCATION_Necropolis)   &&
         player.IsKnownLoc(false, LOCATION_Hub)          &&
@@ -1907,6 +1921,27 @@ void r_SetVarValue(Critter& player, Critter@ npc, int varId, int value) {
     SetLvar(player.Id, testVarValue, value);
 }
 
+/**
+ * Check if player has enough caps in the inventory for some procedure.
+ */
+bool d_HasMoney(Critter& player, Critter@ npc, int price)
+{    
+    return _CritCountItem(player, PID_BOTTLE_CAPS) >= price;
+}
+
+/**
+ * Player pays for the procedure directly from his pockets.
+ */
+void r_RemoveMoneyInventory(Critter& player, Critter@ npc, int price)
+{    
+    // reduce money
+    _CritDeleteItem(player, PID_BOTTLE_CAPS, price);
+}
+
+void r_DialogMessage(Critter& cr, Critter@ npc, int dialogId, int stringId)
+{    
+    cr.SayMsg(SAY_NETMSG, TEXTMSG_DLG, DLGSTR(dialogId, stringId));
+}
 
 
 #endif // __DIALOG__ //

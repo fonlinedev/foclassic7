@@ -678,19 +678,15 @@ void _OnExplDrop(Item& item, Critter& crit)
 
             switch(map.GetLocation().GetProtoId())
             {
-                case LOCATION_VaultCity:
-                case LOCATION_NCR:
-                case LOCATION_SanFrancisco:
+                
+                
+                
                 case LOCATION_Junktown:
                 case LOCATION_BrotherhoodofSteel:
                 case LOCATION_Hub:
                 case LOCATION_Boneyard:
-                case LOCATION_MiningSiteNCR:
-                case LOCATION_MiningSiteKlamath:
-                case LOCATION_MiningSiteSF:
-                case LOCATION_MiningSiteJunktown:
                 case LOCATION_Fortress:
-                case LOCATION_BarterGround:
+                
                 case LOCATION_LandersPoint:
                     DeleteItem(item);
                     break;

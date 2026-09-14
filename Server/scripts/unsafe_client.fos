@@ -603,7 +603,7 @@ void unsafe_TakeAll(Critter& target, int contId, int bodyId, int useFilter, stri
                 itemsWeight += int(items[i].Proto.Weight) * items[i].GetCount();
         }
 
-        // (optional secondary fuse – if the status changes in the meantime)
+        // (optional secondary fuse ï¿½ if the status changes in the meantime)
         if (valid(cont) && ( (cont.Proto.Container_Changeble && !FLAG(cont.LockerCondition, LOCKER_ISOPEN)) ||
                             GetDistantion(target.HexX, target.HexY, cont.HexX, cont.HexY) > LOOT_MAX_DIST )) {
             target.ShowScreen(SHOW_SCREEN_CLOSE, 0, "");
@@ -1671,7 +1671,7 @@ void unsafe_CombatMode(Critter& player, int mode, int, int, string@, array<int>@
         return;
 
     // DLog( "Combat mode change for "+player.Name+"<"+player.Id+"> : "+player.Param[MODE_DEFAULT_COMBAT]+" -> "+mode );
-    player.ParamBase[MODE_DEFAULT_COMBAT] = mode;
+    // player.ParamBase[MODE_DEFAULT_COMBAT] = mode;
 }
 
 

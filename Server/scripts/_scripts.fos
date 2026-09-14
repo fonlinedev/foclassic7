@@ -131,7 +131,6 @@
 #define SCRIPT_map_klamath                   (30030)
 #define SCRIPT_map_ncr_downtown              (30042)
 #define SCRIPT_map_mariposa                  (30049)     // Mariposa Military Base
-#define SCRIPT_map_redding                   (30060)     // Main redding map
 #define SCRIPT_map_redding_lost              (30064)     // hq of some cool redding faction
 #define SCRIPT_map_redding_bank_vault        (30065)     // Bank vault under the Redding bank
 #define SCRIPT_map_cathedral                 (30075)     // All Cathedral levels
