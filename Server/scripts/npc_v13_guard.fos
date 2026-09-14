@@ -16,5 +16,5 @@ void _Idle(Critter& npc)
     if(Random(0, 3) == 0)
         npc.SayMsg(SAY_NORM_ON_HEAD, TEXTMSG_DLG, DLGSTR(DIALOG_ID, 1));
     // till next move
-    npc.Wait(Random(500, 20000));
+    npc.Wait(Random(5000, 10000));
 }

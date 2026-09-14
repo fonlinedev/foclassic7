@@ -25,6 +25,18 @@
 {30}{}{Start Vault}
 {36}{}{}
 
+# Map 3, base 40
+{40}{}{Shady Sands West}
+{46}{}{}
+
+# Map 4, base 50
+{50}{}{Shady Sands East}
+{56}{}{}
+
+# Map 5, base 60
+{60}{}{Rascorpion nest cave}
+{66}{}{}
+
 # Map 6, base 70
 {70}{}{Start Caravan}
 {75}{}{01hub}
@@ -1775,6 +1787,16 @@
 {104000}{}{Start Caravan}
 {104005}{}{}
 {104010}{}{8}
+
+# Shady Sands, pid 5, base 105000
+{105000}{}{Shady Sands}
+{105005}{}{A village in the sands}
+{105010}{}{24}
+
+# Radscorpions Nest, pid 6, base 106000
+{106000}{}{Radscorpions Nest}
+{106005}{}{Radscorpions cave}
+{106010}{}{12}
 
 # Sierra, pid 8, base 108000
 {108000}{}{Sierra}

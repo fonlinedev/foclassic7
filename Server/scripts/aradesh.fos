@@ -1,0 +1,24 @@
+#include "_macros.fos"
+#include "_vars.fos"
+#include "_dialogs.fos"
+#include "messages_h.fos"
+#include "_maps.fos"
+#include "_defines.fos"
+#include "ITEMPID.H"
+
+#define DIALOG_aradesh1 4009
+#define DIALOG_aradesh2 4009
+#define DIALOG_aradesh3 4028
+
+void critter_init(Critter& npc, bool firstTime)
+{		
+    npc.SetEvent(CRITTER_EVENT_MESSAGE, "_OnUpdateQuests");
+	if (firstTime) {
+		npc.StatBase[ST_DIALOG_ID] = DIALOG_aradesh1;
+	}
+}
+
+void _OnUpdateQuests(Critter& npc, Critter& player, int num, int val)
+{
+
+}

@@ -1,0 +1,73 @@
+#include "_defines.fos"
+#include "_macros.fos"
+#include "_maps.fos"
+#include "factions_h.fos"
+#include "groups_h.fos"
+#include "mapdata_h.fos"
+#include "messages_h.fos"
+#include "MSGSTR.h"
+#include "npc_common_h.fos"
+#include "npc_roles_h.fos"
+#include "_vars.fos"
+#include "ITEMPID.H"
+
+void map_init(Map& map, bool firstTime)
+{    
+    uint[] values = { map.GetProtoId() };
+    
+    map.SetEvent(MAP_EVENT_IN_CRITTER, "_CritterIn");
+    map.SetEvent(MAP_EVENT_OUT_CRITTER, "_CritterOut");
+    if(firstTime)
+    {
+        map.SetTurnBasedAvailability(true);        
+    }
+}
+
+void _CritterIn(Map& map, Critter& cr)
+{
+
+}
+
+void _CritterOut(Map& map, Critter& cr)
+{
+
+}
+
+void t_NearEntrance(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
+{
+    
+    if(!critter.IsPlayer())
+    {    
+        return;
+    }
+
+    if(!entered)
+    {        
+        return;
+    }
+       
+    critter.SendMessage(
+        MSG_SANDS_NEAR_ENTRANCE,
+        0,
+        MESSAGE_TO_VISIBLE_ME
+    );
+}
+
+void t_Entered(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
+{
+    if(!critter.IsPlayer())
+    {
+        return;
+    }
+
+    if(!entered)
+    {
+        return;
+    }
+
+    critter.SendMessage(
+        MSG_SANDS_ENTERED,
+        0,
+        MESSAGE_TO_VISIBLE_ME
+    );
+}

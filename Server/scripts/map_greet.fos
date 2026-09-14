@@ -220,11 +220,7 @@ void InitGreet() {
         
 
     //  Talchem
-    AddGreet(MAP_TalchemSurface, "Talchem - Surface");
-    AddGreet(MAP_Talchemlevel1, "Talchem - Level 1");
-    AddGreet(MAP_Talchemlevel2, "Talchem - Level 2");
-
-    AddGreet(MAP_FishingZone, "Fishing Zone");
+        
     AddGreet(MAP_ArroyoTemple, "Arroyo Temple");
     AddGreet(MAP_TeslaTower, "Tesla Tower");
 
@@ -512,9 +508,7 @@ void GreetPlayer(Critter@ player, Map@ map) {
         //  LA warehouse
         case MAP_Ripper:
         case MAP_RipperSub:
-        //  talchem
-        case MAP_Talchemlevel1:
-        case MAP_Talchemlevel2:
+        //  talchem        
         //  sierra caves
         case MAP_SierraCavesLevel1Pitfall:
         case MAP_SierraCavesLevel1Gauntlet:
@@ -533,8 +527,7 @@ void GreetPlayer(Critter@ player, Map@ map) {
         case MAP_LAWarehouse:
         case MAP_MilitaryBaseEntrance:
         
-        case MAP_StrandedTanker_Outside:
-        case MAP_TalchemSurface:
+        case MAP_StrandedTanker_Outside:        
         case MAP_SierraCavesLevel1Scene1:
         case MAP_SierraCavesLevel1Scene2:
         case MAP_SierraCavesLevel1Scene3:

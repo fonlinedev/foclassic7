@@ -243,6 +243,9 @@
 #define LVAR_q_jt_sneakeater_locid              (7209)
 #define LVAR_q_jt_sneakeater_perk               (7210)
 
+// NEW QUESTS AND LOCID
+#define LVAR_quest_water_chip                   (7327)
+#define LVAR_q_shady_tandi                      (7328)
 
 //	KLAMATH										#7600
 #define LVAR_q_klam_aldobooze                   (7601)
@@ -526,6 +529,12 @@
 #define GVAR_den_score		                    (61005)
 #define GVAR_redding_score                      (61006)
 
+// MIGRATION
+#define LVAR_q_shady_radscorpions               (61007)
+#define LVAR_q_shady_radscorpions_locid         (61008)
+#define LVAR_q_shady_antidote                   (61009)
+#define LVAR_q_shady_crop_rotation              (61010)
+#define LVAR_q_shady_jarvis_cured               (61011)
 
 /*************************************************************************************
         Id	Type	Name		Start	Min	Max	Flags
@@ -1667,6 +1676,15 @@
    1 == active
 **********
 
+   $	7327	1	quest_water_chip	0	0	99	4
+**********
+   Water chip quest status variable for Vault 13.
+**********
+
+   $	7328	1	q_shady_tandi	0	0	7	0
+**********
+   Tandi quest states. TANDI_NOT_STARTED 0, TANDI_MISSING 1 TANDI_SEARCHING 2, TANDI_FOUND 3, TANDI_RESCUE_ESCAPE 4, TANDI_RESCUE_DUEL 5, TANDI_COMPLETED 6, TANDI_DEAD 7
+**********
 
 //
 //	KLAMATH										#7600
@@ -2984,6 +3002,32 @@ $	21016	1	LVAR_Book_Speaking          0	0	0	4
 **********
 
 	$	61006	0	redding_score	0	0	10000000	0
+**********
+
+**********
+	$	61007	1	q_shady_radscorpions	0	0	3	0
+**********
+	Used to track Seth's Radscorpion quest in Shady Sands. 0 = Not Started, 1 = Active, 2 = Killed all scorpions, 3 = Completed.
+**********
+   $	61008	1	q_shady_radscorpions_locid	0	0	0	4
+**********
+
+**********
+	$	61009	1	q_shady_antidote	0	0	1	0
+**********
+	Used to track Seth's Radscorpion quest in Shady Sands. 0 = Not Started, 1 = Completed.
+**********
+
+**********
+	$	61010	1	q_shady_crop_rotation	0	0	1	0
+**********
+	Used to track crop rotation quest in Shady Sands. 0 = Not Started, 1 = Completed.
+**********
+
+**********
+	$	61011	1	q_shady_jarvis_cured	0	0	1	0
+**********
+	Used to track Jarvis poison diagnostic and cure. 0 = Not Started, 1 = Completed.
 **********
 
 **********

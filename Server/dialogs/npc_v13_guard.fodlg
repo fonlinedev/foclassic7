@@ -1,0 +1,16 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 &
+
+[engl]
+{100}{}{Vault 13 guard}
+{200}{}{You see a Vault 13 guarding the entrance}
+{1000}{}{Predialogue installations}
+{100000001}{}{They sent me to look at the door. I'm looking at it. Yep. Still big. Still heavy. Still closed.@@You think the outside world is bad? Try spending three weeks down here with the water recycling system backing up.@@Don't look at me, buddy. I drew the short straw just to watch the gear mechanism. It hasn't turned since '77.@@If you find another water chip out there... grab two. I don't fancy drinking my own recycled sweat next month.@@The Overseer told me to stand here and stay alert. Alert for what? A giant mutated rat opening the blast door?@@You're actually going out there? Better you than me. I heard the sun burns your skin right off. Or maybe that was just the rads.}
+{100000002}{}{I don't understand why are you taking so long.@@Be grateful for this opportunity.@@The Overseer put a great deal of confidence on you, don't disappoint us!}
