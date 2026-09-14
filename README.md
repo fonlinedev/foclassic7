@@ -1,4 +1,4 @@
-# PReloaded - Reloaded Prototype
+# Fonline Classic 7 - Revival
 
 **FOClassic server example based on FOnline Reloaded**
 
