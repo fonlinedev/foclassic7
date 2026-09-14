@@ -11,6 +11,19 @@
 #include "_vars.fos"
 #include "ITEMPID.H"
 
+// dialog ids
+#define SETH_DIALOG1 4010
+#define SETH_DIALOG2 4029
+#define ARADESH_DIALOG1 4009
+#define IAN_DIALOG 4017
+#define TANDI_DIALOG1 4026
+
+// npc pids
+#define SETH_PID 67
+#define ARADESH_PID 206
+#define IAN_PID 32
+#define TANDI_PID 68
+
 void map_init(Map& map, bool firstTime)
 {    
     uint[] values = { map.GetProtoId() };
@@ -23,14 +36,183 @@ void map_init(Map& map, bool firstTime)
     }
 }
 
-void _CritterIn(Map& map, Critter& cr)
+void spawnSeth(Map@ map)
+{
+    Critter@ cr = SpawnStaticNpc(
+        map,
+        10,                 // entire id
+        SETH_PID,
+        SETH_DIALOG1,
+        167,                // bag
+        FACTION_NCR,
+        1,                  // faction mode
+        1,                  // faction rank
+        5,                  // direction
+        "seth@critter_init",
+        "Seth"
+    );
+    if (!valid(cr))
+        Log("Error at seth spawning");
+}
+
+void spawnAradesh(Map& map)
+{
+    Critter@ cr = SpawnStaticNpc(
+        map,
+        12,                 // entire id
+        ARADESH_PID,
+        ARADESH_DIALOG1,
+        6,                // bag
+        FACTION_NCR,
+        1,                  // faction mode
+        1,                  // faction rank
+        3,                  // direction
+        "",
+        "Aradesh"
+    );
+    if (!valid(cr))
+        Log("Error at aradesh spawning");
+    
+}
+
+// IAN can be removed by the player, update this to respawn automatically.
+void spawnIan(Map& map)
 {
 
+    Critter@ cr = SpawnStaticNpc(
+        map,
+        11,                 // entire id
+        IAN_PID,
+        IAN_DIALOG,
+        7,                // bag
+        FACTION_NCR,
+        1,                  // faction mode
+        0,                  // faction rank
+        2,                  // direction
+        "",
+        "Ian"
+    );
+    if (!valid(cr))
+        Log("Error at aradesh spawning");
+
+}
+// Tandi must be removed if the quest started
+void spawnTandi(Map& map)
+{
+    Critter@ cr = SpawnStaticNpc(
+        map,
+        13,                 // entire id
+        TANDI_PID,
+        TANDI_DIALOG1,
+        3,                // bag
+        FACTION_NCR,
+        1,                  // faction mode
+        1,                  // faction rank
+        3,                  // direction
+        "",
+        "TANDI"
+    );
+    if (!valid(cr))
+        Log("Error at aradesh spawning");
+        
+}
+
+void _CritterIn(Map& map, Critter& cr)
+{
+    if (!cr.IsPlayer())
+        return;
+
+    Map@   player_map = cr.GetMap();
+    if(valid(player_map))
+    {
+        spawnSeth(player_map);
+        spawnAradesh(player_map);
+        spawnIan(player_map);
+        spawnTandi(player_map);
+    }
 }
 
 void _CritterOut(Map& map, Critter& cr)
 {
 
+}
+
+Critter@ SpawnStaticNpc(
+    Map@ map,
+    uint coord,
+    uint pid,
+    uint dialog,
+    uint bag,
+    uint team,
+    uint factionMode,
+    uint factionRank,
+    uint dir,
+    string initFunc,
+    string name)
+{
+    uint16 x = 0;
+    uint16 y = 0;
+
+    map.GetEntireCoords(coord, 0, x, y);
+
+    Critter@ cr = map.GetCritter(x, y);
+
+    if (!valid(cr))
+    {
+        int[] params = {
+            ST_DIALOG_ID, dialog,
+            ST_BAG_ID, bag,
+            ST_TEAM_ID, team,
+            ST_FACTION_MODE, factionMode,
+            ST_FACTION_RANK, factionRank,
+            MODE_NO_LOOT, 1,
+            MODE_NO_STEAL, 1
+        };
+
+        @cr = map.AddNpc(
+            pid,
+            x,
+            y,
+            dir,
+            params,
+            null,
+            initFunc
+        );
+
+        if (!valid(cr))
+        {
+            Log("Error creating " + name);
+            return null;
+        }
+
+        Log(name + " spawned");
+    }
+    else
+    {
+        Log(name + " already exists");
+    }
+
+    return cr;
+}
+
+void UpdateSeth(Critter@ cr)
+{
+    // Seth-specific logic
+}
+
+void UpdateAradesh(Critter@ cr)
+{
+    // Aradesh-specific logic
+}
+
+void UpdateIan(Critter@ cr)
+{
+    // Ian-specific logic
+}
+
+void UpdateTandi(Critter@ cr)
+{
+    // Tandi-specific logic
 }
 
 void t_NearEntrance(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
