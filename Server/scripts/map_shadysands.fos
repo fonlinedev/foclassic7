@@ -30,10 +30,35 @@ void map_init(Map& map, bool firstTime)
     
     map.SetEvent(MAP_EVENT_IN_CRITTER, "_CritterIn");
     map.SetEvent(MAP_EVENT_OUT_CRITTER, "_CritterOut");
+    CreateTimeEvent(AFTER(REAL_MINUTE(5)), "cte_SpawnIan", values, false);
     if(firstTime)
     {
-        map.SetTurnBasedAvailability(true);        
+        map.SetTurnBasedAvailability(true);
+        spawnIan(map);
     }
+}
+
+uint cte_SpawnIan(array<uint>@ values) {
+    if(values is null || values.length() == 0) return 0;
+    uint mapPid = values[0];
+    Map@ map = GetMapByPid(mapPid, 0);
+
+    if(!valid(map))
+    {
+        Log("cte_SpawnIan failed, map " + mapPid + " not found.");
+        return 0;
+    }
+    uint16 x = 0;
+    uint16 y = 0;
+
+    map.GetEntireCoords(11, 0, x, y);
+
+    Critter@ cr = map.GetCritter(x, y);
+    if (!valid(cr)) {
+        Log("IAN not found, spawning back");
+        spawnIan(map);
+    }
+    return REAL_MINUTE(5);
 }
 
 void spawnSeth(Map@ map)
@@ -126,8 +151,7 @@ void _CritterIn(Map& map, Critter& cr)
     if(valid(player_map))
     {
         spawnSeth(player_map);
-        spawnAradesh(player_map);
-        spawnIan(player_map);
+        spawnAradesh(player_map);        
         spawnTandi(player_map);
     }
 }

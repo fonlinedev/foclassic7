@@ -11,6 +11,7 @@
 #define COMPANIONS_UPDATE_INTERVAL    (REAL_MINUTE(15))
 #define COMPANION_DIALOG_ID           (9310)
 
+#define IAN_PID              (32)
 #define IAN_BAG_ID           (7)
 #define TANDI_BAG_ID         (3)
 

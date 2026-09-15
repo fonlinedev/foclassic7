@@ -18,6 +18,7 @@
 #include "npc_common_h.fos"
 #include "npc_roles_h.fos"
 #include "world_common_h.fos"
+#include "companion_h.fos"
 
 /**
  * \~english @defgroup DialogFuncs Dialog module
@@ -1943,5 +1944,24 @@ void r_DialogMessage(Critter& cr, Critter@ npc, int dialogId, int stringId)
     cr.SayMsg(SAY_NETMSG, TEXTMSG_DLG, DLGSTR(dialogId, stringId));
 }
 
+bool d_HasCompanion(Critter& player, Critter@ npc, int pid)
+{
+    array<Critter@> crits;
+    GetFollowers(player, player.GetMap(), crits, false);
+     bool            following = false;
+    for(uint c = 0, cLen = crits.length(); c < cLen; c++)
+    {
+        if(IsFollowing(crits[c]) && crits[c].GetProtoId() == IAN_PID)
+        {
+            return true;            
+        }
+    }
+    return false;    
+}
+
+bool d_NotHasCompanion(Critter& player, Critter@ npc, int pid)
+{
+    return !d_HasCompanion(player, npc, pid);
+}
 
 #endif // __DIALOG__ //

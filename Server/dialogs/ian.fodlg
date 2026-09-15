@@ -40,7 +40,7 @@ lang=engl
 15 12010 #
 9 12020 #
 13 12030 #
-17 12040 D _param p ST_CHARISMA } 3 #
+17 12040 D _param p ST_CHARISMA } 3 D _script dialog@d_NotHasCompanion 1 32 #
 16 12050 D _param p ST_CHARISMA < 3 #
 0 12060 @
 13 13000 None 0 #
