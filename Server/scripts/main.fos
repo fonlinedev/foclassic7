@@ -86,6 +86,7 @@ import uint   GMTrack(uint targetId, string@ message) from "cheats";
 import void   InitCheats(bool fromGame) from "cheats";
 import void   InitBrahminPens() from "brahmin_pens";
 import void   InitBrahminTraders() from "brahmin_traders";
+import void   InitCompanions() from "companion";
 import void   InitCars() from "car_seller";
 import void   InitCaveLog() from "cavelog";
 import void   InitCaveRandomization() from "cave";
@@ -247,7 +248,7 @@ void init()
 
 	InitPerks();
     InitBlueprints();
-
+    
 	InitSkins();
 
 	FLog(LOG_WMLOCATIONS, "START");
@@ -404,7 +405,7 @@ bool start()
 
     // Mercenaries
     //InitMercs();
-
+    
     // Patrol routes
     InitRoutes();
     // Brahmin pens
@@ -416,7 +417,8 @@ bool start()
 
     InitCaveRandomization();
 //    InitAmmoLog();
-    InitCaveLog();
+    InitCaveLog();    
+    InitCompanions();
     // InitCaravans();     // Uncomment if you want to have one caravan running Hub-Adytum-Lost Hills
     // reputations, alliances
     InitGroups();
@@ -3417,13 +3419,13 @@ void map_critter_out(Map& map, Critter& cr)
             {
                 string cond = crits[i].Cond == CRITTER_CONDITION_KNOCKOUT ? "unconscious" : "dead";
                 cr.Say(SAY_NETMSG, "You've left your " + cond + " follower " + GetLexem(crits[i], "$name") + " behind.");
-                continue;
+                //continue;
             }
 
             if(crits[i].Timeout[TO_BATTLE] > 0)
             {
-                cr.Say(SAY_NETMSG, "You've left behind your follower " + GetLexem(crits[i], "$name") + ", who is still fighting.");
-                continue;
+                cr.Say(SAY_NETMSG, "You've left behind your follower " + GetLexem(crits[i], "$name") + ", who is still fighting. He may catch you back or not.");
+                // continue;
             }
 
             if(!(crits[i].FollowerVar[FV_MODE] == FOLLOWMODE_FOLLOW || crits[i].FollowerVar[FV_MODE] == FOLLOWMODE_FOLLOW_CONTROL))

@@ -24,7 +24,7 @@
  */
 /*@{*/
 
-// #define DEBUG_COMPANION
+#define DEBUG_COMPANION
 
 array<uint>  Companions;
 
@@ -108,7 +108,7 @@ void CreateCompanion()
     if(!MoveToFreeHex(cr))
         DeleteNpc(cr);
     #ifdef DEBUG_COMPANION
-    DLog("Created companion with id " + cr.Id + " moving to map " + MapPid);
+    Log("Created companion with id " + cr.Id + " moving to map " + MapPid);
     #endif
 }
 
@@ -206,7 +206,7 @@ void ForceUpdate(Critter& cr, int, int, int)
 uint e_UpdateCompanions(array<uint>@ values)
 {
     #ifdef DEBUG_COMPANION
-    DLog("Updating companions...");
+    Log("Updating companions...");
     #endif
 
     if(Random(0, 1) == 0)
@@ -218,17 +218,17 @@ uint e_UpdateCompanions(array<uint>@ values)
         if(!valid(cr))
         {
             #ifdef DEBUG_COMPANION
-            DLog(Companions[i] + " is no longer valid, removing from array.");
+            Log(Companions[i] + " is no longer valid, removing from array.");
             #endif
             Companions.removeAt(i);
         }
         #ifdef DEBUG_COMPANION
         else
         {
-            DLog(Companions[i] + ":");
-            DLog("   Map Id: " + cr.GetMapId());
-            DLog("   x: " + cr.HexX);
-            DLog("	 y: "+ cr.HexY);
+            Log(Companions[i] + ":");
+            Log("   Map Id: " + cr.GetMapId());
+            Log("   x: " + cr.HexX);
+            Log("	 y: "+ cr.HexY);
         }
         #endif
     }
@@ -246,7 +246,7 @@ uint e_UpdateCompanions(array<uint>@ values)
                 Map@ map = GetMapByPid(random_from_array(companion_map_pids), 0);
                 cr.TransitToMap(map.Id, ENTIRE_DEFAULT);
                 #ifdef DEBUG_COMPANION
-                DLog(cr.Id + " is entering town " + map.Id);
+                Log(cr.Id + " is entering town " + map.Id);
                 #endif
                 if(!MoveToFreeHex(cr))
                     DeleteNpc(cr);
@@ -261,13 +261,13 @@ uint e_UpdateCompanions(array<uint>@ values)
                     AddWalkPlane(cr, 60, PLANE_GOTO_EXIT, 0, hx, hy, 0xFF, false, 1);
                     cr.SetEvent(CRITTER_EVENT_PLANE_END, "_PlaneEnd");
                     #ifdef DEBUG_COMPANION
-                    DLog(cr.Id + " is leaving town " + cr.GetMapId() + ", walking to " + hx + "," + hy);
+                    Log(cr.Id + " is leaving town " + cr.GetMapId() + ", walking to " + hx + "," + hy);
                     #endif
                 }
                 else
                 {
                     #ifdef DEBUG_COMPANION
-                    DLog(cr.Id + ": can't find any exit grid nearby on map " + cr.GetMapId());
+                    Log(cr.Id + ": can't find any exit grid nearby on map " + cr.GetMapId());
                     #endif
                 }
 
@@ -360,9 +360,10 @@ void dlg_ShowPreInfo(Critter& player, Critter@ npc, string@ text)
 
 void r_BefriendGenericCompanion(Critter& player, Critter@ npc)
 {
+    #ifdef DEBUG_COMPANION
     Log("companion id "+npc.Id);
-    uint index = FindInArray(Companions, npc.Id);
-    Companions.removeAt(index);
+    #endif
+    uint index = FindInArray(Companions, npc.Id);    
     MakeFollower(npc, FOLLOWER_TYPE_COMPANION, "follower@FollowerBaseInit", COMPANION_DIALOG_ID, player, true);
     npc.SetEvent(CRITTER_EVENT_FINISH, "_FinishCompanionOff");
 }
