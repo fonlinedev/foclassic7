@@ -165,10 +165,6 @@ void CheckOwner(Critter& cr, int p0, int p1, int p2)
 {
     cr.Say(SAY_NETMSG, "Owner: " + GetSafePlayerName(cr.GetMap().GetData(MAP_DATA_NESTCAVE_OWNER)));
 }
-void CheckPlants(Critter& cr, int p0, int p1, int p2)
-{
-    cr.Say(SAY_NETMSG, "Plants dead: " + cr.GetMap().GetData(MAP_DATA_NESTCAVE_SCORPIONS));
-}
 
 // =============================================
 // Mob script parts

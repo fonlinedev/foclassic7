@@ -8,7 +8,7 @@
 #include "_maps.fos"
 #include "_bags.fos"
 
-#define COMPANIONS_UPDATE_INTERVAL    (REAL_MINUTE(1))
+#define COMPANIONS_UPDATE_INTERVAL    (REAL_MINUTE(15))
 #define COMPANION_DIALOG_ID           (9310)
 
 #define IAN_PID              (32)

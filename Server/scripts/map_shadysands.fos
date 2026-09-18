@@ -15,6 +15,7 @@
 #define SETH_DIALOG1 4010
 #define SETH_DIALOG2 4029
 #define ARADESH_DIALOG1 4009
+#define ARADESH_DIALOG2 4030
 #define IAN_DIALOG 4017
 #define TANDI_DIALOG1 4026
 
@@ -213,7 +214,10 @@ Critter@ SpawnStaticNpc(
     }
     else
     {
-        Log(name + " already exists");
+        Log(name + " already exists, updating");
+        if (name == "Aradesh") {
+            UpdateAradesh(cr, map);
+        }
     }
 
     return cr;
@@ -224,9 +228,32 @@ void UpdateSeth(Critter@ cr)
     // Seth-specific logic
 }
 
-void UpdateAradesh(Critter@ cr)
+// Aradesh-specific logic
+void UpdateAradesh(Critter@ cr, Map@ map)
 {
-    // Aradesh-specific logic
+    array<Critter@> crits;
+    uint n = map.GetCritters(0, FIND_ALL | FIND_ONLY_PLAYERS, crits);
+
+    for(uint i = 0; i < n; i++)
+    {
+        if(crits[i].IsPlayer())
+        {
+            GameVar@ qVar = GetLocalVar(LVAR_q_shady_radscorpions, crits[i].Id);
+
+            if(!valid(qVar))
+                return;
+
+            if(qVar.GetValue() > 0 && qVar.GetValue() < 3)
+            {
+                Log("Radscorpions quest is ongoing");
+                cr.StatBase[ST_DIALOG_ID] = ARADESH_DIALOG2;
+            }
+
+            return;
+        }
+    }
+
+    Log("Player not found!!");
 }
 
 void UpdateIan(Critter@ cr)
