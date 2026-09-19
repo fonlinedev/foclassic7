@@ -283,7 +283,7 @@ bool start()
     SetSendParameter(PE_STONEWALL, true);
     SetSendParameter(PE_IRON_LIMBS, true);
     */
-    SetSendParameter(PE_WASTELANDERS_RESILIENCE, true);
+    // SetSendParameter(PE_WASTELANDERS_RESILIENCE, true);
     // Agility
     SetSendParameter(ST_AGILITY, true);
     // Hit points, uses Strenght and Endurance
@@ -1971,8 +1971,8 @@ void critter_init(Critter& cr, bool firstTime)
 
         cr.ModeBase[MODE_NO_RUN] = modeRun;
 
-		if( cr.Mode[MODE_DEFAULT_COMBAT] == COMBAT_MODE_ANY )
-			cr.ModeBase[MODE_DEFAULT_COMBAT] = COMBAT_MODE_TURN_BASED;
+		//if( cr.Mode[MODE_DEFAULT_COMBAT] == COMBAT_MODE_ANY )
+		cr.ModeBase[MODE_DEFAULT_COMBAT] = COMBAT_MODE_TURN_BASED;
 
         UpdateFactionsInfo(cr);
 
@@ -3419,9 +3419,9 @@ void map_critter_out(Map& map, Critter& cr)
             {
                 string cond = crits[i].Cond == CRITTER_CONDITION_KNOCKOUT ? "unconscious" : "dead";
                 cr.Say(SAY_NETMSG, "You've left your " + cond + " follower " + GetLexem(crits[i], "$name") + " behind.");
-                //continue;
+                continue;
             }
-
+            // if combat becomes too hard player can escape and the follower will come later if still alive.
             if(crits[i].Timeout[TO_BATTLE] > 0)
             {
                 cr.Say(SAY_NETMSG, "You've left behind your follower " + GetLexem(crits[i], "$name") + ", who is still fighting. He may catch you back or not.");

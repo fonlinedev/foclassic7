@@ -20,7 +20,7 @@ void map_init(Map& map, bool firstTime)
     if (firstTime)
     {
         map.SetData(MAP_DATA_FACTION, FACTION_VAULT_CITY);
-
+        map.SetTurnBasedAvailability(true);
         // Find the skeleton container at its map hex
         Item@ skeleton = map.GetItem(104, 89, PID_SKELETON);
         if (valid(skeleton))
