@@ -27,11 +27,12 @@
 
 # Map 3, base 40
 {40}{}{Shady Sands West}
-{46}{}{}
+{45}{}{07desert}
+{46}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
 # Map 4, base 50
 {50}{}{Shady Sands East}
-{56}{}{}
+{56}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
 # Map 5, base 60
 {60}{}{Rascorpion nest cave}
@@ -48,6 +49,11 @@
 {85}{}{05raider}
 {85}{}{12junktn}
 {86}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
+
+# Map 8, base 90
+{90}{}{Raiders Camp}
+{95}{}{05raider}
+{96}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
 # Map 10, base 110
 {110}{}{Mountains Encounter Khans 2}
@@ -1797,6 +1803,11 @@
 {106000}{}{Radscorpions Nest}
 {106005}{}{Radscorpions cave}
 {106010}{}{12}
+
+# Raiders Camp, pid 7, base 107000
+{107000}{}{Raiders Camp}
+{107005}{}{Riaders camp.}
+{107010}{}{12}
 
 # Sierra, pid 8, base 108000
 {108000}{}{Sierra}
