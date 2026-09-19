@@ -376,7 +376,7 @@ void r_BefriendCompanion(Critter& player, Critter@ npc)
     uint npcId = npc.GetProtoId();
 
     // IAN 32
-    if (npcId == 32) {
+    if (npcId == IAN_PID) {
         Log("init companion Ian");
         npc.StatBase[ST_LEVEL] = player.StatBase[ST_LEVEL];
         npc.StatBase[ST_BAG_ID] = IAN_BAG_ID;
@@ -399,7 +399,7 @@ void r_BefriendCompanion(Critter& player, Critter@ npc)
         true
     );
     // TANDI 68
-    } else if (npcId == 68) {
+    } else if (npcId == TANDI_PID) {
         Log("init companion Tandi");
         npc.StatBase[ST_LEVEL] = player.StatBase[ST_LEVEL];
         npc.StatBase[ST_BAG_ID] = TANDI_BAG_ID;

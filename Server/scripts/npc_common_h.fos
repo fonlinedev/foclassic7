@@ -57,6 +57,7 @@ import uint   GetCrittersWithScript(Map& map, uint16 pid, uint findType, string&
 import uint   GetCrittersLoc(Location& loc, uint16 pid, uint findType, array<Critter@>@ critters) from "npc_common";
 import uint   GetNearGuards(Map@ map, uint16 hexX, uint16 hexY, uint radius, array<Critter@>@ crits) from "npc_common";
 import uint   GetNearFactionGuards(Map@ map, uint16 hexX, uint16 hexY, uint radius, uint faction, array<Critter@>@ crits) from "npc_common";
+import uint   GetNearFactionGuardsMode(Map@ map, uint16 hexX, uint16 hexY, uint radius, uint faction, uint mode, array<Critter@>@ crits) from "npc_common";
 import string GenerateNewName(Critter& critter) from "npc_common";
 import string GetStoredName(Critter& critter) from "npc_common";
 import string GetStoredFirstName(Critter& critter) from "npc_common";

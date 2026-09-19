@@ -170,8 +170,8 @@ void InitRoutes()
     ADD_ROUTE(raiderscamp_guard1_patrol, MAP_RaidersCamp, AddNode(11, 3, 60000)
         .AddNode(12, 5, 60000));     // id 19
 
-    ADD_ROUTE(raiderscamp_guard2_patrol, MAP_RaidersCamp, AddNode(13, 5, 60000)
-        .AddNode(14, 2, 60000));     // id 20
+    ADD_ROUTE(raiderscamp_guard2_patrol, MAP_RaidersCamp, AddNode(13, 5, 30000)
+        .AddNode(14, 2, 30000));     // id 20
     // Add more...
 
     Log("Patrol routes initialized successfully");

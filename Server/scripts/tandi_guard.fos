@@ -14,6 +14,7 @@
 #include "npc_roles_h.fos"
 #include "patrolling.fos"
 #include "factions_h.fos"
+#include "follower_common.fos"
 
 #define DIALOG_TANDI_GUARD_ID   (4039)
 #define GUARD_DIR_1 (5)
@@ -31,7 +32,7 @@ void _OnPlayerWalkCorridor(Critter& npc, Critter& player, int num, int val)
     if(num == MSG_TANDI_DOOR_UNLOCK) {
         if (npc.Dir == GUARD_DIR_1) {
             // Force dialogue interface to open with the player
-            RunDialog(player, npc, DIALOG_TANDI_GUARD_ID, true);            
+            RunDialog(player, npc, DIALOG_TANDI_GUARD_ID, true);
         } else {
             if(player.Mode[MODE_HIDE] == 0)
                 player.ModeBase[MODE_HIDE] = 1;
@@ -39,7 +40,10 @@ void _OnPlayerWalkCorridor(Critter& npc, Critter& player, int num, int val)
         }
     }
     if (num == MSG_TANDI_ESCAPING && val == ROLE_TANDI_GUARD) {        
-        Log("player is escaping with Tandi role guard "+ ROLE_TANDI_GUARD);
+        if (npc.Dir == GUARD_DIR_1) {
+            // Force dialogue interface to open with the player
+            RunDialog(player, npc, DIALOG_TANDI_GUARD_ID, true);
+        }
     }
 }
 
@@ -49,4 +53,14 @@ void _Idle(Critter& guard)
     _GetNextNode(guard, 19)         // Route 19 as defined in patrolroutes.fos
     AddWalkPlane(guard, 0, node.GetX(), node.GetY(), node.GetDir(), false, 0);
     AddWaitPlan(guard, node.GetWait());
+}
+
+bool d_IsTandiFollowingPlayer(Critter& player, Critter@ npc)
+{
+    return isTandiFollower(player);
+}
+
+bool d_NotIsTandiFollowingPlayer(Critter& player, Critter@ npc)
+{
+    return !isTandiFollower(player);
 }
