@@ -36,3 +36,11 @@ Client/
 *.jar
 *.log
 Tools/WorldEditor/Cache.dat
+
+
+# Keep FOClassic server binaries
+!/Server/Server.exe
+!/Server/Server.pdb
+
+!/Server/scripts/client/
+!/Server/scripts/client/**
