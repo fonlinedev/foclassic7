@@ -469,7 +469,7 @@ void CritterGenerate(array<int>& data)     // Export to client_main@player_data_
 
     #ifdef __CLIENT
     // Runtime calculations, only for client registration
-    _param_[ST_ARMOR_CLASS] += 3 * _param_[ST_AGILITY];
+    _param_[ST_ARMOR_CLASS] += 3 * _param_[ST_AGILITY];    
     _param_[ST_MAX_LIFE] += _param_[ST_STRENGTH] * 2 + _param_[ST_ENDURANCE] * 3 + 168;
     _param_[ST_ACTION_POINTS] += (38 + _param_[ST_AGILITY]) / 8;
     _param_[ST_CARRY_WEIGHT] += LBS_TO_GRAMM(25 + _param_[ST_STRENGTH] * 25)+20000;
@@ -503,7 +503,7 @@ void CritterGenerate(array<int>& data)     // Export to client_main@player_data_
         cr.StatBase[ST_MAX_LIFE] += 40;
     if (cr.IsPlayer()) {
         _param_[ST_MAX_LIFE] += 113;
-        _param_[PE_WASTELANDERS_RESILIENCE] = 1;
+        _param_[PE_WASTELANDERS_RESILIENCE] = 0;
     }
     if (!cr.IsPlayer()) {
         _param_[ST_ACTION_POINTS] -= 2;

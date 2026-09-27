@@ -26,6 +26,7 @@
 #include "follower_capturing.fos"
 #include "follower_common_h.fos"
 #include "follower_h.fos"
+#include "companion_h.fos"
 #include "groups_h.fos"
 #include "item_dogtags_h.fos"
 #include "item_perks_h.fos"
@@ -86,6 +87,7 @@ import uint   GMTrack(uint targetId, string@ message) from "cheats";
 import void   InitCheats(bool fromGame) from "cheats";
 import void   InitBrahminPens() from "brahmin_pens";
 import void   InitBrahminTraders() from "brahmin_traders";
+import void   InitCompanions() from "companion";
 import void   InitCars() from "car_seller";
 import void   InitCaveLog() from "cavelog";
 import void   InitCaveRandomization() from "cave";
@@ -247,7 +249,7 @@ void init()
 
 	InitPerks();
     InitBlueprints();
-
+    
 	InitSkins();
 
 	FLog(LOG_WMLOCATIONS, "START");
@@ -282,7 +284,7 @@ bool start()
     SetSendParameter(PE_STONEWALL, true);
     SetSendParameter(PE_IRON_LIMBS, true);
     */
-    SetSendParameter(PE_WASTELANDERS_RESILIENCE, true);
+    // SetSendParameter(PE_WASTELANDERS_RESILIENCE, true);
     // Agility
     SetSendParameter(ST_AGILITY, true);
     // Hit points, uses Strenght and Endurance
@@ -404,7 +406,7 @@ bool start()
 
     // Mercenaries
     //InitMercs();
-
+    
     // Patrol routes
     InitRoutes();
     // Brahmin pens
@@ -416,7 +418,8 @@ bool start()
 
     InitCaveRandomization();
 //    InitAmmoLog();
-    InitCaveLog();
+    InitCaveLog();    
+    InitCompanions();
     // InitCaravans();     // Uncomment if you want to have one caravan running Hub-Adytum-Lost Hills
     // reputations, alliances
     InitGroups();
@@ -1969,8 +1972,8 @@ void critter_init(Critter& cr, bool firstTime)
 
         cr.ModeBase[MODE_NO_RUN] = modeRun;
 
-		if( cr.Mode[MODE_DEFAULT_COMBAT] == COMBAT_MODE_ANY )
-			cr.ModeBase[MODE_DEFAULT_COMBAT] = COMBAT_MODE_TURN_BASED;
+		//if( cr.Mode[MODE_DEFAULT_COMBAT] == COMBAT_MODE_ANY )
+		cr.ModeBase[MODE_DEFAULT_COMBAT] = COMBAT_MODE_TURN_BASED;
 
         UpdateFactionsInfo(cr);
 
@@ -3419,12 +3422,32 @@ void map_critter_out(Map& map, Critter& cr)
                 cr.Say(SAY_NETMSG, "You've left your " + cond + " follower " + GetLexem(crits[i], "$name") + " behind.");
                 continue;
             }
-
+            // if combat becomes too hard player can escape and the follower will come later if still alive.
             if(crits[i].Timeout[TO_BATTLE] > 0)
             {
-                cr.Say(SAY_NETMSG, "You've left behind your follower " + GetLexem(crits[i], "$name") + ", who is still fighting.");
-                continue;
+                uint npcId = crits[i].GetProtoId();
+
+                if (npcId == TANDI_PID) {
+                    cr.Say(SAY_NETMSG, "You've left Tandi behind, who is still fighting.");                                        
+                    GameVar@ rescueVar = GetLocalVar(LVAR_q_tandi_rescue, cr.Id);
+                    if (!valid(rescueVar)) {
+                        Log("q_tandi_rescue invalid state.");
+                        continue;
+                    }
+                    rescueVar = 0;
+                    crits[i].StatBase[ST_FREE_BARTER_PLAYER] = 0;
+                    SetGroupInfo(crits[i], FACTION_UNKNOWN, 0, FACTION_MODE_PASSIVE);
+                    crits[i].FollowerVarBase[FV_MASTER] = 0;
+                    cr.FollowersBase[i] = 0;
+                    DeleteNpc(crits[i]);
+                    continue;
+                }
+
+                cr.Say(SAY_NETMSG, "You've left behind your follower " + GetLexem(crits[i], "$name") + ", who is still fighting. They may catch you back or not.");
+                // continue;
             }
+
+            
 
             if(!(crits[i].FollowerVar[FV_MODE] == FOLLOWMODE_FOLLOW || crits[i].FollowerVar[FV_MODE] == FOLLOWMODE_FOLLOW_CONTROL))
             {

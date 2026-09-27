@@ -23,6 +23,12 @@
 #define ROLE_MOB_MINE                      (91)
 /////////////////////////////
 
+// Raiders
+#define ROLE_RAIDERS_CAVEGUARD             (2700) // these are somehow to dialogs, i think
+#define ROLE_RAIDERS_CAGEGUARD             (2720) // these are somehow to dialogs, i think
+#define ROLE_TANDI_GUARD                   (1)
+#define ROLE_DOOR_GUARD                    (2)
+
 // Junktown
 #define ROLE_JNK_GUARD_GATE                (1)
 #define ROLE_JNK_DRUNKPRIEST               (2) // shouter

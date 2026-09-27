@@ -446,9 +446,9 @@ EXPORT int getParam_MaxCritical(CritterMutual& cr, uint)
 }
 
 int GetAC(CritterMutual& cr, bool head)
-{
-	int val = cr.Params[ST_ARMOR_CLASS] + cr.Params[ST_ARMOR_CLASS_EXT] + 5*getParam_Agility(cr, 0);
-
+{ 	
+	int val = cr.Params[ST_ARMOR_CLASS] + 3*getParam_Agility(cr, 0);
+	
 	while(cr.Params[PE_LIVEWIRE])
 	{
 		const Item* weapon=cr.ItemSlotMain;
@@ -459,7 +459,7 @@ int GetAC(CritterMutual& cr, bool head)
 		if(weapon->IsWeapon() && weapon->Proto->Weapon_Skill[0]!=SK_UNARMED && weapon->Proto->Weapon_Skill[0]!=SK_THROWING && FLAG(weapon->Proto->Flags,ITEM_FLAG_TWO_HANDS))
 			break; // 2-handed sg/bg/ew
 
-		val += 5*getParam_Agility(cr, 0);
+		val += 3*getParam_Agility(cr, 0);
 		break;
 	}
 
@@ -471,7 +471,7 @@ int GetAC(CritterMutual& cr, bool head)
 
 EXPORT int getParam_Ac(CritterMutual& cr, uint)
 {
-	return GetAC(cr,false);
+	return GetAC(cr,false);	
 }
 
 EXPORT int getParam_DamageResistance(CritterMutual& cr, uint index)
@@ -600,7 +600,7 @@ EXPORT bool Critter_IsOverweight(CritterMutual& cr)
 
 EXPORT int Critter_GetAC(CritterMutual& cr, bool head)
 {
-	return GetAC(cr,head);
+	return GetAC(cr,head);	
 }
 
 EXPORT int Critter_GetDR(CritterMutual& cr, uint dmgType, bool head)

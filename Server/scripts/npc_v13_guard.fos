@@ -5,6 +5,19 @@
 #include "utils_h.fos"
 
 #define DIALOG_ID    (4018)
+// Define quest states & item PIDs
+#define QUEST_WATER_CHIP_NONE           (0)
+#define QUEST_WATER_CHIP_STARTED        (1)
+#define QUEST_WATER_CHIP_COMPLETED      (99)
+
+#define NODE_INITIAL                    (100)
+#define NODE_QUEST_EXPLANATION          (200)
+#define NODE_QUEST_TIME_LIMIT           (300)
+#define NODE_QUEST_ACCEPT               (400)
+#define NODE_LOW_INT_COUNTER            (104)
+#define NODE_LOW_INT_ACCEPT             (401)
+#define NODE_BUSY                       (999)
+
 
 void critter_init(Critter& npc, bool firstTime)
 {
@@ -17,4 +30,90 @@ void _Idle(Critter& npc)
         npc.SayMsg(SAY_NORM_ON_HEAD, TEXTMSG_DLG, DLGSTR(DIALOG_ID, 1));
     // till next move
     npc.Wait(Random(5000, 10000));
+}
+
+
+// Script demand/result function for dialogue
+void r_StartQuest(Critter& player, Critter@ npc)
+{
+    // Access the player's quest variable (declared in var.txt as q_vault13_waterchip)
+    GameVar@ quest = GetLocalVar(LVAR_quest_water_chip, player.Id);
+    
+    if (valid(quest))
+    {
+        quest = 1; // Set quest to in-progress		
+        player.Say(SAY_NETMSG, "Quest accepted: Find the Water Chip for Vault 13.");
+		// --- STARTQUEST ITEM LOOT TABLE ---
+        
+        // 100% Chance items (Quantity 1)
+        player.AddItem(PID_KNIFE, 1);
+        player.AddItem(PID_10MM_PISTOL, 1);
+        player.AddItem(PID_WATER_FLASK, 1);
+        
+        // 100% Chance with random quantity (10 to 20 AP rounds)
+        player.AddItem(PID_10MM_AP, Random(10, 20));
+        
+        // 80% Chance item (Quantity 1)
+        if(Random(1, 100) <= 80)
+        {
+            player.AddItem(PID_STIMPAK, 1);
+        }
+        
+        // 25% Chance item (Quantity 1)
+        if(Random(1, 100) <= 25)
+        {
+            player.AddItem(PID_ROPE, 1);
+        }
+        
+        // 15% Chance items (Quantity 3)
+        if(Random(1, 100) <= 15)
+        {
+            player.AddItem(PID_FIRST_AID_KIT, 3);
+        }
+        
+        // 5% Chance item (Quantity 1)
+        if(Random(1, 100) <= 5)
+        {
+            player.AddItem(PID_RADAWAY, 1);
+        }
+        if (player.Stat[ST_INTELLECT] > 3) {
+            player.PerkBase[PE_AWARENESS] = 1;
+        }        
+    } else {
+		player.Say(SAY_SHOUT, "Error! Contact admin.");
+	}
+}
+
+// Dialog Node Conditions
+bool d_IsQuestNotStarted(Critter& player, Critter@ npc)
+{
+    return GetQuestState(player) == QUEST_WATER_CHIP_NONE;
+}
+
+bool d_IsQuestStarted(Critter& player, Critter@ npc)
+{
+    return GetQuestState(player) == QUEST_WATER_CHIP_STARTED;
+}
+
+bool d_IsQuestCompleted(Critter& player, Critter@ npc)
+{
+    return GetQuestState(player) == QUEST_WATER_CHIP_COMPLETED;
+}
+
+bool d_IsLowStat(Critter& player, Critter@ npc)
+{
+    return player.Stat[ST_INTELLECT] < 4 && GetQuestState(player) == QUEST_WATER_CHIP_NONE;
+}
+
+bool d_IsNormalStat(Critter& player, Critter@ npc)
+{
+    return player.Stat[ST_INTELLECT] >= 4;
+}
+
+uint GetQuestState(Critter& player)
+{
+    GameVar@ quest = GetLocalVar(LVAR_quest_water_chip, player.Id);
+    if (valid(quest))
+        return quest.GetValue();
+    return 0;
 }

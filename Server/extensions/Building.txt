@@ -1,0 +1,1 @@
+msbuild extensions.sln /t:parameters /p:Configuration=Release /p:Platform=Win32

@@ -246,6 +246,7 @@
 // NEW QUESTS AND LOCID
 #define LVAR_quest_water_chip                   (7327)
 #define LVAR_q_shady_tandi                      (7328)
+#define LVAR_q_tandi_rescue                     (7329)
 
 //	KLAMATH										#7600
 #define LVAR_q_klam_aldobooze                   (7601)
@@ -1684,6 +1685,11 @@
    $	7328	1	q_shady_tandi	0	0	7	0
 **********
    Tandi quest states. TANDI_NOT_STARTED 0, TANDI_MISSING 1 TANDI_SEARCHING 2, TANDI_FOUND 3, TANDI_RESCUE_ESCAPE 4, TANDI_RESCUE_DUEL 5, TANDI_COMPLETED 6, TANDI_DEAD 7
+**********
+
+   $	7329	1	q_tandi_rescue	0	0	2	0
+**********
+   Tandi rescue states. RESCUE_NOT_STARTED 0, DOOR_OPENED 1, DUEL_ENDED 2
 **********
 
 //

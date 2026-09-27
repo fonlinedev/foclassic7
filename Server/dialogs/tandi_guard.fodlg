@@ -1,0 +1,40 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _script tandi_guard@d_NotIsTandiFollowingPlayer 0  #
+5 1020 D _script tandi_guard@d_IsTandiFollowingPlayer 0  @
+2 2000 None 0 #
+3 2010 D _param p ST_INTELLECT } 5 #
+4 2020 D _param p SK_SPEECH } 50 #
+0 2030 @
+3 3000 None 0 @
+4 4000 Attack 0 @
+5 5000 None 0 #
+65507 5010 #
+0 5020 D _param p ST_INTELLECT } 5 #
+0 5030 D _param p SK_SNEAK } 50 #
+0 5040 &
+
+[engl]
+{100}{}{Raider}
+{1000}{}{Predialogue installations}
+{1010}{}{begin}
+{1020}{}{escaping}
+{2000}{}{Hey! Stay away from this door.}
+{2010}{}{I'm checking the prisoner.}
+{2020}{}{Garl asked me to see the prisoner.}
+{2030}{}{Wrong door.}
+{3000}{}{Leave before I shoot your ass.}
+{4000}{}{I don't think so.}
+{5000}{}{Stop! Where are you going with the prisoner?}
+{5010}{}{Running away of course.}
+{5020}{}{Garl need to see her, let us pass.}
+{5030}{}{[Try to sneak around]}
+{5040}{}{Bye}
+

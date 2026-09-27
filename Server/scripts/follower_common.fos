@@ -591,6 +591,21 @@ int GetFollowers(Critter& player, Map@ map, array<Critter@>& followers, bool Onl
     return followersn;
 }
 
+// verify if Tandi is a follower
+bool isTandiFollower(Critter& player) {
+    uint TANDI_PID  = 68;
+    array<Critter@> crits;
+    GetFollowers(player, true, crits);
+    uint            count = 0;
+    for(uint i = 0; i < crits.length(); i++)
+    {        
+        uint npcId = crits[i].GetProtoId();
+        if (npcId == TANDI_PID)
+            return true;
+    }
+    return false;
+}
+
 /**
  * Retrieves followers belonging to player.
  * @param	all		    if true, then all followers are put in table, if false then only the active ones.

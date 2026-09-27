@@ -1,0 +1,433 @@
+#include "_defines.fos"
+#include "_macros.fos"
+#include "_maps.fos"
+#include "factions_h.fos"
+#include "groups_h.fos"
+#include "mapdata_h.fos"
+#include "messages_h.fos"
+#include "MSGSTR.h"
+#include "npc_common_h.fos"
+#include "npc_roles_h.fos"
+#include "npc_planes_h.fos"
+#include "_vars.fos"
+#include "ITEMPID.H"
+#include "follower_common.fos"
+import bool   IsCompanion(Critter& follower) from "follower";
+import bool LockerOpen(Item& item) from "lockers";
+import bool LockerClose(Item& item) from "lockers";
+
+enum TandiQuestState
+{
+    TANDI_NOT_STARTED   = 0,
+    TANDI_MISSING       = 1,
+    TANDI_SEARCHING     = 2,
+    TANDI_FOUND         = 3,
+    TANDI_RESCUED       = 4,
+    TANDI_COMPLETED     = 5,
+    TANDI_DEAD          = 7
+};
+
+#define TANDI_SEARCHING (2)
+#define TANDI_FOUND (3)
+#define TANDI_RESCUE_ESCAPE (4)
+#define TANDI_RESCUE_DUEL (5)
+
+#define RESCUE_NOT_STARTED (0)
+#define DOOR_CLOSED (0)
+#define DOOR_OPENED (1)
+#define DUEL_ENDED (2)
+
+#define TANDI_DIALOG1 4038
+#define TANDI_PID 68
+
+#define DIALOG_DOOR_DUMB_GUARD_ID 4042
+#define DIALOG_DOOR_GUARD_ID 4040
+#define DIALOG_BACKDOOR_GUARD_ID 4043
+
+void map_init(Map& map, bool firstTime)
+{
+    if(firstTime)
+    {
+        map.SetTurnBasedAvailability(true);
+    }
+    uint[] values = { map.GetProtoId() };
+    CreateTimeEvent(AFTER(REAL_MINUTE(5)), "cte_SpawnTandi", values, false);
+    spawnTandi(map);
+}
+
+void door_init(Item& item, bool firstTime)
+{
+    item.SetEvent(ITEM_EVENT_SKILL, "_doorSkill");
+}
+
+uint cte_SpawnTandi(array<uint>@ values) {
+    if(values is null || values.length() == 0) return 0;
+    uint mapPid = values[0];
+    Map@ map = GetMapByPid(mapPid, 0);
+
+    if(!valid(map))
+    {
+        Log("cte_SpawnTandi failed, map " + mapPid + " not found.");
+        return 0;
+    }
+    uint16 x = 0;
+    uint16 y = 0;
+
+    map.GetEntireCoords(11, 0, x, y);
+
+    Critter@ cr = map.GetCritter(x, y);
+    if (!valid(cr)) {
+        Log("TANDI not found, spawning back");
+        spawnTandi(map);
+    }
+    return REAL_MINUTE(5);
+}
+
+// Tandi must be removed if the quest started
+void spawnTandi(Map& map)
+{
+    Critter@ cr = SpawnStaticNpc(
+        map,
+        9,                 // entire id
+        TANDI_PID,
+        TANDI_DIALOG1,
+        3,                // bag
+        FACTION_NCR,
+        0,                  // faction mode
+        1,                  // faction rank
+        0,                  // direction
+        "tandi_rescue@critter_init",
+        "TANDI"
+    );
+    if (!valid(cr))
+        Log("Error at Tandi spawning");
+
+    array<Item@> cells;
+    uint num = map.GetItems(2581, cells);   
+    DLog("Found " + num + " cell doors ");
+    for(uint i = 0; i < num; i++)
+    {   
+        LockerClose(cells[i]);        
+    }
+}
+
+
+Critter@ SpawnStaticNpc(
+    Map@ map,
+    uint coord,
+    uint pid,
+    uint dialog,
+    uint bag,
+    uint team,
+    uint factionMode,
+    uint factionRank,
+    uint dir,
+    string initFunc,
+    string name)
+{
+    uint16 x = 0;
+    uint16 y = 0;
+
+    map.GetEntireCoords(coord, 0, x, y);
+
+    Critter@ cr = map.GetCritter(x, y);
+
+    if (!valid(cr))
+    {
+        int[] params = {
+            ST_DIALOG_ID, dialog,
+            ST_BAG_ID, bag,
+            ST_TEAM_ID, team,
+            ST_FACTION_MODE, factionMode,
+            ST_FACTION_RANK, factionRank,
+            MODE_NO_LOOT, 1,
+            MODE_NO_STEAL, 1
+        };
+
+        @cr = map.AddNpc(
+            pid,
+            x,
+            y,
+            dir,
+            params,
+            null,
+            initFunc
+        );
+
+        if (!valid(cr))
+        {
+            Log("Error creating " + name);
+            return null;
+        }
+
+        Log(name + " spawned");
+    }
+    else
+    {
+        Log(name + " already exists, updating");
+        if (name == "Tandi") {
+            
+        }
+    }
+
+    return cr;
+}
+
+
+// ============================================================
+// Tandi door - quest/state checks
+// ============================================================
+
+bool _CanUseTandiDoor(Critter& cr)
+{
+    GameVar@ tandiVar = GetLocalVar(LVAR_q_shady_tandi, cr.Id);
+    if (!valid(tandiVar))
+        return false;
+
+    uint state = uint(tandiVar.GetValue());
+
+    if (state == TANDI_RESCUE_DUEL)
+    {
+        cr.Say(SAY_NETMSG, "I must face Garl first before opening this door.");
+        return false;
+    }
+
+    if (state == TANDI_SEARCHING || state == TANDI_FOUND)
+    {
+        cr.Say(SAY_NETMSG, "I must decide what to do first.");
+        return false;
+    }
+
+    return true;
+}
+
+// ============================================================
+// Tandi door - find the guard
+// ============================================================
+
+Critter@ _GetTandiDoorGuard(Item& item)
+{
+    array<Critter@> critters;
+
+    Map@ map = GetMap(item.MapId);
+
+    uint count = map.GetCrittersHex(
+        item.HexX,
+        item.HexY,
+        15,
+        FIND_LIFE_AND_KO | FIND_ONLY_NPC,
+        critters
+    );
+
+    for(uint i = 0; i < count; i++)
+    {
+        Critter@ guard = critters[i];
+
+        if(!valid(guard))
+            continue;
+
+        if(guard.Stat[ST_NPC_ROLE] == ROLE_TANDI_GUARD)
+        {
+            Log("[_GetTandiDoorGuard] Found Tandi guard, direction "+guard.Dir);
+
+            return guard;
+        }
+    }
+
+    Log("[_GetTandiDoorGuard] No Tandi guard found.");
+
+    return null;
+}
+
+// ============================================================
+// Tandi door - interaction
+// ============================================================
+
+bool _doorSkill(Item& item, Critter& cr, int skill)
+{
+    if (skill != SKILL_PICK_ON_GROUND && skill != SK_LOCKPICK)
+        return true;
+
+    // Quest state must allow interaction.
+    if (!_CanUseTandiDoor(cr))
+        return true;
+
+    // Rescue state must exist.
+    GameVar@ rescueVar = GetLocalVar(LVAR_q_tandi_rescue, cr.Id);
+    if (!valid(rescueVar))
+        return true;
+
+    Critter@ guard = _GetTandiDoorGuard(item);
+
+    // No Tandi guard nearby.
+    if (!valid(guard)) {
+        Log("NO GUARD has been found");
+        return false;
+    }
+    
+    // --------------------------------------------------------
+    // Guard is watching the door.
+    // --------------------------------------------------------
+    if (guard.Dir == 5)
+    {
+        cr.SendMessage(
+            MSG_TANDI_DOOR_UNLOCK,
+            0,
+            MESSAGE_TO_VISIBLE_ME
+        );
+
+        LockerClose(item);
+
+        rescueVar = DOOR_CLOSED;
+
+        return true;
+    }
+
+    // --------------------------------------------------------
+    // Guard is distracted.
+    // --------------------------------------------------------
+
+    rescueVar = DOOR_OPENED;
+    
+    bool opened = LockerOpen(item);
+    Log(
+        "UNLOCK THE DOOR, LockerOpen result: " +
+        (opened ? "true" : "false")
+    );
+
+    return true;
+}
+
+void t_NearBackDoor(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
+{
+    if(!critter.IsPlayer() || !entered)
+        return;
+    if (dir == 5) {
+        Log("direction skipped "+dir);
+        return;
+    }
+        
+    bool warnGuards = false;
+    int sneakLevel = critter.Skill[SK_SNEAK];
+    if (!_IsSneaking(critter) || sneakLevel < 60)
+        warnGuards = true;    
+    if (_IsSneaking(critter) && sneakLevel >= 60)
+        warnGuards = false;
+    if (warnGuards) {
+        critter.Wait(0);
+        RunDialog(critter, DIALOG_BACKDOOR_GUARD_ID, critter.HexX, critter.HexY, true);
+    }
+}
+
+bool d_BackDoorBothGuards(Critter& player, Critter@ npc)
+{
+    Map@ map = player.GetMap();
+    array<Critter@> critters;
+    uint count = GetNearFactionGuardsMode(map, player.HexX, player.HexY, 10, FACTION_RAIDERS, 0, critters);
+    Log("found raiders nearby "+count);    
+    if (count == 2) {
+        Log("both present");
+    } else {
+        Log("only one guard is present");
+    }
+    return (count == 2);
+}
+
+bool d_NotBackDoorBothGuards(Critter& player, Critter@ npc)
+{
+    return !d_BackDoorBothGuards(player, npc);
+}
+
+void r_MoveAwayFromDoor(Critter& player, Critter@ npc)
+{
+    Map@ map = GetMapByPid(MAP_RaidersCamp, 0);
+    if(!valid(map))
+    {
+        Log("r_TeleportToMap failed, map " + MAP_RaidersCamp + " not found.");
+        return;
+    }
+    player.TransitToMap(map.Id, 50);
+}
+
+void t_NearTandi(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
+{
+    if(!critter.IsPlayer() || !entered)
+        return;
+    if (dir != 3)
+        return;
+
+    GameVar@ rescueVar = GetLocalVar(LVAR_q_tandi_rescue, critter.Id);
+    if(!valid(rescueVar))
+        return;
+    if (rescueVar.GetValue() != DOOR_OPENED)
+        critter.SendMessage(MSG_TANDI_FOUND, 0, MESSAGE_TO_VISIBLE_ME);
+}
+
+void t_EscapingTandi(Critter& critter, Scenery& trigger, bool entered, uint8 dir, int guardRole)
+{
+    if(!critter.IsPlayer() || !entered)
+        return;
+    GameVar@ rescueVar = GetLocalVar(LVAR_q_tandi_rescue, critter.Id);
+    if(!valid(rescueVar))
+        return;
+    bool warnGuards = false;
+    if(critter.Mode[MODE_HIDE] == 0)
+        warnGuards = true;
+    int sneakLevel = critter.Skill[SK_SNEAK];
+    if (!_IsSneaking(critter) || sneakLevel < 60)
+        warnGuards = true;    
+    if (_IsSneaking(critter) && sneakLevel >= 60)
+        warnGuards = false;
+    if (rescueVar.GetValue() == DOOR_OPENED && isTandiFollower(critter)) {
+        Log("alerting guards at role "+guardRole);
+        critter.SendMessage(MSG_TANDI_ESCAPING, guardRole, MESSAGE_TO_VISIBLE_ME);
+    }    
+}
+
+void t_EscapingTandiWrongDoor(Critter& critter, Scenery& trigger, bool entered, uint8 dir, int guardRole)
+{
+    if(!critter.IsPlayer() || !entered)
+        return;
+    bool warnGuards = false;
+    if(critter.Mode[MODE_HIDE] == 0)
+        warnGuards = true;
+    int sneakLevel = critter.Skill[SK_SNEAK];
+    if (!_IsSneaking(critter) || sneakLevel < 100)
+        warnGuards = true;
+    if (_IsSneaking(critter) && sneakLevel >= 100)
+        warnGuards = false;
+    if (isTandiFollower(critter) && warnGuards) {
+        critter.Wait(3000);
+        array<Critter@> crits;
+        uint n = GetNearRaiderGuards(critter.GetMap(), trigger.HexX, trigger.HexY, 10, FACTION_RAIDERS, crits);
+        critter.Say(SAY_NETMSG, "What the hell I'm doing?");
+        for(uint i = 0; i < n; i++) {            
+            crits[i].Say(SAY_SHOUT_ON_HEAD, "Prisoner is escaping!");
+            int[] data = { critter.Id, crits[i].Id };
+            CreateTimeEvent(AFTER(REAL_SECOND(1)), "e_InitiateAttack", data, false);
+        }
+    }
+}
+
+uint e_InitiateAttack(array<uint>@ values)
+{
+    Critter@ player = GetCritter(values[0]);
+    Critter@ guard = GetCritter(values[1]);
+    AddAttackPlane(guard, 0, player);
+    return 0;
+}
+
+uint GetNearRaiderGuards(Map@ map, uint16 hexX, uint16 hexY, uint radius, uint faction, array<Critter@>@ crits)
+{
+    array<Critter@> critters;
+    uint            n = map.GetCrittersHex(hexX, hexY, radius, FIND_LIFE_AND_KO | FIND_ONLY_NPC, critters);
+    uint            num = 0;
+    for(uint i = 0; i < n; i++)
+        if(critters[i].Stat[ST_TEAM_ID] == int(faction))
+        {
+            crits.insertLast(critters[i]);
+            num++;
+        }
+    return num;
+}
+

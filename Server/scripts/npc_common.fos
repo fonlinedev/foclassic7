@@ -318,6 +318,23 @@ uint GetNearFactionGuards(Map@ map, uint16 hexX, uint16 hexY, uint radius, uint 
 }
 
 /**
+ * Gets all faction guards in a radius around given hex.
+ */
+uint GetNearFactionGuardsMode(Map@ map, uint16 hexX, uint16 hexY, uint radius, uint faction, uint mode, array<Critter@>@ crits)
+{
+    array<Critter@> critters;
+    uint            n = map.GetCrittersHex(hexX, hexY, radius, FIND_LIFE_AND_KO | FIND_ONLY_NPC, critters);
+    uint            num = 0;
+    for(uint i = 0; i < n; i++)
+        if(critters[i].Stat[ST_TEAM_ID] == int(faction) && critters[i].Stat[ST_FACTION_MODE] == mode)
+        {
+            crits.insertLast(critters[i]);
+            num++;
+        }
+    return num;
+}
+
+/**
  * Arm the best weapon available to the NPC.
  * @remarks Firstly, weapons of the best skill of the NPC is tried, then in the following order: SK_BIG_GUNS, SK_ENERGY_WEAPONS, SK_SMALL_GUNS, SK_THROWING, SK_UNARMED
  */

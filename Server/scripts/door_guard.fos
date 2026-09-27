@@ -1,0 +1,106 @@
+//
+// FOnline: 2238
+// Rotators
+//
+// door_guard.fos
+//
+
+#include "_macros.fos"
+#include "factions_h.fos"
+#include "messages_h.fos"
+#include "guard_h.fos"
+#include "npc_common_h.fos"
+#include "npc_planes_h.fos"
+#include "npc_roles_h.fos"
+#include "patrolling.fos"
+#include "factions_h.fos"
+
+#define DIALOG_DOOR_GUARD_ID   (4040)
+#define DIALOG_DOOR_DUMB_GUARD_ID   (4042)
+#define GUARD_DIR_1 (5)
+#define GUARD_DIR_2 (2)
+
+void critter_init(Critter& cr, bool firstTime)
+{    
+    cr.SetEvent(CRITTER_EVENT_MESSAGE, "_OnPlayerWalkDoor");
+    cr.SetEvent(CRITTER_EVENT_IDLE, "_Idle");
+}
+
+void _OnPlayerWalkDoor(Critter& npc, Critter& player, int num, int val)
+{
+    Log("message incoming "+num+", val "+val);
+    if(num == MSG_TANDI_ESCAPING && val == ROLE_DOOR_GUARD) {
+        Map@ map = npc.GetMap();
+        array<Critter@> critters;
+        uint count = GetNearFactionGuardsMode(map, npc.HexX, npc.HexY, 10, FACTION_RAIDERS, 0, critters);
+        Log("found raiders nearby "+count);
+        player.Wait(1000);
+        if (count == 2) {
+            Log("both present");
+            RunDialog(player, npc, DIALOG_DOOR_GUARD_ID, true);
+        } else {
+            Log("only one guard is present");
+            player.Say(SAY_NETMSG, "The other guard is not here, its the perfect time to escape.");
+            RunDialog(player, npc, DIALOG_DOOR_DUMB_GUARD_ID, true);
+        }
+    }
+}
+
+void _Idle(Critter& guard)
+{
+    GuardOnIdle(guard);
+    _GetNextNode(guard, 20)         // Route 20 as defined in patrolroutes.fos
+    AddWalkPlane(guard, 0, node.GetX(), node.GetY(), node.GetDir(), false, 0);
+    AddWaitPlan(guard, node.GetWait());
+}
+
+bool d_NotTandiDoorHard(Critter& player, Critter@ npc)
+{
+    return !d_TandiDoorHard(player, npc);
+}
+
+bool d_TandiDoorHard(Critter& player, Critter@ npc)
+{
+    int chance = 30;
+
+    // Speech: 0-100 skill -> up to +30%
+    chance += player.Skill[SK_SPEECH] * 30 / 100;
+
+    // Intelligence: 1-10 -> up to +20%
+    int intellect = player.Stat[ST_INTELLECT];
+    chance += (intellect - 1) * 20 / 9;
+
+    if(chance < 30)
+        chance = 30;
+
+    if(chance > 80)
+        chance = 80;
+
+    return Random(0, 99) < uint(chance);
+}
+
+void r_AlertCamp(Critter& player, Critter@ npc)
+{
+    array<Critter@> critters;
+
+    Map@ map = npc.GetMap();
+    uint count = GetNearFactionGuardsMode(map, npc.HexX, npc.HexY, 30, FACTION_RAIDERS, 0, critters);
+
+    player.Say(SAY_NETMSG, "The camp is alerted, I must be prepared for a big fight.");
+
+    for(uint i = 0; i < count; i++)
+    {
+        critters[i].Say(SAY_SHOUT_ON_HEAD, "Prisoner is escaping!");
+
+        int[] data = { player.Id, critters[i].Id };
+        CreateTimeEvent(AFTER(REAL_SECOND(1)), "e_InitiateAttack", data, false);
+    }
+}
+
+uint e_InitiateAttack(array<uint>@ values)
+{
+    Critter@ player = GetCritter(values[0]);
+    Critter@ guard = GetCritter(values[1]);
+    AddAttackPlane(guard, 0, player);
+    return 0;
+}

@@ -1,0 +1,28 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _var p name_mem_npc_player = 0 #
+5 1020 D _var p name_mem_npc_player = 1 @
+2 2000 None 0 #
+0 2010 R _var p name_mem_npc_player = 1 @
+5 3000 None 0 #
+2 3010 R _var p name_mem_npc_player = 0 #
+0 3020 &
+
+[engl]
+{100}{}{Woman}
+{1000}{}{Predialogue installations}
+{1010}{}{go 1}
+{1020}{}{go 2}
+{2000}{}{Dialog 1}
+{2010}{}{done 1}
+{3000}{}{Dialog 2}
+{3010}{}{done 3, back to 1}
+{3020}{}{Exit}
+

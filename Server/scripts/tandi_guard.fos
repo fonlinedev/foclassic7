@@ -1,0 +1,64 @@
+//
+// FOnline: 2238
+// Rotators
+//
+// tandi_guard.fos
+//
+
+#include "_macros.fos"
+#include "factions_h.fos"
+#include "messages_h.fos"
+#include "guard_h.fos"
+#include "npc_common_h.fos"
+#include "npc_planes_h.fos"
+#include "npc_roles_h.fos"
+#include "patrolling.fos"
+#include "factions_h.fos"
+#include "follower_common.fos"
+
+#define DIALOG_TANDI_GUARD_ID   (4039)
+#define GUARD_DIR_1 (5)
+#define GUARD_HEXX (102)
+#define GUARD_HEXY (82)
+
+void critter_init(Critter& cr, bool firstTime)
+{    
+    cr.SetEvent(CRITTER_EVENT_MESSAGE, "_OnPlayerWalkCorridor");
+    cr.SetEvent(CRITTER_EVENT_IDLE, "_Idle");
+}
+// Capture trying opening the cage or walking at the corridor
+void _OnPlayerWalkCorridor(Critter& npc, Critter& player, int num, int val)
+{
+    if(num == MSG_TANDI_DOOR_UNLOCK) {
+        if (npc.Dir == GUARD_DIR_1) {
+            // Force dialogue interface to open with the player
+            RunDialog(player, npc, DIALOG_TANDI_GUARD_ID, true);
+        } else {            
+            player.Say(SAY_NETMSG, "The guard is distracted, its the perfect time to open the door. [SNEAK] is recommended now.");
+        }
+    }
+    if (num == MSG_TANDI_ESCAPING && val == ROLE_TANDI_GUARD) {        
+        if (npc.Dir == GUARD_DIR_1) {
+            // Force dialogue interface to open with the player
+            RunDialog(player, npc, DIALOG_TANDI_GUARD_ID, true);
+        }
+    }
+}
+
+void _Idle(Critter& guard)
+{
+    GuardOnIdle(guard);
+    _GetNextNode(guard, 19)         // Route 19 as defined in patrolroutes.fos
+    AddWalkPlane(guard, 0, node.GetX(), node.GetY(), node.GetDir(), false, 0);
+    AddWaitPlan(guard, node.GetWait());
+}
+
+bool d_IsTandiFollowingPlayer(Critter& player, Critter@ npc)
+{
+    return isTandiFollower(player);
+}
+
+bool d_NotIsTandiFollowingPlayer(Critter& player, Critter@ npc)
+{
+    return !isTandiFollower(player);
+}
