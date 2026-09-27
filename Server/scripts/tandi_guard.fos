@@ -33,9 +33,7 @@ void _OnPlayerWalkCorridor(Critter& npc, Critter& player, int num, int val)
         if (npc.Dir == GUARD_DIR_1) {
             // Force dialogue interface to open with the player
             RunDialog(player, npc, DIALOG_TANDI_GUARD_ID, true);
-        } else {
-            if(player.Mode[MODE_HIDE] == 0)
-                player.ModeBase[MODE_HIDE] = 1;
+        } else {            
             player.Say(SAY_NETMSG, "The guard is distracted, its the perfect time to open the door. [SNEAK] is recommended now.");
         }
     }

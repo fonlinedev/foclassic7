@@ -3428,10 +3428,22 @@ void map_critter_out(Map& map, Critter& cr)
                 uint npcId = crits[i].GetProtoId();
 
                 if (npcId == TANDI_PID) {
-                    cr.Say(SAY_NETMSG, "You've left Tandi behind, who is still fighting.");
+                    cr.Say(SAY_NETMSG, "You've left Tandi behind, who is still fighting.");                                        
+                    GameVar@ rescueVar = GetLocalVar(LVAR_q_tandi_rescue, cr.Id);
+                    if (!valid(rescueVar)) {
+                        Log("q_tandi_rescue invalid state.");
+                        continue;
+                    }
+                    rescueVar = 0;
+                    crits[i].StatBase[ST_FREE_BARTER_PLAYER] = 0;
+                    SetGroupInfo(crits[i], FACTION_UNKNOWN, 0, FACTION_MODE_PASSIVE);
+                    crits[i].FollowerVarBase[FV_MASTER] = 0;
+                    cr.FollowersBase[i] = 0;
+                    DeleteNpc(crits[i]);
                     continue;
                 }
-                cr.Say(SAY_NETMSG, "You've left behind your follower " + GetLexem(crits[i], "$name") + ", who is still fighting. He may catch you back or not.");
+
+                cr.Say(SAY_NETMSG, "You've left behind your follower " + GetLexem(crits[i], "$name") + ", who is still fighting. They may catch you back or not.");
                 // continue;
             }
 

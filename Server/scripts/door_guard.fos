@@ -36,7 +36,7 @@ void _OnPlayerWalkDoor(Critter& npc, Critter& player, int num, int val)
         Log("found raiders nearby "+count);
         player.Wait(1000);
         if (count == 2) {
-            Log("both present");            
+            Log("both present");
             RunDialog(player, npc, DIALOG_DOOR_GUARD_ID, true);
         } else {
             Log("only one guard is present");
