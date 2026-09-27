@@ -1,0 +1,472 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+
+uint __GetColor(int r,int g,int b,int a=0xFF)
+{
+	r=(((r)>(255))?(255):(((r)<(0))?(0):(r)));
+	g=(((g)>(255))?(255):(((g)<(0))?(0):(g)));
+	b=(((b)>(255))?(255):(((b)<(0))?(0):(b)));
+	a=(((a)>(255))?(255):(((a)<(0))?(0):(a)));
+	return(uint((((a)&0xFF)<<24)|(((r)&0xFF)<<16)|(((g)&0xFF)<<8)|((b)&0xFF)));
+}                                                                                                      
+
+shared interface IConfigVar
+{
+	string GetName();
+	string GetValue();
+	array<string>GetValueAsArray();
+	array<string>GetValueAsArray(string&delimeter);
+	void SetValue(int val);
+	void SetValue(uint val);
+	void SetValue(string&val);
+	void SetValue(array<string>&val);
+	void SetValue(array<string>&val,string&delimeter);
+};
+
+shared interface IConfigSection
+{
+	string GetName();
+	bool AddVar(string&var,string&val);
+	bool DeleteVar(string&var);
+	bool DeleteVar(string&var,bool caseSensitive);
+	IConfigVar@GetVar(string&var);
+	IConfigVar@GetVar(string&varname,bool caseSensitive);
+	void GetVars(array<string>&list);
+	bool SetVar(string&varname,string val);
+	bool VarExists(string&var);
+	bool VarExists(string&var,bool caseSensitive);
+};
+
+shared interface IConfigFile
+{
+	bool IsVirtual();
+	string GetName();
+	bool AddSection(string&section);
+	IConfigSection@GetSection(string&section);
+	IConfigSection@GetSection(string&sectioname,bool caseSensitive);
+	void GetSections(array<string>&list);
+	bool SectionExists(string&section);
+	bool SectionExists(string&section,bool caseSensitive);
+};  
+
+import IConfigFile@NewConfig(string&filename)from"config_file";
+import bool LoadConfig(string&filename)from"config_file";
+import bool SaveConfig(string&filename)from"config_file";
+import bool UnloadConfig(string&filename)from"config_file";
+
+import IConfigFile@GetConfigFile(string&filename)from"config_file";
+import IConfigFile@GetConfigFile(string&filename,bool caseSensitive)from"config_file";
+import IConfigSection@GetConfigSection(string&filename,string&sectioname)from"config_file";
+import IConfigSection@GetConfigSection(string&filename,string&sectioname,bool caseSensitive)from"config_file";
+import IConfigVar@GetConfigVar(string&filename,string&sectioname,string@varname)from"config_file";
+import IConfigVar@GetConfigVar(string&filename,string&sectioname,string@varname,bool caseSensitive)from"config_file";
+
+import string@GetConfigValue(string&filename,string&section,string@varname)from"config_file";
+import string@GetConfigValue(string&filename,string&sectioname,string@varname,bool caseSensitive)from"config_file";
+
+import bool SetConfigValue(string&filename,string&sectioname,string@varname,string&value)from"config_file";
+import bool SetConfigValue(string&filename,string&sectioname,string@varname,bool value)from"config_file";
+import bool SetConfigValue(string&filename,string&sectioname,string@varname,int value)from"config_file";
+import bool SetConfigValue(string&filename,string&sectioname,string@varname,uint value)from"config_file";              
+
+import uint COLOR_RGB_STRING(string&r,string&g,string&b)from"client_utils";
+import uint COLOR_RGBA_STRING(string&r,string&g,string&b,string&a)from"client_utils";
+import void COLOR_RGB_UNPACK(uint color,uint8&r,uint8&g,uint8&b)from"client_utils";
+import void COLOR_RGB_UNPACK(uint color,uint8&r,uint8&g,uint8&b,uint8&a)from"client_utils"; 
+
+import string RandomString(uint8 length)from"client_utils";
+
+import bool string2bool(string@text)from"client_utils";
+import uint string2uint(string@text)from"client_utils";
+import uint rgb_string2uint(string&text)from"client_utils";
+import uint rgba_string2uint(string&text)from"client_utils";
+
+import int string2int(string&text)from"client_utils";
+import uint font_string2uint(string&text)from"client_utils";
+import uint range_string2int(string&text,int&from,int&to)from"client_utils";
+import uint range_string2uint(string&text,uint&from,uint&to)from"client_utils";
+import void vis_string2bool(string&text,bool&head,bool&msgbox)from"client_utils";
+
+import void FloatingMiscText(int value,int reason)from"client_utils";           
+
+import bool StrToInt(string@s,uint64&inout val)from"strtoint";
+import bool StrToInt(string@s,uint&inout val)from"strtoint";
+import bool StrToInt(string@s,uint16&inout val)from"strtoint";
+import bool StrToInt(string@s,uint8&inout val)from"strtoint";
+import bool StrToInt(string@s,int64&inout val)from"strtoint";
+import bool StrToInt(string@s,int16&inout val)from"strtoint";
+import bool StrToInt(string@s,int8&inout val)from"strtoint";             
+
+void SmartLootLog(string@s){
+	Log("SmartLoot :: "+s);
+	if((false)){
+		Message("SmartLoot :: "+s);
+	}
+}
+
+class CSmartLoot{
+	
+	int DefaultValue=5;
+	
+	int Caps=5000;
+	
+	int MagMultiplier=3;
+	int Grenades=5;
+	int Flares=5;
+	int OtherThrown=20;
+	int Rockets=20;
+	int Traps=5;
+	
+	int Drugs=2;
+	int Psycho=2;
+	int Jet=2;
+	int JetAntidote=2;
+	int Antidote=3;
+	int RadAway=3;
+	int Fish=5;
+	int Alcohol=2;
+	int NukaCola=5;
+	int Cigarettes=5;
+	int MutatedFruit=10;
+	int HealingDrugs=5;
+	
+	CSmartLoot(){
+	}
+};
+
+CSmartLoot smartLoot;
+
+void SmartLootConfig(string&customConfig){
+	SmartLootLog("SmartLootConfig = "+customConfig);
+	string sectioname=(customConfig==""?"SmartLoot":"SmartLoot"+":"+customConfig);
+	IConfigSection@section=GetConfigSection("Reloaded.cfg",sectioname);
+	SmartLootLog("section = "+sectioname);
+	
+	if((@section!=null)){
+		string@val;
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"Caps");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.Caps=(((string2uint(val))>((1000000)))?((1000000)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("Caps = "+smartLoot.Caps+" ("+val+")");
+		}else{
+			SmartLootLog("Caps invalid or missing");
+		}
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"MagMultiplier");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.MagMultiplier=(((string2uint(val))>((10000)))?((10000)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("MagMultiplier = "+smartLoot.MagMultiplier+" ("+val+")");
+		}else{
+			SmartLootLog("MagMultiplier invalid or missing");
+		}
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"Grenades");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.Grenades=(((string2uint(val))>((10000)))?((10000)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("Grenades = "+smartLoot.Grenades+" ("+val+")");
+		}else{
+			SmartLootLog("Grenades invalid or missing");
+		}
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"Flares");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.Flares=(((string2uint(val))>((10000)))?((10000)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("Flares = "+smartLoot.Flares+" ("+val+")");
+		}else{
+			SmartLootLog("Flares invalid or missing");
+		}
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"OtherThrown");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.OtherThrown=(((string2uint(val))>((10000)))?((10000)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("OtherThrown = "+smartLoot.OtherThrown+" ("+val+")");
+		}else{
+			SmartLootLog("OtherThrown invalid or missing");
+		}
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"Rockets");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.Rockets=(((string2uint(val))>((10000)))?((10000)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("Rockets = "+smartLoot.Rockets+" ("+val+")");
+		}else{
+			SmartLootLog("Rockets invalid or missing");
+		}
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"Traps");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.Traps=(((string2uint(val))>((10000)))?((10000)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("Traps = "+smartLoot.Traps+" ("+val+")");
+		}else{
+			SmartLootLog("Traps invalid or missing");
+		}
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"Drugs");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.Drugs=(((string2uint(val))>((100)))?((100)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("Drugs = "+smartLoot.Drugs+" ("+val+")");
+		}else{
+			SmartLootLog("Drugs invalid or missing");
+		}
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"Psycho");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.Psycho=(((string2uint(val))>((100)))?((100)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("Psycho = "+smartLoot.Psycho+" ("+val+")");
+		}else{
+			SmartLootLog("Psycho invalid or missing");
+		}
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"Jet");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.Jet=(((string2uint(val))>((100)))?((100)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("Jet = "+smartLoot.Jet+" ("+val+")");
+		}else{
+			SmartLootLog("Jet invalid or missing");
+		}
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"JetAntidote");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.JetAntidote=(((string2uint(val))>((100)))?((100)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("JetAntidote = "+smartLoot.JetAntidote+" ("+val+")");
+		}else{
+			SmartLootLog("JetAntidote invalid or missing");
+		}
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"Antidote");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.Antidote=(((string2uint(val))>((100)))?((100)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("Antidote = "+smartLoot.Antidote+" ("+val+")");
+		}else{
+			SmartLootLog("Antidote invalid or missing");
+		}
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"RadAway");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.RadAway=(((string2uint(val))>((100)))?((100)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("RadAway = "+smartLoot.RadAway+" ("+val+")");
+		}else{
+			SmartLootLog("RadAway invalid or missing");
+		}
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"Fish");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.Fish=(((string2uint(val))>((100)))?((100)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("Fish = "+smartLoot.Fish+" ("+val+")");
+		}else{
+			SmartLootLog("Fish invalid or missing");
+		}
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"Alcohol");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.Alcohol=(((string2uint(val))>((100)))?((100)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("Alcohol = "+smartLoot.Alcohol+" ("+val+")");
+		}else{
+			SmartLootLog("Alcohol invalid or missing");
+		}
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"NukaCola");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.NukaCola=(((string2uint(val))>((100)))?((100)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("NukaCola = "+smartLoot.NukaCola+" ("+val+")");
+		}else{
+			SmartLootLog("NukaCola invalid or missing");
+		}
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"Cigarettes");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.Cigarettes=(((string2uint(val))>((100)))?((100)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("Cigarettes = "+smartLoot.Cigarettes+" ("+val+")");
+		}else{
+			SmartLootLog("Cigarettes invalid or missing");
+		}
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"MutatedFruit");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.MutatedFruit=(((string2uint(val))>((100)))?((100)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("MutatedFruit = "+smartLoot.MutatedFruit+" ("+val+")");
+		}else{
+			SmartLootLog("MutatedFruit invalid or missing");
+		}
+		
+		@val=GetConfigValue("Reloaded.cfg",sectioname,"HealingDrugs");
+		if((@val!=null)&&val.length()>0){
+			smartLoot.HealingDrugs=(((string2uint(val))>((100)))?((100)):(((string2uint(val))<(0))?(0):(string2uint(val))));
+			SmartLootLog("HealingDrugs = "+smartLoot.HealingDrugs+" ("+val+")");
+		}else{
+			SmartLootLog("HealingDrugs invalid or missing");
+		}
+	}
+}
+
+int GetSmartItemMoveCount(ItemCl&item){
+	int ret=5;
+	CritterCl@chosen=GetChosen();
+	if(!(@chosen!=null)){
+		return 0;
+	}
+	if(!(@item!=null)){
+		return 0;
+	}
+	
+	switch(item.GetProtoId()){
+		
+		case(525):
+		case(273):
+		case(40):
+		case(144):
+		ret=smartLoot.HealingDrugs;
+		break;
+		
+		case(109):
+		case(53):
+		case(87):
+		ret=smartLoot.Drugs;
+		break;
+		case(106):
+		ret=smartLoot.NukaCola;
+		break;
+		case(541):
+		ret=smartLoot.Cigarettes;
+		break;
+		case(110):
+		ret=smartLoot.Psycho;
+		break;
+		case(259):
+		ret=smartLoot.Jet;
+		break;
+		case(260):
+		ret=smartLoot.JetAntidote;
+		break;
+		case(49):
+		ret=smartLoot.Antidote;
+		break;
+		case(48):
+		ret=smartLoot.RadAway;
+		break;
+		
+		case(26762):
+		case(26761):
+		case(26760):
+		ret=smartLoot.Fish;
+		break;
+		
+		case(125):
+		case(124):
+		case(311):
+		case(310):
+		case(469):
+		ret=smartLoot.Alcohol;
+		break;
+		
+		case(26):
+		case(25):
+		case(626):
+		case(159):
+		case(27):
+		ret=smartLoot.Grenades;
+		break;
+		
+		case(79):
+		case(9721):
+		case(9723):
+		case(9725):
+		ret=smartLoot.Flares;
+		break;
+		case(14):
+		case(37):
+		case(621):
+		ret=smartLoot.Rockets;
+		break;
+		
+		case(19):
+		case(45):
+		case(584):
+		case(573):
+		case(365):
+		case(7):
+		case(280):
+		case(320):
+		ret=smartLoot.OtherThrown;
+		break;
+		
+		case(9850):
+		ret=smartLoot.Traps;
+		break; 
+		
+		case(38):
+		ret=smartLoot.MagMultiplier*60;
+		break;
+		
+		case(39):
+		ret=smartLoot.MagMultiplier*30;
+		break;
+		
+		case(95):
+		case(576):
+		case(574):
+		case(575):
+		case(850):
+		ret=smartLoot.MagMultiplier*20;
+		break;
+		
+		case(32):
+		case(382):
+		ret=smartLoot.MagMultiplier*5;
+		break;
+		
+		case(361):
+		case(362):
+		ret=smartLoot.MagMultiplier*10;
+		break;
+		
+		case(163):
+		ret=smartLoot.MagMultiplier*100;
+		break;
+		
+		case(358):
+		ret=smartLoot.MagMultiplier*20;
+		break;
+		
+		case(34):
+		ret=smartLoot.MagMultiplier*30;
+		break;
+		
+		case(111):
+		case(31):
+		ret=smartLoot.MagMultiplier*10;
+		break;
+		
+		case(357):
+		ret=smartLoot.MagMultiplier*75;
+		break;
+		
+		case(359):
+		ret=smartLoot.MagMultiplier*100;
+		break;
+		
+		case(36):
+		case(35):
+		ret=smartLoot.MagMultiplier*120;
+		break;
+		
+		case(363):
+		ret=smartLoot.MagMultiplier*100;
+		break;
+		
+		case(360):
+		case(121):
+		ret=smartLoot.MagMultiplier*7;
+		break;
+		
+		case(30):
+		case(29):
+		ret=smartLoot.MagMultiplier*60;
+		break;
+		
+		case(33):
+		ret=smartLoot.MagMultiplier*10;
+		break;
+	}
+	return ret;
+}  
+
