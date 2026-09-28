@@ -537,6 +537,9 @@
 #define LVAR_q_shady_crop_rotation              (61010)
 #define LVAR_q_shady_jarvis_cured               (61011)
 
+// GARL DUEL
+#define LVAR_q_garl_duel_locid         (61012)
+
 /*************************************************************************************
         Id	Type	Name		Start	Min	Max	Flags
 **************************************************************************************
@@ -3016,6 +3019,10 @@ $	21016	1	LVAR_Book_Speaking          0	0	0	4
 	Used to track Seth's Radscorpion quest in Shady Sands. 0 = Not Started, 1 = Active, 2 = Killed all scorpions, 3 = Completed.
 **********
    $	61008	1	q_shady_radscorpions_locid	0	0	0	4
+**********
+
+**********
+   $	61012	1	q_garl_duel_locid	0	0	0	4
 **********
 
 **********

@@ -9,13 +9,14 @@ lang=engl
 1 1000 None 0 #
 2 1010 @
 2 2000 None 0 #
-3 2010 R _script dialog_altruist@r_Give 1 0 #
-3 2020 R _script dialog_altruist@r_Give 1 1 #
-3 2030 D _param p ST_STRENGTH > 99 R _script dialog_altruist@r_Give 1 2 #
-3 2040 R _script dialog_altruist@r_Give 1 3 #
-3 2050 R _script dialog@r_AddMoney 1 100000 #
-3 2060 R _script dialog_altruist@r_Give 1 4 #
-4 2070 @
+5 2010 #
+3 2020 R _script dialog_altruist@r_Give 1 0 #
+3 2030 R _script dialog_altruist@r_Give 1 1 #
+3 2040 D _param p ST_STRENGTH > 99 R _script dialog_altruist@r_Give 1 2 #
+3 2050 R _script dialog_altruist@r_Give 1 3 #
+3 2060 R _script dialog@r_AddMoney 1 100000 #
+3 2070 R _script dialog_altruist@r_Give 1 4 #
+4 2080 @
 3 3000 None 0 @
 4 4000 None 0 #
 3 4010 D _script dialog_altruist@d_CanTakePerk 1 301 R _script dialog_altruist@r_GivePerk 1 301 #
@@ -57,7 +58,12 @@ lang=engl
 3 4370 D _script dialog_altruist@d_CanTakePerk 1 455 R _script dialog_altruist@r_GivePerk 1 455 #
 3 4380 D _script dialog_altruist@d_CanTakePerk 1 456 R _script dialog_altruist@r_GivePerk 1 456 #
 3 4390 D _script dialog_altruist@d_CanTakePerk 1 459 R _script dialog_altruist@r_GivePerk 1 459 #
-3 4400 D _script dialog_altruist@d_CanTakePerk 1 461 R _script dialog_altruist@r_GivePerk 1 461 &
+3 4400 D _script dialog_altruist@d_CanTakePerk 1 461 R _script dialog_altruist@r_GivePerk 1 461 @
+5 5000 None 0 #
+3 5010 R _var p q_garl_duel_locid = 0 R _var p q_shady_tandi = 0 R _var p q_tandi_rescue = 0 #
+3 5020 #
+3 5030 D _var p q_garl_duel_locid = 0 R _script map_raiders_camp@r_StartDuel 0  R _var p q_shady_tandi = 5 #
+0 5040 D _var p q_garl_duel_locid ! 0 R _script map_raiders_camp@r_TeleportToArena 0  &
 
 [engl]
 {100}{}{Altruist}
@@ -66,13 +72,14 @@ lang=engl
 {1000}{}{Predialogue installations}
 {1010}{}{Answer text}
 {2000}{}{Hello, tester.}
-{2010}{}{Hello, now give me a level.}
-{2020}{}{Right, give me three levels.}
-{2030}{}{I will now receive 100000 wastebucks.}
-{2040}{}{I humbly suggest clearing all of my reputations.}
-{2050}{}{This is a robbery! Gimme 100.000 caps, NOW!}
-{2060}{}{Remove my drug effects, pretty please.}
-{2070}{}{Give me a Support Perk that I am eligible to take.}
+{2010}{}{Quests please}
+{2020}{}{Hello, now give me a level.}
+{2030}{}{Right, give me three levels.}
+{2040}{}{I will now receive 100000 wastebucks.}
+{2050}{}{I humbly suggest clearing all of my reputations.}
+{2060}{}{This is a robbery! Gimme 100.000 caps, NOW!}
+{2070}{}{Remove my drug effects, pretty please.}
+{2080}{}{Give me a Support Perk that I am eligible to take.}
 {3000}{}{Yes.}
 {4000}{}{Which one?}
 {4010}{}{@msg game 103011@}
@@ -115,4 +122,9 @@ lang=engl
 {4380}{}{@msg game 104561@}
 {4390}{}{@msg game 104591@}
 {4400}{}{@msg game 104611@}
+{5000}{}{Quests control}
+{5010}{}{Reset Tandi quest vars}
+{5020}{}{Reset Radscorpion cave quest vars}
+{5030}{}{Start Garl Duel}
+{5040}{}{Teleport to Arena}
 

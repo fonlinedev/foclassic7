@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              200
 MaxHexY              400
-WorkHexX             105
-WorkHexY             80
+WorkHexX             100
+WorkHexY             96
 ScriptModule         map_raiders_camp
 ScriptFunc           map_init
 NoLogOut             0
@@ -13594,7 +13594,7 @@ MapY                 292
 MapObjType           0
 ProtoId              70
 MapX                 100
-MapY                 295
+MapY                 291
 Dir                  2
 ScriptName           genraidb
 FuncName             critter_init
@@ -13608,7 +13608,7 @@ Critter_ParamValue1  1
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
+Critter_ParamValue3  0
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -13975,7 +13975,7 @@ Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
 Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
+Critter_ParamValue0  4044
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  12
 Critter_ParamIndex2  ST_BAG_ID
@@ -16075,8 +16075,8 @@ MapY                 143
 
 MapObjType           0
 ProtoId              71
-MapX                 95
-MapY                 299
+MapX                 91
+MapY                 296
 Dir                  3
 Critter_Cond         1
 Critter_Anim1        0
@@ -16104,8 +16104,8 @@ Critter_ParamValue9  0
 
 MapObjType           0
 ProtoId              72
-MapX                 95
-MapY                 302
+MapX                 94
+MapY                 305
 Dir                  4
 Critter_Cond         1
 Critter_Anim1        0
@@ -16133,8 +16133,8 @@ Critter_ParamValue9  0
 
 MapObjType           0
 ProtoId              72
-MapX                 99
-MapY                 307
+MapX                 103
+MapY                 319
 Dir                  5
 Critter_Cond         1
 Critter_Anim1        0
@@ -16162,9 +16162,8 @@ Critter_ParamValue9  0
 
 MapObjType           0
 ProtoId              71
-MapX                 104
-MapY                 307
-Dir                  5
+MapX                 114
+MapY                 312
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -16193,13 +16192,15 @@ MapObjType           2
 ProtoId              3853
 MapX                 99
 MapY                 299
-Scenery_ToEntire     1
+Scenery_ToEntire     10
+Scenery_ToDir        2
 
 MapObjType           2
 ProtoId              3853
-MapX                 103
-MapY                 304
-Scenery_ToEntire     1
+MapX                 104
+MapY                 306
+Scenery_ToEntire     11
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4012

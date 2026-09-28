@@ -1,0 +1,176 @@
+#include "_defines.fos"
+#include "_macros.fos"
+#include "_maps.fos"
+#include "factions_h.fos"
+#include "groups_h.fos"
+#include "mapdata_h.fos"
+#include "messages_h.fos"
+#include "MSGSTR.h"
+#include "npc_common_h.fos"
+#include "npc_roles_h.fos"
+#include "npc_planes_h.fos"
+#include "_vars.fos"
+#include "ITEMPID.H"
+#include "follower_common.fos"
+import bool   IsCompanion(Critter& follower) from "follower";
+import bool LockerOpen(Item& item) from "lockers";
+import bool LockerClose(Item& item) from "lockers";
+
+#define TANDI_RESCUE_ESCAPE (4)
+#define TANDI_RESCUE_DUEL (5)
+#define TANDI_COMPLETED (6)
+
+#define GARL_DIALOG_ID 4044
+#define GARL_PID 46
+
+void map_init(Map& map, bool firstTime)
+{
+    map.SetEvent(MAP_EVENT_IN_CRITTER, "_CritterIn");
+    map.SetEvent(MAP_EVENT_OUT_CRITTER, "_CritterOut");
+
+    if(firstTime)
+    {
+        map.SetTurnBasedAvailability(true);
+    }    
+}
+
+
+void _CritterIn(Map& map, Critter& cr)
+{
+    if (!cr.IsPlayer())
+        return;
+
+    Map@   player_map = cr.GetMap();
+    if(valid(player_map))
+    {
+        spawnGarl(map);
+    }
+}
+
+void _CritterOut(Map& map, Critter& cr)
+{
+    GameVar@ tandiVar = GetLocalVar(LVAR_q_shady_tandi, cr.Id);
+    if(valid(tandiVar))
+    {
+        if (tandiVar.GetValue() != TANDI_COMPLETED) {
+            // check Garl's hp before leaving the map
+            Critter@ garl = GetGarl(map);
+            if (garl.StatBase[ST_CURRENT_HP] > 0)
+                cr.Say(SAY_NETMSG, "You failed defeating Garl in the duel.");
+            else {
+                Log("garl was defeated");
+                tandiVar = TANDI_COMPLETED;
+            }
+        }            
+    }
+    r_DeleteLocation(cr);
+}
+
+Critter@ GetGarl(Map@ map)
+{    
+    array<Critter@> crits;
+    uint num = map.GetCritters(0, FIND_ALL | FIND_ONLY_NPC, crits);
+    for(uint i = 0; i < num; i++)
+    {        
+        uint npcId = crits[i].GetProtoId();
+        if (npcId == GARL_PID) {
+            return crits[i];
+        }
+    }
+    return null;
+}
+
+Critter@ SpawnStaticNpc(
+    Map@ map,
+    uint coord,
+    uint pid,
+    uint dialog,
+    uint bag,
+    uint team,
+    uint factionMode,
+    uint factionRank,
+    uint dir,
+    string initFunc,
+    string name)
+{
+    uint16 x = 0;
+    uint16 y = 0;
+
+    map.GetEntireCoords(coord, 0, x, y);
+
+    Critter@ cr = map.GetCritter(x, y);
+
+    if (!valid(cr))
+    {
+        int[] params = {
+            ST_DIALOG_ID, dialog,
+            ST_BAG_ID, bag,
+            ST_TEAM_ID, team,
+            ST_FACTION_MODE, factionMode,
+            ST_FACTION_RANK, factionRank,
+            MODE_NO_LOOT, 1,
+            MODE_NO_STEAL, 1
+        };
+
+        @cr = map.AddNpc(
+            pid,
+            x,
+            y,
+            dir,
+            params,
+            null,
+            initFunc
+        );
+
+        if (!valid(cr))
+        {
+            Log("Error creating " + name);
+            return null;
+        }
+
+        Log(name + " spawned");
+    }
+    else
+    {
+        Log(name + " already exists, updating");
+        if (name == "Tandi") {
+            
+        }
+    }
+
+    return cr;
+}
+
+uint e_InitiateAttack(array<uint>@ values)
+{
+    Critter@ player = GetCritter(values[0]);
+    Critter@ guard = GetCritter(values[1]);
+    AddAttackPlane(guard, 0, player);
+    return 0;
+}
+
+Critter@ spawnGarl(Map& map)
+{
+    Critter@ cr = SpawnStaticNpc(
+        map,
+        10,                 // entire id
+        GARL_PID,
+        GARL_DIALOG_ID,
+        0,                // bag
+        FACTION_RAIDERS,
+        0,                  // faction mode
+        0,                  // faction rank
+        2,                  // direction
+        "garl@critter_init",
+        "GARL"
+    );
+    
+    return cr;
+}
+
+void r_DeleteLocation(Critter& player)
+{
+    GameVar@ var = GetLocalVar(LVAR_q_garl_duel_locid, player.Id);
+    if (valid(var))
+        DeleteLocation(var.GetValue());
+}

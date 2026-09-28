@@ -43,4 +43,7 @@ Tools/WorldEditor/Cache.dat
 !/Server/Server.pdb
 
 !/Server/scripts/client/
-!/Server/scripts/client/**
+!/Server/scripts/client/*.fos
+
+/Server/scripts/client/*.fosb
+/Server/scripts/client/*.fosp

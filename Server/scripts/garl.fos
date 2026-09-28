@@ -1,0 +1,110 @@
+//
+// FOnline: 2238
+// Rotators
+//
+// peasant.fos
+//
+
+// Shady sands peasant.
+
+#include "_macros.fos"
+#include "_defines.fos"
+#include "messages_h.fos"
+#include "npc_roles_h.fos"
+#include "npc_planes_h.fos"
+#include "mapdata_h.fos"
+
+import void NpcSetLevel(Critter& npc, int level) from "parameters";
+import bool d_WeaponInHand(Critter& player, Critter@ npc) from "dialog";
+
+#define TANDI_COMPLETED 6
+
+void critter_init(Critter& cr, bool firstTime)
+{
+    cr.StatBase[ST_REPLICATION_TIME] = REPLICATION_NEVER;
+    cr.ModeBase[MODE_NO_HOME] = 1;
+    cr.SetEvent(CRITTER_EVENT_IDLE, "_MobIdle");
+    cr.SetEvent(CRITTER_EVENT_ATTACKED, "_Attacked");
+    cr.SetEvent(CRITTER_EVENT_DEAD, "_GarlDead");
+    if(firstTime)
+    {
+        NpcSetLevel(cr, 10);
+    }
+}
+
+void _MobIdle(Critter& cr)
+{
+    // check critters in sight
+    array<Critter@> crits;
+    // get visible players
+    uint            num = cr.GetCritters(false, FIND_ONLY_PLAYERS | FIND_LIFE, crits);
+    for(uint i = 0; i < num; i++)
+    {
+        // attack        
+        cr.Say(SAY_SHOUT_ON_HEAD, "Let's do it!");
+        int[] data = { crits[i].Id, cr.Id };
+        CreateTimeEvent(AFTER(REAL_SECOND(1)), "e_InitiateAttack", data, false);    
+        return;
+    }
+}
+
+bool _Attacked(Critter& cr, Critter& attacker)
+{
+    uint currentHP = cr.StatBase[ST_CURRENT_HP];
+    if (currentHP < 0) {
+        FinishDuel(attacker);
+    } else {
+        Log("Current HP "+currentHP);
+        if (d_WeaponInHand(attacker, cr)) {
+            Log("player is not playing honestly.");
+            WarnRaiders(cr, attacker);
+        }            
+    }
+    return false;
+}
+
+void WarnRaiders(Critter& critter, Critter& attacker)
+{
+    Map@ map = critter.GetMap();
+    array<Critter@> crits;
+    uint num = map.GetCritters(0, FIND_ALL | FIND_ONLY_NPC, crits);
+    for(uint i = 0; i < num; i++)
+    {        
+        crits[i].Say(SAY_SHOUT_ON_HEAD, "Cowards must die!");
+        int[] data = { attacker.Id, crits[i].Id };
+        CreateTimeEvent(AFTER(REAL_SECOND(1)), "e_InitiateAttack", data, false);        
+    }
+    attacker.Say(SAY_NETMSG, "I broke the rules of the duel."); 
+}
+
+uint e_InitiateAttack(array<uint>@ values)
+{
+    Critter@ player = GetCritter(values[0]);
+    Critter@ guard = GetCritter(values[1]);
+    AddAttackPlane(guard, 0, player);
+    return 0;
+}
+
+void _GarlDead(Critter& cr, Critter@ killer)
+{
+    FinishDuel(killer);
+}
+
+void FinishDuel(Critter& player)
+{
+    Map@ map = player.GetMap();        
+    GameVar@ tandiVar = GetLocalVar(LVAR_q_shady_tandi, player.Id);
+    if(valid(tandiVar))
+    {
+        tandiVar = TANDI_COMPLETED;
+        player.Say(SAY_NETMSG, "You successfully finished the duel against Garl.");
+    } else {
+        Log("ERROR update duel variable.");
+    }
+}
+
+uint GetOwnerId(Map& map)
+{
+    return map.GetLocation().GetMapByIndex(0).GetData(MAP_DATA_ARENA_OWNER);
+}
+

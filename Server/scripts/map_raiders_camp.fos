@@ -39,6 +39,7 @@ enum TandiQuestState
 
 #define TANDI_DIALOG1 4038
 #define TANDI_PID 68
+#define GARL_PID 46
 
 #define DIALOG_DOOR_DUMB_GUARD_ID 4042
 #define DIALOG_DOOR_GUARD_ID 4040
@@ -431,3 +432,41 @@ uint GetNearRaiderGuards(Map@ map, uint16 hexX, uint16 hexY, uint radius, uint f
     return num;
 }
 
+void r_StartDuel(Critter& player, Critter@ npc)
+{
+    int loc = CreateLocation(LOCATION_RaidesCamp_Arena, 1737, 1509, null);
+    if(loc == 0)
+        return;
+    GameVar@  locidv = GetLocalVar(LVAR_q_garl_duel_locid, player.Id);
+    locidv = loc;
+    Location@ location = GetLocation(loc);
+    if (valid(location)) {
+        Map@ map = location.GetMapByIndex(0);
+        SetTurnBasedAvailability(location);
+        map.SetData(MAP_DATA_ARENA_OWNER, player.Id);
+        SetQuestGarbager(0, player.Id, loc, LVAR_q_shady_tandi, 6);
+        Log("quest location created");
+    } else {
+        Log("error at quest creation!");
+    } 
+}
+
+void r_TeleportToArena(Critter& player, Critter@ npc)
+{
+    GameVar@ var = GetLocalVar(LVAR_q_garl_duel_locid, player.Id);
+    if(!valid(var)) {
+        Log("error finding the location id variable!");
+        return;    
+    }
+    Location@ loc = GetLocation(var.GetValue());
+    if(valid(loc)) {
+        Map@ map = loc.GetMapByIndex(0);
+        if (valid(map)) {
+            player.TransitToMap(map.Id, 0);
+        } else {
+            Log("Map index 0 not found!");
+        }
+    } else {
+        Log("arena error, Location not found. ID "+var.GetValue());
+    }
+}

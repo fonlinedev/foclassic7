@@ -1,0 +1,100 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
+6 1020 D _var p name_mem_npc_player = 1 @
+2 2000 None 0 #
+5 2010 D _var p q_shady_tandi > 1 D _var p q_shady_tandi < 6 #
+0 2020 @
+3 3000 None 0 #
+4 3010 #
+4 3020 #
+4 3030 #
+0 3040 @
+4 4000 None 0 #
+65507 4010 #
+0 4020 #
+65507 4030 @
+5 5000 None 0 #
+8 5010 D _var p q_shady_tandi = 5 #
+6 5020 #
+6 5030 #
+65507 5040 @
+6 6000 None 0 #
+7 6010 D _var p q_shady_tandi > 0 D _var p q_shady_tandi < 6 #
+0 6020 @
+7 7000 None 0 #
+8 7010 #
+8 7020 #
+8 7030 D _var p q_shady_tandi = 5 @
+8 8000 None 0 #
+13 8010 D _var p q_garl_duel_locid = 0 R _script map_raiders_camp@r_StartDuel 0  #
+13 8020 D _var p q_garl_duel_locid ! 0 #
+0 8030 #
+65507 8040 @
+9 9000 None 0 #
+10 9010 #
+10 9020 @
+10 10000 None 0 #
+12 10010 #
+11 10020 @
+11 11000 None 0 @
+12 12000 Attack 0 @
+13 13000 None 0 #
+0 13010 R _script map_raiders_camp@r_TeleportToArena 0  #
+0 13020 &
+
+[engl]
+{100}{}{Garl}
+{200}{}{Garl, leader of the Raiders}
+{210}{}{You see before you, Garl, leader of the Raiders.}
+{1000}{}{Predialogue installations}
+{1010}{}{Begin}
+{1020}{}{Second time}
+{2000}{}{You think you can come here without challenge?}
+{2010}{}{I've come in peace to negotiate the release of Tandi.}
+{2020}{}{[Leave]}
+{3000}{}{I killed you!}
+{3010}{}{Free the girl}
+{3020}{}{Step down}
+{3030}{}{Give me riches}
+{3040}{}{[Leave]}
+{4000}{}{What do you want?}
+{4010}{}{I want to join.}
+{4020}{}{[Leave]}
+{4030}{}{I'm an explorer.}
+{5000}{}{What makes you think I have her?}
+{5010}{}{I represent a threat you don't even understand.}
+{5020}{}{I will give you something of equal value.}
+{5030}{}{It would be good for your eternal soul.}
+{5040}{}{Your blood, spilled on the ground.}
+{6000}{}{What do you want now?}
+{6010}{}{I want the girl.}
+{6020}{}{Nothing.}
+{7000}{}{Why should we give one of our most prized possessions to you?}
+{7010}{}{It is only right.}
+{7020}{}{I have something of equal value.}
+{7030}{}{You will be allowed to live.}
+{8000}{}{Would you be willing to fight me over her?}
+{8010}{}{Right now, just you and me.}
+{8020}{}{Let's duel for the woman.}
+{8030}{}{No.}
+{8040}{}{I'll take you and your whole gang on.}
+{9000}{}{Whatever for?}
+{9010}{}{To kick some serious ass.}
+{9020}{}{I like you guys. I want to bond with you.}
+{10000}{}{I grow tired of these women. Kill them.}
+{10010}{}{No!}
+{10020}{}{Ok.}
+{11000}{}{Ha! I like your style.}
+{12000}{}{You have proved my point. Only the Raiders posses the will to survive! You do not. Kill him.}
+{13000}{}{Let's get started!}
+{13010}{}{I'm ready.}
+{13020}{}{Give me sometime to prepare.}
+
