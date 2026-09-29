@@ -536,7 +536,42 @@ In order to do this, I have to find new electronic parts with that I can repair 
 {7208101}{}{Junktown: Collect the Radscorpion Eggs}
 {7208102}{}{QUEST:Collect the Radscorpion Eggs}
 
+#=========================================================================================================================
+# 7327 / quest_water_chip
+# Vault 13, Water Chip
+#=========================================================================================================================
+{7327001}{}{The Overseer of Vault 13 sent me out into the wasteland to find a replacement water chip before the Vault's water supply runs out.}
+{7327002}{}{Vault 15 was my first lead, but after exploring its ruins I found no working water chip. I'll have to search elsewhere and find one before it's too late for Vault 13.}
 
+{7327003}{}{HARD_COMPLETED: I found the water chip and restored the vault 13 water treatment.
+:: Quest Completed ::}
+
+{7327004}{}{HARD_FAILED:I'm not welcome at vault 13 anymore.
+
+:: Quest Failed ::}
+
+{7327101}{}{Vault 13: Find the Water Chip}
+{7327102}{}{QUEST:Find the Water Chip}
+
+
+#=========================================================================================================================
+# 7328 / q_shady_tandi			Quest giver: Aradesh
+# Shady Sands, Rescue Tandi
+#=========================================================================================================================
+{7328001}{}{Aradesh told me that his daughter Tandi has gone missing. He fears something has happened to her and asked me to find her and bring her safely back to Shady Sands. I should ask around the village and look for any information about where she might have been taken.}
+{7328002}{}{Seth told me that Tandi was taken by raiders and gave me directions to their camp. I should travel to the raiders' camp, find Tandi, and bring her safely back to Shady Sands.}
+{7328003}{}{I've found Tandi alive at the raiders' camp, but she's being held prisoner. I need to find a way to free her and get her safely out of the camp.}
+{7328004}{}{Tandi wants me to help her escape without alerting the raiders. I'll have to get her out of the camp quietly and avoid drawing their attention.}
+{7328005}{}{I've agreed to fight Garl for Tandi's freedom. If I can defeat him in the duel, Tandi will be released and we can return to Shady Sands.}
+
+{7328006}{}{HARD_COMPLETED:Tandi is free and has made it safely back to Shady Sands. Aradesh's daughter has been rescued from the raiders.
+:: Quest Completed ::}
+
+{7328007}{}{SOFT_FAILED:Tandi is dead. I failed to rescue Aradesh's daughter and bring her safely back to Shady Sands.
+:: Quest Failed ::}
+
+{7328101}{}{Shady Sands: Rescue Tandi}
+{7328102}{}{QUEST:Rescue Tandi}
 
 #####################
 #		KLAMATH		#
@@ -1455,3 +1490,19 @@ Hint: You can use the distilery to brew spirits in nearby room. Ask someone arou
 #{7091101}{}{Raiders: Main quest}
 #{7091102}{}{QUEST:Raiders main quest}
 
+#=========================================================================================================================
+# 61007 / q_shady_radscorpions			Dialogs: Seth
+# Shady Sands, Radscorpions Nest			Last update: 2026/09/29
+#=========================================================================================================================
+{61007001}{}{Seth asked me to clear out the radscorpion nest threatening Shady Sands. I should head to the caves and kill all of the radscorpions.}
+{61007002}{}{DONE:I've killed all of the radscorpions in the nest. I should return to Seth and let him know the threat has been dealt with.}
+{61007003}{}{HARD_COMPLETED:I've cleared the radscorpion nest and reported back to Seth. Shady Sands is safe from the radscorpions.
+
+:: Quest Completed ::}
+
+{61007004}{}{HARD_FAILED:I failed destroying the nest of radscorpions.
+
+:: Quest Failed ::}
+
+{61007101}{}{Shady Sands: Radscorpions Nest}
+{61007102}{}{QUEST:Radscorpions Nest}

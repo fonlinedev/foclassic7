@@ -72,9 +72,9 @@ void WarnRaiders(Critter& critter, Critter& attacker)
     {        
         crits[i].Say(SAY_SHOUT_ON_HEAD, "Cowards must die!");
         int[] data = { attacker.Id, crits[i].Id };
-        CreateTimeEvent(AFTER(REAL_SECOND(1)), "e_InitiateAttack", data, false);        
+        CreateTimeEvent(AFTER(REAL_SECOND(1)), "e_InitiateAttack", data, false);
     }
-    attacker.Say(SAY_NETMSG, "I broke the rules of the duel."); 
+    attacker.Say(SAY_NETMSG, "You broke the rules of the duel."); 
 }
 
 uint e_InitiateAttack(array<uint>@ values)
