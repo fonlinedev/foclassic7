@@ -3428,13 +3428,13 @@ void map_critter_out(Map& map, Critter& cr)
                 uint npcId = crits[i].GetProtoId();
 
                 if (npcId == TANDI_PID) {
-                    cr.Say(SAY_NETMSG, "You've left Tandi behind, who is still fighting.");                                        
-                    GameVar@ rescueVar = GetLocalVar(LVAR_q_tandi_rescue, cr.Id);
+                    cr.Say(SAY_NETMSG, "You've left Tandi behind, who is still fighting.");
+                    GameVar@ rescueVar = GetLocalVar(LVAR_q_shady_tandi, cr.Id);
                     if (!valid(rescueVar)) {
                         Log("q_tandi_rescue invalid state.");
                         continue;
                     }
-                    rescueVar = 0;
+                    rescueVar = 7;
                     crits[i].StatBase[ST_FREE_BARTER_PLAYER] = 0;
                     SetGroupInfo(crits[i], FACTION_UNKNOWN, 0, FACTION_MODE_PASSIVE);
                     crits[i].FollowerVarBase[FV_MASTER] = 0;

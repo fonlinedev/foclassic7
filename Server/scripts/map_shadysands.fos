@@ -10,12 +10,14 @@
 #include "npc_roles_h.fos"
 #include "_vars.fos"
 #include "ITEMPID.H"
+#include "follower_common.fos"
 
 // dialog ids
 #define SETH_DIALOG1 4010
 #define SETH_DIALOG2 4029
 #define ARADESH_DIALOG1 4009
 #define ARADESH_DIALOG2 4041
+#define ARADESH_DIALOG3 4028
 #define IAN_DIALOG 4017
 #define TANDI_DIALOG1 4026
 
@@ -38,7 +40,7 @@ void map_init(Map& map, bool firstTime)
         spawnIan(map);
     }
 }
-
+// verify Ian presence
 uint cte_SpawnIan(array<uint>@ values) {
     if(values is null || values.length() == 0) return 0;
     uint mapPid = values[0];
@@ -119,7 +121,7 @@ void spawnIan(Map& map)
         "Ian"
     );
     if (!valid(cr))
-        Log("Error at aradesh spawning");
+        Log("Error at IAN spawning");
 
 }
 // Tandi must be removed if the quest started
@@ -139,7 +141,7 @@ void spawnTandi(Map& map)
         "TANDI"
     );
     if (!valid(cr))
-        Log("Error at aradesh spawning");
+        Log("Error at Tandi spawning");
         
 }
 
@@ -152,14 +154,61 @@ void _CritterIn(Map& map, Critter& cr)
     if(valid(player_map))
     {
         spawnSeth(player_map);
-        spawnAradesh(player_map);        
-        spawnTandi(player_map);
+        spawnAradesh(player_map);
+
+        GameVar@ qVar = GetLocalVar(LVAR_q_shady_tandi, cr.Id);
+        if (valid(qVar)) {
+            if (qVar.GetValue() >= 1 && qVar.GetValue() <= 5) {
+                return;
+            }   
+            if (qVar.GetValue() == 0)
+                spawnTandi(player_map);
+        } else {
+            Log("ERROR Tandi var invalid");
+        }
     }
+}
+
+bool d_TandiFollower(Critter& player, Critter@ npc)
+{
+    return isTandiFollower(player);
+}
+
+void r_CompleteTandiRescue(Critter& player, Critter@ npc)
+{    
+    ReturnTandi(player);
+}
+
+void ReturnTandi(Critter& cr)
+{
+    Map@ map = cr.GetMap();
+    GameVar@ tandiVar = GetLocalVar(LVAR_q_shady_tandi, cr.Id);
+    if (!valid(tandiVar)) {
+        Log("q_shady_tandi invalid state.");
+        return;
+    }
+    array<Critter@> crits;
+    int n = GetFollowers(cr, map, crits);
+    for(int i = 0; i < n; i++)
+    {
+        uint npcId = crits[i].GetProtoId();
+        if (npcId == TANDI_PID) {
+            Log("tandi is a follower, removing.");
+            tandiVar = 6;
+            crits[i].StatBase[ST_FREE_BARTER_PLAYER] = 0;
+            SetGroupInfo(crits[i], FACTION_UNKNOWN, 0, FACTION_MODE_PASSIVE);
+            crits[i].FollowerVarBase[FV_MASTER] = 0;
+            cr.FollowersBase[i] = 0;
+            DeleteNpc(crits[i]);
+            break;
+        }
+    }
+    Log("respawn tandi");
+    spawnTandi(map);
 }
 
 void _CritterOut(Map& map, Critter& cr)
 {
-
 }
 
 Critter@ SpawnStaticNpc(
@@ -234,26 +283,61 @@ void UpdateAradesh(Critter@ cr, Map@ map)
     array<Critter@> crits;
     uint n = map.GetCritters(0, FIND_ALL | FIND_ONLY_PLAYERS, crits);
 
+    Critter@ player = null;
+
     for(uint i = 0; i < n; i++)
     {
         if(crits[i].IsPlayer())
         {
-            GameVar@ qVar = GetLocalVar(LVAR_q_shady_radscorpions, crits[i].Id);
-
-            if(!valid(qVar))
-                return;
-
-            if(qVar.GetValue() > 0 && qVar.GetValue() < 3)
-            {
-                Log("Radscorpions quest is ongoing");
-                cr.StatBase[ST_DIALOG_ID] = ARADESH_DIALOG2;
-            }
-
-            return;
+            @player = crits[i];
+            break;            
         }
     }
 
-    Log("Player not found!!");
+    if (!valid(player))
+        return;
+
+    GameVar@ q1Var = GetLocalVar(LVAR_q_shady_radscorpions, player.Id);
+    GameVar@ q2Var = GetLocalVar(LVAR_q_shady_antidote, player.Id);
+    GameVar@ qVar = GetLocalVar(LVAR_q_shady_tandi, cr.Id);
+    if(!valid(q1Var) || !valid(q2Var) || !valid(qVar))
+        return;
+    
+    if (qVar.GetValue() >= 1 && qVar.GetValue() <= 5) {
+        return;
+    }
+    if (qVar.GetValue() == 6) {
+        cr.StatBase[ST_DIALOG_ID] = ARADESH_DIALOG1;
+        return;
+    }        
+    
+    if(q1Var.GetValue() > 0 && q1Var.GetValue() < 3)
+    {
+        Log("Radscorpions quest is ongoing");
+        cr.StatBase[ST_DIALOG_ID] = ARADESH_DIALOG2;
+        return;
+    }
+
+    if(q1Var.GetValue() == 3 && q2Var.GetValue() == 1)
+    {
+        Log("Radscorpions quest is done, can start Tandi rescue.");
+        cr.StatBase[ST_DIALOG_ID] = ARADESH_DIALOG3;
+        Critter@ tandi = GetNpcByEntire(map, 13);
+        if (!valid(tandi)) {
+            Log("Tandi isn't present...");
+            return;
+        }
+        DeleteNpc(tandi);
+    }
+}
+
+Critter@ GetNpcByEntire(Map@ map, uint coord)
+{
+    uint16 x = 0;
+    uint16 y = 0;
+    map.GetEntireCoords(coord, 0, x, y);
+    Critter@ cr = map.GetCritter(x, y);
+    return cr;
 }
 
 void UpdateIan(Critter@ cr)
