@@ -18,6 +18,8 @@ import bool LockerClose(Item& item) from "lockers";
 
 #define TANDI_RESCUE_ESCAPE (4)
 #define TANDI_RESCUE_DUEL (5)
+#define DUEL_STARTED (2)
+#define DUEL_ENDED (3)
 #define TANDI_COMPLETED (6)
 
 #define GARL_DIALOG_ID 4044
@@ -49,21 +51,18 @@ void _CritterIn(Map& map, Critter& cr)
 
 void _CritterOut(Map& map, Critter& cr)
 {
-    GameVar@ tandiVar = GetLocalVar(LVAR_q_shady_tandi, cr.Id);
-    if(valid(tandiVar))
+    GameVar@ rescueVar = GetLocalVar(LVAR_q_tandi_rescue, cr.Id);
+    if(valid(rescueVar))
     {
-        if (tandiVar.GetValue() != TANDI_COMPLETED) {
+        if (rescueVar.GetValue() != DUEL_ENDED) {
             // check Garl's hp before leaving the map
             Critter@ garl = GetGarl(map);
-            if (garl.StatBase[ST_CURRENT_HP] > 0)
+            if (garl.StatBase[ST_CURRENT_HP] > 0) {
                 cr.Say(SAY_NETMSG, "You failed defeating Garl in the duel.");
-            else {
-                Log("garl was defeated");
-                tandiVar = TANDI_COMPLETED;
-            }
-        }            
-    }
-    r_DeleteLocation(cr);
+                rescueVar = DUEL_STARTED;
+            }            
+        }
+    }    
 }
 
 Critter@ GetGarl(Map@ map)

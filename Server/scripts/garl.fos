@@ -17,7 +17,8 @@
 import void NpcSetLevel(Critter& npc, int level) from "parameters";
 import bool d_WeaponInHand(Critter& player, Critter@ npc) from "dialog";
 
-#define TANDI_COMPLETED 6
+#define DUEL_STARTED 2
+#define DUEL_ENDED 3
 
 void critter_init(Critter& cr, bool firstTime)
 {
@@ -51,14 +52,16 @@ void _MobIdle(Critter& cr)
 bool _Attacked(Critter& cr, Critter& attacker)
 {
     uint currentHP = cr.StatBase[ST_CURRENT_HP];
-    if (currentHP < 0) {
+    if (currentHP < 10) {
+        cr.Say(SAY_SHOUT_ON_HEAD, "I'm done you won!");
+        EraseAttackPlane(cr, 0, attacker);
         FinishDuel(attacker);
     } else {
         Log("Current HP "+currentHP);
         if (d_WeaponInHand(attacker, cr)) {
             Log("player is not playing honestly.");
             WarnRaiders(cr, attacker);
-        }            
+        }
     }
     return false;
 }
@@ -82,7 +85,7 @@ uint e_InitiateAttack(array<uint>@ values)
     Critter@ player = GetCritter(values[0]);
     Critter@ guard = GetCritter(values[1]);
     AddAttackPlane(guard, 0, player);
-    return 0;
+    return REAL_SECOND(1);
 }
 
 void _GarlDead(Critter& cr, Critter@ killer)
@@ -93,10 +96,10 @@ void _GarlDead(Critter& cr, Critter@ killer)
 void FinishDuel(Critter& player)
 {
     Map@ map = player.GetMap();        
-    GameVar@ tandiVar = GetLocalVar(LVAR_q_shady_tandi, player.Id);
-    if(valid(tandiVar))
+    GameVar@ rescueVar = GetLocalVar(LVAR_q_tandi_rescue, player.Id);
+    if(valid(rescueVar))
     {
-        tandiVar = TANDI_COMPLETED;
+        rescueVar = DUEL_ENDED;
         player.Say(SAY_NETMSG, "You successfully finished the duel against Garl.");
     } else {
         Log("ERROR update duel variable.");

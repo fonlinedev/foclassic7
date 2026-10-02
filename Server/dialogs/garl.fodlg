@@ -23,21 +23,22 @@ lang=engl
 65507 4030 @
 5 5000 None 0 #
 8 5010 D _var p q_shady_tandi = 5 #
-6 5020 #
-6 5030 #
-65507 5040 @
+7 5020 #
+7 5030 #
+65507 5040 R _script map_raiders_camp@r_StartRaidersBattle 0  @
 6 6000 None 0 #
-7 6010 D _var p q_shady_tandi > 0 D _var p q_shady_tandi < 6 #
-0 6020 @
+7 6010 D _var p q_tandi_rescue ! 3 #
+14 6020 D _var p q_tandi_rescue = 3 #
+0 6030 @
 7 7000 None 0 #
-8 7010 #
-8 7020 #
-8 7030 D _var p q_shady_tandi = 5 @
+8 7010 D _var p q_shady_tandi = 5 #
+8 7020 D _param p SK_BARTER } 100 #
+8 7030 D _param p SK_SPEECH } 100 @
 8 8000 None 0 #
-13 8010 D _var p q_garl_duel_locid = 0 R _script map_raiders_camp@r_StartDuel 0  #
-13 8020 D _var p q_garl_duel_locid ! 0 #
+13 8010 D _var p q_tandi_rescue < 2 R _script map_raiders_camp@r_StartDuel 0  #
+13 8020 D _var p q_tandi_rescue = 2 #
 0 8030 #
-65507 8040 @
+65507 8040 R _script map_raiders_camp@r_StartRaidersBattle 0  @
 9 9000 None 0 #
 10 9010 #
 10 9020 @
@@ -45,10 +46,12 @@ lang=engl
 12 10010 #
 11 10020 @
 11 11000 None 0 @
-12 12000 Attack 0 @
+12 12000 map_raiders_camp@r_StartRaidersBattle 0 @
 13 13000 None 0 #
 0 13010 R _script map_raiders_camp@r_TeleportToArena 0  #
-0 13020 &
+0 13020 @
+14 14000 None 0 #
+0 14010 &
 
 [engl]
 {100}{}{Garl}
@@ -73,17 +76,18 @@ lang=engl
 {5010}{}{I represent a threat you don't even understand.}
 {5020}{}{I will give you something of equal value.}
 {5030}{}{It would be good for your eternal soul.}
-{5040}{}{Your blood, spilled on the ground.}
+{5040}{}{[Attack] Your blood, spilled on the ground.}
 {6000}{}{What do you want now?}
 {6010}{}{I want the girl.}
-{6020}{}{Nothing.}
+{6020}{}{Let her go, the duel is finished.}
+{6030}{}{Nothing.}
 {7000}{}{Why should we give one of our most prized possessions to you?}
-{7010}{}{It is only right.}
+{7010}{}{You will be allowed to live.}
 {7020}{}{I have something of equal value.}
-{7030}{}{You will be allowed to live.}
+{7030}{}{It is only right.}
 {8000}{}{Would you be willing to fight me over her?}
 {8010}{}{Right now, just you and me.}
-{8020}{}{Let's duel for the woman.}
+{8020}{}{Let's finish duel for the woman.}
 {8030}{}{No.}
 {8040}{}{I'll take you and your whole gang on.}
 {9000}{}{Whatever for?}
@@ -97,4 +101,6 @@ lang=engl
 {13000}{}{Let's get started!}
 {13010}{}{I'm ready.}
 {13020}{}{Give me sometime to prepare.}
+{14000}{}{You won, leave with the girl.}
+{14010}{}{Done.}
 

@@ -1701,9 +1701,9 @@
    7 == quest failed
 **********
 
-   $	7329	1	q_tandi_rescue	0	0	2	0
+   $	7329	1	q_tandi_rescue	0	0	3	1
 **********
-   Tandi rescue states. RESCUE_NOT_STARTED 0, DOOR_OPENED 1, DUEL_ENDED 2
+   Tandi rescue states. RESCUE_NOT_STARTED 0, DOOR_OPENED 1, DUEL_STARTED 2, DUEL_ENDED 3
 **********
 
 //
