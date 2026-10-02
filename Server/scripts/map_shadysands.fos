@@ -267,14 +267,47 @@ Critter@ SpawnStaticNpc(
         if (name == "Aradesh") {
             UpdateAradesh(cr, map);
         }
+        if (name == "Seth") {
+            UpdateSeth(cr, map);
+        }
     }
 
     return cr;
 }
 
-void UpdateSeth(Critter@ cr)
+void UpdateSeth(Critter@ cr, Map@ map)
 {
-    // Seth-specific logic
+    // Seth-specific logic~
+    array<Critter@> crits;
+    uint n = map.GetCritters(0, FIND_ALL | FIND_ONLY_PLAYERS, crits);
+
+    Critter@ player = null;
+
+    for(uint i = 0; i < n; i++)
+    {
+        if(crits[i].IsPlayer())
+        {
+            @player = crits[i];
+            break;            
+        }
+    }
+    
+    if (!valid(player))
+        return;
+    Log("update seth");
+    GameVar@ qVar = GetLocalVar(LVAR_q_shady_tandi, player.Id);
+    if (!valid(qVar))
+        return;
+    if (qVar.GetValue() >= 1 && qVar.GetValue() <= 5) {
+        Log("SETH: tandi rescue not finished update to dialog 2");
+        cr.StatBase[ST_DIALOG_ID] = SETH_DIALOG2;
+        return;
+    }
+    if (qVar.GetValue() == 6) {
+        Log("SETH: tandi rescue finalized back to dialog 1");
+        cr.StatBase[ST_DIALOG_ID] = SETH_DIALOG1;
+        return;
+    }
 }
 
 // Aradesh-specific logic
@@ -299,7 +332,7 @@ void UpdateAradesh(Critter@ cr, Map@ map)
 
     GameVar@ q1Var = GetLocalVar(LVAR_q_shady_radscorpions, player.Id);
     GameVar@ q2Var = GetLocalVar(LVAR_q_shady_antidote, player.Id);
-    GameVar@ qVar = GetLocalVar(LVAR_q_shady_tandi, cr.Id);
+    GameVar@ qVar = GetLocalVar(LVAR_q_shady_tandi, player.Id);
     if(!valid(q1Var) || !valid(q2Var) || !valid(qVar))
         return;
     
@@ -307,9 +340,10 @@ void UpdateAradesh(Critter@ cr, Map@ map)
         return;
     }
     if (qVar.GetValue() == 6) {
+        Log("tandi rescue done reset aradesh");
         cr.StatBase[ST_DIALOG_ID] = ARADESH_DIALOG1;
         return;
-    }        
+    }
     
     if(q1Var.GetValue() > 0 && q1Var.GetValue() < 3)
     {
