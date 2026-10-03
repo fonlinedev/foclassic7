@@ -34,7 +34,7 @@ void critter_init(Critter& cr, bool firstTime)
 }
 
 void _MobIdle(Critter& cr)
-{
+{    
     // check critters in sight
     array<Critter@> crits;
     // get visible players
