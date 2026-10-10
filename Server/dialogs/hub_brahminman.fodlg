@@ -31,7 +31,7 @@ lang=engl
 3 8010 @
 9 9000 None 0 @
 11 10000 None 0 #
-12 10010 D _script brahmin_trader@d_PlayerHasBrahmin 1 0 D _script brahmin_trader@d_BrahminPenNotFull 1 0 #
+12 10010 D _script brahmin_trader@d_PlayerHasBrahmin 0 D _script brahmin_trader@d_BrahminPenNotFull 1 0 #
 0 10020 @
 12 11000 brahmin_trader@dlg_ShowBrahminSellPrice 0 #
 16 11010 R _script brahmin_trader@r_SellBrahmin 1 0 #

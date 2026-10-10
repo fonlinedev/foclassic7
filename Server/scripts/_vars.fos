@@ -375,6 +375,7 @@
 #define LVAR_q_lp_stanley						(10422)
 #define LVAR_q_lp_thunderjo						(10423)
 #define LVAR_q_lp_trapper						(10424)
+#define LVAR_q_brahmin_delivery           (10425)
 
 
 //	VAULT 24									#10800
@@ -2328,6 +2329,10 @@ Landers Point caravan packer quest variable.
 *****************
 *****************
 
+$    10425    1    q_brahmin_delivery    0    0    99    1
+**********
+Brahmin dealer delivery job variable.
+**********
 
 //
 //	VAULT 24

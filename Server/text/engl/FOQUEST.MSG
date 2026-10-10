@@ -1327,6 +1327,26 @@ Hint: You can use the distilery to brew spirits in nearby room. Ask someone arou
 {10424101}{}{Landers Point: Gecko Skinning}
 {10424102}{}{QUEST:Learn how to skin geckos from the Old Trapper}
 
+#=======================================
+# 10425 / q_brahmin_delivery
+# Brahmin Dealer: Brahmin Delivery Job (repeatable)
+#=======================================
+{10425001}{}{I heard a Brahmin dealer is looking to buy livestock. I should talk to him if I'm interested in making some caps.
+
+:: New Job Available ::}
+{10425011}{}{The Brahmin dealer offered to pay me for bringing him a Brahmin. I should return with one to collect my reward.}
+{10425012}{}{HIDDEN:Brahmin delivered.}
+{10425013}{}{NO_POPUP:Brahmin delivered.}
+{10425014}{}{DONE:That's all. I should talk to the Brahmin dealer to collect my reward!}
+{10425097}{}{SOFT_FAILED:I couldn't complete the Brahmin delivery job. Maybe I can try again later.
+
+:: Job Failed ::}
+{10425099}{}{SOFT_COMPLETED:I delivered a Brahmin to the dealer and collected my reward. I could return for more work a bit later.
+
+:: Job Completed ::}
+{10425101}{}{Brahmin Dealer: Brahmin Delivery Job (repeatable)}
+{10425102}{}{JOB:Deliver a Brahmin to the dealer for caps}
+
 ########################################
 
 
