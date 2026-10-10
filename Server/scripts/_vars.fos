@@ -540,6 +540,10 @@
 // GARL DUEL
 #define LVAR_q_garl_duel_locid         (61012)
 
+#define LVAR_v15_shaft1                         (61013)
+#define LVAR_v15_shaft2                         (61014)
+
+
 /*************************************************************************************
         Id	Type	Name		Start	Min	Max	Flags
 **************************************************************************************
@@ -3056,6 +3060,18 @@ $	21016	1	LVAR_Book_Speaking          0	0	0	4
 	$	61011	1	q_shady_jarvis_cured	0	0	1	0
 **********
 	Used to track Jarvis poison diagnostic and cure. 0 = Not Started, 1 = Completed.
+**********
+
+**********
+	$	61013	1	v15_shaft1	0	0	1	0
+**********
+	Used to track vault 15 rope status. 0 = Not used, 1 = Rope is set.
+**********
+
+**********
+	$	61014	1	v15_shaft2	0	0	1	0
+**********
+	Used to track vault 15 rope status. 0 = Not used, 1 = Rope is set.
 **********
 
 **********

@@ -10,14 +10,15 @@ lang=engl
 2 1010 @
 2 2000 None 0 #
 5 2010 #
-3 2020 R _script dialog_altruist@r_Give 1 0 #
-3 2030 R _script dialog_altruist@r_Give 1 1 #
-3 2040 D _param p ST_STRENGTH > 99 R _script dialog_altruist@r_Give 1 2 #
-3 2050 R _script dialog_altruist@r_Give 1 3 #
-3 2060 R _script dialog@r_AddMoney 1 100000 #
-3 2070 R _script dialog_altruist@r_Give 1 4 #
-4 2080 #
-0 2090 @
+7 2020 #
+3 2030 R _script dialog_altruist@r_Give 1 0 #
+3 2040 R _script dialog_altruist@r_Give 1 1 #
+3 2050 D _param p ST_STRENGTH > 99 R _script dialog_altruist@r_Give 1 2 #
+3 2060 R _script dialog_altruist@r_Give 1 3 #
+3 2070 R _script dialog@r_AddMoney 1 100000 #
+3 2080 R _script dialog_altruist@r_Give 1 4 #
+4 2090 #
+0 2100 @
 3 3000 None 0 @
 4 4000 None 0 #
 3 4010 D _script dialog_altruist@d_CanTakePerk 1 301 R _script dialog_altruist@r_GivePerk 1 301 #
@@ -85,7 +86,13 @@ lang=engl
 6 6060 R _var p q_shady_tandi = 6 #
 6 6070 R _var p q_shady_tandi = 7 #
 6 6080 R _var p q_shady_tandi = 0 #
-0 6090 &
+0 6090 @
+7 7000 None 0 #
+0 7010 R _script dialog@r_TeleportToMap 2 3 0 #
+0 7020 R _script dialog@r_TeleportToMap 2 8 0 #
+0 7030 R _script dialog@r_TeleportToMap 2 34 0 #
+0 7040 R _script dialog@r_TeleportToMap 2 70 0 #
+0 7050 R _script dialog@r_TeleportToMap 2 221 0 &
 
 [engl]
 {100}{}{Altruist}
@@ -95,14 +102,15 @@ lang=engl
 {1010}{}{Answer text}
 {2000}{}{Hello, tester.}
 {2010}{}{Quests please}
-{2020}{}{Hello, now give me a level.}
-{2030}{}{Right, give me three levels.}
-{2040}{}{I will now receive 100000 wastebucks.}
-{2050}{}{I humbly suggest clearing all of my reputations.}
-{2060}{}{This is a robbery! Gimme 100.000 caps, NOW!}
-{2070}{}{Remove my drug effects, pretty please.}
-{2080}{}{Give me a Support Perk that I am eligible to take.}
-{2090}{}{Done.}
+{2020}{}{Teleport}
+{2030}{}{Hello, now give me a level.}
+{2040}{}{Right, give me three levels.}
+{2050}{}{I will now receive 100000 wastebucks.}
+{2060}{}{I humbly suggest clearing all of my reputations.}
+{2070}{}{This is a robbery! Gimme 100.000 caps, NOW!}
+{2080}{}{Remove my drug effects, pretty please.}
+{2090}{}{Give me a Support Perk that I am eligible to take.}
+{2100}{}{Done.}
 {3000}{}{Yes.}
 {4000}{}{Which one?}
 {4010}{}{@msg game 103011@}
@@ -171,4 +179,10 @@ lang=engl
 {6070}{}{Fail}
 {6080}{}{Reset}
 {6090}{}{Done.}
+{7000}{}{Where to teleport}
+{7010}{}{shady sands}
+{7020}{}{raiders camp}
+{7030}{}{vault 15}
+{7040}{}{junktown}
+{7050}{}{the hub}
 

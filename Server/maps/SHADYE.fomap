@@ -4,8 +4,8 @@ MaxHexX              200
 MaxHexY              200
 WorkHexX             102
 WorkHexY             93
-ScriptModule         -
-ScriptFunc           -
+ScriptModule         map_shadysands
+ScriptFunc           map_init
 NoLogOut             0
 Time                 -1
 DayTime              300  600  1140 1380

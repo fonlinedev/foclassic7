@@ -77,6 +77,8 @@ void _CritterIn(Map& map, Critter& cr)
         if (valid(qVar)) {
             if (qVar.GetValue() >= 1 && qVar.GetValue() <= 5) {
                 spawnTandi(player_map);
+            } else {
+                deleteTandi(player_map);
             }            
         } else {
             Log("ERROR Tandi var invalid");
@@ -133,6 +135,20 @@ void spawnTandi(Map& map)
     for(uint i = 0; i < num; i++)
     {
         LockerClose(cells[i]);
+    }
+}
+// if Tandi is there but quest is inactive or finished
+void deleteTandi(Map& map)
+{
+    array<Critter@> crits;    
+    uint n = map.GetCritters(0, FIND_ALL | FIND_ONLY_NPC, crits);
+    for(int i = 0; i < n; i++)
+    {
+        uint npcId = crits[i].GetProtoId();
+        if (npcId == TANDI_PID) {            
+            DeleteNpc(crits[i]);
+            break;
+        }
     }
 }
 
