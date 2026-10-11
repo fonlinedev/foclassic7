@@ -34,13 +34,13 @@ Execute the appropriate file to start the server.
 ### 4. Running on Linux
 
 To run the server in a Linux environment, refer to the project documentation for instructions on running the server through a Wine environment.
-
 ### 5. Client Requirements
 
 To run the game client, you need the client executables, configuration files, game assets, and supporting directories.
 
 The `/Client` directory should contain the following structure:
 
+```text
 Client/
 ├── ClientGL.exe
 ├── ClientDX.exe
@@ -64,6 +64,7 @@ Client/
 │   └── ...
 ├── logs/
 └── screenshots/
+```
 
 ## Project Status
 
