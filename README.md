@@ -4,6 +4,67 @@
 
 This project is a customized FOClassic/FOnline prototype used for development and testing. Most original example content has been reduced while retaining functionality needed for more complex tests.
 
+Here's an updated `README.md` section you can use for FONLINE Revival. It keeps the setup instructions simple while clarifying the proprietary game-data requirement.
+
+## Getting Started
+
+### 1. Download the Executables
+
+Download the latest client and server executables from the project's [Releases](../../releases) page.
+
+### 2. Configure the Server
+
+Create a `Server.cfg` file inside the `/Server` directory:
+
+```text
+/Server/Server.cfg
+```
+
+Configure the server settings according to your environment before starting the server.
+
+### 3. Start the Server
+
+Choose the executable that suits your needs:
+
+- **`Server.exe`** — Run the server with its standard console interface.
+- **`ServerHeadless.exe`** — Run the server without the standard graphical console interface.
+
+Execute the appropriate file to start the server.
+
+### 4. Running on Linux
+
+To run the server in a Linux environment, refer to the project documentation for instructions on running the server through a Wine environment.
+
+### 5. Client Requirements
+
+To run the game client, you need the client executables, configuration files, game assets, and supporting directories.
+
+The `/Client` directory should contain the following structure:
+
+Client/
+├── ClientGL.exe
+├── ClientDX.exe
+├── FOnline.cfg
+├── FOnline2238.cfg
+├── DataFiles.cfg
+├── DataFilesReloaded.cfg
+├── FO2238Config.exe
+├── FOConfig.exe
+├── GMTButtons.txt
+├── PublicNameColorizing.txt
+├── Reloaded.cfg
+├── Updater.exe
+├── fallout.dat
+├── clientlogs/
+├── data/
+│   ├── art/
+│   ├── cache/
+│   ├── fonts/
+│   ├── sound/
+│   └── ...
+├── logs/
+└── screenshots/
+
 ## Project Status
 
 This repository is being used as a development base for **FOnline Revival / Brave New World** work.
