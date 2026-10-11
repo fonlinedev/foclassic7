@@ -5,17 +5,21 @@
 #include "groups_h.fos"
 #include "mapdata_h.fos"
 #include "messages_h.fos"
+#include "lockers_utils.fos"
 #include "MSGSTR.h"
 #include "npc_common_h.fos"
 #include "npc_roles_h.fos"
 #include "_vars.fos"
 #include "ITEMPID.H"
+#include "follower_common.fos"
+
 
 // dialog ids
 #define SETH_DIALOG1 4010
 #define SETH_DIALOG2 4029
 #define ARADESH_DIALOG1 4009
 #define ARADESH_DIALOG2 4041
+#define ARADESH_DIALOG3 4028
 #define IAN_DIALOG 4017
 #define TANDI_DIALOG1 4026
 
@@ -25,20 +29,28 @@
 #define IAN_PID 32
 #define TANDI_PID 68
 
+
+uint[] LOCKER_PROTECTED_ITEMS = { PID_223_FMJ, PID_SCOUT_HANDBOOK, PID_DOCTORS_BAG, PID_FIRST_AID_BOOK, PID_FIRST_AID_KIT };
+
 void map_init(Map& map, bool firstTime)
 {    
     uint[] values = { map.GetProtoId() };
-    
+    uint respawnTime = 1; // 1 hour loop
     map.SetEvent(MAP_EVENT_IN_CRITTER, "_CritterIn");
     map.SetEvent(MAP_EVENT_OUT_CRITTER, "_CritterOut");
+    _MapSetMode(map, MAP_MODE_NO_PVP);
+    _MapSetMode(map, MAP_MODE_NO_LOOT_DROP);
     CreateTimeEvent(AFTER(REAL_MINUTE(5)), "cte_SpawnIan", values, false);
+    CreateTimeEvent(__FullSecond + REAL_HOUR(respawnTime), "e_RespawnLoot", values, false);
     if(firstTime)
     {
         map.SetTurnBasedAvailability(true);
         spawnIan(map);
+        initLockersOnce(map);
     }
 }
 
+// verify Ian presence
 uint cte_SpawnIan(array<uint>@ values) {
     if(values is null || values.length() == 0) return 0;
     uint mapPid = values[0];
@@ -60,6 +72,140 @@ uint cte_SpawnIan(array<uint>@ values) {
         spawnIan(map);
     }
     return REAL_MINUTE(5);
+}
+
+
+// First init the lockers, only run once.
+void initLockersOnce(Map@ map)
+{    
+    if(!valid(map))
+    {
+        Log("initLockersOnce failed, map not found.");
+        return;
+    }
+    array<Item@> lockers;
+    uint count = map.GetItemsByType(ITEM_TYPE_CONTAINER, lockers);
+
+    if(map.GetProtoId() == MAP_ShadySandsWest)
+    {
+        if(count == 0)
+        {
+            Log("No lockers found on Shady Sands West.");
+            return;
+        }
+
+        Log("shelves found " + count);
+       
+        // Guard house
+        LockerLoot@[] westLocker0;
+        westLocker0.insertLast(LockerLoot(PID_223_FMJ, uint(Random(0, 60))));
+        ResetLockerLoot(lockers[0], LOCKER_PROTECTED_ITEMS, westLocker0);
+       
+        LockerLoot@[] westLocker1;
+        westLocker1.insertLast(LockerLoot(PID_SCOUT_HANDBOOK, 1));
+        ResetLockerLoot(lockers[1], LOCKER_PROTECTED_ITEMS, westLocker1);
+
+        // Razlo locker
+        LockerLoot@[] westLocker2;
+        westLocker2.insertLast(LockerLoot(PID_FIRST_AID_BOOK, 1));
+        westLocker2.insertLast(LockerLoot(PID_STIMPAK, uint(Random(1, 5))));
+        westLocker2.insertLast(LockerLoot(PID_DOCTORS_BAG, 1));
+        westLocker2.insertLast(LockerLoot(PID_FIRST_AID_KIT, 1));
+        ResetLockerLoot(lockers[2], LOCKER_PROTECTED_ITEMS, westLocker2);
+
+        LockerLoot@[] westLocker3;
+        westLocker3.insertLast(LockerLoot(PID_BOTTLE_CAPS, uint(Random(1, 50))));
+        ResetLockerLoot(lockers[3], LOCKER_PROTECTED_ITEMS, westLocker3);
+    }
+    else if(map.GetProtoId() == MAP_ShadySandsEast)
+    {
+        if(count == 0)
+        {
+            Log("No lockers found on Shady Sands East.");
+            return;
+        }
+
+        Log("shelves found " + count);
+        // Guard house
+        LockerLoot@[] westLocker0;
+        westLocker0.insertLast(LockerLoot(PID_SCOUT_HANDBOOK, 1));
+        westLocker0.insertLast(LockerLoot(PID_ROPE, 1));
+        ResetLockerLoot(lockers[0], LOCKER_PROTECTED_ITEMS, westLocker0);
+    } else {
+        Log("ERROR unknown map PID cant load lockers");
+    }
+}
+
+
+uint e_RespawnLoot(uint[]@ values)
+{
+    if(values is null || values.length() == 0) return 0;
+    uint mapId = values[0];
+    respawnLockers(mapId);
+    return REAL_HOUR(1);
+}
+
+
+// Called every hour for respawn items.
+void respawnLockers(uint mapPid) {   
+
+    Map@ map = GetMapByPid(mapPid, 0);
+
+    if(!valid(map))
+    {
+        Log("initLockersOnce failed, map " + mapPid + " not found.");
+        return;
+    }
+
+    if(map.GetProtoId() == MAP_ShadySandsWest)
+    {
+        array<Item@> lockers;
+        uint count = map.GetItemsByType(ITEM_TYPE_CONTAINER, lockers);
+        if(count == 0)
+        {
+            Log("No lockers found on Shady Sands West.");
+            return;
+        }
+        Log("shelves found " + count);      
+        
+        // Guard house
+        LockerLoot@[] westLocker0;
+        westLocker0.insertLast(LockerLoot(PID_10MM_JHP, uint(Random(1, 60))));
+        westLocker0.insertLast(LockerLoot(PID_10MM_AP, uint(Random(1, 60))));
+        westLocker0.insertLast(LockerLoot(PID_SPEAR, uint(Random(0, 1))));
+        ResetLockerLoot(lockers[0], LOCKER_PROTECTED_ITEMS, westLocker0);
+        
+        // empty house
+        LockerLoot@[] westLocker1;
+        westLocker1.insertLast(LockerLoot(PID_KNIFE, 1));
+        westLocker1.insertLast(LockerLoot(PID_ROCK, 1));
+        ResetLockerLoot(lockers[1], LOCKER_PROTECTED_ITEMS, westLocker1);
+
+        // Razlo locker
+        LockerLoot@[] westLocker2;        
+        westLocker2.insertLast(LockerLoot(PID_BOTTLE_CAPS, uint(Random(1, 50))));
+        ResetLockerLoot(lockers[2], LOCKER_PROTECTED_ITEMS, westLocker2);
+        
+        // Aradesh house
+        LockerLoot@[] westLocker3;  
+        westLocker3.insertLast(LockerLoot(PID_FLARE, uint(Random(0, 3))));
+        westLocker3.insertLast(LockerLoot(PID_IGUANA_ON_A_STICK, uint(Random(1, 5))));
+        if(Chance(15))
+            westLocker3.insertLast(LockerLoot(PID_SHOTGUN_SHELLS, uint(Random(1, 50))));
+        ResetLockerLoot(lockers[3], LOCKER_PROTECTED_ITEMS, westLocker3);
+
+    }
+    else if(map.GetProtoId() == MAP_ShadySandsEast)
+    {
+        array<Item@> lockers;
+        uint count = map.GetItemsByType(ITEM_TYPE_CONTAINER, lockers);
+        // Guard house
+        LockerLoot@[] eastLocker0;
+        eastLocker0.insertLast(LockerLoot(PID_BBS, uint(Random(0, 30))));
+        if(Chance(5))
+            eastLocker0.insertLast(LockerLoot(PID_SNIPER_RIFLE, 1));
+        ResetLockerLoot(lockers[0], LOCKER_PROTECTED_ITEMS, eastLocker0);
+    }
 }
 
 void spawnSeth(Map@ map)
@@ -119,7 +265,7 @@ void spawnIan(Map& map)
         "Ian"
     );
     if (!valid(cr))
-        Log("Error at aradesh spawning");
+        Log("Error at IAN spawning");
 
 }
 // Tandi must be removed if the quest started
@@ -139,7 +285,7 @@ void spawnTandi(Map& map)
         "TANDI"
     );
     if (!valid(cr))
-        Log("Error at aradesh spawning");
+        Log("Error at Tandi spawning");
         
 }
 
@@ -152,14 +298,61 @@ void _CritterIn(Map& map, Critter& cr)
     if(valid(player_map))
     {
         spawnSeth(player_map);
-        spawnAradesh(player_map);        
-        spawnTandi(player_map);
+        spawnAradesh(player_map);
+
+        GameVar@ qVar = GetLocalVar(LVAR_q_shady_tandi, cr.Id);
+        if (valid(qVar)) {
+            if (qVar.GetValue() >= 1 && qVar.GetValue() <= 5) {
+                return;
+            }   
+            if (qVar.GetValue() == 0)
+                spawnTandi(player_map);
+        } else {
+            Log("ERROR Tandi var invalid");
+        }
     }
+}
+
+bool d_TandiFollower(Critter& player, Critter@ npc)
+{
+    return isTandiFollower(player);
+}
+
+void r_CompleteTandiRescue(Critter& player, Critter@ npc)
+{    
+    ReturnTandi(player);
+}
+
+void ReturnTandi(Critter& cr)
+{
+    Map@ map = cr.GetMap();
+    GameVar@ tandiVar = GetLocalVar(LVAR_q_shady_tandi, cr.Id);
+    if (!valid(tandiVar)) {
+        Log("q_shady_tandi invalid state.");
+        return;
+    }
+    array<Critter@> crits;
+    int n = GetFollowers(cr, map, crits);
+    for(int i = 0; i < n; i++)
+    {
+        uint npcId = crits[i].GetProtoId();
+        if (npcId == TANDI_PID) {
+            Log("tandi is a follower, removing.");
+            tandiVar = 6;
+            crits[i].StatBase[ST_FREE_BARTER_PLAYER] = 0;
+            SetGroupInfo(crits[i], FACTION_UNKNOWN, 0, FACTION_MODE_PASSIVE);
+            crits[i].FollowerVarBase[FV_MASTER] = 0;
+            cr.FollowersBase[i] = 0;
+            DeleteNpc(crits[i]);
+            break;
+        }
+    }
+    Log("respawn tandi");
+    spawnTandi(map);
 }
 
 void _CritterOut(Map& map, Critter& cr)
 {
-
 }
 
 Critter@ SpawnStaticNpc(
@@ -218,14 +411,47 @@ Critter@ SpawnStaticNpc(
         if (name == "Aradesh") {
             UpdateAradesh(cr, map);
         }
+        if (name == "Seth") {
+            UpdateSeth(cr, map);
+        }
     }
 
     return cr;
 }
 
-void UpdateSeth(Critter@ cr)
+void UpdateSeth(Critter@ cr, Map@ map)
 {
-    // Seth-specific logic
+    // Seth-specific logic~
+    array<Critter@> crits;
+    uint n = map.GetCritters(0, FIND_ALL | FIND_ONLY_PLAYERS, crits);
+
+    Critter@ player = null;
+
+    for(uint i = 0; i < n; i++)
+    {
+        if(crits[i].IsPlayer())
+        {
+            @player = crits[i];
+            break;            
+        }
+    }
+    
+    if (!valid(player))
+        return;
+    Log("update seth");
+    GameVar@ qVar = GetLocalVar(LVAR_q_shady_tandi, player.Id);
+    if (!valid(qVar))
+        return;
+    if (qVar.GetValue() >= 1 && qVar.GetValue() <= 5) {
+        Log("SETH: tandi rescue not finished update to dialog 2");
+        cr.StatBase[ST_DIALOG_ID] = SETH_DIALOG2;
+        return;
+    }
+    if (qVar.GetValue() == 6) {
+        Log("SETH: tandi rescue finalized back to dialog 1");
+        cr.StatBase[ST_DIALOG_ID] = SETH_DIALOG1;
+        return;
+    }
 }
 
 // Aradesh-specific logic
@@ -234,26 +460,62 @@ void UpdateAradesh(Critter@ cr, Map@ map)
     array<Critter@> crits;
     uint n = map.GetCritters(0, FIND_ALL | FIND_ONLY_PLAYERS, crits);
 
+    Critter@ player = null;
+
     for(uint i = 0; i < n; i++)
     {
         if(crits[i].IsPlayer())
         {
-            GameVar@ qVar = GetLocalVar(LVAR_q_shady_radscorpions, crits[i].Id);
-
-            if(!valid(qVar))
-                return;
-
-            if(qVar.GetValue() > 0 && qVar.GetValue() < 3)
-            {
-                Log("Radscorpions quest is ongoing");
-                cr.StatBase[ST_DIALOG_ID] = ARADESH_DIALOG2;
-            }
-
-            return;
+            @player = crits[i];
+            break;            
         }
     }
 
-    Log("Player not found!!");
+    if (!valid(player))
+        return;
+
+    GameVar@ q1Var = GetLocalVar(LVAR_q_shady_radscorpions, player.Id);
+    GameVar@ q2Var = GetLocalVar(LVAR_q_shady_antidote, player.Id);
+    GameVar@ qVar = GetLocalVar(LVAR_q_shady_tandi, player.Id);
+    if(!valid(q1Var) || !valid(q2Var) || !valid(qVar))
+        return;
+    
+    if (qVar.GetValue() >= 1 && qVar.GetValue() <= 5) {
+        return;
+    }
+    if (qVar.GetValue() == 6) {
+        Log("tandi rescue done reset aradesh");
+        cr.StatBase[ST_DIALOG_ID] = ARADESH_DIALOG1;
+        return;
+    }
+    
+    if(q1Var.GetValue() > 0 && q1Var.GetValue() < 3)
+    {
+        Log("Radscorpions quest is ongoing");
+        cr.StatBase[ST_DIALOG_ID] = ARADESH_DIALOG2;
+        return;
+    }
+
+    if(q1Var.GetValue() == 3 && q2Var.GetValue() == 1)
+    {
+        Log("Radscorpions quest is done, can start Tandi rescue.");
+        cr.StatBase[ST_DIALOG_ID] = ARADESH_DIALOG3;
+        Critter@ tandi = GetNpcByEntire(map, 13);
+        if (!valid(tandi)) {
+            Log("Tandi isn't present...");
+            return;
+        }
+        DeleteNpc(tandi);
+    }
+}
+
+Critter@ GetNpcByEntire(Map@ map, uint coord)
+{
+    uint16 x = 0;
+    uint16 y = 0;
+    map.GetEntireCoords(coord, 0, x, y);
+    Critter@ cr = map.GetCritter(x, y);
+    return cr;
 }
 
 void UpdateIan(Critter@ cr)
@@ -303,4 +565,9 @@ void t_Entered(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
         0,
         MESSAGE_TO_VISIBLE_ME
     );
+}
+
+bool Chance(uint percent)
+{
+    return uint(Random(0, 99)) < percent;
 }

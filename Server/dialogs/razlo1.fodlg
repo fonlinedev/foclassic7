@@ -67,7 +67,7 @@ lang=engl
 18 20010 @
 37 21000 None 0 #
 4 21010 #
-21 21020 D _script dialog@d_IsToHeal 0  #
+21 21020 #
 12 21030 D _var p q_shady_radscorpions = 1 #
 16 21040 D _item p PID_SCORPION_TAIL } 1 D _var p q_shady_antidote = 0 #
 0 21050 @

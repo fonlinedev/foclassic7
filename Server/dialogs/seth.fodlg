@@ -7,11 +7,14 @@ lang=engl
 [dialog]
 &
 1 1000 None 1 #
-2 1010 D _script seth@d_IsNotArmed 0  D _var p q_shady_radscorpions = 0 D or D _var p q_shady_radscorpions = 3 #
+2 1010 D _script seth@d_IsNotArmed 0  D _var p q_shady_radscorpions = 0 D or D _var p q_shady_radscorpions = 3 D _var p q_shady_tandi = 0 #
 12 1020 D _script seth@d_IsArmed 0  #
-13 1030 D _var p q_shady_radscorpions = 2 D _script seth@d_IsNotArmed 0  #
-8 1040 D _var p q_shady_radscorpions = 1 D _script seth@d_IsNotArmed 0  #
-15 1050 D _var p q_shady_radscorpions = 3 @
+13 1030 D _var p q_shady_radscorpions = 2 D _script seth@d_IsNotArmed 0  D _var p q_shady_tandi = 0 #
+8 1040 D _var p q_shady_radscorpions = 1 D _script seth@d_IsNotArmed 0  D _var p q_shady_tandi = 0 #
+16 1050 D _var p q_shady_tandi = 1 #
+18 1060 D _var p q_shady_tandi = 2 #
+3 1070 D _var p q_shady_tandi = 6 #
+3 1080 D _var p q_shady_tandi = 7 @
 2 2000 None 0 #
 3 2010 D _param p ST_INTELLECT > 3 #
 4 2020 D _param p ST_INTELLECT < 3 @
@@ -47,8 +50,20 @@ lang=engl
 0 12030 @
 14 13000 None 0 #
 0 13010 @
-15 14000 None 0 #
-0 14010 &
+16 14000 None 0 #
+17 14010 #
+0 14020 #
+0 14030 @
+17 15000 None 0 #
+0 15010 R _var p q_shady_tandi = 2 @
+18 16000 None 0 #
+19 16010 #
+20 16020 #
+0 16030 @
+19 17000 None 0 #
+0 17010 #
+0 17020 @
+20 18000 None 0 &
 
 [engl]
 {100}{}{Seth}
@@ -58,7 +73,10 @@ lang=engl
 {1020}{}{Weapon check}
 {1030}{}{Radscorpions killed}
 {1040}{}{Quest ongoing}
-{1050}{}{End of the dialogue}
+{1050}{}{tandi missing}
+{1060}{}{tandi still missing}
+{1070}{}{tandi finished}
+{1080}{}{tandi failed}
 {2000}{}{Good day. I am called Seth. How can I help you?}
 {2010}{}{I'd like some information.}
 {2020}{}{Bloop?}
@@ -94,7 +112,19 @@ lang=engl
 {12030}{}{See you later.}
 {13000}{}{Thanks to you, we are now safe from them.}
 {13010}{}{You are welcome.}
-{14000}{}{Hello again, how can I help you?}
-{14010}{}{I don't need to know anything else.}
+{14000}{}{Thank Dharma you're here wanderer. My girl . . . uh, Tandi, Aradesh's daughter, has been kidnapped. We believe the raiders have her.}
+{14010}{}{Where are these raiders?}
+{14020}{}{Wow. Tough break. Well, I'll see you later.}
+{14030}{}{I'm sorry, I wish I could help.}
+{15000}{}{They're to the southeast. Please, hurry. I don't know what they'll do to her.}
+{15010}{}{Okay, I'll get her back for you.}
+{16000}{}{Where's Tandi? Why haven't you rescued her?}
+{16010}{}{How much is this job worth to you?}
+{16020}{}{I decided the little tramp wasn't worth the risk.}
+{16030}{}{I need more supplies before I can tackle those guys.}
+{17000}{}{I knew you were a heartless mercenary. We'll pay you well for saving her, rest assured.}
+{17010}{}{Alright, I'll take care of it for you.}
+{17020}{}{If you're not going to tell me how much you'll give me, I'm not going to take the job.}
+{18000}{}{Bastard!}
 {100000001}{}{You gain 250 experience points for dealing with the radscorpion menace threatening Shady Sands.}
 

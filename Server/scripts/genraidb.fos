@@ -35,7 +35,7 @@ bool _UseSkill(Critter& cr, Critter& who, int skill)
     if (skill == SK_STEAL) {
         int sk = who.Skill[SK_STEAL];
         if (sk < 100) {
-            who.SendMessage(MSG_ATTACK_ME, 0, MESSAGE_TO_WHO_SEES_ME);
+            who.SendMessage(MSG_ATTACK_ME, 0, SENDMESSAGE_TO_WHO_SEES_ME);
             return false;
         }        
     }

@@ -35,10 +35,12 @@ enum TandiQuestState
 #define RESCUE_NOT_STARTED (0)
 #define DOOR_CLOSED (0)
 #define DOOR_OPENED (1)
-#define DUEL_ENDED (2)
+#define DUEL_STARTED (2)
+#define DUEL_ENDED (3)
 
 #define TANDI_DIALOG1 4038
 #define TANDI_PID 68
+#define GARL_PID 46
 
 #define DIALOG_DOOR_DUMB_GUARD_ID 4042
 #define DIALOG_DOOR_GUARD_ID 4040
@@ -50,14 +52,38 @@ void map_init(Map& map, bool firstTime)
     {
         map.SetTurnBasedAvailability(true);
     }
+    map.SetEvent(MAP_EVENT_IN_CRITTER, "_CritterIn");
     uint[] values = { map.GetProtoId() };
     CreateTimeEvent(AFTER(REAL_MINUTE(5)), "cte_SpawnTandi", values, false);
-    spawnTandi(map);
 }
 
 void door_init(Item& item, bool firstTime)
 {
     item.SetEvent(ITEM_EVENT_SKILL, "_doorSkill");
+}
+
+void _CritterIn(Map& map, Critter& cr)
+{
+    if (!cr.IsPlayer())
+        return;
+
+    if (isTandiFollower(cr))
+        return;
+
+    Map@   player_map = cr.GetMap();
+    if(valid(player_map))
+    {        
+        GameVar@ qVar = GetLocalVar(LVAR_q_shady_tandi, cr.Id);
+        if (valid(qVar)) {
+            if (qVar.GetValue() >= 1 && qVar.GetValue() <= 5) {
+                spawnTandi(player_map);
+            } else {
+                deleteTandi(player_map);
+            }            
+        } else {
+            Log("ERROR Tandi var invalid");
+        }
+    }
 }
 
 uint cte_SpawnTandi(array<uint>@ values) {
@@ -70,20 +96,21 @@ uint cte_SpawnTandi(array<uint>@ values) {
         Log("cte_SpawnTandi failed, map " + mapPid + " not found.");
         return 0;
     }
+    
     uint16 x = 0;
     uint16 y = 0;
 
-    map.GetEntireCoords(11, 0, x, y);
+    map.GetEntireCoords(9, 0, x, y);
 
     Critter@ cr = map.GetCritter(x, y);
     if (!valid(cr)) {
-        Log("TANDI not found, spawning back");
+        Log("[TANDI] not found, spawning back");
         spawnTandi(map);
     }
     return REAL_MINUTE(5);
 }
 
-// Tandi must be removed if the quest started
+//
 void spawnTandi(Map& map)
 {
     Critter@ cr = SpawnStaticNpc(
@@ -92,9 +119,9 @@ void spawnTandi(Map& map)
         TANDI_PID,
         TANDI_DIALOG1,
         3,                // bag
-        FACTION_NCR,
+        0,
         0,                  // faction mode
-        1,                  // faction rank
+        0,                  // faction rank
         0,                  // direction
         "tandi_rescue@critter_init",
         "TANDI"
@@ -103,11 +130,25 @@ void spawnTandi(Map& map)
         Log("Error at Tandi spawning");
 
     array<Item@> cells;
-    uint num = map.GetItems(2581, cells);   
+    uint num = map.GetItems(2581, cells);
     DLog("Found " + num + " cell doors ");
     for(uint i = 0; i < num; i++)
-    {   
-        LockerClose(cells[i]);        
+    {
+        LockerClose(cells[i]);
+    }
+}
+// if Tandi is there but quest is inactive or finished
+void deleteTandi(Map& map)
+{
+    array<Critter@> crits;    
+    uint n = map.GetCritters(0, FIND_ALL | FIND_ONLY_NPC, crits);
+    for(int i = 0; i < n; i++)
+    {
+        uint npcId = crits[i].GetProtoId();
+        if (npcId == TANDI_PID) {            
+            DeleteNpc(crits[i]);
+            break;
+        }
     }
 }
 
@@ -180,13 +221,15 @@ Critter@ SpawnStaticNpc(
 
 bool _CanUseTandiDoor(Critter& cr)
 {
+    GameVar@ rescueVar = GetLocalVar(LVAR_q_tandi_rescue, cr.Id);
     GameVar@ tandiVar = GetLocalVar(LVAR_q_shady_tandi, cr.Id);
-    if (!valid(tandiVar))
+    if (!valid(tandiVar) || !valid(rescueVar))
         return false;
 
     uint state = uint(tandiVar.GetValue());
+    uint duelState = uint(rescueVar.GetValue());
 
-    if (state == TANDI_RESCUE_DUEL)
+    if (state == TANDI_RESCUE_DUEL && duelState != DUEL_ENDED)
     {
         cr.Say(SAY_NETMSG, "I must face Garl first before opening this door.");
         return false;
@@ -248,14 +291,13 @@ bool _doorSkill(Item& item, Critter& cr, int skill)
     if (skill != SKILL_PICK_ON_GROUND && skill != SK_LOCKPICK)
         return true;
 
-    // Quest state must allow interaction.
-    if (!_CanUseTandiDoor(cr))
-        return true;
-
     // Rescue state must exist.
     GameVar@ rescueVar = GetLocalVar(LVAR_q_tandi_rescue, cr.Id);
     if (!valid(rescueVar))
         return true;
+
+    if (rescueVar.GetValue() == DUEL_ENDED)
+        return false;
 
     Critter@ guard = _GetTandiDoorGuard(item);
 
@@ -263,12 +305,12 @@ bool _doorSkill(Item& item, Critter& cr, int skill)
     if (!valid(guard)) {
         Log("NO GUARD has been found");
         return false;
-    }
-    
+    }    
+
     // --------------------------------------------------------
     // Guard is watching the door.
     // --------------------------------------------------------
-    if (guard.Dir == 5)
+    if (guard.Dir == 5 && rescueVar.GetValue() != DUEL_ENDED)
     {
         cr.SendMessage(
             MSG_TANDI_DOOR_UNLOCK,
@@ -283,6 +325,10 @@ bool _doorSkill(Item& item, Critter& cr, int skill)
         return true;
     }
 
+    // Quest state must allow interaction.
+    if (!_CanUseTandiDoor(cr))
+        return true;
+    
     // --------------------------------------------------------
     // Guard is distracted.
     // --------------------------------------------------------
@@ -306,7 +352,10 @@ void t_NearBackDoor(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
         Log("direction skipped "+dir);
         return;
     }
-        
+    GameVar@ rescueVar = GetLocalVar(LVAR_q_tandi_rescue, critter.Id);
+    if (!valid(rescueVar) || rescueVar == DUEL_ENDED)
+        return;
+
     bool warnGuards = false;
     int sneakLevel = critter.Skill[SK_SNEAK];
     if (!_IsSneaking(critter) || sneakLevel < 60)
@@ -357,8 +406,9 @@ void t_NearTandi(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
         return;
 
     GameVar@ rescueVar = GetLocalVar(LVAR_q_tandi_rescue, critter.Id);
-    if(!valid(rescueVar))
+    if (!valid(rescueVar) || rescueVar == DUEL_ENDED)
         return;
+    
     if (rescueVar.GetValue() != DOOR_OPENED)
         critter.SendMessage(MSG_TANDI_FOUND, 0, MESSAGE_TO_VISIBLE_ME);
 }
@@ -368,7 +418,9 @@ void t_EscapingTandi(Critter& critter, Scenery& trigger, bool entered, uint8 dir
     if(!critter.IsPlayer() || !entered)
         return;
     GameVar@ rescueVar = GetLocalVar(LVAR_q_tandi_rescue, critter.Id);
-    if(!valid(rescueVar))
+    if (!valid(rescueVar))
+        return;
+    if (rescueVar.GetValue() == DUEL_ENDED)
         return;
     bool warnGuards = false;
     if(critter.Mode[MODE_HIDE] == 0)
@@ -388,6 +440,11 @@ void t_EscapingTandiWrongDoor(Critter& critter, Scenery& trigger, bool entered, 
 {
     if(!critter.IsPlayer() || !entered)
         return;
+    GameVar@ rescueVar = GetLocalVar(LVAR_q_tandi_rescue, critter.Id);
+    if (!valid(rescueVar))
+        return;
+    if (rescueVar.GetValue() == DUEL_ENDED)
+        return;
     bool warnGuards = false;
     if(critter.Mode[MODE_HIDE] == 0)
         warnGuards = true;
@@ -406,6 +463,18 @@ void t_EscapingTandiWrongDoor(Critter& critter, Scenery& trigger, bool entered, 
             int[] data = { critter.Id, crits[i].Id };
             CreateTimeEvent(AFTER(REAL_SECOND(1)), "e_InitiateAttack", data, false);
         }
+    }
+}
+
+void r_StartRaidersBattle(Critter& player, Critter@ npc)
+{
+    array<Critter@> crits;
+    uint n = GetNearRaiderGuards(player.GetMap(), npc.HexX, npc.HexY, 30, FACTION_RAIDERS, crits);
+    player.Say(SAY_NETMSG, "What the hell I'm doing?");
+    for(uint i = 0; i < n; i++) {            
+        crits[i].Say(SAY_SHOUT_ON_HEAD, "You started something you can't finish!");
+        int[] data = { player.Id, crits[i].Id };
+        CreateTimeEvent(AFTER(REAL_SECOND(1)), "e_InitiateAttack", data, false);
     }
 }
 
@@ -431,3 +500,46 @@ uint GetNearRaiderGuards(Map@ map, uint16 hexX, uint16 hexY, uint radius, uint f
     return num;
 }
 
+void r_StartDuel(Critter& player, Critter@ npc)
+{
+    int loc = CreateLocation(LOCATION_RaidesCamp_Arena, 1737, 1509, null);
+    if(loc == 0)
+        return;
+    GameVar@  locidv = GetLocalVar(LVAR_q_garl_duel_locid, player.Id);
+    if (!valid(locidv))
+        return;
+    locidv = loc;
+    Location@ location = GetLocation(loc);
+    if (valid(location)) {
+        Map@ map = location.GetMapByIndex(0);
+        SetTurnBasedAvailability(location);
+        map.SetData(MAP_DATA_ARENA_OWNER, player.Id);
+        GameVar@  tandiRescue = GetLocalVar(LVAR_q_tandi_rescue, player.Id);
+        if (valid(tandiRescue))
+            tandiRescue = DUEL_STARTED;
+        SetQuestGarbager(0, player.Id, loc, LVAR_q_tandi_rescue, DUEL_ENDED);
+        Log("quest location created");
+    } else {
+        Log("error at quest creation!");
+    } 
+}
+
+void r_TeleportToArena(Critter& player, Critter@ npc)
+{
+    GameVar@ var = GetLocalVar(LVAR_q_garl_duel_locid, player.Id);
+    if(!valid(var)) {
+        Log("error finding the location id variable!");
+        return;    
+    }
+    Location@ loc = GetLocation(var.GetValue());
+    if(valid(loc)) {
+        Map@ map = loc.GetMapByIndex(0);
+        if (valid(map)) {
+            player.TransitToMap(map.Id, 0);
+        } else {
+            Log("Map index 0 not found!");
+        }
+    } else {
+        Log("arena error, Location not found. ID "+var.GetValue());
+    }
+}

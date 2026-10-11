@@ -375,6 +375,7 @@
 #define LVAR_q_lp_stanley						(10422)
 #define LVAR_q_lp_thunderjo						(10423)
 #define LVAR_q_lp_trapper						(10424)
+#define LVAR_q_brahmin_delivery           (10425)
 
 
 //	VAULT 24									#10800
@@ -536,6 +537,13 @@
 #define LVAR_q_shady_antidote                   (61009)
 #define LVAR_q_shady_crop_rotation              (61010)
 #define LVAR_q_shady_jarvis_cured               (61011)
+
+// GARL DUEL
+#define LVAR_q_garl_duel_locid         (61012)
+
+#define LVAR_v15_shaft1                         (61013)
+#define LVAR_v15_shaft2                         (61014)
+
 
 /*************************************************************************************
         Id	Type	Name		Start	Min	Max	Flags
@@ -1677,19 +1685,30 @@
    1 == active
 **********
 
-   $	7327	1	quest_water_chip	0	0	99	4
+   $	7327	1	quest_water_chip	0	0	4	1
 **********
-   Water chip quest status variable for Vault 13.
+   0 == inactive
+   1 == active
+   2 == vault 15 - explored
+   3 == quest done
+   4 == quest failed
 **********
 
-   $	7328	1	q_shady_tandi	0	0	7	0
+   $	7328	1	q_shady_tandi	0	0	7	1
 **********
-   Tandi quest states. TANDI_NOT_STARTED 0, TANDI_MISSING 1 TANDI_SEARCHING 2, TANDI_FOUND 3, TANDI_RESCUE_ESCAPE 4, TANDI_RESCUE_DUEL 5, TANDI_COMPLETED 6, TANDI_DEAD 7
+   0 == inactive
+   1 == active
+   2 == seth - raiders camp
+   3 == found
+   4 == escape
+   5 == duel
+   6 == quest done
+   7 == quest failed
 **********
 
-   $	7329	1	q_tandi_rescue	0	0	2	0
+   $	7329	1	q_tandi_rescue	0	0	3	1
 **********
-   Tandi rescue states. RESCUE_NOT_STARTED 0, DOOR_OPENED 1, DUEL_ENDED 2
+   Tandi rescue states. RESCUE_NOT_STARTED 0, DOOR_OPENED 1, DUEL_STARTED 2, DUEL_ENDED 3
 **********
 
 //
@@ -2310,6 +2329,10 @@ Landers Point caravan packer quest variable.
 *****************
 *****************
 
+$    10425    1    q_brahmin_delivery    0    0    99    1
+**********
+Brahmin dealer delivery job variable.
+**********
 
 //
 //	VAULT 24
@@ -3011,11 +3034,19 @@ $	21016	1	LVAR_Book_Speaking          0	0	0	4
 **********
 
 **********
-	$	61007	1	q_shady_radscorpions	0	0	3	0
+	$	61007	1	q_shady_radscorpions	0	0	4	1
 **********
-	Used to track Seth's Radscorpion quest in Shady Sands. 0 = Not Started, 1 = Active, 2 = Killed all scorpions, 3 = Completed.
+	0 == inactive
+   1 == active
+   2 == killed - radscorpions
+   3 == quest done
+   4 == quest failed
 **********
    $	61008	1	q_shady_radscorpions_locid	0	0	0	4
+**********
+
+**********
+   $	61012	1	q_garl_duel_locid	0	0	0	4
 **********
 
 **********
@@ -3034,6 +3065,18 @@ $	21016	1	LVAR_Book_Speaking          0	0	0	4
 	$	61011	1	q_shady_jarvis_cured	0	0	1	0
 **********
 	Used to track Jarvis poison diagnostic and cure. 0 = Not Started, 1 = Completed.
+**********
+
+**********
+	$	61013	1	v15_shaft1	0	0	1	0
+**********
+	Used to track vault 15 rope status. 0 = Not used, 1 = Rope is set.
+**********
+
+**********
+	$	61014	1	v15_shaft2	0	0	1	0
+**********
+	Used to track vault 15 rope status. 0 = Not used, 1 = Rope is set.
 **********
 
 **********

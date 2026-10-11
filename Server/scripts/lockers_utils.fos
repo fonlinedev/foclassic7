@@ -1,0 +1,102 @@
+//
+// FOnline: 2238
+// Rotators
+//
+// lockers_utils.fos
+//
+
+#include "ITEMPID.H"
+#include "_defines.fos"
+#include "_macros.fos"
+#include "MsgStr.h"
+#include "utils_h.fos"
+
+
+
+class LockerLoot
+{
+    uint Pid;
+    uint Count;
+
+    LockerLoot(uint pid, uint count)
+    {
+        Pid = pid;
+        Count = count;
+    }
+};
+
+
+bool ResetLockerLoot(Item@ locker, uint[] protectedItems, LockerLoot@[]@ loot)
+{
+    if(!valid(locker))
+        return false;
+
+    // Protected/original loot is still present.
+    // Leave the locker completely untouched.
+    if(LockerContainsProtected(locker, protectedItems))
+        return false;
+
+    // Remove old respawn loot.
+    ClearLocker(locker);
+
+    // Add the complete new loot set.
+    for(uint i = 0; i < loot.length(); i++)
+    {
+        if(loot[i].Count == 0)
+            continue;
+
+        locker.AddItem(loot[i].Pid, loot[i].Count, 0);
+    }
+
+    return true;
+}
+
+bool LockerContainsProtected(Item@ locker, uint[] protectedPids)
+{
+    if(!valid(locker))
+        return false;
+
+    for(uint i = 0; i < protectedPids.length(); i++)
+    {
+        if(LockerContainsPid(locker, protectedPids[i]))
+            return true;
+    }
+
+    return false;
+}
+
+bool LockerContainsPid(Item@ locker, uint pid)
+{
+    if(!valid(locker))
+        return false;
+
+    Item@[] items;
+    uint count = locker.GetItems(0, items);
+
+    for(uint i = 0; i < count; i++)
+    {
+        if(valid(items[i]) && items[i].GetProtoId() == pid)
+            return true;
+    }
+
+    return false;
+}
+
+// Empty the locker respecting the protected items.
+void ClearLocker(Item@ locker)
+{
+    if(!valid(locker))
+        return;
+    
+    Item@[] items;
+    uint count = locker.GetItems(0, items);
+
+    for(uint i = 0; i < count; i++)
+    {
+        if(valid(items[i]))
+            DeleteItem(items[i]);
+    }
+
+    if(locker.LockerId != 0)
+        locker.LockerCondition = 1;
+}
