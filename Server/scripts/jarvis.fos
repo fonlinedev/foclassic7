@@ -169,7 +169,7 @@ void CureJarvis(Critter& critter, Critter& player, Item& item)
     if (valid(questVar)) {
         questVar = 1;
     }
-    player.StatBase[ST_EXPERIENCE] += 400;    
+    player.StatBase[ST_EXPERIENCE] += 400;
     if (player.ReputationBase[FACTION_NCR] < 0) {
         player.ReputationBase[FACTION_NCR] = 100;
     } else {

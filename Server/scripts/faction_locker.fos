@@ -10,9 +10,9 @@
 // ------------------------------------------------------------------
 // CONFIGURATION
 // ------------------------------------------------------------------
-#define MIN_REPUTATION_REQUIRED (100)       // Minimum reputation/faction points needed
+#define MIN_REPUTATION_REQUIRED (300)       // Minimum reputation/faction points needed
 #define ALERT_RADIUS            (15)        // Hex distance around the locker to alert guards
-#define DEFAULT_MIN_REPUTATION (100)
+#define DEFAULT_MIN_REPUTATION (300)
 #define DEFAULT_ALERT_RADIUS   (15)
 
 // ------------------------------------------------------------------

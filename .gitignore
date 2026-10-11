@@ -47,3 +47,5 @@ Tools/WorldEditor/Cache.dat
 
 /Server/scripts/client/*.fosb
 /Server/scripts/client/*.fosp
+Server/Server.cfg
+Tools/EncounterEditor/EncounterEditor.cfg
