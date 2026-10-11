@@ -15,6 +15,7 @@
 #include "patrolling.fos"
 #include "factions_h.fos"
 #include "follower_common.fos"
+#include "companion_h.fos"
 
 #define DIALOG_TANDI_GUARD_ID   (4039)
 #define GUARD_DIR_1 (5)
@@ -55,10 +56,10 @@ void _Idle(Critter& guard)
 
 bool d_IsTandiFollowingPlayer(Critter& player, Critter@ npc)
 {
-    return isTandiFollower(player);
+    return isFollower(player, TANDI_PID);
 }
 
 bool d_NotIsTandiFollowingPlayer(Critter& player, Critter@ npc)
 {
-    return !isTandiFollower(player);
+    return !isFollower(player, TANDI_PID);
 }

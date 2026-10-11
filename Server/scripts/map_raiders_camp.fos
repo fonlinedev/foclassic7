@@ -67,7 +67,7 @@ void _CritterIn(Map& map, Critter& cr)
     if (!cr.IsPlayer())
         return;
 
-    if (isTandiFollower(cr))
+    if (isFollower(cr, TANDI_PID))
         return;
 
     Map@   player_map = cr.GetMap();
@@ -430,7 +430,7 @@ void t_EscapingTandi(Critter& critter, Scenery& trigger, bool entered, uint8 dir
         warnGuards = true;    
     if (_IsSneaking(critter) && sneakLevel >= 60)
         warnGuards = false;
-    if (rescueVar.GetValue() == DOOR_OPENED && isTandiFollower(critter)) {
+    if (rescueVar.GetValue() == DOOR_OPENED && isFollower(critter, TANDI_PID)) {
         Log("alerting guards at role "+guardRole);
         critter.SendMessage(MSG_TANDI_ESCAPING, guardRole, MESSAGE_TO_VISIBLE_ME);
     }    
@@ -453,7 +453,7 @@ void t_EscapingTandiWrongDoor(Critter& critter, Scenery& trigger, bool entered, 
         warnGuards = true;
     if (_IsSneaking(critter) && sneakLevel >= 100)
         warnGuards = false;
-    if (isTandiFollower(critter) && warnGuards) {
+    if (isFollower(critter, TANDI_PID) && warnGuards) {
         critter.Wait(3000);
         array<Critter@> crits;
         uint n = GetNearRaiderGuards(critter.GetMap(), trigger.HexX, trigger.HexY, 10, FACTION_RAIDERS, crits);

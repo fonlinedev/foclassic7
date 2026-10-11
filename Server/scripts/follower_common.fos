@@ -591,16 +591,14 @@ int GetFollowers(Critter& player, Map@ map, array<Critter@>& followers, bool Onl
     return followersn;
 }
 
-// verify if Tandi is a follower
-bool isTandiFollower(Critter& player) {
-    uint TANDI_PID  = 68;
+bool isFollower(Critter& player, uint pId) {    
     array<Critter@> crits;
     GetFollowers(player, true, crits);
     uint            count = 0;
     for(uint i = 0; i < crits.length(); i++)
     {        
         uint npcId = crits[i].GetProtoId();
-        if (npcId == TANDI_PID)
+        if (npcId == pId)
             return true;
     }
     return false;
