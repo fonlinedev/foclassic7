@@ -42,11 +42,11 @@ void map_init(Map& map, bool firstTime)
     _MapSetMode(map, MAP_MODE_NO_LOOT_DROP);
     CreateTimeEvent(AFTER(REAL_MINUTE(5)), "cte_SpawnIan", values, false);
     CreateTimeEvent(__FullSecond + REAL_HOUR(respawnTime), "e_RespawnLoot", values, false);
+    initLockersOnce(map);
     if(firstTime)
     {
         map.SetTurnBasedAvailability(true);
-        spawnIan(map);
-        initLockersOnce(map);
+        spawnIan(map);        
     }
 }
 
@@ -94,17 +94,20 @@ void initLockersOnce(Map@ map)
             return;
         }
 
-        Log("shelves found " + count);
-       
+        Log("initLockersOnce: shelves found " + count);
+        
+
         // Guard house
         LockerLoot@[] westLocker0;
-        westLocker0.insertLast(LockerLoot(PID_223_FMJ, uint(Random(0, 60))));
+        westLocker0.insertLast(LockerLoot(PID_223_FMJ, uint(Random(0, 60))));        
         ResetLockerLoot(lockers[0], LOCKER_PROTECTED_ITEMS, westLocker0);
        
+        
         LockerLoot@[] westLocker1;
-        westLocker1.insertLast(LockerLoot(PID_SCOUT_HANDBOOK, 1));
+        westLocker1.insertLast(LockerLoot(PID_SCOUT_HANDBOOK, 1));       
         ResetLockerLoot(lockers[1], LOCKER_PROTECTED_ITEMS, westLocker1);
 
+        
         // Razlo locker
         LockerLoot@[] westLocker2;
         westLocker2.insertLast(LockerLoot(PID_FIRST_AID_BOOK, 1));
@@ -112,7 +115,7 @@ void initLockersOnce(Map@ map)
         westLocker2.insertLast(LockerLoot(PID_DOCTORS_BAG, 1));
         westLocker2.insertLast(LockerLoot(PID_FIRST_AID_KIT, 1));
         ResetLockerLoot(lockers[2], LOCKER_PROTECTED_ITEMS, westLocker2);
-
+        
         LockerLoot@[] westLocker3;
         westLocker3.insertLast(LockerLoot(PID_BOTTLE_CAPS, uint(Random(1, 50))));
         ResetLockerLoot(lockers[3], LOCKER_PROTECTED_ITEMS, westLocker3);
@@ -124,12 +127,12 @@ void initLockersOnce(Map@ map)
             Log("No lockers found on Shady Sands East.");
             return;
         }
-
-        Log("shelves found " + count);
+        
+        Log("initLockersOnce: shelves found " + count);
         // Guard house
         LockerLoot@[] westLocker0;
         westLocker0.insertLast(LockerLoot(PID_SCOUT_HANDBOOK, 1));
-        westLocker0.insertLast(LockerLoot(PID_ROPE, 1));
+        westLocker0.insertLast(LockerLoot(PID_ROPE, 1));        
         ResetLockerLoot(lockers[0], LOCKER_PROTECTED_ITEMS, westLocker0);
     } else {
         Log("ERROR unknown map PID cant load lockers");
@@ -153,7 +156,7 @@ void respawnLockers(uint mapPid) {
 
     if(!valid(map))
     {
-        Log("initLockersOnce failed, map " + mapPid + " not found.");
+        Log("respawnLockers failed, map " + mapPid + " not found.");
         return;
     }
 
@@ -173,19 +176,16 @@ void respawnLockers(uint mapPid) {
         westLocker0.insertLast(LockerLoot(PID_10MM_JHP, uint(Random(1, 60))));
         westLocker0.insertLast(LockerLoot(PID_10MM_AP, uint(Random(1, 60))));
         westLocker0.insertLast(LockerLoot(PID_SPEAR, uint(Random(0, 1))));
-        ResetLockerLoot(lockers[0], LOCKER_PROTECTED_ITEMS, westLocker0);
-        
+        ResetLockerLoot(lockers[0], LOCKER_PROTECTED_ITEMS, westLocker0);        
         // empty house
         LockerLoot@[] westLocker1;
         westLocker1.insertLast(LockerLoot(PID_KNIFE, 1));
         westLocker1.insertLast(LockerLoot(PID_ROCK, 1));
         ResetLockerLoot(lockers[1], LOCKER_PROTECTED_ITEMS, westLocker1);
-
         // Razlo locker
         LockerLoot@[] westLocker2;        
         westLocker2.insertLast(LockerLoot(PID_BOTTLE_CAPS, uint(Random(1, 50))));
-        ResetLockerLoot(lockers[2], LOCKER_PROTECTED_ITEMS, westLocker2);
-        
+        ResetLockerLoot(lockers[2], LOCKER_PROTECTED_ITEMS, westLocker2);        
         // Aradesh house
         LockerLoot@[] westLocker3;  
         westLocker3.insertLast(LockerLoot(PID_FLARE, uint(Random(0, 3))));
@@ -193,7 +193,6 @@ void respawnLockers(uint mapPid) {
         if(Chance(15))
             westLocker3.insertLast(LockerLoot(PID_SHOTGUN_SHELLS, uint(Random(1, 50))));
         ResetLockerLoot(lockers[3], LOCKER_PROTECTED_ITEMS, westLocker3);
-
     }
     else if(map.GetProtoId() == MAP_ShadySandsEast)
     {
@@ -321,6 +320,13 @@ bool d_TandiFollower(Critter& player, Critter@ npc)
 void r_CompleteTandiRescue(Critter& player, Critter@ npc)
 {    
     ReturnTandi(player);
+    player.StatBase[ST_EXPERIENCE] += 1000;
+    player.AddItem(PID_BOTTLE_CAPS, 300);
+    if (player.ReputationBase[FACTION_NCR] < 300) {
+        player.ReputationBase[FACTION_NCR] = 300;
+    } else {
+        player.ReputationBase[FACTION_NCR] += 100;
+    }
 }
 
 void ReturnTandi(Critter& cr)

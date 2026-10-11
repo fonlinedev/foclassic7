@@ -35,7 +35,8 @@ lang=engl
 0 10010 R _script npc_repairman@r_ExitWarning 0  &
 
 [engl]
-{100}{}{none}
+{100}{}{Wasteland repairman}
+{200}{}{You see a skilled mechanic.}
 {1000}{}{Predialogue installations}
 {1010}{}{Begin}
 {2000}{}{Need something fixed?}
