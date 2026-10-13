@@ -394,7 +394,7 @@ void r_BefriendCompanion(Critter& player, Critter@ npc)
         npc,
         FOLLOWER_TYPE_COMPANION,
         "follower@FollowerBaseInit",
-        COMPANION_DIALOG_ID,
+        IAN_DIALOGID,
         player,
         true
     );
@@ -416,7 +416,7 @@ void r_BefriendCompanion(Critter& player, Critter@ npc)
             npc,
             FOLLOWER_TYPE_COMPANION,
             "follower@FollowerBaseInit",
-            COMPANION_DIALOG_ID,
+            TANDI_DIALOGID,
             player,
             true
         );

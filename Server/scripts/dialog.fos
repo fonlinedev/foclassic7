@@ -48,7 +48,7 @@ import void AddSpecialBonusRaidersFarm(Item@ it) from "item_bonus";   //this add
 
 import void TC_QuestCapsReward(Critter& player, int caps) from "town";
 import void TC_QuestExpReward(Critter& player, int val) from "town";
-
+import bool isFollower(Critter& player, uint pId) from "follower_common";
 
 
 /**
@@ -1983,17 +1983,20 @@ void r_DialogMessage(Critter& cr, Critter@ npc, int dialogId, int stringId)
 
 bool d_HasCompanion(Critter& player, Critter@ npc, int pid)
 {
+    
+    return isFollower(player, pid);
+    /*
     array<Critter@> crits;
     GetFollowers(player, player.GetMap(), crits, false);
      bool            following = false;
     for(uint c = 0, cLen = crits.length(); c < cLen; c++)
     {
-        if(IsFollowing(crits[c]) && crits[c].GetProtoId() == IAN_PID)
+        if(IsFollowing(crits[c]) && crits[c].GetProtoId() == pid)
         {
             return true;            
         }
     }
-    return false;    
+    return false;    */
 }
 
 bool d_NotHasCompanion(Critter& player, Critter@ npc, int pid)

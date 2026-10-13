@@ -314,7 +314,7 @@ void _CritterIn(Map& map, Critter& cr)
 
 bool d_TandiFollower(Critter& player, Critter@ npc)
 {
-    return isTandiFollower(player);
+    return isFollower(player, TANDI_PID);
 }
 
 void r_CompleteTandiRescue(Critter& player, Critter@ npc)

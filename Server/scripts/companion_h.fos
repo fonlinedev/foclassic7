@@ -13,8 +13,10 @@
 
 #define TANDI_PID            (68)
 #define IAN_PID              (32)
+#define IAN_DIALOGID         (4045)
 #define IAN_BAG_ID           (7)
 #define TANDI_BAG_ID         (3)
+#define TANDI_DIALOGID       (4046)
 
 #define COMPANION_DIALOG_PRE_ID       (9321)
 #define COMPANION_INITIAL_SPAWNS      (35)
