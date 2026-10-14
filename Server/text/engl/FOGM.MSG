@@ -68,8 +68,9 @@
 {116}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
 # Map 11, base 120
-{120}{}{Junktown North entrance}
-{126}{}{}
+{120}{}{Junktown hotel}
+{125}{}{12junktn}
+{126}{}{gntlwin1:25, gntlwind:25, animal1:20, animal:20, gustwind:5, gustwin1:5}
 
 # Map 14, base 150
 {150}{}{Mountains Encounter Khans 3}
@@ -227,12 +228,12 @@
 {706}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
 # Map 70, base 710
-{710}{}{Junktown}
+{710}{}{Junktown South}
 {715}{}{12junktn}
 {716}{}{gntlwin1:25, gntlwind:25, animal1:20, animal:20, gustwind:5, gustwin1:5}
 
 # Map 71, base 720
-{720}{}{Junktown Sub}
+{720}{}{Junktown North}
 {725}{}{12junktn}
 {726}{}{blank:10}
 
