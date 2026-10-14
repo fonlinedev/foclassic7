@@ -67,6 +67,10 @@
 {115}{}{12junktn}
 {116}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
+# Map 11, base 120
+{120}{}{Junktown North entrance}
+{126}{}{}
+
 # Map 14, base 150
 {150}{}{Mountains Encounter Khans 3}
 {155}{}{07desert}
