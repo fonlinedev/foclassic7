@@ -51,13 +51,7 @@ void map_init(Map& map, bool firstTime)
         }
 	}
     // barrels rules
-    if(proto == MAP_HubArena)
-    {
-        map.SetEvent(MAP_EVENT_IN_CRITTER, "_CritterArenaIn");      //to remove guns on logging in/gm teleports into arena map
-        map.SetEvent(MAP_EVENT_OUT_CRITTER, "_CritterArenaOut");    //to return guns on going out of arena map
-    }
-    else
-        map.SetEvent(MAP_EVENT_OUT_CRITTER, "_CritterOut");
+    map.SetEvent(MAP_EVENT_OUT_CRITTER, "_CritterOut");
 
 
     if(firstTime)
@@ -237,8 +231,8 @@ void _CritterArenaIn(Map& map, Critter& cr)
 {
     if(GetLvar(cr, LVAR_hub_arena_inside) == 0)
     {
-        TransferItemsToContOnMap(cr, GetMapByPid(MAP_HubArena, 0), ENTIRE_HUB_ARENA_CONTAINER, PID_FOOTLOCKER_CLEAN_LEFT, ITEMTRANSFER_WEAPONS);
-        SetLvar(cr, LVAR_hub_arena_inside, 1);
+      //  TransferItemsToContOnMap(cr, GetMapByPid(MAP_HubArena, 0), ENTIRE_HUB_ARENA_CONTAINER, PID_FOOTLOCKER_CLEAN_LEFT, ITEMTRANSFER_WEAPONS);
+      //  SetLvar(cr, LVAR_hub_arena_inside, 1);
     }
 }
 
@@ -246,8 +240,8 @@ void _CritterArenaOut(Map& map, Critter& cr)
 {
     if(cr.IsLife() && GetLvar(cr, LVAR_hub_arena_inside) == 1)
     {
-        TransferItemsFromContOnMap(cr, GetMapByPid(MAP_HubArena, 0), ENTIRE_HUB_ARENA_CONTAINER, PID_FOOTLOCKER_CLEAN_LEFT);
-        SetLvar(cr, LVAR_hub_arena_inside, 0);
+        //TransferItemsFromContOnMap(cr, GetMapByPid(MAP_HubArena, 0), ENTIRE_HUB_ARENA_CONTAINER, PID_FOOTLOCKER_CLEAN_LEFT);
+        //SetLvar(cr, LVAR_hub_arena_inside, 0);
     }
 }
 

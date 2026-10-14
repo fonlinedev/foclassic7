@@ -114,12 +114,12 @@ void InitGreet() {
     AddGreet(MAP_HubWatermerchants, "Hub - Water Merchants");
     AddGreet(MAP_HubUnderground, "Hub - Underground");
     AddGreet(MAP_HubUndergroundthief, "Hub - Underground Thief Den");
-    AddGreet(MAP_HubArena, "Hub - Arena");
-    AddGreet(MAP_HubParkingLot, "Hub - Parking lot");
+    
+    
 
     //  Junktown
-    AddGreet(MAP_Junktown, "Junktown");
-    AddGreet(MAP_JunktownSub, "Junktown - Basement");
+    AddGreet(MAP_JunktownSouth, "Junktown");
+    
 
 
     //  Den

@@ -934,11 +934,6 @@
 {2275}{}{01hub}
 {2276}{}{gntlwin1:25, gntlwind:25, brdchir1:10, brdchirp:10, blank:30}
 
-# Map 227, base 2280
-{2280}{}{Hub Arena}
-{2285}{}{01hub}
-{2286}{}{gntlwin1:25, gntlwind:25, brdchir1:10, brdchirp:10, blank:30}
-
 # Map 228, base 2290
 {2290}{}{Buffer Map}
 {2295}{}{}
@@ -1764,11 +1759,6 @@
 {25385}{}{13carvrn}
 {25385}{}{08vats}
 {25386}{}{gntlwin1:25, gntlwind:25, animal1:20, animal:20, gustwind:5, gustwin1:5}
-
-# Map 2601, base 26020
-{26020}{}{Hub Parking Lot}
-{26025}{}{01hub}
-{26026}{}{gntlwin1:25, gntlwind:25, brdchir1:10, brdchirp:10, blank:30}
 
 #
 # Global map

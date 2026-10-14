@@ -296,7 +296,7 @@ uint dlg_CreateFactionBase(Critter& player, Critter@ npc, string@ say)
     uint y = 0;
     uint currentlocation = player.GetMap().GetProtoId();
 
-    if(currentlocation == MAP_Junktown)
+    if(currentlocation == MAP_JunktownSouth)
     {
         x = Random(1323, 1968);
         y = Random(1179, 1940);

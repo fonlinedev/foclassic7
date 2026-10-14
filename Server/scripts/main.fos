@@ -147,7 +147,7 @@ import string GetTimeString(uint fullsecond) from "time";
 
 import void SendCarInfoToPlayer(Critter& player) from "unsafe_client";
 import void SendCarInfoToPlayersOnMap(Map& map) from "unsafe_client";
-import void _PlayerEnterParkinglot(Map& map, Critter& player) from "map_hub";
+
 import void ViewImageClient(Critter& player, string& imageFile, bool limitWindowSizeMaxToImageSize, bool resizeEnabled, bool moveEnabled) from "unsafe_client";
 
 import void ForceColorizingGoodEvil(Critter@ chosen, Critter@ crTarget, int direction) from "name_colorizing";
@@ -3376,10 +3376,7 @@ void map_critter_in(Map& map, Critter& cr)
 
     }
 
-    //  parking lot function call
-    if (cr.IsPlayer() && map.GetProtoId() == MAP_HubParkingLot) {
-        _PlayerEnterParkinglot(map, cr);
-    }
+    //  parking lot function call    
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
