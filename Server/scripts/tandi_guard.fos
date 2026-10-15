@@ -49,7 +49,7 @@ void _OnPlayerWalkCorridor(Critter& npc, Critter& player, int num, int val)
 void _Idle(Critter& guard)
 {
     GuardOnIdle(guard);
-    _GetNextNode(guard, 19)         // Route 19 as defined in patrolroutes.fos
+    _GetNextNode(guard, 4)         // Route 19 as defined in patrolroutes.fos
     AddWalkPlane(guard, 0, node.GetX(), node.GetY(), node.GetDir(), false, 0);
     AddWaitPlan(guard, node.GetWait());
 }

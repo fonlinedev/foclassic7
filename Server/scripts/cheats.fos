@@ -296,7 +296,7 @@ void SetAliases()
     // Fallout 1
     //SetMapId("junktown",    MAP_JunktownSouth);
     //SetMapId("jt",                  MAP_JunktownSouth);
-    SetMapId("hub",                 MAP_HubDowntown);
+    SetMapId("hub",                 MAP_HubMarket);
     SetMapId("glow",                MAP_Glow_Entrance);
     SetMapId("gunrunners",  MAP_Gunrunner);
     SetMapId("fortress",    MAP_Gunrunner);
