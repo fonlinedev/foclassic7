@@ -9,8 +9,7 @@ lang=engl
 1 1000 None 1 #
 15 1010 D _script caravans@d_IsFull 0  #
 13 1020 D _script caravans@d_CheckReputationTooLow 1 0 #
-3 1030 D _param p ST_LEVEL > 19 #
-2 1040 @
+3 1030 @
 2 2000 None 0 #
 5 2010 #
 0 2020 @
@@ -69,7 +68,6 @@ lang=engl
 {1010}{}{ }
 {1020}{}{-}
 {1030}{}{-}
-{1040}{}{-}
 {2000}{}{Hey there,}
 {2010}{}{Who are you?}
 {2020}{}{Nevermind.}
