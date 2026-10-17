@@ -44,8 +44,7 @@ void map_init(Map& map, bool firstTime)
     CreateTimeEvent(__FullSecond + REAL_HOUR(respawnTime), "e_RespawnLoot", values, false);
     initLockersOnce(map);
     if(firstTime)
-    {
-        map.SetTurnBasedAvailability(true);
+    {        
         spawnIan(map);        
     }
 }

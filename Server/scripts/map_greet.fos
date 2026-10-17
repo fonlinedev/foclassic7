@@ -108,18 +108,20 @@ void InitGreet() {
     
 
     //  Hub
-    AddGreet(MAP_HubDowntown, LVAR_greet_hub, "Hub - Downtown", "You have entered the dusty streets of the Hub, the main stop-off point for every caravan that is on its way to the north or the south.");
+    AddGreet(MAP_HubMarket, LVAR_greet_hub, "Hub - Market", "You have entered the dusty streets of the Hub, the main stop-off point for every caravan that is on its way to the north or the south.");
     AddGreet(MAP_HubOldtown, "Hub - Oldtown");
     AddGreet(MAP_HubHeights, "Hub - Heights");
     AddGreet(MAP_HubWatermerchants, "Hub - Water Merchants");
-    AddGreet(MAP_HubUnderground, "Hub - Underground");
-    AddGreet(MAP_HubUndergroundthief, "Hub - Underground Thief Den");
-    AddGreet(MAP_HubArena, "Hub - Arena");
-    AddGreet(MAP_HubParkingLot, "Hub - Parking lot");
+    //AddGreet(MAP_HubUnderground, "Hub - Underground");
+    //AddGreet(MAP_HubUndergroundthief, "Hub - Underground Thief Den");
+    
+    
 
     //  Junktown
-    AddGreet(MAP_Junktown, "Junktown");
-    AddGreet(MAP_JunktownSub, "Junktown - Basement");
+    AddGreet(MAP_JunktownSouth, "Junktown");
+    AddGreet(MAP_Junktownhotel, "Crash House");
+    AddGreet(MAP_DocMorbidSecretLab, "Doc Morbid Secret Lab");
+    AddGreet(MAP_JunktownNorth, "Gizmo's Casino");
 
 
     //  Den
@@ -225,41 +227,7 @@ void InitGreet() {
     AddGreet(MAP_TeslaTower, "Tesla Tower");
 
     //  Sierra Caves
-    AddGreet(MAP_SierraCavesLevel1Corner1SW, "Sierra Caves: Outer Caverns - South West Corner");
-    AddGreet(MAP_SierraCavesLevel1West1, "Sierra Caves: Outer Caverns - West Side");
-    AddGreet(MAP_SierraCavesLevel1South1, "Sierra Caves: Outer Caverns - South Side");
-    AddGreet(MAP_SierraCavesLevel1West2, "Sierra Caves: Outer Caverns - Another West Side");
-    AddGreet(MAP_SierraCavesLevel1Filler1, "Sierra Caves: Outer Caverns - Middle");
-    AddGreet(MAP_SierraCavesLevel1South2, "Sierra Caves: Outer Caverns - Another South Side");
-    AddGreet(MAP_SierraCavesLevel1Corner2NW, "Sierra Caves: Outer Caverns - North West Corner");
-    AddGreet(MAP_SierraCavesLevel1Filler2, "Sierra Caves: Outer Caverns - Another Middle");
-    AddGreet(MAP_SierraCavesLevel1Filler3, "Sierra Caves: Outer Caverns - Yet Another Middle");
-    AddGreet(MAP_SierraCavesLevel1Corner3SE, "Sierra Caves: Outer Caverns - South East Corner");
-    AddGreet(MAP_SierraCavesLevel1North1, "Sierra Caves: Outer Caverns - North Side");
-    AddGreet(MAP_SierraCavesLevel1Filler4, "Sierra Caves: Outer Caverns - Not Another Middle");
-    AddGreet(MAP_SierraCavesLevel1East1, "Sierra Caves: Outer Caverns - East Side");
-    AddGreet(MAP_SierraCavesLevel1North2, "Sierra Caves: Outer Caverns - Another North Side");
-    AddGreet(MAP_SierraCavesLevel1East2, "Sierra Caves: Outer Caverns - Another East Side");
-    AddGreet(MAP_SierraCavesLevel1Corner4NE, "Sierra Caves: Outer Caverns - North East Corner");
-    AddGreet(MAP_SierraCavesLevel1Scene1, "Sierra Caves: Outer Caverns - Slime Dump");
-    AddGreet(MAP_SierraCavesLevel1Scene2, "Sierra Caves: Outer Caverns - Fountain");
-    AddGreet(MAP_SierraCavesLevel1Scene3, "Sierra Caves: Outer Caverns - Fences");
-    AddGreet(MAP_SierraCavesLevel1Scene4, "Sierra Caves: Outer Caverns - Scout Encampment");
-    AddGreet(MAP_SierraCavesLevel1Scene5, "Sierra Caves: Outer Caverns - Generators");
-    AddGreet(MAP_SierraCavesLevel1Scene6, "Sierra Caves: Outer Caverns - Wanamingo Gate");
-    AddGreet(MAP_SierraCavesLevel1Scene7, "Sierra Caves: Outer Caverns - Wanamingo Lair");
-    AddGreet(MAP_SierraCavesLevel1Pitfall, "Sierra Caves: Outer Caverns - Pitfall");
-    AddGreet(MAP_SierraCavesLevel1Gauntlet, "Sierra Caves: Outer Caverns - Gauntlet");
-    AddGreet(MAP_SierraCavesLevel1Exit1, "Sierra Caves: Outer Caverns - Exit");
-    AddGreet(MAP_SierraCavesLevel1Exit2, "Sierra Caves: Outer Caverns - Another Exit");
-    AddGreet(MAP_SierraCavesLevel1Vault2, "Sierra Caves: Outer Caverns - Vault 2");
-    AddGreet(MAP_SierraCavesLevel1Vault3, "Sierra Caves: Outer Caverns - Vault 3");
-    AddGreet(MAP_SierraCavesLevel1Vault4, "Sierra Caves: Outer Caverns - Vault 4");
-    AddGreet(MAP_SierraCavesLevel1Vault5, "Sierra Caves: Outer Caverns - Vault 5");
-    AddGreet(MAP_SierraCavesLevel1Vault6, "Sierra Caves: Outer Caverns - Vault 6");
-    AddGreet(MAP_SierraCavesLevel1Vault7, "Sierra Caves: Outer Caverns - Vault 7");
-
-
+    
 
     //  Replication
     for (int i = MAP_Replication1; i <= MAP_Replication4; i++) {
@@ -510,17 +478,7 @@ void GreetPlayer(Critter@ player, Map@ map) {
         case MAP_RipperSub:
         //  talchem        
         //  sierra caves
-        case MAP_SierraCavesLevel1Pitfall:
-        case MAP_SierraCavesLevel1Gauntlet:
-        case MAP_SierraCavesLevel1Vault2:
-        case MAP_SierraCavesLevel1Vault3:
-        case MAP_SierraCavesLevel1Vault4:
-        case MAP_SierraCavesLevel1Vault5:
-        case MAP_SierraCavesLevel1Vault6:
-        case MAP_SierraCavesLevel1Vault7:
-            hostility = MAP_GREETER_HOSTILITY_HOSTILE;
-            break;
-
+        
         //  semi hostile, quest location
         case MAP_Vault15Surface:
         case MAP_Vault13Level1:
@@ -528,15 +486,6 @@ void GreetPlayer(Critter@ player, Map@ map) {
         case MAP_MilitaryBaseEntrance:
         
         case MAP_StrandedTanker_Outside:        
-        case MAP_SierraCavesLevel1Scene1:
-        case MAP_SierraCavesLevel1Scene2:
-        case MAP_SierraCavesLevel1Scene3:
-        case MAP_SierraCavesLevel1Scene4:
-        case MAP_SierraCavesLevel1Scene5:
-        case MAP_SierraCavesLevel1Scene6:
-        case MAP_SierraCavesLevel1Scene7:
-        case MAP_SierraCavesLevel1Exit1:
-        case MAP_SierraCavesLevel1Exit2:
             hostility = MAP_GREETER_HOSTILITY_UNFRIENDLY;
             break;
         //  jail

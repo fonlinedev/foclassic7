@@ -294,9 +294,9 @@ void RefreshAliases(Critter& player, int, int, int)   // ~runscript cheats Refre
 void SetAliases()
 {
     // Fallout 1
-    SetMapId("junktown",    MAP_Junktown);
-    SetMapId("jt",                  MAP_Junktown);
-    SetMapId("hub",                 MAP_HubDowntown);
+    //SetMapId("junktown",    MAP_JunktownSouth);
+    //SetMapId("jt",                  MAP_JunktownSouth);
+    SetMapId("hub",                 MAP_HubMarket);
     SetMapId("glow",                MAP_Glow_Entrance);
     SetMapId("gunrunners",  MAP_Gunrunner);
     SetMapId("fortress",    MAP_Gunrunner);
@@ -358,7 +358,7 @@ void SetAliases()
 
     SetMapId("ares",                MAP_AresMilitaryBase_Entrance);
     SetMapId("gasstation2", MAP_GordonsGasStation);
-    SetMapId("hub_arena",   MAP_HubArena);
+    // SetMapId("hub_arena",   MAP_HubArena);
     SetMapId("junkyard",    MAP_Junkyard);
     SetMapId("tesla",               MAP_TeslaTower);
     SetMapId("themepark",   MAP_Themepark);

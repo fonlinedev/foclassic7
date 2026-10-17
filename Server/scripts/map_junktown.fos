@@ -19,8 +19,8 @@
 
 void map_init(Map& map, bool firstTime)
 {
-    InitJunktownTasks();
-    InitSkumpittEvents();
+    //InitJunktownTasks();
+    //InitSkumpittEvents();
     // certainly
 
     if(firstTime)

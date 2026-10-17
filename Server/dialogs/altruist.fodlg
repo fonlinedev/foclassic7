@@ -92,7 +92,13 @@ lang=engl
 0 7020 R _script dialog@r_TeleportToMap 2 8 0 #
 0 7030 R _script dialog@r_TeleportToMap 2 34 0 #
 0 7040 R _script dialog@r_TeleportToMap 2 70 0 #
-0 7050 R _script dialog@r_TeleportToMap 2 221 0 &
+0 7050 R _script dialog@r_TeleportToMap 2 221 0 #
+0 7060 R _script dialog@r_TeleportToMap 2 141 0 #
+0 7070 R _script dialog@r_TeleportToMap 2 280 0 #
+0 7080 R _script dialog@r_TeleportToMap 2 75 0 #
+0 7090 #
+0 7100 #
+0 7110 &
 
 [engl]
 {100}{}{Altruist}
@@ -185,4 +191,10 @@ lang=engl
 {7030}{}{vault 15}
 {7040}{}{junktown}
 {7050}{}{the hub}
+{7060}{}{necropolis}
+{7070}{}{boneyard}
+{7080}{}{cathedral}
+{7090}{}{military base}
+{7100}{}{brotherhood of steel}
+{7110}{}{the glow}
 

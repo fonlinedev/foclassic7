@@ -35,13 +35,13 @@ void InitJunktownTasks()
 }
 
 // Tyler
-_AddTask(Tyler_Bar, 0, MAP_Junktown, ROLE_JNK_TYLER, ENTIRE_TYLER_BAR, 3, true);
-_AddTask(Tyler_Bar2, 1, MAP_Junktown, ROLE_JNK_TYLER, ENTIRE_BAR_SPOT, 5, IsEntireFree(MAP_Junktown, ENTIRE_BAR_SPOT));
-_AddTask(Tyler_Ring, 2, MAP_Junktown, ROLE_JNK_TYLER, ENTIRE_TYLER_RING, 5, true);
+_AddTask(Tyler_Bar, 0, MAP_JunktownSouth, ROLE_JNK_TYLER, ENTIRE_TYLER_BAR, 3, true);
+_AddTask(Tyler_Bar2, 1, MAP_JunktownSouth, ROLE_JNK_TYLER, ENTIRE_BAR_SPOT, 5, IsEntireFree(MAP_JunktownSouth, ENTIRE_BAR_SPOT));
+_AddTask(Tyler_Ring, 2, MAP_JunktownSouth, ROLE_JNK_TYLER, ENTIRE_TYLER_RING, 5, true);
 
 // Neal
-_AddTask(Neal_Bar, 0, MAP_Junktown, ROLE_JNK_NEAL, ENTIRE_NEAL_BAR, 3, true);
-_AddTask(Neal_Bedroom, 1, MAP_Junktown, ROLE_JNK_NEAL, ENTIRE_NEAL_BEDROOM, Random(0, 5), true);
+_AddTask(Neal_Bar, 0, MAP_JunktownSouth, ROLE_JNK_NEAL, ENTIRE_NEAL_BAR, 3, true);
+_AddTask(Neal_Bedroom, 1, MAP_JunktownSouth, ROLE_JNK_NEAL, ENTIRE_NEAL_BEDROOM, Random(0, 5), true);
 
 
 uint e_MoveRing(array<uint>@ values)
@@ -52,7 +52,7 @@ uint e_MoveRing(array<uint>@ values)
     HexX = 0;
     HexY = 0;
 
-    Map@ map = GetMapByPid(MAP_Junktown, 0);
+    Map@ map = GetMapByPid(MAP_JunktownSouth, 0);
 
     if(!valid(map))
     {
@@ -95,7 +95,7 @@ uint e_MoveBar(array<uint>@ values)
 {
     DLog("Bar people moves to bar...");
 
-    Map@ map = GetMapByPid(MAP_Junktown, 0);
+    Map@ map = GetMapByPid(MAP_JunktownSouth, 0);
     if(!valid(map))
     {
         Log("Invalid map.");
