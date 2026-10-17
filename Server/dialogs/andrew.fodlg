@@ -1,0 +1,16 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 &
+
+[engl]
+{100}{}{Andrew}
+{200}{}{Junktown jail guard.
+}
+{1000}{}{Predialogue installations}
+

@@ -2,17 +2,17 @@
 Version              4
 MaxHexX              200
 MaxHexY              200
-WorkHexX             121
-WorkHexY             144
+WorkHexX             85
+WorkHexY             51
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
 Time                 -1
-DayTime              5    5    5    5   
+DayTime              300  600  1140 1380
 DayColor0            18  18  53 
-DayColor1            18  18  53 
-DayColor2            18  18  53 
-DayColor3            18  18  53 
+DayColor1            128 128 128
+DayColor2            103 95  86 
+DayColor3            51  40  29 
 
 [Tiles]
 tile       46   24             art\TILES\EDG5003.FRM
@@ -8853,11 +8853,6 @@ MapX                 141
 MapY                 44
 
 MapObjType           2
-ProtoId              4021
-MapX                 102
-MapY                 45
-
-MapObjType           2
 ProtoId              2344
 MapX                 138
 MapY                 45
@@ -8868,11 +8863,6 @@ MapX                 141
 MapY                 45
 
 MapObjType           2
-ProtoId              4021
-MapX                 102
-MapY                 46
-
-MapObjType           2
 ProtoId              2344
 MapX                 139
 MapY                 46
@@ -8881,16 +8871,6 @@ MapObjType           2
 ProtoId              5114
 MapX                 141
 MapY                 46
-
-MapObjType           2
-ProtoId              4016
-MapX                 97
-MapY                 47
-
-MapObjType           2
-ProtoId              4021
-MapX                 102
-MapY                 47
 
 MapObjType           2
 ProtoId              2344
@@ -8913,134 +8893,64 @@ MapX                 142
 MapY                 47
 
 MapObjType           2
-ProtoId              4016
-MapX                 94
-MapY                 48
-
-MapObjType           2
 ProtoId              2049
-MapX                 101
-MapY                 48
-
-MapObjType           2
-ProtoId              4021
-MapX                 102
-MapY                 48
-
-MapObjType           2
-ProtoId              5114
-MapX                 141
-MapY                 48
-
-MapObjType           2
-ProtoId              5111
-MapX                 143
-MapY                 48
-
-MapObjType           2
-ProtoId              4021
-MapX                 102
-MapY                 49
-
-MapObjType           2
-ProtoId              5115
-MapX                 141
-MapY                 49
-
-MapObjType           2
-ProtoId              5110
-MapX                 143
-MapY                 49
-
-MapObjType           2
-ProtoId              4016
-MapX                 91
-MapY                 50
-
-MapObjType           2
-ProtoId              4021
-MapX                 102
-MapY                 50
-
-MapObjType           2
-ProtoId              5114
-MapX                 141
-MapY                 50
-
-MapObjType           2
-ProtoId              5111
-MapX                 143
-MapY                 50
-
-MapObjType           2
-ProtoId              4016
-MapX                 88
-MapY                 51
-
-MapObjType           2
-ProtoId              4021
-MapX                 102
-MapY                 51
-
-MapObjType           2
-ProtoId              5115
-MapX                 141
-MapY                 51
-
-MapObjType           2
-ProtoId              5110
-MapX                 143
-MapY                 51
-
-MapObjType           2
-ProtoId              2049
-MapX                 101
-MapY                 52
-
-MapObjType           2
-ProtoId              4019
-MapX                 102
-MapY                 52
-
-MapObjType           2
-ProtoId              4021
-MapX                 102
-MapY                 52
-
-MapObjType           2
-ProtoId              5114
-MapX                 141
-MapY                 52
-
-MapObjType           2
-ProtoId              5111
-MapX                 143
-MapY                 52
-
-MapObjType           2
-ProtoId              4017
-MapX                 84
-MapY                 53
-
-MapObjType           2
-ProtoId              4016
-MapX                 85
-MapY                 53
-
-MapObjType           2
-ProtoId              4017
-MapX                 88
-MapY                 53
-
-MapObjType           2
-ProtoId              4019
 MapX                 100
-MapY                 53
+MapY                 46
 
 MapObjType           2
-ProtoId              4019
-MapX                 101
-MapY                 53
+ProtoId              5114
+MapX                 141
+MapY                 48
+
+MapObjType           2
+ProtoId              5111
+MapX                 143
+MapY                 48
+
+MapObjType           2
+ProtoId              5115
+MapX                 141
+MapY                 49
+
+MapObjType           2
+ProtoId              5110
+MapX                 143
+MapY                 49
+
+MapObjType           2
+ProtoId              5114
+MapX                 141
+MapY                 50
+
+MapObjType           2
+ProtoId              5111
+MapX                 143
+MapY                 50
+
+MapObjType           2
+ProtoId              5115
+MapX                 141
+MapY                 51
+
+MapObjType           2
+ProtoId              5110
+MapX                 143
+MapY                 51
+
+MapObjType           2
+ProtoId              2049
+MapX                 100
+MapY                 49
+
+MapObjType           2
+ProtoId              5114
+MapX                 141
+MapY                 52
+
+MapObjType           2
+ProtoId              5111
+MapX                 143
+MapY                 52
 
 MapObjType           2
 ProtoId              5115
@@ -9054,17 +8964,7 @@ MapY                 53
 
 MapObjType           2
 ProtoId              2049
-MapX                 97
-MapY                 54
-
-MapObjType           2
-ProtoId              4019
-MapX                 98
-MapY                 54
-
-MapObjType           2
-ProtoId              4019
-MapX                 99
+MapX                 93
 MapY                 54
 
 MapObjType           2
@@ -9076,16 +8976,6 @@ MapObjType           2
 ProtoId              5111
 MapX                 143
 MapY                 54
-
-MapObjType           2
-ProtoId              4019
-MapX                 96
-MapY                 55
-
-MapObjType           2
-ProtoId              4019
-MapX                 97
-MapY                 55
 
 MapObjType           2
 ProtoId              5115
@@ -9104,22 +8994,12 @@ MapY                 55
 
 MapObjType           2
 ProtoId              2049
-MapX                 85
+MapX                 81
 MapY                 56
 
 MapObjType           2
 ProtoId              2049
-MapX                 93
-MapY                 56
-
-MapObjType           2
-ProtoId              4019
-MapX                 94
-MapY                 56
-
-MapObjType           2
-ProtoId              4019
-MapX                 95
+MapX                 89
 MapY                 56
 
 MapObjType           2
@@ -9141,51 +9021,6 @@ MapObjType           2
 ProtoId              2344
 MapX                 146
 MapY                 56
-
-MapObjType           2
-ProtoId              4023
-MapX                 78
-MapY                 57
-
-MapObjType           2
-ProtoId              4023
-MapX                 80
-MapY                 57
-
-MapObjType           2
-ProtoId              4023
-MapX                 82
-MapY                 57
-
-MapObjType           2
-ProtoId              4023
-MapX                 84
-MapY                 57
-
-MapObjType           2
-ProtoId              4023
-MapX                 86
-MapY                 57
-
-MapObjType           2
-ProtoId              4023
-MapX                 88
-MapY                 57
-
-MapObjType           2
-ProtoId              4023
-MapX                 90
-MapY                 57
-
-MapObjType           2
-ProtoId              4019
-MapX                 92
-MapY                 57
-
-MapObjType           2
-ProtoId              4019
-MapX                 93
-MapY                 57
 
 MapObjType           2
 ProtoId              5138
@@ -9273,48 +9108,8 @@ MapX                 148
 MapY                 57
 
 MapObjType           2
-ProtoId              4023
-MapX                 77
-MapY                 58
-
-MapObjType           2
-ProtoId              4023
-MapX                 79
-MapY                 58
-
-MapObjType           2
-ProtoId              4023
-MapX                 81
-MapY                 58
-
-MapObjType           2
-ProtoId              4023
-MapX                 83
-MapY                 58
-
-MapObjType           2
-ProtoId              4023
-MapX                 85
-MapY                 58
-
-MapObjType           2
-ProtoId              4023
-MapX                 87
-MapY                 58
-
-MapObjType           2
 ProtoId              2049
-MapX                 89
-MapY                 58
-
-MapObjType           2
-ProtoId              4023
-MapX                 89
-MapY                 58
-
-MapObjType           2
-ProtoId              4023
-MapX                 91
+MapX                 85
 MapY                 58
 
 MapObjType           2
@@ -10566,27 +10361,6 @@ ProtoId              5148
 MapX                 87
 MapY                 75
 
-MapObjType           0
-ProtoId              31
-MapX                 94
-MapY                 75
-Dir                  1
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  2
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
 MapObjType           2
 ProtoId              5144
 MapX                 99
@@ -10691,27 +10465,6 @@ MapObjType           2
 ProtoId              5298
 MapX                 144
 MapY                 76
-
-MapObjType           0
-ProtoId              18
-MapX                 83
-MapY                 77
-Dir                  3
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
 
 MapObjType           2
 ProtoId              5148
@@ -11179,27 +10932,6 @@ ProtoId              5115
 MapX                 118
 MapY                 82
 
-MapObjType           0
-ProtoId              81
-MapX                 120
-MapY                 82
-Dir                  2
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
 MapObjType           2
 ProtoId              2067
 MapX                 122
@@ -11209,26 +10941,6 @@ MapObjType           2
 ProtoId              2067
 MapX                 123
 MapY                 82
-
-MapObjType           0
-ProtoId              49
-MapX                 123
-MapY                 82
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
 
 MapObjType           2
 ProtoId              2067
@@ -11334,27 +11046,6 @@ MapObjType           2
 ProtoId              5488
 MapX                 93
 MapY                 83
-
-MapObjType           0
-ProtoId              2
-MapX                 94
-MapY                 83
-Dir                  2
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  2
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
 
 MapObjType           2
 ProtoId              5487
@@ -11507,48 +11198,6 @@ ProtoId              2141
 MapX                 96
 MapY                 84
 LightDistance        8
-
-MapObjType           0
-ProtoId              170
-MapX                 96
-MapY                 84
-Dir                  2
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
-MapObjType           0
-ProtoId              2
-MapX                 97
-MapY                 84
-Dir                  2
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  2
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
 
 MapObjType           2
 ProtoId              5120
@@ -12768,27 +12417,6 @@ ProtoId              2067
 MapX                 86
 MapY                 95
 
-MapObjType           0
-ProtoId              170
-MapX                 89
-MapY                 95
-Dir                  2
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
 MapObjType           2
 ProtoId              5115
 MapX                 94
@@ -13005,27 +12633,6 @@ ProtoId              5746
 MapX                 70
 MapY                 97
 
-MapObjType           0
-ProtoId              94
-MapX                 77
-MapY                 97
-Dir                  2
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
 MapObjType           2
 ProtoId              5622
 MapX                 79
@@ -13038,26 +12645,6 @@ MapY                 97
 
 MapObjType           1
 ProtoId              4
-
-MapObjType           0
-ProtoId              100
-MapX                 82
-MapY                 97
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
 
 MapObjType           2
 ProtoId              2067
@@ -13521,27 +13108,6 @@ ProtoId              2067
 MapX                 88
 MapY                 99
 
-MapObjType           0
-ProtoId              210
-MapX                 91
-MapY                 99
-Dir                  1
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
 MapObjType           2
 ProtoId              5108
 MapX                 94
@@ -13607,27 +13173,6 @@ ProtoId              2067
 MapX                 119
 MapY                 99
 
-MapObjType           0
-ProtoId              3
-MapX                 129
-MapY                 99
-Dir                  5
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  3
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
 MapObjType           2
 ProtoId              5115
 MapX                 136
@@ -13688,27 +13233,6 @@ ProtoId              89
 MapX                 82
 MapY                 100
 Dir                  5
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
-MapObjType           0
-ProtoId              40
-MapX                 83
-MapY                 100
-Dir                  2
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -13956,26 +13480,6 @@ Item_AmmoCount       12
 MapObjType           1
 ProtoId              6
 
-MapObjType           0
-ProtoId              99
-MapX                 86
-MapY                 102
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
 MapObjType           2
 ProtoId              2067
 MapX                 88
@@ -14062,27 +13566,6 @@ ProtoId              2663
 MapX                 72
 MapY                 103
 
-MapObjType           0
-ProtoId              96
-MapX                 75
-MapY                 103
-Dir                  5
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
 MapObjType           2
 ProtoId              2067
 MapX                 88
@@ -14102,27 +13585,6 @@ MapObjType           2
 ProtoId              5250
 MapX                 110
 MapY                 103
-
-MapObjType           0
-ProtoId              32
-MapX                 124
-MapY                 103
-Dir                  2
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
 
 MapObjType           2
 ProtoId              2067
@@ -15205,52 +14667,10 @@ ProtoId              5622
 MapX                 113
 MapY                 114
 
-MapObjType           0
-ProtoId              2
-MapX                 114
-MapY                 114
-Dir                  2
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  2
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
 MapObjType           2
 ProtoId              5622
 MapX                 117
 MapY                 114
-
-MapObjType           0
-ProtoId              2
-MapX                 118
-MapY                 114
-Dir                  2
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  2
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
 
 MapObjType           2
 ProtoId              5622
@@ -16085,47 +15505,6 @@ ProtoId              5120
 MapX                 102
 MapY                 122
 
-MapObjType           0
-ProtoId              40
-MapX                 109
-MapY                 122
-Dir                  3
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
-MapObjType           0
-ProtoId              2
-MapX                 129
-MapY                 122
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  2
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
 MapObjType           2
 ProtoId              2067
 MapX                 133
@@ -16271,26 +15650,6 @@ ProtoId              2549
 MapX                 134
 MapY                 124
 
-MapObjType           0
-ProtoId              4
-MapX                 135
-MapY                 124
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
 MapObjType           2
 ProtoId              5115
 MapX                 140
@@ -16330,26 +15689,6 @@ MapObjType           2
 ProtoId              2465
 MapX                 103
 MapY                 125
-
-MapObjType           0
-ProtoId              32
-MapX                 104
-MapY                 125
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
 
 MapObjType           2
 ProtoId              2067
@@ -16480,26 +15819,6 @@ MapObjType           2
 ProtoId              2453
 MapX                 108
 MapY                 126
-
-MapObjType           0
-ProtoId              18
-MapX                 109
-MapY                 126
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
 
 MapObjType           2
 ProtoId              5120
@@ -18719,27 +18038,6 @@ MapX                 87
 MapY                 153
 LightDistance        6
 
-MapObjType           0
-ProtoId              122
-MapX                 87
-MapY                 153
-Dir                  3
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
 MapObjType           2
 ProtoId              5114
 MapX                 149
@@ -18759,91 +18057,145 @@ MapObjType           2
 ProtoId              4018
 MapX                 118
 MapY                 154
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4022
 MapX                 119
 MapY                 154
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4022
 MapX                 120
 MapY                 154
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4022
 MapX                 121
 MapY                 154
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4022
 MapX                 122
 MapY                 154
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4022
 MapX                 123
 MapY                 154
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4022
 MapX                 124
 MapY                 154
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4022
 MapX                 125
 MapY                 154
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4022
 MapX                 126
 MapY                 154
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4022
 MapX                 127
 MapY                 154
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4022
 MapX                 128
 MapY                 154
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4022
 MapX                 129
 MapY                 154
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4022
 MapX                 130
 MapY                 154
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4022
 MapX                 131
 MapY                 154
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4022
 MapX                 132
 MapY                 154
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4022
 MapX                 133
 MapY                 154
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4022
 MapX                 134
 MapY                 154
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4022
 MapX                 135
 MapY                 154
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              5115
@@ -18860,60 +18212,29 @@ ProtoId              2344
 MapX                 151
 MapY                 154
 
-MapObjType           0
-ProtoId              170
-MapX                 96
-MapY                 155
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  1
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
-MapObjType           0
-ProtoId              24
-MapX                 97
-MapY                 155
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  1
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  2
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
 MapObjType           2
 ProtoId              4018
 MapX                 116
 MapY                 155
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4018
 MapX                 117
 MapY                 155
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              2049
 MapX                 119
 MapY                 155
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              2344
@@ -18934,11 +18255,17 @@ MapObjType           2
 ProtoId              4018
 MapX                 114
 MapY                 156
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4018
 MapX                 115
 MapY                 156
+Scenery_ToMapPid     11
+Scenery_ToEntire     11
+Scenery_ToDir        55
 
 MapObjType           2
 ProtoId              2344
@@ -18964,26 +18291,41 @@ MapObjType           2
 ProtoId              4018
 MapX                 112
 MapY                 157
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4018
 MapX                 113
 MapY                 157
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              2049
 MapX                 115
 MapY                 157
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              2049
 MapX                 123
 MapY                 157
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4017
 MapX                 124
 MapY                 157
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              2344
@@ -19009,16 +18351,25 @@ MapObjType           2
 ProtoId              4018
 MapX                 110
 MapY                 158
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4018
 MapX                 111
 MapY                 158
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4016
 MapX                 126
 MapY                 158
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              2344
@@ -19044,16 +18395,25 @@ MapObjType           2
 ProtoId              4018
 MapX                 108
 MapY                 159
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4018
 MapX                 109
 MapY                 159
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              2049
 MapX                 111
 MapY                 159
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              2344
@@ -19079,16 +18439,25 @@ MapObjType           2
 ProtoId              4018
 MapX                 106
 MapY                 160
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4018
 MapX                 107
 MapY                 160
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              4016
 MapX                 123
 MapY                 160
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              2344
@@ -19142,6 +18511,4020 @@ MapObjType           2
 ProtoId              3853
 MapX                 97
 MapY                 60
+Scenery_ToDir        2
+
+MapObjType           0
+ProtoId              9
+MapX                 87
+MapY                 153
+Dir                  3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  21
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  16
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              220
+MapX                 95
+MapY                 156
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  14
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  48
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              70
+MapX                 96
+MapY                 155
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  12
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  5
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           2
+ProtoId              4022
+MapX                 106
+MapY                 160
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
+
+MapObjType           2
+ProtoId              4022
+MapX                 106
+MapY                 164
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
+
+MapObjType           2
+ProtoId              4022
+MapX                 106
+MapY                 168
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
+
+MapObjType           2
+ProtoId              4022
+MapX                 108
+MapY                 163
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
+
+MapObjType           2
+ProtoId              4022
+MapX                 108
+MapY                 167
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
+
+MapObjType           2
+ProtoId              4022
+MapX                 110
+MapY                 165
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
+
+MapObjType           2
+ProtoId              4020
+MapX                 108
+MapY                 171
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
+
+MapObjType           2
+ProtoId              4020
+MapX                 108
+MapY                 169
+Scenery_ToMapPid     11
+Scenery_ToEntire     1
+Scenery_ToDir        5
+
+MapObjType           2
+ProtoId              4012
+MapX                 19
+MapY                 81
+
+MapObjType           2
+ProtoId              4012
+MapX                 20
+MapY                 80
+
+MapObjType           2
+ProtoId              4012
+MapX                 21
+MapY                 80
+
+MapObjType           2
+ProtoId              4012
+MapX                 22
+MapY                 79
+
+MapObjType           2
+ProtoId              4012
+MapX                 23
+MapY                 79
+
+MapObjType           2
+ProtoId              4012
+MapX                 24
+MapY                 78
+
+MapObjType           2
+ProtoId              4012
+MapX                 30
+MapY                 75
+
+MapObjType           2
+ProtoId              4012
+MapX                 29
+MapY                 76
+
+MapObjType           2
+ProtoId              4012
+MapX                 28
+MapY                 76
+
+MapObjType           2
+ProtoId              4012
+MapX                 27
+MapY                 77
+
+MapObjType           2
+ProtoId              4012
+MapX                 26
+MapY                 77
+
+MapObjType           2
+ProtoId              4012
+MapX                 25
+MapY                 78
+
+MapObjType           2
+ProtoId              4012
+MapX                 31
+MapY                 75
+
+MapObjType           2
+ProtoId              4012
+MapX                 32
+MapY                 74
+
+MapObjType           2
+ProtoId              4012
+MapX                 33
+MapY                 74
+
+MapObjType           2
+ProtoId              4012
+MapX                 34
+MapY                 73
+
+MapObjType           2
+ProtoId              4012
+MapX                 35
+MapY                 73
+
+MapObjType           2
+ProtoId              4012
+MapX                 36
+MapY                 72
+
+MapObjType           2
+ProtoId              4012
+MapX                 37
+MapY                 72
+
+MapObjType           2
+ProtoId              4012
+MapX                 38
+MapY                 71
+
+MapObjType           2
+ProtoId              4012
+MapX                 39
+MapY                 71
+
+MapObjType           2
+ProtoId              4012
+MapX                 40
+MapY                 70
+
+MapObjType           2
+ProtoId              4012
+MapX                 41
+MapY                 70
+
+MapObjType           2
+ProtoId              4012
+MapX                 42
+MapY                 69
+
+MapObjType           2
+ProtoId              4012
+MapX                 19
+MapY                 81
+
+MapObjType           2
+ProtoId              4012
+MapX                 20
+MapY                 80
+
+MapObjType           2
+ProtoId              4012
+MapX                 21
+MapY                 80
+
+MapObjType           2
+ProtoId              4012
+MapX                 22
+MapY                 79
+
+MapObjType           2
+ProtoId              4012
+MapX                 23
+MapY                 79
+
+MapObjType           2
+ProtoId              4012
+MapX                 24
+MapY                 78
+
+MapObjType           2
+ProtoId              4012
+MapX                 25
+MapY                 78
+
+MapObjType           2
+ProtoId              4012
+MapX                 26
+MapY                 77
+
+MapObjType           2
+ProtoId              4012
+MapX                 27
+MapY                 77
+
+MapObjType           2
+ProtoId              4012
+MapX                 28
+MapY                 76
+
+MapObjType           2
+ProtoId              4012
+MapX                 29
+MapY                 76
+
+MapObjType           2
+ProtoId              4012
+MapX                 30
+MapY                 75
+
+MapObjType           2
+ProtoId              4012
+MapX                 19
+MapY                 82
+
+MapObjType           0
+ProtoId              69
+MapX                 86
+MapY                 102
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  12
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  44
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              69
+MapX                 91
+MapY                 99
+Dir                  1
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  12
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  44
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              142
+MapX                 89
+MapY                 95
+Dir                  2
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  17
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  48
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              58
+MapX                 77
+MapY                 96
+Dir                  2
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  17
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  41
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              58
+MapX                 75
+MapY                 103
+Dir                  5
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  17
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  41
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              61
+MapX                 83
+MapY                 100
+Dir                  2
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  17
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  36
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              72
+MapX                 82
+MapY                 97
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  12
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  5
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              166
+MapX                 94
+MapY                 83
+Dir                  2
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  22
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  12
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              166
+MapX                 97
+MapY                 84
+Dir                  2
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  22
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  12
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              198
+MapX                 83
+MapY                 77
+Dir                  3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  17
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  39
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              163
+MapX                 96
+MapY                 84
+Dir                  2
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  102
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  48
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              467
+MapX                 120
+MapY                 82
+Dir                  2
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  18
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  9
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              17
+MapX                 124
+MapY                 103
+Dir                  2
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  25
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  37
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              17
+MapX                 104
+MapY                 125
+Dir                  1
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  25
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  37
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              463
+MapX                 129
+MapY                 99
+Dir                  5
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  18
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  14
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              71
+MapX                 118
+MapY                 114
+Dir                  2
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  12
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  12
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              71
+MapX                 114
+MapY                 114
+Dir                  2
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  12
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  12
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              71
+MapX                 129
+MapY                 122
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  12
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  12
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              168
+MapX                 109
+MapY                 122
+Dir                  3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  22
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  36
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              169
+MapX                 109
+MapY                 126
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  22
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  39
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              54
+MapX                 135
+MapY                 124
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  25
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  43
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              54
+MapX                 131
+MapY                 126
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  25
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  43
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           0
+ProtoId              54
+MapX                 136
+MapY                 124
+Dir                  1
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  25
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  43
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           2
+ProtoId              4012
+MapX                 19
+MapY                 81
+
+MapObjType           2
+ProtoId              4012
+MapX                 20
+MapY                 80
+
+MapObjType           2
+ProtoId              4012
+MapX                 21
+MapY                 80
+
+MapObjType           2
+ProtoId              4012
+MapX                 22
+MapY                 79
+
+MapObjType           2
+ProtoId              4012
+MapX                 23
+MapY                 79
+
+MapObjType           2
+ProtoId              4012
+MapX                 24
+MapY                 78
+
+MapObjType           2
+ProtoId              4012
+MapX                 25
+MapY                 78
+
+MapObjType           2
+ProtoId              4012
+MapX                 26
+MapY                 77
+
+MapObjType           2
+ProtoId              4012
+MapX                 27
+MapY                 77
+
+MapObjType           2
+ProtoId              4012
+MapX                 28
+MapY                 76
+
+MapObjType           2
+ProtoId              4012
+MapX                 29
+MapY                 76
+
+MapObjType           2
+ProtoId              4012
+MapX                 30
+MapY                 75
+
+MapObjType           2
+ProtoId              4012
+MapX                 20
+MapY                 82
+
+MapObjType           2
+ProtoId              4012
+MapX                 20
+MapY                 83
+
+MapObjType           2
+ProtoId              4012
+MapX                 21
+MapY                 84
+
+MapObjType           2
+ProtoId              4012
+MapX                 21
+MapY                 85
+
+MapObjType           2
+ProtoId              4012
+MapX                 22
+MapY                 85
+
+MapObjType           2
+ProtoId              4012
+MapX                 22
+MapY                 86
+
+MapObjType           2
+ProtoId              4012
+MapX                 26
+MapY                 92
+
+MapObjType           2
+ProtoId              4012
+MapX                 26
+MapY                 91
+
+MapObjType           2
+ProtoId              4012
+MapX                 25
+MapY                 91
+
+MapObjType           2
+ProtoId              4012
+MapX                 25
+MapY                 90
+
+MapObjType           2
+ProtoId              4012
+MapX                 24
+MapY                 89
+
+MapObjType           2
+ProtoId              4012
+MapX                 24
+MapY                 88
+
+MapObjType           2
+ProtoId              4012
+MapX                 23
+MapY                 88
+
+MapObjType           2
+ProtoId              4012
+MapX                 30
+MapY                 98
+
+MapObjType           2
+ProtoId              4012
+MapX                 30
+MapY                 97
+
+MapObjType           2
+ProtoId              4012
+MapX                 29
+MapY                 97
+
+MapObjType           2
+ProtoId              4012
+MapX                 29
+MapY                 96
+
+MapObjType           2
+ProtoId              4012
+MapX                 28
+MapY                 95
+
+MapObjType           2
+ProtoId              4012
+MapX                 28
+MapY                 94
+
+MapObjType           2
+ProtoId              4012
+MapX                 27
+MapY                 94
+
+MapObjType           2
+ProtoId              4012
+MapX                 34
+MapY                 104
+
+MapObjType           2
+ProtoId              4012
+MapX                 34
+MapY                 103
+
+MapObjType           2
+ProtoId              4012
+MapX                 33
+MapY                 103
+
+MapObjType           2
+ProtoId              4012
+MapX                 33
+MapY                 102
+
+MapObjType           2
+ProtoId              4012
+MapX                 32
+MapY                 101
+
+MapObjType           2
+ProtoId              4012
+MapX                 32
+MapY                 100
+
+MapObjType           2
+ProtoId              4012
+MapX                 31
+MapY                 100
+
+MapObjType           2
+ProtoId              4012
+MapX                 38
+MapY                 110
+
+MapObjType           2
+ProtoId              4012
+MapX                 38
+MapY                 109
+
+MapObjType           2
+ProtoId              4012
+MapX                 37
+MapY                 109
+
+MapObjType           2
+ProtoId              4012
+MapX                 37
+MapY                 108
+
+MapObjType           2
+ProtoId              4012
+MapX                 36
+MapY                 107
+
+MapObjType           2
+ProtoId              4012
+MapX                 36
+MapY                 106
+
+MapObjType           2
+ProtoId              4012
+MapX                 35
+MapY                 106
+
+MapObjType           2
+ProtoId              4012
+MapX                 35
+MapY                 105
+
+MapObjType           2
+ProtoId              4012
+MapX                 31
+MapY                 99
+
+MapObjType           2
+ProtoId              4012
+MapX                 27
+MapY                 93
+
+MapObjType           2
+ProtoId              4012
+MapX                 23
+MapY                 87
+
+MapObjType           2
+ProtoId              4012
+MapX                 39
+MapY                 111
+
+MapObjType           2
+ProtoId              4012
+MapX                 39
+MapY                 112
+
+MapObjType           2
+ProtoId              4012
+MapX                 40
+MapY                 112
+
+MapObjType           2
+ProtoId              4012
+MapX                 40
+MapY                 113
+
+MapObjType           2
+ProtoId              4012
+MapX                 41
+MapY                 114
+
+MapObjType           2
+ProtoId              4012
+MapX                 41
+MapY                 115
+
+MapObjType           2
+ProtoId              4012
+MapX                 42
+MapY                 115
+
+MapObjType           2
+ProtoId              4012
+MapX                 42
+MapY                 116
+
+MapObjType           2
+ProtoId              4012
+MapX                 43
+MapY                 117
+
+MapObjType           2
+ProtoId              4012
+MapX                 43
+MapY                 118
+
+MapObjType           2
+ProtoId              4012
+MapX                 44
+MapY                 118
+
+MapObjType           2
+ProtoId              4012
+MapX                 44
+MapY                 119
+
+MapObjType           2
+ProtoId              4012
+MapX                 45
+MapY                 120
+
+MapObjType           2
+ProtoId              4012
+MapX                 45
+MapY                 121
+
+MapObjType           2
+ProtoId              4012
+MapX                 46
+MapY                 121
+
+MapObjType           2
+ProtoId              4012
+MapX                 46
+MapY                 122
+
+MapObjType           2
+ProtoId              4012
+MapX                 47
+MapY                 123
+
+MapObjType           2
+ProtoId              4012
+MapX                 47
+MapY                 124
+
+MapObjType           2
+ProtoId              4012
+MapX                 48
+MapY                 124
+
+MapObjType           2
+ProtoId              4012
+MapX                 48
+MapY                 125
+
+MapObjType           2
+ProtoId              4012
+MapX                 49
+MapY                 126
+
+MapObjType           2
+ProtoId              4012
+MapX                 49
+MapY                 127
+
+MapObjType           2
+ProtoId              4012
+MapX                 50
+MapY                 127
+
+MapObjType           2
+ProtoId              4012
+MapX                 50
+MapY                 128
+
+MapObjType           2
+ProtoId              4012
+MapX                 51
+MapY                 129
+
+MapObjType           2
+ProtoId              4012
+MapX                 51
+MapY                 130
+
+MapObjType           2
+ProtoId              4012
+MapX                 52
+MapY                 130
+
+MapObjType           2
+ProtoId              4012
+MapX                 52
+MapY                 131
+
+MapObjType           2
+ProtoId              4012
+MapX                 53
+MapY                 132
+
+MapObjType           2
+ProtoId              4012
+MapX                 53
+MapY                 133
+
+MapObjType           2
+ProtoId              4012
+MapX                 54
+MapY                 133
+
+MapObjType           2
+ProtoId              4012
+MapX                 54
+MapY                 134
+
+MapObjType           2
+ProtoId              4012
+MapX                 55
+MapY                 135
+
+MapObjType           2
+ProtoId              4012
+MapX                 55
+MapY                 136
+
+MapObjType           2
+ProtoId              4012
+MapX                 56
+MapY                 136
+
+MapObjType           2
+ProtoId              4012
+MapX                 56
+MapY                 137
+
+MapObjType           2
+ProtoId              4012
+MapX                 57
+MapY                 138
+
+MapObjType           2
+ProtoId              4012
+MapX                 57
+MapY                 139
+
+MapObjType           2
+ProtoId              4012
+MapX                 58
+MapY                 139
+
+MapObjType           2
+ProtoId              4012
+MapX                 58
+MapY                 140
+
+MapObjType           2
+ProtoId              4012
+MapX                 59
+MapY                 141
+
+MapObjType           2
+ProtoId              4012
+MapX                 59
+MapY                 142
+
+MapObjType           2
+ProtoId              4012
+MapX                 60
+MapY                 142
+
+MapObjType           2
+ProtoId              4012
+MapX                 60
+MapY                 143
+
+MapObjType           2
+ProtoId              4012
+MapX                 61
+MapY                 144
+
+MapObjType           2
+ProtoId              4012
+MapX                 61
+MapY                 145
+
+MapObjType           2
+ProtoId              4012
+MapX                 62
+MapY                 145
+
+MapObjType           2
+ProtoId              4012
+MapX                 62
+MapY                 146
+
+MapObjType           2
+ProtoId              4012
+MapX                 63
+MapY                 147
+
+MapObjType           2
+ProtoId              4012
+MapX                 63
+MapY                 148
+
+MapObjType           2
+ProtoId              4012
+MapX                 64
+MapY                 148
+
+MapObjType           2
+ProtoId              4012
+MapX                 64
+MapY                 149
+
+MapObjType           2
+ProtoId              4012
+MapX                 65
+MapY                 150
+
+MapObjType           2
+ProtoId              4012
+MapX                 65
+MapY                 151
+
+MapObjType           2
+ProtoId              4012
+MapX                 66
+MapY                 151
+
+MapObjType           2
+ProtoId              4012
+MapX                 66
+MapY                 152
+
+MapObjType           2
+ProtoId              4012
+MapX                 67
+MapY                 153
+
+MapObjType           2
+ProtoId              4012
+MapX                 67
+MapY                 154
+
+MapObjType           2
+ProtoId              4012
+MapX                 68
+MapY                 154
+
+MapObjType           2
+ProtoId              4012
+MapX                 68
+MapY                 155
+
+MapObjType           2
+ProtoId              4012
+MapX                 69
+MapY                 156
+
+MapObjType           2
+ProtoId              4012
+MapX                 69
+MapY                 157
+
+MapObjType           2
+ProtoId              4012
+MapX                 70
+MapY                 157
+
+MapObjType           2
+ProtoId              4012
+MapX                 70
+MapY                 158
+
+MapObjType           2
+ProtoId              4012
+MapX                 71
+MapY                 159
+
+MapObjType           2
+ProtoId              4012
+MapX                 71
+MapY                 160
+
+MapObjType           2
+ProtoId              4012
+MapX                 72
+MapY                 160
+
+MapObjType           2
+ProtoId              4012
+MapX                 72
+MapY                 161
+
+MapObjType           2
+ProtoId              4012
+MapX                 73
+MapY                 162
+
+MapObjType           2
+ProtoId              4012
+MapX                 73
+MapY                 163
+
+MapObjType           2
+ProtoId              4012
+MapX                 74
+MapY                 163
+
+MapObjType           2
+ProtoId              4012
+MapX                 74
+MapY                 164
+
+MapObjType           2
+ProtoId              4012
+MapX                 75
+MapY                 165
+
+MapObjType           2
+ProtoId              4012
+MapX                 75
+MapY                 166
+
+MapObjType           2
+ProtoId              4012
+MapX                 76
+MapY                 166
+
+MapObjType           2
+ProtoId              4012
+MapX                 76
+MapY                 167
+
+MapObjType           2
+ProtoId              4012
+MapX                 88
+MapY                 185
+
+MapObjType           2
+ProtoId              4012
+MapX                 88
+MapY                 184
+
+MapObjType           2
+ProtoId              4012
+MapX                 87
+MapY                 184
+
+MapObjType           2
+ProtoId              4012
+MapX                 87
+MapY                 183
+
+MapObjType           2
+ProtoId              4012
+MapX                 86
+MapY                 182
+
+MapObjType           2
+ProtoId              4012
+MapX                 86
+MapY                 181
+
+MapObjType           2
+ProtoId              4012
+MapX                 85
+MapY                 181
+
+MapObjType           2
+ProtoId              4012
+MapX                 85
+MapY                 180
+
+MapObjType           2
+ProtoId              4012
+MapX                 84
+MapY                 179
+
+MapObjType           2
+ProtoId              4012
+MapX                 84
+MapY                 178
+
+MapObjType           2
+ProtoId              4012
+MapX                 83
+MapY                 178
+
+MapObjType           2
+ProtoId              4012
+MapX                 83
+MapY                 177
+
+MapObjType           2
+ProtoId              4012
+MapX                 82
+MapY                 176
+
+MapObjType           2
+ProtoId              4012
+MapX                 82
+MapY                 175
+
+MapObjType           2
+ProtoId              4012
+MapX                 81
+MapY                 175
+
+MapObjType           2
+ProtoId              4012
+MapX                 81
+MapY                 174
+
+MapObjType           2
+ProtoId              4012
+MapX                 80
+MapY                 173
+
+MapObjType           2
+ProtoId              4012
+MapX                 80
+MapY                 172
+
+MapObjType           2
+ProtoId              4012
+MapX                 79
+MapY                 172
+
+MapObjType           2
+ProtoId              4012
+MapX                 79
+MapY                 171
+
+MapObjType           2
+ProtoId              4012
+MapX                 78
+MapY                 170
+
+MapObjType           2
+ProtoId              4012
+MapX                 78
+MapY                 169
+
+MapObjType           2
+ProtoId              4012
+MapX                 77
+MapY                 169
+
+MapObjType           2
+ProtoId              4012
+MapX                 77
+MapY                 168
+
+MapObjType           2
+ProtoId              4012
+MapX                 89
+MapY                 185
+
+MapObjType           2
+ProtoId              4012
+MapX                 90
+MapY                 184
+
+MapObjType           2
+ProtoId              4012
+MapX                 91
+MapY                 184
+
+MapObjType           2
+ProtoId              4012
+MapX                 92
+MapY                 183
+
+MapObjType           2
+ProtoId              4012
+MapX                 93
+MapY                 183
+
+MapObjType           2
+ProtoId              4012
+MapX                 94
+MapY                 182
+
+MapObjType           2
+ProtoId              4012
+MapX                 95
+MapY                 182
+
+MapObjType           2
+ProtoId              4012
+MapX                 96
+MapY                 181
+
+MapObjType           2
+ProtoId              4012
+MapX                 97
+MapY                 181
+
+MapObjType           2
+ProtoId              4012
+MapX                 98
+MapY                 180
+
+MapObjType           2
+ProtoId              4012
+MapX                 108
+MapY                 175
+
+MapObjType           2
+ProtoId              4012
+MapX                 107
+MapY                 176
+
+MapObjType           2
+ProtoId              4012
+MapX                 106
+MapY                 176
+
+MapObjType           2
+ProtoId              4012
+MapX                 105
+MapY                 177
+
+MapObjType           2
+ProtoId              4012
+MapX                 104
+MapY                 177
+
+MapObjType           2
+ProtoId              4012
+MapX                 103
+MapY                 178
+
+MapObjType           2
+ProtoId              4012
+MapX                 102
+MapY                 178
+
+MapObjType           2
+ProtoId              4012
+MapX                 101
+MapY                 179
+
+MapObjType           2
+ProtoId              4012
+MapX                 100
+MapY                 179
+
+MapObjType           2
+ProtoId              4012
+MapX                 99
+MapY                 180
+
+MapObjType           2
+ProtoId              4012
+MapX                 118
+MapY                 170
+
+MapObjType           2
+ProtoId              4012
+MapX                 117
+MapY                 171
+
+MapObjType           2
+ProtoId              4012
+MapX                 116
+MapY                 171
+
+MapObjType           2
+ProtoId              4012
+MapX                 115
+MapY                 172
+
+MapObjType           2
+ProtoId              4012
+MapX                 114
+MapY                 172
+
+MapObjType           2
+ProtoId              4012
+MapX                 113
+MapY                 173
+
+MapObjType           2
+ProtoId              4012
+MapX                 112
+MapY                 173
+
+MapObjType           2
+ProtoId              4012
+MapX                 111
+MapY                 174
+
+MapObjType           2
+ProtoId              4012
+MapX                 110
+MapY                 174
+
+MapObjType           2
+ProtoId              4012
+MapX                 109
+MapY                 175
+
+MapObjType           2
+ProtoId              4012
+MapX                 136
+MapY                 161
+
+MapObjType           2
+ProtoId              4012
+MapX                 135
+MapY                 162
+
+MapObjType           2
+ProtoId              4012
+MapX                 134
+MapY                 162
+
+MapObjType           2
+ProtoId              4012
+MapX                 133
+MapY                 163
+
+MapObjType           2
+ProtoId              4012
+MapX                 132
+MapY                 163
+
+MapObjType           2
+ProtoId              4012
+MapX                 131
+MapY                 164
+
+MapObjType           2
+ProtoId              4012
+MapX                 130
+MapY                 164
+
+MapObjType           2
+ProtoId              4012
+MapX                 129
+MapY                 165
+
+MapObjType           2
+ProtoId              4012
+MapX                 128
+MapY                 165
+
+MapObjType           2
+ProtoId              4012
+MapX                 127
+MapY                 166
+
+MapObjType           2
+ProtoId              4012
+MapX                 126
+MapY                 166
+
+MapObjType           2
+ProtoId              4012
+MapX                 125
+MapY                 167
+
+MapObjType           2
+ProtoId              4012
+MapX                 124
+MapY                 167
+
+MapObjType           2
+ProtoId              4012
+MapX                 123
+MapY                 168
+
+MapObjType           2
+ProtoId              4012
+MapX                 122
+MapY                 168
+
+MapObjType           2
+ProtoId              4012
+MapX                 121
+MapY                 169
+
+MapObjType           2
+ProtoId              4012
+MapX                 120
+MapY                 169
+
+MapObjType           2
+ProtoId              4012
+MapX                 119
+MapY                 170
+
+MapObjType           2
+ProtoId              4012
+MapX                 137
+MapY                 162
+
+MapObjType           2
+ProtoId              4012
+MapX                 138
+MapY                 161
+
+MapObjType           2
+ProtoId              4012
+MapX                 139
+MapY                 161
+
+MapObjType           2
+ProtoId              4012
+MapX                 140
+MapY                 160
+
+MapObjType           2
+ProtoId              4012
+MapX                 141
+MapY                 160
+
+MapObjType           2
+ProtoId              4012
+MapX                 142
+MapY                 159
+
+MapObjType           2
+ProtoId              4012
+MapX                 143
+MapY                 159
+
+MapObjType           2
+ProtoId              4012
+MapX                 144
+MapY                 158
+
+MapObjType           2
+ProtoId              4012
+MapX                 145
+MapY                 158
+
+MapObjType           2
+ProtoId              4012
+MapX                 146
+MapY                 157
+
+MapObjType           2
+ProtoId              4012
+MapX                 147
+MapY                 157
+
+MapObjType           2
+ProtoId              4012
+MapX                 148
+MapY                 156
+
+MapObjType           2
+ProtoId              4012
+MapX                 149
+MapY                 156
+
+MapObjType           2
+ProtoId              4012
+MapX                 150
+MapY                 155
+
+MapObjType           2
+ProtoId              4012
+MapX                 151
+MapY                 155
+
+MapObjType           2
+ProtoId              4012
+MapX                 152
+MapY                 154
+
+MapObjType           2
+ProtoId              4012
+MapX                 153
+MapY                 154
+
+MapObjType           2
+ProtoId              4012
+MapX                 154
+MapY                 153
+
+MapObjType           2
+ProtoId              4012
+MapX                 155
+MapY                 153
+
+MapObjType           2
+ProtoId              4012
+MapX                 156
+MapY                 152
+
+MapObjType           2
+ProtoId              4012
+MapX                 157
+MapY                 152
+
+MapObjType           2
+ProtoId              4012
+MapX                 158
+MapY                 151
+
+MapObjType           2
+ProtoId              4012
+MapX                 159
+MapY                 151
+
+MapObjType           2
+ProtoId              4012
+MapX                 160
+MapY                 150
+
+MapObjType           2
+ProtoId              4012
+MapX                 161
+MapY                 150
+
+MapObjType           2
+ProtoId              4012
+MapX                 162
+MapY                 149
+
+MapObjType           2
+ProtoId              4012
+MapX                 163
+MapY                 149
+
+MapObjType           2
+ProtoId              4012
+MapX                 164
+MapY                 148
+
+MapObjType           2
+ProtoId              4012
+MapX                 165
+MapY                 148
+
+MapObjType           2
+ProtoId              4012
+MapX                 166
+MapY                 147
+
+MapObjType           2
+ProtoId              4012
+MapX                 167
+MapY                 147
+
+MapObjType           2
+ProtoId              4012
+MapX                 168
+MapY                 146
+
+MapObjType           2
+ProtoId              4012
+MapX                 169
+MapY                 146
+
+MapObjType           2
+ProtoId              4012
+MapX                 170
+MapY                 145
+
+MapObjType           2
+ProtoId              4012
+MapX                 171
+MapY                 145
+
+MapObjType           2
+ProtoId              4012
+MapX                 172
+MapY                 144
+
+MapObjType           2
+ProtoId              4012
+MapX                 173
+MapY                 144
+
+MapObjType           2
+ProtoId              4012
+MapX                 64
+MapY                 58
+
+MapObjType           2
+ProtoId              4012
+MapX                 63
+MapY                 59
+
+MapObjType           2
+ProtoId              4012
+MapX                 62
+MapY                 59
+
+MapObjType           2
+ProtoId              4012
+MapX                 61
+MapY                 60
+
+MapObjType           2
+ProtoId              4012
+MapX                 60
+MapY                 60
+
+MapObjType           2
+ProtoId              4012
+MapX                 59
+MapY                 61
+
+MapObjType           2
+ProtoId              4012
+MapX                 58
+MapY                 61
+
+MapObjType           2
+ProtoId              4012
+MapX                 57
+MapY                 62
+
+MapObjType           2
+ProtoId              4012
+MapX                 56
+MapY                 62
+
+MapObjType           2
+ProtoId              4012
+MapX                 55
+MapY                 63
+
+MapObjType           2
+ProtoId              4012
+MapX                 54
+MapY                 63
+
+MapObjType           2
+ProtoId              4012
+MapX                 53
+MapY                 64
+
+MapObjType           2
+ProtoId              4012
+MapX                 52
+MapY                 64
+
+MapObjType           2
+ProtoId              4012
+MapX                 52
+MapY                 64
+
+MapObjType           2
+ProtoId              4012
+MapX                 52
+MapY                 64
+
+MapObjType           2
+ProtoId              4012
+MapX                 51
+MapY                 65
+
+MapObjType           2
+ProtoId              4012
+MapX                 51
+MapY                 65
+
+MapObjType           2
+ProtoId              4012
+MapX                 51
+MapY                 65
+
+MapObjType           2
+ProtoId              4012
+MapX                 50
+MapY                 65
+
+MapObjType           2
+ProtoId              4012
+MapX                 50
+MapY                 65
+
+MapObjType           2
+ProtoId              4012
+MapX                 50
+MapY                 65
+
+MapObjType           2
+ProtoId              4012
+MapX                 49
+MapY                 66
+
+MapObjType           2
+ProtoId              4012
+MapX                 49
+MapY                 66
+
+MapObjType           2
+ProtoId              4012
+MapX                 49
+MapY                 66
+
+MapObjType           2
+ProtoId              4012
+MapX                 48
+MapY                 66
+
+MapObjType           2
+ProtoId              4012
+MapX                 48
+MapY                 66
+
+MapObjType           2
+ProtoId              4012
+MapX                 48
+MapY                 66
+
+MapObjType           2
+ProtoId              4012
+MapX                 47
+MapY                 67
+
+MapObjType           2
+ProtoId              4012
+MapX                 47
+MapY                 67
+
+MapObjType           2
+ProtoId              4012
+MapX                 47
+MapY                 67
+
+MapObjType           2
+ProtoId              4012
+MapX                 46
+MapY                 67
+
+MapObjType           2
+ProtoId              4012
+MapX                 46
+MapY                 67
+
+MapObjType           2
+ProtoId              4012
+MapX                 46
+MapY                 67
+
+MapObjType           2
+ProtoId              4012
+MapX                 45
+MapY                 68
+
+MapObjType           2
+ProtoId              4012
+MapX                 45
+MapY                 68
+
+MapObjType           2
+ProtoId              4012
+MapX                 45
+MapY                 68
+
+MapObjType           2
+ProtoId              4012
+MapX                 44
+MapY                 68
+
+MapObjType           2
+ProtoId              4012
+MapX                 44
+MapY                 68
+
+MapObjType           2
+ProtoId              4012
+MapX                 44
+MapY                 68
+
+MapObjType           2
+ProtoId              4012
+MapX                 43
+MapY                 69
+
+MapObjType           2
+ProtoId              4012
+MapX                 43
+MapY                 69
+
+MapObjType           2
+ProtoId              4012
+MapX                 43
+MapY                 69
+
+MapObjType           2
+ProtoId              4012
+MapX                 86
+MapY                 47
+
+MapObjType           2
+ProtoId              4012
+MapX                 85
+MapY                 48
+
+MapObjType           2
+ProtoId              4012
+MapX                 84
+MapY                 48
+
+MapObjType           2
+ProtoId              4012
+MapX                 83
+MapY                 49
+
+MapObjType           2
+ProtoId              4012
+MapX                 82
+MapY                 49
+
+MapObjType           2
+ProtoId              4012
+MapX                 81
+MapY                 50
+
+MapObjType           2
+ProtoId              4012
+MapX                 80
+MapY                 50
+
+MapObjType           2
+ProtoId              4012
+MapX                 79
+MapY                 51
+
+MapObjType           2
+ProtoId              4012
+MapX                 78
+MapY                 51
+
+MapObjType           2
+ProtoId              4012
+MapX                 77
+MapY                 52
+
+MapObjType           2
+ProtoId              4012
+MapX                 76
+MapY                 52
+
+MapObjType           2
+ProtoId              4012
+MapX                 75
+MapY                 53
+
+MapObjType           2
+ProtoId              4012
+MapX                 74
+MapY                 53
+
+MapObjType           2
+ProtoId              4012
+MapX                 74
+MapY                 53
+
+MapObjType           2
+ProtoId              4012
+MapX                 74
+MapY                 53
+
+MapObjType           2
+ProtoId              4012
+MapX                 73
+MapY                 54
+
+MapObjType           2
+ProtoId              4012
+MapX                 73
+MapY                 54
+
+MapObjType           2
+ProtoId              4012
+MapX                 73
+MapY                 54
+
+MapObjType           2
+ProtoId              4012
+MapX                 72
+MapY                 54
+
+MapObjType           2
+ProtoId              4012
+MapX                 72
+MapY                 54
+
+MapObjType           2
+ProtoId              4012
+MapX                 72
+MapY                 54
+
+MapObjType           2
+ProtoId              4012
+MapX                 71
+MapY                 55
+
+MapObjType           2
+ProtoId              4012
+MapX                 71
+MapY                 55
+
+MapObjType           2
+ProtoId              4012
+MapX                 71
+MapY                 55
+
+MapObjType           2
+ProtoId              4012
+MapX                 70
+MapY                 55
+
+MapObjType           2
+ProtoId              4012
+MapX                 70
+MapY                 55
+
+MapObjType           2
+ProtoId              4012
+MapX                 70
+MapY                 55
+
+MapObjType           2
+ProtoId              4012
+MapX                 69
+MapY                 56
+
+MapObjType           2
+ProtoId              4012
+MapX                 69
+MapY                 56
+
+MapObjType           2
+ProtoId              4012
+MapX                 69
+MapY                 56
+
+MapObjType           2
+ProtoId              4012
+MapX                 68
+MapY                 56
+
+MapObjType           2
+ProtoId              4012
+MapX                 68
+MapY                 56
+
+MapObjType           2
+ProtoId              4012
+MapX                 68
+MapY                 56
+
+MapObjType           2
+ProtoId              4012
+MapX                 67
+MapY                 57
+
+MapObjType           2
+ProtoId              4012
+MapX                 67
+MapY                 57
+
+MapObjType           2
+ProtoId              4012
+MapX                 67
+MapY                 57
+
+MapObjType           2
+ProtoId              4012
+MapX                 66
+MapY                 57
+
+MapObjType           2
+ProtoId              4012
+MapX                 66
+MapY                 57
+
+MapObjType           2
+ProtoId              4012
+MapX                 66
+MapY                 57
+
+MapObjType           2
+ProtoId              4012
+MapX                 65
+MapY                 58
+
+MapObjType           2
+ProtoId              4012
+MapX                 65
+MapY                 58
+
+MapObjType           2
+ProtoId              4012
+MapX                 65
+MapY                 58
+
+MapObjType           2
+ProtoId              4012
+MapX                 106
+MapY                 37
+
+MapObjType           2
+ProtoId              4012
+MapX                 105
+MapY                 38
+
+MapObjType           2
+ProtoId              4012
+MapX                 104
+MapY                 38
+
+MapObjType           2
+ProtoId              4012
+MapX                 103
+MapY                 39
+
+MapObjType           2
+ProtoId              4012
+MapX                 102
+MapY                 39
+
+MapObjType           2
+ProtoId              4012
+MapX                 101
+MapY                 40
+
+MapObjType           2
+ProtoId              4012
+MapX                 100
+MapY                 40
+
+MapObjType           2
+ProtoId              4012
+MapX                 99
+MapY                 41
+
+MapObjType           2
+ProtoId              4012
+MapX                 98
+MapY                 41
+
+MapObjType           2
+ProtoId              4012
+MapX                 97
+MapY                 42
+
+MapObjType           2
+ProtoId              4012
+MapX                 96
+MapY                 42
+
+MapObjType           2
+ProtoId              4012
+MapX                 95
+MapY                 43
+
+MapObjType           2
+ProtoId              4012
+MapX                 94
+MapY                 43
+
+MapObjType           2
+ProtoId              4012
+MapX                 94
+MapY                 43
+
+MapObjType           2
+ProtoId              4012
+MapX                 94
+MapY                 43
+
+MapObjType           2
+ProtoId              4012
+MapX                 93
+MapY                 44
+
+MapObjType           2
+ProtoId              4012
+MapX                 93
+MapY                 44
+
+MapObjType           2
+ProtoId              4012
+MapX                 93
+MapY                 44
+
+MapObjType           2
+ProtoId              4012
+MapX                 92
+MapY                 44
+
+MapObjType           2
+ProtoId              4012
+MapX                 92
+MapY                 44
+
+MapObjType           2
+ProtoId              4012
+MapX                 92
+MapY                 44
+
+MapObjType           2
+ProtoId              4012
+MapX                 91
+MapY                 45
+
+MapObjType           2
+ProtoId              4012
+MapX                 91
+MapY                 45
+
+MapObjType           2
+ProtoId              4012
+MapX                 91
+MapY                 45
+
+MapObjType           2
+ProtoId              4012
+MapX                 90
+MapY                 45
+
+MapObjType           2
+ProtoId              4012
+MapX                 90
+MapY                 45
+
+MapObjType           2
+ProtoId              4012
+MapX                 90
+MapY                 45
+
+MapObjType           2
+ProtoId              4012
+MapX                 89
+MapY                 46
+
+MapObjType           2
+ProtoId              4012
+MapX                 89
+MapY                 46
+
+MapObjType           2
+ProtoId              4012
+MapX                 89
+MapY                 46
+
+MapObjType           2
+ProtoId              4012
+MapX                 88
+MapY                 46
+
+MapObjType           2
+ProtoId              4012
+MapX                 88
+MapY                 46
+
+MapObjType           2
+ProtoId              4012
+MapX                 88
+MapY                 46
+
+MapObjType           2
+ProtoId              4012
+MapX                 87
+MapY                 47
+
+MapObjType           2
+ProtoId              4012
+MapX                 87
+MapY                 47
+
+MapObjType           2
+ProtoId              4012
+MapX                 87
+MapY                 47
+
+MapObjType           2
+ProtoId              4012
+MapX                 127
+MapY                 27
+
+MapObjType           2
+ProtoId              4012
+MapX                 126
+MapY                 27
+
+MapObjType           2
+ProtoId              4012
+MapX                 125
+MapY                 28
+
+MapObjType           2
+ProtoId              4012
+MapX                 124
+MapY                 28
+
+MapObjType           2
+ProtoId              4012
+MapX                 123
+MapY                 29
+
+MapObjType           2
+ProtoId              4012
+MapX                 122
+MapY                 29
+
+MapObjType           2
+ProtoId              4012
+MapX                 121
+MapY                 30
+
+MapObjType           2
+ProtoId              4012
+MapX                 120
+MapY                 30
+
+MapObjType           2
+ProtoId              4012
+MapX                 119
+MapY                 31
+
+MapObjType           2
+ProtoId              4012
+MapX                 118
+MapY                 31
+
+MapObjType           2
+ProtoId              4012
+MapX                 117
+MapY                 32
+
+MapObjType           2
+ProtoId              4012
+MapX                 116
+MapY                 32
+
+MapObjType           2
+ProtoId              4012
+MapX                 115
+MapY                 33
+
+MapObjType           2
+ProtoId              4012
+MapX                 115
+MapY                 33
+
+MapObjType           2
+ProtoId              4012
+MapX                 115
+MapY                 33
+
+MapObjType           2
+ProtoId              4012
+MapX                 114
+MapY                 33
+
+MapObjType           2
+ProtoId              4012
+MapX                 114
+MapY                 33
+
+MapObjType           2
+ProtoId              4012
+MapX                 114
+MapY                 33
+
+MapObjType           2
+ProtoId              4012
+MapX                 113
+MapY                 34
+
+MapObjType           2
+ProtoId              4012
+MapX                 113
+MapY                 34
+
+MapObjType           2
+ProtoId              4012
+MapX                 113
+MapY                 34
+
+MapObjType           2
+ProtoId              4012
+MapX                 112
+MapY                 34
+
+MapObjType           2
+ProtoId              4012
+MapX                 112
+MapY                 34
+
+MapObjType           2
+ProtoId              4012
+MapX                 112
+MapY                 34
+
+MapObjType           2
+ProtoId              4012
+MapX                 111
+MapY                 35
+
+MapObjType           2
+ProtoId              4012
+MapX                 111
+MapY                 35
+
+MapObjType           2
+ProtoId              4012
+MapX                 111
+MapY                 35
+
+MapObjType           2
+ProtoId              4012
+MapX                 110
+MapY                 35
+
+MapObjType           2
+ProtoId              4012
+MapX                 110
+MapY                 35
+
+MapObjType           2
+ProtoId              4012
+MapX                 110
+MapY                 35
+
+MapObjType           2
+ProtoId              4012
+MapX                 109
+MapY                 36
+
+MapObjType           2
+ProtoId              4012
+MapX                 109
+MapY                 36
+
+MapObjType           2
+ProtoId              4012
+MapX                 109
+MapY                 36
+
+MapObjType           2
+ProtoId              4012
+MapX                 108
+MapY                 36
+
+MapObjType           2
+ProtoId              4012
+MapX                 108
+MapY                 36
+
+MapObjType           2
+ProtoId              4012
+MapX                 108
+MapY                 36
+
+MapObjType           2
+ProtoId              4012
+MapX                 107
+MapY                 37
+
+MapObjType           2
+ProtoId              4012
+MapX                 128
+MapY                 27
+
+MapObjType           2
+ProtoId              4012
+MapX                 128
+MapY                 28
+
+MapObjType           2
+ProtoId              4012
+MapX                 129
+MapY                 29
+
+MapObjType           2
+ProtoId              4012
+MapX                 129
+MapY                 30
+
+MapObjType           2
+ProtoId              4012
+MapX                 130
+MapY                 30
+
+MapObjType           2
+ProtoId              4012
+MapX                 130
+MapY                 31
+
+MapObjType           2
+ProtoId              4012
+MapX                 131
+MapY                 32
+
+MapObjType           2
+ProtoId              4012
+MapX                 131
+MapY                 33
+
+MapObjType           2
+ProtoId              4012
+MapX                 132
+MapY                 33
+
+MapObjType           2
+ProtoId              4012
+MapX                 132
+MapY                 34
+
+MapObjType           2
+ProtoId              4012
+MapX                 133
+MapY                 35
+
+MapObjType           2
+ProtoId              4012
+MapX                 134
+MapY                 36
+
+MapObjType           2
+ProtoId              4012
+MapX                 134
+MapY                 37
+
+MapObjType           2
+ProtoId              4012
+MapX                 135
+MapY                 38
+
+MapObjType           2
+ProtoId              4012
+MapX                 135
+MapY                 39
+
+MapObjType           2
+ProtoId              4012
+MapX                 136
+MapY                 39
+
+MapObjType           2
+ProtoId              4012
+MapX                 136
+MapY                 40
+
+MapObjType           2
+ProtoId              4012
+MapX                 137
+MapY                 41
+
+MapObjType           2
+ProtoId              4012
+MapX                 137
+MapY                 42
+
+MapObjType           2
+ProtoId              4012
+MapX                 133
+MapY                 36
+
+MapObjType           2
+ProtoId              4012
+MapX                 138
+MapY                 42
+
+MapObjType           2
+ProtoId              4012
+MapX                 139
+MapY                 44
+
+MapObjType           2
+ProtoId              4012
+MapX                 139
+MapY                 45
+
+MapObjType           2
+ProtoId              4012
+MapX                 140
+MapY                 45
+
+MapObjType           2
+ProtoId              4012
+MapX                 140
+MapY                 46
+
+MapObjType           2
+ProtoId              4012
+MapX                 141
+MapY                 47
+
+MapObjType           2
+ProtoId              4012
+MapX                 141
+MapY                 48
+
+MapObjType           2
+ProtoId              4012
+MapX                 142
+MapY                 48
+
+MapObjType           2
+ProtoId              4012
+MapX                 142
+MapY                 49
+
+MapObjType           2
+ProtoId              4012
+MapX                 138
+MapY                 43
+
+MapObjType           2
+ProtoId              4012
+MapX                 143
+MapY                 51
+
+MapObjType           2
+ProtoId              4012
+MapX                 144
+MapY                 51
+
+MapObjType           2
+ProtoId              4012
+MapX                 144
+MapY                 52
+
+MapObjType           2
+ProtoId              4012
+MapX                 145
+MapY                 53
+
+MapObjType           2
+ProtoId              4012
+MapX                 145
+MapY                 54
+
+MapObjType           2
+ProtoId              4012
+MapX                 146
+MapY                 54
+
+MapObjType           2
+ProtoId              4012
+MapX                 143
+MapY                 50
+
+MapObjType           2
+ProtoId              4012
+MapX                 147
+MapY                 55
+
+MapObjType           2
+ProtoId              4012
+MapX                 148
+MapY                 55
+
+MapObjType           2
+ProtoId              4012
+MapX                 149
+MapY                 56
+
+MapObjType           2
+ProtoId              4012
+MapX                 150
+MapY                 56
+
+MapObjType           2
+ProtoId              4012
+MapX                 151
+MapY                 57
+
+MapObjType           2
+ProtoId              4012
+MapX                 156
+MapY                 59
+
+MapObjType           2
+ProtoId              4012
+MapX                 157
+MapY                 60
+
+MapObjType           2
+ProtoId              4012
+MapX                 158
+MapY                 60
+
+MapObjType           2
+ProtoId              4012
+MapX                 153
+MapY                 58
+
+MapObjType           2
+ProtoId              4012
+MapX                 155
+MapY                 59
+
+MapObjType           2
+ProtoId              4012
+MapX                 154
+MapY                 58
+
+MapObjType           2
+ProtoId              4012
+MapX                 152
+MapY                 57
+
+MapObjType           2
+ProtoId              4012
+MapX                 163
+MapY                 63
+
+MapObjType           2
+ProtoId              4012
+MapX                 164
+MapY                 63
+
+MapObjType           2
+ProtoId              4012
+MapX                 165
+MapY                 64
+
+MapObjType           2
+ProtoId              4012
+MapX                 160
+MapY                 61
+
+MapObjType           2
+ProtoId              4012
+MapX                 162
+MapY                 62
+
+MapObjType           2
+ProtoId              4012
+MapX                 161
+MapY                 62
+
+MapObjType           2
+ProtoId              4012
+MapX                 159
+MapY                 61
+
+MapObjType           2
+ProtoId              4012
+MapX                 174
+MapY                 143
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 143
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 142
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 141
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 140
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 139
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 138
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 137
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 136
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 134
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 135
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 125
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 127
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 128
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 129
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 130
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 131
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 132
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 133
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 134
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 126
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 106
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 107
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 108
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 109
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 110
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 111
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 112
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 113
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 114
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 115
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 115
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 116
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 117
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 118
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 119
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 120
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 121
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 122
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 123
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 124
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 85
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 86
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 87
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 88
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 89
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 90
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 91
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 92
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 93
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 94
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 94
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 95
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 96
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 97
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 98
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 99
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 100
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 101
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 102
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 103
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 104
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 105
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 76
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 77
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 78
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 79
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 80
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 81
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 82
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 83
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 84
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 84
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 75
+
+MapObjType           2
+ProtoId              4012
+MapX                 166
+MapY                 64
+
+MapObjType           2
+ProtoId              4012
+MapX                 168
+MapY                 65
+
+MapObjType           2
+ProtoId              4012
+MapX                 167
+MapY                 65
+
+MapObjType           2
+ProtoId              4012
+MapX                 169
+MapY                 66
+
+MapObjType           2
+ProtoId              4012
+MapX                 170
+MapY                 66
+
+MapObjType           2
+ProtoId              4012
+MapX                 171
+MapY                 67
+
+MapObjType           2
+ProtoId              4012
+MapX                 172
+MapY                 67
+
+MapObjType           2
+ProtoId              4012
+MapX                 173
+MapY                 68
+
+MapObjType           2
+ProtoId              4012
+MapX                 174
+MapY                 68
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 69
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 71
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 72
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 73
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 74
+
+MapObjType           2
+ProtoId              4012
+MapX                 175
+MapY                 70
+
+MapObjType           0
+ProtoId              439
+MapX                 123
+MapY                 85
+Dir                  2
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  22
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  78
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
+
+MapObjType           1
+ProtoId              214
+MapX                 123
+MapY                 82
+
+MapObjType           2
+ProtoId              4031
+MapX                 95
+MapY                 54
+
+MapObjType           2
+ProtoId              4031
+MapX                 92
+MapY                 55
+
+MapObjType           2
+ProtoId              4031
+MapX                 89
+MapY                 57
+
+MapObjType           2
+ProtoId              4031
+MapX                 86
+MapY                 58
+
+MapObjType           2
+ProtoId              4031
+MapX                 98
+MapY                 52
+
+MapObjType           2
+ProtoId              4031
+MapX                 97
+MapY                 51
+
+MapObjType           2
+ProtoId              4031
+MapX                 94
+MapY                 52
+
+MapObjType           2
+ProtoId              4031
+MapX                 91
+MapY                 54
+
+MapObjType           2
+ProtoId              4031
+MapX                 88
+MapY                 55
+
+MapObjType           2
+ProtoId              4031
+MapX                 85
+MapY                 57
+
+MapObjType           2
+ProtoId              4031
+MapX                 96
+MapY                 49
+
+MapObjType           2
+ProtoId              4031
+MapX                 93
+MapY                 51
+
+MapObjType           2
+ProtoId              4031
+MapX                 90
+MapY                 52
+
+MapObjType           2
+ProtoId              4031
+MapX                 87
+MapY                 54
+
+MapObjType           2
+ProtoId              4031
+MapX                 84
+MapY                 55
+
+MapObjType           2
+ProtoId              4031
+MapX                 95
+MapY                 42
+OffsetX              74
+OffsetY              43
+
+MapObjType           2
+ProtoId              4031
+MapX                 87
+MapY                 46
+OffsetX              74
+OffsetY              43
+
+MapObjType           2
+ProtoId              4031
+MapX                 84
+MapY                 47
+OffsetX              74
+OffsetY              43
+
+MapObjType           2
+ProtoId              4031
+MapX                 81
+MapY                 49
+OffsetX              74
+OffsetY              43
+
+MapObjType           2
+ProtoId              4031
+MapX                 83
+MapY                 54
+
+MapObjType           2
+ProtoId              4037
+MapX                 100
+MapY                 48
+
+MapObjType           2
+ProtoId              4037
+MapX                 100
+MapY                 44
+
+MapObjType           2
+ProtoId              4037
+MapX                 98
+MapY                 46
+
+MapObjType           2
+ProtoId              4037
+MapX                 98
+MapY                 42
+
+MapObjType           2
+ProtoId              4035
+MapX                 83
+MapY                 59
+
+MapObjType           2
+ProtoId              4035
+MapX                 83
+MapY                 57
+
+MapObjType           2
+ProtoId              4035
+MapX                 81
+MapY                 55
+
+MapObjType           2
+ProtoId              4035
+MapX                 79
+MapY                 57
+
+MapObjType           2
+ProtoId              4035
+MapX                 79
+MapY                 59
+
+MapObjType           2
+ProtoId              4035
+MapX                 77
+MapY                 55
+
+MapObjType           2
+ProtoId              4035
+MapX                 75
+MapY                 57
+
+MapObjType           2
+ProtoId              4035
+MapX                 75
+MapY                 59
+
+MapObjType           2
+ProtoId              4035
+MapX                 75
+MapY                 55
+
+MapObjType           2
+ProtoId              4031
+MapX                 95
+MapY                 49
+
+MapObjType           2
+ProtoId              4031
+MapX                 92
+MapY                 50
+
+MapObjType           2
+ProtoId              4031
+MapX                 86
+MapY                 53
+
+MapObjType           2
+ProtoId              4031
+MapX                 89
+MapY                 52
+
+MapObjType           2
+ProtoId              4031
+MapX                 97
+MapY                 46
+
+MapObjType           2
+ProtoId              4031
+MapX                 94
+MapY                 47
+
+MapObjType           2
+ProtoId              4031
+MapX                 91
+MapY                 49
+
+MapObjType           2
+ProtoId              4031
+MapX                 88
+MapY                 50
+
+MapObjType           2
+ProtoId              4031
+MapX                 85
+MapY                 52
+
+MapObjType           2
+ProtoId              4031
+MapX                 82
+MapY                 53
+
+MapObjType           2
+ProtoId              4037
+MapX                 100
+MapY                 42
+
+MapObjType           2
+ProtoId              4031
+MapX                 90
+MapY                 44
+OffsetX              74
+OffsetY              43
+
+MapObjType           2
+ProtoId              4031
+MapX                 92
+MapY                 43
+OffsetX              74
+OffsetY              43
+
+MapObjType           2
+ProtoId              4031
+MapX                 76
+MapY                 53
+
+MapObjType           2
+ProtoId              4031
+MapX                 79
+MapY                 52
+
+MapObjType           2
+ProtoId              4031
+MapX                 82
+MapY                 50
+
+MapObjType           2
+ProtoId              4031
+MapX                 94
+MapY                 44
+
+MapObjType           2
+ProtoId              4031
+MapX                 91
+MapY                 46
+
+MapObjType           2
+ProtoId              4031
+MapX                 88
+MapY                 47
+
+MapObjType           2
+ProtoId              4031
+MapX                 85
+MapY                 49
+
+MapObjType           2
+ProtoId              4031
+MapX                 78
+MapY                 54
+
+MapObjType           2
+ProtoId              3853
+MapX                 89
+MapY                 64
+Scenery_ToDir        2
+
+MapObjType           2
+ProtoId              3853
+MapX                 94
+MapY                 61
+Scenery_ToDir        2
+
+MapObjType           2
+ProtoId              3853
+MapX                 98
+MapY                 56
 Scenery_ToDir        2
 
 

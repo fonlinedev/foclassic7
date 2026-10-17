@@ -1,0 +1,16 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 &
+
+[engl]
+{100}{}{Kalnor}
+{200}{}{Gate guard for Junktown.
+}
+{1000}{}{Predialogue installations}
+

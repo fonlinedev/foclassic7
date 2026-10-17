@@ -77,6 +77,11 @@
 {135}{}{01hub}
 {136}{}{gntlwin1:25, gntlwind:25, brdchir1:10, brdchirp:10, blank:30}
 
+# Map 13, base 140
+{140}{}{Boneyard Downtown}
+{145}{}{10labone}
+{146}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
+
 # Map 14, base 150
 {150}{}{Mountains Encounter Khans 3}
 {155}{}{07desert}
@@ -84,12 +89,27 @@
 {155}{}{12junktn}
 {156}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
+# Map 15, base 160
+{160}{}{Boneyard Library}
+{165}{}{10labone}
+{166}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
+
+# Map 16, base 170
+{170}{}{Deathclawn Warehouse}
+{175}{}{10labone}
+{176}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
+
 # Map 17, base 180
 {180}{}{Desert Encounter Khans 4}
 {185}{}{07desert}
 {185}{}{05raider}
 {185}{}{12junktn}
 {186}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
+
+# Map 18, base 190
+{190}{}{Fortress}
+{195}{}{10labone}
+{196}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
 # Map 23, base 240
 {240}{}{LA Warehouse}
@@ -1631,7 +1651,7 @@
 # Cathedral, pid 11, base 111000
 {111000}{}{Cathedral}
 {111005}{}{An old Cathedral among city ruins, lighted up by burning barrels. People are wandering outside in a large crowd.}
-{111010}{}{6}
+{111010}{}{12}
 {111020}{}{art\intrface\twnmap11.frm}
 {111030}{}{art\intrface\wm_cathedral.frm}
 {111090}{}{1}
@@ -1767,10 +1787,10 @@
 {125152}{}{118}
 {125153}{}{59}
 
-# New Adytum, pid 26, base 126000
-{126000}{}{New Adytum}
+# Boneyard, pid 26, base 126000
+{126000}{}{Boneyard}
 {126005}{}{Amongst decimated skyscrapers lies the small industrial town named New Adytum.}
-{126010}{}{12}
+{126010}{}{20}
 {126020}{}{art\intrface\Twnmap10.frm}
 {126030}{}{art\intrface\Wm_10.frm}
 {126090}{}{1}

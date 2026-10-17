@@ -119,7 +119,9 @@ void InitGreet() {
 
     //  Junktown
     AddGreet(MAP_JunktownSouth, "Junktown");
-    
+    AddGreet(MAP_Junktownhotel, "Crash House");
+    AddGreet(MAP_DocMorbidSecretLab, "Doc Morbid Secret Lab");
+    AddGreet(MAP_JunktownNorth, "Gizmo's Casino");
 
 
     //  Den
