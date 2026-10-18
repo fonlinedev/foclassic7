@@ -14,8 +14,10 @@
 #include "patrolling.fos"
 #include "guard_h.fos"
 #include "world_common_h.fos"
+#include "dialog.fos"
 
 #define DIALOG_ID                (1700)
+#define KALNOR_DIALOG_ID         (1726)
 
 import void NpcSetLevel(Critter& npc, int level) from "parameters";
 
@@ -50,13 +52,13 @@ void _Idle(Critter& guard)
 
     if(guard.Stat[ST_NPC_ROLE] == ROLE_JNK_GUARD_1)
     {
-        _GetNextNode(guard, 17)         // Route 17 as defined in patrolroutes.fos
+        // _GetNextNode(guard, 17)         // Route 17 as defined in patrolroutes.fos
     }
 
     if(IsPatrolling(guard))
     {
-        AddWalkPlane(guard, 0, node.GetX(), node.GetY(), node.GetDir(), false, 0);
-        AddWaitPlan(guard, node.GetWait());
+        //AddWalkPlane(guard, 0, node.GetX(), node.GetY(), node.GetDir(), false, 0);
+        //AddWaitPlan(guard, node.GetWait());
     }
 
 }
@@ -68,25 +70,33 @@ void _OnSomeoneSteal(Critter& guard, Critter& target, Critter& thief, bool succe
 
 void _OnMessage(Critter& npc, Critter& player, int num, int val)
 {
+    int rep = player.ReputationBase[FACTION_JUNKTOWN];    
+    Log("guard receiving message "+ num + " player rep: "+rep);
     GuardOnMessage(npc, player, num, val);
-
+    bool armed = d_IsArmed(player, npc);
+    if(!armed)
+        return;
+        
     switch(num)
     {
 
-    case MSG_JNK_PLAYER_ENTRANCE:
-        //if(IsNight() && npc.Stat[ST_NPC_ROLE] == ROLE_JNK_GUARD_GATE && GetGroupIndex(player) != FACTION_NONE)
-            npc.SayMsg(SAY_NORM_ON_HEAD, TEXTMSG_DLG, DLGSTR(DIALOG_ID, STR_ENTRANCE_NIGHT));
-        //else
-		if(npc.Stat[ST_NPC_ROLE] == ROLE_JNK_GUARD_GATE)
-            npc.SayMsg(SAY_NORM_ON_HEAD, TEXTMSG_DLG, DLGSTR(DIALOG_ID, STR_ENTRANCE_WELCOME));
+    case MSG_JNK_PLAYER_ENTRANCE:       
+		if(npc.Stat[ST_NPC_ROLE] == ROLE_JNK_GUARD_GATE) {
+            player.Wait(0);
+            Log("open dialog with player");
+            RunDialog(player, npc, KALNOR_DIALOG_ID, true);
+        }            
         break;
 
     case MSG_JNK_PLAYER_ENTRANCE_ENTER:
-        if(IsNight() && npc.Stat[ST_NPC_ROLE] == ROLE_JNK_GUARD_GATE && GetGroupIndex(player) != FACTION_NONE)
+        if(armed && npc.Stat[ST_NPC_ROLE] == ROLE_JNK_GUARD_GATE)
         {
+            Log("attack the player");
+            player.Wait(0);
             player.SendMessage(MSG_ATTACK_ME, 0, SENDMESSAGE_TO_VISIBLE_ME);
             npc.SayMsg(SAY_NORM_ON_HEAD, TEXTMSG_DLG, DLGSTR(DIALOG_ID, STR_ENTR_COMBAT_TAUNT));
-        }
+        }        
+        break;
     }
 }
 

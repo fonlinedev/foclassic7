@@ -420,7 +420,7 @@ bool start()
 //    InitAmmoLog();
     InitCaveLog();    
     InitCompanions();
-    // InitCaravans();     // Uncomment if you want to have one caravan running Hub-Adytum-Lost Hills
+    InitCaravans();     // Uncomment if you want to have one caravan running Hub-Adytum-Lost Hills
     // reputations, alliances
     InitGroups();
     // scenariooos
