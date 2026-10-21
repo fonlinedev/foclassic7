@@ -1,0 +1,82 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+0 2010 #
+3 2020 #
+4 2030 @
+3 3000 None 0 #
+5 3010 #
+6 3020 @
+5 4000 None 0 #
+0 4010 #
+7 4020 #
+8 4030 @
+7 5000 None 0 #
+0 5010 @
+8 6000 None 0 #
+9 6010 #
+10 6020 @
+9 7000 None 0 #
+0 7010 #
+11 7020 @
+11 8000 None 0 #
+0 8010 @
+10 9000 None 0 #
+0 9010 @
+6 10000 None 0 #
+0 10010 @
+4 11000 None 0 #
+0 11010 &
+
+[engl]
+{100}{}{Peasant}
+{200}{}{You see a Junktown peasant.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> PeasantC00]}
+{2000}{}{I hope you're not going to kick me out of here.}
+{2010}{}{No.}
+{2020}{}{That's a strange way to start a conversation.}
+{2030}{}{Hnnn.}
+{3000}{}{[MANUAL: add NPC dialogue for diagram node 'PeasantC00a']}
+{3010}{}{[MANUAL: add player response/transition -> PeasantC03]}
+{3020}{}{[MANUAL: add player response/transition -> PeasantC02]}
+{4000}{}{Well, it's true. After what happened to my friends, I gotta protect my turf. I just hope
+you're not gonna kill me.}
+{4010}{}{No.}
+{4020}{}{No, I won't hurt you. Much.}
+{4030}{}{Why do you say that?}
+{5000}{}{Gack!}
+{5010}{}{[Done.]}
+{6000}{}{[MANUAL: add NPC dialogue for diagram node 'PeasantC03a']}
+{6010}{}{[MANUAL: add player response/transition -> PeasantC06]}
+{6020}{}{[MANUAL: add player response/transition -> PeasantC05]}
+{7000}{}{Those 'helpful' healing guys wanted my friend's place, so they took it. I don't know
+what happened to my friends.
+---
+There's nobody around to help me.
+---
+Gizmo laughed at me when I asked for his help.
+---
+Killian is too busy cleaning up Gizmo's mess to help.
+---
+And Killian is too busy to help me.}
+{7010}{}{That's a shame.}
+{7020}{}{Are you safe?}
+{8000}{}{I hope so, I really hope so.}
+{8010}{}{[Done.]}
+{9000}{}{No reason. Really.}
+{9010}{}{[Done.]}
+{10000}{}{Well, you gotta be careful these days. I hope you're having a better life than I am.}
+{10010}{}{[Done.]}
+{11000}{}{Oh, well, if you want to stay a while, go right ahead. I think we are safe here.}
+{11010}{}{[Done.]}
+

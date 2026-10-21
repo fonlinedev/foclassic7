@@ -1,0 +1,256 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+5 1010 @
+2 2000 None 0 #
+13 2010 @
+13 3000 None 0 #
+0 3010 @
+3 4000 None 0 #
+0 4010 @
+4 5000 None 0 #
+0 5010 @
+5 6000 None 0 #
+14 6010 #
+14 6020 #
+15 6030 #
+16 6040 #
+17 6050 @
+14 7000 None 0 #
+21 7010 #
+22 7020 @
+21 8000 None 0 #
+25 8010 #
+26 8020 @
+25 9000 None 0 #
+28 9010 @
+28 10000 None 0 #
+26 10010 #
+33 10020 @
+26 11000 None 0 #
+29 11010 @
+29 12000 None 0 #
+0 12010 @
+33 13000 None 0 #
+35 13010 @
+35 14000 None 0 #
+0 14010 @
+22 15000 None 0 #
+27 15010 @
+27 16000 None 0 #
+30 16010 #
+30 16020 #
+31 16030 #
+32 16040 #
+32 16050 @
+30 17000 None 0 #
+29 17010 #
+34 17020 @
+34 18000 None 0 #
+0 18010 @
+31 19000 None 0 #
+0 19010 @
+32 20000 None 0 #
+0 20010 @
+15 21000 None 0 #
+23 21010 @
+23 22000 None 0 #
+0 22010 @
+16 23000 None 0 #
+0 23010 @
+17 24000 None 0 #
+14 24010 #
+16 24020 #
+24 24030 @
+24 25000 None 0 #
+14 25010 #
+16 25020 @
+6 26000 None 0 #
+14 26010 #
+14 26020 #
+14 26030 #
+15 26040 @
+7 27000 None 0 #
+18 27010 @
+18 28000 None 0 #
+0 28010 @
+8 29000 None 0 #
+18 29010 @
+9 30000 None 0 #
+14 30010 #
+14 30020 #
+15 30030 #
+19 30040 @
+19 31000 None 0 #
+0 31010 @
+10 32000 None 0 #
+14 32010 #
+14 32020 #
+19 32030 @
+11 33000 None 0 #
+14 33010 #
+14 33020 #
+14 33030 #
+20 33040 #
+15 33050 @
+20 34000 None 0 #
+0 34010 @
+12 35000 None 0 #
+14 35010 #
+14 35020 #
+14 35030 #
+20 35040 &
+
+[engl]
+{100}{}{Morbid}
+{200}{}{You see Doc Morbid.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> Morbid17]}
+{2000}{}{Now, half of what you have just seen is mine again.}
+{2010}{}{YOU RIPPED OUT MY EYE! YOU MOTHER . . .}
+{3000}{}{Now, now. Watch your language.}
+{3010}{}{[Done.]}
+{4000}{}{Trespasser! This is a private room!}
+{4010}{}{[Done.]}
+{5000}{}{Don't try to talk your way out of this one!}
+{5010}{}{[Done.]}
+{6000}{}{Oh, It's a customer! What can I help you with?}
+{6010}{}{I need healing.}
+{6020}{}{Wock!}
+{6030}{}{I know about you and Iguana Bob, you filthy butcher.}
+{6040}{}{Nothing, just making small talk.}
+{6050}{}{You seem exited to see me. Why?}
+{7000}{}{Hmm, lets have a look.}
+{7010}{}{[MANUAL: add player response/transition -> Morbid04]}
+{7020}{}{[MANUAL: add player response/transition -> Morbid09]}
+{8000}{}{You seem to be in nearly perfect health. That will be $10 for the examination.}
+{8010}{}{Ten caps for you to tell me that? You gotta be kidding.}
+{8020}{}{Here you go. Take your money.}
+{9000}{}{[MANUAL: add NPC dialogue for diagram node 'Morbid04a']}
+{9010}{}{[MANUAL: add player response/transition -> Morbid05]}
+{10000}{}{I never joke. Especially when it comes to physical trauma. You will pay or I'll have to
+resort to other forms of compensation, many of which are much more painful then just
+paying my fee.}
+{10010}{}{Ok, here's your money.}
+{10020}{}{Bite me. I'm leaving.}
+{11000}{}{Thank you for your business. Come again.}
+{11010}{}{[MANUAL: add player response/transition -> Morbid08]}
+{12000}{}{You do not have enough money. I have a very special way of dealing with debtors - I
+don't. Flash and Cougar, take our new found source of income to the lab for processing.}
+{12010}{}{[Done.]}
+{13000}{}{[MANUAL: add NPC dialogue for diagram node 'Morbid05a']}
+{13010}{}{[MANUAL: add player response/transition -> Morbid06]}
+{14000}{}{Have it your way. Cougar, Flash. Show our 'patient' to the lab.}
+{14010}{}{[Done.]}
+{15000}{}{You are
+---
+perfectly healthy,
+---
+slightly wounded,
+---
+moderately wounded,
+---
+seriously wounded,
+---
+near death,
+---
+You have minor radiation poisoning.
+---
+You have some serious radiation poisoning.
+---
+Your body has absorbed an incredible amount of radiation.
+---
+I have never seen such readings on my radscanner. I think you are about to die. I give
+you two to three weeks.
+---
+There is not much I can do about it.
+---
+Ok, I have your test results:}
+{15010}{}{[MANUAL: add player response/transition -> Morbid09a]}
+{16000}{}{The total cost will be $
+---
+. Payment is due before treatment. No exceptions. Will you pay?}
+{16010}{}{Yes, I will pay.}
+{16020}{}{Ya.}
+{16030}{}{No, I don't have the money. Will you float me?}
+{16040}{}{No.}
+{16050}{}{Nuh.}
+{17000}{}{Excellent. Let's begin. This might hurt a little . . .
+---
+There you go. Come back again!}
+{17010}{}{[MANUAL: add player response/transition -> Morbid08]}
+{17020}{}{[MANUAL: add player response/transition -> UpReact]}
+{18000}{}{[MANUAL: add NPC dialogue for diagram node 'UpReact']}
+{18010}{}{[Done.]}
+{19000}{}{No. I don't loan anyone, and I mean anyone, any amount of money. Go away, you pauper.}
+{19010}{}{[Done.]}
+{20000}{}{It's your life. Good-Bye.}
+{20010}{}{[Done.]}
+{21000}{}{Wh . . . what could you possibly mean?}
+{21010}{}{I had a little conversation with your troll . . .}
+{22000}{}{[He looks shiftily from side to side] That proves nothing. Gretch is a little . . . slow
+in the head. No one listens to him around here. You had best leave.}
+{22010}{}{[Done.]}
+{23000}{}{Well, if you do need anything, please stop by. No one can beat my service!}
+{23010}{}{[Done.]}
+{24000}{}{My business has dropped off recently. I'm happy to see any customers, these days. Not
+that I mind your company, of course.}
+{24010}{}{Excellent, I need some healing.}
+{24020}{}{Of course, I understand. Have a good day.}
+{24030}{}{Why has your business dropped off?}
+{25000}{}{In case you haven't noticed, I got some competition.
+---
+Complaining to Killian won't do anything. He doesn't see anything wrong with the
+newcomers.
+---
+Those damn Children have moved in next door, and all, um, much of my business has gone
+to them. I don't like it, but I can't lower my prices to match theirs. I can only
+provide better service.}
+{25010}{}{Ahh, I do need some healing.}
+{25020}{}{Hmm, better prices, interesting. Thank you.}
+{26000}{}{Ahh, a repeat customer. Excellent these days! How can I help you?}
+{26010}{}{I need healing.}
+{26020}{}{Nothing, just making small talk.}
+{26030}{}{Wock!}
+{26040}{}{I know about you and Iguana Bob, you filthy butcher.}
+{27000}{}{You again. I hope you have another good reason for disturbing me . . .}
+{27010}{}{Aggh!}
+{28000}{}{I'm sorry, I don't treat idiots at night. Something about full moons and lunacy, I
+suppose. Have a good night.}
+{28010}{}{[Done.]}
+{29000}{}{I hope you have a good reason for disturbing me. My time is extremely valuable.}
+{29010}{}{Aggh!}
+{30000}{}{Oh, back so soon. What can I help you with?}
+{30010}{}{I need healing.}
+{30020}{}{Wock!}
+{30030}{}{I know about you and Iguana Bob, you filthy butcher.}
+{30040}{}{Nothing, just making small talk.}
+{31000}{}{Please make it somewhere else, I'm busy.}
+{31010}{}{[Done.]}
+{32000}{}{Oh, It's you again. I like your style, even if I don't like you. What can I help you
+with, now?}
+{32010}{}{I need healing.}
+{32020}{}{Wock!}
+{32030}{}{Nothing, just making small talk.}
+{33000}{}{I'm Doc Morbid, can I help you?}
+{33010}{}{Yeah, I need some help.}
+{33020}{}{I need some medical assistance.}
+{33030}{}{Ya.}
+{33040}{}{No, not today.}
+{33050}{}{I know about you and Iguana Bob, you filthy butcher.}
+{34000}{}{Well, if not today, then perhaps sometime in the near future.}
+{34010}{}{Hopefully not. Bye.}
+{35000}{}{Hmmm. I don't like your looks, stranger. But what can I do for you? I never, ever turn
+away a paying customer.}
+{35010}{}{I need some help.}
+{35020}{}{I need some medical assistance.}
+{35030}{}{Hep.}
+{35040}{}{Nothing today, thanks.}
+

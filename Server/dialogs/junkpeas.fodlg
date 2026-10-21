@@ -1,0 +1,18 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 &
+
+[engl]
+{100}{}{none}
+{1000}{}{Predialogue installations}
+{100000001}{}{I'm busy. Leave me alone.}
+{100000002}{}{Where did I put that thing . . .}
+{100000003}{}{What are you doing here?}
+{100000004}{}{Ain't Junktown a sight for sore eyes?}
+

@@ -1,0 +1,254 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+0 2010 @
+3 3000 None 0 #
+8 3010 #
+9 3020 #
+10 3030 #
+11 3040 @
+8 4000 None 0 #
+0 4010 @
+9 5000 None 0 #
+19 5010 @
+19 6000 None 0 #
+0 6010 @
+10 7000 None 0 #
+0 7010 @
+11 8000 None 0 #
+20 8010 #
+21 8020 @
+20 9000 None 0 #
+31 9010 @
+31 10000 None 0 #
+32 10010 @
+32 11000 None 0 #
+0 11010 @
+21 12000 None 0 #
+0 12010 @
+4 13000 None 0 #
+0 13010 #
+12 13020 #
+13 13030 @
+12 14000 None 0 #
+0 14010 @
+13 15000 None 0 #
+22 15010 #
+23 15020 @
+22 16000 None 0 #
+32 16010 @
+23 17000 None 0 #
+0 17010 @
+5 18000 None 0 #
+14 18010 #
+15 18020 @
+14 19000 None 0 #
+24 19010 #
+25 19020 @
+24 20000 None 0 #
+0 20010 @
+25 21000 None 0 #
+33 21010 #
+34 21020 @
+33 22000 None 0 #
+0 22010 @
+34 23000 None 0 #
+0 23010 @
+15 24000 None 0 #
+26 24010 @
+26 25000 None 0 #
+35 25010 #
+36 25020 @
+35 26000 None 0 #
+0 26010 @
+36 27000 None 0 #
+0 27010 @
+6 28000 None 0 #
+16 28010 @
+16 29000 None 0 #
+27 29010 #
+28 29020 #
+29 29030 #
+30 29040 @
+27 30000 None 0 #
+0 30010 @
+28 31000 None 0 #
+37 31010 #
+38 31020 @
+37 32000 None 0 #
+27 32010 #
+0 32020 @
+38 33000 None 0 #
+0 33010 @
+29 34000 None 0 #
+27 34010 #
+39 34020 @
+39 35000 None 0 #
+0 35010 @
+30 36000 None 0 #
+40 36010 #
+41 36020 @
+40 37000 None 0 #
+0 37010 @
+41 38000 None 0 #
+40 38010 #
+42 38020 @
+42 39000 None 0 #
+43 39010 #
+44 39020 @
+43 40000 None 0 #
+27 40010 #
+0 40020 @
+44 41000 None 0 #
+27 41010 #
+45 41020 @
+45 42000 None 0 #
+27 42010 #
+0 42020 @
+7 43000 None 0 #
+17 43010 #
+18 43020 #
+18 43030 @
+17 44000 None 0 #
+0 44010 @
+18 45000 None 0 #
+0 45010 &
+
+[engl]
+{100}{}{Jtraider}
+{200}{}{You see a raider who seems crazed.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> Raider34]}
+{2000}{}{You just cost this whore her life!}
+{2010}{}{[MANUAL: add player response/transition -> RaiderSnap]}
+{3000}{}{That's it! Don't come any closer. I'll off her. I swear.}
+{3010}{}{Nung!}
+{3020}{}{Don't do it!}
+{3030}{}{If you don't let her go, I'm gonna kill you.}
+{3040}{}{There is no need for violence. Let's talk about this.}
+{4000}{}{What? You just want to kill me, don't you? Just remember, this is your fault.}
+{4010}{}{[MANUAL: add player response/transition -> RaiderSnap]}
+{5000}{}{Any why not? She's just a whore.}
+{5010}{}{She has as much right to live as you do.}
+{6000}{}{No. No way. Not this bitch.}
+{6010}{}{[Done.]}
+{7000}{}{Oh, big man. Let's see you try. But first . . .
+---
+Oh, big woman. Let's see you try. But first . . .}
+{7010}{}{[MANUAL: add player response/transition -> RaiderSnap]}
+{8000}{}{What world do you live in? Out here in the real world, blood flows, man. Blood flows,
+and it's gonna spill all over this room if you don't get out of here.}
+{8010}{}{We can talk this over. What can I do to help?}
+{8020}{}{Ok, ok. I'm backing off. You don't have to worry about me.}
+{9000}{}{Geez, that's funny. Who says I want help?}
+{9010}{}{You do. By holding this woman hostage, you're asking for help. I can help.}
+{10000}{}{I gotta think about this. Give me a moment.}
+{10010}{}{[MANUAL: add player response/transition -> UpReact]}
+{11000}{}{[MANUAL: add NPC dialogue for diagram node 'UpReact']}
+{11010}{}{[Done.]}
+{12000}{}{Yeah. Don't try anything, or she gets it.}
+{12010}{}{[Done.]}
+{13000}{}{Just leave me alone. I hate you! You are the devil. I won't listen to you.}
+{13010}{}{Have it your way.}
+{13020}{}{You have to hear me out. Your life, and the life of the girl, depend on it.}
+{13030}{}{Just relax. I won't harm you. I just want to listen to what you have to say.}
+{14000}{}{There you go again, threatening me. Die!!}
+{14010}{}{[MANUAL: add player response/transition -> RaiderSnap]}
+{15000}{}{[MANUAL: add NPC dialogue for diagram node 'Raider17b']}
+{15010}{}{[MANUAL: add player response/transition -> Raider20]}
+{15020}{}{[MANUAL: add player response/transition -> Raider19]}
+{16000}{}{You might have a point. Prove it to me.}
+{16010}{}{[MANUAL: add player response/transition -> UpReact]}
+{17000}{}{I won't listen to you. You're just going to trick me with your words. I don't believe
+you. Go away.}
+{17010}{}{[Done.]}
+{18000}{}{Stay back . . . I don't want to hurt her, but I will.}
+{18010}{}{Don't, or I'll have to hurt you.}
+{18020}{}{Why do you want to hurt her?}
+{19000}{}{Try it, and she dies first. Now, what were you saying?}
+{19010}{}{It'll be hard to hurt her with that hole in your head.}
+{19020}{}{Ok, but you got to keep talking to me.}
+{20000}{}{What hole?}
+{20010}{}{The one I'm gonna put there right now.}
+{21000}{}{[MANUAL: add NPC dialogue for diagram node 'Raider10a']}
+{21010}{}{[MANUAL: add player response/transition -> Raider12]}
+{21020}{}{[MANUAL: add player response/transition -> Raider13]}
+{22000}{}{I'll keep talking as long as you do, but try anything tricky, and she'll take the fall.}
+{22010}{}{[Done.]}
+{23000}{}{I don't have to do anything. You got to do it, and you ain't doing so hot.}
+{23010}{}{[Done.]}
+{24000}{}{She laughed at me. They all laughed at me. I'll make 'em pay, I swear.}
+{24010}{}{I trust you. Let's work through this, ok?}
+{25000}{}{[MANUAL: add NPC dialogue for diagram node 'Raider14a']}
+{25010}{}{[MANUAL: add player response/transition -> Raider16]}
+{25020}{}{[MANUAL: add player response/transition -> Raider15]}
+{26000}{}{You sound like an all right kind of guy. No one ever wanted to help me before. I think
+we can talk some more.
+---
+You sound like an all right kind of gal. No one ever wanted to help me before. I think
+we can talk some more.}
+{26010}{}{[Done.]}
+{27000}{}{Maybe. I dunno.}
+{27010}{}{[Done.]}
+{28000}{}{Where do we go from here?}
+{28010}{}{You tell me. You're in charge.}
+{29000}{}{I want some money, and I want to get out of here peacefully. No one follows me.}
+{29010}{}{Sorry, we can't do that.}
+{29020}{}{Sure.}
+{29030}{}{No money, but you can just walk away. No one will do anything. I promise.}
+{29040}{}{Ok, but you have to let the girl go first. Show me some trust, and I'll trust you.}
+{30000}{}{You lied to me!}
+{30010}{}{[MANUAL: add player response/transition -> RaiderSnap]}
+{31000}{}{Ok. I want $100. Then we walk out of here. No one follows me, and I'll let her go when
+we get to the edge of town.}
+{31010}{}{Here's your money.}
+{31020}{}{I don't have that kind of cash on me.}
+{32000}{}{[MANUAL: add NPC dialogue for diagram node 'Raider24a']}
+{32010}{}{[MANUAL: add player response/transition -> Raider23]}
+{32020}{}{[MANUAL: add player response/transition -> safe]}
+{33000}{}{Then I guess she gets it.}
+{33010}{}{[MANUAL: add player response/transition -> RaiderSnap]}
+{34000}{}{[MANUAL: add NPC dialogue for diagram node 'Raider22a']}
+{34010}{}{[MANUAL: add player response/transition -> Raider23]}
+{34020}{}{[MANUAL: add player response/transition -> Raider26]}
+{35000}{}{That's ok, I guess.}
+{35010}{}{[MANUAL: add player response/transition -> safe]}
+{36000}{}{I don't like it. What stops you from just shooting me in the back when I walk out of
+here?}
+{36010}{}{I won't shoot you. Trust me.}
+{36020}{}{Nothing, you'll just have to believe what I say.}
+{37000}{}{No way! I don't trust you!}
+{37010}{}{[MANUAL: add player response/transition -> RaiderSnap]}
+{38000}{}{[MANUAL: add NPC dialogue for diagram node 'Raider27a']}
+{38010}{}{[MANUAL: add player response/transition -> Raider28]}
+{38020}{}{[MANUAL: add player response/transition -> Raider29]}
+{39000}{}{All right. We'll see what happens, won't we.}
+{39010}{}{Here's $100. Have a good day.}
+{39020}{}{You can leave peacefully.}
+{40000}{}{[MANUAL: add NPC dialogue for diagram node 'Raider29a']}
+{40010}{}{[MANUAL: add player response/transition -> Raider23]}
+{40020}{}{[MANUAL: add player response/transition -> safe]}
+{41000}{}{I want my money. I want $200.}
+{41010}{}{I don't have enough money.}
+{41020}{}{Here you go.}
+{42000}{}{[MANUAL: add NPC dialogue for diagram node 'Raider30a']}
+{42010}{}{[MANUAL: add player response/transition -> Raider23]}
+{42020}{}{[MANUAL: add player response/transition -> safe]}
+{43000}{}{You seem like a liar and a cheat to me.}
+{43010}{}{Feeling's mutual bud. Let the girl go.}
+{43020}{}{Why don't you pick on me instead of her? See what a real man can do.}
+{43030}{}{Why don't you pick on me instead of her? See what a real woman can do.}
+{44000}{}{No! Don't tell me what to do! You can't tell me what to do!}
+{44010}{}{[MANUAL: add player response/transition -> RaiderSnap]}
+{45000}{}{Yeah, I'm gonna show you.}
+{45010}{}{[MANUAL: add player response/transition -> RaiderCombat]}
+

@@ -1,0 +1,203 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+0 2010 @
+3 3000 None 0 #
+5 3010 #
+0 3020 #
+6 3030 #
+7 3040 @
+5 4000 None 0 #
+9 4010 #
+0 4020 #
+10 4030 #
+10 4040 #
+0 4050 @
+9 5000 None 0 #
+16 5010 #
+0 5020 #
+6 5030 #
+11 5040 @
+16 6000 None 0 #
+0 6010 #
+6 6020 #
+11 6030 #
+17 6040 #
+19 6050 @
+6 7000 None 0 #
+0 7010 #
+11 7020 #
+12 7030 @
+11 8000 None 0 #
+0 8010 #
+6 8020 @
+12 9000 None 0 #
+0 9010 #
+0 9020 #
+17 9030 #
+13 9040 @
+17 10000 None 0 #
+0 10010 @
+13 11000 None 0 #
+0 11010 #
+6 11020 #
+11 11030 #
+18 11040 @
+18 12000 None 0 #
+5 12010 @
+19 13000 None 0 #
+0 13010 #
+20 13020 #
+13 13030 #
+21 13040 #
+22 13050 @
+20 14000 None 0 #
+0 14010 #
+13 14020 #
+7 14030 @
+7 15000 None 0 #
+0 15010 #
+13 15020 #
+14 15030 #
+15 15040 @
+14 16000 None 0 #
+17 16010 @
+15 17000 None 0 #
+0 17010 #
+13 17020 #
+14 17030 @
+21 18000 None 0 #
+0 18010 #
+17 18020 #
+13 18030 @
+22 19000 None 0 #
+0 19010 #
+13 19020 @
+10 20000 None 0 #
+9 20010 #
+0 20020 #
+16 20030 @
+4 21000 None 0 #
+8 21010 #
+5 21020 @
+8 22000 None 0 #
+5 22010 #
+9 22020 #
+0 22030 &
+
+[engl]
+{100}{}{Saul}
+{200}{}{You see a tough-looking, muscular man.}
+{210}{}{You see Saul, the boxer.}
+{220}{}{He has muscles toughened by years of fighting, and a light-footed stance characteristic
+of a skilled boxer.}
+{1000}{}{error}
+{1010}{}{error}
+{2000}{}{This isn't the time or place for weapons, friend. But if you care to try me sometime in
+the ring, feel free.}
+{2010}{}{error}
+{3000}{}{You again. What now?
+---
+Hello again.}
+{3010}{}{error}
+{3020}{}{error}
+{3030}{}{error}
+{3040}{}{error}
+{4000}{}{Well, you're in the right place if you're looking for someone to pound that ugly mug of
+yours into a better shape.
+---
+I'm Saul.}
+{4010}{}{error}
+{4020}{}{error}
+{4030}{}{error}
+{4040}{}{error}
+{4050}{}{error}
+{5000}{}{error}
+{5010}{}{error}
+{5020}{}{error}
+{5030}{}{error}
+{5040}{}{error}
+{6000}{}{error}
+{6010}{}{error}
+{6020}{}{error}
+{6030}{}{error}
+{6040}{}{error}
+{6050}{}{error}
+{7000}{}{If you are just looking for supplies, you should try Killian Darkwater's store, off
+southeast of here. You can also get a night's sleep at the Crash House near here. If you
+are planning to stay a while, you might want to get a drink over at the Skum Pitt, but
+watch out for the Skulz.}
+{7010}{}{error}
+{7020}{}{error}
+{7030}{}{error}
+{8000}{}{error}
+{8010}{}{error}
+{8020}{}{error}
+{9000}{}{error}
+{9010}{}{error}
+{9020}{}{error}
+{9030}{}{error}
+{9040}{}{error}
+{10000}{}{error}
+{10010}{}{error}
+{11000}{}{error}
+{11010}{}{error}
+{11020}{}{error}
+{11030}{}{error}
+{11040}{}{error}
+{12000}{}{error}
+{12010}{}{error}
+{13000}{}{error}
+{13010}{}{error}
+{13020}{}{error}
+{13030}{}{error}
+{13040}{}{error}
+{13050}{}{error}
+{14000}{}{error}
+{14010}{}{error}
+{14020}{}{error}
+{14030}{}{error}
+{15000}{}{error}
+{15010}{}{error}
+{15020}{}{error}
+{15030}{}{error}
+{15040}{}{error}
+{16000}{}{error}
+{16010}{}{error}
+{17000}{}{error}
+{17010}{}{error}
+{17020}{}{error}
+{17030}{}{error}
+{18000}{}{error}
+{18010}{}{error}
+{18020}{}{error}
+{18030}{}{error}
+{19000}{}{error}
+{19010}{}{error}
+{19020}{}{error}
+{20000}{}{error}
+{20010}{}{error}
+{20020}{}{error}
+{20030}{}{error}
+{21000}{}{What do you want?
+---
+Yes?
+---
+My name's
+---
+. Just taking a look around.}
+{21010}{}{error}
+{21020}{}{error}
+{22000}{}{error}
+{22010}{}{error}
+{22020}{}{error}
+{22030}{}{error}
+

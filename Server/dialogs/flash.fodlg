@@ -1,0 +1,43 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _var p name_mem_npc_player = 0 D _script dialog@d_CheckDay 0  R _var p name_mem_npc_player = 1 #
+5 1020 D _var p name_mem_npc_player = 1 D _script dialog@d_CheckDay 0  #
+3 1030 D _script dialog@d_CheckNight 0  @
+2 2000 None 0 #
+7 2010 @
+3 3000 None 0 #
+4 3010 @
+4 4000 None 0 @
+5 5000 None 0 #
+5 5010 D _param p ST_INTELLECT } 3 #
+5 5020 D _param p ST_INTELLECT } 3 #
+6 5030 D _param p ST_INTELLECT < 3 @
+6 6000 None 0 @
+7 7000 None 0 &
+
+[engl]
+{100}{}{Flash}
+{200}{}{Doc Morbid's assistant, Flash.}
+{1000}{}{Predialogue installations}
+{1010}{}{1 Open}
+{1020}{}{2 Open}
+{1030}{}{Not attending}
+{2000}{}{Watch yourself around the Doc, and I won't have to get medieval on your face.}
+{2010}{}{It is very important that I see the doctor.}
+{3000}{}{We're closed. Come back later.}
+{3010}{}{When is the doctor here?}
+{4000}{}{The doc sees patients from 8 to 5. Now get outta here.}
+{5000}{}{What do you want now?}
+{5010}{}{Is the doctor available?}
+{5020}{}{I gotta see the Doc.}
+{5030}{}{Hnnn!}
+{6000}{}{Yeah, Ok. Get out.}
+{7000}{}{Yeah, Ok.}
+

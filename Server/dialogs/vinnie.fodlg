@@ -1,0 +1,184 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+0 2010 #
+6 2020 #
+7 2030 @
+6 3000 None 0 #
+0 3010 @
+7 4000 None 0 #
+0 4010 @
+3 5000 None 0 #
+8 5010 #
+9 5020 #
+10 5030 @
+8 6000 None 0 #
+0 6010 @
+9 7000 None 0 #
+15 7010 #
+8 7020 #
+0 7030 #
+6 7040 @
+15 8000 None 0 #
+0 8010 @
+10 9000 None 0 #
+0 9010 @
+4 10000 None 0 #
+11 10010 #
+0 10020 @
+11 11000 None 0 #
+16 11010 #
+17 11020 @
+16 12000 None 0 #
+0 12010 #
+19 12020 #
+20 12030 @
+19 13000 None 0 #
+3 13010 #
+14 13020 #
+8 13030 #
+23 13040 #
+24 13050 @
+14 14000 None 0 #
+0 14010 @
+23 15000 None 0 #
+0 15010 @
+24 16000 None 0 #
+0 16010 @
+20 17000 None 0 #
+17 17010 #
+19 17020 @
+17 18000 None 0 #
+13 18010 #
+0 18020 #
+0 18030 #
+21 18040 @
+13 19000 None 0 #
+0 19010 #
+15 19020 #
+18 19030 @
+18 20000 None 0 #
+0 20010 #
+22 20020 @
+22 21000 None 0 #
+0 21010 #
+25 21020 @
+25 22000 None 0 #
+0 22010 #
+26 22020 @
+26 23000 None 0 #
+0 23010 @
+21 24000 None 0 #
+14 24010 #
+19 24020 @
+5 25000 None 0 #
+12 25010 #
+13 25020 #
+11 25030 #
+14 25040 @
+12 26000 None 0 #
+0 26010 &
+
+[engl]
+{100}{}{Vinnie}
+{200}{}{You see Vinnie from the Skulz gang.}
+{210}{}{You see a young man with a tattoo and a bad attitude.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> Vinnie24]}
+{2000}{}{You ready to take out Neal?}
+{2010}{}{Yeah, let's ice the bastard.}
+{2020}{}{Nah, I got some more stuff to do.}
+{2030}{}{No way. I want out.}
+{3000}{}{Uh, all right . . . meet us later, but don't take too long.}
+{3010}{}{[Done.]}
+{4000}{}{It's too late for that, slick. When you're out, you're way out.}
+{4010}{}{[MANUAL: add player response/transition -> VinnieCombat]}
+{5000}{}{You got it?}
+{5010}{}{I had to kill Neal to get it. He cried like a little girl.}
+{5020}{}{Yep.}
+{5030}{}{No.}
+{6000}{}{That'll show that old fuck. Thanks for taking care of him for us. [Vinnie gets a tear in
+his eye.] You're a Skul, now.}
+{6010}{}{[Done.]}
+{7000}{}{Ha ha! Let that old cock suffer until we off him tonight - are you in?}
+{7010}{}{I decided I'd rather not have anything to do with scabs like you.}
+{7020}{}{[MANUAL: add player response/transition -> Vinnie22]}
+{7030}{}{Let's crush him.}
+{7040}{}{I've got some other shit to do before then - I'll meet you there.}
+{8000}{}{What?! You'll pay for that remark!}
+{8010}{}{[MANUAL: add player response/transition -> VinnieCombat]}
+{9000}{}{What are you wasting my time for?}
+{9010}{}{[Done.]}
+{10000}{}{What do you want now?}
+{10010}{}{I'd like to join you guys.}
+{10020}{}{Nothing. Sorry.}
+{11000}{}{[MANUAL: add NPC dialogue for diagram node 'Vinnie01a']}
+{11010}{}{[MANUAL: add player response/transition -> Vinnie14]}
+{11020}{}{[MANUAL: add player response/transition -> Vinnie15]}
+{12000}{}{You want to join us, huh? How do we know you're tough enough to be a Skul?}
+{12010}{}{I'll show you tough enough, you son of a bitch!}
+{12020}{}{Let me prove myself to you.}
+{12030}{}{Trust me, I'm tough enough.}
+{13000}{}{[Vinnie thinks for a second.] If you want to prove you belong in the Skulz, I want you
+to steal that old bastard's wife's ashes. Heh. [Vinnie mumbles] Let's make Neal suffer
+for his last couple of hours . . .}
+{13010}{}{I already stole it.}
+{13020}{}{Uh, I don't think I could do that.}
+{13030}{}{That won't be as tough as you might think. I already killed the bastard.}
+{13040}{}{All right, I'll do it.}
+{13050}{}{No way.}
+{14000}{}{Get out of here, you moron!}
+{14010}{}{[Done.]}
+{15000}{}{If you're hard enough to do that, mebbe you'd make a Skul after all. Bring it here once
+you've got it.}
+{15010}{}{[Done.]}
+{16000}{}{I knew you weren't Skulz material. Get the hell out of here.}
+{16010}{}{[Done.]}
+{17000}{}{[MANUAL: add NPC dialogue for diagram node 'Vinnie14a']}
+{17010}{}{[MANUAL: add player response/transition -> Vinnie15]}
+{17020}{}{[MANUAL: add player response/transition -> Vinnie16]}
+{18000}{}{[Vinnie looks at you and laughs.] I don't think so.}
+{18010}{}{What makes the Skulz so tough?}
+{18020}{}{You're right, I'll be leaving now.}
+{18030}{}{That's it. Time for you to die.}
+{18040}{}{I'll prove it to you.}
+{19000}{}{We are the one and only Junktown gang. We have the run of the streets, and we rule the
+city at night.}
+{19010}{}{Oh. Sorry. Bye.}
+{19020}{}{You couldn't run the schoolyard, Chromo.}
+{19030}{}{I thought this city was run by Gizmo after hours.}
+{20000}{}{That slob can't even stand up by himself. We're the muscle in this town. We take what we
+want.}
+{20010}{}{I see.}
+{20020}{}{You have some sort of deal with Killian?}
+{21000}{}{We don't bother Killian and he doesn't bother us as long as we keep it low-key. You get
+me?}
+{21010}{}{Yeah. Bye.}
+{21020}{}{I get it, all right. You have to hide out from him.}
+{22000}{}{We don't take that from anybody, least of all Killian! Just because he thinks he's a
+glorified sheriff doesn't mean that he controls the Skulz!}
+{22010}{}{Sorry, didn't mean to get you all riled up.}
+{22020}{}{So, he cramps your style, eh? Mine, too. In fact, I'm thinking of whacking him. You want
+in?}
+{23000}{}{You want to whack Killian? Man, you're crazy. Man, I don't know . . . all right, I'm in.}
+{23010}{}{[Done.]}
+{24000}{}{[MANUAL: add NPC dialogue for diagram node 'Vinnie15a']}
+{24010}{}{[MANUAL: add player response/transition -> Vinnie04]}
+{24020}{}{[MANUAL: add player response/transition -> Vinnie16]}
+{25000}{}{You're on Skulz turf, stranger. You'd better talk quick.}
+{25010}{}{Sorry, wrong room.}
+{25020}{}{Skulz? Who are you guys?}
+{25030}{}{I'd like to join you guys.}
+{25040}{}{Urgh?}
+{26000}{}{Yeah, you bet this is the wrong room!}
+{26010}{}{[Done.]}
+

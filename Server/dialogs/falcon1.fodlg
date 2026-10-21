@@ -1,0 +1,128 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+3 2010 #
+4 2020 #
+5 2030 #
+6 2040 #
+7 2050 @
+3 3000 None 0 #
+8 3010 #
+9 3020 @
+8 4000 None 0 #
+12 4010 #
+13 4020 @
+12 5000 None 0 #
+0 5010 @
+13 6000 None 0 #
+16 6010 @
+16 7000 None 0 #
+3 7010 #
+4 7020 #
+5 7030 #
+6 7040 #
+7 7050 @
+4 8000 None 0 #
+9 8010 #
+10 8020 @
+9 9000 None 0 #
+0 9010 @
+10 10000 None 0 #
+12 10010 #
+14 10020 @
+14 11000 None 0 #
+16 11010 @
+5 12000 None 0 #
+9 12010 #
+11 12020 @
+11 13000 None 0 #
+12 13010 #
+15 13020 @
+15 14000 None 0 #
+16 14010 @
+6 15000 None 0 #
+0 15010 @
+7 16000 None 0 #
+0 16010 &
+
+[engl]
+{100}{}{Falcon1}
+{200}{}{You see the Bar Tender.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> Falcon00]}
+{2000}{}{Yeah, whadda ya want?}
+{2010}{}{Water.}
+{2020}{}{Beer.}
+{2030}{}{Liquor.}
+{2040}{}{Nothing.}
+{2050}{}{Tuh?}
+{3000}{}{That'll be two caps.}
+{3010}{}{Okay.}
+{3020}{}{No, thanks.}
+{4000}{}{[MANUAL: add NPC dialogue for diagram node 'Falcon05a']}
+{4010}{}{[MANUAL: add player response/transition -> Falcon01]}
+{4020}{}{[MANUAL: add player response/transition -> Falcon09]}
+{5000}{}{If ya' don't have the caps, get the hell out!}
+{5010}{}{[Done.]}
+{6000}{}{Here. (The bartender slides you another cup full of the same
+---
+murky water, and after you drink it, you're reminded as to
+---
+how strange it tasted the last time . . .
+---
+Here. (The bartender slides you a dirty tin cup full of some
+---
+murky water. After drinking the water, you have a strange
+---
+taste in your mouth.}
+{6010}{}{[MANUAL: add player response/transition -> Falcon15]}
+{7000}{}{[MANUAL: add NPC dialogue for diagram node 'Falcon15']}
+{7010}{}{Water.}
+{7020}{}{Beer.}
+{7030}{}{Liquor.}
+{7040}{}{Nothing.}
+{7050}{}{Tuh?}
+{8000}{}{That'll be five caps.}
+{8010}{}{No, thanks.}
+{8020}{}{Sure.}
+{9000}{}{Didn't think you looked like someone that could hold their
+---
+liquor.
+---
+That's a shame. We were all looking forward to seeing you
+---
+'perform' again.}
+{9010}{}{[Done.]}
+{10000}{}{[MANUAL: add NPC dialogue for diagram node 'Falcon06a']}
+{10010}{}{[MANUAL: add player response/transition -> Falcon01]}
+{10020}{}{[MANUAL: add player response/transition -> Falcon14]}
+{11000}{}{Here you are. (The bartender hands you a beer bottle.) Anything
+---
+else?}
+{11010}{}{[MANUAL: add player response/transition -> Falcon15]}
+{12000}{}{That'll be ten caps.}
+{12010}{}{No, thanks.}
+{12020}{}{Sure.}
+{13000}{}{[MANUAL: add NPC dialogue for diagram node 'Falcon07a']}
+{13010}{}{[MANUAL: add player response/transition -> Falcon01]}
+{13020}{}{[MANUAL: add player response/transition -> Falcon16]}
+{14000}{}{Here you are. (The bartender hands you a liquor bottle.)
+---
+Anything else?}
+{14010}{}{[MANUAL: add player response/transition -> Falcon15]}
+{15000}{}{Yeah . . . well beat it.}
+{15010}{}{[Done.]}
+{16000}{}{I think you've had enough, buddy.
+---
+I think you've had enough, lady.}
+{16010}{}{[Done.]}
+

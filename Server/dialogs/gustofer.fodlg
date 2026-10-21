@@ -1,0 +1,168 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+0 2010 @
+3 3000 None 0 #
+0 3010 @
+4 4000 None 0 #
+0 4010 @
+5 5000 None 0 #
+10 5010 #
+11 5020 #
+11 5030 @
+10 6000 None 0 #
+0 6010 @
+11 7000 None 0 #
+0 7010 @
+6 8000 None 0 #
+12 8010 #
+0 8020 #
+13 8030 #
+14 8040 @
+12 9000 None 0 #
+0 9010 @
+13 10000 None 0 #
+16 10010 #
+17 10020 @
+16 11000 None 0 #
+22 11010 #
+0 11020 @
+22 12000 None 0 #
+0 12010 @
+17 13000 None 0 #
+22 13010 #
+0 13020 @
+14 14000 None 0 #
+0 14010 #
+18 14020 #
+19 14030 @
+18 15000 None 0 #
+23 15010 @
+23 16000 None 0 #
+0 16010 #
+19 16020 @
+19 17000 None 0 #
+0 17010 #
+24 17020 @
+24 18000 None 0 #
+0 18010 @
+7 19000 None 0 #
+0 19010 @
+8 20000 None 0 #
+0 20010 #
+0 20020 @
+9 21000 None 0 #
+12 21010 #
+0 21020 #
+15 21030 @
+15 22000 None 0 #
+20 22010 #
+21 22020 @
+20 23000 None 0 #
+0 23010 #
+25 23020 @
+25 24000 None 0 #
+0 24010 @
+21 25000 None 0 #
+0 25010 #
+25 25020 &
+
+[engl]
+{100}{}{Gustofer}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> Gustofer05]}
+{2000}{}{Hey, there. No boxing today.
+---
+Try again the day after tomorrow.
+---
+Try again tomorrow.}
+{2010}{}{[Done.]}
+{3000}{}{Well, well, looks like you're a winner! Here's your caps.}
+{3010}{}{[MANUAL: add player response/transition -> destroy_challenger]}
+{4000}{}{Well, you can't win them all, my friend. Better luck next time.
+---
+Well, you can't win them all, my friend. Better luck next time.}
+{4010}{}{[Done.]}
+{5000}{}{Hey, what are you doing?}
+{5010}{}{Uh, nothing.}
+{5020}{}{You wanna start something, loser?}
+{5030}{}{Hnn.}
+{6000}{}{Please quit it.}
+{6010}{}{[Done.]}
+{7000}{}{Uh, no. Never mind. Forget I said anything.}
+{7010}{}{[Done.]}
+{8000}{}{So! Want to lay a bet on the fight?}
+{8010}{}{Hnn.}
+{8020}{}{I've got better things to do with my money. Goodbye.}
+{8030}{}{What are the odds?}
+{8040}{}{No, thanks. Mind if I ask a few questions, though?}
+{9000}{}{You might try signing up with Gizmo. I hear he's always looking for new meat to toss in
+the ring.}
+{9010}{}{[Done.]}
+{10000}{}{Who do you want to bet on, Saul or the challenger? Odds favor Saul winning. Cost is 25
+caps to bet; you get 50 if you win betting on Saul, 100 if you win betting on the
+challenger!}
+{10010}{}{I'll bet on Saul.}
+{10020}{}{I'll bet on the challenger.}
+{11000}{}{Would you like to wait here until the fight starts at 2:00?
+---
+Come back when you have enough caps to bet!}
+{11010}{}{Nah, I got stuff to do. I'll be back later.}
+{11020}{}{Sure, what the heck.}
+{12000}{}{Okay, but if you miss, the fight, you forfeit your bet!}
+{12010}{}{[Done.]}
+{13000}{}{Would you like to wait here until the fight starts at 2:00?
+---
+Come back when you have enough caps to bet!}
+{13010}{}{Nah, I got stuff to do. I'll be back later.}
+{13020}{}{Sure, what the heck.}
+{14000}{}{All right, I guess.
+---
+Sorry, I don't have the time. Maybe later.}
+{14010}{}{Uh, never mind.}
+{14020}{}{Who's the boxer?}
+{14030}{}{Who runs these matches?}
+{15000}{}{Saul, the fastest fist in Junktown! He's a marvel of manly musculature! A pulsating
+power puncher!}
+{15010}{}{You just missed it. Try again in a couple of days. Saul boxes every three days.}
+{16000}{}{He's a nice guy, too.}
+{16010}{}{Thanks. See you around.}
+{16020}{}{Um, yeah. So, who runs these matches?}
+{17000}{}{Gizmo, the casino owner, employs Saul. He occasionally likes to watch a match or two,
+but mostly it's good money - people will bet a lot on a fight. And nobody has to get
+killed, unlike those death matches they supposedly have in the Hub.}
+{17010}{}{Thanks.}
+{17020}{}{Death matches?}
+{18000}{}{Well, it's just a rumor. But they say there's an underground fighting ring there where
+you can pay to watch people fight to the death. Not my kind of fight.}
+{18010}{}{Hmm. Thanks.}
+{19000}{}{Please don't disturb me while the match is in progress.}
+{19010}{}{[Done.]}
+{20000}{}{Sorry, but today's match is already over.}
+{20010}{}{Oh. Well, never mind, then.}
+{20020}{}{Hnn.}
+{21000}{}{Sorry, no boxing today.}
+{21010}{}{Hnn.}
+{21020}{}{Uk, okay.}
+{21030}{}{When's the next match?}
+{22000}{}{[MANUAL: add NPC dialogue for diagram node 'Gustofer00a']}
+{22010}{}{[MANUAL: add player response/transition -> Gustofer03]}
+{22020}{}{[MANUAL: add player response/transition -> Gustofer02]}
+{23000}{}{You just missed it. Try again in a couple of days. Saul boxes every three days.}
+{23010}{}{Thanks.}
+{23020}{}{Who's Saul?}
+{24000}{}{Saul is the local champion. Saul is the current favorite of Gizmo.}
+{24010}{}{[Done.]}
+{25000}{}{Try again tomorrow. Saul will be boxing then.}
+{25010}{}{Thanks.}
+{25020}{}{Who's Saul?}
+

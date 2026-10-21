@@ -111,6 +111,10 @@
 {195}{}{10labone}
 {196}{}{gntlwin1:25, gntlwind:25, gustwind:10, rattle:15, rattle1:15, vulture:10}
 
+# Map 19, base 200
+{200}{}{Doc Morbid Secret Lab}
+{206}{}{}
+
 # Map 23, base 240
 {240}{}{LA Warehouse}
 {245}{}{08vats}

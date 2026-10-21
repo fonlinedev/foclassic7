@@ -1,0 +1,143 @@
+[comment]
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1018 None 1 #
+2 1019 @
+2 1000 None 0 #
+3 1020 #
+4 1021 #
+5 1022 #
+6 1023 @
+3 1001 None 0 #
+0 1024 #
+7 1025 #
+8 1026 @
+7 1005 None 0 #
+13 1034 #
+14 1035 @
+13 1011 None 0 #
+0 1043 #
+14 1044 @
+14 1012 None 0 #
+18 1045 @
+18 1016 None 0 #
+0 1050 #
+0 1051 @
+8 1006 None 0 #
+0 1036 #
+15 1037 @
+15 1013 None 0 #
+14 1046 #
+19 1047 @
+19 1017 None 0 #
+14 1052 @
+4 1002 None 0 #
+0 1027 #
+9 1028 @
+9 1007 None 0 #
+16 1038 #
+17 1039 @
+16 1014 None 0 #
+0 1048 @
+17 1015 None 0 #
+0 1049 @
+5 1003 None 0 #
+0 1029 #
+10 1030 @
+10 1008 None 0 #
+0 1040 @
+6 1004 None 0 #
+0 1031 #
+11 1032 #
+12 1033 @
+11 1009 None 0 #
+0 1041 @
+12 1010 None 0 #
+0 1042 @
+
+[engl]
+{100}{}{Jchidmem}
+{1000}{}{We offer healing of the body to heal the spirit. Can I help you?}
+{1001}{}{We require a donation of $
+---
+before we can heal you. Is this acceptable?
+---
+Will you take, $
+---
+?
+---
+You are wounded.
+---
+I see you are poisoned.
+---
+Hmm, some radiation poisoning. Unfortunately, we cannot cure that.
+---
+You do not have any condition that needs assistance.}
+{1002}{}{We are the Children of the Cathedral. We live and work amongst those unfortunates living
+in the wasteland. If you ever get to the Boneyard, stop by the cathedral.}
+{1003}{}{They donated this house to us, in order that we might spread the word and perform our
+duty as healers.}
+{1004}{}{That is fine, my child. We will examine you now.}
+{1005}{}{[MANUAL: add NPC dialogue for diagram node 'Child04a']}
+{1006}{}{If you donate all you can, we will heal you. Is this acceptable?}
+{1007}{}{We are the healers and teachers of peace. We heal the body to heal the spirit. All we
+ask is a small donation to pay for our healing supplies.}
+{1008}{}{Whatever that heathen soul feels is no concern of the Children. We are here to do our
+duty, and it shall be done.}
+{1009}{}{You have been healed. Be more careful in the future.}
+{1010}{}{Blessed are the meek of mind. There is nothing wrong with you my child. Run along and
+play.}
+{1011}{}{You do not have enough money. If you donate all you can, we will heal you. Is this
+acceptable?}
+{1012}{}{Thank you, my son. Let us pray for your healing
+---
+Thank you, my daughter. Let us pray for your healing.}
+{1013}{}{[MANUAL: add NPC dialogue for diagram node 'Child09a']}
+{1014}{}{It is the most holy of ideas. We are working towards ultimate peace in the wasteland.
+All creatures shall live as one.}
+{1015}{}{We did not ask you. I can tell you are tired of listening to our beliefs. If you need
+anything else, we will be here.}
+{1016}{}{There you go. Peace and blessings of the Children with you.}
+{1017}{}{You have more than enough to make the donation. You need schooling in math, my child.}
+{1018}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1019}{}{[MANUAL: initial branch condition/greeting -> Child00]}
+{1020}{}{Yes. Help me.}
+{1021}{}{Who are you people?}
+{1022}{}{What happened to the people who were here before you?}
+{1023}{}{Uhn}
+{1024}{}{No.}
+{1025}{}{Yes.}
+{1026}{}{But I don't have that kind of money!}
+{1027}{}{Thank you.}
+{1028}{}{What do you do?}
+{1029}{}{That was awfully kind of them. Thanks.}
+{1030}{}{Isn't Doc Morbid upset about this?}
+{1031}{}{[MANUAL: add player response/transition -> child_heal]}
+{1032}{}{[MANUAL: add player response/transition -> Child03]}
+{1033}{}{[MANUAL: add player response/transition -> Child02]}
+{1034}{}{[MANUAL: add player response/transition -> Child08]}
+{1035}{}{[MANUAL: add player response/transition -> Child06]}
+{1036}{}{No.}
+{1037}{}{Yes.}
+{1038}{}{Sounds like a good idea to me.}
+{1039}{}{Sounds like a load of crap to me.}
+{1040}{}{Uh, gee, thanks. Bye.}
+{1041}{}{[Done.]}
+{1042}{}{[Done.]}
+{1043}{}{No.}
+{1044}{}{Yes.}
+{1045}{}{Blessed are the meek of mind. There is nothing wrong with you my child. Run along and
+play.}
+{1046}{}{[MANUAL: add player response/transition -> Child06]}
+{1047}{}{[MANUAL: add player response/transition -> Child10]}
+{1048}{}{Thank you. Good day.}
+{1049}{}{[Done.]}
+{1050}{}{[MANUAL: add player response/transition -> child_heal]}
+{1051}{}{[MANUAL: add player response/transition -> child_pois]}
+{1052}{}{Blessed are the meek of mind. There is nothing wrong with you my child. Run along and
+play.}

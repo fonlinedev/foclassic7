@@ -1,0 +1,91 @@
+[comment]
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1010 None 1 #
+2 1011 #
+3 1012 #
+4 1013 #
+5 1014 #
+6 1015 @
+2 1000 None 0 #
+0 1016 @
+3 1001 None 0 #
+0 1017 @
+4 1002 None 0 #
+0 1018 @
+5 1003 None 0 #
+7 1019 #
+0 1020 #
+8 1021 #
+9 1022 @
+7 1005 None 0 #
+0 1024 #
+8 1025 @
+8 1006 None 0 #
+0 1026 #
+10 1027 #
+11 1028 @
+10 1008 None 0 #
+11 1030 #
+0 1031 @
+11 1009 None 0 #
+0 1032 @
+9 1007 None 0 #
+0 1029 @
+6 1004 None 0 #
+0 1023 @
+
+[engl]
+{100}{}{Phil}
+{200}{}{You see a peasant.}
+{210}{}{You see Phil.}
+{1000}{}{I wouldn't trust that beast, if I was you. That thing is a killer.}
+{1001}{}{Thanks for your help.}
+{1002}{}{Damn right, shoot that beast!}
+{1003}{}{Mister,
+---
+Ma'am,
+---
+I would be really happy if you were to get rid of that damn dog.}
+{1004}{}{I hate that dog.}
+{1005}{}{It won't let us back into our house, that's why.}
+{1006}{}{It was the 'pet' of a traveller. When the traveller died, this damn dog just plopped its
+furry ass down on my doorstep and wouldn't leave. It's been there for days.}
+{1007}{}{Mebbe you can talk it to death.}
+{1008}{}{So, Gizmo had a couple of boys beat him up and throw him from the casino roof. The
+traveller broke his damnfool neck and died. The dog was pissed.
+---
+I don't know. Some guy. He came from the east, he said. Like anyone could get past the
+deadlands to the east. He ran afoul of Gizmo, trying to interfere with Gizmo's business.}
+{1009}{}{He had some funny accent. The dog was his constant companion, followed him everywhere.
+---
+Oh, the guy was tall, dark-haired with a little graying around the edges. He was dressed
+all in black leather, like that's a good idea in the desert, and carried a shotgun.}
+{1010}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1011}{}{[MANUAL: initial branch condition/greeting -> Phil01]}
+{1012}{}{[MANUAL: initial branch condition/greeting -> Phil09]}
+{1013}{}{[MANUAL: initial branch condition/greeting -> Phil00]}
+{1014}{}{[MANUAL: initial branch condition/greeting -> Phil02]}
+{1015}{}{[MANUAL: initial branch condition/greeting -> Phil08]}
+{1016}{}{[Done.]}
+{1017}{}{[Done.]}
+{1018}{}{[Done.]}
+{1019}{}{Why?}
+{1020}{}{Nah, I only deal with important stuff.}
+{1021}{}{Where did it come from?}
+{1022}{}{Hnnn.}
+{1023}{}{[Done.]}
+{1024}{}{Okay.}
+{1025}{}{Isn't it your dog?}
+{1026}{}{Oh.}
+{1027}{}{Who was this traveller?}
+{1028}{}{What did the traveller look like?}
+{1029}{}{[Done.]}
+{1030}{}{What did the traveller look like?}
+{1031}{}{[MANUAL: add player response/transition -> Goodbyes]}
+{1032}{}{Appreciate the gossip.}

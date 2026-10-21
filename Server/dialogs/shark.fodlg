@@ -1,0 +1,95 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+0 2010 #
+5 2020 #
+6 2030 #
+7 2040 #
+8 2050 @
+5 3000 None 0 #
+0 3010 @
+6 4000 None 0 #
+0 4010 @
+7 5000 None 0 #
+6 5010 #
+10 5020 @
+10 6000 None 0 #
+0 6010 #
+11 6020 #
+12 6030 @
+11 7000 None 0 #
+0 7010 @
+12 8000 None 0 #
+8 8010 #
+13 8020 @
+8 9000 None 0 #
+0 9010 @
+13 10000 None 0 #
+0 10010 @
+3 11000 None 0 #
+0 11010 @
+4 12000 None 0 #
+6 12010 #
+8 12020 #
+9 12030 @
+9 13000 None 0 #
+0 13010 &
+
+[engl]
+{100}{}{Shark}
+{200}{}{You see Shark.}
+{210}{}{You see a man with filed teeth.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> Shark01]}
+{2000}{}{Hey, fresh bait! So, what brings you in to our territory, chum? Here for a little fun?
+At your expense, of course.}
+{2010}{}{Actually, I'm here to kick butt and chew gum . . . you can guess the rest.}
+{2020}{}{What do you do for fun around here?}
+{2030}{}{Uh, I was just leaving. Bye.}
+{2040}{}{Just stopped by for a drink and some . . . entertainment.}
+{2050}{}{Glopf!}
+{3000}{}{We beat up posers like you!}
+{3010}{}{[MANUAL: add player response/transition -> SharkCombat]}
+{4000}{}{Not so fast! Nobody just walks into our place without payin' the pain tax.
+---
+I think you'll do. Boys, grab her.
+---
+Let me introduce you to the tax man. He's called Mr. Sledgehammer!}
+{4010}{}{I don't think so!}
+{5000}{}{[MANUAL: add NPC dialogue for diagram node 'Shark01a']}
+{5010}{}{[MANUAL: add player response/transition -> Shark03]}
+{5020}{}{[MANUAL: add player response/transition -> Shark04]}
+{6000}{}{Well, for this evening's entertainment, we've decided to thrash this place! Heh. Grab
+what you can carry and let's see some blood run, eh?}
+{6010}{}{Nah, I'd rather have something to eat . . . perhaps grilled shark!}
+{6020}{}{Smash and grab? Count me in!}
+{6030}{}{Not tonight, I have a headache.}
+{7000}{}{[MANUAL: add NPC dialogue for diagram node 'Shark04b']}
+{7010}{}{[Done.]}
+{8000}{}{[MANUAL: add NPC dialogue for diagram node 'Shark04a']}
+{8010}{}{[MANUAL: add player response/transition -> Shark05]}
+{8020}{}{[MANUAL: add player response/transition -> DownReactLevel]}
+{9000}{}{Ah, you loser. Go run back to your momma.}
+{9010}{}{[Done.]}
+{10000}{}{[MANUAL: add NPC dialogue for diagram node 'DownReactLevel']}
+{10010}{}{[Done.]}
+{11000}{}{I thought you'd get the picture by now, to beat it. Guess I was wrong. Well, at least
+it'll be fun to beat you!}
+{11010}{}{[MANUAL: add player response/transition -> SharkCombat]}
+{12000}{}{You again? Geez, some people just don't learn!}
+{12010}{}{Just leaving, never mind.}
+{12020}{}{Glorpf!}
+{12030}{}{Just stopped in for a quick drink.}
+{13000}{}{Not a bad idea. Think I'll have one myself. Of course, you always have to wash a beer
+down with some bloodshed!}
+{13010}{}{[MANUAL: add player response/transition -> SharkCombat]}
+

@@ -1,0 +1,199 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+9 2010 #
+10 2020 #
+0 2030 @
+9 3000 None 0 #
+0 3010 @
+10 4000 None 0 #
+0 4010 @
+3 5000 None 0 #
+11 5010 #
+12 5020 #
+13 5030 @
+11 6000 None 0 #
+0 6010 @
+12 7000 None 0 #
+0 7010 @
+13 8000 None 0 #
+0 8010 @
+4 9000 None 0 #
+0 9010 @
+5 10000 None 0 #
+9 10010 #
+10 10020 #
+14 10030 @
+14 11000 None 0 #
+18 11010 #
+19 11020 @
+18 12000 None 0 #
+24 12010 #
+25 12020 @
+24 13000 None 0 #
+11 13010 #
+27 13020 @
+27 14000 None 0 #
+0 14010 @
+25 15000 None 0 #
+27 15010 @
+19 16000 None 0 #
+26 16010 #
+11 16020 #
+27 16030 @
+26 17000 None 0 #
+11 17010 @
+6 18000 None 0 #
+0 18010 @
+7 19000 None 0 #
+0 19010 @
+8 20000 None 0 #
+0 20010 #
+15 20020 #
+16 20030 #
+17 20040 @
+15 21000 None 0 #
+0 21010 #
+20 21020 #
+21 21030 #
+22 21040 @
+20 22000 None 0 #
+0 22010 @
+21 23000 None 0 #
+0 23010 @
+22 24000 None 0 #
+0 24010 @
+16 25000 None 0 #
+23 25010 @
+23 26000 None 0 #
+0 26010 #
+28 26020 #
+29 26030 #
+30 26040 @
+28 27000 None 0 #
+31 27010 @
+31 28000 None 0 #
+0 28010 #
+28 28020 #
+29 28030 #
+30 28040 @
+29 29000 None 0 #
+31 29010 @
+30 30000 None 0 #
+31 30010 @
+17 31000 None 0 #
+0 31010 &
+
+[engl]
+{100}{}{Trish}
+{200}{}{You see Trish, a waitress from the Skum Pitt.}
+{210}{}{You see a waitress.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> Trish0]}
+{2000}{}{What the hell are you doing in my room?}
+{2010}{}{Gug!}
+{2020}{}{Whoops, sorry. I thought this was my room.}
+{2030}{}{Sorry. Bye.}
+{3000}{}{No way! I'm not into that! Go talk to Sinthia down the hall. She might be available, but
+she is never free.}
+{3010}{}{[Done.]}
+{4000}{}{Yeah, right. Whatever. This is my room. Get the hell out.}
+{4010}{}{[Done.]}
+{5000}{}{Hey, I met you at the Skum Pitt. What the hell are you doing in my room?}
+{5010}{}{Plato}
+{5020}{}{I wanted to get a closer look at you.}
+{5030}{}{I wanted to get some info from you, and I didn't want to do it in front of that
+bartender.}
+{6000}{}{Just leave me alone.}
+{6010}{}{[Done.]}
+{7000}{}{Just leave me the hell alone, you loser. Sinthia might be your kind of woman, but I sure
+as hell ain't.}
+{7010}{}{[Done.]}
+{8000}{}{You should leave me alone. I really don't want to talk to you.}
+{8010}{}{Sorry to disturb you.}
+{9000}{}{You got my boyfriend killed. I should hate you, but I knew it was going to happen sooner
+or later. Please leave me alone.}
+{9010}{}{[Done.]}
+{10000}{}{What the hell are you doing in my room?}
+{10010}{}{Grub!}
+{10020}{}{Whoops, sorry. I thought this was my room.}
+{10030}{}{Do you know a guy named Saul?}
+{11000}{}{I used to think so. Now, I'm not so sure.}
+{11010}{}{He really cares about you.}
+{11020}{}{I think you should dump him.}
+{12000}{}{So he says. If he did, he wouldn't be doing what he is doing.}
+{12010}{}{What's that?}
+{12020}{}{His boxing, right?}
+{13000}{}{His fighting, of course. I don't get it.}
+{13010}{}{Of course not, dearie.}
+{13020}{}{It's a man thing.}
+{14000}{}{Maybe you're right. Maybe I need to understand what he does and leave it at that.
+---
+Still, working for Gizmo is going to kill him.}
+{14010}{}{[Done.]}
+{15000}{}{Of course it's his boxing. He's a really nice guy, but he needs to get out of it before
+it kills him.}
+{15010}{}{Maybe that's what he wants to do.}
+{16000}{}{You would say that. you want to take his place right?}
+{16010}{}{Nah. You're too shanky.}
+{16020}{}{Sure.}
+{16030}{}{No, but you can't change him, and he can't change you. If you don't like what he does,
+then you should look elsewhere.}
+{17000}{}{[MANUAL: add NPC dialogue for diagram node 'Trish6a']}
+{17010}{}{[MANUAL: add player response/transition -> Trish7]}
+{18000}{}{Thanks for helping out with Saul. He's really a neat guy.}
+{18010}{}{[Done.]}
+{19000}{}{Look, this is my room. Please leave.}
+{19010}{}{[Done.]}
+{20000}{}{Welcome to the Skum Pitt. Can I get you something to drink?}
+{20010}{}{Nothing, thanks.}
+{20020}{}{Yes, what do you have?}
+{20030}{}{Actually, can I ask you some questions?}
+{20040}{}{Hnnngh! Hoo!}
+{21000}{}{What would you like?}
+{21010}{}{Nothing, thanks.}
+{21020}{}{Nuka-cola, 3 caps.}
+{21030}{}{Beer, 5 caps.}
+{21040}{}{The hard stuff, 20 caps.}
+{22000}{}{Here you go. Enjoy.}
+{22010}{}{[Done.]}
+{23000}{}{Here you go. Enjoy.}
+{23010}{}{[Done.]}
+{24000}{}{Here you go. Enjoy.}
+{24010}{}{[Done.]}
+{25000}{}{No, as a matter of fact, you can't. If you aren't going to order a drink, then you're in
+the wrong place.}
+{25010}{}{[MANUAL: add player response/transition -> Trish19]}
+{26000}{}{I guess so.}
+{26010}{}{Thanks, bye.}
+{26020}{}{Who owns the bar?}
+{26030}{}{Who is Gizmo?}
+{26040}{}{Why did you scream about Saul?}
+{27000}{}{Neal owns the bar. He's a good guy, always treated me right. We used to date, but he got
+a little too serious for my liking. I don't want to be a widow.}
+{27010}{}{[MANUAL: add player response/transition -> Trish24]}
+{28000}{}{[MANUAL: add NPC dialogue for diagram node 'Trish24']}
+{28010}{}{Thanks, bye.}
+{28020}{}{Who owns the bar?}
+{28030}{}{Who is Gizmo?}
+{28040}{}{Why did you scream about Saul?}
+{29000}{}{Gizmo runs the Casino. He would like to take over Neal's bar, but Neal doesn't want to
+sell.
+---
+Killian and Gizmo do not like each other. One of them will either have to leave town or
+be buried beneath it.}
+{29010}{}{[MANUAL: add player response/transition -> Trish24]}
+{30000}{}{Saul is my boyfriend. He's really good to me.}
+{30010}{}{[MANUAL: add player response/transition -> Trish24]}
+{31000}{}{Sorry, it looks like you're already a little gone.}
+{31010}{}{[Done.]}
+

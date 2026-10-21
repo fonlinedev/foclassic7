@@ -1,0 +1,36 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+12 1010 @
+2 2000 None 0 @
+3 3000 None 0 @
+5 4000 None 0 @
+6 5000 None 0 @
+7 6000 None 0 @
+8 7000 None 0 @
+9 8000 None 0 @
+10 9000 None 0 @
+11 10000 None 0 @
+12 11000 None 0 &
+
+[engl]
+{100}{}{Craps roulette}
+{1000}{}{Predialogue installations}
+{1010}{}{Begin}
+{2000}{}{You see before you the low stakes Craps table. It costs $40 to play.}
+{3000}{}{You rolled a 7. You win!!}
+{4000}{}{You roll snake eyes. You lose.}
+{5000}{}{You rolled}
+{6000}{}{. You lose.}
+{7000}{}{ before rolling your point. You lose.}
+{8000}{}{You rolled your point. You win.}
+{9000}{}{You rolled }
+{10000}{}{. This is your point. Rolling again.}
+{11000}{}{You gain 70 experience points for killing the dealer.}
+

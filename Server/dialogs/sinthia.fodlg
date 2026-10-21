@@ -1,0 +1,230 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+5 1010 @
+2 2000 None 0 #
+8 2010 @
+8 3000 None 0 #
+0 3010 @
+3 4000 None 0 #
+9 4010 #
+10 4020 @
+9 5000 None 0 #
+4 5010 @
+4 6000 None 0 #
+11 6010 #
+12 6020 #
+13 6030 #
+14 6040 @
+11 7000 None 0 #
+0 7010 @
+12 8000 None 0 #
+0 8010 @
+13 9000 None 0 #
+20 9010 #
+21 9020 @
+20 10000 None 0 #
+29 10010 @
+29 11000 None 0 #
+30 11010 #
+36 11020 @
+30 12000 None 0 #
+0 12010 @
+36 13000 None 0 #
+37 13010 @
+37 14000 None 0 #
+0 14010 @
+21 15000 None 0 #
+30 15010 @
+14 16000 None 0 #
+0 16010 @
+10 17000 None 0 #
+0 17010 @
+5 18000 None 0 #
+0 18010 #
+15 18020 #
+16 18030 @
+15 19000 None 0 #
+22 19010 #
+23 19020 @
+22 20000 None 0 #
+31 20010 #
+32 20020 @
+31 21000 None 0 #
+0 21010 @
+32 22000 None 0 #
+0 22010 @
+23 23000 None 0 #
+0 23010 @
+16 24000 None 0 #
+24 24010 #
+25 24020 @
+24 25000 None 0 #
+0 25010 @
+25 26000 None 0 #
+0 26010 @
+6 27000 None 0 #
+0 27010 @
+7 28000 None 0 #
+17 28010 #
+18 28020 #
+19 28030 @
+17 29000 None 0 #
+0 29010 @
+18 30000 None 0 #
+26 30010 #
+27 30020 @
+26 31000 None 0 #
+0 31010 @
+27 32000 None 0 #
+0 32010 @
+19 33000 None 0 #
+28 33010 @
+28 34000 None 0 #
+0 34010 #
+33 34020 #
+34 34030 #
+35 34040 @
+33 35000 None 0 #
+28 35010 @
+34 36000 None 0 #
+28 36010 @
+35 37000 None 0 #
+28 37010 &
+
+[engl]
+{100}{}{Sinthia}
+{200}{}{You see Sinthia, the seductive sellbaby.}
+{210}{}{You see a pouty, shapely woman.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> Sinthia16]}
+{2000}{}{You shit! You killed him! Why did you have to kill him? You bastard! I can't believe you
+killed him. All he wanted was someone to talk to. You don't care about human life, do
+you?
+---
+You shit! You killed him! Why did you have to kill him? You bitch! I can't believe you
+killed him. All he wanted was someone to talk to. You don't care about human life, do
+you?}
+{2010}{}{Oh, baby, I understand. You gotta run home to momma. Well, come back here when you need
+some luvin'!}
+{3000}{}{Just get the hell out of my room!}
+{3010}{}{[Done.]}
+{4000}{}{You killed him! I can't believe you killed him. All he wanted was someone to talk to . .
+.}
+{4010}{}{He ain't dead. He's just gonna have a hurt head when he wakes up.}
+{4020}{}{Hnnn.}
+{5000}{}{Oh, sorry. I though he was dead. I though you killed him. He's not such a bad guy, after
+all. Just a little lonely.}
+{5010}{}{No problem.}
+{6000}{}{Thank you for what you did. No one ever took care of me like that before.}
+{6010}{}{[MANUAL: add player response/transition -> BigUpReact]}
+{6020}{}{I can really take care of you later.}
+{6030}{}{You're welcome.}
+{6040}{}{Unh.}
+{7000}{}{[MANUAL: add NPC dialogue for diagram node 'BigUpReact']}
+{7010}{}{[Done.]}
+{8000}{}{Is that all you can think about? Geez. Some people.}
+{8010}{}{[Done.]}
+{9000}{}{I mean, my boss didn't even send some of his goons to help. You'd think for all the cash
+I make for that loser, he would at least live up to his part of the bargain.}
+{9010}{}{Who's your boss?}
+{9020}{}{What bargain?}
+{10000}{}{Gizmo, of course. He runs all the sin in this town. Killian sure as hell wouldn't put up
+with me or my kind. If it wasn't for the fact that I make Giz a whole hell of a lot of
+money, I'd have to do other things to him.}
+{10010}{}{Oh, baby, I understand. You gotta run home to momma. Well, come back here when you need
+some luvin'!}
+{11000}{}{And, honey, those thoughts just don't do my stomach a whole lot of good.}
+{11010}{}{What else does Gizmo control?}
+{11020}{}{You should just hang it up and move on with your life.}
+{12000}{}{Just about every bad thing a person could do in this town. He owns the Casino. He runs
+me and some of the other gals, even some little kids. I hear he is trying to take over
+the bar.
+---
+Giz wants to take care of Killian, if you get my meaning.}
+{12010}{}{[Done.]}
+{13000}{}{You're telling me. But what else can I do? It seems like my life has been designed by
+someone else. Oh, well. A girl has to make a living.}
+{13010}{}{Oh, baby, I understand. You gotta run home to momma. Well, come back here when you need
+some luvin'!}
+{14000}{}{But sugar, this one's for free.
+---
+Thanks again, honey. We women gotta stick together.}
+{14010}{}{Oh, baby, I understand. You gotta run home to momma. Well, come back here when you need
+some luvin'!}
+{15000}{}{Why, honey, I take care of men, and they take care of me in return. Gizmo gets 25% and I
+supposedly get his protection. You saw how well that went, huh?"}
+{15010}{}{What else does Gizmo control?}
+{16000}{}{Thanks again.}
+{16010}{}{[Done.]}
+{17000}{}{Yeah, whatever. Get the hell out of my room!}
+{17010}{}{[Done.]}
+{18000}{}{Hey, darling, how you doing?}
+{18010}{}{Okay. Bye.}
+{18020}{}{Just fine, but I could be better.}
+{18030}{}{Uhh.}
+{19000}{}{[MANUAL: add NPC dialogue for diagram node 'Sinthia00a']}
+{19010}{}{[MANUAL: add player response/transition -> Sinthia04]}
+{19020}{}{[MANUAL: add player response/transition -> Sinthia03]}
+{20000}{}{Maybe I can help you with that.}
+{20010}{}{Maybe you can. How much to you charge?}
+{20020}{}{I wouldn't let my dog touch you.}
+{21000}{}{Oh, baby, if you got to ask . . . more than you can afford. Maybe next time, sugar. See
+you around.}
+{21010}{}{[Done.]}
+{22000}{}{Oh, sugar, that's just plain disgusting.}
+{22010}{}{[Done.]}
+{23000}{}{You'll find whatever, or whoever, you're looking for, honey, and that'll make you all
+better, I'm sure.}
+{23010}{}{[Done.]}
+{24000}{}{[MANUAL: add NPC dialogue for diagram node 'Sinthia00b']}
+{24010}{}{[MANUAL: add player response/transition -> Sinthia01]}
+{24020}{}{[MANUAL: add player response/transition -> Sinthia02]}
+{25000}{}{Oh, baby, I understand. You gotta run home to momma. Well, come back here when you need
+some luvin'!}
+{25010}{}{[Done.]}
+{26000}{}{Yeah, sweets, same to you.}
+{26010}{}{[Done.]}
+{27000}{}{I reserve the right to refuse admittance, and honey, you ain't getting nowhere near me!}
+{27010}{}{[Done.]}
+{28000}{}{You again. What can I help you with this time?}
+{28010}{}{Just stopping by to see how you are doing.}
+{28020}{}{I've got $40, if you got ten minutes.}
+{28030}{}{I need some more info on your boss.}
+{29000}{}{Doing fine, thanks to you, sugar.}
+{29010}{}{[Done.]}
+{30000}{}{[MANUAL: add NPC dialogue for diagram node 'Sinthia20a']}
+{30010}{}{[MANUAL: add player response/transition -> Sinthia27]}
+{30020}{}{[MANUAL: add player response/transition -> Sinthia28]}
+{31000}{}{Only that he thinks he doesn't have any. Well, that and he's a fat slob, who can't move
+for a damn. He's got to have his guards help him move around. Even then, they gotta use
+a little tricycle. Heh heh.}
+{31010}{}{[MANUAL: add player response/transition -> SinOn]}
+{32000}{}{Honey, you need some more money. I like you and all, but a girl has to make a living.}
+{32010}{}{[Done.]}
+{33000}{}{What do you want to know, but make it short, honey, I'm on the clock.}
+{33010}{}{[MANUAL: add player response/transition -> SinthiaQuestions]}
+{34000}{}{[MANUAL: add NPC dialogue for diagram node 'SinthiaQuestions']}
+{34010}{}{Thanks, doll, but I don't need to know anything else.}
+{34020}{}{How many guards does he have?}
+{34030}{}{Where does he stash the money?}
+{34040}{}{Does he have any weaknesses?}
+{35000}{}{Hmm. I know about eight, personally, if you get my meaning. I think he has another ten
+or so.}
+{35010}{}{[MANUAL: add player response/transition -> SinthiaQuestions]}
+{36000}{}{Money? How would I know? He only takes my money, he doesn't show me his. I would guess
+that it's in his bedroom, but for all I know, he could keep it where the sun doesn't
+shine. And for Giz, that's a big place.}
+{36010}{}{[MANUAL: add player response/transition -> SinthiaQuestions]}
+{37000}{}{Only that he thinks he doesn't have any. Well, that and he's a fat slob, who can't move
+for a damn. He's got to have his guards help him move around. Even then, they gotta use
+a little tricycle. Heh heh.}
+{37010}{}{[MANUAL: add player response/transition -> SinthiaQuestions]}
+

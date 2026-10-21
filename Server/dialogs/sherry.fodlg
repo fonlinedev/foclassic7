@@ -1,0 +1,142 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+0 2010 #
+6 2020 #
+7 2030 #
+8 2040 @
+6 3000 None 0 #
+0 3010 #
+0 3020 @
+7 4000 None 0 #
+0 4010 @
+8 5000 None 0 #
+0 5010 #
+13 5020 #
+14 5030 @
+13 6000 None 0 #
+14 6010 #
+16 6020 @
+14 7000 None 0 #
+0 7010 @
+16 8000 None 0 #
+0 8010 @
+3 9000 None 0 #
+0 9010 #
+9 9020 #
+10 9030 @
+9 10000 None 0 #
+0 10010 @
+10 11000 None 0 #
+0 11010 #
+15 11020 @
+15 12000 None 0 #
+0 12010 #
+17 12020 @
+17 13000 None 0 #
+18 13010 #
+19 13020 @
+18 14000 None 0 #
+20 14010 @
+20 15000 None 0 #
+0 15010 @
+19 16000 None 0 #
+0 16010 @
+4 17000 None 0 #
+11 17010 #
+12 17020 @
+11 18000 None 0 #
+0 18010 #
+0 18020 @
+12 19000 None 0 #
+0 19010 @
+5 20000 None 0 #
+0 20010 &
+
+[engl]
+{100}{}{Sherry}
+{200}{}{You see Sherry.}
+{210}{}{You see a gang member.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> Sherry22]}
+{2000}{}{Hi! How are you doing? It's been a while.}
+{2010}{}{I'm all right, thanks.}
+{2020}{}{I've been better.}
+{2030}{}{Okay. How about you?}
+{2040}{}{I need your help. I need your testimony to put away the Skulz for good.}
+{3000}{}{I'm sorry to hear that! Perhaps you should get a room and sleep it off. Talk to
+Marcelles. Oh, and here, I can fix you something to eat, if you like.}
+{3010}{}{No thanks, but I'll see you around.}
+{3020}{}{That would be swell, thanks.}
+{4000}{}{Oh, I'm doing much better, thanks! I do some cooking now at the Skum Pitt and the Crash
+House. It gets kind of tiresome on some nights, but I do like to cook, and I get to meet
+all sorts of interesting people. And I get paid, too. Thanks for your help.}
+{4010}{}{[Done.]}
+{5000}{}{You want me to turn in my friends?!?}
+{5010}{}{Sorry. Forget I asked.}
+{5020}{}{Yes, I need your information.}
+{5030}{}{They have been hurting people, and they will go on hurting people unless they're
+stopped. You changed your life for the better. Now you have a chance to help improve the
+lives of others, too.}
+{6000}{}{[MANUAL: add NPC dialogue for diagram node 'Sherry27a']}
+{6010}{}{[MANUAL: add player response/transition -> Sherry28]}
+{6020}{}{[MANUAL: add player response/transition -> Sherry29]}
+{7000}{}{Hmm. Well, I mean, they are my friends. But I guess that they shouldn't be allowed to
+hurt people the way they do. And I guess I trust you since you helped me. All right.}
+{7010}{}{[Done.]}
+{8000}{}{No, I can't do that! Those are my friends! I may not be a Skul anymore, but I'm not
+going to turn my back on my old friends.}
+{8010}{}{[Done.]}
+{9000}{}{Oh, it's you again! You know, it's probably not healthy to hang out here if you're not
+one of the Skulz. And you're not.}
+{9010}{}{[MANUAL: add player response/transition -> Goodbyes]}
+{9020}{}{Yeah, well, your Skulz probably couldn't knock over a sleeping Brahmin, much less take
+on me.}
+{9030}{}{What have you been up to lately?}
+{10000}{}{Really? We'll see about that! Victor!}
+{10010}{}{[MANUAL: add player response/transition -> SherryCombat]}
+{11000}{}{Not too much, actually. There's not much to do. I mean, Shark has been causing some
+fights at the Skum Pitt, as usual, but what else is there to do around here?}
+{11010}{}{Uh, not much, I guess.}
+{11020}{}{You could always try doing something else. You must have some talents or hobbies.}
+{12000}{}{Well, I do sort of like to draw. And Vinnie says I'm a pretty good cook. But I mean,
+hey, we have fun and stuff, you know?}
+{12010}{}{I guess that's understandable.}
+{12020}{}{But what will you do when you get older? Where will your life go? How will you make
+money?}
+{13000}{}{[MANUAL: add NPC dialogue for diagram node 'Sherry18a']}
+{13010}{}{[MANUAL: add player response/transition -> Sherry19]}
+{13020}{}{[MANUAL: add player response/transition -> Sherry20]}
+{14000}{}{Um, well, I never gave it much thought. I mean, Vinnie and Victor make some money and
+Shark occasionally does some bodyguarding for visitors here. I don't know.}
+{14010}{}{You should probably get out while you still can.}
+{15000}{}{I guess. I never thought about it much.}
+{15010}{}{[Done.]}
+{16000}{}{Hey, lay off! You sound like Vinnie's parents used to. We all support each other, okay?
+So back off.}
+{16010}{}{[Done.]}
+{17000}{}{Who are you and what are you doing here?
+---
+I'm
+---
+. I'm new to this town.}
+{17010}{}{None of your business, wench!}
+{17020}{}{Puwah?}
+{18000}{}{Take off, you hoser, before one of us decides to tear you up.}
+{18010}{}{Yeah? Bring it on!}
+{18020}{}{Sheesh, sorry.}
+{19000}{}{You sorry thing. You should run along. It's not safe here, especially for someone like
+you who wouldn't understand.}
+{19010}{}{[Done.]}
+{20000}{}{There you go. Enjoy. And I'll see you around!}
+{20010}{}{[Done.]}
+

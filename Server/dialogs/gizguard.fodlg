@@ -1,0 +1,44 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+3 2010 #
+0 2020 #
+0 2030 #
+4 2040 @
+3 3000 None 0 #
+5 3010 #
+0 3020 @
+5 4000 None 0 #
+0 4010 @
+4 5000 None 0 #
+0 5010 &
+
+[engl]
+{100}{}{Gizguard}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> GizGuard02]}
+{2000}{}{What?}
+{2010}{}{Hey, can I ask you a few questions?}
+{2020}{}{Can you spare a few caps?}
+{2030}{}{Never mind, sorry.}
+{2040}{}{Uuuh?}
+{3000}{}{I'm on duty. Make it quick.
+---
+No. Go away.}
+{3010}{}{Can you tell me about your boss?}
+{3020}{}{What else is there around this town?}
+{4000}{}{Gizmo's a fair man. Pay's good, work's easy. Don't make trouble and everyone will be
+happy.}
+{4010}{}{[Done.]}
+{5000}{}{Get outta here, you moron.}
+{5010}{}{[Done.]}
+
