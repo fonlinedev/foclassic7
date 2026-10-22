@@ -88,17 +88,18 @@ lang=engl
 6 6080 R _var p q_shady_tandi = 0 #
 0 6090 @
 7 7000 None 0 #
-0 7010 R _script dialog@r_TeleportToMap 2 3 0 #
-0 7020 R _script dialog@r_TeleportToMap 2 8 0 #
-0 7030 R _script dialog@r_TeleportToMap 2 34 0 #
-0 7040 R _script dialog@r_TeleportToMap 2 70 0 #
-0 7050 R _script dialog@r_TeleportToMap 2 221 0 #
-0 7060 R _script dialog@r_TeleportToMap 2 141 0 #
-0 7070 R _script dialog@r_TeleportToMap 2 280 0 #
-0 7080 R _script dialog@r_TeleportToMap 2 75 0 #
-0 7090 #
+0 7010 R _script dialog@r_TeleportToMap 2 90 10 #
+0 7020 R _script dialog@r_TeleportToMap 2 3 0 #
+0 7030 R _script dialog@r_TeleportToMap 2 8 0 #
+0 7040 R _script dialog@r_TeleportToMap 2 34 0 #
+0 7050 R _script dialog@r_TeleportToMap 2 70 0 #
+0 7060 R _script dialog@r_TeleportToMap 2 221 0 #
+0 7070 R _script dialog@r_TeleportToMap 2 141 0 #
+0 7080 R _script dialog@r_TeleportToMap 2 280 0 #
+0 7090 R _script dialog@r_TeleportToMap 2 75 0 #
 0 7100 #
-0 7110 &
+0 7110 #
+0 7120 &
 
 [engl]
 {100}{}{Altruist}
@@ -186,15 +187,16 @@ lang=engl
 {6080}{}{Reset}
 {6090}{}{Done.}
 {7000}{}{Where to teleport}
-{7010}{}{shady sands}
-{7020}{}{raiders camp}
-{7030}{}{vault 15}
-{7040}{}{junktown}
-{7050}{}{the hub}
-{7060}{}{necropolis}
-{7070}{}{boneyard}
-{7080}{}{cathedral}
-{7090}{}{military base}
-{7100}{}{brotherhood of steel}
-{7110}{}{the glow}
+{7010}{}{vault 13}
+{7020}{}{shady sands}
+{7030}{}{raiders camp}
+{7040}{}{vault 15}
+{7050}{}{junktown}
+{7060}{}{the hub}
+{7070}{}{necropolis}
+{7080}{}{boneyard}
+{7090}{}{cathedral}
+{7100}{}{military base}
+{7110}{}{brotherhood of steel}
+{7120}{}{the glow}
 

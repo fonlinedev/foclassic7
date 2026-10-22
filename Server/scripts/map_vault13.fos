@@ -24,6 +24,13 @@
 // elevator 1-2-3
 CElevator Elevator(ELEVATOR_BOS_1234);
 
+
+#define PID_SKELETON       211
+#define V13_GUARD_DIALOG1   4018
+#define V13_GUARD_PID       92
+#define V13_GUARD_BAG_ID    426
+
+
 bool ElevatorsAdded = false;
 
 void map_init(Map& map, bool firstTime)
@@ -31,7 +38,20 @@ void map_init(Map& map, bool firstTime)
     if(firstTime)
     {
         // this map belongs to that faction
-        map.SetData(MAP_DATA_FACTION, FACTION_UNITY);
+        map.SetData(MAP_DATA_FACTION, FACTION_VAULT_CITY);
+        map.SetTurnBasedAvailability(true);
+    
+        if(map.GetProtoId() == MAP_Vault13Level1) {
+            Log("Init vault 13 level 1 "+ map.GetProtoId());
+            // Find the skeleton container at its map hex
+            Item@ skeleton = map.GetItem(104, 89, PID_SKELETON);
+            if (valid(skeleton))
+            {
+                skeleton.AddItem(PID_STIMPAK, 3, 0);
+            }
+            // spanw the V13_GUARD at entrance
+            spanwGuard(map);
+        }
     }
     // to add only one for all floors
     if(!ElevatorsAdded)
@@ -51,6 +71,19 @@ void map_init(Map& map, bool firstTime)
         if(map.GetEntireCoords(1, 0, x, y))
             Elevator.AddFloor(map.Id, 1);
     }
+
+}
+
+void spanwGuard(Map& map)
+{
+    int[] params = { ST_DIALOG_ID, V13_GUARD_DIALOG1, ST_BAG_ID, V13_GUARD_BAG_ID, ST_TEAM_ID, FACTION_VAULT_CITY, ST_FACTION_MODE, 1, MODE_NO_LOOT, 1, MODE_NO_STEAL, 1 };
+    uint16           x = 0;
+    uint16           y = 0;
+    map.GetEntireCoords(9, 0, x, y);
+    Critter@         cr = map.AddNpc(V13_GUARD_PID, x, y, 2, params, null, "npc_v13_guard@critter_init");
+
+    if(!valid(cr))
+        return;
 }
 
 //
