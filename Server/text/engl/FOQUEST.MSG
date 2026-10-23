@@ -536,6 +536,223 @@ In order to do this, I have to find new electronic parts with that I can repair 
 {7208101}{}{Junktown: Collect the Radscorpion Eggs}
 {7208102}{}{QUEST:Collect the Radscorpion Eggs}
 
+
+#=======================================
+# 7211 / q_jt_skulz_gang
+# Junktown, Bust the Skulz gang
+#=======================================
+{7211001}{}{I've heard about the Skulz, a gang causing trouble in Junktown. I should find out more about them and decide how to deal with the gang.
+
+:: New Quest Available ::}
+{7211011}{}{I'm investigating the Skulz gang. I should speak with people who know about the gang, learn what they are doing, and work out how to put an end to their activities.}
+{7211070}{}{I've dealt with the Skulz gang's threat. I should report back to the person who asked for my help, if anyone is waiting for a report.}
+{7211081}{}{I can no longer resolve the Skulz gang problem through the original plan. I should check whether another approach is possible.
+
+:: Quest Failed ::}
+{7211099}{}{HARD_COMPLETED:I helped bring the Skulz gang's activities to an end in Junktown.
+
+:: Quest Completed ::}
+{7211101}{}{Junktown: Bust the Skulz Gang}
+{7211102}{}{QUEST:Bust the Skulz gang}
+
+#=======================================
+# 7212 / q_jt_kill_killian
+# Junktown, Kill Killian
+#=======================================
+{7212001}{}{I've learned that someone wants Killian Darkwater dead. Before I get involved, I should find out who is behind the request and consider the consequences of killing Junktown's sheriff.
+
+:: New Quest Available ::}
+{7212011}{}{I've decided to pursue the plan to kill Killian. I should follow the lead I've been given and be prepared for the consequences of attacking him and his allies.}
+{7212070}{}{Killian has been killed. I should leave the area or report back, depending on who gave me this assignment.}
+{7212081}{}{I can no longer carry out the plan to kill Killian as intended.
+
+:: Quest Failed ::}
+{7212099}{}{HARD_COMPLETED:Killian has been killed. His death may affect other people and quests in Junktown.
+
+:: Quest Completed ::}
+{7212101}{}{Junktown: Kill Killian}
+{7212102}{}{QUEST:Kill Killian}
+
+#=======================================
+# 7213 / q_jt_gizmo_confession
+# Junktown, Get Gizmo's confession
+#=======================================
+{7213001}{}{Killian Darkwater suspects Gizmo is behind the trouble in Junktown. I should look for a way to obtain evidence or a confession that can connect Gizmo to the plot.
+
+:: New Quest Available ::}
+{7213011}{}{I am trying to obtain Gizmo's confession. I should investigate the available leads and make sure I have what Killian needs before returning to him.}
+{7213070}{}{I have obtained the confession or evidence needed for Killian. I should return to him and present what I found.}
+{7213081}{}{I can no longer obtain or deliver Gizmo's confession through this approach.
+
+:: Quest Failed ::}
+{7213099}{}{HARD_COMPLETED:I obtained Gizmo's confession and brought the evidence to a conclusion.
+
+:: Quest Completed ::}
+{7213101}{}{Junktown: Get Gizmo's Confession}
+{7213102}{}{QUEST:Get Gizmo's confession}
+
+#=======================================
+# 7214 / q_jt_rescue_sinthia
+# Junktown, Rescue Sinthia
+#=======================================
+{7214001}{}{I've heard that Sinthia needs help. I should find out where she is being held or threatened, learn what has happened, and work out how to get her to safety.
+
+:: New Quest Available ::}
+{7214011}{}{I'm looking into Sinthia's situation. I should follow the leads I've found and help her escape the danger she is in.}
+{7214070}{}{I've helped Sinthia reach safety. I should report back to anyone who asked me to help her.}
+{7214081}{}{I was unable to rescue Sinthia through the current plan.
+
+:: Quest Failed ::}
+{7214099}{}{HARD_COMPLETED:Sinthia has been rescued and is safe.
+
+:: Quest Completed ::}
+{7214101}{}{Junktown: Rescue Sinthia}
+{7214102}{}{QUEST:Rescue Sinthia}
+
+#=======================================
+# 7215 / q_jt_stop_gizmo
+# Junktown, Stop Gizmo
+#=======================================
+{7215001}{}{Gizmo's influence is causing trouble in Junktown. I should investigate his plans and decide how to stop him before he can continue threatening the town.
+
+:: New Quest Available ::}
+{7215011}{}{I'm working to stop Gizmo. I should follow the leads available to me and choose an approach that prevents him from carrying out his plans.}
+{7215070}{}{I've taken action to stop Gizmo. I should report back if the person who sent me expects confirmation.}
+{7215081}{}{I can no longer stop Gizmo through the approach I was following.
+
+:: Quest Failed ::}
+{7215099}{}{HARD_COMPLETED:Gizmo's threat to Junktown has been dealt with.
+
+:: Quest Completed ::}
+{7215101}{}{Junktown: Stop Gizmo}
+{7215102}{}{QUEST:Stop Gizmo}
+
+#=======================================
+# 7216 / q_jt_guard_caravans
+# Junktown, Guard the caravans
+#=======================================
+{7216001}{}{Caravans operating around Junktown need protection. I should speak with the people organizing the guards and learn when and where I am expected to help.
+
+:: New Quest Available ::}
+{7216011}{}{I've agreed to help guard the caravans. I should stay with the caravan, protect its members from threats, and make sure it reaches its destination.}
+{7216070}{}{The caravan is safe for now. I should report back to the person who hired me and collect any promised reward.}
+{7216081}{}{I failed to protect the caravan or can no longer complete this assignment.
+
+:: Quest Failed ::}
+{7216099}{}{SOFT_COMPLETED:I completed the caravan-guard assignment. I may be able to take another caravan job later.
+
+:: Quest Completed ::}
+{7216101}{}{Junktown: Guard the Caravans}
+{7216102}{}{JOB:Guard the caravans}
+
+#=======================================
+# 7217 / q_jt_phil_canine
+# Junktown, Phil's Canine Conundrum
+#=======================================
+{7217001}{}{Phil has a problem involving a dog and may need help resolving it. I should speak with him to learn the details and find out what I can do.
+
+:: New Quest Available ::}
+{7217011}{}{I'm helping Phil with his canine problem. I should follow the information he gives me and resolve the situation without overlooking what he needs.}
+{7217070}{}{I've resolved Phil's canine problem. I should return to him and let him know what happened.}
+{7217081}{}{I could not resolve Phil's canine problem as planned.
+
+:: Quest Failed ::}
+{7217099}{}{HARD_COMPLETED:I helped Phil resolve his canine problem.
+
+:: Quest Completed ::}
+{7217101}{}{Junktown: Phil's Canine Conundrum}
+{7217102}{}{QUEST:Solve Phil's Canine Conundrum}
+
+#=======================================
+# 7218 / q_jt_save_killian
+# Junktown, Save Killian's life
+#=======================================
+{7218001}{}{Killian's life is in danger. I should find out who is threatening him and help him survive the attack.
+
+:: New Quest Available ::}
+{7218011}{}{I'm trying to keep Killian alive. I should identify the threat and intervene before he is killed.}
+{7218070}{}{I've helped protect Killian. I should check on him and report back if anyone asked me to intervene.}
+{7218081}{}{I failed to protect Killian, or the threat can no longer be resolved through this plan.
+
+:: Quest Failed ::}
+{7218099}{}{HARD_COMPLETED:I helped save Killian's life and prevented the attempt on him from succeeding.
+
+:: Quest Completed ::}
+{7218101}{}{Junktown: Save Killian's Life}
+{7218102}{}{QUEST:Save Killian's life}
+
+#=======================================
+# 7219 / q_jt_kill_neal
+# Junktown, Kill Neal
+#=======================================
+{7219001}{}{I've been asked to kill Neal. I should learn why he is being targeted and consider the consequences before deciding how to proceed.
+
+:: New Quest Available ::}
+{7219011}{}{I've decided to pursue the assignment involving Neal. I should find him and complete the task, while being prepared for the consequences of his death.}
+{7219070}{}{Neal has been killed. I should report back to whoever gave me the assignment, if required.}
+{7219081}{}{I can no longer complete the assignment to kill Neal as planned.
+
+:: Quest Failed ::}
+{7219099}{}{HARD_COMPLETED:Neal has been killed and the assignment is complete.
+
+:: Quest Completed ::}
+{7219101}{}{Junktown: Kill Neal}
+{7219102}{}{QUEST:Kill Neal}
+
+#=======================================
+# 7220 / q_jt_help_saul
+# Junktown, Help Saul
+#=======================================
+{7220001}{}{Saul may need help with a problem in Junktown. I should speak with him to learn what is wrong and what he needs me to do.
+
+:: New Quest Available ::}
+{7220011}{}{I've agreed to help Saul. I should follow his instructions, resolve the problem he described, and return to him when I have made progress.}
+{7220070}{}{I've helped Saul with his problem. I should return to him and let him know the task is finished.}
+{7220081}{}{I could not help Saul as planned, or the situation has changed so that I can no longer complete the task.
+
+:: Quest Failed ::}
+{7220099}{}{HARD_COMPLETED:I helped Saul resolve his problem.
+
+:: Quest Completed ::}
+{7220101}{}{Junktown: Help Saul}
+{7220102}{}{QUEST:Help Saul}
+
+#=======================================
+# 7221 / q_jt_steal_neal_urn
+# Junktown, Steal Neal's Urn
+#=======================================
+{7221001}{}{I've heard that Neal has an urn someone wants stolen. I should learn where it is kept and how to take it without getting caught.
+
+:: New Quest Available ::}
+{7221011}{}{I'm trying to steal Neal's urn. I should find a way to obtain it and decide what to do with it once I have it.}
+{7221070}{}{I've obtained Neal's urn. I should deliver it to the person who requested it, if that is part of the arrangement.}
+{7221081}{}{I failed to steal Neal's urn or can no longer complete the job as planned.
+
+:: Quest Failed ::}
+{7221099}{}{HARD_COMPLETED:I stole Neal's urn and completed the assignment.
+
+:: Quest Completed ::}
+{7221101}{}{Junktown: Steal Neal's Urn}
+{7221102}{}{QUEST:Steal Neal's Urn}
+
+#=======================================
+# 7222 / q_jt_save_trish
+# Junktown, Save Trish (cut content)
+#=======================================
+{7222001}{}{I've come across a lead about Trish, who may be in danger. This appears to be part of cut content, so I should follow any available clues only if the quest is implemented in this world.
+
+:: New Quest Available ::}
+{7222011}{}{I'm looking into Trish's situation. I should follow the available clues and try to get her to safety.}
+{7222070}{}{I've helped Trish reach safety. I should report back if anyone was waiting for me to help her.}
+{7222081}{}{I was unable to save Trish through the approach I was following.
+
+:: Quest Failed ::}
+{7222099}{}{HARD_COMPLETED:Trish has been saved and the quest is complete.
+
+:: Quest Completed ::}
+{7222101}{}{Junktown: Save Trish (Cut Content)}
+{7222102}{}{QUEST:Save Trish (cut content)}
+
 #=========================================================================================================================
 # 7327 / quest_water_chip
 # Vault 13, Water Chip

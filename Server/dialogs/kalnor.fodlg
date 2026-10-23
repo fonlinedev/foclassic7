@@ -8,8 +8,8 @@ lang=engl
 &
 1 1000 None 1 #
 2 1010 D _script dialog@d_IsArmed 0  #
-6 1020 D _script dialog@d_IsNotArmed 0  #
-11 1030 D _script dialog@d_CheckEvening 0  D or D _script dialog@d_CheckNight 0  @
+6 1020 D _script dialog@d_IsNotArmed 0  D _script dialog@d_CheckDay 0  #
+10 1030 D _script dialog@d_CheckNight 0  @
 7 2000 None 0 #
 0 2010 @
 6 3000 None 0 #
@@ -40,7 +40,7 @@ lang=engl
 10 10000 None 0 #
 11 10010 D _param p ST_INTELLECT } 3 #
 0 10020 D _param p ST_INTELLECT } 3 #
-12 10030 D _param p ST_INTELLECT > 5 #
+11 10030 D _param p ST_INTELLECT > 5 #
 13 10040 D _param p ST_INTELLECT < 3 @
 11 11000 None 0 @
 12 12000 None 0 @

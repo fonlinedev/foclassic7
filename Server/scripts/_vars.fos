@@ -8,7 +8,7 @@
 #ifndef __VARS__
 #define __VARS__
 /*************************************************************************************
-***  VARS  *****  COUNT: 00000396  ***************************************************
+***  VARS  *****  COUNT: 00000450  ***************************************************
 *************************************************************************************/
 
 //	GENERAL VARS
@@ -242,6 +242,25 @@
 #define LVAR_q_jt_sneakeater                    (7208)
 #define LVAR_q_jt_sneakeater_locid              (7209)
 #define LVAR_q_jt_sneakeater_perk               (7210)
+#define LVAR_q_jt_skulz_gang                      (7211)
+#define LVAR_q_jt_kill_killian                     (7212)
+#define LVAR_q_jt_gizmo_confession                 (7213)
+#define LVAR_q_jt_rescue_sinthia                   (7214)
+#define LVAR_q_jt_stop_gizmo                       (7215)
+#define LVAR_q_jt_guard_caravans                   (7216)
+#define LVAR_q_jt_phil_canine                      (7217)
+#define LVAR_q_jt_save_killian                     (7218)
+#define LVAR_q_jt_kill_neal                        (7219)
+#define LVAR_q_jt_help_saul                        (7220)
+#define LVAR_q_jt_steal_neal_urn                   (7221)
+#define LVAR_q_jt_save_trish                       (7222)
+#define LVAR_q_jt_killian_state                    (7223)
+#define LVAR_q_jt_gizmo_state                      (7224)
+#define LVAR_q_jt_skulz_state                      (7225)
+#define LVAR_q_jt_neal_state                       (7226)
+#define LVAR_q_jt_caravan_state                    (7227)
+#define LVAR_q_jt_killian_assassin_state           (7228)
+
 
 // NEW QUESTS AND LOCID
 #define LVAR_quest_water_chip                   (7327)
@@ -1683,6 +1702,153 @@
 **********
    0 == inactive
    1 == active
+**********
+
+
+    $ 7211 1 q_jt_skulz_gang	0	0	4	1
+**********
+    0 == inactive
+    1 == active
+    2 == gang issue resolved / objective complete
+    3 == quest completed
+    4 == quest failed
+**********
+
+    $ 7212 1 q_jt_kill_killian	0	0	4	1
+**********
+    0 == inactive
+    1 == active
+    2 == Killian killed
+    3 == quest completed
+    4 == quest failed
+**********
+
+    $ 7213 1 q_jt_gizmo_confession	0	0	5	1
+**********
+    0 == inactive
+    1 == active
+    2 == confession/evidence obtained
+    3 == returned to quest giver / resolved
+    4 == quest completed
+    5 == quest failed
+**********
+
+    $ 7214 1 q_jt_rescue_sinthia	0	0	5	1
+**********
+    0 == inactive
+    1 == active
+    2 == rescue objective reached
+    3 == Sinthia rescued
+    4 == quest completed
+    5 == quest failed
+**********
+
+    $ 7215 1 q_jt_stop_gizmo	0	0	5	1
+**********
+    0 == inactive
+    1 == active
+    2 == Gizmo's plan exposed / countermeasure available
+    3 == Gizmo's plan stopped
+    4 == quest completed
+    5 == quest failed
+**********
+
+    $ 7216 1 q_jt_guard_caravans	0	0	4	1
+**********
+    0 == inactive
+    1 == available
+    2 == accepted / guarding
+    3 == completed
+    4 == failed
+**********
+
+    $ 7217 1 q_jt_phil_canine	0	0	4	1
+**********
+    0 == inactive
+    1 == active
+    2 == objective resolved
+    3 == quest completed
+    4 == quest failed
+**********
+
+    $ 7218 1 q_jt_save_killian	0	0	5	1
+**********
+    0 == inactive
+    1 == active
+    2 == danger/event triggered
+    3 == Killian saved
+    4 == quest completed
+    5 == quest failed
+**********
+
+    $ 7219 1 q_jt_kill_neal	0	0	4	1
+**********
+    0 == inactive
+    1 == active
+    2 == Neal killed
+    3 == quest completed
+    4 == quest failed
+**********
+
+    $ 7220 1 q_jt_help_saul	0	0	4	1
+**********
+    0 == inactive
+    1 == active
+    2 == objective resolved
+    3 == quest completed
+    4 == quest failed
+**********
+
+    $ 7221 1 q_jt_steal_neal_urn	0	0	5	1
+**********
+    0 == inactive
+    1 == active
+    2 == urn stolen
+    3 == urn delivered / objective resolved
+    4 == quest completed
+    5 == quest failed
+**********
+
+    $ 7222 1 q_jt_save_trish	0	0	5	1
+**********
+    Cut-content quest; stages are provisional pending confirmation of original quest logic.
+    0 == inactive
+    1 == active
+    2 == objective reached
+    3 == Trish saved
+    4 == quest completed
+    5 == quest failed
+**********
+
+    $ 7223 1 q_jt_killian_state 0 0 2 0  
+**********
+    Shared Junktown state: 0 == alive/normal, 1 == dead, 2 == hostile or unavailable.
+**********
+
+    $ 7224 1 q_jt_gizmo_state 0 0 2 0  
+**********
+    Shared Junktown state: 0 == alive/normal, 1 == dead, 2 == plan stopped / neutralized.
+**********
+
+    $ 7225 1 q_jt_skulz_state 0 0 2 0  
+**********
+    Shared Junktown state: 0 == active, 1 == defeated, 2 == resolved without defeating the gang.
+**********
+
+    $ 7226 1 q_jt_neal_state 0 0 2 0 
+**********
+    Shared Junktown state: 0 == alive/normal, 1 == dead, 2 == hostile or unavailable.
+**********
+
+    $ 7227 1 q_jt_caravan_state 0 0 4 0
+**********
+    Shared caravan state: 0 == not started, 1 == available, 2 == guarding active, 3 == completed, 4 == failed.
+**********
+
+   $	7228	1	q_jt_killian_assassin_state	0	0	1	0
+**********
+   0 == inactive
+   1 == done
 **********
 
    $	7327	1	quest_water_chip	0	0	4	1

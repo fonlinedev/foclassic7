@@ -1,0 +1,65 @@
+//
+// FOnline: 2238
+// Rotators
+//
+// garl.fos
+//
+
+// Garl leader of raiders, duel script
+
+#include "_macros.fos"
+#include "_defines.fos"
+#include "messages_h.fos"
+#include "npc_roles_h.fos"
+#include "npc_planes_h.fos"
+#include "mapdata_h.fos"
+
+import void NpcSetLevel(Critter& npc, int level) from "parameters";
+import bool d_WeaponInHand(Critter& player, Critter@ npc) from "dialog";
+
+#define KILLIAN_PID (307)
+
+void critter_init(Critter& cr, bool firstTime)
+{
+    cr.StatBase[ST_REPLICATION_TIME] = REPLICATION_DELETE_FAST;
+    cr.ModeBase[MODE_NO_HOME] = 1;
+    cr.SetEvent(CRITTER_EVENT_IDLE, "_MobIdle");
+    cr.SetEvent(CRITTER_EVENT_DEAD, "_Dead");
+    if(firstTime)
+    {
+        NpcSetLevel(cr, 10);
+    }
+}
+
+void _MobIdle(Critter& cr)
+{    
+    // check critters in sight
+    array<Critter@> crits;
+    // get visible npcs    
+    uint            num = cr.GetMap().GetCritters(0, FIND_ALL | FIND_ONLY_NPC, crits);
+    for(uint i = 0; i < num; i++)
+    {
+        // attack
+        uint npcId = crits[i].GetProtoId();
+        if (npcId == KILLIAN_PID) {
+            cr.Say(SAY_SHOUT_ON_HEAD, "Gizmo sends regards!");
+            int[] data = { crits[i].Id, cr.Id };            
+            CreateTimeEvent(AFTER(REAL_SECOND(5)), "e_InitiateAttack", data, false);
+            return;
+        }
+    }
+}
+
+uint e_InitiateAttack(array<uint>@ values)
+{
+    Critter@ player = GetCritter(values[0]);
+    Critter@ guard = GetCritter(values[1]);
+    AddAttackPlane(guard, 0, player);
+    return REAL_SECOND(1);
+}
+
+void _Dead(Critter& cr, Critter@ player)
+{        
+    DeleteNpc(cr);
+    player.Say(SAY_NETMSG, "Killian's assassin is dead.");
+}
