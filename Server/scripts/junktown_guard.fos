@@ -73,10 +73,14 @@ void _OnMessage(Critter& npc, Critter& player, int num, int val)
     int rep = player.ReputationBase[FACTION_JUNKTOWN];    
     Log("guard receiving message "+ num + " player rep: "+rep);
     GuardOnMessage(npc, player, num, val);
-    bool armed = d_IsArmed(player, npc);
-    if(!armed)
+    bool isArmed = d_IsArmed(player, npc);
+    bool isNight = IsNight();    
+    Log("Night: " + isNight + " | armed " + isArmed);
+
+    bool warnGuard = isNight || isArmed;
+    if (!warnGuard)
         return;
-        
+
     switch(num)
     {
 
@@ -89,7 +93,7 @@ void _OnMessage(Critter& npc, Critter& player, int num, int val)
         break;
 
     case MSG_JNK_PLAYER_ENTRANCE_ENTER:
-        if(armed && npc.Stat[ST_NPC_ROLE] == ROLE_JNK_GUARD_GATE)
+        if(npc.Stat[ST_NPC_ROLE] == ROLE_JNK_GUARD_GATE)
         {
             Log("attack the player");
             player.Wait(0);

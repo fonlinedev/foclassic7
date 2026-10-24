@@ -38,7 +38,7 @@ void map_init(Map& map, bool firstTime)
 
 }
 
-// Entrance at day
+// Entrance at gates
 void t_NearEntrance(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
 {
     if(!critter.IsPlayer() || !entered)
