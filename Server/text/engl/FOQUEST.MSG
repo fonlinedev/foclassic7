@@ -753,6 +753,23 @@ In order to do this, I have to find new electronic parts with that I can repair 
 {7222101}{}{Junktown: Save Trish (Cut Content)}
 {7222102}{}{QUEST:Save Trish (cut content)}
 
+#=======================================
+# 7229 / q_hub_iguana_state
+# The Hub, Blackmail Iguana Bob
+#=======================================
+{7229001}{}{Gretch has revealed something suspicious about Iguana Bob's meat. I should investigate the operation. I'm investigating Iguana Bob's meat operation. I should confront those involved and decide what to do next.}
+{7229002}{}{I've confronted the people involved in the meat operation. I should follow through with my decision.}
+{7229003}{}{I've reported Iguana Bob's meat operation to the Hub police. I should follow up on the investigation.}
+{7229004}{}{I've taken action against the people involved in Iguana Bob's meat operation. I should make sure the operation can no longer continue.}
+{7229005}{}{I can no longer resolve the meat operation through the approach I was following.
+
+:: Quest Failed ::}
+{7229006}{}{HARD_COMPLETED:Iguana Bob's meat operation has been dealt with.
+
+:: Quest Completed ::}
+{7229101}{}{The Hub: Blackmail Iguana Bob}
+{7229102}{}{QUEST:Blackmail Iguana Bob}
+
 #=========================================================================================================================
 # 7327 / quest_water_chip
 # Vault 13, Water Chip

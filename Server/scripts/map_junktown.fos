@@ -35,7 +35,7 @@ void map_init(Map& map, bool firstTime)
     Log("Setting NO PVP and NO LOOTING for location Junktown (" + proto + ", " + protoName + ")");
     _MapSetMode(map, MAP_MODE_NO_LOOT_DROP);
     _MapSetMode(map, MAP_MODE_NO_PVP);
-
+    spawnDocMorbidTeam(map);
 }
 
 // Entrance at gates
@@ -184,4 +184,115 @@ uint e_SwitchGate(array<uint>@ values)
 
     // on init
     return REAL_SECOND(5);
+}
+
+void spawnDocMorbidTeam(Map& map)
+{
+    Critter@ crDoc = SpawnStaticNpc(
+        map,
+        11,                 // entire id
+        451,                // Pid
+        1731,      // Dialog Id
+        0,                // bag
+        5004,
+        0,                  // faction mode
+        0,                  // faction rank
+        3,                  // direction
+        "",
+        "DOC_MORBID"
+    );
+    if (!valid(crDoc))
+        Log("Error at DOC_MORBID spawning");
+
+    Critter@ crCougar = SpawnStaticNpc(
+        map,
+        12,                 // entire id
+        402,                // Pid
+        1729,      // Dialog Id
+        156,                // bag
+        5004,
+        0,                  // faction mode
+        0,                  // faction rank
+        3,                  // direction
+        "",
+        "COUGAR"
+    );
+    if (!valid(crCougar))
+        Log("Error at COUGAR spawning");
+
+     Critter@ crFlash = SpawnStaticNpc(
+        map,
+        13,                 // entire id
+        402,                // Pid
+        1730,      // Dialog Id
+        15,                // bag
+        5004,
+        0,                  // faction mode
+        0,                  // faction rank
+        1,                  // direction
+        "",
+        "FLASH"
+    );
+    if (!valid(crCougar))
+        Log("Error at COUGAR spawning");
+}
+
+Critter@ SpawnStaticNpc(
+    Map@ map,
+    uint coord,
+    uint pid,
+    uint dialog,
+    uint bag,
+    uint team,
+    uint factionMode,
+    uint factionRank,
+    uint dir,
+    string initFunc,
+    string name)
+{
+    uint16 x = 0;
+    uint16 y = 0;
+
+    map.GetEntireCoords(coord, 0, x, y);
+
+    Critter@ cr = map.GetCritter(x, y);
+
+    if (!valid(cr))
+    {
+        int[] params = {
+            ST_DIALOG_ID, dialog,
+            ST_BAG_ID, bag,
+            ST_TEAM_ID, team,
+            ST_FACTION_MODE, factionMode,
+            ST_FACTION_RANK, factionRank,
+            MODE_NO_LOOT, 1,
+            MODE_NO_STEAL, 1
+        };
+
+        @cr = map.AddNpc(
+            pid,
+            x,
+            y,
+            dir,
+            params,
+            null,
+            initFunc
+        );
+
+        if (!valid(cr))
+        {
+            Log("Error creating " + name);
+            return null;
+        }
+
+        cr.StatBase[ST_REPLICATION_TIME] = REPLICATION_MINUTE(1);
+
+        Log(name + " spawned");
+    }
+    else
+    {
+        Log(name + " already exists, updating");        
+    }
+
+    return cr;
 }

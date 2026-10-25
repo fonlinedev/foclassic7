@@ -7,79 +7,80 @@ lang=engl
 [dialog]
 &
 1 1000 None 1 #
-5 1010 @
-2 2000 None 0 #
-13 2010 @
-13 3000 None 0 #
+5 1010 D _var p name_mem_npc_player = 0 D _script dialog@d_CheckDay 0  R _var p name_mem_npc_player = 1 #
+6 1020 D _var p name_mem_npc_player = 1 D _script dialog@d_CheckDay 0  #
+18 1030 D _script dialog@d_CheckNight 0  @
+5 2000 None 0 #
+21 2010 D _param p ST_INTELLECT } 3 D _script dialog@d_NotIsToHeal 0  #
+14 2020 D _script dialog@d_IsToHeal 0  D _param p ST_INTELLECT } 3 #
+21 2030 D _param p ST_INTELLECT < 3 #
+15 2040 D _var p q_hub_iguana_state > 0 D _param p ST_INTELLECT } 3 #
+16 2050 D _param p ST_INTELLECT } 3 #
+17 2060 D _param p ST_INTELLECT } 3 @
+18 3000 None 0 #
 0 3010 @
-3 4000 None 0 #
-0 4010 @
-4 5000 None 0 #
-0 5010 @
-5 6000 None 0 #
-14 6010 #
-14 6020 #
-15 6030 #
-16 6040 #
-17 6050 @
-14 7000 None 0 #
-21 7010 #
-22 7020 @
-21 8000 None 0 #
-25 8010 #
-26 8020 @
-25 9000 None 0 #
-28 9010 @
-28 10000 None 0 #
-26 10010 #
-33 10020 @
-26 11000 None 0 #
-29 11010 @
-29 12000 None 0 #
-0 12010 @
-33 13000 None 0 #
-35 13010 @
-35 14000 None 0 #
-0 14010 @
-22 15000 None 0 #
-27 15010 @
-27 16000 None 0 #
-30 16010 #
-30 16020 #
-31 16030 #
-32 16040 #
-32 16050 @
-30 17000 None 0 #
-29 17010 #
-34 17020 @
-34 18000 None 0 #
-0 18010 @
-31 19000 None 0 #
-0 19010 @
-32 20000 None 0 #
-0 20010 @
-15 21000 None 0 #
-23 21010 @
-23 22000 None 0 #
+6 4000 None 0 #
+21 4010 D _param p ST_INTELLECT } 3 D _script dialog@d_NotIsToHeal 0  #
+14 4020 D _param p ST_INTELLECT } 3 D _script dialog@d_IsToHeal 0  #
+16 4030 D _param p ST_INTELLECT } 3 #
+16 4040 D _param p ST_INTELLECT < 3 #
+15 4050 D _var p q_hub_iguana_state > 0 D _param p ST_INTELLECT } 3 @
+2 5000 None 0 #
+13 5010 @
+13 6000 None 0 #
+0 6010 @
+3 7000 None 0 #
+0 7010 @
+4 8000 None 0 #
+0 8010 @
+14 9000 None 0 #
+22 9010 D _script dialog@d_IsToHeal 0  @
+21 10000 None 0 #
+26 10010 D _script dialog@d_HasMoney 1 10 #
+28 10020 @
+28 11000 None 0 #
+26 11010 D _script dialog@d_HasMoney 1 10 #
+29 11020 @
+22 12000 None 0 #
+36 12010 @
+36 13000 None 0 #
+27 13010 @
+38 14000 None 0 #
+27 14010 @
+33 15000 None 0 @
+27 16000 dialog@dlg_ShowHealingPrice 0 #
+30 16010 D _param p ST_INTELLECT } 3 D _script dialog@d_HealingMoney 0  #
+30 16020 D _param p ST_INTELLECT < 3 D _script dialog@d_HealingMoney 0  #
+31 16030 D _param p ST_INTELLECT } 3 #
+32 16040 D _param p ST_INTELLECT } 3 #
+32 16050 D _param p ST_INTELLECT < 3 @
+26 17000 None 0 #
+0 17010 R _script dialog@r_RemoveMoneyInventory 1 10 @
+29 18000 None 0 #
+65507 18010 @
+35 19000 None 0 #
+65507 19010 @
+30 20000 None 0 #
+0 20010 R _script dialog@r_DocHeal 0  @
+31 21000 None 0 #
+0 21010 @
+32 22000 None 0 #
 0 22010 @
-16 23000 None 0 #
-0 23010 @
-17 24000 None 0 #
-14 24010 #
-16 24020 #
-24 24030 @
-24 25000 None 0 #
-14 25010 #
-16 25020 @
-6 26000 None 0 #
+15 23000 None 0 #
+23 23010 @
+23 24000 None 0 #
+0 24010 @
+16 25000 None 0 #
+0 25010 @
+17 26000 None 0 #
 14 26010 #
-14 26020 #
-14 26030 #
-15 26040 @
-7 27000 None 0 #
-18 27010 @
-18 28000 None 0 #
-0 28010 @
+16 26020 #
+24 26030 @
+24 27000 None 0 #
+14 27010 #
+16 27020 @
+7 28000 None 0 #
+18 28010 @
 8 29000 None 0 #
 18 29010 @
 9 30000 None 0 #
@@ -91,14 +92,14 @@ lang=engl
 0 31010 @
 10 32000 None 0 #
 14 32010 #
-14 32020 #
+14 32020 D _param p ST_INTELLECT < 3 #
 19 32030 @
 11 33000 None 0 #
-14 33010 #
-14 33020 #
-14 33030 #
-20 33040 #
-15 33050 @
+14 33010 D _param p ST_INTELLECT } 3 #
+14 33020 D _param p ST_INTELLECT } 3 #
+14 33030 D _param p ST_INTELLECT < 3 #
+20 33040 D _param p ST_INTELLECT } 3 #
+15 33050 D _var p q_hub_iguana_state > 1 @
 20 34000 None 0 #
 0 34010 @
 12 35000 None 0 #
@@ -112,119 +113,87 @@ lang=engl
 {200}{}{You see Doc Morbid.}
 {1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
 conditions.]}
-{1010}{}{[MANUAL: initial branch condition/greeting -> Morbid17]}
-{2000}{}{Now, half of what you have just seen is mine again.}
-{2010}{}{YOU RIPPED OUT MY EYE! YOU MOTHER . . .}
-{3000}{}{Now, now. Watch your language.}
+{1010}{}{First time}
+{1020}{}{Back}
+{1030}{}{Night}
+{2000}{}{Oh, It's a customer! What can I help you with?}
+{2010}{}{I need healing.}
+{2020}{}{I need healing.}
+{2030}{}{Wock!}
+{2040}{}{I know about you and Iguana Bob, you filthy butcher.}
+{2050}{}{Nothing, just making small talk.}
+{2060}{}{You seem excited to see me. Why?}
+{3000}{}{I'm sorry, I don't treat idiots at night. Something about full moons and lunacy, I
+suppose. Have a good night.}
 {3010}{}{[Done.]}
-{4000}{}{Trespasser! This is a private room!}
-{4010}{}{[Done.]}
-{5000}{}{Don't try to talk your way out of this one!}
-{5010}{}{[Done.]}
-{6000}{}{Oh, It's a customer! What can I help you with?}
-{6010}{}{I need healing.}
-{6020}{}{Wock!}
-{6030}{}{I know about you and Iguana Bob, you filthy butcher.}
-{6040}{}{Nothing, just making small talk.}
-{6050}{}{You seem exited to see me. Why?}
-{7000}{}{Hmm, lets have a look.}
-{7010}{}{[MANUAL: add player response/transition -> Morbid04]}
-{7020}{}{[MANUAL: add player response/transition -> Morbid09]}
-{8000}{}{You seem to be in nearly perfect health. That will be $10 for the examination.}
-{8010}{}{Ten caps for you to tell me that? You gotta be kidding.}
-{8020}{}{Here you go. Take your money.}
-{9000}{}{[MANUAL: add NPC dialogue for diagram node 'Morbid04a']}
-{9010}{}{[MANUAL: add player response/transition -> Morbid05]}
-{10000}{}{I never joke. Especially when it comes to physical trauma. You will pay or I'll have to
+{4000}{}{Ahh, a repeat customer. Excellent these days! How can I help you?}
+{4010}{}{I need healing.}
+{4020}{}{I need healing.}
+{4030}{}{Nothing, just making small talk.}
+{4040}{}{Wock!}
+{4050}{}{I know about you and Iguana Bob, you filthy butcher.}
+{5000}{}{Now, half of what you have just seen is mine again.}
+{5010}{}{YOU RIPPED OUT MY EYE! YOU MOTHER . . .}
+{6000}{}{Now, now. Watch your language.}
+{6010}{}{[Done.]}
+{7000}{}{Trespasser! This is a private room!}
+{7010}{}{[Done.]}
+{8000}{}{Don't try to talk your way out of this one!}
+{8010}{}{[Done.]}
+{9000}{}{Hmm, lets have a look.}
+{9010}{}{[Proceed examination...]}
+{10000}{}{You seem to be in nearly perfect health. That will be $10 for the examination.}
+{10010}{}{Here you go. Take your money.}
+{10020}{}{Ten caps for you to tell me that? You gotta be kidding.}
+{11000}{}{I never joke. Especially when it comes to physical trauma. You will pay or I'll have to
 resort to other forms of compensation, many of which are much more painful then just
 paying my fee.}
-{10010}{}{Ok, here's your money.}
-{10020}{}{Bite me. I'm leaving.}
-{11000}{}{Thank you for your business. Come again.}
-{11010}{}{[MANUAL: add player response/transition -> Morbid08]}
-{12000}{}{You do not have enough money. I have a very special way of dealing with debtors - I
-don't. Flash and Cougar, take our new found source of income to the lab for processing.}
-{12010}{}{[Done.]}
-{13000}{}{[MANUAL: add NPC dialogue for diagram node 'Morbid05a']}
-{13010}{}{[MANUAL: add player response/transition -> Morbid06]}
-{14000}{}{Have it your way. Cougar, Flash. Show our 'patient' to the lab.}
-{14010}{}{[Done.]}
-{15000}{}{You are
----
-perfectly healthy,
----
-slightly wounded,
----
-moderately wounded,
----
-seriously wounded,
----
-near death,
----
-You have minor radiation poisoning.
----
-You have some serious radiation poisoning.
----
-Your body has absorbed an incredible amount of radiation.
----
-I have never seen such readings on my radscanner. I think you are about to die. I give
-you two to three weeks.
----
-There is not much I can do about it.
----
-Ok, I have your test results:}
-{15010}{}{[MANUAL: add player response/transition -> Morbid09a]}
-{16000}{}{The total cost will be $
----
-. Payment is due before treatment. No exceptions. Will you pay?}
+{11010}{}{Ok, here's your money.}
+{11020}{}{Bite me. I'm leaving.}
+{12000}{}{Ok, I have your test results:}
+{12010}{}{[Show results...]}
+{13000}{}{You are moderately wounded.}
+{13010}{}{[Proceed...]}
+{14000}{}{You are near death.}
+{14010}{}{[Proceed...]}
+{15000}{}{There you go. Come back again!}
+{16000}{}{The total cost will be $@lex price@. Payment is due before treatment. No exceptions. Will you pay?}
 {16010}{}{Yes, I will pay.}
 {16020}{}{Ya.}
 {16030}{}{No, I don't have the money. Will you float me?}
 {16040}{}{No.}
 {16050}{}{Nuh.}
-{17000}{}{Excellent. Let's begin. This might hurt a little . . .
----
-There you go. Come back again!}
-{17010}{}{[MANUAL: add player response/transition -> Morbid08]}
-{17020}{}{[MANUAL: add player response/transition -> UpReact]}
-{18000}{}{[MANUAL: add NPC dialogue for diagram node 'UpReact']}
+{17000}{}{Thank you for your business. Come again.}
+{17010}{}{[Done.]}
+{18000}{}{You do not have enough money. I have a very special way of dealing with debtors - I
+don't. Flash and Cougar, take our new found source of income to the lab for processing.}
 {18010}{}{[Done.]}
-{19000}{}{No. I don't loan anyone, and I mean anyone, any amount of money. Go away, you pauper.}
+{19000}{}{Have it your way. Cougar, Flash. Show our 'patient' to the lab.}
 {19010}{}{[Done.]}
-{20000}{}{It's your life. Good-Bye.}
+{20000}{}{Excellent. Let's begin. This might hurt a little . . .}
 {20010}{}{[Done.]}
-{21000}{}{Wh . . . what could you possibly mean?}
-{21010}{}{I had a little conversation with your troll . . .}
-{22000}{}{[He looks shiftily from side to side] That proves nothing. Gretch is a little . . . slow
-in the head. No one listens to him around here. You had best leave.}
+{21000}{}{No. I don't loan anyone, and I mean anyone, any amount of money. Go away, you pauper.}
+{21010}{}{[Done.]}
+{22000}{}{It's your life. Good-Bye.}
 {22010}{}{[Done.]}
-{23000}{}{Well, if you do need anything, please stop by. No one can beat my service!}
-{23010}{}{[Done.]}
-{24000}{}{My business has dropped off recently. I'm happy to see any customers, these days. Not
+{23000}{}{Wh . . . what could you possibly mean?}
+{23010}{}{I had a little conversation with your troll . . .}
+{24000}{}{[He looks shiftily from side to side] That proves nothing. Gretch is a little . . . slow
+in the head. No one listens to him around here. You had best leave.}
+{24010}{}{[Done.]}
+{25000}{}{Well, if you do need anything, please stop by. No one can beat my service!}
+{25010}{}{[Done.]}
+{26000}{}{My business has dropped off recently. I'm happy to see any customers, these days. Not
 that I mind your company, of course.}
-{24010}{}{Excellent, I need some healing.}
-{24020}{}{Of course, I understand. Have a good day.}
-{24030}{}{Why has your business dropped off?}
-{25000}{}{In case you haven't noticed, I got some competition.
----
-Complaining to Killian won't do anything. He doesn't see anything wrong with the
-newcomers.
----
-Those damn Children have moved in next door, and all, um, much of my business has gone
-to them. I don't like it, but I can't lower my prices to match theirs. I can only
-provide better service.}
-{25010}{}{Ahh, I do need some healing.}
-{25020}{}{Hmm, better prices, interesting. Thank you.}
-{26000}{}{Ahh, a repeat customer. Excellent these days! How can I help you?}
-{26010}{}{I need healing.}
-{26020}{}{Nothing, just making small talk.}
-{26030}{}{Wock!}
-{26040}{}{I know about you and Iguana Bob, you filthy butcher.}
-{27000}{}{You again. I hope you have another good reason for disturbing me . . .}
-{27010}{}{Aggh!}
-{28000}{}{I'm sorry, I don't treat idiots at night. Something about full moons and lunacy, I
-suppose. Have a good night.}
-{28010}{}{[Done.]}
+{26010}{}{Excellent, I need some healing.}
+{26020}{}{Of course, I understand. Have a good day.}
+{26030}{}{Why has your business dropped off?}
+{27000}{}{In case you haven't noticed, I got some competition.@@
+Complaining to Killian won't do anything. He doesn't see anything wrong with the newcomers.@@Those damn Children have moved in next door, and all, um, much of my business has gone to them. I don't like it, but I can't lower my prices to match theirs. I can only provide better service.}
+{27010}{}{Ahh, I do need some healing.}
+{27020}{}{Hmm, better prices, interesting. Thank you.}
+{28000}{}{You again. I hope you have another good reason for disturbing me . . .}
+{28010}{}{Aggh!}
 {29000}{}{I hope you have a good reason for disturbing me. My time is extremely valuable.}
 {29010}{}{Aggh!}
 {30000}{}{Oh, back so soon. What can I help you with?}

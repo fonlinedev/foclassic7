@@ -6,9 +6,103 @@ lang=engl
 
 [dialog]
 &
-1 1000 None 1 &
+1 1000 None 1 #
+2 1010 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
+3 1020 D _var p name_mem_npc_player = 1 @
+2 2000 None 0 #
+4 2010 D _param p ST_INTELLECT < 3 #
+5 2020 D _param p ST_INTELLECT } 3 #
+0 2030 D _param p ST_INTELLECT } 3 #
+4 2040 D _param p ST_INTELLECT } 3 @
+4 3000 None 0 #
+0 3010 D _param p ST_INTELLECT } 3 #
+9 3020 D _param p ST_INTELLECT } 3 #
+10 3030 D _param p ST_INTELLECT } 3 #
+11 3040 D _param p ST_INTELLECT < 3 @
+3 4000 None 0 #
+0 4010 D _param p ST_INTELLECT < 3 #
+14 4020 D _param p ST_INTELLECT } 3 #
+10 4030 D _param p ST_INTELLECT } 3 #
+5 4040 D _param p ST_INTELLECT } 3 #
+0 4050 D _param p ST_INTELLECT } 3 @
+9 5000 None 0 #
+0 5010 #
+14 5020 #
+15 5030 @
+14 6000 None 0 #
+0 6010 #
+15 6020 D _var p q_hub_iguana_state = 0 #
+65507 6030 @
+15 7000 None 0 #
+18 7010 D _var p q_hub_iguana_state = 0 R _var p q_hub_iguana_state = 1 #
+4 7020 #
+0 7030 @
+18 8000 None 0 #
+0 8010 #
+65507 8020 @
+10 9000 None 0 #
+0 9010 @
+11 10000 None 0 #
+0 10010 @
+5 11000 None 0 #
+9 11010 #
+12 11020 #
+4 11030 @
+12 12000 None 0 #
+0 12010 #
+9 12020 #
+9 12030 &
 
 [engl]
-{100}{}{none}
-{1000}{}{Predialogue installations}
+{100}{}{Gretch}
+{200}{}{You see a rotund midget.}
+{210}{}{You see Gretch, Doc Morbid's assistant.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> Gretch01]}
+{1020}{}{[MANUAL: initial branch condition/greeting -> Gretch00]}
+{2000}{}{I know you . . . right?}
+{2010}{}{Urgh?}
+{2020}{}{No.}
+{2030}{}{Never mind.}
+{2040}{}{Yes.}
+{3000}{}{Me have trouble thinking, too . . . what we talk about?}
+{3010}{}{I don't remember. Goodbye.}
+{3020}{}{You were telling me what you're doing.}
+{3030}{}{We were talking about how stupid you are.}
+{3040}{}{Dunna.}
+{4000}{}{What you down here for?}
+{4010}{}{Urgh?}
+{4020}{}{Your boss sent me down.}
+{4030}{}{Don't talk to me like that, cretin.}
+{4040}{}{To see how you're doing.}
+{4050}{}{Nothing. Goodbye.}
+{5000}{}{Body parts almost ready to go to Hub.}
+{5010}{}{I don't think I want to hear about this.}
+{5020}{}{Of course. That's why I'm here.}
+{5030}{}{For what?}
+{6000}{}{Iguana man Bob send you . . . he happy, lots of good meat . . .}
+{6010}{}{Of course . . . I'll be back in a minute.}
+{6020}{}{He's selling human body parts for people to eat?}
+{6030}{}{[Attack] You sick little scab, I'm gonna cut you up and sell you as meat!}
+{7000}{}{For Bob to sell . . . to eat . . . why you ask what we use for?}
+{7010}{}{I wasn't sure this was where Bob got his human meat from.}
+{7020}{}{Sometimes I have a little trouble thinking.}
+{7030}{}{No reason. Goodbye.}
+{8000}{}{Yes . . . Doc Morbid has best human bodies around. None better.}
+{8010}{}{Uh . . . I'll be back to pick up the . . . bodies . . . in a little while. Goodbye.}
+{8020}{}{[Attack] You sick little scab, I'm gonna cut you up and sell you as meat!}
+{9000}{}{I don't talk to you any more.}
+{9010}{}{[Done.]}
+{10000}{}{I go back to work now.}
+{10010}{}{[Done.]}
+{11000}{}{Um . . . okay.}
+{11010}{}{What are you doing?}
+{11020}{}{Okay? Does that mean that you're almost done?}
+{11030}{}{You're a little slow, aren't you?}
+{12000}{}{Yes, yes, almost done.}
+{12010}{}{Great. I'll see you later.}
+{12020}{}{With what?}
+{12030}{}{It's about time.}
+{100000001}{}{Don't be messing with the Doctor's stuff!}
 

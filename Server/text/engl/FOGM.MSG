@@ -115,6 +115,11 @@
 {200}{}{Doc Morbid Secret Lab}
 {206}{}{}
 
+# Map 20, base 210
+{210}{}{Hub Underground}
+{215}{}{01hub}
+{216}{}{gntlwin1:25, gntlwind:25, brdchir1:10, brdchirp:10, blank:30}
+
 # Map 23, base 240
 {240}{}{LA Warehouse}
 {245}{}{08vats}

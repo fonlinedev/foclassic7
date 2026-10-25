@@ -260,7 +260,7 @@
 #define LVAR_q_jt_neal_state                       (7226)
 #define LVAR_q_jt_caravan_state                    (7227)
 #define LVAR_q_jt_killian_assassin_state           (7228)
-
+#define LVAR_q_hub_iguana_state                    (7229)
 
 // NEW QUESTS AND LOCID
 #define LVAR_quest_water_chip                   (7327)
@@ -1849,6 +1849,18 @@
 **********
    0 == inactive
    1 == done
+**********
+
+   $ 7229 1 q_hub_iguana_state 0 0 6 1
+**********
+Shared Hub state:
+0 == not started
+1 == Gretch revealed the meat operation
+2 == blackmail deal made with Iguana Bob
+3 == operation reported to Hub police
+4 == operation resolved by killing or neutralizing the participants
+5 == completed
+6 == failed
 **********
 
    $	7327	1	quest_water_chip	0	0	4	1
