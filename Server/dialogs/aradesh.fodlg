@@ -1,0 +1,503 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+12 1010 D _var p q_shady_tandi = 0 D _var p q_shady_radscorpions = 0 D _var p q_shady_antidote = 0 #
+20 1020 D _var p q_shady_radscorpions = 3 D _var p q_shady_tandi = 0 D _var p q_shady_antidote = 0 #
+38 1030 D _var p q_shady_radscorpions < 3 D _var p q_shady_radscorpions } 1 #
+3 1040 D _var p q_shady_tandi = 0 D _var p q_shady_radscorpions = 3 D _var p q_shady_antidote = 1 #
+4 1050 D _var p q_shady_tandi } 1 D _var p q_shady_tandi < 6 #
+6 1060 D _script map_shadysands@d_TandiFollower 0  @
+12 2000 None 0 #
+28 2010 D _param p ST_INTELLECT } 3 #
+48 2020 D _param p ST_INTELLECT } 3 #
+30 2030 D _param p ST_INTELLECT } 3 #
+50 2040 D _param p ST_INTELLECT > 3 D _param p ST_INTELLECT { 5 #
+51 2050 D _param p ST_INTELLECT = 3 #
+32 2060 D _param p ST_INTELLECT } 3 #
+33 2070 D _param p ST_INTELLECT } 3 #
+34 2080 D _param p ST_INTELLECT < 3 @
+28 3000 None 0 #
+48 3010 #
+45 3020 #
+49 3030 #
+52 3040 @
+3 4000 None 0 #
+13 4010 D _param p ST_INTELLECT < 3 #
+14 4020 D _param p ST_INTELLECT } 3 @
+30 5000 None 0 #
+0 5010 @
+52 6000 None 0 #
+0 6010 @
+15 7000 None 0 #
+19 7010 #
+22 7020 #
+38 7030 D _var p q_shady_radscorpions = 0 D _var p q_shady_tandi = 0 #
+7 7040 D _var p q_shady_radscorpions = 3 D _var p q_shady_tandi = 0 #
+8 7050 D _var p q_shady_radscorpions } 1 D _var p q_shady_radscorpions < 3 D _var p q_shady_tandi = 0 #
+9 7060 D _var p q_shady_tandi = 6 @
+33 8000 None 0 #
+0 8010 @
+34 9000 None 0 #
+0 9010 @
+22 10000 None 0 #
+15 10010 @
+23 11000 None 0 #
+7 11010 #
+8 11020 #
+9 11030 #
+38 11040 #
+39 11050 @
+35 12000 None 0 #
+53 12010 #
+54 12020 @
+47 13000 None 0 #
+61 13010 #
+52 13020 @
+7 14000 None 0 #
+15 14010 #
+20 14020 @
+8 15000 None 0 #
+0 15010 @
+9 16000 None 0 #
+22 16010 #
+23 16020 #
+0 16030 @
+38 17000 None 0 #
+56 17010 @
+39 18000 None 0 #
+15 18010 #
+21 18020 #
+42 18030 @
+48 19000 None 0 #
+33 19010 #
+49 19020 #
+52 19030 @
+2 20000 None 0 #
+3 20010 #
+3 20020 #
+4 20030 #
+4 20040 #
+5 20050 #
+6 20060 #
+7 20070 #
+8 20080 #
+9 20090 #
+10 20100 #
+11 20110 #
+12 20120 @
+53 21000 None 0 #
+0 21010 @
+13 22000 None 0 #
+0 22010 @
+14 23000 None 0 #
+54 23010 #
+36 23020 #
+37 23030 @
+54 24000 None 0 #
+65 24010 R _var p q_shady_tandi = 1 @
+65 25000 None 0 #
+0 25010 @
+36 26000 None 0 #
+54 26010 #
+55 26020 @
+55 27000 None 0 #
+0 27010 @
+37 28000 None 0 #
+55 28010 @
+4 29000 None 0 #
+15 29010 D _param p ST_INTELLECT } 3 #
+16 29020 D _param p ST_INTELLECT } 3 #
+16 29030 D _param p ST_INTELLECT < 3 #
+17 29040 D _param p ST_INTELLECT } 3 D _var p q_shady_tandi = 7 #
+17 29050 D _param p ST_INTELLECT < 3 @
+21 30000 None 0 #
+0 30010 #
+19 30020 @
+19 31000 None 0 #
+0 31010 @
+20 32000 None 0 #
+15 32010 #
+19 32020 @
+25 33000 None 0 #
+19 33010 #
+40 33020 @
+40 34000 None 0 #
+0 34010 @
+56 35000 None 0 #
+66 35010 #
+73 35020 #
+68 35030 @
+66 36000 None 0 #
+0 36010 @
+67 37000 None 0 #
+73 37010 @
+73 38000 None 0 #
+15 38010 #
+74 38020 @
+74 39000 None 0 #
+53 39010 #
+66 39020 @
+68 40000 None 0 #
+15 40010 @
+42 41000 None 0 #
+21 41010 #
+22 41020 #
+23 41030 @
+16 42000 None 0 #
+0 42010 @
+17 43000 None 0 #
+0 43010 @
+5 44000 None 0 #
+0 44010 @
+18 45000 None 0 #
+0 45010 @
+6 46000 map_shadysands@r_CompleteTandiRescue 0 #
+15 46010 #
+19 46020 #
+0 46030 @
+10 47000 None 0 #
+15 47010 #
+24 47020 #
+25 47030 #
+26 47040 @
+24 48000 None 0 #
+0 48010 @
+26 49000 None 0 #
+22 49010 #
+25 49020 #
+41 49030 @
+41 50000 None 0 #
+57 50010 #
+58 50020 @
+57 51000 None 0 #
+69 51010 @
+69 52000 None 0 #
+15 52010 #
+21 52020 @
+58 53000 None 0 #
+15 53010 @
+11 54000 None 0 #
+15 54010 #
+24 54020 #
+25 54030 #
+44 54040 @
+27 55000 None 0 #
+42 55010 #
+42 55020 #
+43 55030 #
+44 55040 @
+43 56000 None 0 #
+0 56010 @
+44 57000 None 0 #
+0 57010 @
+46 58000 None 0 #
+49 58010 #
+61 58020 @
+49 59000 None 0 #
+0 59010 @
+45 60000 None 0 #
+59 60010 #
+60 60020 @
+59 61000 None 0 #
+29 61010 #
+33 61020 #
+33 61030 #
+52 61040 @
+60 62000 None 0 #
+70 62010 #
+71 62020 @
+70 63000 None 0 #
+52 63010 #
+53 63020 @
+71 64000 None 0 #
+49 64010 @
+61 65000 None 0 #
+72 65010 @
+72 66000 None 0 #
+0 66010 @
+50 67000 None 0 #
+15 67010 D _param p ST_INTELLECT } 3 #
+0 67020 D _param p ST_INTELLECT } 3 #
+24 67030 D _param p ST_INTELLECT < 3 @
+51 68000 None 0 #
+62 68010 #
+32 68020 #
+32 68030 @
+62 69000 None 0 #
+28 69010 #
+48 69020 #
+50 69030 @
+63 70000 None 0 #
+28 70010 #
+32 70020 @
+32 71000 None 0 #
+33 71010 #
+49 71020 #
+52 71030 @
+64 72000 None 0 #
+32 72010 &
+
+[engl]
+{100}{}{Aradesh}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{Begin, no quests done}
+{1020}{}{Radscorpions done.}
+{1030}{}{Radscorpions in progress}
+{1040}{}{Begin Tandi Quest}
+{1050}{}{Tandi quest in progress}
+{1060}{}{Tandi rescue completed}
+{2000}{}{Greetings, wanderer. Please do not be offended if the gentlefolk about seem rude. As Dharma said, 'Tough times tan the human hide.' Your business in Shady Sands might be?@@Greetings. Your business in Shady Sands might be?@@We don't take to strangers much. Your business in Shady Sands?}
+{2010}{}{I'm from a small village west of here. I'm just exploring and mean you no harm.}
+{2020}{}{What's it to you?}
+{2030}{}{My reasons are mine to keep.}
+{2040}{}{I'm from a Vault to the west. My people are dying of thirst and I need to find a water
+purifier chip for them to survive.}
+{2050}{}{I'm from a Vault to the west. My people are dying of thirst and I need to find a water purifier chip for them to survive.}
+{2060}{}{I'm saving an entire people from destruction!}
+{2070}{}{Shady Sands? Whoops, I'm lost! I'll just be going now.}
+{2080}{}{Hunh?}
+{3000}{}{I know of no village to the west.}
+{3010}{}{So?}
+{3020}{}{Have you been through the mountains west of here?}
+{3030}{}{Are you saying you know every location from here to the ocean?}
+{3040}{}{I'm sure you've been many places, but you must have missed my tiny village.}
+{4000}{}{Thank goodness you came! I am in desperate need of assistance. My daughter, Tandi, is missing. I do not know what to do!}
+{4010}{}{Uhh?}
+{4020}{}{Have you tried to save her?}
+{5000}{}{And keep them you may. But this is not a city of open hospitality. If you desire that,
+go to Junktown. You may enter, but know we have our eyes on you.}
+{5010}{}{[Done.]}
+{6000}{}{Yes, hmmm, yes, yes. yes. I shall believe you...for now. But we do not trust easily, especially those who might be dangerous. Know that Seth and I will be watching you.}
+{6010}{}{[Done.]}
+{7000}{}{Certainly. What do you wish to know?@@You may ask, but please hurry. There are more important uses for my time.}
+{7010}{}{Thanks. Bye.}
+{7020}{}{What can you tell me about the other towns around here?}
+{7030}{}{What's going on around here?}
+{7040}{}{What's going on around here?}
+{7050}{}{What's going on around here?}
+{7060}{}{What's going on around here?}
+{8000}{}{So be it, wanderer. Seth will show you out.}
+{8010}{}{[Done.]}
+{9000}{}{Hmmm. You may enter. But stay out of trouble.}
+{9010}{}{[Done.]}
+{10000}{}{Dharma said, 'Heed not the call of the wolf when the fox is raiding the hen house.'
+Junktown lies south of here, though there is little in the way of visitation. From stories, I'm certain there are cities south of that.}
+{10010}{}{Thanks. I . . . Can I ask you a few more questions?}
+{11000}{}{[MANUAL: add NPC dialogue for diagram node 'aradesh16_2']}
+{11010}{}{[MANUAL: add player response/transition -> aradesh31]}
+{11020}{}{[MANUAL: add player response/transition -> aradesh30a]}
+{11030}{}{[MANUAL: add player response/transition -> aradesh35]}
+{11040}{}{[MANUAL: add player response/transition -> aradesh28]}
+{11050}{}{[MANUAL: add player response/transition -> aradesh26]}
+{12000}{}{[MANUAL: add NPC dialogue for diagram node 'aradesh39b']}
+{12010}{}{[MANUAL: add player response/transition -> UpReact]}
+{12020}{}{[MANUAL: add player response/transition -> aradesh40]}
+{13000}{}{[MANUAL: add NPC dialogue for diagram node 'aradesh02_5']}
+{13010}{}{[MANUAL: add player response/transition -> aradesh09]}
+{13020}{}{[MANUAL: add player response/transition -> aradesh04]}
+{14000}{}{Things are much more settled now. Razlo has been working on a cure for Rad Scorpion
+poison, and with that, we should be able to fight what's left of them.}
+{14010}{}{It was nothing. Can I ask you some more questions?}
+{14020}{}{You don't need to worry anymore. I destroyed the Nest.}
+{15000}{}{Please hurry and rid us of those Rad Scorpions!}
+{15010}{}{[Done.]}
+{16000}{}{Since you brought my Tandi back to me, things are quite fine. My eternal gratitude to
+you, wanderer.}
+{16010}{}{What can you tell me about the other towns around here?}
+{16020}{}{What's going on around here?}
+{16030}{}{Thanks. Bye.}
+{17000}{}{Oh my yes. Great packs of Rad Scorpions are killing our herds. We don't know where
+they're from, and no matter how many we kill, there's always more!}
+{17010}{}{Go on.}
+{18000}{}{It is a quiet time, thankfully.}
+{18010}{}{Well, then, can I ask you a few more questions?}
+{18020}{}{Good. Hopefully it will stay that way for a while.}
+{18030}{}{Sounds . . . boring}
+{19000}{}{It is my town, wanderer. You must answer my questions or leave. This is not a matter of choice.}
+{19010}{}{Don't worry, I'm leaving.}
+{19020}{}{I don't have to tell you anything.}
+{19030}{}{I mean you no harm, really.}
+{20000}{}{I will not waste my time on treacherous outsiders.
+---
+I certainly hope so.}
+{20010}{}{[MANUAL: add player response/transition -> aradesh39]}
+{20020}{}{[MANUAL: add player response/transition -> aradesh39]}
+{20030}{}{[MANUAL: add player response/transition -> aradesh37]}
+{20040}{}{[MANUAL: add player response/transition -> aradesh37]}
+{20050}{}{[MANUAL: add player response/transition -> aradesh46]}
+{20060}{}{[MANUAL: add player response/transition -> aradesh43]}
+{20070}{}{[MANUAL: add player response/transition -> aradesh31]}
+{20080}{}{[MANUAL: add player response/transition -> aradesh30a]}
+{20090}{}{[MANUAL: add player response/transition -> aradesh35]}
+{20100}{}{[MANUAL: add player response/transition -> aradesh18]}
+{20110}{}{[MANUAL: add player response/transition -> aradesh17]}
+{20120}{}{[MANUAL: add player response/transition -> aradesh01]}
+{21000}{}{[MANUAL: add NPC dialogue for diagram node 'UpReact']}
+{21010}{}{[Done.]}
+{22000}{}{If you can understand me, please try to find my daughter.}
+{22010}{}{[Done.]}
+{23000}{}{My people are not skilled in this. Already three patrols have gone out to look, but none returned. Will you help me?}
+{23010}{}{Okay. Who could have taken her?}
+{23020}{}{I'll do it . . . for a fee.}
+{23030}{}{I am sorry, but I have other things I have to do.}
+{24000}{}{Seth and I believe one of the raider clans is responsible - retribution for our
+resistance to them. Take this spear. It was found where my daughter was last seen.}
+{24010}{}{Okay, I'll check it out.}
+{25000}{}{Please, talk to Seth. He knows much about these raiders. And God speed, wanderer.}
+{25010}{}{[Done.]}
+{26000}{}{Of course, I will reward you. Bring her and you will receive 500 in Hub Script. Will you
+help me?}
+{26010}{}{Okay. Who could have taken her?}
+{26020}{}{Ah . . . no thanks. I got other stuff I gotta take care of.}
+{27000}{}{As Dharma said, 'While you are out hunting the wolves, do not bring the lion to your
+den.' If you will not help, you must leave here.}
+{27010}{}{[Done.]}
+{28000}{}{[MANUAL: add NPC dialogue for diagram node 'aradesh39c']}
+{28010}{}{[MANUAL: add player response/transition -> aradesh42]}
+{29000}{}{Ahh, wanderer. How goes the search for my daughter?}
+{29010}{}{Slow, but I am making some progress. Can I ask you a few more questions?}
+{29020}{}{Sorry, but I haven't found her. I will, though.}
+{29030}{}{Guunngggg!}
+{29040}{}{I'm sorry, but she is dead.}
+{29050}{}{Duh-nada.}
+{30000}{}{[MANUAL: add NPC dialogue for diagram node 'aradesh24c']}
+{30010}{}{[MANUAL: add player response/transition -> aradeshx]}
+{30020}{}{[MANUAL: add player response/transition -> aradesh44]}
+{31000}{}{Until we meet again, my friend. May the water you find in the desert not shine at you in the dark.}
+{31010}{}{[Done.]}
+{32000}{}{You are truly a hero! Know that the people of Shady Sands are most grateful.}
+{32010}{}{Thanks. Can I ask you a few more questions, though?}
+{32020}{}{Thanks. Bye!}
+{33000}{}{[MANUAL: add NPC dialogue for diagram node 'aradesh17_2']}
+{33010}{}{[MANUAL: add player response/transition -> aradesh44]}
+{33020}{}{[MANUAL: add player response/transition -> aradesh20]}
+{34000}{}{Ah. Happy journeys, wanderer.}
+{34010}{}{[Done.]}
+{35000}{}{And now the monsters are attacking my people! Razlo is trying to find a cure for their poison, but I'm not sure how it goes.}
+{35010}{}{Well, I'll help you get rid of these things!}
+{35020}{}{I can help you for a price.}
+{35030}{}{That's terrible. Can I ask you a few more questions?}
+{36000}{}{Ummm, yes, yes, yes, yes, yes! Please talk to Razlo. He possesses far more information
+on these creatures than I.}
+{36010}{}{[Done.]}
+{37000}{}{[MANUAL: add NPC dialogue for diagram node 'aradesh28b']}
+{37010}{}{[MANUAL: add player response/transition -> aradesh30]}
+{38000}{}{As Dharma said, 'Those who tend their own flock, know the shepherd.'}
+{38010}{}{Your choice. Can I ask you some more questions?}
+{38020}{}{I know it's hard for you to trust, but I would like to help.}
+{39000}{}{[MANUAL: add NPC dialogue for diagram node 'aradesh30b']}
+{39010}{}{[MANUAL: add player response/transition -> UpReact]}
+{39020}{}{[MANUAL: add player response/transition -> aradesh29]}
+{40000}{}{[MANUAL: add NPC dialogue for diagram node 'aradesh28c']}
+{40010}{}{[MANUAL: add player response/transition -> aradesh19]}
+{41000}{}{Yes. We like it that way.}
+{41010}{}{Thanks. Bye.}
+{41020}{}{What can you tell me about the other towns around here?}
+{41030}{}{What's going on around here?}
+{42000}{}{May my thoughts be wings to your feet. Please hurry.}
+{42010}{}{[Done.]}
+{43000}{}{Thank you for trying. Please leave me to my grief.}
+{43010}{}{[Done.]}
+{44000}{}{That is not yours. Please do not take it.}
+{44010}{}{[Done.]}
+{45000}{}{[MANUAL: add NPC dialogue for diagram node 'BigDownReact']}
+{45010}{}{[Done.]}
+{46000}{}{I will be forever in your debt for your courage and bravery, wanderer. Here is your reward.}
+{46010}{}{Thanks. Can I ask you a few more questions, first?}
+{46020}{}{Thanks.}
+{46030}{}{[Done.]}
+{47000}{}{Greetings. What may I help you with this fine day?@@
+Is there something you want?}
+{47010}{}{I was wondering if I could ask you a few questions?}
+{47020}{}{Nuh-uh.}
+{47030}{}{Nothing, really, I was just leaving.}
+{47040}{}{Can you tell me about Shady Sands?}
+{48000}{}{Yes, yes. Umm. Have a good stay.}
+{48010}{}{[MANUAL: add player response/transition -> aradeshx]}
+{49000}{}{Shady Sands is much like a family, one that keeps to itself.@@We are a very protective community. As Dharma said, 'Many sticks can be broken. A bundle
+cannot.'}
+{49010}{}{Interesting. Are there any other cities around here?}
+{49020}{}{How cute. Well, I better be going.}
+{49030}{}{What kind of things do you have around here?}
+{50000}{}{[MANUAL: add NPC dialogue for diagram node 'aradesh23_2']}
+{50010}{}{[MANUAL: add player response/transition -> aradesh24]}
+{50020}{}{[MANUAL: add player response/transition -> aradesh24b]}
+{51000}{}{The Gardens are on the south side. The Brahma Pens are north, although the smell is, I fear, quite intense this time of year.}
+{51010}{}{Anything else?}
+{52000}{}{We are small and self sufficient so there is little else to tell.}
+{52010}{}{Thanks. Can I ask you a few more questions?}
+{52020}{}{Thanks. Bye.}
+{53000}{}{It is a small place. You have feet.}
+{53010}{}{Thanks. Can I ask you a few more questions?}
+{54000}{}{Greetings again, young wanderer. I hope your stay here has been pleasant.}
+{54010}{}{It's been great. Can I ask you some questions?}
+{54020}{}{Nuh-huh.}
+{54030}{}{It has. I gotta run though.}
+{54040}{}{If you like sewers.}
+{55000}{}{[MANUAL: add NPC dialogue for diagram node 'aradesh17_3']}
+{55010}{}{[MANUAL: add player response/transition -> aradesh27]}
+{55020}{}{[MANUAL: add player response/transition -> aradesh27]}
+{55030}{}{[MANUAL: add player response/transition -> aradesh21]}
+{55040}{}{[MANUAL: add player response/transition -> aradesh22]}
+{56000}{}{Dharma said, 'A man and his wayward tongue are soon parted.' Come back when you have
+learned some manners.}
+{56010}{}{[Done.]}
+{57000}{}{That is quite enough, wanderer. Seth will show you out of the city. Do not return. Your welcome will not be pleasant.}
+{57010}{}{[Done.]}
+{58000}{}{[MANUAL: add NPC dialogue for diagram node 'aradesh02_4']}
+{58010}{}{[MANUAL: add player response/transition -> aradesh06]}
+{58020}{}{[MANUAL: add player response/transition -> aradesh09]}
+{59000}{}{You are quite insolent. I believe you should leave. Do not return. You will not be welcome.}
+{59010}{}{[Done.]}
+{60000}{}{[MANUAL: add NPC dialogue for diagram node 'aradesh02_2']}
+{60010}{}{[MANUAL: add player response/transition -> aradesh03]}
+{60020}{}{[MANUAL: add player response/transition -> aradesh08]}
+{61000}{}{Ah well, to my regret, I have not. Which begs the question, how did you make that passage?}
+{61010}{}{What's it to you?}
+{61020}{}{Look, all I wanted was a few supplies and things, but I will gladly go elsewhere.}
+{61030}{}{I don't need to answer you.}
+{61040}{}{It was pretty tough, but I made it.}
+{62000}{}{You must think me quite gullible, wanderer. You conquered the mountains by yourself?}
+{62010}{}{Doesn't matter how I think. It's true I came from the mountains.}
+{62020}{}{No, just stupid.}
+{63000}{}{[MANUAL: add NPC dialogue for diagram node 'aradesh08a']}
+{63010}{}{[MANUAL: add player response/transition -> aradesh04]}
+{63020}{}{[MANUAL: add player response/transition -> UpReact]}
+{64000}{}{[MANUAL: add NPC dialogue for diagram node 'aradesh08b']}
+{64010}{}{[MANUAL: add player response/transition -> aradesh06]}
+{65000}{}{As Dharma said, 'Caution is life in troubled times.' Your origin is not the issue. Your intent is.}
+{65010}{}{Okay.}
+{66000}{}{I will let you pass, but know this: Seth and I will watch you very, very closely. Do not
+even consider bringing trouble here.}
+{66010}{}{[Done.]}
+{67000}{}{Wanderer, I shall believe you . . . for now. You may enter Shady Sands, but be warned your every move will be watched.}
+{67010}{}{I was wondering if I could ask you a few questions?}
+{67020}{}{Thanks. Bye.}
+{67030}{}{Nuh-huh.}
+{68000}{}{A Vault. How shall I trust you, wanderer, when you are not honest with me?}
+{68010}{}{No, honestly, I come from a Vault!}
+{68020}{}{The Vault is . . . the name of my village.}
+{68030}{}{You're right, I was lying.}
+{69000}{}{Hmmm, yes, yes, yes. Then tell me of this Vault.}
+{69010}{}{Well . . . the Vault is actually the name of my town. We name it that because it's in
+between two big cliffs.}
+{69020}{}{Why do you want to know?}
+{69030}{}{It's a big place built into a mountain far to the west. My people have been there for
+the last 80 years.}
+{70000}{}{[MANUAL: add NPC dialogue for diagram node 'aradesh11a']}
+{70010}{}{[MANUAL: add player response/transition -> aradesh02]}
+{70020}{}{[MANUAL: add player response/transition -> aradesh14]}
+{71000}{}{I will not be lied to, wanderer.}
+{71010}{}{Don't worry, I'm leaving.}
+{71020}{}{I don't have to tell you anything.}
+{71030}{}{I mean you no harm, really.}
+{72000}{}{[MANUAL: add NPC dialogue for diagram node 'aradesh11b']}
+{72010}{}{[MANUAL: add player response/transition -> aradesh14]}
+
