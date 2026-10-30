@@ -216,7 +216,7 @@ void spawnSeth(Map@ map)
         SETH_DIALOG1,
         167,                // bag
         FACTION_NCR,
-        1,                  // faction mode
+        0,                  // faction mode
         1,                  // faction rank
         5,                  // direction
         "seth@critter_init",
@@ -235,7 +235,7 @@ void spawnAradesh(Map& map)
         ARADESH_DIALOG1,
         6,                // bag
         FACTION_NCR,
-        1,                  // faction mode
+        0,                  // faction mode
         1,                  // faction rank
         3,                  // direction
         "",
@@ -257,7 +257,7 @@ void spawnIan(Map& map)
         IAN_DIALOG,
         7,                // bag
         FACTION_NCR,
-        1,                  // faction mode
+        0,                  // faction mode
         0,                  // faction rank
         2,                  // direction
         "",
@@ -277,7 +277,7 @@ void spawnTandi(Map& map)
         TANDI_DIALOG1,
         3,                // bag
         FACTION_NCR,
-        1,                  // faction mode
+        0,                  // faction mode
         1,                  // faction rank
         3,                  // direction
         "",
