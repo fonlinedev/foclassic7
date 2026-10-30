@@ -16,16 +16,16 @@ lang=engl
 5 2010 #
 6 2020 #
 6 2030 #
-7 2040 D _var p q_shady_radscorpions } 0 D _var p q_shady_radscorpions < 3 @
+7 2040 D _var p q_shady_radscorpions } 1 D _var p q_shady_radscorpions < 3 @
 5 3000 None 0 #
-0 3010 R _var p q_shady_tandi = 2 #
+0 3010 R _var p q_shady_tandi = 2 R _script map_shadysands@r_RevealRaidersCamp 0  #
 6 3020 #
 6 3030 #
 15 3040 @
 6 4000 None 0 #
 0 4010 @
 15 5000 None 0 #
-0 5010 R _var p q_shady_tandi = 2 #
+0 5010 R _var p q_shady_tandi = 2 R _script map_shadysands@r_RevealRaidersCamp 0  #
 6 5020 #
 9 5030 @
 9 6000 None 0 #
@@ -60,7 +60,7 @@ lang=engl
 22 15040 #
 28 15050 D _var p q_shady_radscorpions = 1 #
 28 15060 D _var p q_shady_radscorpions = 1 #
-24 15070 @
+26 15070 @
 20 16000 None 0 #
 21 16010 #
 22 16020 #
@@ -121,7 +121,7 @@ lang=engl
 conditions.]}
 {1010}{}{Tandi kidnap}
 {1020}{}{Tandi in progress}
-{1030}{}{Radscorpions finished}
+{1030}{}{Radscorpions killed get reward}
 {1040}{}{Begin}
 {1050}{}{After radscorpions}
 {2000}{}{Thank Dharma you're here wanderer. My girl . . . uh, Tandi, Aradesh's daughter, has been kidnapped. We believe the raiders have her.}

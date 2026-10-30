@@ -38,7 +38,7 @@ enum TandiQuestState
 #define DUEL_STARTED (2)
 #define DUEL_ENDED (3)
 
-#define TANDI_DIALOG1 4038
+#define TANDI_DIALOG1 4026
 #define TANDI_PID 68
 #define GARL_PID 46
 

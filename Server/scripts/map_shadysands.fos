@@ -12,6 +12,7 @@
 #include "_vars.fos"
 #include "ITEMPID.H"
 #include "follower_common.fos"
+#include "_colors.fos"
 
 
 // dialog ids
@@ -44,7 +45,7 @@ void map_init(Map& map, bool firstTime)
     CreateTimeEvent(__FullSecond + REAL_HOUR(respawnTime), "e_RespawnLoot", values, false);
     initLockersOnce(map);
     if(firstTime)
-    {        
+    {
         spawnIan(map);        
     }
 }
@@ -316,9 +317,37 @@ bool d_TandiFollower(Critter& player, Critter@ npc)
     return isFollower(player, TANDI_PID);
 }
 
+
+bool d_TandiNotFollower(Critter& player, Critter@ npc)
+{
+    return !isFollower(player, TANDI_PID);
+}
+
 void r_CompleteTandiRescue(Critter& player, Critter@ npc)
 {    
     ReturnTandi(player);
+
+    GameVar@ tandiVar = GetLocalVar(LVAR_q_shady_tandi, player.Id);
+    if (!valid(tandiVar)) {
+        Log("q_shady_tandi invalid state.");
+        return;
+    }
+    tandiVar = 6;
+
+    // set raiders camp for autogarbage
+    GameVar@  locidv = GetLocalVar(LVAR_q_raiders_locid, player.Id);
+    if (!valid(locidv)) {
+        Log("location var not found");
+        return;
+    }
+
+    Location@ loc = GetLocation(locidv.GetValue());
+    if(!valid(loc) || !loc.IsInstancedQuest()) {
+        Log("invalid location");
+        return;
+    }        
+    loc.AutoGarbage = true;
+    
     player.StatBase[ST_EXPERIENCE] += 1000;
     player.AddItem(PID_BOTTLE_CAPS, 300);
     if (player.ReputationBase[FACTION_NCR] < 300) {
@@ -326,34 +355,36 @@ void r_CompleteTandiRescue(Critter& player, Critter@ npc)
     } else {
         player.ReputationBase[FACTION_NCR] += 100;
     }
+    
 }
 
 void ReturnTandi(Critter& cr)
 {
     Map@ map = cr.GetMap();
-    GameVar@ tandiVar = GetLocalVar(LVAR_q_shady_tandi, cr.Id);
-    if (!valid(tandiVar)) {
-        Log("q_shady_tandi invalid state.");
-        return;
-    }
+    
     array<Critter@> crits;
     int n = GetFollowers(cr, map, crits);
-    for(int i = 0; i < n; i++)
+
+    for (int i = 0; i < n; i++)
     {
-        uint npcId = crits[i].GetProtoId();
-        if (npcId == TANDI_PID) {
-            Log("tandi is a follower, removing.");
-            tandiVar = 6;
-            crits[i].StatBase[ST_FREE_BARTER_PLAYER] = 0;
-            SetGroupInfo(crits[i], FACTION_UNKNOWN, 0, FACTION_MODE_PASSIVE);
-            crits[i].FollowerVarBase[FV_MASTER] = 0;
-            cr.FollowersBase[i] = 0;
-            DeleteNpc(crits[i]);
-            break;
+        if (!valid(crits[i])) {
+            continue;
         }
+
+        if (crits[i].GetProtoId() != TANDI_PID) {
+            continue;
+        }
+
+        Log("Tandi is a follower, removing.");
+        
+        crits[i].StatBase[ST_FREE_BARTER_PLAYER] = 0;
+        SetGroupInfo(crits[i], FACTION_UNKNOWN, 0, FACTION_MODE_PASSIVE);
+
+        crits[i].FollowerVarBase[FV_MASTER] = 0;
+
+        DeleteNpc(crits[i]);
+        break;
     }
-    Log("respawn tandi");
-    spawnTandi(map);
 }
 
 void _CritterOut(Map& map, Critter& cr)
@@ -414,10 +445,10 @@ Critter@ SpawnStaticNpc(
     {
         Log(name + " already exists, updating");
         if (name == "Aradesh") {
-            UpdateAradesh(cr, map);
+           // UpdateAradesh(cr, map);
         }
         if (name == "Seth") {
-            UpdateSeth(cr, map);
+           // UpdateSeth(cr, map);
         }
     }
 
@@ -575,4 +606,46 @@ void t_Entered(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
 bool Chance(uint percent)
 {
     return uint(Random(0, 99)) < percent;
+}
+
+
+void r_RevealRaidersCamp(Critter& player, Critter@ npc)
+{
+    array<Critter@> critters = { player };
+
+    int locId = CreateLocation(LOCATION_RaidersCamp, 1723, 1525, critters);
+    if (locId == 0) {
+        Log("Failed to create raiders camp location.");
+        return;
+    }
+
+    Location@ location = GetLocation(locId);
+    if (!valid(location)) {
+        Log("Failed to retrieve raiders camp location.");
+        return;
+    }
+
+    GameVar@ locidv = GetLocalVar(LVAR_q_raiders_locid, player.Id);
+    if (!valid(locidv)) {
+        Log("Raiders camp location variable not found.");
+        return;
+    }
+
+    locidv = locId;
+
+    SetRootMapData(location, MAP_DATA_OWNER, player.Id);
+
+    location.Color = COLOR_WM_QUEST;
+    location.Update();
+
+    SetTurnBasedAvailability(location);
+
+    Map@ map = location.GetMapByIndex(0);
+    if (valid(map)) {
+        map.SetData(MAP_DATA_CAMP_OWNER, player.Id);
+    }
+
+    SetQuestGarbager(0, player.Id, locId, LVAR_q_shady_tandi, 6);
+
+    Log("Raiders camp location created.");
 }
