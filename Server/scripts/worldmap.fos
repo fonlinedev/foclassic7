@@ -2115,11 +2115,22 @@ int CheckSpecialEncounter(Critter@ leader, CZone@ zone)
     return 0;
 }
 
-
+bool IsInCaravanGroup(array<Critter@>@ group)
+{
+    if(!valid(group)) return false;
+    for(uint i = 0; i < group.length(); i++)
+    {
+        // Check if player has an active caravan ID or if an NPC caravan guard/driver is present
+        if(group[i].Param[ST_VAR9] == 666)
+            return true;
+    }
+    return false;
+}
 
 void FindEncounter(array<Critter@>& group, Item@ car, uint x, uint y, uint& encounterDescriptor, bool& waitForAnswer, bool empty)
 {
-    //if(group[0].IsPlayer()) Log("FindEncounter: START.");
+    if(group[0].IsPlayer()) 
+        Log("FindEncounter: START.");
 	DPlayerLog(group[0], "FindEncounter tick");
     uint start = GetTick();
     encounterDescriptor = 0;
@@ -2188,8 +2199,8 @@ void FindEncounter(array<Critter@>& group, Item@ car, uint x, uint y, uint& enco
 
     bool giveReward = false; // reward for averting encounter
     bool giveSkillGain = false;
-    bool caravan = false;
-	bool playerCaravan = valid(car) && _IsCaravanCar(car.GetProtoId());
+    bool caravan = (valid(car) && _IsCaravanCar(car.GetProtoId())) || IsInCaravanGroup(group);
+    bool playerCaravan = caravan;
 
     // Check chance
     DPlayerLog(leader, "Zone' chance: " + zone.GetChance());
@@ -2547,19 +2558,15 @@ void InviteToEncounter(array<Critter@>& group, Item@ car, uint encounterDescript
     Location@ loc = map.GetLocation();
 
     Critter@ leader = group[0];
-    bool isCaravanEncounter = valid(car) && _IsCaravanCar(car.GetProtoId());
+    bool isCaravanEncounter = (valid(car) && _IsCaravanCar(car.GetProtoId())) || IsInCaravanGroup(group);
 
     // Caravan encounters are real-time; all other encounters are turn-based.
     for(uint i = 0, j = loc.GetMapCount(); i < j; i++)
         loc.GetMapByIndex(i).SetTurnBasedAvailability(!isCaravanEncounter);
 
     fe.TurnBased = !isCaravanEncounter;
-
-    if(isCaravanEncounter)
-        combatMode = COMBAT_MODE_REAL_TIME;
-    else
-        combatMode = COMBAT_MODE_TURN_BASED;
-
+    
+    combatMode = COMBAT_MODE_TURN_BASED;
     mapId = map.Id;
     hexX = fe.StartHexX;
     hexY = fe.StartHexY;
