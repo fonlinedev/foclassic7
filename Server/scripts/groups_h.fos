@@ -79,7 +79,8 @@
 #define FACTION_HUB                     (90)
 #define FACTION_LA                      (91)
 #define FACTION_LANDERS_CAMP            (92)
-#define FACTION_END                     (93)
+#define FACTION_SKULZ                   (93)
+#define FACTION_END                     (94)
 
 #define FACTION_MODE_PASSIVE            (0)
 #define FACTION_MODE_ALWAYS             (1)

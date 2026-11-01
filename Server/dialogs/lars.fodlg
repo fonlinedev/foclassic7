@@ -7,13 +7,13 @@ lang=engl
 [dialog]
 &
 1 1000 None 1 #
-6 1010 @
+6 1010 D _var p q_jt_stop_gizmo = 0 @
 6 2000 None 0 #
 11 2010 D _param p ST_INTELLECT > 3 #
 12 2020 D _param p ST_INTELLECT > 3 #
 13 2030 D _param p ST_INTELLECT > 3 #
 14 2040 D _param p ST_INTELLECT { 3 #
-15 2050 #
+15 2050 D _var p q_jt_skulz_gang = 3 #
 9 2060 D _var p q_jt_stop_gizmo = 2 #
 16 2070 D _var p q_jt_skulz_gang = 2 @
 11 3000 None 0 #
@@ -22,13 +22,14 @@ lang=engl
 12 4000 None 0 #
 20 4010 #
 21 4020 #
-22 4030 @
+22 4030 D _var p q_jt_skulz_gang = 1 D or D _var p q_jt_stop_gizmo } 1 @
 13 5000 None 0 #
-9 5010 #
-20 5020 @
+9 5010 D _var p q_jt_stop_gizmo = 1 #
+20 5020 #
+0 5030 @
 15 6000 None 0 #
-23 6010 #
-24 6020 D _var p q_jt_skulz_gang = 2 @
+24 6010 #
+23 6020 @
 9 7000 None 0 #
 0 7010 @
 16 8000 None 0 #
@@ -55,7 +56,7 @@ lang=engl
 21 16000 None 0 #
 0 16010 @
 22 17000 None 0 #
-26 17010 R _var p q_jt_skulz_gang = 1 #
+26 17010 #
 27 17020 @
 26 18000 None 0 #
 0 18010 @
@@ -66,7 +67,7 @@ lang=engl
 23 21000 None 0 #
 0 21010 @
 24 22000 None 0 #
-0 22010 @
+0 22010 R _var p q_jt_skulz_gang = 4 @
 7 23000 None 0 #
 0 23010 @
 8 24000 None 0 #
@@ -80,8 +81,8 @@ lang=engl
 24 26010 D _var p q_jt_skulz_gang = 2 #
 25 26020 D _var p q_jt_skulz_gang = 1 @
 25 27000 None 0 #
-0 27010 #
-24 27020 D _var p q_jt_skulz_gang = 2 &
+24 27010 D _var p q_jt_skulz_gang = 3 #
+0 27020 &
 
 [engl]
 {100}{}{Lars}
@@ -123,10 +124,11 @@ I'm
 .}
 {5010}{}{Killian sent me to help run Gizmo out of town.}
 {5020}{}{Buzz off, I don't have to tell you anything.}
+{5030}{}{Nevermind.}
 {6000}{}{Yes, I'm in charge of the guards here. What do you have for me?}
-{6010}{}{Nothing, just checking.}
-{6020}{}{I have some testimony from Sherry that the Skulz are involved in some illegal
+{6010}{}{I have some testimony from Sherry that the Skulz are involved in some illegal
 activities.}
+{6020}{}{Nothing, just checking.}
 {7000}{}{All right, let's do it.}
 {7010}{}{[Done.]}
 {8000}{}{What? Hmm. We'll see about that. I'll send some men over to ambush them when they try
@@ -174,23 +176,16 @@ tying them to any of the killings or muggings.}
 {21000}{}{Look, this isn't a game. People are getting hurt here. If you find some real evidence,
 come back, but otherwise, don't waste my time!}
 {21010}{}{[Done.]}
-{22000}{}{Excellent. I'll pick her up for a few questions, and I'm sure that I'll get all the
-information that I need to put them away.}
+{22000}{}{Excellent. I'll pick her up for a few questions, and I'm sure that I'll get all the information that I need to put them away.}
 {22010}{}{[Done.]}
 {23000}{}{Thanks for your assistance. Junktown's a little safer now, because of your help.}
 {23010}{}{[Done.]}
-{24000}{}{Good day, traveler. Do you need something?
----
-Hello again! What can I do for you?
----
-What?}
+{24000}{}{Good day, traveler. Do you need something?@@Hello again! What can I do for you?@@What?}
 {24010}{}{The Skulz are planning on killing Neal!}
 {24020}{}{I'm looking for a little work.}
 {24030}{}{Just stopping by to say hello.}
 {24040}{}{I have testimony about the illegal activities that the Skulz were involved in.}
-{25000}{}{If you're not averse to a little skullduggery, I need someone to get some hard evidence
-on the Skulz, proving that they're involved in illegal activities here. Or you can talk
-to Killian; he might have some work for you.}
+{25000}{}{If you're not averse to a little skullduggery, I need someone to get some hard evidence on the Skulz, proving that they're involved in illegal activities here. Or you can talk to Killian; he might have some work for you.}
 {25010}{}{Done.}
 {26000}{}{So, you have some info on the Skulz, eh? What can you tell me?}
 {26010}{}{I've convinced one of them, Sherry, to testify that they were involved in criminal
@@ -198,6 +193,6 @@ activity.}
 {26020}{}{They're involved in some muggings and killings here.}
 {27000}{}{That's great and all, but I can't just jail them all on one person's say-so. I need hard
 evidence or inside testimony.}
-{27010}{}{I'll see what I can do.}
-{27020}{}{I've got testimony from Sherry, a former gang member.}
+{27010}{}{I've got testimony from Sherry, a former gang member.}
+{27020}{}{I'll see what I can do.}
 

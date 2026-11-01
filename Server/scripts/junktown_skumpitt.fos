@@ -1,3 +1,4 @@
+
 //
 // FOnline: 2238
 // Rotators
@@ -12,41 +13,154 @@
 #include "mapdata_h.fos"
 
 #include "entire.fos"
+#include "factions_h.fos"
+#include "_defines.fos"
+#include "messages_h.fos"
+#include "reinforcements_h.fos"
+
+#include "msgstr.h"
+#include "entire.fos"
+#include "utils_h.fos"
+#include "tasks.fos"
+
+#include "npc_common_h.fos"
+#include "npc_roles_h.fos"
+
 
 #define SP_OPENED             (0)
 #define SP_CLOSED             (1)
 
 #define SP_LOCK_COMPLEXITY    (120)
 
-void InitSkumpittEvents()
-{
-    DLog("Creating junktown events");
-    //CreateTimeEvent(GetNearFullSecond(0, 0, 0, 4, 0, 0), "e_CloseSkumpitt", false);
-    CreateTimeEvent(GetNearFullSecond(0, 0, 0, 17, 0, 0), "e_OpenSkumpitt", false);
-}
+#define SP_OPEN_HOUR          (17)
+#define SP_CLOSE_HOUR         (4)
 
 void SetBarState(uint mode, Map@ map)
 {
+    if(map is null)
+        return;
+
     map.SetData(MAP_DATA_SKUMPITT, mode);
 }
 
+// Check current time and immediately synchronize the bar.
+void UpdateSkumpittState()
+{
+    Map@ map = GetMapByPid(MAP_JunktownNorth, 0);
+
+    if(map is null)
+        return;
+        
+    uint16 year=0, month=0, day=0, dayofweek=0, hour=0, minute=0, second=0;
+    GetGameTime( __FullSecond, year, month, day, dayofweek, hour, minute, second );
+
+    array<uint> values;
+    if(hour >= 17 || hour < 4)
+    {
+        Log("Skumpitt: Bar is OPEN. Time: " + hour + " : " + minute);
+        e_OpenSkumpitt(values);
+        SetBarState(SP_OPENED, map);
+    }
+    else
+    {
+        Log("Skumpitt: Bar is CLOSED. Time: " + hour + " : " + minute);
+        e_CloseSkumpitt(values);
+        SetBarState(SP_CLOSED, map);
+    }
+}
+
+void InitSkumpittEvents()
+{
+    Log("Creating Skumpitt events");
+
+    // First synchronize with the current time.
+    UpdateSkumpittState();
+
+    // Then schedule automatic daily changes.
+    CreateTimeEvent(GetNearFullSecond(0, 0, 0, SP_CLOSE_HOUR, 0, 0), "e_CloseSkumpitt", false);
+    CreateTimeEvent(GetNearFullSecond(0, 0, 0, SP_OPEN_HOUR, 0, 0), "e_OpenSkumpitt", false);
+}
+
+// Remove all npcs, move Neal to the room.
 uint e_CloseSkumpitt(array<uint>@ values)
 {
-    Map@ map = GetMapByPid(MAP_JunktownSouth, 0);
+    Map@ map = GetMapByPid(MAP_JunktownNorth, 0);
+   
+    Log("It's morning, Skumpitt is closing.");
 
-    LockDoor(184, 96, map, SP_LOCK_COMPLEXITY, 100);
-    LockDoor(197, 105, map, SP_LOCK_COMPLEXITY, 100);
-    DLog("It's morning, Skumpitt is closing.");
+    RemoveSkumpittPatrons();
+
     SetBarState(SP_CLOSED, map);
-    _ReturnTime(4, 0);
+
+    _ReturnTime(SP_CLOSE_HOUR, 0);
 }
 
 uint e_OpenSkumpitt(array<uint>@ values)
 {
-    Map@ map = GetMapByPid(MAP_JunktownSouth, 0);
-    DLog("It's evening, Skumpitt is opening.");
-    UnlockDoor(184, 96, map);
-    UnlockDoor(197, 105, map);
+    Map@ map = GetMapByPid(MAP_JunktownNorth, 0);
+    
+    AddSkumpittPatrons();
+    Log("It's evening, Skumpitt is opening.");
+
     SetBarState(SP_OPENED, map);
-    _ReturnTime(17, 10);
+
+    _ReturnTime(SP_OPEN_HOUR, 0);
+}
+
+Critter@ GetCritterAtEntire(uint entireId, Map@ map)
+{
+    uint16 x = 0;
+    uint16 y = 0;
+    map.GetEntireCoords(entireId, 0, x, y);
+    Critter@ cr = map.GetCritter(x, y);
+    return cr;
+}
+
+// Spawn the Skumpitt bar patrons.
+void AddSkumpittPatrons()
+{
+    Map@ map = GetMapByPid(MAP_JunktownNorth, 0);
+
+    if(!valid(map))
+        return;
+
+    // remove Neal from the room.
+    Critter@ cr = GetCritterAtEntire(10, map);
+    if(valid(cr))
+        DeleteNpc(cr);
+
+    SpawnStaticNpc(map, 11, 58, 1759, 0, 0, 0, 0, 2, "", "");
+    SpawnStaticNpc(map, 12, 58, 1762, 0, 0, 0, 0, 5, "", "");
+    SpawnStaticNpc(map, 13, 89, 1748, 0, 0, 0, 0, 5, "", "");
+    SpawnStaticNpc(map, 15, 61, 1747, 0, 0, 0, 0, 2, "", "");
+    SpawnStaticNpc(map, 16, 72, 1748, 0, 0, 0, 0, 0, "", "");
+    SpawnStaticNpc(map, 17, 69, 1754, 0, 0, 0, 0, 0, "", "");
+    SpawnStaticNpc(map, 18, 69, 1753, 0, 0, 0, 0, 1, "", "");
+    SpawnStaticNpc(map, 19, 142, 1758, 0, 0, 0, 0, 2, "", "");
+}
+
+// Remove the Skumpitt bar patrons.
+void RemoveSkumpittPatrons()
+{
+    Map@ map = GetMapByPid(MAP_JunktownNorth, 0);
+
+    if(!valid(map))
+        return;
+
+    // remove Neal at the bar.
+    Critter@ cr = GetCritterAtEntire(11, map);
+    if(valid(cr))
+        DeleteNpc(cr);
+
+
+    // Add Neal to the room
+    SpawnStaticNpc(map, 10, 58, 1759, 0, 0, 0, 0, 2, "", "");
+
+    for(uint i = 11; i <= 19; i++)
+    {
+        Critter@ cr = GetCritterAtEntire(i, map);
+
+        if(valid(cr))
+            DeleteNpc(cr);
+    }
 }

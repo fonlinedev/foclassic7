@@ -7,7 +7,8 @@ lang=engl
 [dialog]
 &
 1 1000 None 1 #
-2 1010 @
+2 1010 D _var p name_mem_npc_player = 1 #
+3 1020 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 @
 2 2000 None 0 #
 4 2010 #
 0 2020 @
@@ -34,25 +35,25 @@ lang=engl
 {210}{}{You see a gang member.}
 {1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
 conditions.]}
-{1010}{}{[MANUAL: initial branch condition/greeting -> Victor06]}
+{1010}{}{2nd time}
+{1020}{}{1st time}
 {2000}{}{Hello again, my artistic friend.}
 {2010}{}{Victor, did I ever tell you that you're a real sicko?}
 {2020}{}{Uh, hi.}
 {3000}{}{Don't say that! My mother said that! I'll make you pay! I'm a good boy, right mommy?}
-{3010}{}{[MANUAL: add player response/transition -> VictorCombat]}
+{3010}{}{Bye.}
 {4000}{}{New blood. Heh. Heh heh.}
 {4010}{}{Um, yeah. Uh, I think I'll go now.}
 {4020}{}{You're not a very happy person, are you?}
 {4030}{}{Huh huh!}
 {5000}{}{No, actually, I think I'll keep you around for a while.}
-{5010}{}{[MANUAL: add player response/transition -> VictorCombat]}
-{6000}{}{Why do you say that? I'm quite happy. I'm very happy because there are lots of things
-that bleed.}
+{5010}{}{Bye.}
+{6000}{}{Why do you say that? I'm quite happy. I'm very happy because there are lots of things that bleed.}
 {6010}{}{Um, yeah. Bye.}
 {6020}{}{You're a real sicko, you know that?}
 {6030}{}{Ah, yes, art appreciation. Uh, I can understand that. I think.}
 {7000}{}{Someone who understands me! At last!}
 {7010}{}{[Done.]}
 {8000}{}{Ha! Ha! Heh heh hee! Ho ho ha!}
-{8010}{}{[MANUAL: add player response/transition -> VictorDies]}
+{8010}{}{[Done.]}
 

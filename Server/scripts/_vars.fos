@@ -1706,13 +1706,14 @@
 **********
 
 
-    $ 7211 1 q_jt_skulz_gang	0	0	4	1
+    $ 7211 1 q_jt_skulz_gang	0	0	5	1
 **********
     0 == inactive
     1 == active
     2 == gang issue resolved / objective complete
-    3 == quest completed
-    4 == quest failed
+    3 == sherry convinced
+    4 == quest completed
+    5 == quest failed   
 **********
 
     $ 7212 1 q_jt_kill_killian	0	0	4	1
@@ -1800,14 +1801,13 @@
     4 == quest failed
 **********
 
-    $ 7221 1 q_jt_steal_neal_urn	0	0	5	1
+    $ 7221 1 q_jt_steal_neal_urn	0	0	4	1
 **********
     0 == inactive
     1 == active
-    2 == urn stolen
-    3 == urn delivered / objective resolved
-    4 == quest completed
-    5 == quest failed
+    2 == urn stolen    
+    3 == quest completed
+    4 == quest failed
 **********
 
     $ 7222 1 q_jt_save_trish	0	0	5	1
