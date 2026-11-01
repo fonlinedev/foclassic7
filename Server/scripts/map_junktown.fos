@@ -6,16 +6,19 @@
 //
 
 #include "_macros.fos"
+#include "_maps.fos"
+#include "mapdata_h.fos"
+#include "npc_common_h.fos"
+
 #include "factions_h.fos"
 #include "_defines.fos"
 #include "messages_h.fos"
 #include "reinforcements_h.fos"
-#include "_maps.fos"
 #include "msgstr.h"
 #include "world_common_h.fos"
-
 #include "npc_junktown_tasks.fos"
 #include "junktown_skumpitt.fos"
+#include "map_junktown_lockers.fos"
 
 void map_init(Map& map, bool firstTime)
 {
@@ -30,12 +33,17 @@ void map_init(Map& map, bool firstTime)
     }
 
     uint proto = map.GetProtoId();
-    string protoName;
-    map.ProtoName(protoName);
-    Log("Setting NO PVP and NO LOOTING for location Junktown (" + proto + ", " + protoName + ")");
     _MapSetMode(map, MAP_MODE_NO_LOOT_DROP);
     _MapSetMode(map, MAP_MODE_NO_PVP);
-    spawnDocMorbidTeam(map);
+    if (proto == MAP_JunktownSouth) {
+        spawnDocMorbidTeam(map);
+    }    
+    if (proto == MAP_JunktownNorth) {
+        InitSkumpittEvents();
+    }
+    uint[] values = { map.GetProtoId() };
+    CreateTimeEvent(__FullSecond + REAL_HOUR(1), "e_RespawnLoot", values, false);
+    spawnLockers(map);
 }
 
 // Entrance at gates
@@ -125,7 +133,6 @@ void t_EnteredKillian(Critter& critter, Scenery& trigger, bool entered, uint8 di
     }
 
 }
-
 
 void _Gate(Item& item, bool firstTime)
 {
@@ -237,62 +244,44 @@ void spawnDocMorbidTeam(Map& map)
         Log("Error at COUGAR spawning");
 }
 
-Critter@ SpawnStaticNpc(
-    Map@ map,
-    uint coord,
-    uint pid,
-    uint dialog,
-    uint bag,
-    uint team,
-    uint factionMode,
-    uint factionRank,
-    uint dir,
-    string initFunc,
-    string name)
+
+void urn_init(Item& item, bool firstTime)
 {
-    uint16 x = 0;
-    uint16 y = 0;
+    item.SetEvent(ITEM_EVENT_SKILL, "_urnSkill");    
+}
 
-    map.GetEntireCoords(coord, 0, x, y);
+bool _urnSkill(Item& item, Critter& cr, int skill)
+{
+    // Handle hand cursor (SKILL_PICK_ON_GROUND / -1) or general interaction
+    return HandleUrnInteraction(item, cr);
+}
 
-    Critter@ cr = map.GetCritter(x, y);
+bool HandleUrnInteraction(Item& item, Critter& cr)
+{
+    Log("Triggered Urn interaction");
+    
+    GameVar@ var = GetLocalVar(LVAR_q_jt_steal_neal_urn, cr.Id);
+    if (!valid(var))
+        return true; // Return true to block default pickup
 
-    if (!valid(cr))
+    uint questState = var.GetValue();
+
+    // If the quest is not active or already finished/failed: block pickup & notify
+    if (questState == 0 || questState == 5) 
     {
-        int[] params = {
-            ST_DIALOG_ID, dialog,
-            ST_BAG_ID, bag,
-            ST_TEAM_ID, team,
-            ST_FACTION_MODE, factionMode,
-            ST_FACTION_RANK, factionRank,
-            MODE_NO_LOOT, 1,
-            MODE_NO_STEAL, 1
-        };
-
-        @cr = map.AddNpc(
-            pid,
-            x,
-            y,
-            dir,
-            params,
-            null,
-            initFunc
-        );
-
-        if (!valid(cr))
-        {
-            Log("Error creating " + name);
-            return null;
-        }
-
-        cr.StatBase[ST_REPLICATION_TIME] = REPLICATION_MINUTE(1);
-
-        Log(name + " spawned");
-    }
-    else
-    {
-        Log(name + " already exists, updating");        
+        cr.Say(SAY_NETMSG, "This quest is not active or finished.");
+        Log("Quest isn't active or finished.");
+        return true;
     }
 
-    return cr;
+    // Quest stage is active (e.g., stage 3: steal the urn)
+    if (questState == 1)
+    {
+        // Allow player to take it into inventory, or add custom steal/notice logic here
+        cr.Say(SAY_NETMSG, "You can pick up Neal's urn.");
+        return false;
+    }
+
+    // Default block for all other unhandled quest states
+    return true; 
 }

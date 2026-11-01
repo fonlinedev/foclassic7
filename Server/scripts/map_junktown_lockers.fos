@@ -1,0 +1,242 @@
+#include "_defines.fos"
+#include "_macros.fos"
+#include "_maps.fos"
+#include "lockers_utils.fos"
+#include "ITEMPID.H"
+
+uint[] LOCKER_PROTECTED_ITEMS = { };
+
+
+// First init the lockers, only run once.
+void spawnLockers(Map@ map)
+{
+    if(!valid(map))
+    {
+        Log("initLockersOnce failed, map not found.");
+        return;
+    }
+
+    array<Item@> lockers;
+    uint count = map.GetItemsByType(ITEM_TYPE_CONTAINER, lockers);
+    
+    // Gizmo / skumpitt
+    if(map.GetProtoId() == MAP_JunktownNorth)
+    {
+        if(count == 0)
+        {
+            Log("No lockers found on MAP_JunktownNorth.");
+            return;
+        }
+
+        Log("initLockersOnce: MAP_JunktownNorth - containers found: " + count);       
+
+        LockerLoot@[] northLocker0;        
+        ResetLockerLoot(lockers[0], LOCKER_PROTECTED_ITEMS, northLocker0); 
+
+        LockerLoot@[] northLocker1;        
+        ResetLockerLoot(lockers[1], LOCKER_PROTECTED_ITEMS, northLocker1); 
+
+        LockerLoot@[] northLocker2;     
+        northLocker2.insertLast(LockerLoot(PID_HEALING_POWDER, 1));   
+        northLocker2.insertLast(LockerLoot(PID_BOTTLE_CAPS, 100)); 
+        northLocker2.insertLast(LockerLoot(PID_LIGHTER, 1)); 
+        ResetLockerLoot(lockers[2], LOCKER_PROTECTED_ITEMS, northLocker2); 
+
+        // Neil's Urn
+        LockerLoot@[] northLocker3;
+        northLocker3.insertLast(LockerLoot(PID_URN, 1));
+        ResetLockerLoot(lockers[3], LOCKER_PROTECTED_ITEMS, northLocker3);
+
+        LockerLoot@[] northLocker4;        
+        ResetLockerLoot(lockers[4], LOCKER_PROTECTED_ITEMS, northLocker4);
+
+        LockerLoot@[] northLocker5;        
+        ResetLockerLoot(lockers[5], LOCKER_PROTECTED_ITEMS, northLocker5); 
+
+        LockerLoot@[] northLocker6;        
+        ResetLockerLoot(lockers[6], LOCKER_PROTECTED_ITEMS, northLocker6); 
+
+        LockerLoot@[] northLocker7;        
+        ResetLockerLoot(lockers[7], LOCKER_PROTECTED_ITEMS, northLocker7); 
+
+        LockerLoot@[] northLocker8;        
+        ResetLockerLoot(lockers[8], LOCKER_PROTECTED_ITEMS, northLocker8); 
+
+        LockerLoot@[] northLocker9;        
+        ResetLockerLoot(lockers[9], LOCKER_PROTECTED_ITEMS, northLocker9); 
+
+        LockerLoot@[] northLocker10;      
+        northLocker10.insertLast(LockerLoot(PID_9MM_BALL, 1)); 
+        northLocker10.insertLast(LockerLoot(PID_BOTTLE_CAPS, 100)); 
+        northLocker10.insertLast(LockerLoot(PID_IGUANA_ON_A_STICK, 3)); 
+        northLocker10.insertLast(LockerLoot(PID_9MM_MAUSER, 1));   
+        ResetLockerLoot(lockers[10], LOCKER_PROTECTED_ITEMS, northLocker10); 
+
+    }
+
+    // Entrance
+    else if(map.GetProtoId() == MAP_JunktownSouth)
+    {
+        if(count == 0)
+        {
+            Log("No lockers found on MAP_JunktownSouth.");
+            return;
+        }
+        
+        Log("initLockersOnce: MAP_JunktownSouth - containers found: " + count);
+
+        LockerLoot@[] southLocker0;
+        southLocker0.insertLast(LockerLoot(PID_ROCK, 5));
+        southLocker0.insertLast(LockerLoot(PID_FRAG_GRENADE, 3));
+        ResetLockerLoot(lockers[0], LOCKER_PROTECTED_ITEMS, southLocker0);
+
+        LockerLoot@[] southLocker1;        
+        ResetLockerLoot(lockers[1], LOCKER_PROTECTED_ITEMS, southLocker1);
+
+        LockerLoot@[] southLocker2;        
+        ResetLockerLoot(lockers[2], LOCKER_PROTECTED_ITEMS, southLocker2);
+
+        LockerLoot@[] southLocker3;
+        southLocker3.insertLast(LockerLoot(PID_10MM_AP, 3));
+        southLocker3.insertLast(LockerLoot(PID_10MM_JHP, 3));
+        ResetLockerLoot(lockers[3], LOCKER_PROTECTED_ITEMS, southLocker3);
+
+        LockerLoot@[] southLocker4;
+        southLocker4.insertLast(LockerLoot(PID_NUKA_COLA, 5));
+        southLocker4.insertLast(LockerLoot(PID_MUTATED_FRUIT, 4));
+        southLocker4.insertLast(LockerLoot(PID_BOOZE, 5));
+        southLocker4.insertLast(LockerLoot(PID_BEER, 7));
+        ResetLockerLoot(lockers[4], LOCKER_PROTECTED_ITEMS, southLocker4);
+
+        // Guard house
+    } else if(map.GetProtoId() == MAP_Junktownhotel)
+    {
+        if(count == 0)
+        {
+            Log("No lockers found on MAP_Junktownhotel.");
+            return;
+        }
+        Log("initLockersOnce: MAP_Junktownhotel - containers found: " + count);
+
+        LockerLoot@[] hotelLocker0;        
+        ResetLockerLoot(lockers[0], LOCKER_PROTECTED_ITEMS, hotelLocker0);
+
+        LockerLoot@[] hotelLocker1;        
+        ResetLockerLoot(lockers[1], LOCKER_PROTECTED_ITEMS, hotelLocker1);
+
+        LockerLoot@[] hotelLocker2;        
+        ResetLockerLoot(lockers[2], LOCKER_PROTECTED_ITEMS, hotelLocker2);
+
+        LockerLoot@[] hotelLocker3;        
+        ResetLockerLoot(lockers[3], LOCKER_PROTECTED_ITEMS, hotelLocker3);
+
+        LockerLoot@[] hotelLocker4;        
+        ResetLockerLoot(lockers[4], LOCKER_PROTECTED_ITEMS, hotelLocker4);
+
+        LockerLoot@[] hotelLocker5;     
+        hotelLocker5.insertLast(LockerLoot(PID_FROZEN_DINNER, 1));   
+        ResetLockerLoot(lockers[5], LOCKER_PROTECTED_ITEMS, hotelLocker5);
+
+        LockerLoot@[] hotelLocker6;        
+        ResetLockerLoot(lockers[6], LOCKER_PROTECTED_ITEMS, hotelLocker6);
+
+        LockerLoot@[] hotelLocker7;  
+        hotelLocker7.insertLast(LockerLoot(PID_BOTTLE_CAPS, 15));
+        ResetLockerLoot(lockers[7], LOCKER_PROTECTED_ITEMS, hotelLocker7);
+
+        LockerLoot@[] hotelLocker8;        
+        ResetLockerLoot(lockers[8], LOCKER_PROTECTED_ITEMS, hotelLocker8);
+
+        LockerLoot@[] hotelLocker9;        
+        ResetLockerLoot(lockers[9], LOCKER_PROTECTED_ITEMS, hotelLocker9);
+
+        LockerLoot@[] hotelLocker10;        
+        ResetLockerLoot(lockers[10], LOCKER_PROTECTED_ITEMS, hotelLocker10);
+
+        LockerLoot@[] hotelLocker11;        
+        hotelLocker11.insertLast(LockerLoot(PID_ROPE, 1));
+        hotelLocker11.insertLast(LockerLoot(PID_BACKPACK, 1));
+        ResetLockerLoot(lockers[11], LOCKER_PROTECTED_ITEMS, hotelLocker11);
+
+        LockerLoot@[] hotelLocker12;      
+        hotelLocker12.insertLast(LockerLoot(PID_HUNTING_RIFLE, 1));
+        ResetLockerLoot(lockers[12], LOCKER_PROTECTED_ITEMS, hotelLocker12);
+
+        LockerLoot@[] hotelLocker13;        
+        hotelLocker13.insertLast(LockerLoot(PID_CATS_PAW, 1));
+        ResetLockerLoot(lockers[13], LOCKER_PROTECTED_ITEMS, hotelLocker13);
+
+        LockerLoot@[] hotelLocker14;        
+        hotelLocker14.insertLast(LockerLoot(PID_LEATHER_JACKET, 1));
+        hotelLocker14.insertLast(LockerLoot(PID_LEATHER_ARMOR, 1));
+        ResetLockerLoot(lockers[14], LOCKER_PROTECTED_ITEMS, hotelLocker14);
+
+        LockerLoot@[] hotelLocker15;        
+        hotelLocker15.insertLast(LockerLoot(PID_SHOTGUN, 1));
+        hotelLocker15.insertLast(LockerLoot(PID_SHOTGUN_SHELLS, 1));
+        hotelLocker15.insertLast(LockerLoot(PID_44_MAGNUM_JHP, 5));
+        hotelLocker15.insertLast(LockerLoot(PID_10MM_JHP, 2));
+        hotelLocker15.insertLast(LockerLoot(PID_10MM_AP, 1));
+        hotelLocker15.insertLast(LockerLoot(PID_223_FMJ, 4));
+        ResetLockerLoot(lockers[15], LOCKER_PROTECTED_ITEMS, hotelLocker15);
+
+        LockerLoot@[] hotelLocker16;                
+        ResetLockerLoot(lockers[16], LOCKER_PROTECTED_ITEMS, hotelLocker16);
+
+        LockerLoot@[] hotelLocker17;        
+        hotelLocker17.insertLast(LockerLoot(PID_RED_RYDER_BB_GUN, 1));
+        ResetLockerLoot(lockers[17], LOCKER_PROTECTED_ITEMS, hotelLocker17);
+
+        LockerLoot@[] hotelLocker18;      
+        hotelLocker18.insertLast(LockerLoot(PID_STIMPAK, 5));
+        hotelLocker18.insertLast(LockerLoot(PID_MUTATED_FRUIT, 8));
+        hotelLocker18.insertLast(LockerLoot(PID_GEIGER_COUNTER, 1));
+        hotelLocker18.insertLast(LockerLoot(PID_FIRST_AID_KIT, 2));
+        hotelLocker18.insertLast(LockerLoot(PID_DOCTORS_BAG, 2));
+        hotelLocker18.insertLast(LockerLoot(PID_KEYS, 1));
+        ResetLockerLoot(lockers[18], LOCKER_PROTECTED_ITEMS, hotelLocker18);
+
+        LockerLoot@[] hotelLocker19;        
+        hotelLocker19.insertLast(LockerLoot(PID_MENTATS, 1));
+        ResetLockerLoot(lockers[19], LOCKER_PROTECTED_ITEMS, hotelLocker19);
+
+        LockerLoot@[] hotelLocker20;     
+        hotelLocker20.insertLast(LockerLoot(PID_SCOUT_HANDBOOK, 1));
+        hotelLocker20.insertLast(LockerLoot(PID_BOTTLE_CAPS, 2016));
+        hotelLocker20.insertLast(LockerLoot(PID_DESERT_EAGLE, 1));
+        ResetLockerLoot(lockers[20], LOCKER_PROTECTED_ITEMS, hotelLocker20);
+
+    } else {
+        Log("ERROR unknown map PID cant load lockers");
+    }
+
+    // Loop through the populated array and log the coordinates of each container
+    for(uint i = 0; i < count; i++)
+    {
+        Item@ locker = lockers[i];
+        if(valid(locker))
+        {
+            // HexX and HexY print the map coordinates. GetProtoId() helps identify the container graphic/type.
+            Log("Container found -> X: " + locker.HexX + " | Y: " + locker.HexY + " | Item PID: " + locker.GetProtoId());
+        }
+    }
+}
+
+uint e_RespawnLoot(uint[]@ values)
+{
+    if(values is null || values.length() == 0) return 0;
+    uint mapId = values[0];
+    Map@ map = GetMapByPid(mapId, 0);
+    if(!valid(map))
+    {
+        Log("e_RespawnLoot failed, map not found.");
+        return 0;
+    }
+    spawnLockers(map);
+    return REAL_HOUR(1);
+}
+
+bool Chance(uint percent)
+{
+    return uint(Random(0, 99)) < percent;
+}
