@@ -1,0 +1,361 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _script dialog@d_CheckNight 0  #
+5 1020 D _script dialog@d_CheckDay 0  D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
+11 1030 D _var p name_mem_npc_player = 1 D _script dialog@d_CheckDay 0  @
+2 2000 None 0 #
+13 2010 #
+14 2020 D _var p q_shady_radscorpions = 1 #
+15 2030 D _var p q_shady_tandi = 1 #
+16 2040 D _param p ST_INTELLECT < 3 @
+13 3000 None 0 #
+26 3010 D _script dialog@d_IsToHeal 0  #
+27 3020 @
+26 4000 None 0 #
+40 4010 @
+43 5000 None 0 #
+40 5010 #
+41 5020 #
+42 5030 #
+50 5040 @
+40 6000 dialog@dlg_ShowHealingPrice 0 #
+0 6010 D _param p ST_INTELLECT < 3 #
+51 6020 D _script dialog@d_HealingMoney 0  #
+48 6030 D _param p ST_INTELLECT < 3 #
+49 6040 D _param p ST_INTELLECT } 3 @
+48 7000 None 0 #
+49 7010 #
+51 7020 #
+51 7030 @
+49 8000 None 0 #
+0 8010 D _param p ST_INTELLECT } 3 #
+0 8020 D _param p ST_INTELLECT < 3 #
+52 8030 D _param p ST_INTELLECT } 3 D _item p PID_SCORPION_TAIL } 1 D _var p q_shady_antidote = 0 #
+52 8040 D _param p ST_INTELLECT < 3 #
+53 8050 D _param p ST_INTELLECT } 3 #
+53 8060 D _param p ST_INTELLECT < 3 @
+52 9000 None 0 #
+54 9010 @
+54 10000 dialog@r_DocHealLvl2 0 #
+0 10010 R _item p PID_ANTIDOTE + 1 R _param p ST_EXPERIENCE + 250 R _param p PE_SNAKEATER = 1 R _var p q_shady_antidote = 1 @
+53 11000 None 0 #
+48 11010 @
+51 12000 dialog@r_DocHeal 0 #
+0 12010 @
+41 13000 None 0 #
+0 13010 #
+48 13020 #
+48 13030 #
+49 13040 @
+42 14000 dialog@dlg_ShowHealingPrice 0 #
+0 14010 #
+48 14020 #
+48 14030 #
+49 14040 @
+50 15000 None 0 #
+0 15010 @
+27 16000 None 0 #
+0 16010 @
+14 17000 None 0 #
+28 17010 @
+28 18000 None 0 #
+0 18010 @
+15 19000 None 0 #
+29 19010 #
+30 19020 @
+29 20000 None 0 #
+31 20010 #
+0 20020 @
+31 21000 None 0 #
+44 21010 #
+45 21020 @
+44 22000 None 0 #
+0 22010 @
+45 23000 None 0 #
+0 23010 @
+30 24000 None 0 #
+0 24010 @
+16 25000 None 0 #
+0 25010 @
+3 26000 None 0 #
+17 26010 #
+18 26020 #
+19 26030 #
+20 26040 @
+17 27000 None 0 #
+31 27010 #
+0 27020 #
+0 27030 @
+18 28000 None 0 #
+24 28010 @
+24 29000 None 0 #
+39 29010 D _script dialog@d_HpAverage 0  #
+40 29020 D _script dialog@d_HpLow 0  #
+42 29030 D _script dialog@d_HpVeryLow 0  @
+39 30000 None 0 #
+0 30010 @
+19 31000 None 0 #
+32 31010 #
+33 31020 @
+32 32000 None 0 #
+46 32010 @
+46 33000 None 0 #
+0 33010 @
+33 34000 None 0 #
+0 34010 @
+20 35000 None 0 #
+0 35010 @
+4 36000 None 0 #
+18 36010 D _script dialog@d_IsToHeal 0  D _param p ST_INTELLECT } 3 #
+32 36020 D _var p q_shady_antidote = 1 D _script dialog@d_IsPoison 0  D _param p ST_INTELLECT } 3 #
+33 36030 D _var p q_shady_antidote = 0 D _script dialog@d_IsPoison 0  D _param p ST_INTELLECT } 3 #
+0 36040 D _param p ST_INTELLECT } 3 #
+21 36050 D _param p ST_INTELLECT < 3 #
+22 36060 D _var p q_shady_radscorpions > 1 D _param p ST_INTELLECT } 3 #
+23 36070 D _item p PID_SCORPION_TAIL } 1 D _var p q_shady_antidote = 0 D _param p ST_INTELLECT } 3 #
+23 36080 D _param p ST_INTELLECT < 3 @
+21 37000 None 0 #
+24 37010 #
+34 37020 @
+34 38000 None 0 #
+0 38010 @
+22 39000 None 0 #
+35 39010 #
+36 39020 #
+37 39030 @
+35 40000 None 0 #
+0 40010 @
+36 41000 None 0 #
+0 41010 @
+37 42000 None 0 #
+47 42010 @
+47 43000 None 0 #
+0 43010 @
+23 44000 None 0 #
+38 44010 R _item p PID_SCORPION_TAIL - 1 @
+38 45000 None 0 #
+0 45010 R _item p PID_ANTIDOTE + 1 R _param p ST_EXPERIENCE + 250 R _param p PE_SNAKEATER = 1 R _var p q_shady_antidote = 1 @
+5 46000 None 0 #
+19 46010 D _script dialog@d_IsPoison 0  #
+0 46020 #
+24 46030 D _script dialog@d_IsToHeal 0  #
+21 46040 @
+6 47000 None 0 #
+19 47010 #
+0 47020 #
+24 47030 @
+7 48000 None 0 #
+0 48010 @
+8 49000 None 0 #
+0 49010 @
+9 50000 None 0 #
+0 50010 @
+10 51000 None 0 #
+0 51010 @
+11 52000 None 0 #
+18 52010 D _script dialog@d_IsToHeal 0  D _param p ST_INTELLECT } 3 #
+19 52020 D _script dialog@d_IsPoison 0  D _param p ST_INTELLECT } 3 #
+21 52030 D _param p ST_INTELLECT < 3 #
+25 52040 @
+25 53000 None 0 #
+0 53010 @
+12 54000 None 0 #
+18 54010 #
+19 54020 #
+0 54030 #
+21 54040 &
+
+[engl]
+{100}{}{Razlo}
+{200}{}{You see Razlo.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{Its late.}
+{1020}{}{Its day.}
+{1030}{}{It's day again.}
+{2000}{}{It's late. Come back in the morning.}
+{2010}{}{But I need your help.}
+{2020}{}{I'm trying to kill some radscorpions. Do you have anything to help?}
+{2030}{}{I'm looking for Tandi. Can you help?}
+{2040}{}{Hnn.}
+{3000}{}{Are you hurt?}
+{3010}{}{Yes.}
+{3020}{}{No.}
+{4000}{}{Great Brahmin! Why didn't you say so?}
+{4010}{}{Uhhh. I did . . .}
+{5000}{}{[MANUAL: add NPC dialogue for diagram node 'razlo05n']}
+{5010}{}{[MANUAL: add player response/transition -> razlofixa]}
+{5020}{}{[MANUAL: add player response/transition -> razlofixb]}
+{5030}{}{[MANUAL: add player response/transition -> razlofixc]}
+{5040}{}{[MANUAL: add player response/transition -> razlowmpb]}
+{6000}{}{Ouch, that does look a little painful. That will be @lex price@$ .}
+{6010}{}{Nunga.}
+{6020}{}{OK, here you go.}
+{6030}{}{K, me giv?}
+{6040}{}{I don't have enough money.}
+{7000}{}{[MANUAL: add NPC dialogue for diagram node 'razlo08n']}
+{7010}{}{[MANUAL: add player response/transition -> razlo06n]}
+{7020}{}{[MANUAL: add player response/transition -> razlo14n]}
+{7030}{}{[MANUAL: add player response/transition -> razlo14n]}
+{8000}{}{You don't have enough money! I'm sorry, but my work ethic doesn't permit me to heal for free, you know. Come back when you have enough money.}
+{8010}{}{Thanks for nothing.}
+{8020}{}{Nunga.}
+{8030}{}{How about a Radscorpion tail instead?}
+{8040}{}{Scorpin, Scorpin?}
+{8050}{}{Can you take something in trade?}
+{8060}{}{My giv dis?}
+{9000}{}{Let me see the sac! Yes, I can do something with this, as well as heal you for this great gift.}
+{9010}{}{[Next...]}
+{10000}{}{This will take a little bit of time. Come, relax in the back, while I work with the sac. You might have a slight headache from the junja juice, as well. Come, come . . .}
+{10010}{}{[Done.]}
+{11000}{}{Let's see here.}
+{11010}{}{[...]}
+{12000}{}{This will take a little bit of time. Come, relax in the back. You might have a slight headache from the junja juice, as well. Come, come . . .}
+{12010}{}{[Done.]}
+{13000}{}{Oh Great Brahmin! That is very, very serious. It will cost $50.}
+{13010}{}{Nunga.}
+{13020}{}{OK, here you go.}
+{13030}{}{K, me giv?}
+{13040}{}{I don't have enough money.}
+{14000}{}{How can you still be walking?! This looks extremely serious. We'll need some special prayers for this one and a lot of luck. Not to mention @lex price@$.}
+{14010}{}{Nunga.}
+{14020}{}{OK, here you go.}
+{14030}{}{K, me giv?}
+{14040}{}{I don't have enough money.}
+{15000}{}{You're barely hurt, you wimp. Come back in the morning.}
+{15010}{}{[Done.]}
+{16000}{}{You will be, if you keep me from my sleep. Now come back in the morning.}
+{16010}{}{[Done.]}
+{17000}{}{Why would I be able to help you kill radscorpions? I'm a doctor, not a warrior. For that
+you should see Aradesh, or even Tandi, or her boyfriend, Seth. Leave me.}
+{17010}{}{I need something for their poison.}
+{18000}{}{If I had a sample of their poison, I could create a cure.}
+{18010}{}{[Done.]}
+{19000}{}{[MANUAL: add NPC dialogue for diagram node 'razlo15n']}
+{19010}{}{[MANUAL: add player response/transition -> razlo11n]}
+{19020}{}{[MANUAL: add player response/transition -> razlo16n]}
+{20000}{}{Hmm, Tandi is gone? I find this hard to believe, but maybe she ran away with Seth. I
+know that they have been eyeing each other lately. Aradesh was always a little bit of a
+prude, perhaps it was too much for her finally.}
+{20010}{}{I don't think so, I think that she was kidnapped.}
+{20020}{}{Perhaps, I'll go talk to some other people.}
+{21000}{}{How awful! If that is the case, I hope she is not hurt. Who is looking for her?}
+{21010}{}{Almost everyone.}
+{21020}{}{Many people, including myself.}
+{22000}{}{I hope she is found before it is too late.}
+{22010}{}{[Done.]}
+{23000}{}{If she is hurt, it could be bad. Here, take these . . . I hope that you won't need them.}
+{23010}{}{[MANUAL: add player response/transition -> givestuff]}
+{24000}{}{I have already given you as much as I can. Good luck.}
+{24010}{}{[Done.]}
+{25000}{}{Hnn?! What is that? Great, I get awakened by the great mumbling beast of the north. Come
+back in the morning.}
+{25010}{}{[Done.]}
+{26000}{}{You look distraught. Are you in need of assistance?}
+{26010}{}{Tandi has been kidnapped.}
+{26020}{}{I need healing.}
+{26030}{}{I've been poisoned!}
+{26040}{}{Hng, Tanny boo.}
+{27000}{}{Hmm, Tandi is gone? I find this hard to believe, but maybe she ran away with Seth. I
+know that they have been eyeing each other lately. Aradesh was always a little bit of a
+prude, perhaps it was too much for her finally.}
+{27010}{}{I don't think so, I think that she was kidnapped.}
+{27020}{}{Hmm, I didn't think of that.}
+{27030}{}{Perhaps, I'll go talk to some other people.}
+{28000}{}{Of course you do.}
+{28010}{}{[...]}
+{29000}{}{Let's see here.}
+{29010}{}{[Next...]}
+{29020}{}{[Next...]}
+{29030}{}{[Next...]}
+{30000}{}{You're barely hurt. I suggest a good nights sleep and some rest; you will heal naturally over time.}
+{30010}{}{[Done.]}
+{31000}{}{[MANUAL: add NPC dialogue for diagram node 'razlo23a']}
+{31010}{}{[MANUAL: add player response/transition -> razlo25]}
+{31020}{}{[MANUAL: add player response/transition -> razlo24]}
+{32000}{}{Here, let's see.
+---
+Yep, just as I thought. Let me get the cure.
+---
+You seem fine, now. Be careful in the future.}
+{32010}{}{[Next...]}
+{33000}{}{Stop by again, but stay healthy next time.}
+{33010}{}{[Done.]}
+{34000}{}{Sorry, I can't cure any poisons. I don't have the proper ingredients to make a decent anti-venom.}
+{34010}{}{[Done.]}
+{35000}{}{Tandi is gone? That is a terrible thing. I hope they find her.}
+{35010}{}{[Done.]}
+{36000}{}{Can I help you?}
+{36010}{}{I need healing.}
+{36020}{}{I've been poisoned!}
+{36030}{}{I've been poisoned!}
+{36040}{}{No.}
+{36050}{}{Luki!}
+{36060}{}{What do you know about Radscorpions?}
+{36070}{}{I have a sample of the Radscorpion poison, can you do something with it?}
+{36080}{}{Scorpin, Scorpin?}
+{37000}{}{Hmmm. I think I've seen Brahmin with more brain cells then you. Well, let's see if you're wounded.}
+{37010}{}{[...]}
+{37020}{}{[...]}
+{38000}{}{Well, you seem fine to me. Perhaps later, then?}
+{38010}{}{[Done.]}
+{39000}{}{And how such a large creature can even be possible by natural evolution, or even radiation induced mutation is beyond me.
+---
+Not too much. They seem to be extremely large versions of the north American Emperor scorpion. Contrary to my medical knowledge, their poison has grown more potent, not
+diluted, as I would expect. Seth has been hunting them, which helps some of my tests.}
+{39010}{}{You seem well educated. What are you doing here?}
+{39020}{}{Anything else?}
+{39030}{}{Thanks.}
+{40000}{}{Doc Morbid in Junktown taught me some. And just because we live in stone huts, does not
+mean we are less intelligent or educated. Have a nice day.}
+{40010}{}{[Done.]}
+{41000}{}{They seem to be sensitive to light. Nocturnal. If I could get a sample of their poison,
+especially the venom production sac located in their tail, I could create an anti-venom.}
+{41010}{}{Thanks.}
+{42000}{}{[MANUAL: add NPC dialogue for diagram node 'razlo27a']}
+{42010}{}{[MANUAL: add player response/transition -> UpReact]}
+{43000}{}{[MANUAL: add NPC dialogue for diagram node 'UpReact']}
+{43010}{}{[Done.]}
+{44000}{}{Let me see the sac! Yes, I can do something with this.}
+{44010}{}{[Next...]}
+{45000}{}{Here, take this as a free sample. It seems to work well against radscorpion stings, of course, but it shows much potential as a general anti-venom and poison cure.}
+{45010}{}{[Done.]}
+{46000}{}{I'm Razlo. Can I help you?}
+{46010}{}{I've been poisoned!}
+{46020}{}{Not right now, but it was nice meeting you.}
+{46030}{}{I need healing.}
+{46040}{}{Hnngh!}
+{47000}{}{Hmmm, I don't like your looks. I hope that you have come for business, and will be
+moving on shortly . . .}
+{47010}{}{I've been poisoned!}
+{47020}{}{No need to get defensive, I'm just looking around}
+{47030}{}{Help, I need some healing.}
+{48000}{}{My grief knows no end. Tandi, the only child of my good friend, is gone. I cannot work
+right now.}
+{48010}{}{[Done.]}
+{49000}{}{I heard that you helped save Tandi. Congratulations and thank you. Anytime you need healing, come here.}
+{49010}{}{[Done.]}
+{50000}{}{I hope Tandi gets back soon. Aradesh must be feeling terrible right now.}
+{50010}{}{[Done.]}
+{51000}{}{I'm sorry but I can't help you.}
+{51010}{}{[Done.]}
+{52000}{}{Hello, again. How can I be of service?}
+{52010}{}{I need healing.}
+{52020}{}{I've been poisoned!}
+{52030}{}{Ug!}
+{52040}{}{Hello again. Just stopping by.}
+{53000}{}{It was nice seeing you again. Have a good day.}
+{53010}{}{[Done.]}
+{54000}{}{Of course. It's you again. Now what?}
+{54010}{}{I need healing.}
+{54020}{}{I've been poisoned!}
+{54030}{}{Nothing.}
+{54040}{}{Luki!}
+

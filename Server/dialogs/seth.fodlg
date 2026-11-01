@@ -10,8 +10,9 @@ lang=engl
 2 1010 D _var p q_shady_tandi = 1 #
 3 1020 D _var p q_shady_tandi } 2 D _var p q_shady_tandi < 6 #
 4 1030 D _var p q_shady_radscorpions = 2 #
-11 1040 D _var p q_shady_radscorpions = 0 #
-14 1050 D _var p q_shady_radscorpions = 3 @
+11 1040 D _var p q_shady_radscorpions = 0 D _script dialog@d_IsNotArmed 0  #
+29 1050 D _script dialog@d_IsArmed 0  #
+14 1060 D _var p q_shady_radscorpions = 3 @
 2 2000 None 0 #
 5 2010 #
 6 2020 #
@@ -112,7 +113,9 @@ lang=engl
 0 28010 R _script quest_shady_nestcave@r_TeleportToCave 0  #
 0 28020 R _script quest_shady_nestcave@r_TeleportToCave 0  #
 25 28030 #
-25 28040 &
+25 28040 @
+29 29000 None 0 #
+0 29010 &
 
 [engl]
 {100}{}{Seth}
@@ -123,7 +126,8 @@ conditions.]}
 {1020}{}{Tandi in progress}
 {1030}{}{Radscorpions killed get reward}
 {1040}{}{Begin}
-{1050}{}{After radscorpions}
+{1050}{}{Armed}
+{1060}{}{After radscorpions}
 {2000}{}{Thank Dharma you're here wanderer. My girl . . . uh, Tandi, Aradesh's daughter, has been kidnapped. We believe the raiders have her.}
 {2010}{}{Where are these raiders?}
 {2020}{}{Wow. Tough break. Well, I'll see you later.}
@@ -230,4 +234,6 @@ be in our Town Hall, the building to the south.}
 {28020}{}{Uh-huh.}
 {28030}{}{No.}
 {28040}{}{Uh-uh.}
+{29000}{}{Welcome to Shady Sands, stranger. Please holster that weapon while you are here.}
+{29010}{}{[Done.]}
 
