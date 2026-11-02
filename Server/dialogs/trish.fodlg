@@ -7,7 +7,8 @@ lang=engl
 [dialog]
 &
 1 1000 None 1 #
-2 1010 @
+2 1010 D _script map_junktown@d_SkumpittClosed 0  #
+8 1020 D _script map_junktown@d_SkumpittOpen 0  @
 2 2000 None 0 #
 9 2010 #
 10 2020 #
@@ -98,7 +99,8 @@ lang=engl
 {210}{}{You see a waitress.}
 {1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
 conditions.]}
-{1010}{}{[MANUAL: initial branch condition/greeting -> Trish0]}
+{1010}{}{At crash hotel}
+{1020}{}{At Skum pitt}
 {2000}{}{What the hell are you doing in my room?}
 {2010}{}{Gug!}
 {2020}{}{Whoops, sorry. I thought this was my room.}

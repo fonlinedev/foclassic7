@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              200
 MaxHexY              200
-WorkHexX             80
-WorkHexY             82
+WorkHexX             92
+WorkHexY             106
 ScriptModule         map_junktown
 ScriptFunc           map_init
 NoLogOut             0
@@ -13218,7 +13218,7 @@ Critter_ParamValue0  1748
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  1
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  352
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  1
 Critter_ParamIndex4  ST_NPC_ROLE
@@ -18816,7 +18816,7 @@ Critter_ParamValue0  1754
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  12
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  351
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  0
 Critter_ParamIndex4  ST_NPC_ROLE
@@ -18845,7 +18845,7 @@ Critter_ParamValue0  1753
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  12
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  350
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  0
 Critter_ParamIndex4  ST_NPC_ROLE
@@ -18903,7 +18903,7 @@ Critter_ParamValue0  1759
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  17
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  394
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  0
 Critter_ParamIndex4  ST_NPC_ROLE
@@ -18989,7 +18989,7 @@ Critter_ParamValue0  1748
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  12
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  352
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  0
 Critter_ParamIndex4  ST_NPC_ROLE
@@ -19250,7 +19250,7 @@ Critter_ParamValue0  1735
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  12
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  353
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  0
 Critter_ParamIndex4  ST_NPC_ROLE
@@ -19279,7 +19279,7 @@ Critter_ParamValue0  1735
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  12
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  353
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  0
 Critter_ParamIndex4  ST_NPC_ROLE
@@ -21763,7 +21763,7 @@ Critter_ParamValue0  1736
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  22
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  354
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  0
 Critter_ParamIndex4  ST_NPC_ROLE
@@ -22725,5 +22725,74 @@ MapObjType           1
 ProtoId              2849
 MapX                 70
 MapY                 98
+
+MapObjType           2
+ProtoId              3852
+MapX                 84
+MapY                 105
+ScriptName           map_junktown
+FuncName             t_TriggerBarFight
+
+MapObjType           2
+ProtoId              3852
+MapX                 83
+MapY                 105
+ScriptName           map_junktown
+FuncName             t_TriggerBarFight
+
+MapObjType           2
+ProtoId              3852
+MapX                 82
+MapY                 104
+ScriptName           map_junktown
+FuncName             t_TriggerBarFight
+
+MapObjType           2
+ProtoId              3852
+MapX                 81
+MapY                 105
+ScriptName           map_junktown
+FuncName             t_TriggerBarFight
+
+MapObjType           2
+ProtoId              3852
+MapX                 80
+MapY                 105
+ScriptName           map_junktown
+FuncName             t_TriggerBarFight
+
+MapObjType           2
+ProtoId              3852
+MapX                 79
+MapY                 106
+ScriptName           map_junktown
+FuncName             t_TriggerBarFight
+
+MapObjType           2
+ProtoId              3852
+MapX                 78
+MapY                 106
+ScriptName           map_junktown
+FuncName             t_TriggerBarFight
+
+MapObjType           2
+ProtoId              3852
+MapX                 85
+MapY                 106
+ScriptName           map_junktown
+FuncName             t_TriggerBarFight
+
+MapObjType           2
+ProtoId              3852
+MapX                 86
+MapY                 106
+ScriptName           map_junktown
+FuncName             t_TriggerBarFight
+
+MapObjType           2
+ProtoId              3853
+MapX                 109
+MapY                 155
+Scenery_ToEntire     20
 
 

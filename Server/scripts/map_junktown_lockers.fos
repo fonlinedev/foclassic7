@@ -18,16 +18,26 @@ void spawnLockers(Map@ map)
 
     array<Item@> lockers;
     uint count = map.GetItemsByType(ITEM_TYPE_CONTAINER, lockers);
+
+    // Loop through the populated array and log the coordinates of each container
+    for(uint i = 0; i < count; i++)
+    {
+        Item@ locker = lockers[i];
+        if(valid(locker))
+        {
+            // HexX and HexY print the map coordinates. GetProtoId() helps identify the container graphic/type.
+            Log("Container found -> X: " + locker.HexX + " | Y: " + locker.HexY + " | Item PID: " + locker.GetProtoId());
+        }
+    }
     
     // Gizmo / skumpitt
     if(map.GetProtoId() == MAP_JunktownNorth)
     {
-        if(count == 0)
+        if(count < 11)
         {
-            Log("No lockers found on MAP_JunktownNorth.");
+            Log("ERROR MAP_JunktownNorth: Expected 11 containers, found " + count);
             return;
         }
-
         Log("initLockersOnce: MAP_JunktownNorth - containers found: " + count);       
 
         LockerLoot@[] northLocker0;        
@@ -77,9 +87,9 @@ void spawnLockers(Map@ map)
     // Entrance
     else if(map.GetProtoId() == MAP_JunktownSouth)
     {
-        if(count == 0)
+        if(count < 5)
         {
-            Log("No lockers found on MAP_JunktownSouth.");
+            Log("ERROR MAP_JunktownSouth: Expected 5 containers, found " + count);
             return;
         }
         
@@ -93,27 +103,24 @@ void spawnLockers(Map@ map)
         LockerLoot@[] southLocker1;        
         ResetLockerLoot(lockers[1], LOCKER_PROTECTED_ITEMS, southLocker1);
 
-        LockerLoot@[] southLocker2;        
+        LockerLoot@[] southLocker2;
+        southLocker2.insertLast(LockerLoot(PID_10MM_AP, 3));
+        southLocker2.insertLast(LockerLoot(PID_10MM_JHP, 3));
         ResetLockerLoot(lockers[2], LOCKER_PROTECTED_ITEMS, southLocker2);
 
         LockerLoot@[] southLocker3;
-        southLocker3.insertLast(LockerLoot(PID_10MM_AP, 3));
-        southLocker3.insertLast(LockerLoot(PID_10MM_JHP, 3));
+        southLocker3.insertLast(LockerLoot(PID_NUKA_COLA, 5));
+        southLocker3.insertLast(LockerLoot(PID_MUTATED_FRUIT, 4));
+        southLocker3.insertLast(LockerLoot(PID_BOOZE, 5));
+        southLocker3.insertLast(LockerLoot(PID_BEER, 7));
         ResetLockerLoot(lockers[3], LOCKER_PROTECTED_ITEMS, southLocker3);
-
-        LockerLoot@[] southLocker4;
-        southLocker4.insertLast(LockerLoot(PID_NUKA_COLA, 5));
-        southLocker4.insertLast(LockerLoot(PID_MUTATED_FRUIT, 4));
-        southLocker4.insertLast(LockerLoot(PID_BOOZE, 5));
-        southLocker4.insertLast(LockerLoot(PID_BEER, 7));
-        ResetLockerLoot(lockers[4], LOCKER_PROTECTED_ITEMS, southLocker4);
 
         // Guard house
     } else if(map.GetProtoId() == MAP_Junktownhotel)
     {
-        if(count == 0)
+        if(count < 21)
         {
-            Log("No lockers found on MAP_Junktownhotel.");
+            Log("ERROR MAP_Junktownhotel: Expected 21 containers, found " + count);
             return;
         }
         Log("initLockersOnce: MAP_Junktownhotel - containers found: " + count);
@@ -210,16 +217,6 @@ void spawnLockers(Map@ map)
         Log("ERROR unknown map PID cant load lockers");
     }
 
-    // Loop through the populated array and log the coordinates of each container
-    for(uint i = 0; i < count; i++)
-    {
-        Item@ locker = lockers[i];
-        if(valid(locker))
-        {
-            // HexX and HexY print the map coordinates. GetProtoId() helps identify the container graphic/type.
-            Log("Container found -> X: " + locker.HexX + " | Y: " + locker.HexY + " | Item PID: " + locker.GetProtoId());
-        }
-    }
 }
 
 uint e_RespawnLoot(uint[]@ values)

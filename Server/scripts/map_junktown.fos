@@ -285,3 +285,174 @@ bool HandleUrnInteraction(Item& item, Critter& cr)
     // Default block for all other unhandled quest states
     return true; 
 }
+
+bool d_SkumpittOpen(Critter& player, Critter@ npc)
+{
+    uint16 year=0, month=0, day=0, dayofweek=0, hour=0, minute=0, second=0;
+    GetGameTime( __FullSecond, year, month, day, dayofweek, hour, minute, second );    
+    return (hour >= 17 || hour < 4);    
+}
+
+bool d_SkumpittClosed(Critter& player, Critter@ npc)
+{
+    return !d_SkumpittOpen(player, npc);
+}
+
+void t_TriggerBarFight(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
+{
+    if(!entered)
+        return;
+
+    if(dir == 2 || dir == 3 || dir == 1)
+        return;
+
+    Map@ map = GetMapByPid(MAP_JunktownNorth, 0);
+
+    if(!valid(map))
+        return;
+
+    critter.Wait(10000);
+
+    Critter@ crTrish = GetCritterAtEntire(15, map);
+    Critter@ crNeil  = GetCritterAtEntire(11, map);
+    Critter@ crSkul  = GetCritterAtEntire(13, map);
+    Critter@ crShark = GetCritterAtEntire(17, map);
+
+    if(!valid(crShark) || !valid(crTrish) ||
+       !valid(crNeil) || !valid(crSkul))
+        return;
+    
+    crTrish.Say(SAY_SHOUT_ON_HEAD, "Oh! Saul, where are you?!?");
+    
+    CreateTimeEvent(AFTER(REAL_SECOND(3)), "e_NeilConfrontsSkulz", false);
+}
+
+uint e_NeilConfrontsSkulz(array<uint>@ values)
+{
+    Map@ map = GetMapByPid(MAP_JunktownNorth, 0);
+    if(!valid(map))
+        return 0;
+
+    Critter@ crNeil = GetCritterAtEntire(11, map);
+    Critter@ crSkul  = GetCritterAtEntire(13, map);
+
+    if(valid(crNeil) && valid(crSkul))
+    {
+        crNeil.Say(SAY_SHOUT_ON_HEAD,
+            "Get the hell outta here you goddamn punks! If any of ya ever touch her again I'll kill the whole lot o' ya!");
+        
+        AddAttackPlane(crNeil, 0, crSkul);
+
+        CreateTimeEvent(AFTER(REAL_SECOND(1)),
+                        "e_NeilKillsSkulz", false);
+    }
+
+    return 0;
+}
+
+uint e_NeilKillsSkulz(array<uint>@ values)
+{
+    Map@ map = GetMapByPid(MAP_JunktownNorth, 0);
+    if(!valid(map))
+        return 0;
+
+    Critter@ crNeil = GetCritterAtEntire(11, map);
+    Critter@ crSkul  = GetCritterAtEntire(13, map);
+
+    if(valid(crNeil) && valid(crSkul))
+    {
+        crNeil.Say(SAY_SHOUT_ON_HEAD,
+            "The day I can't handle little shits like you is the day I die!");
+    }
+    
+    crSkul.ToDead(ANIM2_DEAD_BLOODY_SINGLE, null);
+
+    CreateTimeEvent(AFTER(REAL_SECOND(3)),
+                    "e_SharkThreatensNeil", false);
+
+    return 0;
+}
+
+uint e_SharkThreatensNeil(array<uint>@ values)
+{
+    Map@ map = GetMapByPid(MAP_JunktownNorth, 0);
+    if(!valid(map))
+        return 0;
+
+    Critter@ crShark = GetCritterAtEntire(17, map);
+
+    if(valid(crShark))
+    {
+        crShark.Say(SAY_SHOUT_ON_HEAD,
+            "We'll be back, old man. This isn't over!");
+    }
+
+    CreateTimeEvent(AFTER(REAL_SECOND(4)),  "e_SkulzLeaveBar", false);
+
+    return 0;
+}
+
+uint e_SkulzLeaveBar(array<uint>@ values)
+{
+    Map@ map = GetMapByPid(MAP_JunktownNorth, 0);
+    if(!valid(map))
+        return 0;
+    
+    uint16 x = 0;
+    uint16 y = 0;
+    map.GetEntireCoords(20, 0, x, y);
+    Critter@ crSkul  = GetCritterAtEntire(13, map);
+    Critter@ crShark = GetCritterAtEntire(17, map);
+    Critter@ crFemaleSkul = GetCritterAtEntire(16, map);
+
+    uint[] npcIds;
+
+    if(valid(crShark))
+    {
+        AddWalkPlane(crShark, AI_PLANE_WALK_PRIORITY, x, y, 5, false, 0);
+        npcIds.insertLast(crShark.Id);
+    }
+
+    if(valid(crFemaleSkul))
+    {
+        AddWalkPlane(crFemaleSkul, AI_PLANE_WALK_PRIORITY, x, y, 5, false, 0);
+        npcIds.insertLast(crFemaleSkul.Id);
+    }
+    
+    // Only create the time event if there are actually NPCs to remove
+    if(npcIds.length() > 0)
+    {
+        CreateTimeEvent(AFTER(REAL_SECOND(5)), "e_SkulzRemoveMap", npcIds, false);
+    }
+   
+    DeleteNpc(crSkul);   
+    
+    return 0;
+}
+
+uint e_SkulzRemoveMap(array<uint>@ values)
+{
+    if(values.length() < 2)
+        return 0;
+
+    Critter@ crShark = GetCritter(values[0]);
+    Critter@ crFemaleSkul = GetCritter(values[1]);
+
+    if(valid(crShark))
+    {
+        DeleteNpc(crShark);
+        Log("Skumpitt: Shark removed.");
+    }
+    else
+        Log("Skumpitt: Could not find Shark.");
+
+    if(valid(crFemaleSkul))
+    {
+        DeleteNpc(crFemaleSkul);
+        Log("Skumpitt: Female Skul removed.");
+    }
+    else
+        Log("Skumpitt: Could not find female Skul.");
+
+    return 0;
+}
