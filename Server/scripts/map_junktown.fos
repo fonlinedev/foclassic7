@@ -22,8 +22,6 @@
 
 void map_init(Map& map, bool firstTime)
 {
-    //InitJunktownTasks();
-    //InitSkumpittEvents();
     // certainly
 
     if(firstTime)
@@ -247,7 +245,7 @@ void spawnDocMorbidTeam(Map& map)
 
 void urn_init(Item& item, bool firstTime)
 {
-    item.SetEvent(ITEM_EVENT_SKILL, "_urnSkill");    
+        item.SetEvent(ITEM_EVENT_SKILL, "_urnSkill");    
 }
 
 bool _urnSkill(Item& item, Critter& cr, int skill)
@@ -300,31 +298,51 @@ bool d_SkumpittClosed(Critter& player, Critter@ npc)
 
 void t_TriggerBarFight(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
 {
+    if(!critter.IsPlayer())    
+        return;
+   
     if(!entered)
         return;
 
     if(dir == 2 || dir == 3 || dir == 1)
         return;
 
+    GameVar@ gangVar = GetLocalVar(LVAR_q_jt_skulz_gang, critter.Id);
+    if (!valid(gangVar) || gangVar.GetValue() != 0)
+        return;
+    
     Map@ map = GetMapByPid(MAP_JunktownNorth, 0);
 
     if(!valid(map))
         return;
-
-    critter.Wait(10000);
-
+    
     Critter@ crTrish = GetCritterAtEntire(15, map);
     Critter@ crNeil  = GetCritterAtEntire(11, map);
     Critter@ crSkul  = GetCritterAtEntire(13, map);
     Critter@ crShark = GetCritterAtEntire(17, map);
+    Critter@ crFemaleSkul = GetCritterAtEntire(16, map);
 
     if(!valid(crShark) || !valid(crTrish) ||
-       !valid(crNeil) || !valid(crSkul))
+       !valid(crNeil) || !valid(crSkul) || !valid(crFemaleSkul))
         return;
+
+    if (crSkul.StatBase[ST_CURRENT_HP] < 0)
+        return;
+
+    critter.Wait(10000);
+
+    uint[] npcIds;
+
+    npcIds.insertLast(crNeil.Id); // 0
+    npcIds.insertLast(crTrish.Id); // 1
+    npcIds.insertLast(crSkul.Id); // 2
+    npcIds.insertLast(crShark.Id); // 3
+    npcIds.insertLast(crFemaleSkul.Id); // 4
+    npcIds.insertLast(critter.Id); // Player 5
     
     crTrish.Say(SAY_SHOUT_ON_HEAD, "Oh! Saul, where are you?!?");
     
-    CreateTimeEvent(AFTER(REAL_SECOND(3)), "e_NeilConfrontsSkulz", false);
+    CreateTimeEvent(AFTER(REAL_SECOND(3)), "e_NeilConfrontsSkulz", npcIds, false);
 }
 
 uint e_NeilConfrontsSkulz(array<uint>@ values)
@@ -333,8 +351,8 @@ uint e_NeilConfrontsSkulz(array<uint>@ values)
     if(!valid(map))
         return 0;
 
-    Critter@ crNeil = GetCritterAtEntire(11, map);
-    Critter@ crSkul  = GetCritterAtEntire(13, map);
+    Critter@ crNeil = GetCritter(values[0]);
+    Critter@ crSkul  = GetCritter(values[2]);
 
     if(valid(crNeil) && valid(crSkul))
     {
@@ -343,8 +361,8 @@ uint e_NeilConfrontsSkulz(array<uint>@ values)
         
         AddAttackPlane(crNeil, 0, crSkul);
 
-        CreateTimeEvent(AFTER(REAL_SECOND(1)),
-                        "e_NeilKillsSkulz", false);
+        CreateTimeEvent(AFTER(REAL_SECOND(3)),
+                        "e_NeilKillsSkulz", values, false);
     }
 
     return 0;
@@ -356,8 +374,8 @@ uint e_NeilKillsSkulz(array<uint>@ values)
     if(!valid(map))
         return 0;
 
-    Critter@ crNeil = GetCritterAtEntire(11, map);
-    Critter@ crSkul  = GetCritterAtEntire(13, map);
+    Critter@ crNeil = GetCritter(values[0]);
+    Critter@ crSkul  = GetCritter(values[2]);
 
     if(valid(crNeil) && valid(crSkul))
     {
@@ -368,7 +386,7 @@ uint e_NeilKillsSkulz(array<uint>@ values)
     crSkul.ToDead(ANIM2_DEAD_BLOODY_SINGLE, null);
 
     CreateTimeEvent(AFTER(REAL_SECOND(3)),
-                    "e_SharkThreatensNeil", false);
+                    "e_SharkThreatensNeil", values, false);
 
     return 0;
 }
@@ -379,7 +397,7 @@ uint e_SharkThreatensNeil(array<uint>@ values)
     if(!valid(map))
         return 0;
 
-    Critter@ crShark = GetCritterAtEntire(17, map);
+    Critter@ crShark = GetCritter(values[3]);
 
     if(valid(crShark))
     {
@@ -387,7 +405,7 @@ uint e_SharkThreatensNeil(array<uint>@ values)
             "We'll be back, old man. This isn't over!");
     }
 
-    CreateTimeEvent(AFTER(REAL_SECOND(4)),  "e_SkulzLeaveBar", false);
+    CreateTimeEvent(AFTER(REAL_SECOND(4)),  "e_SkulzLeaveBar", values, false);
 
     return 0;
 }
@@ -401,55 +419,51 @@ uint e_SkulzLeaveBar(array<uint>@ values)
     uint16 x = 0;
     uint16 y = 0;
     map.GetEntireCoords(20, 0, x, y);
-    Critter@ crSkul  = GetCritterAtEntire(13, map);
-    Critter@ crShark = GetCritterAtEntire(17, map);
-    Critter@ crFemaleSkul = GetCritterAtEntire(16, map);
-
-    uint[] npcIds;
+    
+    Critter@ crShark = GetCritter(values[3]);
+    Critter@ crFemaleSkul = GetCritter(values[4]);
 
     if(valid(crShark))
     {
         AddWalkPlane(crShark, AI_PLANE_WALK_PRIORITY, x, y, 5, false, 0);
-        npcIds.insertLast(crShark.Id);
     }
 
     if(valid(crFemaleSkul))
     {
         AddWalkPlane(crFemaleSkul, AI_PLANE_WALK_PRIORITY, x, y, 5, false, 0);
-        npcIds.insertLast(crFemaleSkul.Id);
     }
     
     // Only create the time event if there are actually NPCs to remove
-    if(npcIds.length() > 0)
-    {
-        CreateTimeEvent(AFTER(REAL_SECOND(5)), "e_SkulzRemoveMap", npcIds, false);
-    }
-   
-    DeleteNpc(crSkul);   
+    CreateTimeEvent(AFTER(REAL_SECOND(25)), "e_SkulzWaitMap", values, false);  
     
+    GameVar@ gangVar = GetLocalVar(LVAR_q_jt_skulz_gang, values[5]);
+    if (!valid(gangVar))
+        return 0;
+    gangVar = 1;
+
     return 0;
 }
 
-uint e_SkulzRemoveMap(array<uint>@ values)
+uint e_SkulzWaitMap(array<uint>@ values)
 {
     if(values.length() < 2)
         return 0;
 
-    Critter@ crShark = GetCritter(values[0]);
-    Critter@ crFemaleSkul = GetCritter(values[1]);
+    Critter@ crShark = GetCritter(values[3]);
+    Critter@ crFemaleSkul = GetCritter(values[4]);
 
     if(valid(crShark))
     {
-        DeleteNpc(crShark);
-        Log("Skumpitt: Shark removed.");
+        crShark.Wait(90000);
+        Log("Skumpitt: Shark waiting.");
     }
     else
         Log("Skumpitt: Could not find Shark.");
 
     if(valid(crFemaleSkul))
     {
-        DeleteNpc(crFemaleSkul);
-        Log("Skumpitt: Female Skul removed.");
+        crFemaleSkul.Wait(90000);
+        Log("Skumpitt: Female Skul waiting.");
     }
     else
         Log("Skumpitt: Could not find female Skul.");

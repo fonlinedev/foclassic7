@@ -541,17 +541,16 @@ In order to do this, I have to find new electronic parts with that I can repair 
 # 7211 / q_jt_skulz_gang
 # Junktown, Bust the Skulz gang
 #=======================================
-{7211001}{}{I've heard about the Skulz, a gang causing trouble in Junktown. I should find out more about them and decide how to deal with the gang.
-
-:: New Quest Available ::}
-{7211011}{}{I'm investigating the Skulz gang. I should speak with people who know about the gang, learn what they are doing, and work out how to put an end to their activities.}
-{7211070}{}{I've dealt with the Skulz gang's threat. I should report back to the person who asked for my help, if anyone is waiting for a report.}
-{7211081}{}{I can no longer resolve the Skulz gang problem through the original plan. I should check whether another approach is possible.
-
-:: Quest Failed ::}
-{7211099}{}{HARD_COMPLETED:I helped bring the Skulz gang's activities to an end in Junktown.
+{7211001}{}{I've heard about the Skulz, a gang causing trouble in Junktown. I should find out more about them and decide how to deal with the gang.}
+{7211002}{}{I'm investigating the Skulz gang. I should speak with people who know about the gang, learn what they are doing, and work out how to put an end to their activities.}
+{7211003}{}{I convinced Sherry to testify against the Skulz gang.}
+{7211004}{}{I've dealt with the Skulz gang's threat. I should report back to the person who asked for my help, if anyone is waiting for a report.
 
 :: Quest Completed ::}
+{7211005}{}{I can no longer resolve the Skulz gang problem through the original plan. I should check whether another approach is possible.
+
+:: Quest Failed ::}
+
 {7211101}{}{Junktown: Bust the Skulz Gang}
 {7211102}{}{QUEST:Bust the Skulz gang}
 
