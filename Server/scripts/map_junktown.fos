@@ -83,13 +83,6 @@ void t_EnteredKillian(Critter& critter, Scenery& trigger, bool entered, uint8 di
     if(dir == 1 || dir == 2 || dir == 3)
         return;
 
-    Map@ map = critter.GetMap();     
-        
-    if(!valid(map))
-    {
-        DLog("Invalid map");
-    }
-   
     GameVar@ assassinVar = GetLocalVar(LVAR_q_jt_killian_assassin_state, critter.Id);
     if(valid(assassinVar))
     {
@@ -97,17 +90,28 @@ void t_EnteredKillian(Critter& critter, Scenery& trigger, bool entered, uint8 di
             return;
     }
 
-    critter.Wait(1000);
+    critter.Wait(15000);
+
+    Map@ map = critter.GetMap();
+        
+    if(!valid(map))
+    {
+        DLog("Invalid map");
+        return;
+    }
+   
 
     uint16 x = 0;
     uint16 y = 0;
 
     map.GetEntireCoords(9, 0, x, y);
-
+    Log("spawn at x "+ x + ", y " + y);
     Critter@ cr = map.GetCritter(x, y);
 
     if (!valid(cr))
     {
+        assassinVar = 1;
+
         int[] params = {
             ST_DIALOG_ID, 0,
             ST_BAG_ID, 167,
@@ -125,8 +129,7 @@ void t_EnteredKillian(Critter& critter, Scenery& trigger, bool entered, uint8 di
             Log("Error creating npc.");
             return;
         }
-        
-        assassinVar = 1;        
+                
         Log("npc spawned");
     }
 

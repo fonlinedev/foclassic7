@@ -23,8 +23,8 @@ lang=engl
 10 5020 @
 10 6000 None 0 #
 0 6010 #
-11 6020 #
-12 6030 @
+0 6020 #
+8 6030 @
 11 7000 None 0 #
 0 7010 @
 12 8000 None 0 #
@@ -58,7 +58,7 @@ At your expense, of course.}
 {2040}{}{Just stopped by for a drink and some . . . entertainment.}
 {2050}{}{Glopf!}
 {3000}{}{We beat up posers like you!}
-{3010}{}{[MANUAL: add player response/transition -> SharkCombat]}
+{3010}{}{Bye.}
 {4000}{}{Not so fast! Nobody just walks into our place without payin' the pain tax.
 ---
 I think you'll do. Boys, grab her.
@@ -68,8 +68,7 @@ Let me introduce you to the tax man. He's called Mr. Sledgehammer!}
 {5000}{}{[MANUAL: add NPC dialogue for diagram node 'Shark01a']}
 {5010}{}{[MANUAL: add player response/transition -> Shark03]}
 {5020}{}{[MANUAL: add player response/transition -> Shark04]}
-{6000}{}{Well, for this evening's entertainment, we've decided to thrash this place! Heh. Grab
-what you can carry and let's see some blood run, eh?}
+{6000}{}{Well, for this evening's entertainment, we've decided to thrash this place! Heh. Grab what you can carry and let's see some blood run, eh?}
 {6010}{}{Nah, I'd rather have something to eat . . . perhaps grilled shark!}
 {6020}{}{Smash and grab? Count me in!}
 {6030}{}{Not tonight, I have a headache.}
@@ -91,5 +90,5 @@ it'll be fun to beat you!}
 {12030}{}{Just stopped in for a quick drink.}
 {13000}{}{Not a bad idea. Think I'll have one myself. Of course, you always have to wash a beer
 down with some bloodshed!}
-{13010}{}{[MANUAL: add player response/transition -> SharkCombat]}
+{13010}{}{Bye.}
 

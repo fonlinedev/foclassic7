@@ -41,25 +41,45 @@ void _MobIdle(Critter& cr)
     {
         // attack
         uint npcId = crits[i].GetProtoId();
-        if (npcId == KILLIAN_PID) {
-            cr.Say(SAY_SHOUT_ON_HEAD, "Gizmo sends regards!");
-            int[] data = { crits[i].Id, cr.Id };            
-            CreateTimeEvent(AFTER(REAL_SECOND(5)), "e_InitiateAttack", data, false);
+        if (npcId == KILLIAN_PID) {            
+            int[] data = { crits[i].Id, cr.Id };
+            CreateTimeEvent(AFTER(REAL_SECOND(1)), "e_Walk", data, false);
             return;
         }
     }
 }
 
+uint e_Walk(array<uint>@ values)
+{    
+    Critter@ assassin = GetCritter(values[1]);
+
+    Map@ map = GetMapByPid(MAP_Junktownhotel, 0);
+    if(!valid(map))
+        return 0;
+    
+    uint16 x = 0;
+    uint16 y = 0;
+    map.GetEntireCoords(11, 0, x, y);
+    Log("walking...");
+    AddWalkPlane(assassin, AI_PLANE_WALK_PRIORITY, x, y, 5, false, 0);
+
+    CreateTimeEvent(AFTER(REAL_SECOND(10)), "e_InitiateAttack", values, false);
+
+    return 0;
+}
+
 uint e_InitiateAttack(array<uint>@ values)
 {
-    Critter@ player = GetCritter(values[0]);
-    Critter@ guard = GetCritter(values[1]);
-    AddAttackPlane(guard, 0, player);
-    return REAL_SECOND(1);
+    Log("attacking...");
+    Critter@ killian = GetCritter(values[0]);
+    Critter@ assassin = GetCritter(values[1]);
+    assassin.Say(SAY_SHOUT_ON_HEAD, "Gizmo sends regards!");
+
+    AddAttackPlane(assassin, 0, killian);
+    return 0;
 }
 
 void _Dead(Critter& cr, Critter@ player)
 {        
-    DeleteNpc(cr);
-    player.Say(SAY_NETMSG, "Killian's assassin is dead.");
+    Log("dead");    
 }

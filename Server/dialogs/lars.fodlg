@@ -33,8 +33,9 @@ lang=engl
 9 7000 None 0 #
 0 7010 @
 16 8000 None 0 #
-0 8010 #
-0 8020 @
+0 8010 R _var p q_jt_skulz_gang = 4 #
+0 8020 D _script map_junktown@d_SkumpittOpen 0  #
+28 8030 D _script map_junktown@d_SkumpittClosed 0  @
 2 9000 None 0 #
 0 9010 @
 3 10000 None 0 #
@@ -82,7 +83,9 @@ lang=engl
 25 26020 D _var p q_jt_skulz_gang = 1 @
 25 27000 None 0 #
 24 27010 D _var p q_jt_skulz_gang = 3 #
-0 27020 &
+0 27020 @
+28 28000 None 0 #
+0 28010 &
 
 [engl]
 {100}{}{Lars}
@@ -102,8 +105,7 @@ conditions.]}
 {2050}{}{If you're in charge of the guards here, I think I have some information for you.}
 {2060}{}{Killian sent me. We're going to take Gizmo down.}
 {2070}{}{The Skulz are planning on killing Neal!}
-{3000}{}{Plenty, so long as you stay on our good side. We got Killian Darkwaters' store, where
-you can do some trading. And there's Gizmo's Casino, if you're a gambler. Or if you just
+{3000}{}{Plenty, so long as you stay on our good side. We got Killian Darkwaters' store, where you can do some trading. And there's Gizmo's Casino, if you're a gambler. Or if you just
 want a drink, you can head on over to the Skum Pitt. Just don't get too rowdy.}
 {3010}{}{Done.}
 {3020}{}{Hey, I like a rowdy time!}
@@ -117,17 +119,13 @@ it.}
 {4020}{}{Good to know that someone's keeping the peace around here. Thanks.}
 {4030}{}{So, what keeps you lawboys from just busting Gizmo and the Skulz?}
 {5000}{}{I'm the head of the guards here in Junktown. Name's Lars. For that matter, who are you,
-stranger?
----
-I'm
----
-.}
+stranger?}
 {5010}{}{Killian sent me to help run Gizmo out of town.}
 {5020}{}{Buzz off, I don't have to tell you anything.}
 {5030}{}{Nevermind.}
 {6000}{}{Yes, I'm in charge of the guards here. What do you have for me?}
 {6010}{}{I have some testimony from Sherry that the Skulz are involved in some illegal
-activities.}
+ activities.}
 {6020}{}{Nothing, just checking.}
 {7000}{}{All right, let's do it.}
 {7010}{}{[Done.]}
@@ -135,14 +133,13 @@ activities.}
 it. You gonna be there?}
 {8010}{}{No thanks, I've done my good deed for the day.}
 {8020}{}{Yes.}
+{8030}{}{Yes.}
 {9000}{}{Hey! You! We know about you, you monster!}
 {9010}{}{[Done.]}
 {10000}{}{We don't like your kind here. You've got about fifteen seconds before I blow your head
 off.}
 {10010}{}{[Done.]}
-{11000}{}{Wanderer, you just screwed up. We needed evidence so that we could take down Gizmo all
-nice and legal-like. Look, off the record, I'm happy to have that fat fuck out of the
-picture, but we can't condone murder. You better leave Junktown and never come back.}
+{11000}{}{Wanderer, you just screwed up. We needed evidence so that we could take down Gizmo all nice and legal-like. Look, off the record, I'm happy to have that fat fuck out of the picture, but we can't condone murder. You better leave Junktown and never come back.}
 {11010}{}{[Done.]}
 {12000}{}{You ready to help take down Gizmo?}
 {12010}{}{You bet. Let's nail that tub.}
@@ -151,9 +148,7 @@ picture, but we can't condone murder. You better leave Junktown and never come b
 {12040}{}{Nuh-uh.}
 {13000}{}{Well, you'd best wait here so you don't get caught in the crossfire.}
 {13010}{}{[Done.]}
-{14000}{}{Well, you'd best keep yourself under control. We're a free town but we don't tolerate
-stepping on other people's toes. Don't cause any problems and you won't give cause for
-me and my men to come down on you.}
+{14000}{}{Well, you'd best keep yourself under control. We're a free town but we don't tolerate stepping on other people's toes. Don't cause any problems and you won't give cause for me and my men to come down on you.}
 {14010}{}{Done.}
 {14020}{}{What a stick in the mud!}
 {15000}{}{Look, buddy, my job here is to keep the peace, and if I have to break a few heads to do
@@ -195,4 +190,6 @@ activity.}
 evidence or inside testimony.}
 {27010}{}{I've got testimony from Sherry, a former gang member.}
 {27020}{}{I'll see what I can do.}
+{28000}{}{Come back later, the Skumpitt is closed now.}
+{28010}{}{I'll be back later to join your group.}
 

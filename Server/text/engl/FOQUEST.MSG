@@ -542,9 +542,9 @@ In order to do this, I have to find new electronic parts with that I can repair 
 # Junktown, Bust the Skulz gang
 #=======================================
 {7211001}{}{I've heard about the Skulz, a gang causing trouble in Junktown. I should find out more about them and decide how to deal with the gang.}
-{7211002}{}{I'm investigating the Skulz gang. I should speak with people who know about the gang, learn what they are doing, and work out how to put an end to their activities.}
-{7211003}{}{I convinced Sherry to testify against the Skulz gang.}
-{7211004}{}{I've dealt with the Skulz gang's threat. I should report back to the person who asked for my help, if anyone is waiting for a report.
+{7211002}{}{I agreed join Skulz revenge against Neal this will have serious repercussions for me in Junktown in case I can't find another way of dealing with them.}
+{7211003}{}{I convinced Sherry to testify against the Skulz gang. I need inform Lars about it.}
+{7211004}{}{I've dealt with the Skulz gang's threat.
 
 :: Quest Completed ::}
 {7211005}{}{I can no longer resolve the Skulz gang problem through the original plan. I should check whether another approach is possible.
@@ -684,12 +684,10 @@ In order to do this, I have to find new electronic parts with that I can repair 
 # 7219 / q_jt_kill_neal
 # Junktown, Kill Neal
 #=======================================
-{7219001}{}{I've been asked to kill Neal. I should learn why he is being targeted and consider the consequences before deciding how to proceed.
-
-:: New Quest Available ::}
-{7219011}{}{I've decided to pursue the assignment involving Neal. I should find him and complete the task, while being prepared for the consequences of his death.}
-{7219070}{}{Neal has been killed. I should report back to whoever gave me the assignment, if required.}
-{7219081}{}{I can no longer complete the assignment to kill Neal as planned.
+{7219001}{}{I've been asked to kill Neal. I should learn why he is being targeted and consider the consequences before deciding how to proceed.}
+{7219002}{}{I've decided to pursue the assignment involving Neal. I should find him and complete the task, while being prepared for the consequences of his death.}
+{7219003}{}{Neal has been killed. I should report back to whoever gave me the assignment, if required.}
+{7219004}{}{I can no longer complete the assignment to kill Neal as planned.
 
 :: Quest Failed ::}
 {7219099}{}{HARD_COMPLETED:Neal has been killed and the assignment is complete.
@@ -720,15 +718,14 @@ In order to do this, I have to find new electronic parts with that I can repair 
 # 7221 / q_jt_steal_neal_urn
 # Junktown, Steal Neal's Urn
 #=======================================
-{7221001}{}{I've heard that Neal has an urn someone wants stolen. I should learn where it is kept and how to take it without getting caught.
+{7221001}{}{Vinnie wants Neal's urn stolen. I should learn where it is kept and how to take it without getting caught.}
+{7221002}{}{I've obtained Neal's urn. I should deliver it to Vinnie.}
+{7221003}{}{I've finalized Neal's urn delivery.
 
-:: New Quest Available ::}
-{7221011}{}{I'm trying to steal Neal's urn. I should find a way to obtain it and decide what to do with it once I have it.}
-{7221070}{}{I've obtained Neal's urn. I should deliver it to the person who requested it, if that is part of the arrangement.}
-{7221081}{}{I failed to steal Neal's urn or can no longer complete the job as planned.
+:: Quest Completed ::}
+{7221004}{}{I failed to steal Neal's urn or can no longer complete the job as planned.
 
 :: Quest Failed ::}
-{7221099}{}{HARD_COMPLETED:I stole Neal's urn and completed the assignment.
 
 :: Quest Completed ::}
 {7221101}{}{Junktown: Steal Neal's Urn}

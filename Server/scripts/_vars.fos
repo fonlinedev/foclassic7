@@ -1710,7 +1710,7 @@
 **********
     0 == inactive
     1 == active
-    2 == gang issue resolved / objective complete
+    2 == join gang
     3 == sherry convinced
     4 == quest completed
     5 == quest failed   

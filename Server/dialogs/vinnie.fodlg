@@ -7,9 +7,13 @@ lang=engl
 [dialog]
 &
 1 1000 None 1 #
-2 1010 @
+5 1010 D _var p q_jt_skulz_gang = 1 D _var p q_jt_steal_neal_urn = 0 #
+5 1020 D _var p q_jt_skulz_gang = 0 #
+3 1030 D _var p q_jt_steal_neal_urn = 1 #
+2 1040 D _var p q_jt_skulz_gang = 2 #
+2 1050 D _var p q_jt_steal_neal_urn = 3 D _var p q_jt_skulz_gang = 2 @
 2 2000 None 0 #
-0 2010 #
+0 2010 D _script map_junktown@d_SkumpittOpen 0  #
 6 2020 #
 7 2030 @
 6 3000 None 0 #
@@ -17,18 +21,18 @@ lang=engl
 7 4000 None 0 #
 0 4010 @
 3 5000 None 0 #
-8 5010 #
-9 5020 #
+8 5010 D _var p q_jt_kill_neal = 2 D _item p PID_URN > 0 #
+9 5020 D _item p PID_URN > 0 #
 10 5030 @
 8 6000 None 0 #
-0 6010 @
+0 6010 R _var p q_jt_steal_neal_urn = 3 @
 9 7000 None 0 #
-15 7010 #
-8 7020 #
-0 7030 #
-6 7040 @
+15 7010 R _var p q_jt_steal_neal_urn = 3 R _item p PID_URN - 1 R _var p q_jt_skulz_gang = 5 #
+8 7020 R _var p q_jt_steal_neal_urn = 3 R _item p PID_URN - 1 R _var p q_jt_skulz_gang = 2 #
+6 7030 R _var p q_jt_steal_neal_urn = 3 R _var p q_jt_skulz_gang = 2 #
+0 7040 R _var p q_jt_steal_neal_urn = 3 R _item p PID_URN - 1 R _var p q_jt_skulz_gang = 2 @
 15 8000 None 0 #
-0 8010 @
+65507 8010 @
 10 9000 None 0 #
 0 9010 @
 4 10000 None 0 #
@@ -38,14 +42,14 @@ lang=engl
 16 11010 #
 17 11020 @
 16 12000 None 0 #
-0 12010 #
-19 12020 #
-20 12030 @
+19 12010 #
+17 12020 #
+0 12030 @
 19 13000 None 0 #
-3 13010 #
+3 13010 D _item p PID_URN > 0 #
 14 13020 #
-8 13030 #
-23 13040 #
+8 13030 D _var p q_jt_kill_neal = 2 #
+23 13040 R _var p q_jt_steal_neal_urn = 1 #
 24 13050 @
 14 14000 None 0 #
 0 14010 @
@@ -60,7 +64,7 @@ lang=engl
 13 18010 #
 0 18020 #
 0 18030 #
-21 18040 @
+19 18040 @
 13 19000 None 0 #
 0 19010 #
 15 19020 #
@@ -73,17 +77,17 @@ lang=engl
 25 21020 @
 25 22000 None 0 #
 0 22010 #
-26 22020 @
+26 22020 D _var p q_jt_kill_killian = 1 @
 26 23000 None 0 #
 0 23010 @
 21 24000 None 0 #
 14 24010 #
 19 24020 @
 5 25000 None 0 #
-12 25010 #
-13 25020 #
-11 25030 #
-14 25040 @
+12 25010 D _param p ST_INTELLECT } 3 #
+13 25020 D _param p ST_INTELLECT } 3 #
+16 25030 D _param p ST_INTELLECT } 3 #
+14 25040 D _param p ST_INTELLECT < 3 @
 12 26000 None 0 #
 0 26010 &
 
@@ -93,7 +97,11 @@ lang=engl
 {210}{}{You see a young man with a tattoo and a bad attitude.}
 {1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
 conditions.]}
-{1010}{}{[MANUAL: initial branch condition/greeting -> Vinnie24]}
+{1010}{}{Bust skulls started}
+{1020}{}{Not started quest.}
+{1030}{}{Steal neal urn}
+{1040}{}{Take down Neal}
+{1050}{}{Stolen urn and skulz gang active.}
 {2000}{}{You ready to take out Neal?}
 {2010}{}{Yeah, let's ice the bastard.}
 {2020}{}{Nah, I got some more stuff to do.}
@@ -101,7 +109,7 @@ conditions.]}
 {3000}{}{Uh, all right . . . meet us later, but don't take too long.}
 {3010}{}{[Done.]}
 {4000}{}{It's too late for that, slick. When you're out, you're way out.}
-{4010}{}{[MANUAL: add player response/transition -> VinnieCombat]}
+{4010}{}{[Done.]}
 {5000}{}{You got it?}
 {5010}{}{I had to kill Neal to get it. He cried like a little girl.}
 {5020}{}{Yep.}
@@ -111,11 +119,11 @@ his eye.] You're a Skul, now.}
 {6010}{}{[Done.]}
 {7000}{}{Ha ha! Let that old cock suffer until we off him tonight - are you in?}
 {7010}{}{I decided I'd rather not have anything to do with scabs like you.}
-{7020}{}{[MANUAL: add player response/transition -> Vinnie22]}
-{7030}{}{Let's crush him.}
-{7040}{}{I've got some other shit to do before then - I'll meet you there.}
+{7020}{}{[Done.]}
+{7030}{}{I've got some other shit to do before then - I'll meet you there.}
+{7040}{}{Let's crush him.}
 {8000}{}{What?! You'll pay for that remark!}
-{8010}{}{[MANUAL: add player response/transition -> VinnieCombat]}
+{8010}{}{[Done.]}
 {9000}{}{What are you wasting my time for?}
 {9010}{}{[Done.]}
 {10000}{}{What do you want now?}
@@ -125,9 +133,9 @@ his eye.] You're a Skul, now.}
 {11010}{}{[MANUAL: add player response/transition -> Vinnie14]}
 {11020}{}{[MANUAL: add player response/transition -> Vinnie15]}
 {12000}{}{You want to join us, huh? How do we know you're tough enough to be a Skul?}
-{12010}{}{I'll show you tough enough, you son of a bitch!}
-{12020}{}{Let me prove myself to you.}
-{12030}{}{Trust me, I'm tough enough.}
+{12010}{}{Let me prove myself to you.}
+{12020}{}{Trust me, I'm tough enough.}
+{12030}{}{I'll show you tough enough, you son of a bitch!}
 {13000}{}{[Vinnie thinks for a second.] If you want to prove you belong in the Skulz, I want you
 to steal that old bastard's wife's ashes. Heh. [Vinnie mumbles] Let's make Neal suffer
 for his last couple of hours . . .}
@@ -138,8 +146,7 @@ for his last couple of hours . . .}
 {13050}{}{No way.}
 {14000}{}{Get out of here, you moron!}
 {14010}{}{[Done.]}
-{15000}{}{If you're hard enough to do that, mebbe you'd make a Skul after all. Bring it here once
-you've got it.}
+{15000}{}{If you're hard enough to do that, mebbe you'd make a Skul after all. Bring it here once you've got it.}
 {15010}{}{[Done.]}
 {16000}{}{I knew you weren't Skulz material. Get the hell out of here.}
 {16010}{}{[Done.]}
@@ -151,21 +158,17 @@ you've got it.}
 {18020}{}{You're right, I'll be leaving now.}
 {18030}{}{That's it. Time for you to die.}
 {18040}{}{I'll prove it to you.}
-{19000}{}{We are the one and only Junktown gang. We have the run of the streets, and we rule the
-city at night.}
+{19000}{}{We are the one and only Junktown gang. We have the run of the streets, and we rule the city at night.}
 {19010}{}{Oh. Sorry. Bye.}
 {19020}{}{You couldn't run the schoolyard, Chromo.}
 {19030}{}{I thought this city was run by Gizmo after hours.}
-{20000}{}{That slob can't even stand up by himself. We're the muscle in this town. We take what we
-want.}
+{20000}{}{That slob can't even stand up by himself. We're the muscle in this town. We take what we want.}
 {20010}{}{I see.}
 {20020}{}{You have some sort of deal with Killian?}
-{21000}{}{We don't bother Killian and he doesn't bother us as long as we keep it low-key. You get
-me?}
+{21000}{}{We don't bother Killian and he doesn't bother us as long as we keep it low-key. You get me?}
 {21010}{}{Yeah. Bye.}
 {21020}{}{I get it, all right. You have to hide out from him.}
-{22000}{}{We don't take that from anybody, least of all Killian! Just because he thinks he's a
-glorified sheriff doesn't mean that he controls the Skulz!}
+{22000}{}{We don't take that from anybody, least of all Killian! Just because he thinks he's a glorified sheriff doesn't mean that he controls the Skulz!}
 {22010}{}{Sorry, didn't mean to get you all riled up.}
 {22020}{}{So, he cramps your style, eh? Mine, too. In fact, I'm thinking of whacking him. You want
 in?}
