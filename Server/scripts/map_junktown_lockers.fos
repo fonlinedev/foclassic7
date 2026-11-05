@@ -87,9 +87,9 @@ void spawnLockers(Map@ map)
     // Entrance
     else if(map.GetProtoId() == MAP_JunktownSouth)
     {
-        if(count < 5)
+        if(count < 4)
         {
-            Log("ERROR MAP_JunktownSouth: Expected 5 containers, found " + count);
+            Log("ERROR MAP_JunktownSouth: Expected 4 containers, found " + count);
             return;
         }
         

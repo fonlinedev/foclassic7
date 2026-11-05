@@ -52,6 +52,8 @@ void _MobIdle(Critter& cr)
 uint e_Walk(array<uint>@ values)
 {    
     Critter@ assassin = GetCritter(values[1]);
+    if(!valid(assassin))
+        return 0;
 
     Map@ map = GetMapByPid(MAP_Junktownhotel, 0);
     if(!valid(map))
@@ -73,6 +75,8 @@ uint e_InitiateAttack(array<uint>@ values)
     Log("attacking...");
     Critter@ killian = GetCritter(values[0]);
     Critter@ assassin = GetCritter(values[1]);
+    if(!valid(killian) || !valid(assassin))
+        return 0;
     assassin.Say(SAY_SHOUT_ON_HEAD, "Gizmo sends regards!");
 
     AddAttackPlane(assassin, 0, killian);
@@ -80,6 +84,19 @@ uint e_InitiateAttack(array<uint>@ values)
 }
 
 void _Dead(Critter& cr, Critter@ player)
-{        
-    Log("dead");    
+{   
+    Log("dead, trigger delete npc");     
+    int[] values = { cr.Id };
+    CreateTimeEvent(AFTER(REAL_SECOND(10)), "e_DeleteNPC", values, false);
+}
+
+
+uint e_DeleteNPC(array<uint>@ values)
+{
+    Log("delete...");    
+    Critter@ assassin = GetCritter(values[0]);
+    if(!valid(assassin))
+        return 0;
+    DeleteNpc(assassin);
+    return 0;
 }

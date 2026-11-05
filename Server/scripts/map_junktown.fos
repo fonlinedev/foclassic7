@@ -119,6 +119,7 @@ void t_EnteredKillian(Critter& critter, Scenery& trigger, bool entered, uint8 di
             ST_FACTION_MODE, 0,
             ST_FACTION_RANK, 0,
             MODE_NO_LOOT, 1,
+            ST_REPLICATION_TIME, REPLICATION_DELETE_FAST,
             MODE_NO_STEAL, 1
         };
 
