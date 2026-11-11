@@ -30,13 +30,15 @@ lang=engl
 8 8000 None 0 #
 0 8010 R _script npc_v13_guard@r_StartQuest 0  @
 10 9000 None 0 #
-0 9010 @
+0 9010 #
+0 9020 R _script dialog@r_TeleportToMap 2 90 10 @
 11 10000 None 0 #
 12 10010 #
 0 10020 R _script dialog@r_TeleportToMap 2 90 10 @
 12 11000 None 0 @
 20 12000 None 0 #
-0 12010 &
+0 12010 #
+0 12020 R _script dialog@r_TeleportToMap 2 90 10 &
 
 [engl]
 {100}{}{Vault 13 Guard}
@@ -66,12 +68,14 @@ lang=engl
 {8010}{}{Done.}
 {9000}{}{Have you found the chip yet? We're running out of time!}
 {9010}{}{Not yet. I'm still looking.}
+{9020}{}{Let me enter the vault again.}
 {10000}{}{Why are you here? Did you found the chip?}
 {10010}{}{Not yet, vault 15 is destroyed.}
 {10020}{}{Let me enter the vault again.}
 {11000}{}{Not my problem, the Overseer is in very bad mood.}
 {12000}{}{The water supply has stabilized thanks to you!}
 {12010}{}{Glad I could help.}
+{12020}{}{Let me enter the vault again.}
 {100000001}{}{They sent me to look at the door. I'm looking at it. Yep. Still big. Still heavy. Still closed.@@You think the outside world is bad? Try spending three weeks down here with the water recycling system backing up.@@Don't look at me, buddy. I drew the short straw just to watch the gear mechanism. It hasn't turned since '77.@@If you find another water chip out there... grab two. I don't fancy drinking my own recycled sweat next month.@@The Overseer told me to stand here and stay alert. Alert for what? A giant mutated rat opening the blast door?@@You're actually going out there? Better you than me. I heard the sun burns your skin right off. Or maybe that was just the rads.}
 {100000002}{}{I don't understand why are you taking so long.@@Be grateful for this opportunity.@@The Overseer put a great deal of confidence on you, don't disappoint us!}
 
