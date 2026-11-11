@@ -1,0 +1,86 @@
+[comment]
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1012 None 1 #
+2 1013 @
+2 1000 None 0 #
+3 1014 #
+0 1015 @
+3 1001 None 0 #
+4 1016 #
+5 1017 #
+6 1018 @
+4 1002 None 0 #
+0 1019 @
+5 1003 None 0 #
+6 1020 #
+7 1021 @
+6 1004 None 0 #
+8 1022 #
+9 1023 @
+8 1006 None 0 #
+0 1025 #
+10 1026 @
+10 1008 None 0 #
+11 1028 #
+12 1029 @
+11 1009 None 0 #
+0 1030 @
+12 1010 None 0 #
+13 1031 @
+13 1011 None 0 #
+0 1032 #
+0 1033 @
+9 1007 None 0 #
+0 1027 @
+7 1005 None 0 #
+4 1024 @
+
+[engl]
+{100}{}{Wtrthief}
+{200}{}{You see a sleepy vault dweller.}
+{210}{}{You see a vault dweller acting suspiciously.}
+{220}{}{He seems to be avoiding your gaze.}
+{1000}{}{Hello,
+---
+.}
+{1001}{}{I was worried about the vault and had a nightmare. I couldn't get back to sleep so I
+thought I'd take a walk to relax.}
+{1002}{}{Well, good night.}
+{1003}{}{Yeah, some guy was acting suspicious back near the water ration room. He scared me. I
+hope he didn't see me.}
+{1004}{}{[MANUAL: add NPC dialogue for diagram node 'WtrThief05']}
+{1005}{}{I didn't get a good look at him because I ran.}
+{1006}{}{Don't touch me! I don't have anything. Now leave me alone!}
+{1007}{}{Sure. I've got nothing to hide.}
+{1008}{}{[MANUAL: add NPC dialogue for diagram node 'WtrThief09']}
+{1009}{}{I stole the water. I'm sorry. Please don't hurt me!}
+{1010}{}{Okay, okay. I've got nothing to hide. Look for yourself.}
+{1011}{}{[MANUAL: add NPC dialogue for diagram node 'WtrThief11a']}
+{1012}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1013}{}{[MANUAL: initial branch condition/greeting -> WtrThief01]}
+{1014}{}{Hello. What are you doing here at this time?}
+{1015}{}{Eaah!}
+{1016}{}{Okay.}
+{1017}{}{Have you seen anyone else around here?}
+{1018}{}{I'm sorry, but I'm looking for the water thief and I need to see what you're carrying.}
+{1019}{}{Good night.}
+{1020}{}{I'm sorry, but I still need to see what you're carrying.}
+{1021}{}{What did he look like?}
+{1022}{}{[MANUAL: add player response/transition -> WtrThief08]}
+{1023}{}{[MANUAL: add player response/transition -> WtrThief06]}
+{1024}{}{Okay. Thanks anyway.}
+{1025}{}{Okay. Sorry.}
+{1026}{}{Would you rather have a bullet in your head?}
+{1027}{}{[Search him]}
+{1028}{}{[MANUAL: add player response/transition -> WtrThief10]}
+{1029}{}{[MANUAL: add player response/transition -> WtrThief11]}
+{1030}{}{I'm taking you to the officer.}
+{1031}{}{[Search him]}
+{1032}{}{[MANUAL: add player response/transition -> finish_quest]}
+{1033}{}{[MANUAL: add player response/transition -> WtrThiefCombat]}

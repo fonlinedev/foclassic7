@@ -1,0 +1,63 @@
+[comment]
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1006 None 1 #
+2 1007 @
+2 1000 None 0 #
+0 1008 #
+3 1009 #
+4 1010 @
+3 1001 None 0 #
+0 1011 #
+0 1012 #
+5 1013 #
+6 1014 @
+5 1003 None 0 #
+0 1016 @
+6 1004 None 0 #
+7 1017 @
+7 1005 None 0 #
+0 1018 #
+5 1019 @
+4 1002 None 0 #
+0 1015 @
+
+[engl]
+{100}{}{Cindy}
+{200}{}{You see Cindy.}
+{210}{}{She is crying.}
+{1000}{}{Hello,
+---
+. Have you found the water chip yet?}
+{1001}{}{I'm scared. I don't know what will happen to us all. Please, don't let us down.
+---
+I am afraid of what is happening. Someone has been stealing water and now everyone is on
+edge.}
+{1002}{}{Oh . . . you don't understand me. I guess we really don't have much hope after all.
+Excuse me while I cry.}
+{1003}{}{Some people have been accused and fights have broken out over it, but nobody really
+knows.}
+{1004}{}{Some people reported that their water had been stolen. They weren't given more water but
+some friends shared with them. After this everybody got very paranoid and started
+guarding their water. A few days later someone knocked the guard out in the ration
+supply area and stole water.}
+{1005}{}{Maybe you can stop whoever is doing this.}
+{1006}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1007}{}{[MANUAL: initial branch condition/greeting -> Cindy01]}
+{1008}{}{Not yet. I haven't had much luck.}
+{1009}{}{No luck yet, but I know I'll find it. By the way, how are you doing?}
+{1010}{}{Urug!}
+{1011}{}{Don't worry, I'll do my best. You'll be all right.}
+{1012}{}{Yeah, whatever.}
+{1013}{}{Who would do such a thing?}
+{1014}{}{What happened?}
+{1015}{}{Ugg!}
+{1016}{}{Okay. Thanks.}
+{1017}{}{That's terrible! What can I do?}
+{1018}{}{I'll take a look around.}
+{1019}{}{Who do you think might be involved?}

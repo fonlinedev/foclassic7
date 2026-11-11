@@ -1,0 +1,144 @@
+[comment]
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1019 None 1 #
+2 1020 #
+3 1021 #
+4 1022 #
+5 1023 @
+2 1000 None 0 #
+6 1024 #
+7 1025 @
+6 1004 None 0 #
+0 1033 @
+7 1005 None 0 #
+0 1034 @
+3 1001 None 0 #
+8 1026 @
+8 1006 None 0 #
+12 1035 @
+12 1010 None 0 #
+15 1040 @
+15 1013 None 0 #
+16 1043 #
+16 1044 #
+17 1045 #
+17 1046 #
+18 1047 #
+19 1048 @
+16 1014 None 0 #
+0 1049 @
+17 1015 None 0 #
+20 1050 @
+20 1018 None 0 #
+0 1055 @
+18 1016 None 0 #
+16 1051 #
+17 1052 @
+19 1017 None 0 #
+16 1053 #
+17 1054 @
+4 1002 None 0 #
+9 1027 #
+10 1028 #
+0 1029 @
+9 1007 None 0 #
+13 1036 #
+14 1037 @
+13 1011 None 0 #
+8 1041 @
+14 1012 None 0 #
+0 1042 @
+10 1008 None 0 #
+0 1038 @
+5 1003 None 0 #
+11 1030 #
+9 1031 #
+10 1032 @
+11 1009 None 0 #
+0 1039 @
+
+[engl]
+{100}{}{Medic}
+{200}{}{You see the Vault-13 medic.}
+{1000}{}{I can't believe the things that you have done.}
+{1001}{}{Oh my, you're seriously wounded. Here, let me help you.}
+{1002}{}{I heard what you did, saving the Vault. Thank you.}
+{1003}{}{Welcome back,
+---
+. How goes the search?}
+{1004}{}{No. I have taken a vow to not hurt life, but I will not help you.}
+{1005}{}{Lack of intelligence is no excuse for what you have done. Go away, I will not speak to
+you anymore.}
+{1006}{}{Lie down here, and we will start the healing process.}
+{1007}{}{[MANUAL: add NPC dialogue for diagram node 'Medic04a']}
+{1008}{}{Ah. Yes. Here, I found these. Try them when you need a boost.}
+{1009}{}{Good, keep up the good work. And let me know if you need anything.}
+{1010}{}{You are fully healed. Take care of yourself in the future, but come back if you need any
+more healing.}
+{1011}{}{You look hurt. Here, let me help you.}
+{1012}{}{You seem ok to me. Come back if you need some healing.}
+{1013}{}{The medical scanners picked up some deadly radiation poisoning. Would you like us to
+attempt a healing? It will take a while.
+---
+The medical scanners picked up some serious radiation poisoning. Would you like us to
+attempt a healing? It will take a while.
+---
+The medical scanners picked up some major radiation poisoning. Would you like us to
+attempt a healing? It will take a while.
+---
+The medical scanners picked up some mild radiation poisoning. Would you like us to
+attempt a healing? It will take a while.}
+{1014}{}{It's your body.}
+{1015}{}{[MANUAL: add NPC dialogue for diagram node 'Medic22']}
+{1016}{}{It will take
+---
+minutes. Do you want to start the process?}
+{1017}{}{It will take
+---
+minutes. It will be able to remove about
+---
+percent. Do you want to start the process?}
+{1018}{}{Ok, you should be feeling much better. Be careful out there.}
+{1019}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1020}{}{[MANUAL: initial branch condition/greeting -> Medic00]}
+{1021}{}{[MANUAL: initial branch condition/greeting -> Medic03]}
+{1022}{}{[MANUAL: initial branch condition/greeting -> Medic24]}
+{1023}{}{[MANUAL: initial branch condition/greeting -> Medic04]}
+{1024}{}{I don't care. I'm hurt. Heal me.}
+{1025}{}{Hngh!}
+{1026}{}{[MANUAL: add player response/transition -> Medic16]}
+{1027}{}{I need help.}
+{1028}{}{Lol?}
+{1029}{}{No. I have taken a vow to not hurt life, but I will not help you.}
+{1030}{}{It's going ok.}
+{1031}{}{I need help.}
+{1032}{}{Lol?}
+{1033}{}{[Done.]}
+{1034}{}{[Done.]}
+{1035}{}{[MANUAL: add player response/transition -> Medic17]}
+{1036}{}{[MANUAL: add player response/transition -> Medic14]}
+{1037}{}{[MANUAL: add player response/transition -> Medic13]}
+{1038}{}{[MANUAL: add player response/transition -> pushdrugs]}
+{1039}{}{[Done.]}
+{1040}{}{[MANUAL: add player response/transition -> Medic18]}
+{1041}{}{[MANUAL: add player response/transition -> Medic16]}
+{1042}{}{[Done.]}
+{1043}{}{No.}
+{1044}{}{Na.}
+{1045}{}{Okay, do it.}
+{1046}{}{Ya.}
+{1047}{}{How long?}
+{1048}{}{How long will it take, and how much radiation can you remove?}
+{1049}{}{[Done.]}
+{1050}{}{[MANUAL: add player response/transition -> Medic23]}
+{1051}{}{No.}
+{1052}{}{Yes.}
+{1053}{}{No.}
+{1054}{}{Yes.}
+{1055}{}{[Done.]}
