@@ -38,8 +38,10 @@ void map_init(Map& map, bool firstTime)
     if(firstTime)
     {
         // this map belongs to that faction
-        map.SetData(MAP_DATA_FACTION, FACTION_VAULT_CITY);
+        map.SetData(MAP_DATA_FACTION, FACTION_VAULT_13);
         map.SetTurnBasedAvailability(true);
+        _MapSetMode(map, MAP_MODE_NO_LOOT_DROP);
+        _MapSetMode(map, MAP_MODE_NO_PVP);
     
         if(map.GetProtoId() == MAP_Vault13Level1) {
             Log("Init vault 13 level 1 "+ map.GetProtoId());
@@ -76,7 +78,11 @@ void map_init(Map& map, bool firstTime)
 
 void spanwGuard(Map& map)
 {
-    int[] params = { ST_DIALOG_ID, V13_GUARD_DIALOG1, ST_BAG_ID, V13_GUARD_BAG_ID, ST_TEAM_ID, FACTION_VAULT_CITY, ST_FACTION_MODE, 1, MODE_NO_LOOT, 1, MODE_NO_STEAL, 1 };
+    int[] params = { ST_DIALOG_ID, V13_GUARD_DIALOG1, 
+    ST_BAG_ID, V13_GUARD_BAG_ID, 
+    ST_TEAM_ID, FACTION_VAULT_13, 
+    ST_FACTION_MODE, 1, 
+    MODE_NO_LOOT, 1, MODE_NO_STEAL, 1 };
     uint16           x = 0;
     uint16           y = 0;
     map.GetEntireCoords(9, 0, x, y);

@@ -3543,9 +3543,6 @@ void ExecCritterInfoCommand(array<string@>@ command, Critter@ player, Critter@ t
             case FACTION_NCR:
                 ranks = ranks_ncr;
                 break;
-            case FACTION_VAULT_CITY:
-                ranks = ranks_vc;
-                break;
             }
 
             if(FACTION_VALID(fid))

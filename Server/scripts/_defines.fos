@@ -1224,7 +1224,7 @@
 # pragma crdata "Trait 550 565"
 # pragma crdata "Profession 570 580"
 # pragma crdata "Achievement 580 587"
-# pragma crdata "Reputation 600 692 +"
+# pragma crdata "Reputation 600 694 +"
 # pragma crdata "GoodEvilList 700 899"
 # pragma crdata "Followers 900 924"
 # pragma crdata "FollowerVar 925 942"

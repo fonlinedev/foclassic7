@@ -35,12 +35,20 @@ void InitGroups() // export
         GroupAlliancesSQ[i] = 0;
 
     for(uint i = 0, j = ReputationMods.length(); i < j; i++)
+    {
+        if(!valid(ReputationMods[i]))
+            continue;
         for(uint k = 0, l = ReputationMods[i].length(); k < l; k += 2)
             ReputationModifiersSQ[IDX(i, ReputationMods[i][k])] = ReputationMods[i][k + 1];
+    }
 
     for(uint i = 0, j = AllianceMods.length(); i < j; i++)
+    {
+        if(!valid(AllianceMods[i]))
+            continue;
         for(uint k = 0, l = AllianceMods[i].length(); k < l; k += 2)
             GroupAlliancesSQ[IDX(i, AllianceMods[i][k])] = AllianceMods[i][k + 1];
+    }
 
     //FactionUniformsDictionary.set("" + PID_BROTHERHOOD_COMBAT_ARMOR, FACTION_BOS);
     //UniformHelmetsDictionary.set("" + PID_BROTHERHOOD_HELMET, PID_BROTHERHOOD_COMBAT_ARMOR);
@@ -173,7 +181,7 @@ int GetGroupsStatus(Critter& c2, Critter& c1)   // export
 void ReputationsInit(Critter& cr)   // export
 {
     uint index = _GroupIndex(cr);
-    if(!_ValidReputationIndex(index))
+    if(!_ValidReputationIndex(index) || !valid(ReputationMods[index]))
         return;
 
     for(uint k = 0, l = ReputationMods[index].length(); k < l; k += 2)
@@ -186,7 +194,7 @@ void ReputationsInit(Critter& cr)   // export
  */
 void FeedReputations(Critter@ cr, uint index, int cap)   // export
 {
-    if(index >= AllianceMods.length())
+    if(index >= AllianceMods.length() || !valid(AllianceMods[index]))
         return;
     for(uint i = 0, j = AllianceMods[index].length(); i < j; i += 2)
     {
