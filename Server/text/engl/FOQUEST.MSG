@@ -700,20 +700,19 @@ In order to do this, I have to find new electronic parts with that I can repair 
 # 7220 / q_jt_help_saul
 # Junktown, Help Saul
 #=======================================
-{7220001}{}{Saul may need help with a problem in Junktown. I should speak with him to learn what is wrong and what he needs me to do.
-
-:: New Quest Available ::}
-{7220011}{}{I've agreed to help Saul. I should follow his instructions, resolve the problem he described, and return to him when I have made progress.}
-{7220070}{}{I've helped Saul with his problem. I should return to him and let him know the task is finished.}
-{7220081}{}{I could not help Saul as planned, or the situation has changed so that I can no longer complete the task.
+{7220001}{}{Trish mentioned that Saul is her boyfriend. I should speak with him at the boxing ring tomorrow morning to find out more about their situation.}
+{7220002}{}{I've spoken with Saul and learned more about his relationship with Trish. I should return to her and help resolve their disagreement.}
+{7220003}{}{I've helped Saul and Trish work through their relationship problems.}
+{7220004}{}{I could not help Saul and Trish resolve their relationship problems, or the situation has changed so that I can no longer complete the task.
 
 :: Quest Failed ::}
-{7220099}{}{HARD_COMPLETED:I helped Saul resolve his problem.
+
+{7220099}{}{HARD_COMPLETED helped Saul and Trish resolve their relationship problems.
 
 :: Quest Completed ::}
-{7220101}{}{Junktown: Help Saul}
-{7220102}{}{QUEST:Help Saul}
 
+{7220101}{}{Junktown: Help Saul}
+{7220102}{}{QUEST Saul}
 #=======================================
 # 7221 / q_jt_steal_neal_urn
 # Junktown, Steal Neal's Urn
