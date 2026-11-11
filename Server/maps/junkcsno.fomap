@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              200
 MaxHexY              200
-WorkHexX             85
-WorkHexY             105
+WorkHexX             94
+WorkHexY             81
 ScriptModule         map_junktown
 ScriptFunc           map_init
 NoLogOut             0
@@ -22809,5 +22809,11 @@ ProtoId              3853
 MapX                 80
 MapY                 101
 Scenery_ToEntire     26
+
+MapObjType           2
+ProtoId              3853
+MapX                 92
+MapY                 84
+Scenery_ToEntire     30
 
 

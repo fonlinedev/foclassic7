@@ -1796,7 +1796,7 @@
 **********
     0 == inactive
     1 == active
-    2 == objective resolved
+    2 == talked with Saul
     3 == quest completed
     4 == quest failed
 **********

@@ -153,6 +153,9 @@ void AddSkumpittPatrons()
     SpawnStaticNpc(map, 18, 69, 1753, 350, 0, 0, 0, 1, "", "");
     SpawnStaticNpc(map, 19, 142, 1758, 0, 0, 0, 0, 2, "", "");
 
+    // Add Saul to the ring
+    SpawnStaticNpc(map, 30, 69, 1753, 350, 0, 0, 0, 1, "", "");
+
     // Remove Trish at Crash hotel
     Map@ mapHotel = GetMapByPid(MAP_Junktownhotel, 0);
 
@@ -162,6 +165,11 @@ void AddSkumpittPatrons()
     Critter@ trish = GetCritterAtEntire(10, mapHotel);
     if(valid(trish))
         DeleteNpc(trish);
+
+    // Remove Shark
+    Critter@ shark = GetCritterAtEntire(15, mapHotel);
+    if(valid(shark))
+        DeleteNpc(shark);
 }
 
 // Remove the Skumpitt bar patrons.
@@ -189,11 +197,16 @@ void RemoveSkumpittPatrons()
             DeleteNpc(cr);
     }
 
-     // Add Trish back to Crash hotel
+    Critter@ crSaul = GetCritterAtEntire(30, map);
+    if(valid(cr))
+        DeleteNpc(crSaul);
+
+     // Add Trish / Shark back to Crash hotel
     Map@ mapHotel = GetMapByPid(MAP_Junktownhotel, 0);
 
     if(!valid(mapHotel))
         return;
 
     SpawnStaticNpc(mapHotel, 10, 61, 1747, 0, 0, 0, 0, 0, "", "");
+    SpawnStaticNpc(mapHotel, 15, 300, 1754, 0, 0, 0, 0, 3, "", "");
 }

@@ -388,13 +388,12 @@ bool start()
     RegisterFaction(FACTION_VAULT_CITY, "Vault City", false);
     RegisterFaction(FACTION_RAIDERS, "Raiders", false);
     RegisterFaction(FACTION_SKULZ, "Skulz Gang", false);
+    RegisterFaction(FACTION_VAULT_13, "Vault 13", false);
     //RegisterFaction(FACTION_MORDINOS, "Mordinos", false);
-    // RegisterFaction(FACTION_GUNRUNNERS, "Gun Runners", false); <- screw it
+    RegisterFaction(FACTION_GUNRUNNERS, "Gun Runners", false);
 
     // and some fixed playerdriven factions
-    RegisterFaction(FACTION_VAGRANTS, "The Tanker Vagrants", true);
-    RegisterFaction(FACTION_REDDING_GUTTERSNIPES, "The Redding Guttersnipes", true);
-
+    
     __TimeoutBattle = REAL_SECOND(10);   // do not move this to InitializeGame() - __TimeMultiplier is still 0 there!
 
     InitTents();

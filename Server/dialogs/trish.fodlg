@@ -7,8 +7,10 @@ lang=engl
 [dialog]
 &
 1 1000 None 1 #
-2 1010 D _script map_junktown@d_SkumpittClosed 0  #
-8 1020 D _script map_junktown@d_SkumpittOpen 0  @
+2 1010 D _script map_junktown@d_SkumpittClosed 0  D _var p q_jt_skulz_gang = 0 D _var p q_jt_help_saul = 0 #
+3 1020 D _var p q_jt_skulz_gang = 1 D _script map_junktown@d_SkumpittClosed 0  D _var p q_jt_help_saul = 0 #
+8 1030 D _script map_junktown@d_SkumpittOpen 0  #
+5 1040 D _var p q_jt_help_saul = 2 D _script map_junktown@d_SkumpittClosed 0  @
 2 2000 None 0 #
 9 2010 #
 10 2020 #
@@ -43,11 +45,11 @@ lang=engl
 11 13010 #
 27 13020 @
 27 14000 None 0 #
-0 14010 @
+0 14010 R _var p q_jt_help_saul = 3 R _param p ST_EXPERIENCE + 250 @
 25 15000 None 0 #
 27 15010 @
 19 16000 None 0 #
-26 16010 #
+11 16010 #
 11 16020 #
 27 16030 @
 26 17000 None 0 #
@@ -78,18 +80,18 @@ lang=engl
 0 26010 #
 28 26020 #
 29 26030 #
-30 26040 @
+30 26040 D _var p q_jt_help_saul = 0 D _var p q_jt_skulz_gang = 1 @
 28 27000 None 0 #
 31 27010 @
 31 28000 None 0 #
 0 28010 #
 28 28020 #
 29 28030 #
-30 28040 @
+30 28040 D _var p q_jt_help_saul = 0 D _var p q_jt_skulz_gang = 1 @
 29 29000 None 0 #
 31 29010 @
 30 30000 None 0 #
-31 30010 @
+31 30010 R _var p q_jt_help_saul = 1 @
 17 31000 None 0 #
 0 31010 &
 
@@ -100,7 +102,9 @@ lang=engl
 {1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
 conditions.]}
 {1010}{}{At crash hotel}
-{1020}{}{At Skum pitt}
+{1020}{}{At crash hotel skuls started.}
+{1030}{}{At Skum pitt}
+{1040}{}{Quest help saul finish.}
 {2000}{}{What the hell are you doing in my room?}
 {2010}{}{Gug!}
 {2020}{}{Whoops, sorry. I thought this was my room.}
@@ -114,7 +118,7 @@ she is never free.}
 {5010}{}{Plato}
 {5020}{}{I wanted to get a closer look at you.}
 {5030}{}{I wanted to get some info from you, and I didn't want to do it in front of that
-bartender.}
+ bartender.}
 {6000}{}{Just leave me alone.}
 {6010}{}{[Done.]}
 {7000}{}{Just leave me the hell alone, you loser. Sinthia might be your kind of woman, but I sure
@@ -122,8 +126,7 @@ as hell ain't.}
 {7010}{}{[Done.]}
 {8000}{}{You should leave me alone. I really don't want to talk to you.}
 {8010}{}{Sorry to disturb you.}
-{9000}{}{You got my boyfriend killed. I should hate you, but I knew it was going to happen sooner
-or later. Please leave me alone.}
+{9000}{}{You got my boyfriend killed. I should hate you, but I knew it was going to happen sooner or later. Please leave me alone.}
 {9010}{}{[Done.]}
 {10000}{}{What the hell are you doing in my room?}
 {10010}{}{Grub!}
@@ -138,9 +141,7 @@ or later. Please leave me alone.}
 {13000}{}{His fighting, of course. I don't get it.}
 {13010}{}{Of course not, dearie.}
 {13020}{}{It's a man thing.}
-{14000}{}{Maybe you're right. Maybe I need to understand what he does and leave it at that.
----
-Still, working for Gizmo is going to kill him.}
+{14000}{}{Maybe you're right. Maybe I need to understand what he does and leave it at that. Still, working for Gizmo is going to kill him.}
 {14010}{}{[Done.]}
 {15000}{}{Of course it's his boxing. He's a really nice guy, but he needs to get out of it before
 it kills him.}
@@ -172,9 +173,8 @@ then you should look elsewhere.}
 {23010}{}{[Done.]}
 {24000}{}{Here you go. Enjoy.}
 {24010}{}{[Done.]}
-{25000}{}{No, as a matter of fact, you can't. If you aren't going to order a drink, then you're in
-the wrong place.}
-{25010}{}{[MANUAL: add player response/transition -> Trish19]}
+{25000}{}{No, as a matter of fact, you can't. If you aren't going to order a drink, then you're in the wrong place.}
+{25010}{}{[...]}
 {26000}{}{I guess so.}
 {26010}{}{Thanks, bye.}
 {26020}{}{Who owns the bar?}
@@ -182,20 +182,17 @@ the wrong place.}
 {26040}{}{Why did you scream about Saul?}
 {27000}{}{Neal owns the bar. He's a good guy, always treated me right. We used to date, but he got
 a little too serious for my liking. I don't want to be a widow.}
-{27010}{}{[MANUAL: add player response/transition -> Trish24]}
-{28000}{}{[MANUAL: add NPC dialogue for diagram node 'Trish24']}
+{27010}{}{[Next...]}
+{28000}{}{Killian and Gizmo do not like each other. One of them will either have to leave town or be buried beneath it.}
 {28010}{}{Thanks, bye.}
 {28020}{}{Who owns the bar?}
 {28030}{}{Who is Gizmo?}
 {28040}{}{Why did you scream about Saul?}
 {29000}{}{Gizmo runs the Casino. He would like to take over Neal's bar, but Neal doesn't want to
-sell.
----
-Killian and Gizmo do not like each other. One of them will either have to leave town or
-be buried beneath it.}
-{29010}{}{[MANUAL: add player response/transition -> Trish24]}
+sell.}
+{29010}{}{[Next...]}
 {30000}{}{Saul is my boyfriend. He's really good to me.}
-{30010}{}{[MANUAL: add player response/transition -> Trish24]}
+{30010}{}{[Done.]}
 {31000}{}{Sorry, it looks like you're already a little gone.}
 {31010}{}{[Done.]}
 

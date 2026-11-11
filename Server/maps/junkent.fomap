@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              200
 MaxHexY              200
-WorkHexX             105
-WorkHexY             67
+WorkHexX             99
+WorkHexY             94
 ScriptModule         map_junktown
 ScriptFunc           map_init
 NoLogOut             0
@@ -11273,7 +11273,13 @@ MapObjType           1
 ProtoId              43
 MapX                 99
 MapY                 97
+ScriptName           faction_locker
+FuncName             locker_init
 Item_LockerComplexity 100
+Item_Val0            89
+Item_Val1            100
+Item_Val2            4024
+Item_Val3            1
 
 MapObjType           2
 ProtoId              5622
@@ -11284,7 +11290,13 @@ MapObjType           1
 ProtoId              42
 MapX                 101
 MapY                 97
+ScriptName           faction_locker
+FuncName             locker_init
 Item_LockerComplexity 100
+Item_Val0            89
+Item_Val1            100
+Item_Val2            4024
+Item_Val3            1
 
 MapObjType           2
 ProtoId              2067

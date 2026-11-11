@@ -117,7 +117,7 @@ Item@ DogTag(Critter@ holder, Critter@ target)
 
                 if(Random(1, 100) <= 7)
                 {
-                    array<uint8> factions = { FACTION_BOS, FACTION_ENCLAVE, FACTION_NCR, FACTION_NCR_RANGERS };
+                    array<uint8> factions = { FACTION_BOS, FACTION_ENCLAVE, FACTION_NCR };
                     _DogTagFaction(dogtag) = factions[Random(0, factions.length() - 1)];
                 }
             }
@@ -166,9 +166,7 @@ Item@ DogTag(Critter@ holder, Critter@ target)
         case FACTION_NCR:
             picture = "tag_ncr.png";
             break;
-        case FACTION_NCR_RANGERS:
-            picture = "tag_rangers.png";
-            break;
+
         }
         if(picture.length() > 0)
         {
@@ -230,7 +228,7 @@ bool IsRanger(Critter@ cr)
     if(!valid(cr))
         return(false);
 
-    if(cr.Param[ST_TEAM_ID] == FACTION_NCR_RANGERS)
+    if(cr.Param[ST_TEAM_ID] == FACTION_NCR)
     {
         // if( cr.Param[ST_FACTION_RANK] >= RANK_ROOKIE )
         return(true);
