@@ -2,10 +2,10 @@
 // FOnline: 2238
 // Rotators
 //
-// peasant.fos
+// garl.fos
 //
 
-// Shady sands peasant.
+// Garl leader of raiders, duel script
 
 #include "_macros.fos"
 #include "_defines.fos"

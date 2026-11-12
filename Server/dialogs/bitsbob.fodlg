@@ -1,0 +1,311 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+8 1010 @
+8 2000 None 0 #
+16 2010 #
+16 2020 D _param p ST_INTELLECT < 3 #
+17 2030 #
+18 2040 #
+19 2050 #
+20 2060 D _var p q_hub_iguana_state = 1 #
+21 2070 #
+22 2080 #
+0 2090 #
+0 2100 D _param p ST_INTELLECT < 3 @
+2 3000 None 0 #
+9 3010 @
+16 4000 None 0 #
+30 4010 #
+30 4020 #
+31 4030 #
+31 4040 #
+32 4050 #
+32 4060 @
+30 5000 None 0 #
+8 5010 @
+31 6000 None 0 #
+8 6010 #
+40 6020 @
+40 7000 None 0 #
+0 7010 @
+32 8000 None 0 #
+0 8010 @
+17 9000 None 0 #
+33 9010 @
+33 10000 None 0 #
+65505 10010 @
+18 11000 None 0 #
+8 11010 @
+19 12000 None 0 #
+8 12010 #
+34 12020 @
+34 13000 None 0 #
+8 13010 @
+20 14000 None 0 #
+35 14010 #
+36 14020 #
+37 14030 #
+38 14040 @
+35 15000 None 0 #
+36 15010 #
+38 15020 @
+36 16000 None 0 #
+0 16010 @
+38 17000 None 0 #
+41 17010 #
+42 17020 #
+43 17030 @
+41 18000 None 0 #
+0 18010 @
+42 19000 None 0 #
+15 19010 #
+43 19020 #
+44 19030 @
+15 20000 None 0 #
+0 20010 @
+43 21000 None 0 #
+2 21010 #
+2 21020 #
+2 21030 #
+45 21040 @
+45 22000 None 0 #
+0 22010 @
+44 23000 None 0 #
+0 23010 @
+37 24000 None 0 #
+41 24010 #
+42 24020 #
+43 24030 @
+21 25000 None 0 #
+8 25010 @
+22 26000 None 0 #
+8 26010 @
+9 27000 None 0 #
+8 27010 @
+4 28000 None 0 #
+10 28010 @
+10 29000 None 0 #
+18 29010 #
+0 29020 #
+23 29030 #
+24 29040 #
+25 29050 #
+26 29060 #
+27 29070 @
+23 30000 None 0 #
+39 30010 #
+28 30020 @
+39 31000 None 0 #
+0 31010 @
+28 32000 None 0 #
+0 32010 @
+24 33000 None 0 #
+15 33010 @
+25 34000 None 0 #
+0 34010 @
+26 35000 None 0 #
+16 35010 #
+27 35020 @
+27 36000 None 0 #
+0 36010 @
+5 37000 None 0 #
+11 37010 #
+11 37020 #
+12 37030 #
+13 37040 #
+14 37050 #
+15 37060 @
+11 38000 None 0 #
+28 38010 #
+28 38020 #
+29 38030 @
+29 39000 None 0 #
+0 39010 @
+12 40000 None 0 #
+0 40010 @
+13 41000 None 0 #
+0 41010 @
+14 42000 None 0 #
+0 42010 @
+6 43000 None 0 #
+10 43010 @
+7 44000 None 0 #
+0 44010 &
+
+[engl]
+{100}{}{Bitsbob}
+{200}{}{You see Bob, proprietor of Bob's Iguana Bits.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> Bob05]}
+{2000}{}{Hi! Welcome to Bob's Iguana Bits, the family eating place. Can I take your order?}
+{2010}{}{Gimme' an iguana on a stick.}
+{2020}{}{Me hungry! Grrrrr!}
+{2030}{}{What can you tell me about a Water Chip?}
+{2040}{}{What can you tell me about Decker?}
+{2050}{}{What can you tell me about Decker?}
+{2060}{}{I think we need to talk about Doc Morbid and some of your secret ingredients.}
+{2070}{}{Do you know anything about the missing caravans?}
+{2080}{}{Anything interesting happening in the Hub?}
+{2090}{}{Nothing, bye.}
+{2100}{}{Me go now.}
+{3000}{}{Hey, I don't want any trouble!}
+{3010}{}{What, me trouble? What gives you that impression?}
+{4000}{}{Sure. We got whole iguana on a stick for twenty bucks, and our prime select pieces for
+eight bucks.}
+{4010}{}{I'll take one of the real ones.}
+{4020}{}{No sissy portions! Me want all iguana! Ugh!}
+{4030}{}{I'll take one of the prime cuts.}
+{4040}{}{Hmm, smell good! Me want prime!}
+{4050}{}{Nothing for me right now. I'm on a diet.}
+{4060}{}{Uhh... Me no hungry now.}
+{5000}{}{Sorry, you can't afford it.
+---
+One whole iguana coming up! Anything else?}
+{5010}{}{[MANUAL: add player response/transition -> BobStandardQuestions]}
+{6000}{}{Sorry, you can't afford it.
+---
+You know what they're made from and you still want one? You make Decker look like a
+charity worker! Anything else?
+---
+One iguana prime select choice, coming up! Anything else?}
+{6010}{}{[MANUAL: add player response/transition -> BobStandardQuestions]}
+{6020}{}{I don't like your attitude.}
+{7000}{}{Tough. You want money, I'll give it to you. You want food, I'll give it to you. You want
+to die, I'll arrange it. But "like" ain't part of the equation.}
+{7010}{}{[Done.]}
+{8000}{}{Smart choice. You could stand to lose a few pounds.}
+{8010}{}{[Done.]}
+{9000}{}{Never seen any of them around here. Water Merchants don't need 'em.}
+{9010}{}{Water Merchants?}
+{10000}{}{You must be new in town if you're asking me about the Water Merchants. Water is life,
+and you don't get much more powerful than life and death.}
+{10010}{}{[Tell me more about.]}
+{11000}{}{Well, he's dead now, and my cash flow has increased because of it.}
+{11010}{}{[MANUAL: add player response/transition -> BobStandardQuestions]}
+{12000}{}{Mr. Decker is a distinguished businessman in a less than distinguished business.
+Anything else?}
+{12010}{}{[MANUAL: add player response/transition -> BobStandardQuestions]}
+{12020}{}{What kind of business?}
+{13000}{}{If there's anything that involves misery and suffering in the Hub, Decker either
+controls it or wants to control it. Anything else?}
+{13010}{}{[MANUAL: add player response/transition -> BobStandardQuestions]}
+{14000}{}{What are you talking about?}
+{14010}{}{Your secret ingredients. How fresh does the corpse have to be before it develops a
+bitter aftertaste? Do you use mutants, humans, or a mix?}
+{14020}{}{I found an invoice in Doc Morbid's lair. An invoice for dead bodies...}
+{14030}{}{If you've got a memory loss, I can talk to the sheriff.}
+{14040}{}{Prime Choice Select is made of people!!!! It's made of people!!!}
+{15000}{}{[MANUAL: add NPC dialogue for diagram node 'Bob20a']}
+{15010}{}{[MANUAL: add player response/transition -> Bob34]}
+{15020}{}{[MANUAL: add player response/transition -> Bob36]}
+{16000}{}{I don't know what you're talking about, and I don't appreciate your slander! I suggest
+you don't show your face in here again.}
+{16010}{}{[Done.]}
+{17000}{}{Not so loud! I don't need you saying that all over the Hub...}
+{17010}{}{I guess I was rude. Have a nice day...}
+{17020}{}{You know, the police station is just across the street. I really should take a little
+walk.}
+{17030}{}{I can get even louder. But I can also shut up. Noise is cheap, silence is expensive.}
+{18000}{}{Uh, bye.}
+{18010}{}{[Done.]}
+{19000}{}{Wait a minute. We've got to find a way to reach a mutual understanding!}
+{19010}{}{The only way you'll be able to keep me quiet is to kill me.}
+{19020}{}{Fine. What can I get out of this?}
+{19030}{}{Sorry, no deal.}
+{20000}{}{[MANUAL: add NPC dialogue for diagram node 'BobCombat']}
+{20010}{}{[MANUAL: add player response/transition -> combat]}
+{21000}{}{Fine. What do you want me to pay?}
+{21010}{}{I want 50 bucks every day.}
+{21020}{}{I want 75 bucks every day.}
+{21030}{}{I want 100 bucks every day.}
+{21040}{}{I don't think I'll blackmail you. Carry on.}
+{22000}{}{Fine. Maybe it would be good if our paths didn't cross again.}
+{22010}{}{[Done.]}
+{23000}{}{I'd change your mind if I were you, friend. People have died for less in the Hub.}
+{23010}{}{[Done.]}
+{24000}{}{Don't do that! Fine, I've been using some questionable portions. But it's not like I'm
+committing murder. Doc Morbid's stuff is already dead, isn't it?}
+{24010}{}{I'm sure it is, Bob. Have a nice day...}
+{24020}{}{Cannibalism is a crime against humanity, Bob. I'm going to see that you pay for it.}
+{24030}{}{Maybe it is. Maybe it isn't. I don't care. I want a piece of the action.}
+{25000}{}{Terrible business. Those poor people. Oh, those poor people. Losing their lives in such
+a ghastly way! Is there anything else I can do for you? Like feed you, perhaps?}
+{25010}{}{[MANUAL: add player response/transition -> BobStandardQuestions]}
+{26000}{}{Someone killed Decker. We're in mourning. [snicker]
+---
+Someone shot Sheriff Greene. Don't know about the deputy, though.
+---
+Daren Hightower was murdered. And all that money couldn't save him. Ironic, ain't it?
+---
+Someone stole a necklace from the Hightowers. Man, did they ever make a big mistake.
+They're dead for sure!
+---
+Someone killed Jain over at the Cathedral. I hear she was a real pain in the butt!
+---
+Well, the only new thing is that the Children of the Cathedral has taken over the
+Hospital. It's pretty boring around here lately.
+---
+Anything else?}
+{26010}{}{[MANUAL: add player response/transition -> BobStandardQuestions]}
+{27000}{}{Nothing. Sorry to bring it up. Now is there anything else I can do for you?}
+{27010}{}{[MANUAL: add player response/transition -> BobStandardQuestions]}
+{28000}{}{Ok, Ok, I've got your money.}
+{28010}{}{[MANUAL: add player response/transition -> BobBlackmailQuestions]}
+{29000}{}{[MANUAL: add NPC dialogue for diagram node 'BobBlackmailQuestions']}
+{29010}{}{What can you tell me about Decker?}
+{29020}{}{Nothing, bye.}
+{29030}{}{I've got more expenses. I need to increase the payment.}
+{29040}{}{Screw this. I want ALL of your money now, or you're a dead Bob.}
+{29050}{}{I can't take the heat. I'm calling off the payments.}
+{29060}{}{What can you tell me about Decker?}
+{29070}{}{I want information on Doc Morbid.}
+{30000}{}{[MANUAL: add NPC dialogue for diagram node 'BBQa']}
+{30010}{}{[MANUAL: add player response/transition -> Bob09]}
+{30020}{}{[MANUAL: add player response/transition -> Bob13]}
+{31000}{}{Fine. What do you want me to pay?}
+{31010}{}{[Done.]}
+{32000}{}{You can stick it! I ain't ever payin' you! Get lost!}
+{32010}{}{[Done.]}
+{33000}{}{Forget it.}
+{33010}{}{[MANUAL: add player response/transition -> BobCombat]}
+{34000}{}{You are? Well, Ok...}
+{34010}{}{[Done.]}
+{35000}{}{He's a mean son of a bitch. You don't want to mess with him. Anything else?}
+{35010}{}{Gimme' an iguana on a stick.}
+{35020}{}{I want information on Doc Morbid.}
+{36000}{}{Doc Morbid? All I know is that he's up around Junktown and he's the cheapest source of
+food I could find. That's all!}
+{36010}{}{[Done.]}
+{37000}{}{I'm sorry. I ain't payin' no more. Do what you want with me.}
+{37010}{}{Bob, I thought we were pals! In fact, I was thinking about giving you a promotion in my
+organization. Instead, you betray me. This is very disappointing...}
+{37020}{}{Bob, why should I take no for an answer? Especially from a scumbag like you?}
+{37030}{}{Glad to see you're standing up for yourself.}
+{37040}{}{Your reputation is history, Bob. Hi-sto-ree!}
+{37050}{}{Fine, I'll decide what to do with you later.}
+{37060}{}{Well, it was nice knowing you Bob. Say 'hi' to Satan for me.}
+{38000}{}{[MANUAL: add NPC dialogue for diagram node 'Bob01a']}
+{38010}{}{[MANUAL: add player response/transition -> Bob13]}
+{38020}{}{[MANUAL: add player response/transition -> Bob13]}
+{38030}{}{[MANUAL: add player response/transition -> Bob12]}
+{39000}{}{Fine! Take your money and get out!}
+{39010}{}{[Done.]}
+{40000}{}{Yeah, sure. Why don't you find someone else to screw over.}
+{40010}{}{[Done.]}
+{41000}{}{You can't throw crap without getting some of it on your fingers. Get out of here!}
+{41010}{}{[Done.]}
+{42000}{}{Sure you will. Get lost!}
+{42010}{}{[Done.]}
+{43000}{}{What are you doing back so soon? It ain't time for the payment.}
+{43010}{}{[MANUAL: add player response/transition -> BobBlackmailQuestions]}
+{44000}{}{You've got a lot of nerve showing your face around here. Get lost!}
+{44010}{}{[Done.]}
+

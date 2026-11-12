@@ -2235,7 +2235,6 @@
 # Reputation groups
 #
 ######################
-
 # REPUTATION_UNKNOWN
 {106001}{}{Should not be visible.}
 # REPUTATION_NONE
@@ -2252,104 +2251,62 @@
 {106061}{}{Citizens of Vault City}
 # REPUTATION_RAIDERS
 {106071}{}{Raiders}
-# REPUTATION_MORDINOS
-{106081}{}{Mordino Family}
-# REPUTATION_SLAVERS_GUILD
-{106091}{}{Slaver's Guild}
-# REPUTATION_SLAGS
-{106101}{}{The Slags}
-# REPUTATION_KOKOWEEF
-{106111}{}{Kokoweef Mine}
-# REPUTATION_MORNINGSTAR
-{106121}{}{Morningstar Mine}
-# REPUTATION_BH_HUMANS
-{106131}{}{Broken Hills Humans}
-# REPUTATION_BH_MUTANTS
-{106141}{}{Broken Hills Mutants}
-# REPUTATION_WRIGHTS
-{106151}{}{Wright Family}
-# REPUTATION_BISHOPS
-{106161}{}{Bishop Family}
-# REPUTATION_SALVATORES
-{106171}{}{Salvatore Family}
-# REPUTATION_NCR_RANGERS
-{106181}{}{NCR Rangers}
-# REPUTATION_VORTIS_SLAVERS
-{106191}{}{Vortis' Slavers}
-# REPUTATION_COMMUNISTS
-{106201}{}{Communists}
 # REPUTATION_VAGRANTS
-{106211}{}{Tanker Vagrants}
-# REPUTATION_CRYPTS
-{106221}{}{Crypts}
+{106081}{}{Tanker Vagrants}
 # REPUTATION_FOOLS
-{106231}{}{Fools}
+{106091}{}{Fools}
+# REPUTATION_CRYPTS
+{106101}{}{Crypts}
 # REPUTATION_HUB_CRIMINALS
-{106241}{}{Hub Criminals}
+{106111}{}{Hub Criminals}
 # REPUTATION_CRIMSON_CARAVANS
-{106251}{}{Crimson Caravans}
+{106121}{}{Crimson Caravans}
 # REPUTATION_FARGO_TRADERS
-{106261}{}{Far Go Traders}
+{106131}{}{Far Go Traders}
 # REPUTATION_WATER_MERCHANTS
-{106271}{}{Water Merchants}
+{106141}{}{Water Merchants}
 # REPUTATION_HEIGHTS
-{106281}{}{The Heights Residents}
+{106151}{}{The Heights Residents}
 # REPUTATION_REGULATORS
-{106291}{}{Regulators}
+{106161}{}{Regulators}
 # REPUTATION_SCAVENGERS
-{106301}{}{LA Scavengers}
+{106171}{}{LA Scavengers}
 # REPUTATION_GUNRUNNERS
-{106311}{}{Gun Runners}
+{106181}{}{Gun Runners}
 # REPUTATION_FOLLOWERS
-{106321}{}{Followers of the Apocalypse}
+{106191}{}{Followers of the Apocalypse}
 # REPUTATION_BOUNTY_HUNTERS
-{106331}{}{Bounty Hunters}
+{106201}{}{Bounty Hunters}
 # REPUTATION_FREE_TRADERS
-{106341}{}{Free Traders}
+{106211}{}{Free Traders}
 # REPUTATION_GUTTERSNIPES
-{106351}{}{Guttersnipes}
+{106221}{}{Guttersnipes}
 # REPUTATION_FLC
-{106361}{}{FLC}
+{106231}{}{FLC}
 # REPUTATION_SLAVES
-{106371}{}{Slaves}
+{106241}{}{Slaves}
 # REPUTATION_LARAS_GANG
-{106381}{}{Lara's Gang}
+{106251}{}{Lara's Gang}
 # REPUTATION_CHILDREN
-{106391}{}{Children of the Cathedral}
+{106261}{}{Children of the Cathedral}
 # REPUTATION_NR_PIMPS
-{106401}{}{New Reno Sex Workers}
-# REPUTATION_ELRONOLOGISTS
-{106411}{}{Hubologist}
+{106271}{}{New Reno Sex Workers}
 # REPUTATION_CATHEDRAL
-{106421}{}{Cathedral of the Lost}
-# REPUTATION_CORSICAN_BROTHERS
-{106431}{}{New Reno Corsican Brothers}
-# REPUTATION_KLAMATH
-{106801}{}{Klamath Citizens}
-# REPUTATION_DEN
-{106811}{}{Den Citizens}
-# REPUTATION_MODOC
-{106821}{}{Modoc Citizens}
-# REPUTATION_COURTYARD
-{106831}{}{Courtyard Citizens}
-# REPUTATION_GECKO
-{106841}{}{Gecko Ghouls}
-# REPUTATION_REDDING
-{106851}{}{Redding Citizens}
-# REPUTATION_BH_GHOULS
-{106861}{}{Broken Hills Ghouls}
-# REPUTATION_NEW_RENO
-{106871}{}{Population of New Reno}
+{106281}{}{Cathedral of the Lost}
 # REPUTATION_NECROPOLIS
-{106881}{}{Necropolis Ghouls}
+{106291}{}{Necropolis Ghouls}
 # REPUTATION_JUNKTOWN
-{106891}{}{Junktown Citizens}
+{106301}{}{Junktown Citizens}
 # REPUTATION_HUB
-{106901}{}{Hub Citizens}
+{106311}{}{Hub Citizens}
 # REPUTATION_LA
-{106911}{}{LA Citizens}
-# REPUTATION_LA
-{106921}{}{Landers Point Camp}
+{106321}{}{LA Citizens}
+# REPUTATION_SKULZ
+{106331}{}{Skulz Gang}
+# REPUTATION_VAULT_13
+{106341}{}{Vault 13}
+# REPUTATION_END
+{106351}{}{End}
 
 
 ######################

@@ -1,0 +1,86 @@
+[comment]
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1009 None 1 #
+2 1010 #
+3 1011 @
+2 1000 None 0 #
+4 1012 #
+5 1013 #
+6 1014 #
+7 1015 @
+4 1002 None 0 #
+0 1019 @
+5 1003 None 0 #
+8 1020 @
+8 1006 None 0 #
+4 1024 #
+10 1025 #
+0 1026 @
+10 1008 None 0 #
+0 1028 #
+0 1029 @
+6 1004 None 0 #
+0 1021 #
+7 1022 @
+7 1005 None 0 #
+9 1023 @
+9 1007 None 0 #
+0 1027 @
+3 1001 None 0 #
+8 1016 #
+4 1017 #
+5 1018 @
+
+[engl]
+{100}{}{Wtrgrd}
+{200}{}{You see the water guard.}
+{1000}{}{Good day,
+---
+.}
+{1001}{}{Hello,
+---
+.}
+{1002}{}{You're welcome to take supplies if you need them, since your job is so important, but
+please don't take too much. We don't have much left.}
+{1003}{}{Well Gahh! back to you . . . I'm sorry that you never learned to speak. We might have
+been good friends.}
+{1004}{}{Well, everyone's pretty nervous, of course, but we haven't had too much trouble. I hope
+you find a new chip soon.}
+{1005}{}{I hand out the water rations, of course. And I make sure that nobody tries to take more
+water than their share, though I don't think we'll have any trouble.}
+{1006}{}{I'm not feeling very well. Someone cracked my head with a big pipe. I went to the medic
+but my head still hurts. Sure hope someone catches the jerk that hit me.}
+{1007}{}{You too. I hope you find that chip soon so we can all go back to a normal life.}
+{1008}{}{Well, they attacked me while I was here pretty late one night. Usually I go home by
+eight or so, but I was staying late since someone had some water stolen and I was
+checking our supplies. Next thing I know, I wake up in the med-lab with a big bump on my
+head. Things are getting crazy around here. Someone is going to get killed for water
+soon and I don't know what we can do about it.}
+{1009}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> WtrGrd05]}
+{1011}{}{[MANUAL: initial branch condition/greeting -> WtrGrd01]}
+{1012}{}{Can I take some supplies?}
+{1013}{}{Gahh!}
+{1014}{}{Hi. How have things been lately?}
+{1015}{}{Say, what are you doing here?}
+{1016}{}{Hello. How are you doing?}
+{1017}{}{Can I take some supplies?}
+{1018}{}{Gahh!}
+{1019}{}{[Done.]}
+{1020}{}{Ouph.}
+{1021}{}{Well Gahh! back to you . . . I'm sorry that you never learned to speak. We might have
+been good friends.}
+{1022}{}{Say, what are you doing here?}
+{1023}{}{Hmm. Well, keep up the good work.}
+{1024}{}{Can I take some supplies?}
+{1025}{}{Why did they do that?}
+{1026}{}{Guck.}
+{1027}{}{[Done.]}
+{1028}{}{Sorry. I hope you feel better soon.}
+{1029}{}{I'll see what I can do.}

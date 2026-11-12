@@ -38,7 +38,7 @@ enum TandiQuestState
 #define DUEL_STARTED (2)
 #define DUEL_ENDED (3)
 
-#define TANDI_DIALOG1 4038
+#define TANDI_DIALOG1 4026
 #define TANDI_PID 68
 #define GARL_PID 46
 
@@ -151,69 +151,6 @@ void deleteTandi(Map& map)
         }
     }
 }
-
-
-Critter@ SpawnStaticNpc(
-    Map@ map,
-    uint coord,
-    uint pid,
-    uint dialog,
-    uint bag,
-    uint team,
-    uint factionMode,
-    uint factionRank,
-    uint dir,
-    string initFunc,
-    string name)
-{
-    uint16 x = 0;
-    uint16 y = 0;
-
-    map.GetEntireCoords(coord, 0, x, y);
-
-    Critter@ cr = map.GetCritter(x, y);
-
-    if (!valid(cr))
-    {
-        int[] params = {
-            ST_DIALOG_ID, dialog,
-            ST_BAG_ID, bag,
-            ST_TEAM_ID, team,
-            ST_FACTION_MODE, factionMode,
-            ST_FACTION_RANK, factionRank,
-            MODE_NO_LOOT, 1,
-            MODE_NO_STEAL, 1
-        };
-
-        @cr = map.AddNpc(
-            pid,
-            x,
-            y,
-            dir,
-            params,
-            null,
-            initFunc
-        );
-
-        if (!valid(cr))
-        {
-            Log("Error creating " + name);
-            return null;
-        }
-
-        Log(name + " spawned");
-    }
-    else
-    {
-        Log(name + " already exists, updating");
-        if (name == "Tandi") {
-            
-        }
-    }
-
-    return cr;
-}
-
 
 // ============================================================
 // Tandi door - quest/state checks

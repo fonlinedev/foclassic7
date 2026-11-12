@@ -1,0 +1,103 @@
+[comment]
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1013 None 1 #
+2 1014 @
+2 1000 None 0 #
+3 1015 #
+4 1016 #
+0 1017 #
+5 1018 @
+3 1001 None 0 #
+4 1019 #
+6 1020 #
+7 1021 @
+4 1002 None 0 #
+0 1022 @
+6 1004 None 0 #
+0 1024 @
+7 1005 None 0 #
+0 1025 #
+8 1026 #
+9 1027 #
+10 1028 @
+8 1006 None 0 #
+11 1029 @
+11 1009 None 0 #
+0 1034 #
+12 1035 #
+13 1036 #
+14 1037 @
+12 1010 None 0 #
+11 1038 @
+13 1011 None 0 #
+11 1039 @
+14 1012 None 0 #
+11 1040 @
+9 1007 None 0 #
+6 1030 #
+7 1031 #
+7 1032 @
+10 1008 None 0 #
+7 1033 @
+5 1003 None 0 #
+0 1023 @
+
+[engl]
+{100}{}{Ismarc}
+{1000}{}{What?
+---
+Yeah, what do you want?}
+{1001}{}{Thanks. What can I do for ya?}
+{1002}{}{Oh, great. You don't know how gratified that makes me. Go away.}
+{1003}{}{What?!? I don't have time for this.}
+{1004}{}{[MANUAL: add NPC dialogue for diagram node 'UpReact']}
+{1005}{}{[MANUAL: add NPC dialogue for diagram node 'Ismarc10']}
+{1006}{}{Yeah, I sing at the Hub sometimes, and I've visited the Brotherhood of Steel and Adytum
+with the caravans. Why do you ask?}
+{1007}{}{Hey, thanks. It's hard being a starving artist. You got anything you need to know, you
+just ask.
+---
+I appreciate the thought and all, but you're strapped worse than I am.}
+{1008}{}{Ah, I picked it up here and there. Learned a little from an old singer at the Hub, and
+got some music from the scavs in Adytum, in the Boneyard. You know. Just takes some
+practice.}
+{1009}{}{[MANUAL: add NPC dialogue for diagram node 'Ismarc09']}
+{1010}{}{The Hub? Oh, it's just a short distance down south of Junktown. What else?}
+{1011}{}{The Brotherhood is a couple days west and a little bit north of here. Don't go there,
+though. They won't let you in unless you're with a caravan. You need anything else?}
+{1012}{}{Hmm. Head southwest of the Hub. Adytum is part of the Boneyard. It's a small,
+semi-industrial town. I didn't like it much there. What else do you want?}
+{1013}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1014}{}{[MANUAL: initial branch condition/greeting -> Ismarc01]}
+{1015}{}{Hey, good singing.}
+{1016}{}{Your singing makes my ears bleed.}
+{1017}{}{Never mind.}
+{1018}{}{Hoo!}
+{1019}{}{[MANUAL: add player response/transition -> Ismarc03]}
+{1020}{}{[MANUAL: add player response/transition -> UpReact]}
+{1021}{}{[MANUAL: add player response/transition -> Ismarc10]}
+{1022}{}{[Done.]}
+{1023}{}{[Done.]}
+{1024}{}{[Done.]}
+{1025}{}{Thanks for your time.}
+{1026}{}{Do you do music anywhere else?}
+{1027}{}{Just felt like tossing some money in the hat, so to speak.}
+{1028}{}{Where did you learn to sing?}
+{1029}{}{[MANUAL: add player response/transition -> Ismarc09]}
+{1030}{}{[MANUAL: add player response/transition -> UpReact]}
+{1031}{}{[MANUAL: add player response/transition -> Ismarc10]}
+{1032}{}{Never mind.}
+{1033}{}{[MANUAL: add player response/transition -> Ismarc10]}
+{1034}{}{Um, never mind, thanks.}
+{1035}{}{Can you tell me how to get to the Hub?}
+{1036}{}{I need to know how to get to the Brotherhood.}
+{1037}{}{How do I get to Adytum?}
+{1038}{}{[MANUAL: add player response/transition -> Ismarc09]}
+{1039}{}{[MANUAL: add player response/transition -> Ismarc09]}
+{1040}{}{[MANUAL: add player response/transition -> Ismarc09]}

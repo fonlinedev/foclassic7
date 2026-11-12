@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              77
 MaxHexY              77
-WorkHexX             30
-WorkHexY             38
+WorkHexX             43
+WorkHexY             32
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -1267,6 +1267,7 @@ ProtoId              2139
 MapX                 40
 MapY                 28
 Scenery_ToMapPid     70
+Scenery_ToEntire     9
 
 MapObjType           2
 ProtoId              5129
@@ -1347,6 +1348,8 @@ MapObjType           1
 ProtoId              188
 MapX                 37
 MapY                 29
+Item_LockerDoorId    10
+Item_LockerComplexity 100
 
 MapObjType           2
 ProtoId              5622
@@ -1463,6 +1466,8 @@ MapObjType           1
 ProtoId              44
 MapX                 42
 MapY                 31
+Item_LockerDoorId    11
+Item_LockerComplexity 100
 
 MapObjType           2
 ProtoId              2067
@@ -1775,11 +1780,11 @@ Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
 Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
+Critter_ParamValue0  1740
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  17
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  15
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  0
 Critter_ParamIndex4  ST_NPC_ROLE
@@ -2839,5 +2844,10 @@ MapObjType           2
 ProtoId              4012
 MapX                 37
 MapY                 49
+
+MapObjType           2
+ProtoId              3853
+MapX                 41
+MapY                 34
 
 

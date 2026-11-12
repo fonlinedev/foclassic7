@@ -1,0 +1,424 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 #
+3 1020 #
+4 1030 #
+5 1040 #
+6 1050 #
+7 1060 #
+8 1070 #
+9 1080 #
+10 1090 #
+11 1100 #
+12 1110 #
+13 1120 #
+14 1130 #
+15 1140 @
+2 2000 None 0 #
+16 2010 @
+16 3000 None 0 #
+42 3010 @
+42 4000 None 0 #
+56 4010 @
+56 5000 None 0 #
+64 5010 @
+64 6000 None 0 #
+0 6010 @
+3 7000 None 0 #
+0 7010 @
+4 8000 None 0 #
+0 8010 @
+5 9000 None 0 #
+17 9010 #
+18 9020 #
+19 9030 @
+17 10000 None 0 #
+43 10010 #
+44 10020 @
+43 11000 None 0 #
+0 11010 @
+44 12000 None 0 #
+0 12010 @
+18 13000 None 0 #
+17 13010 #
+45 13020 @
+45 14000 None 0 #
+17 14010 #
+45 14020 @
+19 15000 None 0 #
+46 15010 @
+46 16000 None 0 #
+57 16010 @
+57 17000 None 0 #
+65 17010 @
+65 18000 None 0 #
+67 18010 @
+67 19000 None 0 #
+69 19010 #
+70 19020 @
+69 20000 None 0 #
+0 20010 @
+70 21000 None 0 #
+0 21010 @
+6 22000 None 0 #
+20 22010 #
+21 22020 #
+22 22030 #
+22 22040 @
+20 23000 None 0 #
+22 23010 @
+22 24000 None 0 #
+0 24010 @
+21 25000 None 0 #
+22 25010 @
+7 26000 None 0 #
+23 26010 #
+24 26020 #
+25 26030 #
+25 26040 @
+23 27000 None 0 #
+0 27010 @
+24 28000 None 0 #
+0 28010 @
+25 29000 None 0 #
+0 29010 @
+8 30000 None 0 #
+26 30010 #
+27 30020 #
+28 30030 #
+28 30040 @
+26 31000 None 0 #
+0 31010 @
+27 32000 None 0 #
+47 32010 #
+48 32020 #
+49 32030 @
+47 33000 None 0 #
+0 33010 @
+48 34000 None 0 #
+0 34010 @
+49 35000 None 0 #
+58 35010 #
+59 35020 @
+58 36000 None 0 #
+0 36010 #
+0 36020 @
+59 37000 None 0 #
+0 37010 @
+28 38000 None 0 #
+0 38010 @
+9 39000 None 0 #
+29 39010 #
+30 39020 @
+29 40000 None 0 #
+50 40010 #
+51 40020 @
+50 41000 None 0 #
+0 41010 @
+51 42000 None 0 #
+60 42010 #
+61 42020 @
+60 43000 None 0 #
+0 43010 @
+61 44000 None 0 #
+0 44010 @
+30 45000 None 0 #
+0 45010 @
+10 46000 None 0 #
+0 46010 @
+11 47000 None 0 #
+31 47010 #
+31 47020 #
+32 47030 @
+31 48000 None 0 #
+52 48010 @
+52 49000 None 0 #
+0 49010 @
+32 50000 None 0 #
+53 50010 @
+53 51000 None 0 #
+0 51010 @
+12 52000 None 0 #
+33 52010 #
+34 52020 @
+33 53000 None 0 #
+54 53010 @
+54 54000 None 0 #
+62 54010 #
+63 54020 @
+62 55000 None 0 #
+66 55010 @
+66 56000 None 0 #
+0 56010 #
+68 56020 @
+68 57000 None 0 #
+0 57010 @
+63 58000 None 0 #
+66 58010 @
+34 59000 None 0 #
+0 59010 @
+13 60000 None 0 #
+35 60010 #
+35 60020 #
+36 60030 #
+37 60040 @
+35 61000 None 0 #
+0 61010 @
+36 62000 None 0 #
+0 62010 @
+37 63000 None 0 #
+0 63010 @
+14 64000 None 0 #
+38 64010 #
+38 64020 #
+39 64030 @
+38 65000 None 0 #
+39 65010 #
+39 65020 @
+39 66000 None 0 #
+55 66010 #
+55 66020 @
+55 67000 None 0 #
+0 67010 @
+15 68000 None 0 #
+40 68010 #
+40 68020 #
+41 68030 @
+40 69000 None 0 #
+0 69010 @
+41 70000 None 0 #
+0 70010 &
+
+[engl]
+{100}{}{Over}
+{200}{}{You see the Overseer.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{Last words of the overseer.}
+{1020}{}{Betrayed the vault 13}
+{1030}{}{rebellion quest}
+{1040}{}{Waterchip found}
+{1050}{}{Waterchip still not be found}
+{1060}{}{Waterchip still not be found 2}
+{1070}{}{Waterchip still not be found 3}
+{1080}{}{Water caravan 1}
+{1090}{}{Water caravan 2}
+{1100}{}{Mutants not finished}
+{1110}{}{Mutants lab quest start.}
+{1120}{}{Mutant laboratory in course.}
+{1130}{}{Mutant lab quest in course.}
+{1140}{}{Mutant leader quest in course.}
+{2000}{}{You've done it! That's . . . wonderful. Amazing! I'm so proud of what you've accomplished, what you've endured.}
+{2010}{}{...}
+{3000}{}{There's no way the people of the Vault can ever thank you enough for what you've done. You've saved all our lives. Who knows, maybe even saved the human race. [The Overseer sighs.] That makes the rest of this even harder.}
+{3010}{}{...}
+{4000}{}{Everyone will want to talk to you. Every youngster will look up to you, and want to
+emulate you. And then what?}
+{4010}{}{...}
+{5000}{}{They'll want to leave. What happens to the Vault if we lose the best of a generation?
+What if we are the only safe place in the world? You just gave us back all these lives .
+. . I can't take the chance of losing them.}
+{5010}{}{...}
+{6000}{}{I've made a lot of tough decisions since I took this position. But none of them harder than this one. You saved us, but you'll kill us. I'm sorry. You're a hero . . . and you have to leave.}
+{6010}{}{[Done.]}
+{7000}{}{What's wrong with you?! You turned against us?! I can not allow that.}
+{7010}{}{Yeah, well I guess you'll have to find someone else to do your dirty work.}
+{8000}{}{We can't have this. Not now. Not with everything else going on. The rules of the Vault are there for our protection and the survival of our species.}
+{8010}{}{[Done.]}
+{9000}{}{Have you found the chip?}
+{9010}{}{Yes.}
+{9020}{}{Yes, but I think we should talk more about letting people leave the Vault.}
+{9030}{}{Nuh-huh!}
+{10000}{}{Okey-dokey. One moment, the chip is initializing. Here - here - here - There it goes . .
+. Self-test is green . . . re-boot is good . . . Hah! It's working! And it looks like we
+have a winner! Haha! [The overseer sighs with relief.] You -- you've saved us. You've
+done it!}
+{10010}{}{Ahh, it was nothing.}
+{10020}{}{You're welcome.}
+{11000}{}{Nothing? No, oh no! It was something. Don't downplay what you've done. You've saved a lot of lives. All right, now we need a report on what's out there. Please go to the library.}
+{11010}{}{Ok.}
+{12000}{}{You saved the Vault. You should be proud. But now, we need your report. We'll get it from you in the library. Please go there now.}
+{12010}{}{Ok.}
+{13000}{}{Well, you've certainly earned that right. But let's take care of survival first. Give me
+the chip and we'll discuss this when you give your report.}
+{13010}{}{Fair enough.}
+{13020}{}{I don't know.}
+{14000}{}{Please, the chip!}
+{14010}{}{Fair enough.}
+{14020}{}{I don't know.}
+{15000}{}{Oh, that's great! Can I have the chip, please?}
+{15010}{}{Nungh.}
+{16000}{}{No, not that. I want the com-pu-ter chip.}
+{16010}{}{Nungh.}
+{17000}{}{No. The chip.}
+{17010}{}{Nungh.}
+{18000}{}{Just-give-me-the-chip!}
+{18010}{}{Nungh.}
+{19000}{}{Thank you. Now, go to the library and rest for a while, ok?}
+{19010}{}{Nuh-huh, uh-nuh?}
+{19020}{}{Uh, nuh? Nuh-uh-uh-nuh.}
+{20000}{}{Yes, you can touch things.}
+{20010}{}{[Done.]}
+{21000}{}{Oh, yes. You did good and I'm sure you have a lot to tell.}
+{21010}{}{[Done.]}
+{22000}{}{You're back! And in one piece! How goes the search?}
+{22010}{}{Not good, but I noticed the radiation count is low. Why don't we just move the people
+out of the vault?}
+{22020}{}{I haven't found the chip yet. Can't we just make a replacement?}
+{22030}{}{Nothing yet.}
+{22040}{}{Nuh.}
+{23000}{}{We've debated this before. You ought to know now, after being out there! You think the
+rest of us could survive that? Besides, I'd be out of a job! I'm management! It's not
+like I know how to do anything useful!}
+{23010}{}{We agree on that.}
+{24000}{}{Look, I know it's got to be tough. But we're counting on you. And we're running out of
+time. Please! Keep trying!}
+{24010}{}{I understand. I'll work harder to find the chip.}
+{25000}{}{Ahh, you never did listen to me. We don't have the necessary parts anymore. We've used
+up all the supplies required.}
+{25010}{}{Oh, ok. Thanks.}
+{26000}{}{Well, do you have the chip?}
+{26010}{}{Not yet. Sorry.}
+{26020}{}{I still say we just pack everybody up and move out of here.}
+{26030}{}{No, but I have a lot of other things to tell you!}
+{26040}{}{Nuh.}
+{27000}{}{[The Overseer sighs.] Don't be sorry. I know you're trying your best and that means a
+lot. But you can't give up now.}
+{27010}{}{[Done.]}
+{28000}{}{This isn't the best time to debate that. Get the chip, give us the option. Most of these
+people, including me, won't survive out there.}
+{28010}{}{OK, I'll go see if I can find it.}
+{29000}{}{We have no time, no options. I know it's a lot of responsibility for you, but we have no
+choice. We need the chip now.}
+{29010}{}{[Done.]}
+{30000}{}{Please tell me you've found the chip.}
+{30010}{}{No, but I've seen some amazing things!}
+{30020}{}{Sorry, haven't been able to track it down yet.}
+{30030}{}{Nope.}
+{30040}{}{Nuh-uh.}
+{31000}{}{We don't have time for this! We need the chip. Time's running out. [Sigh]}
+{31010}{}{[Done.]}
+{32000}{}{Is there some problem, do you need more equipment? Is there anything we can do to help?}
+{32010}{}{Nope, just going to take some time. It's a big world out there.}
+{32020}{}{I could use some more stuff.}
+{32030}{}{Yeah, you could get off your fannies and help.}
+{33000}{}{Do your best. Remember, we're all counting on you.}
+{33010}{}{[Done.]}
+{34000}{}{Here, take the last of our ammo and portable healing supplies. We're in trouble. Hurry!}
+{34010}{}{[Done.]}
+{35000}{}{Do what? With who? Anyone else would be less qualified and have less supplies. It'd be suicide.}
+{35010}{}{Your choice. I'll do my best, but I don't know if it'll be enough.}
+{35020}{}{I understand.}
+{36000}{}{It has to be. If you fail, so does the Vault.}
+{36010}{}{Got it.}
+{36020}{}{Whatever.}
+{37000}{}{Good, then get going!}
+{37010}{}{[Done.]}
+{38000}{}{Well, keep looking. Time's growing short.}
+{38010}{}{[Done.]}
+{39000}{}{The water caravans from this Hub place have started to arrive. I've been running the
+figures and I've got some disturbing news.}
+{39010}{}{What's that?}
+{39020}{}{Huh?}
+{40000}{}{The caravan water will maintain our current supply, but not increase it substantially.
+And these Hub merchants are charging us an arm and leg. This helps and we're thankful
+for that, but it's not a solution.}
+{40010}{}{Ok.}
+{40020}{}{There's something else, isn't there?}
+{41000}{}{Keep looking for a replacement chip. It's the only way we can maintain our independence
+and the security that comes with our seclusion.}
+{41010}{}{[Done.]}
+{42000}{}{We're taking a terrible risk by showing these people the way to our vault. I understand your choice, and it may be what saves us. But I'm worried. Can we trust these people?}
+{42010}{}{I trust them.}
+{42020}{}{I understand.}
+{43000}{}{I'm sure you do, but we need that replacement chip for our long-term survival and
+economic stability. We don't produce as many goods as we need to pay for this water, and
+soon we won't be able to pay. Find the chip.}
+{43010}{}{[Done.]}
+{44000}{}{I'm sure you do. You must also understand our need for that replacement chip. Please
+keep looking.}
+{44010}{}{[Done.]}
+{45000}{}{Oh, never mind. Just try and find the water chip. Get the chip. We still need it.}
+{45010}{}{[Done.]}
+{46000}{}{Please keep looking for the water chip. These water caravans are going to cause us problems in the long run.}
+{46010}{}{[Done.]}
+{47000}{}{What news do you have of the mutants?}
+{47010}{}{I wasted the head SOB.}
+{47020}{}{I've killed the Master, the mutant leader.}
+{47030}{}{Nuh, ungh. Uh-nuh, nuh.}
+{48000}{}{Excellent! What about the laboratory? Did you destroy that, too?}
+{48010}{}{No.}
+{49000}{}{Go back out and find it. It needs to be destroyed for the vault to be safe. Try to the
+west, most of the mutants seem to be there.}
+{49010}{}{[Done.]}
+{50000}{}{What's that? You've killed the mutant leader?}
+{50010}{}{Uh-huh, nuh, huh. Nuh-nuh.}
+{51000}{}{There are still more mutants appearing? You need to destroy their vats? Great job! Go
+back out there and take care of it.}
+{51010}{}{[Done.]}
+{52000}{}{I uh, I just wanted to let you know that the water supply has stabilized. Actually, we're rebuilding our reserves. You did great . . . I uh, I am a little concerned, however.}
+{52010}{}{About what?}
+{52020}{}{Huh?}
+{53000}{}{I' I don't like your reports. What was in the reports, that is. Heh. In fact, they
+scared the heck out of me. It's those mutants. I've done some calculations and, well,
+I've come to an unpleasant conclusion.}
+{53010}{}{What's that?}
+{54000}{}{[Sigh] The mutant population is far greater than could be expected by natural growth or mutations. This leads me to believe in -- I don't really understand it. But it looks like someone's generating new mutants. And at a startling rate.}
+{54010}{}{Say again? Without the confusion?}
+{54020}{}{Must be a lab somewhere then.}
+{55000}{}{Someone's making mutants!}
+{55010}{}{What do I need to do?}
+{56000}{}{As long as someone is creating hostile mutants at this rate, the Vault's safety is at
+stake! Find and destroy this lab as soon as you can.}
+{56010}{}{Ok.}
+{56020}{}{Once more into the breach, my friend.}
+{57000}{}{You have no idea how sorry I am to send you back out.}
+{57010}{}{[Done.]}
+{58000}{}{Exactly! And as you've probably guessed, none of these mutations could have occurred
+naturally, even with the radiation from the war.}
+{58010}{}{What do you want me to do about it?}
+{59000}{}{Oh, yeah. Hmm . . . I' I' I' It's like this. There is a bad place where the bad mutants
+come from. It is bad. Vault is good. Please, go destroy bad place.}
+{59010}{}{[Done.]}
+{60000}{}{Has the mutant laboratory been discovered yet? Even better, tell me it's been destroyed.}
+{60010}{}{No.}
+{60020}{}{Nungh.}
+{60030}{}{Not yet, but I've got some good leads.}
+{60040}{}{Nope, I'm a little lost.}
+{61000}{}{Well, keep searching.}
+{61010}{}{[Done.]}
+{62000}{}{Good. But hurry, the more time they have to produce them, the harder they'll be to stop.}
+{62010}{}{[Done.]}
+{63000}{}{Well, based on the information you provided about population density, I think you should
+concentrate your search to the west.}
+{63010}{}{[Done.]}
+{64000}{}{What news of the mutants?}
+{64010}{}{I blew them up.}
+{64020}{}{Nuhh!}
+{64030}{}{The mutant vats have been destroyed.}
+{65000}{}{All of them?}
+{65010}{}{Well, all of them at the vats.}
+{65020}{}{Uh, nuh-nuh.}
+{66000}{}{What about the mutant leader? What about this so-called Master?}
+{66010}{}{Far as I know, he's still alive.}
+{66020}{}{Uh-nuh-nuh.}
+{67000}{}{He must be stopped. If not, he could rebuild his empire of mutants and would certainly
+strike back at us. The vault will not be safe until the Master is dead.}
+{67010}{}{[Done.]}
+{68000}{}{Is the mutant leader . . . taken care of?}
+{68010}{}{No.}
+{68020}{}{Nuh.}
+{68030}{}{He will be . . . soon.}
+{69000}{}{I know this has been hard on you. But this Master's the type who'll rebuild his mutant
+army. Then he'll come for us. Please, go out and finish the job.}
+{69010}{}{[Done.]}
+{70000}{}{Well, Th' Tha' That's great. That's very good. You sound like you're in control out there. Please, finish this up soon so that you and I can . . . When you're out there, remember, the people of the Vault know you've saved them.}
+{70010}{}{[Done.]}
+

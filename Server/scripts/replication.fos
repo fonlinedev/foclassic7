@@ -417,7 +417,7 @@ void ReplicateCritter(Critter& cr)   // Export
         {
 			//	In case Hinkley gets to be added later.
             //	if(!(map.GetLocation().GetProtoId() == LOCATION_Hinkley && IsInsideArena(cr)))
-            DropItems(cr);
+            // disabled! DropItems(cr);
         }
     }
     else

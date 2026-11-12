@@ -1,0 +1,80 @@
+[comment]
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1011 None 1 #
+2 1012 #
+3 1013 #
+4 1014 @
+2 1000 None 0 #
+0 1015 @
+3 1001 None 0 #
+0 1016 @
+4 1002 None 0 #
+5 1017 #
+6 1018 #
+7 1019 #
+8 1020 @
+5 1003 None 0 #
+6 1021 #
+8 1022 @
+6 1004 None 0 #
+9 1023 @
+9 1007 None 0 #
+0 1027 @
+8 1006 None 0 #
+11 1026 @
+11 1009 None 0 #
+0 1030 @
+7 1005 None 0 #
+8 1024 #
+10 1025 @
+10 1008 None 0 #
+6 1028 #
+12 1029 @
+12 1010 None 0 #
+0 1031 @
+
+[engl]
+{100}{}{Valtcupl}
+{200}{}{You see a citizen of Vault 13.}
+{1000}{}{You should leave. This isn't your place here anymore.}
+{1001}{}{We really like it here.}
+{1002}{}{We didn't think that you were coming back. You have such a nice room, and we were a
+little crowded with her parents. I hope you don't mind.}
+{1003}{}{Look, we could really use the space. I hope you will reconsider.}
+{1004}{}{Thanks! We really appreciate it. We put your stuff in the trunk.}
+{1005}{}{[MANUAL: add NPC dialogue for diagram node 'ValtCupl00a']}
+{1006}{}{Look, I don't want to argue with you, but you obviously don't deserve this room anymore.
+Please leave.}
+{1007}{}{[MANUAL: add NPC dialogue for diagram node 'BigUpReact']}
+{1008}{}{Well, I don't know. You don't seem to be using it very often, and we sure could use the
+space.}
+{1009}{}{[MANUAL: add NPC dialogue for diagram node 'BigDownReact']}
+{1010}{}{Gee, I didn't think you would still care about this place from what I've heard. You have
+a good day. We'll go back to her mothers' place.}
+{1011}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1012}{}{[MANUAL: initial branch condition/greeting -> ValtCupl07]}
+{1013}{}{[MANUAL: initial branch condition/greeting -> ValtCupl06]}
+{1014}{}{[MANUAL: initial branch condition/greeting -> ValtCupl00]}
+{1015}{}{[Done.]}
+{1016}{}{[Done.]}
+{1017}{}{Yes, I do mind. Get out of my room!}
+{1018}{}{Nah, I don't care. Enjoy the room.}
+{1019}{}{It would be reassuring to have my own quarters back. Please find somewhere else to live.}
+{1020}{}{Hng.}
+{1021}{}{Well, ok. You need it more than I do.}
+{1022}{}{Well, let me think about it for a moment. Hmmm. No. Get out!}
+{1023}{}{[MANUAL: add player response/transition -> BigUpReact]}
+{1024}{}{[MANUAL: add player response/transition -> ValtCupl01]}
+{1025}{}{[MANUAL: add player response/transition -> ValtCupl04]}
+{1026}{}{[MANUAL: add player response/transition -> BigDownReact]}
+{1027}{}{[Done.]}
+{1028}{}{Fine. Take it.}
+{1029}{}{I need this place to remember my roots. And besides, it's a good place to rest.}
+{1030}{}{[Done.]}
+{1031}{}{[Done.]}

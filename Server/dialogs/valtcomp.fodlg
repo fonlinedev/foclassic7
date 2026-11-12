@@ -1,0 +1,15 @@
+[comment]
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+0 1001 @
+
+[engl]
+{100}{}{Valtcomp}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1001}{}{[MANUAL: add initial dialogue branch]}

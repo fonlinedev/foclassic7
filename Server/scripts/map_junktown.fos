@@ -6,21 +6,22 @@
 //
 
 #include "_macros.fos"
+#include "_maps.fos"
+#include "mapdata_h.fos"
+#include "npc_common_h.fos"
+
 #include "factions_h.fos"
 #include "_defines.fos"
 #include "messages_h.fos"
 #include "reinforcements_h.fos"
-#include "_maps.fos"
 #include "msgstr.h"
 #include "world_common_h.fos"
-
 #include "npc_junktown_tasks.fos"
 #include "junktown_skumpitt.fos"
+#include "map_junktown_lockers.fos"
 
 void map_init(Map& map, bool firstTime)
 {
-    //InitJunktownTasks();
-    //InitSkumpittEvents();
     // certainly
 
     if(firstTime)
@@ -30,15 +31,20 @@ void map_init(Map& map, bool firstTime)
     }
 
     uint proto = map.GetProtoId();
-    string protoName;
-    map.ProtoName(protoName);
-    Log("Setting NO PVP and NO LOOTING for location Junktown (" + proto + ", " + protoName + ")");
     _MapSetMode(map, MAP_MODE_NO_LOOT_DROP);
     _MapSetMode(map, MAP_MODE_NO_PVP);
-
+    if (proto == MAP_JunktownSouth) {
+        spawnDocMorbidTeam(map);
+    }    
+    if (proto == MAP_JunktownNorth) {
+        InitSkumpittEvents();
+    }
+    uint[] values = { map.GetProtoId() };
+    CreateTimeEvent(__FullSecond + REAL_HOUR(1), "e_RespawnLoot", values, false);
+    spawnLockers(map);
 }
 
-// Entrance at day
+// Entrance at gates
 void t_NearEntrance(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
 {
     if(!critter.IsPlayer() || !entered)
@@ -60,6 +66,74 @@ void t_EntranceEnter(Critter& critter, Scenery& trigger, bool entered, uint8 dir
         return;
 
     critter.SendMessage(MSG_JNK_PLAYER_ENTRANCE_ENTER, 0, MESSAGE_TO_VISIBLE_ME);
+}
+
+void t_EnteredKillian(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
+{
+    if(!critter.IsPlayer())
+    {
+        return;
+    }
+
+    if(!entered)
+    {
+        return;
+    }
+
+    if(dir == 1 || dir == 2 || dir == 3)
+        return;
+
+    GameVar@ assassinVar = GetLocalVar(LVAR_q_jt_killian_assassin_state, critter.Id);
+    if(valid(assassinVar))
+    {
+        if (assassinVar.GetValue() != 0)
+            return;
+    }
+
+    critter.Wait(15000);
+
+    Map@ map = critter.GetMap();
+        
+    if(!valid(map))
+    {
+        DLog("Invalid map");
+        return;
+    }
+   
+
+    uint16 x = 0;
+    uint16 y = 0;
+
+    map.GetEntireCoords(9, 0, x, y);
+    Log("spawn at x "+ x + ", y " + y);
+    Critter@ cr = map.GetCritter(x, y);
+
+    if (!valid(cr))
+    {
+        assassinVar = 1;
+
+        int[] params = {
+            ST_DIALOG_ID, 0,
+            ST_BAG_ID, 167,
+            ST_TEAM_ID, 0,
+            ST_FACTION_MODE, 0,
+            ST_FACTION_RANK, 0,
+            MODE_NO_LOOT, 1,
+            ST_REPLICATION_TIME, REPLICATION_DELETE_FAST,
+            MODE_NO_STEAL, 1
+        };
+
+        @cr = map.AddNpc(63, x, y, 5, params, null, "killian_assassin@critter_init");
+
+        if (!valid(cr))
+        {
+            Log("Error creating npc.");
+            return;
+        }
+                
+        Log("npc spawned");
+    }
+
 }
 
 void _Gate(Item& item, bool firstTime)
@@ -119,4 +193,284 @@ uint e_SwitchGate(array<uint>@ values)
 
     // on init
     return REAL_SECOND(5);
+}
+
+void spawnDocMorbidTeam(Map& map)
+{
+    Critter@ crDoc = SpawnStaticNpc(
+        map,
+        11,                 // entire id
+        451,                // Pid
+        1731,      // Dialog Id
+        0,                // bag
+        5004,
+        0,                  // faction mode
+        0,                  // faction rank
+        3,                  // direction
+        "",
+        "DOC_MORBID"
+    );
+    if (!valid(crDoc))
+        Log("Error at DOC_MORBID spawning");
+
+    Critter@ crCougar = SpawnStaticNpc(
+        map,
+        12,                 // entire id
+        402,                // Pid
+        1729,      // Dialog Id
+        156,                // bag
+        5004,
+        0,                  // faction mode
+        0,                  // faction rank
+        3,                  // direction
+        "",
+        "COUGAR"
+    );
+    if (!valid(crCougar))
+        Log("Error at COUGAR spawning");
+
+     Critter@ crFlash = SpawnStaticNpc(
+        map,
+        13,                 // entire id
+        402,                // Pid
+        1730,      // Dialog Id
+        15,                // bag
+        5004,
+        0,                  // faction mode
+        0,                  // faction rank
+        1,                  // direction
+        "",
+        "FLASH"
+    );
+    if (!valid(crCougar))
+        Log("Error at COUGAR spawning");
+}
+
+
+void urn_init(Item& item, bool firstTime)
+{
+        item.SetEvent(ITEM_EVENT_SKILL, "_urnSkill");    
+}
+
+bool _urnSkill(Item& item, Critter& cr, int skill)
+{
+    // Handle hand cursor (SKILL_PICK_ON_GROUND / -1) or general interaction
+    return HandleUrnInteraction(item, cr);
+}
+
+bool HandleUrnInteraction(Item& item, Critter& cr)
+{
+    Log("Triggered Urn interaction");
+    
+    GameVar@ var = GetLocalVar(LVAR_q_jt_steal_neal_urn, cr.Id);
+    if (!valid(var))
+        return true; // Return true to block default pickup
+
+    uint questState = var.GetValue();
+
+    // If the quest is not active or already finished/failed: block pickup & notify
+    if (questState == 0 || questState == 5) 
+    {
+        cr.Say(SAY_NETMSG, "This quest is not active or finished.");
+        Log("Quest isn't active or finished.");
+        return true;
+    }
+
+    // Quest stage is active (e.g., stage 3: steal the urn)
+    if (questState == 1)
+    {
+        // Allow player to take it into inventory, or add custom steal/notice logic here
+        cr.Say(SAY_NETMSG, "You can pick up Neal's urn.");
+        return false;
+    }
+
+    // Default block for all other unhandled quest states
+    return true; 
+}
+
+bool d_SkumpittOpen(Critter& player, Critter@ npc)
+{
+    uint16 year=0, month=0, day=0, dayofweek=0, hour=0, minute=0, second=0;
+    GetGameTime( __FullSecond, year, month, day, dayofweek, hour, minute, second );    
+    return (hour >= 17 || hour < 4);    
+}
+
+bool d_SkumpittClosed(Critter& player, Critter@ npc)
+{
+    return !d_SkumpittOpen(player, npc);
+}
+
+void t_TriggerBarFight(Critter& critter, Scenery& trigger, bool entered, uint8 dir)
+{
+    if(!critter.IsPlayer())    
+        return;
+   
+    if(!entered)
+        return;
+
+    if(dir == 2 || dir == 3 || dir == 1)
+        return;
+
+    GameVar@ gangVar = GetLocalVar(LVAR_q_jt_skulz_gang, critter.Id);
+    if (!valid(gangVar) || gangVar.GetValue() != 0)
+        return;
+    
+    Map@ map = GetMapByPid(MAP_JunktownNorth, 0);
+
+    if(!valid(map))
+        return;
+    
+    Critter@ crTrish = GetCritterAtEntire(15, map);
+    Critter@ crNeil  = GetCritterAtEntire(11, map);
+    Critter@ crSkul  = GetCritterAtEntire(13, map);
+    Critter@ crShark = GetCritterAtEntire(17, map);
+    Critter@ crFemaleSkul = GetCritterAtEntire(16, map);
+
+    if(!valid(crShark) || !valid(crTrish) ||
+       !valid(crNeil) || !valid(crSkul) || !valid(crFemaleSkul))
+        return;
+
+    if (crSkul.StatBase[ST_CURRENT_HP] < 0)
+        return;
+
+    critter.Wait(10000);
+
+    uint[] npcIds;
+
+    npcIds.insertLast(crNeil.Id); // 0
+    npcIds.insertLast(crTrish.Id); // 1
+    npcIds.insertLast(crSkul.Id); // 2
+    npcIds.insertLast(crShark.Id); // 3
+    npcIds.insertLast(crFemaleSkul.Id); // 4
+    npcIds.insertLast(critter.Id); // Player 5
+    
+    crTrish.Say(SAY_SHOUT_ON_HEAD, "Oh! Saul, where are you?!?");
+    
+    CreateTimeEvent(AFTER(REAL_SECOND(3)), "e_NeilConfrontsSkulz", npcIds, false);
+}
+
+uint e_NeilConfrontsSkulz(array<uint>@ values)
+{
+    Map@ map = GetMapByPid(MAP_JunktownNorth, 0);
+    if(!valid(map))
+        return 0;
+
+    Critter@ crNeil = GetCritter(values[0]);
+    Critter@ crSkul  = GetCritter(values[2]);
+
+    if(valid(crNeil) && valid(crSkul))
+    {
+        crNeil.Say(SAY_SHOUT_ON_HEAD,
+            "Get the hell outta here you goddamn punks! If any of ya ever touch her again I'll kill the whole lot o' ya!");
+        
+        AddAttackPlane(crNeil, 0, crSkul);
+
+        CreateTimeEvent(AFTER(REAL_SECOND(3)),
+                        "e_NeilKillsSkulz", values, false);
+    }
+
+    return 0;
+}
+
+uint e_NeilKillsSkulz(array<uint>@ values)
+{
+    Map@ map = GetMapByPid(MAP_JunktownNorth, 0);
+    if(!valid(map))
+        return 0;
+
+    Critter@ crNeil = GetCritter(values[0]);
+    Critter@ crSkul  = GetCritter(values[2]);
+
+    if(valid(crNeil) && valid(crSkul))
+    {
+        crNeil.Say(SAY_SHOUT_ON_HEAD,
+            "The day I can't handle little shits like you is the day I die!");
+    }
+    
+    crSkul.ToDead(ANIM2_DEAD_BLOODY_SINGLE, null);
+
+    CreateTimeEvent(AFTER(REAL_SECOND(3)),
+                    "e_SharkThreatensNeil", values, false);
+
+    return 0;
+}
+
+uint e_SharkThreatensNeil(array<uint>@ values)
+{
+    Map@ map = GetMapByPid(MAP_JunktownNorth, 0);
+    if(!valid(map))
+        return 0;
+
+    Critter@ crShark = GetCritter(values[3]);
+
+    if(valid(crShark))
+    {
+        crShark.Say(SAY_SHOUT_ON_HEAD,
+            "We'll be back, old man. This isn't over!");
+    }
+
+    CreateTimeEvent(AFTER(REAL_SECOND(4)),  "e_SkulzLeaveBar", values, false);
+
+    return 0;
+}
+
+uint e_SkulzLeaveBar(array<uint>@ values)
+{
+    Map@ map = GetMapByPid(MAP_JunktownNorth, 0);
+    if(!valid(map))
+        return 0;
+    
+    uint16 x = 0;
+    uint16 y = 0;
+    map.GetEntireCoords(20, 0, x, y);
+    
+    Critter@ crShark = GetCritter(values[3]);
+    Critter@ crFemaleSkul = GetCritter(values[4]);
+
+    if(valid(crShark))
+    {
+        AddWalkPlane(crShark, AI_PLANE_WALK_PRIORITY, x, y, 5, false, 0);
+    }
+
+    if(valid(crFemaleSkul))
+    {
+        AddWalkPlane(crFemaleSkul, AI_PLANE_WALK_PRIORITY, x, y, 5, false, 0);
+    }
+    
+    // Only create the time event if there are actually NPCs to remove
+    CreateTimeEvent(AFTER(REAL_SECOND(25)), "e_SkulzWaitMap", values, false);  
+    
+    GameVar@ gangVar = GetLocalVar(LVAR_q_jt_skulz_gang, values[5]);
+    if (!valid(gangVar))
+        return 0;
+    gangVar = 1;
+
+    return 0;
+}
+
+uint e_SkulzWaitMap(array<uint>@ values)
+{
+    if(values.length() < 2)
+        return 0;
+
+    Critter@ crShark = GetCritter(values[3]);
+    Critter@ crFemaleSkul = GetCritter(values[4]);
+
+    if(valid(crShark))
+    {
+        crShark.Wait(90000);
+        Log("Skumpitt: Shark waiting.");
+    }
+    else
+        Log("Skumpitt: Could not find Shark.");
+
+    if(valid(crFemaleSkul))
+    {
+        crFemaleSkul.Wait(90000);
+        Log("Skumpitt: Female Skul waiting.");
+    }
+    else
+        Log("Skumpitt: Could not find female Skul.");
+
+    return 0;
 }

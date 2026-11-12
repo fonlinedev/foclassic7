@@ -67,5 +67,6 @@ import void   FindFreeHexes(Map@ map, uint16 hexX, uint16 hexY, int& num, array<
 import bool   FindNearestFreeHex(Map@ map, uint16 hexX, uint16 hexY, uint16& outX, uint16& outY) from "npc_common";
 import void   SetDeleteEvent(Critter& cr, uint time) from "npc_common";
 import void   DropDeleteEvent(Critter& cr) from "npc_common";
+import Critter@ SpawnStaticNpc(Map@ map, uint coord, uint pid, uint dialog, uint bag, uint team, uint factionMode, uint factionRank, uint dir, string initFunc, string name)  from "npc_common";
 #endif
 #endif

@@ -1,0 +1,41 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
+3 1020 D _var p name_mem_npc_player = 1 @
+2 2000 None 0 #
+4 2010 D _param p ST_INTELLECT } 3 #
+6 2020 D _param p ST_INTELLECT < 3 @
+3 3000 None 0 #
+0 3010 @
+4 4000 None 0 #
+5 4010 @
+5 5000 None 0 #
+0 5010 @
+6 6000 None 0 #
+0 6010 &
+
+[engl]
+{100}{}{Cougar}
+{200}{}{Doc Morbid's assistant, Cougar.}
+{1000}{}{Predialogue installations}
+{1010}{}{First time.}
+{1020}{}{2n  time.}
+{2000}{}{How's it going?}
+{2010}{}{Good, and you?}
+{2020}{}{Ung.}
+{3000}{}{It's you again. The Cougar got nothing more to say.}
+{3010}{}{[Done.]}
+{4000}{}{The Cougar is always fine.}
+{4010}{}{Hey, I gotta know...}
+{5000}{}{You need to talk to my man, Flash, here. He can help you out.}
+{5010}{}{[Done.]}
+{6000}{}{Yow! Don't talk too fast man. You give the Cougar a headhurt. Talk to Flash instead.}
+{6010}{}{[Done.]}
+

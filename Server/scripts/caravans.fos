@@ -183,11 +183,17 @@ void _GuardSmthDied(Critter& cr, Critter& killed, Critter@ killer)
         return;
     if(valid(caravan) && caravan.IsCaravanMember(killed))
     {
+        // CLEAR VARIABLE IF THE KILLED MEMBER IS A PLAYER
+        if(killed.IsPlayer())
+        {
+            SetLvar(killed.Id, LVAR_caravan_id, 0);
+            caravan.Leave(killed);
+        }
+
         if(valid(leader) && (killer.IsPlayer() || !caravan.IsCaravanMember(killer)))
         {
             if(caravan.IsCaravanMember(killer))
             {
-                // SetLvar(killer.Id, LVAR_caravan_id, 0);
                 caravan.Leave(killer);
             }
 
@@ -259,6 +265,13 @@ void _DriverSmthDied(Critter& leader, Critter& killed, Critter@ killer)
         return;
     if(valid(caravan) && caravan.IsCaravanMember(killed))
     {
+        // CLEAR VARIABLE IF THE KILLED MEMBER IS A PLAYER
+        if(killed.IsPlayer())
+        {
+            SetLvar(killed.Id, LVAR_caravan_id, 0);
+            caravan.Leave(killed);
+        }
+
         if((killer.IsPlayer() || !caravan.IsCaravanMember(killer)))
         {
             if(caravan.IsCaravanMember(killer))
@@ -418,7 +431,24 @@ uint e_Clean(array<uint>@ values)
         Map@      map = leader.GetMap();
         ICaravan@ caravan = GetCaravan(leader);
         if(valid(caravan))
+        {
             caravan.PrepareRespawn();
+            
+            // CLEAR VARIABLE FOR ALL PLAYERS ON THIS MAP
+            if(valid(map))
+            {
+                array<Critter@> players;
+                map.GetCritters(0, FIND_ALL | FIND_ONLY_PLAYERS, players);
+                for(uint i = 0; i < players.length(); i++)
+                {
+                    if(caravan.IsCaravanMember(players[i]))
+                    {
+                        SetLvar(players[i].Id, LVAR_caravan_id, 0);
+                        players[i].Say(SAY_NETMSG, "The caravan has failed. You are no longer on duty.");
+                    }
+                }
+            }
+        }
         if(valid(map))
         {
             if(IsEncounterMap(map) && map.GetCritters(0, FIND_ALL | FIND_ONLY_PLAYERS, null) < 1)
@@ -487,6 +517,7 @@ uint e_Leave(array<uint>@ values)
 							int expAmount = 100;
 							critters[i].StatBase[ST_EXPERIENCE] += expAmount;
 							critters[i].Say(SAY_NETMSG, "|0xFFFFFF You have gained " + expAmount + " experience points for securing caravan leader in the encounter.");
+                            SetLvar(critters[i].Id, LVAR_caravan_id, 0);
 						}
                 }
             }
@@ -707,6 +738,18 @@ void r_JoinCaravan(Critter& player, Critter@ npc)
     }
 }
 
+void r_LeaveCaravan(Critter& player, Critter@ npc)
+{
+    ICaravan@ caravan = GetCaravan(player);
+    if(valid(caravan))
+    {
+        caravan.Leave(player);
+        SetLvar(player.Id, LVAR_caravan_id, 0);        
+        player.Say(SAY_NETMSG, "You have abandoned the caravan.");
+        player.TransitToGlobal(false);
+    }    
+}
+
 void r_KillCaravanDriver(Critter& player, Critter@ npc, int carNr)
 {
     ICaravan@ caravan = GetCaravan(carNr);
@@ -714,6 +757,7 @@ void r_KillCaravanDriver(Critter& player, Critter@ npc, int carNr)
     Critter@ encNpc = GetCritter(caravan.GetLeaderId());
     if(valid(encNpc))
     {
+        SetLvar(player.Id, LVAR_caravan_id, 0);
         encNpc.ToDead(ANIM2_DEAD_FRONT, null);
         player.Say(SAY_NETMSG, "Driver (id "+encNpc.Id+") killed on map "+encNpc.GetMapId());
     }

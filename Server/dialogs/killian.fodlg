@@ -1,0 +1,436 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+13 1010 @
+2 2000 None 0 #
+0 2010 @
+3 3000 None 0 #
+15 3010 @
+15 4000 None 0 #
+0 4010 #
+0 4020 #
+0 4030 @
+4 5000 None 0 #
+16 5010 #
+17 5020 #
+18 5030 @
+16 6000 None 0 #
+0 6010 #
+0 6020 @
+17 7000 None 0 #
+0 7010 #
+26 7020 @
+26 8000 None 0 #
+40 8010 #
+0 8020 @
+40 9000 None 0 #
+0 9010 @
+18 10000 None 0 #
+15 10010 @
+5 11000 None 0 #
+0 11010 @
+6 12000 None 0 #
+0 12010 @
+7 13000 None 0 #
+0 13010 @
+8 14000 None 0 #
+15 14010 @
+9 15000 None 0 #
+19 15010 #
+20 15020 #
+21 15030 #
+21 15040 #
+22 15050 @
+19 16000 None 0 #
+22 16010 #
+27 16020 #
+28 16030 @
+22 17000 None 0 #
+15 17010 @
+27 18000 None 0 #
+20 18010 #
+22 18020 #
+28 18030 @
+20 19000 None 0 #
+22 19010 #
+28 19020 #
+29 19030 @
+28 20000 None 0 #
+22 20010 #
+29 20020 @
+29 21000 None 0 #
+0 21010 @
+21 22000 None 0 #
+29 22010 @
+10 23000 None 0 #
+23 23010 #
+23 23020 #
+24 23030 #
+24 23040 @
+23 24000 None 0 #
+0 24010 @
+24 25000 None 0 #
+30 25010 #
+30 25020 #
+31 25030 @
+30 26000 None 0 #
+41 26010 @
+41 27000 None 0 #
+49 27010 @
+49 28000 None 0 #
+53 28010 #
+53 28020 #
+54 28030 #
+55 28040 #
+56 28050 #
+57 28060 @
+53 29000 None 0 #
+61 29010 #
+61 29020 #
+62 29030 #
+63 29040 #
+63 29050 @
+61 30000 None 0 #
+0 30010 @
+62 31000 None 0 #
+65 31010 #
+66 31020 @
+65 32000 None 0 #
+0 32010 @
+66 33000 None 0 #
+65 33010 #
+67 33020 @
+67 34000 None 0 #
+40 34010 #
+63 34020 @
+63 35000 None 0 #
+0 35010 @
+54 36000 None 0 #
+53 36010 @
+55 37000 None 0 #
+53 37010 @
+56 38000 None 0 #
+53 38010 @
+57 39000 None 0 #
+53 39010 @
+31 40000 None 0 #
+42 40010 @
+42 41000 None 0 #
+49 41010 @
+11 42000 None 0 #
+25 42010 @
+25 43000 None 0 #
+0 43010 #
+32 43020 #
+33 43030 #
+34 43040 #
+35 43050 #
+36 43060 #
+37 43070 #
+38 43080 #
+39 43090 @
+32 44000 None 0 #
+0 44010 @
+33 45000 None 0 #
+43 45010 @
+43 46000 None 0 #
+40 46010 #
+50 46020 @
+50 47000 None 0 #
+0 47010 @
+34 48000 None 0 #
+44 48010 #
+45 48020 #
+35 48030 #
+46 48040 @
+44 49000 None 0 #
+25 49010 #
+51 49020 @
+51 50000 None 0 #
+0 50010 #
+58 50020 #
+59 50030 @
+58 51000 None 0 #
+25 51010 @
+59 52000 None 0 #
+64 52010 #
+40 52020 @
+64 53000 None 0 #
+25 53010 @
+45 54000 None 0 #
+25 54010 @
+35 55000 None 0 #
+47 55010 #
+48 55020 @
+47 56000 None 0 #
+25 56010 @
+48 57000 None 0 #
+40 57010 #
+52 57020 @
+52 58000 None 0 #
+60 58010 #
+50 58020 @
+60 59000 None 0 #
+25 59010 @
+46 60000 None 0 #
+25 60010 @
+36 61000 None 0 #
+14 61010 @
+14 62000 None 0 #
+0 62010 @
+37 63000 None 0 #
+0 63010 @
+38 64000 None 0 #
+0 64010 @
+39 65000 None 0 #
+0 65010 #
+0 65020 #
+19 65030 @
+12 66000 None 0 #
+25 66010 @
+13 67000 None 0 #
+25 67010 &
+
+[engl]
+{100}{}{Killian}
+{200}{}{You see Killian.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> get_stuff_from_safe]}
+{2000}{}{You moved against Gizmo without evidence. Y'know, he wasn't on the up-and-up, but
+neither are you. Go see Lars.}
+{2010}{}{[Done.]}
+{3000}{}{Well, congratulations. You just earned yourself a night in a cell. Boys . . .}
+{3010}{}{[MANUAL: add player response/transition -> Killianx1]}
+{4000}{}{[MANUAL: add NPC dialogue for diagram node 'Killianx1']}
+{4010}{}{Right . . . I don't think so.}
+{4020}{}{Nu-uhh?}
+{4030}{}{All right, I'll come along quietly.}
+{5000}{}{Now what the Uncle Sam-hell do you think you're doing here?}
+{5010}{}{Uh . . . I got lost?}
+{5020}{}{Oh, this is your place?}
+{5030}{}{Well . . . I broke in.}
+{6000}{}{Uh, no. You got stupid. Get out of here!}
+{6010}{}{Who's going to make me? You? Don't make me laugh . . .}
+{6020}{}{Okay. Sorry about the inconvenience.}
+{7000}{}{You're damn straight this is my place! Now get the hell out before I make your head a
+wall decoration!}
+{7010}{}{You? Wake up, pal, you're still dreaming.}
+{7020}{}{Okay, okay, I'm going.}
+{8000}{}{[MANUAL: add NPC dialogue for diagram node 'Killian32a']}
+{8010}{}{[MANUAL: add player response/transition -> DownReactLevel]}
+{8020}{}{[MANUAL: add player response/transition -> Killianx2]}
+{9000}{}{[MANUAL: add NPC dialogue for diagram node 'DownReactLevel']}
+{9010}{}{[Done.]}
+{10000}{}{An honest thief. Hmpf. Well, I'm still gonna have to take you in. Come along quietly and
+you won't get hurt.}
+{10010}{}{[MANUAL: add player response/transition -> Killianx1]}
+{11000}{}{It's obvious your mama didn't teach you manners. Am I gonna have to?}
+{11010}{}{[Done.]}
+{12000}{}{You leaving so soon? Better pay first.}
+{12010}{}{[MANUAL: add player response/transition -> Killianx]}
+{13000}{}{This is not something I take as a joke. Now. Pay up.}
+{13010}{}{[MANUAL: add player response/transition -> Killianx]}
+{14000}{}{All right. Fine. Let's see if a night in the locker will cool you off a bit.}
+{14010}{}{[MANUAL: add player response/transition -> Killianx1]}
+{15000}{}{Listen. Thanks for saving my life. It's a mighty brave thing to do. Looks like we got
+ourselves a situation here. I know Gizmo's behind this, but I need proof. You interested
+in helpin'?}
+{15010}{}{Me? What do you need me for?}
+{15020}{}{Can't you get someone else? I'm kinda busy . . .}
+{15030}{}{I'm in.}
+{15040}{}{Uh-huh.}
+{15050}{}{Nuh-uh.}
+{16000}{}{Now, if I get proof, the people of Junktown will kick him out. Way I figure it, you need
+to either plant a bug at his place or wear a wire and get him to confess to you. Can you
+handle that?}
+{16010}{}{Ummm . . . no. Getting involved in other people's problems never works out.}
+{16020}{}{Whoa. Sounds kinda dangerous . . .}
+{16030}{}{What do I get in return?}
+{17000}{}{Well, damn. That's too bad. But, you know, I'm gonna have to lock you up until this
+thing's done. Can't risk Gizmo finding out. Sorry.}
+{17010}{}{[MANUAL: add player response/transition -> Killianx1]}
+{18000}{}{I'm not gonna lie to you, it will be dangerous. But I'll owe you one, and Killian
+Darkwater always pays his debts.}
+{18010}{}{You sure you can't find someone else?}
+{18020}{}{I don't think so. Sounds too dangerous to me.}
+{18030}{}{What do you mean, 'pays his debts.'}
+{19000}{}{It'll work best if it's you. Gizmo doesn't know you, so he might trust you. Or, at least
+he'll have a hard time blaming me. Either way, you're the best person for the job.}
+{19010}{}{Pass. Getting killed doesn't seem like a fun thing for me.}
+{19020}{}{What do I get out of this?}
+{19030}{}{Fair enough, I'll do it.}
+{20000}{}{I'll tell you what. Anything in the store, even the most expensive, it's yours. No
+charge. If it's a gun, I'll give you all the ammo you can carry. Does that sound fair?}
+{20010}{}{Not even close. I'm not risking my neck for that.}
+{20020}{}{Yeah. I'll do it.}
+{21000}{}{All right, I owe you. Here's the bug and the wire tap. You let me know when it's done.
+And good luck.}
+{21010}{}{[MANUAL: add player response/transition -> Killianx4]}
+{22000}{}{You have to wear a recorder and tape Gizmo confessing, or plant this wire tap in his
+office. Either way, and we got him.}
+{22010}{}{What do I have to do to help you get rid of Gizmo?}
+{23000}{}{So, did you get the evidence?}
+{23010}{}{Not yet. But I will, believe me!}
+{23020}{}{Nuh-uh.}
+{23030}{}{I sure did.}
+{23040}{}{Uh-huh.}
+{24000}{}{Well, he's not going to come here and confess! You shouldn't even be seen with me until
+this is done. Now go.}
+{24010}{}{[MANUAL: add player response/transition -> Killianx]}
+{25000}{}{Which, bug or tape?}
+{25010}{}{The bug.}
+{25020}{}{Nu-uhh?}
+{25030}{}{The confession.}
+{26000}{}{Great! Let me make sure it's working.}
+{26010}{}{[MANUAL: add player response/transition -> soundcheck]}
+{27000}{}{Loud and clear. We're going to get him. In the mean time, we've got some business . . .}
+{27010}{}{[MANUAL: add player response/transition -> Killian_give_stuff]}
+{28000}{}{[MANUAL: add NPC dialogue for diagram node 'Killian_give_stuff']}
+{28010}{}{No thanks. Knowing that Gizmo's going to get his due is thanks enough.}
+{28020}{}{Nuh-uh.}
+{28030}{}{I'll take a shotgun and shells.}
+{28040}{}{I'll take a suit of leather armor.}
+{28050}{}{I'll take a doctor's medical kit.}
+{28060}{}{I'll take all the stimpaks you can spare.}
+{29000}{}{Well, thanks again. Oh, listen, I'm gonna take the guards and run Gizmo and his cronies
+out of town. I could use another gun. You up for it? Might be good for a laugh.}
+{29010}{}{Sure. It'll be worth it just to see him try to walk more than ten feet.}
+{29020}{}{Uh-huh.}
+{29030}{}{Kinda depends on what you're willing to give me.}
+{29040}{}{Again? I don't think so. I've got way too much stuff going on.}
+{29050}{}{Nuh-uh.}
+{30000}{}{Go to Lars at the guard station. He'll fill you in. And listen, this town owes you . . .
+a lot.}
+{30010}{}{[MANUAL: add player response/transition -> Killianx]}
+{31000}{}{Well, I can pay you the standard rate for mercenary work, 500 caps.}
+{31010}{}{Done.}
+{31020}{}{Sorry, not enough.}
+{32000}{}{Good enough. Go see Lars, he'll give you the details.}
+{32010}{}{[MANUAL: add player response/transition -> Killianx]}
+{33000}{}{Listen, that's all I'm offering. Thanks for getting the evidence, but I'm not going to
+beg for your services.}
+{33010}{}{All right, I'll do it for that fee.}
+{33020}{}{Oh, well. See ya around.}
+{34000}{}{[MANUAL: add NPC dialogue for diagram node 'Killian63a']}
+{34010}{}{[MANUAL: add player response/transition -> DownReactLevel]}
+{34020}{}{[MANUAL: add player response/transition -> Killian64]}
+{35000}{}{Good luck in your travels. Now if you'll excuse me, I have a fat ass to move.}
+{35010}{}{[MANUAL: add player response/transition -> Killianx]}
+{36000}{}{[MANUAL: add NPC dialogue for diagram node 'Killian_give_shotgun']}
+{36010}{}{[MANUAL: add player response/transition -> Killian59]}
+{37000}{}{[MANUAL: add NPC dialogue for diagram node 'Killian_give_armor']}
+{37010}{}{[MANUAL: add player response/transition -> Killian59]}
+{38000}{}{[MANUAL: add NPC dialogue for diagram node 'Killian_give_doctor_bag']}
+{38010}{}{[MANUAL: add player response/transition -> Killian59]}
+{39000}{}{[MANUAL: add NPC dialogue for diagram node 'Killian_give_stimpaks']}
+{39010}{}{[MANUAL: add player response/transition -> Killian59]}
+{40000}{}{Let's hear it.}
+{40010}{}{What do I have to do to help you get rid of Gizmo?}
+{41000}{}{That's the first time I've been happy to hear his voice. Thanks, friend. Now, time for
+you and me to take care of the other business.}
+{41010}{}{[MANUAL: add player response/transition -> Killian_give_stuff]}
+{42000}{}{Well, howdy! What can I do for you today?}
+{42010}{}{[MANUAL: add player response/transition -> killian00]}
+{43000}{}{[MANUAL: add NPC dialogue for diagram node 'killian00']}
+{43010}{}{I'd better go.}
+{43020}{}{Nu-uhh?}
+{43030}{}{Who are you?}
+{43040}{}{How about telling me a bit about this town?}
+{43050}{}{What's there to do around here?}
+{43060}{}{I want to buy something.}
+{43070}{}{Do you own this store?}
+{43080}{}{What do I have to do to help you get rid of Gizmo?}
+{43090}{}{What do you know about this Gizmo character?}
+{44000}{}{You want to buy something, friend?}
+{44010}{}{[Done.]}
+{45000}{}{The name's Killian. Killian Darkwater. I'm the mayor of this fine town. And who might
+you be?
+---
+I'm
+---
+.
+---
+My name is
+---
+. I come from up north.}
+{45010}{}{What's it to you?}
+{46000}{}{[MANUAL: add NPC dialogue for diagram node 'Killian02a']}
+{46010}{}{[MANUAL: add player response/transition -> DownReactLevel]}
+{46020}{}{[MANUAL: add player response/transition -> Killian16]}
+{47000}{}{Oh, you obviously have me confused with someone who has to take your lip. Why don't you
+come back when your mama teaches you some manners.}
+{47010}{}{[Done.]}
+{48000}{}{Well, Junktown's not much, but it's home. Mostly we trade with people or let 'em forget
+their troubles for a bit. Of course, we have our share of problems.}
+{48010}{}{What other cities are around here?}
+{48020}{}{Problems?}
+{48030}{}{What's there to do in this town?}
+{48040}{}{Thanks.}
+{49000}{}{Well, travelers tell me there's a bunch of crazies up north called the Vipers. Another
+group of yahoos out east called the Khans. Neither one of them likely to invite you to
+supper as anything but the main course, if you know what I mean.}
+{49010}{}{Thanks.}
+{49020}{}{What else is outside Junktown?}
+{50000}{}{Well, ya got the Hub southwest. Don't go south, though. That'd be Necropolis; the, uh .
+. . climate's bad there, rain or shine. If you understand what I'm saying.}
+{50010}{}{I'd better be going now.}
+{50020}{}{Well, thanks for the information. Can I ask you a few more questions?}
+{50030}{}{You just know everything, don't you?}
+{51000}{}{Hell, why not. Ask away, friend.
+---
+Yeah, okay. But make it quick, I got work to do.}
+{51010}{}{[MANUAL: add player response/transition -> killian00]}
+{52000}{}{[MANUAL: add NPC dialogue for diagram node 'Killian09a']}
+{52010}{}{[MANUAL: add player response/transition -> Killian04]}
+{52020}{}{[MANUAL: add player response/transition -> DownReactLevel]}
+{53000}{}{Yeah, if you say so. So what do you need?}
+{53010}{}{[MANUAL: add player response/transition -> killian00]}
+{54000}{}{From outside, we've had the occasional to-do with the Khans. But they've been pretty
+quiet lately. Inside, trouble's been from the Skulz. And I hear of some strange things
+happening down by the Hub, but they haven't affected us yet, knock on my mother-in-law's
+head.}
+{54010}{}{[MANUAL: add player response/transition -> killian00]}
+{55000}{}{Oh, we got tons to do. The Skum Pitt's on the east side, by the entrance. Great drinkin'
+place. Gizmo's is near there. And if you're hurtin', Doc Morbid's your man.}
+{55010}{}{Thanks.}
+{55020}{}{That's all there is to do around here?}
+{56000}{}{[MANUAL: add NPC dialogue for diagram node 'Killian13b']}
+{56010}{}{[MANUAL: add player response/transition -> killian00]}
+{57000}{}{[MANUAL: add NPC dialogue for diagram node 'Killian13a']}
+{57010}{}{[MANUAL: add player response/transition -> DownReactLevel]}
+{57020}{}{[MANUAL: add player response/transition -> Killian14]}
+{58000}{}{Well, if we're too fast for ya, just pass on by, pal. It is pal, ain't it?}
+{58010}{}{Better than nothing, I guess.}
+{58020}{}{Then there won't be anything exciting in town.}
+{59000}{}{By a damn sight.}
+{59010}{}{[MANUAL: add player response/transition -> killian00]}
+{60000}{}{[MANUAL: add NPC dialogue for diagram node 'Killian11a']}
+{60010}{}{[MANUAL: add player response/transition -> killian00]}
+{61000}{}{Well that's a damn fine coincidence! That's what this store's here for! We got about
+everything you can need. Let me show you some things over here . . .}
+{61010}{}{What do I have to do to help you get rid of Gizmo?}
+{62000}{}{[MANUAL: add NPC dialogue for diagram node 'Killian_barter']}
+{62010}{}{Nu-uhh?}
+{63000}{}{You bet. May not be as big as some in the Hub, but people usually find what they're
+looking for. Take a look around . . .}
+{63010}{}{[Done.]}
+{64000}{}{You have to wear a recorder and tape Gizmo confessing, or plant this wire tap in his
+office. Either way, and we got him.}
+{64010}{}{[Done.]}
+{65000}{}{Gizmo owns the casino. Named it after himself. Be very careful around him.}
+{65010}{}{Okay.}
+{65020}{}{Yeah, he's dangerous. I'm here to kill you for him.}
+{65030}{}{I'll say . . . that fat slob just tried to hire me to kill you. Why don't you do
+something about him?}
+{66000}{}{You again. What do you want now?}
+{66010}{}{[MANUAL: add player response/transition -> killian00]}
+{67000}{}{Welcome to Junktown, stranger. What can I help you with?@@Hello, darlin'. What can I get ya?@@What do you want?@@Can I help you?}
+{67010}{}{[MANUAL: add player response/transition -> killian00]}
+

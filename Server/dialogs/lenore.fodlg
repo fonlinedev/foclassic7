@@ -1,0 +1,51 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+4 2010 #
+5 2020 #
+6 2030 #
+7 2040 @
+4 3000 None 0 #
+0 3010 @
+5 4000 None 0 #
+0 4010 @
+6 5000 None 0 #
+0 5010 @
+7 6000 None 0 #
+0 6010 @
+3 7000 None 0 #
+0 7010 &
+
+[engl]
+{100}{}{Lenore}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> do_dialogue]}
+{2000}{}{[MANUAL: add NPC dialogue for diagram node 'do_dialogue']}
+{2010}{}{[MANUAL: add player response/transition -> Lenore02]}
+{2020}{}{[MANUAL: add player response/transition -> Lenore04]}
+{2030}{}{[MANUAL: add player response/transition -> Lenore01]}
+{2040}{}{[MANUAL: add player response/transition -> Lenore03]}
+{3000}{}{That sure is a nice pooch you have there.}
+{3010}{}{[Done.]}
+{4000}{}{Thanks for dealing with that dog.}
+{4010}{}{[Done.]}
+{5000}{}{That might be a little overkill for a poor defenseless animal, don'cha think?}
+{5010}{}{[Done.]}
+{6000}{}{I'm sure Phil would appreciate it if you were to get rid of his dog.}
+{6010}{}{[Done.]}
+{7000}{}{Oh, yeah, big man running from a scary dog. Phil, you sure showed it. Yep, you sure did.
+---
+What are you doing, Phil? You're checking the tread on those sneakers, aren't you?
+---
+Man, that dog looks hungry. It sure wants to eat you alive, Phil.}
+{7010}{}{[Done.]}
+

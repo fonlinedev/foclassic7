@@ -1,0 +1,350 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+3 1010 @
+2 2000 None 0 #
+0 2010 @
+3 3000 None 0 #
+7 3010 #
+8 3020 #
+9 3030 #
+9 3040 #
+10 3050 #
+11 3060 @
+7 4000 None 0 #
+0 4010 @
+8 5000 None 0 #
+0 5010 #
+0 5020 #
+16 5030 #
+17 5040 @
+16 6000 None 0 #
+22 6010 #
+17 6020 @
+22 7000 None 0 #
+0 7010 @
+17 8000 None 0 #
+0 8010 #
+0 8020 #
+26 8030 @
+26 9000 None 0 #
+37 9010 #
+38 9020 @
+37 10000 None 0 #
+0 10010 @
+38 11000 None 0 #
+22 11010 #
+34 11020 @
+34 12000 None 0 #
+0 12010 @
+9 13000 None 0 #
+10 13010 #
+11 13020 #
+11 13030 #
+18 13040 #
+18 13050 #
+19 13060 @
+10 14000 None 0 #
+0 14010 @
+11 15000 None 0 #
+0 15010 @
+18 16000 None 0 #
+10 16010 #
+11 16020 #
+27 16030 #
+27 16040 @
+27 17000 None 0 #
+10 17010 #
+28 17020 #
+39 17030 @
+28 18000 None 0 #
+39 18010 #
+39 18020 @
+39 19000 None 0 #
+42 19010 #
+42 19020 #
+43 19030 @
+42 20000 None 0 #
+11 20010 #
+44 20020 #
+44 20030 @
+44 21000 None 0 #
+43 21010 #
+43 21020 #
+45 21030 #
+45 21040 @
+43 22000 None 0 #
+0 22010 @
+45 23000 None 0 #
+0 23010 @
+19 24000 None 0 #
+10 24010 #
+28 24020 @
+4 25000 None 0 #
+12 25010 #
+13 25020 @
+12 26000 None 0 #
+20 26010 #
+21 26020 @
+20 27000 None 0 #
+0 27010 @
+21 28000 None 0 #
+13 28010 #
+13 28020 #
+29 28030 #
+30 28040 @
+13 29000 None 0 #
+22 29010 #
+0 29020 @
+29 30000 None 0 #
+22 30010 #
+0 30020 @
+30 31000 None 0 #
+13 31010 #
+13 31020 #
+29 31030 #
+40 31040 @
+40 32000 None 0 #
+22 32010 #
+37 32020 @
+5 33000 None 0 #
+0 33010 @
+6 34000 None 0 #
+14 34010 #
+15 34020 #
+15 34030 #
+7 34040 @
+14 35000 None 0 #
+23 35010 @
+23 36000 None 0 #
+15 36010 #
+22 36020 @
+15 37000 None 0 #
+24 37010 #
+25 37020 @
+24 38000 None 0 #
+31 38010 #
+32 38020 #
+33 38030 #
+34 38040 #
+35 38050 @
+31 39000 None 0 #
+33 39010 #
+33 39020 #
+34 39030 #
+34 39040 #
+35 39050 #
+38 39060 @
+33 40000 None 0 #
+0 40010 @
+35 41000 None 0 #
+33 41010 #
+34 41020 #
+38 41030 #
+41 41040 @
+41 42000 None 0 #
+33 42010 #
+34 42020 #
+34 42030 #
+38 42040 @
+32 43000 None 0 #
+34 43010 #
+37 43020 @
+25 44000 None 0 #
+22 44010 #
+36 44020 @
+36 45000 None 0 #
+24 45010 &
+
+[engl]
+{100}{}{Gizmo}
+{200}{}{You see Gizmo, the casino owner.}
+{210}{}{This is easily the most corpulent individual you have ever seen.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> Gizmo21]}
+{2000}{}{Hey, what the hell do you think you're doing? Izo, tear his arms off!
+---
+Hey, what the hell do you think you're doing? Izo, tear off her arms!}
+{2010}{}{[Done.]}
+{3000}{}{What do you want? I'm a busy man.}
+{3010}{}{Blehh.}
+{3020}{}{I took care of Killian. Word is you might appreciate that.}
+{3030}{}{I'm here to tell you your assassin failed.}
+{3040}{}{I'm here to talk about the attempt on Killian's life.}
+{3050}{}{Nothing, actually. I'll just be going now.}
+{3060}{}{I want to know how someone as stupid as you is still alive.}
+{4000}{}{Get outta here, ya' idiot!}
+{4010}{}{[MANUAL: add player response/transition -> Gizmox2]}
+{5000}{}{Oh, yeah. Oh, yeah! Izo's got your money. Oh, this is good! Hey, hey, uh . . . you
+should leave town for a while. You know, just in case.}
+{5010}{}{Okay, I'm going.}
+{5020}{}{Sure, I'll go. Just remember you owe me one.}
+{5030}{}{You don't order me around, fat boy. You got that?}
+{5040}{}{And if I don't?}
+{6000}{}{[MANUAL: add NPC dialogue for diagram node 'Gizmo15_1']}
+{6010}{}{[MANUAL: add player response/transition -> Gizmo11]}
+{6020}{}{[MANUAL: add player response/transition -> Gizmo16]}
+{7000}{}{One is okay. Two is too much. And that was two. Izo, get me a set of kneecaps.}
+{7010}{}{[MANUAL: add player response/transition -> Gizmox1]}
+{8000}{}{You don't leave town, you end up under it. You got me?}
+{8010}{}{Okay, okay. I'm going.}
+{8020}{}{All right, fine. Just remember you owe me.}
+{8030}{}{Who's going to do that? You? You couldn't get off your fat butt to get a sandwich, much
+less kill me.}
+{9000}{}{[MANUAL: add NPC dialogue for diagram node 'Gizmo16a']}
+{9010}{}{[MANUAL: add player response/transition -> DownReactLevel]}
+{9020}{}{[MANUAL: add player response/transition -> badmouth]}
+{10000}{}{[MANUAL: add NPC dialogue for diagram node 'DownReactLevel']}
+{10010}{}{[Done.]}
+{11000}{}{[MANUAL: add NPC dialogue for diagram node 'badmouth']}
+{11010}{}{[MANUAL: add player response/transition -> Gizmo11]}
+{11020}{}{[MANUAL: add player response/transition -> Gizmo10]}
+{12000}{}{Sorry you feel that way. Not as sorry as you're gonna be, though. Can't let word of this
+get out. Izo, show our new friend what we do with people who say no to me.}
+{12010}{}{[MANUAL: add player response/transition -> Gizmox1]}
+{13000}{}{I don't know what you're talking about.}
+{13010}{}{You're right. Goodbye.}
+{13020}{}{You don't remember hiring someone to kill Killian, you stupid slug?}
+{13030}{}{You're a liar!}
+{13040}{}{Of course you do. You hired someone to kill Killian, and he screwed up.}
+{13050}{}{Oh, really?}
+{13060}{}{Well, let's take a hypothetical situation . . .}
+{14000}{}{I don't like people who waste my time. Don't come back again soon!}
+{14010}{}{[MANUAL: add player response/transition -> Gizmox2]}
+{15000}{}{You know, [Gizmo sighs] I don't like it when people insult me in my own place. Izo,
+escort our guest out . . . through the window.}
+{15010}{}{[MANUAL: add player response/transition -> Gizmox1]}
+{16000}{}{I don't know who you are, but I don't take kindly to strangers walking into my office
+and accusing me of things they know nothing about.}
+{16010}{}{You're right. I'm leaving.}
+{16020}{}{I know it all. So confess!}
+{16030}{}{Ah, but there's where you miss the point, Gizmo. I'm not accusing. I'm here to help you.}
+{16040}{}{Hey, okay, if you don't want him dead, fine. Just tryin' to be helpful.}
+{17000}{}{Really? [Gizmo chuckles.] He's gonna help me? What kinda help are we talking about?
+---
+Really? [Gizmo chuckles.] She's gonna help me? What kinda help are we talking about?}
+{17010}{}{Nothing. Forget I brought it up.}
+{17020}{}{Easy. You sent someone to kill Killian. He failed. You need someone who can do the job .
+. . better.}
+{17030}{}{I was thinking maybe knife in the back or bullet in the head.}
+{18000}{}{And let me guess. You're that someone?}
+{18010}{}{Very good . . . For a price, of course.}
+{18020}{}{I can kill him quicker than you can spit.}
+{19000}{}{Well, how can I trust you?}
+{19010}{}{I'm here. And you need someone from out of town to do your dirty work. Right?}
+{19020}{}{Because I've been around. I've killed before.}
+{19030}{}{You can't . . . I mean you can . . . I mean . . .}
+{20000}{}{Hmm . . . all right. We can do this. But you work for me, you better know that nobody
+ever double-crosses Gizmo and lives to talk about it. You got me?}
+{20010}{}{Oh, I could put one over on you . . . just no way anyone could put one 'round you.}
+{20020}{}{Of course. But first I need to know why you want him dead.}
+{20030}{}{Got it. What'cha want 'im dead for?}
+{21000}{}{Huh. That's easy. I want him dead because he cramps my business. So, will you do him for
+me?}
+{21010}{}{Could you say that again please . . . this time in my coat pocket?}
+{21020}{}{Well, um . . . No, I can't.}
+{21030}{}{That's why I'm here. He'll be dead before sundown.}
+{21040}{}{Sure. It's a job.}
+{22000}{}{You're either real stupid . . . or a real stupid spy. Doesn't matter, because now Izo's
+gonna make you real dead.}
+{22010}{}{[MANUAL: add player response/transition -> Gizmox1]}
+{23000}{}{Good. Return with the dog tags he wears around his neck as proof. And we never had this
+conversation, you don't mention this to anyone. No one double crosses me. No one.}
+{23010}{}{[MANUAL: add player response/transition -> Gizmox]}
+{24000}{}{Such as?}
+{24010}{}{Huh? Oh, never mind.}
+{24020}{}{Well, let's say you did try and kill Killian, and your assassin failed. That means you
+need a new one to do the job right.}
+{25000}{}{Did ya' finish the job yet?}
+{25010}{}{Yep, sure did.}
+{25020}{}{Nope, not yet.}
+{26000}{}{[MANUAL: add NPC dialogue for diagram node 'Gizmo13_1']}
+{26010}{}{[MANUAL: add player response/transition -> Gizmo14]}
+{26020}{}{[MANUAL: add player response/transition -> Gizmo17]}
+{27000}{}{Let's see the tags.}
+{27010}{}{[Done.]}
+{28000}{}{Then give me the dog tags?}
+{28010}{}{I lied. I don't have them.}
+{28020}{}{I had them, but then I lost them.}
+{28030}{}{Um . . . well . . . I . . . uh, lost them.}
+{28040}{}{What if I don't want to give them you?}
+{29000}{}{No tags, no money. You come back without the tags again and Izo gets creative with your
+anatomy. Now get out!}
+{29010}{}{[MANUAL: add player response/transition -> Gizmo11]}
+{29020}{}{[MANUAL: add player response/transition -> Gizmox]}
+{30000}{}{[Gizmo laughs.] You know, you're a crummy liar. Now go get the tags. I don't want to see
+your face until you've offed Killian.}
+{30010}{}{[MANUAL: add player response/transition -> Gizmo11]}
+{30020}{}{[MANUAL: add player response/transition -> Gizmox]}
+{31000}{}{No problem, I take them off your dead body.}
+{31010}{}{Uh . . . well, I kinda lied. I don't have them.}
+{31020}{}{Well, I had them, but they were stolen.}
+{31030}{}{I lost them.}
+{31040}{}{Yeah? You going to hire somebody to do your bending for you?}
+{32000}{}{[MANUAL: add NPC dialogue for diagram node 'Gizmo19a']}
+{32010}{}{[MANUAL: add player response/transition -> Gizmo11]}
+{32020}{}{[MANUAL: add player response/transition -> DownReactLevel]}
+{33000}{}{You're back. You know, I had to hire someone else to do your work. That didn't make me
+happy. In fact, Izo will show you just how unhappy I am. I hope you had a nice day. It
+was your last.}
+{33010}{}{[MANUAL: add player response/transition -> Gizmox1]}
+{34000}{}{Get your butt in here and sit down. We got some business to discuss.}
+{34010}{}{Looks like there's enough butt in here already . . .}
+{34020}{}{I gathered as much. What do you want?}
+{34030}{}{What business?}
+{34040}{}{Blehh.}
+{35000}{}{[MANUAL: add NPC dialogue for diagram node 'Gizmo01_1']}
+{35010}{}{[MANUAL: add player response/transition -> Gizmo02]}
+{36000}{}{You kiss your mother with that mouth? Show some respect.}
+{36010}{}{You're right, I'm sorry. So let's talk business.}
+{36020}{}{You do anything but eat?}
+{37000}{}{All right, [Gizmo snorts] here's the deal. Junktown, it ain't what it used to be. The
+only reason it's still here is because of my gambling establishment. Even so, Killian's
+been breathing down my neck, and I'm starting to take it personal. [Gizmo snorts] And
+that's where you come in, slick.}
+{37010}{}{What do you want me to do?}
+{37020}{}{If you think I'd help you, you're fat and stupid.}
+{38000}{}{What I think is you're going to take him out for me, you know? No witnesses, just in,
+over, out.}
+{38010}{}{Why don't you send one of your own goons in?}
+{38020}{}{I wouldn't work for you if you offered me all the money in this crummy place.}
+{38030}{}{Sure. I can use the money.}
+{38040}{}{I don't think so. Thanks anyway.}
+{38050}{}{How much you willing to pay?}
+{39000}{}{I would, but there must be no connection between me and Killian's unfortunate demise.}
+{39010}{}{Makes sense. Sure, I'll do it.}
+{39020}{}{All right, I'll do it.}
+{39030}{}{No way in Hell.}
+{39040}{}{I don't think so. Thanks anyway.}
+{39050}{}{How much you willing to pay?}
+{39060}{}{What a coward. Afraid people won't like you? Too late.}
+{40000}{}{[Gizmo wheezes.] I knew you'd see it my way. As proof, I want the dog tags Killian wears
+around his neck. Ya' get them, ya' get your money. Now, just get. And don't cross me. I
+still got the kneecaps from the last one who tried.}
+{40010}{}{[MANUAL: add player response/transition -> Gizmox]}
+{41000}{}{Thousand caps. No more, no less.}
+{41010}{}{Sounds good. I'll do it.}
+{41020}{}{Not even close. I don't want any part of this deal.}
+{41030}{}{I wouldn't trust you as far as two people could throw you. Forget it, slim.}
+{41040}{}{You call that a reward? If I'm to whack the guy, I'm going to need more than that.}
+{42000}{}{[Gizmo laughs and coughs] Maybe you're right. I think you're worth more. 1500.}
+{42010}{}{Now we're talking.}
+{42020}{}{Thank you, but I'd rather not.}
+{42030}{}{No way in Hell.}
+{42040}{}{That's about what, a dollar a pound for you? Forget it.}
+{43000}{}{[MANUAL: add NPC dialogue for diagram node 'Gizmo05_1']}
+{43010}{}{[MANUAL: add player response/transition -> Gizmo10]}
+{43020}{}{[MANUAL: add player response/transition -> DownReactLevel]}
+{44000}{}{[MANUAL: add NPC dialogue for diagram node 'Gizmo04_1']}
+{44010}{}{[MANUAL: add player response/transition -> Gizmo11]}
+{44020}{}{[MANUAL: add player response/transition -> Gizmo04a]}
+{45000}{}{Funny.}
+{45010}{}{[MANUAL: add player response/transition -> Gizmo05]}
+

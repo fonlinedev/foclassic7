@@ -1,0 +1,207 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+4 1010 D _var p q_shady_tandi = 0 D _param p ST_INTELLECT } 3 #
+9 1020 D _var p q_shady_tandi } 1 D _param p ST_INTELLECT } 3 D _var p q_shady_tandi < 4 D _var p q_tandi_rescue = 0 #
+7 1030 D _var p q_shady_tandi = 6 D _param p ST_INTELLECT } 3 #
+6 1040 D _var p q_shady_tandi = 4 D _var p q_tandi_rescue = 1 #
+6 1050 D _var p q_tandi_rescue = 3 D _var p q_shady_tandi } 1 D _var p q_shady_tandi < 6 #
+8 1060 D _param p ST_INTELLECT < 3 D _var p q_shady_tandi = 0 @
+4 2000 None 0 #
+11 2010 #
+10 2020 @
+11 3000 None 0 #
+22 3010 #
+27 3020 D _var p q_shady_radscorpions = 1 #
+28 3030 D _var p q_shady_radscorpions = 3 #
+29 3040 D _var p q_shady_radscorpions = 0 #
+24 3050 #
+25 3060 #
+10 3070 @
+22 4000 None 0 #
+26 4010 @
+24 5000 None 0 #
+26 5010 #
+30 5020 @
+25 6000 None 0 #
+31 6010 #
+32 6020 #
+33 6030 @
+26 7000 None 0 #
+65505 7010 @
+27 8000 None 0 #
+65505 8010 @
+28 9000 None 0 #
+65505 9010 @
+29 10000 None 0 #
+65505 10010 @
+30 11000 None 0 #
+0 11010 @
+9 12000 None 0 #
+12 12010 D _param p ST_INTELLECT } 3 #
+14 12020 D _param p ST_INTELLECT } 3 #
+13 12030 D _param p ST_INTELLECT < 3 @
+2 13000 None 0 #
+4 13010 #
+5 13020 #
+6 13030 #
+7 13040 #
+8 13050 #
+9 13060 @
+3 14000 None 0 #
+0 14010 @
+5 15000 None 0 #
+12 15010 #
+13 15020 #
+14 15030 @
+6 16000 None 0 #
+0 16010 R _script companion@r_BefriendCompanion 0  @
+7 17000 None 0 #
+10 17010 #
+11 17020 #
+15 17030 #
+21 17040 @
+10 18000 None 0 #
+0 18010 @
+13 19000 None 0 #
+0 19010 @
+14 20000 None 0 #
+19 20010 R _var p q_shady_tandi = 4 #
+20 20020 R _var p q_shady_tandi = 5 @
+15 21000 None 0 #
+0 21010 @
+12 22000 None 0 #
+19 22010 R _var p q_shady_tandi = 4 #
+20 22020 R _var p q_shady_tandi = 5 @
+19 23000 None 0 #
+0 23010 @
+20 24000 None 0 #
+0 24010 @
+31 25000 None 0 #
+10 25010 #
+11 25020 @
+32 26000 None 0 #
+65505 26010 @
+33 27000 None 0 #
+11 27010 #
+31 27020 @
+16 28000 None 0 #
+21 28010 @
+8 29000 None 0 #
+17 29010 @
+21 30000 None 0 #
+0 30010 @
+17 31000 None 0 #
+0 31010 &
+
+[engl]
+{100}{}{Tandi}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{Greetings}
+{1020}{}{Tandi Rescue begin}
+{1030}{}{Tandi rescue finished}
+{1040}{}{Escape through backdoor}
+{1050}{}{Duel finished}
+{1060}{}{Low int}
+{2000}{}{Hello again! What can I help you with now?}
+{2010}{}{Can I ask you a few more questions?}
+{2020}{}{Nothing. Goodbye.}
+{3000}{}{Sure, I guess. I've never been out of here, so I don't know what help I can be. So,
+what'cha need?}
+{3010}{}{What else is around these parts?}
+{3020}{}{What's going on around here?}
+{3030}{}{What's going on around here?}
+{3040}{}{What's going on around here?}
+{3050}{}{Have you heard any stories from down south?}
+{3060}{}{How do you like it here?}
+{3070}{}{Well, that's about it. Thanks for your time.}
+{4000}{}{Junktown's to the southwest, but I don't know how far. Then there's some weird place below that called the City of Death. Oh, oh yeah there's this other place...Oh, shoot, what was that? Oh, yeah, the Hub.@@There's a bunch of cities down south. But since you're such a great traveler, I'm sure
+you know that already.}
+{4010}{}{Thanks.}
+{5000}{}{The weirdest story I've heard is about the Death Claw.}
+{5010}{}{Thanks.}
+{5020}{}{Deathclaw?}
+{6000}{}{It's okay, I guess. I mean, it is home and all, but it's so boring! You know, I want to
+see the world.}
+{6010}{}{If you're so bored, why don't you leave?}
+{6020}{}{Well, I'm sure it's not that bad.}
+{6030}{}{It seems nice and safe here.}
+{7000}{}{No problem. Anything else?}
+{7010}{}{Tell me more about...}
+{8000}{}{We got Rad Scorpions! I mean, I know it's not a good thing, but no one's died from the
+stings. And it's the closest thing to excitement we've got here!}
+{8010}{}{Tell me more about...}
+{9000}{}{Nothing much, since you whomped those Rad Scorpions. Gee, I wish I could have seen that.}
+{9010}{}{Tell me more about...}
+{10000}{}{Same as always. Bo-ring.}
+{10010}{}{Tell me more about...}
+{11000}{}{I heard a tale from a traveller up from the south. He said the Death Claw was a creature that killed people at night. He said no one can catch it, because it can disappear like smoke. Not that I believe it, of course.}
+{11010}{}{[Done.]}
+{12000}{}{Who are you? What do you want?}
+{12010}{}{I'm your fairy god-mother. What's it look like?}
+{12020}{}{My name is @pname@, and your father sent me.}
+{12030}{}{Duh.}
+{13000}{}{Let's get outta here.}
+{13010}{}{[MANUAL: add player response/transition -> tandi30]}
+{13020}{}{[MANUAL: add player response/transition -> tandi43]}
+{13030}{}{[MANUAL: add player response/transition -> tandi43b]}
+{13040}{}{[MANUAL: add player response/transition -> tandi36]}
+{13050}{}{[MANUAL: add player response/transition -> tandi01]}
+{13060}{}{[MANUAL: add player response/transition -> tandi37]}
+{14000}{}{Uh...I have to stand over here now.}
+{14010}{}{[Done.]}
+{15000}{}{Oh, it's you again! Are you going to get me out?}
+{15010}{}{No, I'm just stopping by to say hi.}
+{15020}{}{Duh.}
+{15030}{}{Yes, so just sit tight. I'll get you out.}
+{16000}{}{This is no time to talk, we have to get out of here.}
+{16010}{}{[Done.]}
+{17000}{}{Hi! I was afraid that you were gone and I wasn't going to get a chance to thank you for rescuing me. Aw! That was great! Action, adventure...Anyway, if there's anything that I can do for you, you just ask.}
+{17010}{}{Nope, that's it, thanks.}
+{17020}{}{How about a few more questions?}
+{17030}{}{Dungh!!}
+{17040}{}{How about you and I...well, you know...get together.}
+{18000}{}{Well, thanks for talking. We don't get many strangers here, so it's always good to talk
+to new people. Well, see ya!}
+{18010}{}{'Bye.}
+{19000}{}{Hello, anybody home? Could you get me out of here? Could you GET ME OUT OF HERE!}
+{19010}{}{[Done.]}
+{20000}{}{Well, what's your plan?}
+{20010}{}{Just wait for the doors to open. Then run for it!}
+{20020}{}{I'm going to fight the Khan leader in exchange for your freedom.}
+{21000}{}{Uh...hey, thanks. Later.}
+{21010}{}{[Done.]}
+{22000}{}{Oh, aren't we the sarcastic one? Are you going to get me out, or what!?}
+{22010}{}{Yeah. Just hold on, and when you see the door open, run for it.}
+{22020}{}{I'm going to fight the Khan leader in exchange for your freedom.}
+{23000}{}{That's it? That's your plan. Ugh! All right. But hurry. I heard them talking and I
+didn't like their plans.}
+{23010}{}{[Done.]}
+{24000}{}{You? Fight him? You got to be kidding me! [Sigh] Listen, if you come up with another
+plan, let me know, okay?}
+{24010}{}{[Done.]}
+{25000}{}{Me, leave? I wish. I don't know enough to leave alone and no one else wants to go, and
+worst of all, my father says he would have a heart attack if something happened to me!}
+{25010}{}{Shoot, I have to go. Good luck.}
+{25020}{}{Tough situation. Can I ask you a few questions, though?}
+{26000}{}{You live here all your life and see how you like it! Anything else you want to know?}
+{26010}{}{Tell me more about...}
+{27000}{}{Yeah, real safe...and so boring I think my brain's going to leak out of my ear at any moment.}
+{27010}{}{Sorry to hear that, but I don't have much time. Can I ask you a few questions?}
+{27020}{}{Why don't you leave?}
+{28000}{}{[MANUAL: add NPC dialogue for diagram node 'tandi36a']}
+{28010}{}{[MANUAL: add player response/transition -> tandi27]}
+{29000}{}{Hi! I heard there was a traveller in town, but I was kinda skeptical until I saw you. My name's Tandi, what's yours?}
+{29010}{}{Uhhh?}
+{30000}{}{@sex@|I'm not that kind of girl, mister. Go find a Brahma or something.| |Listen...uh...but I...uh...I-I like guys, okay? Whew! Uh, excuse me, I got stuff to do.|}
+{30010}{}{[Done.]}
+{31000}{}{Uh, listen. I have to go take care of the Brahmas. It was, uh, nice talking to ya.}
+{31010}{}{[Done.]}
+

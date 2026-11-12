@@ -1,0 +1,290 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+0 1010 @
+2 2000 None 0 #
+10 2010 #
+11 2020 #
+12 2030 @
+10 3000 None 0 #
+25 3010 #
+0 3020 @
+25 4000 None 0 #
+34 4010 #
+14 4020 @
+34 5000 None 0 #
+0 5010 @
+14 6000 None 0 #
+0 6010 @
+11 7000 None 0 #
+0 7010 @
+12 8000 None 0 #
+0 8010 @
+3 9000 None 0 #
+0 9010 @
+4 10000 None 0 #
+13 10010 #
+13 10020 @
+13 11000 None 0 #
+0 11010 @
+5 12000 None 0 #
+0 12010 #
+0 12020 #
+14 12030 @
+6 13000 None 0 #
+15 13010 #
+16 13020 #
+17 13030 @
+15 14000 None 0 #
+0 14010 @
+16 15000 None 0 #
+15 15010 #
+26 15020 @
+26 16000 None 0 #
+14 16010 @
+17 17000 None 0 #
+0 17010 @
+7 18000 None 0 #
+18 18010 #
+19 18020 #
+20 18030 #
+21 18040 @
+18 19000 None 0 #
+0 19010 @
+19 20000 None 0 #
+0 20010 #
+27 20020 #
+28 20030 @
+27 21000 None 0 #
+35 21010 #
+36 21020 @
+35 22000 None 0 #
+0 22010 @
+36 23000 None 0 #
+0 23010 @
+28 24000 None 0 #
+35 24010 #
+36 24020 @
+20 25000 None 0 #
+0 25010 #
+29 25020 @
+29 26000 None 0 #
+37 26010 #
+38 26020 @
+37 27000 None 0 #
+0 27010 @
+38 28000 None 0 #
+0 28010 @
+21 29000 None 0 #
+30 29010 #
+27 29020 #
+28 29030 @
+30 30000 None 0 #
+0 30010 @
+8 31000 None 0 #
+0 31010 #
+22 31020 #
+23 31030 @
+22 32000 None 0 #
+31 32010 @
+31 33000 None 0 #
+39 33010 #
+40 33020 @
+39 34000 None 0 #
+44 34010 #
+45 34020 @
+44 35000 None 0 #
+0 35010 #
+45 35020 @
+45 36000 None 0 #
+36 36010 #
+47 36020 @
+47 37000 None 0 #
+0 37010 @
+40 38000 None 0 #
+0 38010 @
+23 39000 None 0 #
+0 39010 @
+9 40000 None 0 #
+0 40010 #
+24 40020 #
+24 40030 @
+24 41000 None 0 #
+32 41010 #
+33 41020 @
+32 42000 None 0 #
+0 42010 #
+0 42020 #
+41 42030 #
+41 42040 @
+41 43000 None 0 #
+0 43010 @
+33 44000 None 0 #
+0 44010 #
+42 44020 #
+43 44030 @
+42 45000 None 0 #
+36 45010 #
+46 45020 @
+46 46000 None 0 #
+11 46010 @
+43 47000 None 0 #
+36 47010 #
+46 47020 &
+
+[engl]
+{100}{}{Marcelle}
+{200}{}{You see Marcelles.}
+{210}{}{You see a tough-looking woman.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> go_to_room]}
+{2000}{}{Thank god you're here! Some crazy guy has Sinthia held hostage. He's threatening to kill
+her! You've got to help.}
+{2010}{}{Nah, don't bother me.}
+{2020}{}{Hmm. I'll check it out.}
+{2030}{}{Dung!}
+{3000}{}{You are an incredibly cold person. She could die without your help.}
+{3010}{}{Tough. That's life.}
+{3020}{}{All right, don't harp on me. I'll look into it.}
+{4000}{}{[MANUAL: add NPC dialogue for diagram node 'Marcelles02a']}
+{4010}{}{[MANUAL: add player response/transition -> Marcelles_charge_raider]}
+{4020}{}{[MANUAL: add player response/transition -> BigDownReact]}
+{5000}{}{Marcelles charges in to confront the raider!}
+{5010}{}{[Done.]}
+{6000}{}{[MANUAL: add NPC dialogue for diagram node 'BigDownReact']}
+{6010}{}{[Done.]}
+{7000}{}{[MANUAL: add NPC dialogue for diagram node 'UpReact']}
+{7010}{}{[Done.]}
+{8000}{}{Oh, geez, I hope you can do it. He's in her room. Help her!}
+{8010}{}{[Done.]}
+{9000}{}{Help Sinthia. She's in trouble.}
+{9010}{}{[Done.]}
+{10000}{}{Thank you for helping Sinthia. She's usually not a problem. You deserve a good night's
+sleep. On me. But don't ask for another freebie.}
+{10010}{}{Hnn. Thug.}
+{10020}{}{Thanks.}
+{11000}{}{Enjoy your stay. Don't be a pain.
+---
+No problem. Room #1. Follow me.}
+{11010}{}{[Done.]}
+{12000}{}{You should have saved Sinthia. It's your fault she died. I hope you are happy with
+yourself.}
+{12010}{}{Yeah, whatever.}
+{12020}{}{Hnnn.}
+{12030}{}{[MANUAL: add player response/transition -> BigDownReact]}
+{13000}{}{You killed Killian, didn't you?}
+{13010}{}{Yep, sure did.}
+{13020}{}{Nah, wasn't me. Really it wasn't.}
+{13030}{}{Hnn.}
+{14000}{}{You son of a bitch. I can't believe you killed him. He was a good man, and now I get all
+sorts of hell . . . get out, and don't come back.}
+{14010}{}{[Done.]}
+{15000}{}{[MANUAL: add NPC dialogue for diagram node 'Marcelles29a']}
+{15010}{}{[MANUAL: add player response/transition -> Marcelles31]}
+{15020}{}{[MANUAL: add player response/transition -> Marcelles32]}
+{16000}{}{Yeah, whatever you say, but that's not what I heard. You'd better behave around here, or
+I'll get out ol' Betsy and ram some buckshot up your ass.}
+{16010}{}{[MANUAL: add player response/transition -> BigDownReact]}
+{17000}{}{Get out! You're too dumb to realize what you did, but my life is hell now!}
+{17010}{}{[Done.]}
+{18000}{}{Welcome to the Crash House. How can I help you, stranger?}
+{18010}{}{I'm looking for some water.}
+{18020}{}{I need a good night's sleep.}
+{18030}{}{I'm looking for some info.}
+{18040}{}{Hnnn.}
+{19000}{}{Then you should try the Skum Pitt. I heard you can get a lot of water in your booze
+there.}
+{19010}{}{[Done.]}
+{20000}{}{I don't know about that, but I will rent you a room. It's a good place to rest and heal
+up. $25 for a day, or a week is $150. Most people go for the weekly rate. You should, if
+you ask me.}
+{20010}{}{No, thanks.}
+{20020}{}{Just one night.}
+{20030}{}{Okay. A week.}
+{21000}{}{[MANUAL: add NPC dialogue for diagram node 'Marcelles08a']}
+{21010}{}{[MANUAL: add player response/transition -> Marcelles10]}
+{21020}{}{[MANUAL: add player response/transition -> Marcelles11]}
+{22000}{}{Have a good stay.
+---
+Okay, thanks. Your room is room #1. Follow me. Don't be shooting any guns in here, okay?}
+{22010}{}{[Done.]}
+{23000}{}{You need some money before I can rent you a room.}
+{23010}{}{[Done.]}
+{24000}{}{[MANUAL: add NPC dialogue for diagram node 'Marcelles08b']}
+{24010}{}{[MANUAL: add player response/transition -> Marcelles10]}
+{24020}{}{[MANUAL: add player response/transition -> Marcelles11]}
+{25000}{}{I'm just a hotel manager, bub. Don't ask too much of me.}
+{25010}{}{No thanks.}
+{25020}{}{Here's $50, tell me what you know.}
+{26000}{}{[MANUAL: add NPC dialogue for diagram node 'Marcelles14a']}
+{26010}{}{[MANUAL: add player response/transition -> Marcelles15]}
+{26020}{}{[MANUAL: add player response/transition -> Marcelles16]}
+{27000}{}{I know you're $50 poorer. I don't do the gossip thing, okay? Come back if you want a
+room.}
+{27010}{}{[Done.]}
+{28000}{}{What do you think I am? A fool? If you're gonna bribe me, have enough money.}
+{28010}{}{[Done.]}
+{29000}{}{Yeah, we serve your kind, too. It'll be $25 for the night. A week will cost you $150.}
+{29010}{}{Nah.}
+{29020}{}{Ahkay.}
+{29030}{}{Ahkay. Weeeka.}
+{30000}{}{Yeah, you too. Have a good day.}
+{30010}{}{[Done.]}
+{31000}{}{Yeah, what do you want?}
+{31010}{}{Uh, nothing. Never mind.}
+{31020}{}{I want to rent a room.}
+{31030}{}{Hnn.}
+{32000}{}{I don't like your face. I don't think I'll be renting you a room.}
+{32010}{}{I really need a place to stay.}
+{33000}{}{[MANUAL: add NPC dialogue for diagram node 'Marcelles24a']}
+{33010}{}{[MANUAL: add player response/transition -> Marcelles26]}
+{33020}{}{[MANUAL: add player response/transition -> Marcelles25]}
+{34000}{}{Okay. One night. $100.}
+{34010}{}{What! That's outrageous!}
+{34020}{}{Okay.}
+{35000}{}{Deal with it. Yes or no.}
+{35010}{}{No.}
+{35020}{}{Okay.}
+{36000}{}{[MANUAL: add NPC dialogue for diagram node 'Marcelles26a']}
+{36010}{}{[MANUAL: add player response/transition -> Marcelles11]}
+{36020}{}{[MANUAL: add player response/transition -> Marcelles28]}
+{37000}{}{Good. Here you go. Room #1. Have a nice night, check out time is 11 o' clock.}
+{37010}{}{[Done.]}
+{38000}{}{No. Have a good night.}
+{38010}{}{[Done.]}
+{39000}{}{No. Go away.}
+{39010}{}{[Done.]}
+{40000}{}{Welcome back, what can I do for you?}
+{40010}{}{Uh, nothing. Never mind.}
+{40020}{}{I want to rent a room.}
+{40030}{}{Hnnn.}
+{41000}{}{[MANUAL: add NPC dialogue for diagram node 'Marcelles17a']}
+{41010}{}{[MANUAL: add player response/transition -> Marcelles18]}
+{41020}{}{[MANUAL: add player response/transition -> Marcelles20]}
+{42000}{}{You're already renting room #1 from me. Do you want me to show you where it is?}
+{42010}{}{Nah.}
+{42020}{}{Nah.}
+{42030}{}{Sure.}
+{42040}{}{Yah.}
+{43000}{}{And this is still your room. Have a good stay.}
+{43010}{}{[Done.]}
+{44000}{}{Sure. It's $25 a day, or $150 for the entire week.}
+{44010}{}{No, thanks.}
+{44020}{}{Just one night.}
+{44030}{}{Okay. A week.}
+{45000}{}{[MANUAL: add NPC dialogue for diagram node 'Marcelles19a']}
+{45010}{}{[MANUAL: add player response/transition -> Marcelles11]}
+{45020}{}{[MANUAL: add player response/transition -> Marcelles21]}
+{46000}{}{Okay. Room #1 is yours. Have a nice stay.}
+{46010}{}{[MANUAL: add player response/transition -> UpReact]}
+{47000}{}{[MANUAL: add NPC dialogue for diagram node 'Marcelles19b']}
+{47010}{}{[MANUAL: add player response/transition -> Marcelles11]}
+{47020}{}{[MANUAL: add player response/transition -> Marcelles21]}
+

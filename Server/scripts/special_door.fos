@@ -1,0 +1,83 @@
+#include "_macros.fos"
+#include "_vars.fos"
+#include "groups_h.fos"
+#include "npc_planes.fos"
+#include "factions_h.fos"
+#include "npc_roles_h.fos"
+#include "npc_common_h.fos"
+#include "reputations_h.fos"
+
+// ------------------------------------------------------------------
+// CONFIGURATION
+// ------------------------------------------------------------------
+#define MIN_REPUTATION_REQUIRED (300)       // Minimum reputation/faction points needed
+#define ALERT_RADIUS            (15)        // Hex distance around the locker to alert guards
+#define DEFAULT_MIN_REPUTATION (300)
+#define DEFAULT_ALERT_RADIUS   (15)
+
+// ------------------------------------------------------------------
+// REPUTATION CHECK HELPER
+// ------------------------------------------------------------------
+int GetPlayerReputation(Critter& player, uint factionId)
+{   
+	int rep = player.ParamBase[factionId];
+	Log("[FactionLocker] Reading ParamBase[" + (MIN_REPUTATION_REQUIRED + factionId) + "] for Player " + player.Id + " -> Value: " + rep);
+    return player.ReputationBase[factionId];
+}
+
+// Initialization function assigned to containers in the Mapper
+void door_init(Item& item, bool firstTime)
+{
+    item.SetEvent(ITEM_EVENT_SKILL, "_doorSkill");        
+    uint[] values = { item.Id };
+}
+
+// ------------------------------------------------------------------
+// MAIN ITEM INTERACTION SCRIPT
+// ------------------------------------------------------------------
+//
+bool _doorSkill(Item& item, Critter& cr, int skill)
+{
+    Log("[FactionLocker] TRIGGERED -> Item ID: " + item.Id + " | Critter ID: " + cr.Id + " | Skill: " + skill 
+        + " | Val0 (Key PID): " + item.Val0 
+        + " | Val1 (map ID): " + item.Val1
+        + " | Val1 (Entrance ID): " + item.Val2);
+
+    // Skill -1 (SKILL_PICK_ON_GROUND) represents opening; SK_LOCKPICK handles lockpicking attempts
+    if (skill == SKILL_PICK_ON_GROUND)
+    {
+        uint keyPid = item.Val0;
+        uint mapId = item.Val1;
+        uint entranceId = item.Val2;
+        if (d_HasKeys(cr, keyPid)) {
+            cr.Say(SAY_NETMSG, "You've just entered at a special room and your key was consumed. To exit, walk back to the other side.");
+            _CritDeleteItem(cr, keyPid, 1);
+            r_TeleportToMap(cr, mapId, entranceId);
+            return true;
+        } else {
+            cr.Say(SAY_NETMSG, "You don't have the keys for this door!");
+            return false;    
+        }
+    }
+    else
+    {        
+        return false;
+    }
+    
+}
+
+bool d_HasKeys(Critter& player, int keysPID)
+{    
+    return _CritCountItem(player, keysPID) > 0;
+}
+
+void r_TeleportToMap(Critter& player, int mappid, int entid)
+{
+    Map@ map = GetMapByPid(mappid, 0);
+    if(!valid(map))
+    {
+        Log("r_TeleportToMap failed, map " + mappid + " not found.");
+        return;
+    }
+    player.TransitToMap(map.Id, entid);
+}

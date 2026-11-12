@@ -1,0 +1,25 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+4 1010 @
+2 2000 None 0 @
+3 3000 None 0 @
+4 4000 None 0 @
+5 5000 None 0 &
+
+[engl]
+{100}{}{Izo}
+{200}{}{He has the stance and musculature of a master martial artist.}
+{1000}{}{Predialogue installations}
+{1010}{}{Begin}
+{2000}{}{Izo motions to the door.}
+{3000}{}{He has the entrance and musculature of a master martial artist.}
+{4000}{}{Izo says nothing.}
+{5000}{}{He gives you your money.}
+

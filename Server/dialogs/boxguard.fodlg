@@ -1,0 +1,32 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 @
+3 3000 None 0 @
+4 4000 None 0 @
+5 5000 None 0 @
+6 6000 None 0 @
+7 7000 None 0 @
+8 8000 None 0 @
+9 9000 None 0 &
+
+[engl]
+{100}{}{none}
+{1000}{}{Predialogue installations}
+{1010}{}{begin}
+{2000}{}{Holy crap! Kill it!}
+{3000}{}{Shoot that beast before it eats him!}
+{4000}{}{Guns!}
+{5000}{}{Get him out of there!}
+{6000}{}{Don't go inside the ring, chump.}
+{7000}{}{Hey, where do you think you're going?}
+{8000}{}{Talk to Gustofer if you want to bet.}
+{9000}{}{Boxing matches at 2:00 every third day.}
+

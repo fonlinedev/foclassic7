@@ -1,0 +1,31 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 @
+3 3000 None 0 @
+4 4000 None 0 @
+5 5000 None 0 @
+6 6000 None 0 @
+7 7000 None 0 @
+8 8000 None 0 &
+
+[engl]
+{100}{}{Barfly}
+{200}{}{Some loser in the bar in Junktown}
+{1000}{}{Predialogue installations}
+{1010}{}{begin}
+{2000}{}{Hey buddy, can you spare some change?}
+{3000}{}{I'm tryin' to drink here!}
+{4000}{}{I don't feel so good.}
+{5000}{}{Man, I gotta get some work.}
+{6000}{}{Could you pass the peanuts?}
+{7000}{}{Not drunk enough . . .}
+{8000}{}{Jaeger . . . jaeger . . .}
+

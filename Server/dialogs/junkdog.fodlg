@@ -1,0 +1,21 @@
+[comment]
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1001 None 1 #
+2 1002 @
+2 1000 None 0 #
+0 1003 @
+
+[engl]
+{100}{}{Junkdog}
+{200}{}{You see a dog. He seems to be following you.}
+{210}{}{You see a dog.}
+{1000}{}{You gain 100 experience points for helping Phil solve his canine conundrum.}
+{1001}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1002}{}{[MANUAL: initial branch condition/greeting -> dog_joins_dude]}
+{1003}{}{[Done.]}

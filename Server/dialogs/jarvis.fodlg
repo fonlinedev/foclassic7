@@ -7,14 +7,14 @@ lang=engl
 [dialog]
 &
 1 1000 None 1 #
-2 1010 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
-4 1020 D _var p name_mem_npc_player = 1 @
+2 1010 D _var p name_mem_npc_player = 0 D _var p q_shady_jarvis_cured = 0 R _var p name_mem_npc_player = 1 #
+4 1020 D _var p name_mem_npc_player = 1 D _var p q_shady_jarvis_cured = 0 #
+7 1030 D _var p q_shady_jarvis_cured = 1 D _var p name_mem_npc_player = 1 @
 2 2000 None 0 #
 4 2010 D _var p q_shady_jarvis_cured = 0 R _script jarvis@DiagnoseJarvisDialog 0  #
 0 2020 @
 3 3000 None 0 #
-4 3010 #
-0 3020 @
+0 3010 @
 4 4000 None 0 #
 4 4010 D _var p q_shady_jarvis_cured = 0 R _script jarvis@DiagnoseJarvisDialog 0  #
 5 4020 D _param p ST_INTELLECT } 3 #
@@ -24,14 +24,12 @@ lang=engl
 5 5000 None 0 #
 4 5010 @
 6 6000 None 0 #
-4 6010 @
-7 7000 None 0 @
-8 8000 None 0 @
-9 9000 None 0 @
-10 10000 None 0 @
-11 11000 None 0 @
-12 12000 None 0 @
-13 13000 None 0 &
+4 6010 D _var p q_shady_jarvis_cured = 0 #
+0 6020 @
+7 7000 None 0 #
+6 7010 #
+5 7020 #
+0 7030 &
 
 [engl]
 {100}{}{Jarvis}
@@ -42,14 +40,14 @@ lang=engl
 {1000}{}{Predialogue installations}
 {1010}{}{1st time}
 {1020}{}{2nd time}
+{1030}{}{Cured}
 {2000}{}{Hello. I'm sorry, but I'm not feeling too well right now. Please, if you can help find a way to fight the radscorpions, talk to my brother, Seth.}
 {2010}{}{Examine the man's condition.}
 {2020}{}{Sorry.}
 {3000}{}{Thank you so much for helping me. My name is Jarvis, and I'm
  Seth's younger brother. Please, if there's anything you need to
  know, just ask.}
-{3010}{}{Examine the man's condition.}
-{3020}{}{Nothing, thanks.}
+{3010}{}{Nothing, thanks.}
 {4000}{}{Hello again. Can I help you with something?}
 {4010}{}{Examine the man's condition.}
 {4020}{}{Can you tell me more about your brother?}
@@ -63,13 +61,11 @@ lang=engl
  leader, Aradesh. He could tell you more of the story. We have a
  well and irrigation, so we do well for ourselves.}
 {6010}{}{Tell me more about...}
-{7000}{}{error}
-{8000}{}{error}
-{9000}{}{error}
-{10000}{}{error}
-{11000}{}{error}
-{12000}{}{error}
-{13000}{}{error}
+{6020}{}{Just chatting, thanks.}
+{7000}{}{Thank you so much for helping me. My name is Jarvis, and I'm Seth's younger brother. Please, if there's anything you need to know, just ask.}
+{7010}{}{Tell me a bit about the town.}
+{7020}{}{Can you tell me more about your brother?}
+{7030}{}{Just chatting, thanks.}
 {100000001}{}{The man tosses about fitfully.}
 {100000001}{}{Oohhh . . .}
 {100000002}{}{This man is suffering from a virulent poison.}

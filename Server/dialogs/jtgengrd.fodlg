@@ -1,0 +1,121 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+0 2010 @
+3 3000 None 0 #
+6 3010 #
+7 3020 #
+0 3030 #
+8 3040 #
+9 3050 @
+6 4000 None 0 #
+12 4010 #
+13 4020 @
+12 5000 None 0 #
+0 5010 #
+0 5020 @
+13 6000 None 0 #
+12 6010 #
+17 6020 @
+17 7000 None 0 #
+0 7010 @
+7 8000 None 0 #
+12 8010 @
+8 9000 None 0 #
+14 9010 #
+15 9020 @
+14 10000 None 0 #
+0 10010 @
+15 11000 None 0 #
+0 11010 @
+9 12000 None 0 #
+0 12010 @
+4 13000 None 0 #
+10 13010 #
+10 13020 #
+11 13030 @
+10 14000 None 0 #
+0 14010 @
+11 15000 None 0 #
+10 15010 #
+16 15020 @
+16 16000 None 0 #
+0 16010 #
+18 16020 #
+18 16030 @
+18 17000 None 0 #
+14 17010 @
+5 18000 None 0 #
+0 18010 &
+
+[engl]
+{100}{}{Junktown Guard}
+{200}{}{He looks like an experienced guardsman.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> JTGenGrd18]}
+{2000}{}{Okay, that's enough warnings. Leave town, now, and never return, or face the
+consequences!}
+{2010}{}{[Done.]}
+{3000}{}{You'd better put that away. Junktown is a friendly place, friend, and we want to keep it
+that way.}
+{3010}{}{Put what away?}
+{3020}{}{Don't tell me what to do, loser boy.}
+{3030}{}{Keep up the good work.}
+{3040}{}{Sounds fair. By the way, what is the local law regarding weapons?}
+{3050}{}{Uh,oh.}
+{4000}{}{Your weapon, idiot. Killian won't take your arms away, but you'd better damn well keep
+them in your holster.}
+{4010}{}{Oh, sorry.}
+{4020}{}{No way! I'm not putting down my shooters for nobody!}
+{5000}{}{You'd better behave, since it's the law, and I enforce the law. Put your weapon away,
+don't draw it unless in self-defense, and you won't have a problem with us guards.
+Disobey the law, and we will return you to the lawless wasteland - dead or alive.}
+{5010}{}{Sure, since you put it that way.}
+{5020}{}{Bite your laws!}
+{6000}{}{[MANUAL: add NPC dialogue for diagram node 'JTGenGrd01a']}
+{6010}{}{[MANUAL: add player response/transition -> JTGenGrd02]}
+{6020}{}{[MANUAL: add player response/transition -> JTGenGrd03]}
+{7000}{}{Well, uh, fine with me. But you'd better be careful.}
+{7010}{}{[Done.]}
+{8000}{}{[MANUAL: add NPC dialogue for diagram node 'JTGenGrd00a']}
+{8010}{}{[MANUAL: add player response/transition -> JTGenGrd02]}
+{9000}{}{[MANUAL: add NPC dialogue for diagram node 'JTGenGrd00b']}
+{9010}{}{[MANUAL: add player response/transition -> UpReact]}
+{9020}{}{[MANUAL: add player response/transition -> JTGenGrd04]}
+{10000}{}{[MANUAL: add NPC dialogue for diagram node 'UpReact']}
+{10010}{}{[Done.]}
+{11000}{}{Good you asked. No weapons can be drawn except in self-defense. If you start a fight,
+it's your fault. Other than that, it's your right to go around armed. Just don't pull a
+knife or gun without just cause. Have a good day.}
+{11010}{}{[Done.]}
+{12000}{}{Hey you, no weapons! And I don't care if your momma dropped you on your head as a kid.
+No weapons.}
+{12010}{}{[Done.]}
+{13000}{}{Hey! You! What are you doing sneaking around?}
+{13010}{}{Nothing.}
+{13020}{}{Uhhh.}
+{13030}{}{I'm not sneaking around. I just like to walk cautiously.}
+{14000}{}{Whatever you're doing, don't do it in this town.}
+{14010}{}{[Done.]}
+{15000}{}{[MANUAL: add NPC dialogue for diagram node 'JTGenGrd06a']}
+{15010}{}{[MANUAL: add player response/transition -> JTGenGrd07]}
+{15020}{}{[MANUAL: add player response/transition -> JTGenGrd08]}
+{16000}{}{Well, uh, ok. Whatever. Just don't do anything out of line.}
+{16010}{}{Thanks, bye.}
+{16020}{}{Certainly. I will throw caution to the wind, sir.}
+{16030}{}{Certainly. I will throw caution to the wind, ma'am.}
+{17000}{}{[MANUAL: add NPC dialogue for diagram node 'JTGenGrd08a']}
+{17010}{}{[MANUAL: add player response/transition -> UpReact]}
+{18000}{}{The guard stares at you for a moment. You see a look of recognition on his face, and
+then he pulls his weapon.}
+{18010}{}{[Done.]}
+

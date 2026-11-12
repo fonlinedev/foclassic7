@@ -59,12 +59,12 @@ bool _lockerSkill(Item& item, Critter& cr, int skill)
         if (currentRep < minRep)
         {
             Log("[FactionLocker] ACCESS DENIED -> Alerting guards!");
-            cr.Say(SAY_NETMSG, "You do not have permission to open this container!");
+            cr.Say(SAY_NETMSG, "You don't have enough reputation for opening this locker. Your current reputation is: "+currentRep);
             if (skill == SKILL_PICK_ON_GROUND) {
                 // Only warn with dialog id passed
                 WarnGuards(item, cr, factionId, dialogId, dialogMessageId);
             } else if (skill == SK_STEAL || skill == SK_LOCKPICK) {
-                r_SubReputation(cr, factionId, 10, 1000);
+                r_SubReputation(cr, factionId, 100, -1000);
                 // Trigger nearby guards to attack player
                 AlertNearbyGuards(item, cr, factionId);
             }
@@ -74,6 +74,8 @@ bool _lockerSkill(Item& item, Critter& cr, int skill)
         else
         {
             Log("[FactionLocker] ACCESS GRANTED -> Critter has enough reputation.");
+            // discount 100 of reputation every time the locker is used.
+            r_SubReputation(cr, factionId, 100, -1000);
         }
     }
     else
@@ -92,7 +94,7 @@ void WarnGuards(Item& locker, Critter& player, uint teamId, uint dialogId, uint 
 	}   
 
     array<Critter@> guards;
-	uint count = GetNearFactionGuards(GetMap(locker.MapId), locker.HexX, locker.HexY, 10, teamId, guards);
+	uint count = GetNearFactionGuardsMode(GetMap(locker.MapId), locker.HexX, locker.HexY, 10, teamId, 0, guards);
 	Log("[FactionLocker] Searching guards near Hex (" + locker.HexX + ", " + locker.HexY + ") with Radius " + DEFAULT_ALERT_RADIUS + " for Faction " + teamId + "...");
 	
     for (uint i = 0; i < count; i++)

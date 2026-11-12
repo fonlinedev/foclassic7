@@ -43,7 +43,16 @@ void r_StartQuest(Critter& player, Critter@ npc)
     {
         quest = 1; // Set quest to in-progress		
         player.Say(SAY_NETMSG, "Quest accepted: Find the Water Chip for Vault 13.");
-		// --- STARTQUEST ITEM LOOT TABLE ---
+        int reputation = player.ReputationBase[FACTION_VAULT_13];
+        
+		
+        if (reputation <= 0)
+            player.ReputationBase[FACTION_VAULT_13] = 100;
+        else
+            player.ReputationBase[FACTION_VAULT_13] += 10;
+        
+
+        // --- STARTQUEST ITEM LOOT TABLE ---
         
         // 100% Chance items (Quantity 1)
         player.AddItem(PID_KNIFE, 1);

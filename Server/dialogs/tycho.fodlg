@@ -1,0 +1,238 @@
+[comment]
+
+
+[data]
+lang=engl
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+0 2010 #
+0 2020 #
+0 2030 @
+3 3000 None 0 #
+0 3010 #
+8 3020 #
+9 3030 #
+10 3040 #
+11 3050 #
+12 3060 #
+13 3070 #
+14 3080 #
+15 3090 #
+16 3100 @
+8 4000 None 0 #
+0 4010 @
+9 5000 None 0 #
+0 5010 @
+10 6000 None 0 #
+0 6010 @
+11 7000 None 0 #
+0 7010 @
+12 8000 None 0 #
+0 8010 @
+13 9000 None 0 #
+0 9010 @
+14 10000 None 0 #
+0 10010 @
+15 11000 None 0 #
+0 11010 #
+0 11020 #
+0 11030 @
+16 12000 None 0 #
+0 12010 @
+4 13000 None 0 #
+0 13010 #
+17 13020 #
+18 13030 @
+17 14000 None 0 #
+25 14010 @
+25 15000 None 0 #
+27 15010 #
+28 15020 @
+27 16000 None 0 #
+29 16010 #
+21 16020 @
+29 17000 None 0 #
+26 17010 @
+26 18000 None 0 #
+22 18010 @
+22 19000 None 0 #
+0 19010 #
+0 19020 @
+21 20000 None 0 #
+26 20010 #
+0 20020 @
+28 21000 None 0 #
+26 21010 #
+30 21020 @
+30 22000 None 0 #
+26 22010 #
+31 22020 @
+31 23000 None 0 #
+26 23010 #
+32 23020 @
+32 24000 None 0 #
+0 24010 @
+18 25000 None 0 #
+0 25010 @
+5 26000 None 0 #
+0 26010 #
+19 26020 #
+20 26030 @
+19 27000 None 0 #
+0 27010 @
+20 28000 None 0 #
+0 28010 @
+6 29000 None 0 #
+21 29010 #
+22 29020 #
+23 29030 @
+23 30000 None 0 #
+0 30010 @
+7 31000 None 0 #
+21 31010 #
+23 31020 #
+24 31030 @
+24 32000 None 0 #
+0 32010 &
+
+[engl]
+{100}{}{Tycho}
+{200}{}{You see Tycho.}
+{210}{}{You see a man in dusty leather armor with a trenchcoat and gas mask.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> Tycho28]}
+{2000}{}{Yes?}
+{2010}{}{Nothing. Never mind.}
+{2020}{}{Duh-wah?}
+{2030}{}{I think maybe we should stick together, after all.}
+{3000}{}{What can I do for you?}
+{3010}{}{Uh, never mind.}
+{3020}{}{Any recommendations?}
+{3030}{}{Any recommendations?}
+{3040}{}{Any recommendations?}
+{3050}{}{Any recommendations?}
+{3060}{}{Any recommendations?}
+{3070}{}{Any recommendations?}
+{3080}{}{Thanks for your help. I think it's time to part ways.}
+{3090}{}{I need to change formation.}
+{3100}{}{What sorts of weapon skills have you learned?}
+{4000}{}{Yeah, I'd stay the hell away from whatever made that. Seriously, I've never seen
+anything like that. I think our best option is to move on, fast.}
+{4010}{}{[Done.]}
+{5000}{}{Watch out for radioactive hot spots. This place obviously sustained a direct nuclear
+strike, and secondary cascade radiation may be bad. I'd recommend avoiding this place
+completely if we can.}
+{5010}{}{[Done.]}
+{6000}{}{Note the lack of any animal life for quite a distance. And the piles of bones. Whatever
+lives here is a real beast. Keep your weapon handy.}
+{6010}{}{[Done.]}
+{7000}{}{There are many strange tales about Necropolis, the city of the dead. Stay alert, because
+it could get dangerous really fast.}
+{7010}{}{[Done.]}
+{8000}{}{I bet we could get through those force-field generators with a little hot-wiring, or if
+we could find the force field control computer.}
+{8010}{}{[Done.]}
+{9000}{}{A military place like this must have a central command room somewhere.}
+{9010}{}{[Done.]}
+{10000}{}{Very well. I must say that it has been an honor and a pleasure.}
+{10010}{}{[Done.]}
+{11000}{}{What distance do you want me at?}
+{11010}{}{Stay close.}
+{11020}{}{Keep a moderate distance.}
+{11030}{}{Move out to longer range.}
+{12000}{}{Pretty good ranger training: I can use a spear, of course, in a pinch; I'm also skilled
+with small pistols and rifles.}
+{12010}{}{[Done.]}
+{13000}{}{Another new face. Travelers here are a dime a dozen. But you have the look of someone
+different. Care to join me for a drink?}
+{13010}{}{Sorry, I'm rather pressed for time.}
+{13020}{}{Sure.}
+{13030}{}{Duh-wah?}
+{14000}{}{Delightful. I hope you don't mind your drink well-watered - they treat beer here like
+it's a potted plant.}
+{14010}{}{So, what's your story?}
+{15000}{}{I could ask the same of you. In the interest of amity, I suppose I'll tell first. I'm
+called Tycho. Came from out east, what used to be called Nevada.}
+{15010}{}{That's a pretty long trip.}
+{15020}{}{How did you survive all the dangers?}
+{16000}{}{Yeah, it was. Decided to take it easy for a while. This place shows some promise, just
+as soon as someone cleans up some of the scum.}
+{16010}{}{Why don't you?}
+{16020}{}{Yeah, I noticed. What do you know about those jerks?}
+{17000}{}{Not my place. I'd rather not cross Killian, after all. He'll clean up this town when he
+gets around to it. A good man, mark my words. But watch out for that fellow Gizmo.
+Reminds me of another fat freak my father told me about back in Las Vegas.}
+{17010}{}{Thanks for the tip, and the drink.}
+{18000}{}{Whoa, not so fast. We never finished introductions, remember? What's your name,
+stranger?
+---
+I'm
+---
+.}
+{18010}{}{None of your business, you nut.}
+{19000}{}{Now, now, no need to get impolite. But with that attitude you'd best be on your way.}
+{19010}{}{Whatever. See ya.}
+{19020}{}{Bite me.}
+{20000}{}{There's two grades of scum here. One of 'em's the Skulz, a gang that hangs out in back
+of Marcelles' crash house. They're just grade-B twerps. But the other ones answer to a
+fat freak whose name you can probably guess. Runs the casino. Those guys are organized
+and dangerous.}
+{20010}{}{I see. Thanks for the info.}
+{20020}{}{[MANUAL: add player response/transition -> Goodbyes]}
+{21000}{}{Had some pretty good training, and some good weapons, too. My grandfather was a Ranger
+way back when, and he taught my father everything he knew. Dad passed it on to me. So I
+know enough not to drink glowing water, so to speak.}
+{21010}{}{Interesting. Thanks for the drink.}
+{21020}{}{Really? Survival's tough these days. You must be pretty knowledgeable.}
+{22000}{}{Yeah, well, my family taught me everything there is to know about survival. Don't drink
+water that's totally clear and free of insects and moss, for instance. Only poisonous or
+radioactive water would be that clean in the wilderness. Lots of other little things to
+look out for, too.}
+{22010}{}{Interesting. Thanks for the drink.}
+{22020}{}{Like what?}
+{23000}{}{Well, if you've got some time, I could go over some pointers.}
+{23010}{}{Sorry, I'm kind of pressed for time.}
+{23020}{}{Sure, that would be great.}
+{24000}{}{I hope that my little instruction course helped a bit.}
+{24010}{}{[MANUAL: add player response/transition -> Goodbyes]}
+{25000}{}{Yeah, a drink of water. Never mind.}
+{25010}{}{[Done.]}
+{26000}{}{Word out is that you've been having some contacts with Gizmo. I'd step carefully around
+that barrel of lard if I were you.}
+{26010}{}{Duh-wah?}
+{26020}{}{My business is none of yours.}
+{26030}{}{Yeah, I work for Gizmo now. What's it to you?}
+{27000}{}{Fair enough. But watch your back. Gizmo isn't known for his consideration for his
+employees.}
+{27010}{}{[Done.]}
+{28000}{}{Suffice to say that your employer has caused more than enough misery and strife in this
+town. Don't expect much help from anyone, least of all Gizmo. Too bad. You might've been
+able to change this town for the better.}
+{28010}{}{[Done.]}
+{29000}{}{What do you want?}
+{29010}{}{I need information about the gangers here.}
+{29020}{}{Sorry to disturb your private time. Go wank somewhere else.}
+{29030}{}{I need information about the town.}
+{30000}{}{Well, this is the Skum Pitt, a wretched hive of villainy and all that. Just west of here
+is Gizmo's, a big casino. Word is the games are rigged. A little south of here is the
+Crash House, run by Marcelles, where you can get a night's sleep for way too many caps.
+Past that is Killian's. Killian runs a general store, and he also enforces the law in
+this town - a good man. Then south of there you have Doc Morbid, whose operation is a
+little funny, if you take my meaning.}
+{30010}{}{[MANUAL: add player response/transition -> Goodbyes]}
+{31000}{}{Hello again. How can I help you?}
+{31010}{}{I need information about the gangers here.}
+{31020}{}{I need information about the town.}
+{31030}{}{Killian's asked me to clean up this town, and I'd like your help.}
+{32000}{}{Well it's about time. Lead on, my friend, and let's do some street sweeping. I'd
+recommend knocking over Gizmo, if I may.
+---
+Well it's about time. Lead on, my friend, and let's do some street sweeping. I'd
+recommend knocking over Gizmo, if I may.}
+{32010}{}{[MANUAL: add player response/transition -> TychoJoins]}
+

@@ -387,13 +387,13 @@ bool start()
     RegisterFaction(FACTION_NCR, "New California Republic", false);
     RegisterFaction(FACTION_VAULT_CITY, "Vault City", false);
     RegisterFaction(FACTION_RAIDERS, "Raiders", false);
+    RegisterFaction(FACTION_SKULZ, "Skulz Gang", false);
+    RegisterFaction(FACTION_VAULT_13, "Vault 13", false);
     //RegisterFaction(FACTION_MORDINOS, "Mordinos", false);
-    // RegisterFaction(FACTION_GUNRUNNERS, "Gun Runners", false); <- screw it
+    RegisterFaction(FACTION_GUNRUNNERS, "Gun Runners", false);
 
     // and some fixed playerdriven factions
-    RegisterFaction(FACTION_VAGRANTS, "The Tanker Vagrants", true);
-    RegisterFaction(FACTION_REDDING_GUTTERSNIPES, "The Redding Guttersnipes", true);
-
+    
     __TimeoutBattle = REAL_SECOND(10);   // do not move this to InitializeGame() - __TimeMultiplier is still 0 there!
 
     InitTents();
@@ -420,7 +420,7 @@ bool start()
 //    InitAmmoLog();
     InitCaveLog();    
     InitCompanions();
-    // InitCaravans();     // Uncomment if you want to have one caravan running Hub-Adytum-Lost Hills
+    InitCaravans();     // Uncomment if you want to have one caravan running Hub-Adytum-Lost Hills
     // reputations, alliances
     InitGroups();
     // scenariooos
@@ -1509,6 +1509,10 @@ bool critter_use_skill(Critter& cr, int skill, Critter@ targetCr, Item@ targetIt
     }
     case SKILL_LOOT_CRITTER:           // Loot critter, only targetCr is valid
     {
+        // NPCs must never loot player corpses, regardless of player drop settings.
+        if(targetCr.IsPlayer() && cr.IsNpc())
+            return true;
+
         // NO DROP MODE FOR PLAYERS
         if(targetCr.IsPlayer() && !_PlayerDropEnabled(targetCr, targetCr.GetMap()))
             return true;
@@ -1714,6 +1718,11 @@ bool critter_use_skill(Critter& cr, int skill, Critter@ targetCr, Item@ targetIt
                     }
                     cr.ToDead(deathAnim, null);
                 }
+            }
+            // NPCs must never loot player corpses, regardless of player drop settings.
+            else if(targetCr.IsPlayer() && cr.IsNpc())
+            {
+                cr.SayMsg(SAY_NETMSG, TEXTMSG_GAME, STR_USE_NOTHING);
             }
             // NO DROP MODE FOR PLAYERS
             else if(targetCr.IsPlayer() && !_PlayerDropEnabled(targetCr, targetCr.GetMap()))
@@ -2850,7 +2859,7 @@ void critter_dead(Critter& cr, Critter@ killer)
     bool isTrophy = (trophies.length() > 0);
 
     // remove armor/helmet/trophies on following death types
-    if((isArmor || isHelmet || isTrophy) &&
+    if(!cr.IsPlayer() && (isArmor || isHelmet || isTrophy) &&
        (cr.Anim2Dead == ANIM2_DEAD_FUSED || cr.Anim2Dead == ANIM2_DEAD_PULSE_DUST || cr.Anim2Dead == ANIM2_DEAD_EXPLODE) &&
        _CritCanDropItemsOnDead(cr))
     {
@@ -2880,7 +2889,7 @@ void critter_dead(Critter& cr, Critter@ killer)
 
     bool isArmorDestroyedDeath = (cr.Anim2Dead == ANIM2_DEAD_FUSED || cr.Anim2Dead == ANIM2_DEAD_PULSE_DUST || cr.Anim2Dead == ANIM2_DEAD_EXPLODE);
     //players' items deterioration for NO DROP
-    if(cr.IsPlayer() && !_PlayerDropEnabled(cr, map))
+    if(cr.IsPlayer())
     {
         if(isArmor)
             WearItem(cr, armor, ((Random(15, 20) + (isArmorDestroyedDeath?1:0))*MAX_DETERIORATION/100));
@@ -2952,7 +2961,7 @@ void critter_dead(Critter& cr, Critter@ killer)
     }
 
     // drop items immediately if pulsed
-    if(valid(map) && (cr.Anim2Dead == ANIM2_DEAD_PULSE_DUST || cr.Anim2Dead == ANIM2_DEAD_EXPLODE) && _CritCanDropItemsOnDead(cr))
+    if(!cr.IsPlayer() && valid(map) && (cr.Anim2Dead == ANIM2_DEAD_PULSE_DUST || cr.Anim2Dead == ANIM2_DEAD_EXPLODE) && _CritCanDropItemsOnDead(cr))
     {
         for(uint i = 0; i < items.length(); i++)
         {
@@ -2965,8 +2974,8 @@ void critter_dead(Critter& cr, Critter@ killer)
         MoveItems(items, map, cr.HexX, cr.HexY);
     }
     // 'loot-me'
-    // NO DROP MODE FOR PLAYERS
-    if(!_CritHasMode(cr, MODE_NO_LOOT) && !(cr.IsPlayer() && !_PlayerDropEnabled(cr, map)))
+    // NPCs must not be instructed to loot dead players.
+    if(!cr.IsPlayer() && !_CritHasMode(cr, MODE_NO_LOOT))
     {
         uint mappid = 0;
         if(valid(cr.GetMap()))
@@ -2992,7 +3001,7 @@ void critter_dead(Critter& cr, Critter@ killer)
                     if(crits[i].GetScriptId() == 0 || !(scriptName == "caravans@_CaravanGuard" || scriptName == "caravans@_CaravanDriver"))
                     {
                         DPlayerLog(cr, "Critter " + crits[i].Id + " will loot me.");
-                        AddWalkPlane(crits[i], 0, PLANE_LOOT, cr.Id, cr.HexX, cr.HexY, 6, true, 1);
+                        // -> DISABLED AUTO LOOT FROM DEAD PLAYERS AddWalkPlane(crits[i], 0, PLANE_LOOT, cr.Id, cr.HexX, cr.HexY, 6, true, 1);
                         break;
                     }
                 }
