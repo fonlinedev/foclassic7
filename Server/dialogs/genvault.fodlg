@@ -1,47 +1,49 @@
 [comment]
 
+
 [data]
 lang=engl
 
 [dialog]
 &
-1 1010 None 1 #
-0 1011 #
-2 1012 #
-3 1013 #
-4 1014 #
-5 1015 #
-6 1016 @
-2 1000 None 0 #
-0 1017 @
-3 1001 None 0 #
-0 1018 @
-4 1002 None 0 #
-0 1019 #
-0 1020 #
-7 1021 @
-7 1005 None 0 #
-0 1028 @
-5 1003 None 0 #
-0 1022 #
-0 1023 #
-8 1024 @
-8 1006 None 0 #
-0 1029 @
-6 1004 None 0 #
-9 1025 #
-10 1026 #
-11 1027 @
-9 1007 None 0 #
-0 1030 @
-10 1008 None 0 #
-0 1031 @
-11 1009 None 0 #
-0 1032 @
+1 1000 None 1 #
+2 1010 D _var p quest_water_chip = 99 D _param p REPUTATION_VAULT_13 > 0 #
+5 1020 D _var p quest_water_chip ! 99 D _param p REPUTATION_VAULT_13 < 0 #
+9 1030 D _var p quest_water_chip < 99 D _param p REPUTATION_VAULT_13 > 0 @
+2 2000 None 0 #
+0 2010 @
+3 3000 None 0 #
+0 3010 @
+4 4000 None 0 #
+0 4010 #
+0 4020 #
+7 4030 @
+7 5000 None 0 #
+0 5010 @
+5 6000 None 0 #
+0 6010 #
+0 6020 #
+8 6030 @
+8 7000 None 0 @
+6 8000 None 0 #
+9 8010 #
+10 8020 #
+11 8030 @
+9 9000 None 0 @
+10 10000 None 0 #
+0 10010 @
+11 11000 None 0 #
+0 11010 &
 
 [engl]
-{100}{}{Genvault}
-{1000}{}{Thank you for saving us.
+{100}{}{Vault 13 citizen}
+{200}{}{You see a citizen of Vault 13.}
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{player saved vault}
+{1020}{}{player hated}
+{1030}{}{standard}
+{2000}{}{Thank you for saving us.
 ---
 I was a little unsure that you could do it, but I trust you now.
 ---
@@ -56,68 +58,35 @@ know if I like that.
 You are a swell guy!
 ---
 You are a swell gal!}
-{1001}{}{[MANUAL: add NPC dialogue for diagram node 'Vault02']}
-{1002}{}{[MANUAL: add NPC dialogue for diagram node 'Vault00b']}
-{1003}{}{[MANUAL: add NPC dialogue for diagram node 'Vault00c']}
-{1004}{}{[MANUAL: add NPC dialogue for diagram node 'Vault00a']}
-{1005}{}{The Vault dweller refuses to talk to you.
+{2010}{}{[Done.]}
+{3000}{}{[MANUAL: add NPC dialogue for diagram node 'Vault02']}
+{3010}{}{[Done.]}
+{4000}{}{[MANUAL: add NPC dialogue for diagram node 'Vault00b']}
+{4010}{}{[MANUAL: add player response/transition -> Vault04]}
+{4020}{}{[MANUAL: add player response/transition -> Vault07]}
+{4030}{}{[MANUAL: add player response/transition -> Vault10]}
+{5000}{}{The Vault dweller refuses to talk to you.
 ---
 An empty stare meets your request to talk.}
-{1006}{}{You caused this! You probably broke the water chip in the first place, too!
----
-I hate you. I really, really hate you.
----
-The Vault dweller just sobs great big tears.
----
-Your request to talk is met by a cold stare.}
-{1007}{}{It's good to see you again.
----
-I'm glad you are doing well.
----
-You look OK to me. All those rumors must be untrue.
----
-Hi
----
-. Keep up the good work.}
-{1008}{}{Hmm. You still look human to me. It can't be all that bad outside.
----
-Hi
----
-.
----
-I hope you are doing well on your quest.
----
-See you around.
----
-Have you talked to the Overseer recently?}
-{1009}{}{I think you should leave me and my family alone,
+{5010}{}{[Done.]}
+{6000}{}{[MANUAL: add NPC dialogue for diagram node 'Vault00c']}
+{6010}{}{[MANUAL: add player response/transition -> Vault05]}
+{6020}{}{[MANUAL: add player response/transition -> Vault08]}
+{6030}{}{[MANUAL: add player response/transition -> Vault11]}
+{7000}{}{You caused this! You probably broke the water chip in the first place, too!@@I hate you. I really, really hate you.@@The Vault dweller just sobs great big tears.@@Your request to talk is met by a cold stare.}
+{8000}{}{[MANUAL: add NPC dialogue for diagram node 'Vault00a']}
+{8010}{}{[MANUAL: add player response/transition -> Vault03]}
+{8020}{}{[MANUAL: add player response/transition -> Vault06]}
+{8030}{}{[MANUAL: add player response/transition -> Vault09]}
+{9000}{}{It's good to see you again.@@I'm glad you are doing well.@@You look OK to me. All those rumors must be untrue.@@Hi. Keep up the good work.}
+{10000}{}{Hmm. You still look human to me. It can't be all that bad outside.@@Hi. I hope you are doing well on your quest.@@See you around.@@Have you talked to the Overseer recently?}
+{10010}{}{[Done.]}
+{11000}{}{I think you should leave me and my family alone,
 ---
 . It would be for the best.
 ---
 I think you should leave me and my family alone,
 ---
 I think you should leave me and my family alone,}
-{1010}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
-conditions.]}
-{1011}{}{[MANUAL: initial branch condition/greeting -> Vault00]}
-{1012}{}{[MANUAL: initial branch condition/greeting -> Vault01]}
-{1013}{}{[MANUAL: initial branch condition/greeting -> Vault02]}
-{1014}{}{[MANUAL: initial branch condition/greeting -> Vault00b]}
-{1015}{}{[MANUAL: initial branch condition/greeting -> Vault00c]}
-{1016}{}{[MANUAL: initial branch condition/greeting -> Vault00a]}
-{1017}{}{[Done.]}
-{1018}{}{[Done.]}
-{1019}{}{[MANUAL: add player response/transition -> Vault04]}
-{1020}{}{[MANUAL: add player response/transition -> Vault07]}
-{1021}{}{[MANUAL: add player response/transition -> Vault10]}
-{1022}{}{[MANUAL: add player response/transition -> Vault05]}
-{1023}{}{[MANUAL: add player response/transition -> Vault08]}
-{1024}{}{[MANUAL: add player response/transition -> Vault11]}
-{1025}{}{[MANUAL: add player response/transition -> Vault03]}
-{1026}{}{[MANUAL: add player response/transition -> Vault06]}
-{1027}{}{[MANUAL: add player response/transition -> Vault09]}
-{1028}{}{[Done.]}
-{1029}{}{[Done.]}
-{1030}{}{[Done.]}
-{1031}{}{[Done.]}
-{1032}{}{[Done.]}
+{11010}{}{[Done.]}
+
