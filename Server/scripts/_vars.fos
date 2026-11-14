@@ -267,6 +267,7 @@
 #define LVAR_q_shady_tandi                      (7328)
 #define LVAR_q_tandi_rescue                     (7329)
 #define LVAR_q_raiders_locid                    (7330)
+#define LVAR_quest_water_thief                  (7331)
 
 //	KLAMATH										#7600
 #define LVAR_q_klam_aldobooze                   (7601)
@@ -1895,6 +1896,17 @@ Shared Hub state:
    Raiders camp quest reveal.
 **********
 
+   $	7331	1	quest_water_thief	0	0	6	1
+**********
+   0 == inactive
+   1 == active
+   2 == gathered thief details
+   3 == confronted the thief
+   4 == thief admited
+   5 == thief killed
+   6 == completed
+   7 == failed
+**********
 
 //
 //	KLAMATH										#7600

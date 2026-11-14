@@ -2074,4 +2074,14 @@ bool d_NotHasCompanion(Critter& player, Critter@ npc, int pid)
     return !d_HasCompanion(player, npc, pid);
 }
 
+// check if the game time is between a time window
+bool d_IsBetweenHour(Critter& player, Critter@ npc, int begin, int end) {
+    uint16 year = 0, month = 0, day = 0, dayofweek = 0;
+    uint16 hour = 0, minute = 0, second = 0;
+
+    GetGameTime(__FullSecond, year, month, day, dayofweek, hour, minute, second);
+
+    return (hour >= begin && hour < end);
+}
+
 #endif // __DIALOG__ //
