@@ -22,7 +22,7 @@
 //
 
 // elevator 1-2-3
-CElevator Elevator(ELEVATOR_BOS_1234);
+CElevator Elevator(ELEVATOR_VAULT_123);
 
 
 #define PID_SKELETON       211
@@ -65,7 +65,6 @@ void map_init(Map& map, bool firstTime)
     // parse elevators floors (only for vault levels)
     if(map.GetProtoId() == MAP_Vault13Level1 ||
        map.GetProtoId() == MAP_Vault13Level2 ||
-       map.GetProtoId() == MAP_Vault13Level3 ||
        map.GetProtoId() == MAP_Vault13Level4)
     {
         uint16 x = 0, y = 0;
