@@ -1,0 +1,5459 @@
+[Header]
+Version              4
+MaxHexX              200
+MaxHexY              600
+WorkHexX             100
+WorkHexY             100
+ScriptModule         -
+ScriptFunc           -
+NoLogOut             0
+Time                 -1
+DayTime              5    5    5    5   
+DayColor0            18  18  53 
+DayColor1            18  18  53 
+DayColor2            18  18  53 
+DayColor3            18  18  53 
+
+[Tiles]
+tile       100  64             art\tiles\road02.frm
+tile       102  64             art\tiles\road02.frm
+tile       104  64             art\tiles\road02.frm
+tile       106  64             art\tiles\road02.frm
+tile       96   66             art\tiles\road02.frm
+tile       98   66             art\tiles\road02.frm
+tile       100  66             art\tiles\road02.frm
+tile       102  66             art\tiles\road02.frm
+tile       104  66             art\tiles\road02.frm
+tile       106  66             art\tiles\road02.frm
+tile       94   68             art\tiles\road02.frm
+tile       96   68             art\tiles\road02.frm
+tile       98   68             art\tiles\road02.frm
+tile       100  68             art\tiles\road02.frm
+tile       102  68             art\tiles\road02.frm
+tile       104  68             art\tiles\road02.frm
+tile       106  68             art\tiles\road02.frm
+tile       90   70             art\tiles\road02.frm
+tile       92   70             art\tiles\road02.frm
+tile       94   70             art\tiles\road02.frm
+tile       96   70             art\tiles\road02.frm
+tile       98   70             art\tiles\road02.frm
+tile       100  70             art\tiles\road02.frm
+tile       102  70             art\tiles\road02.frm
+tile       104  70             art\tiles\road02.frm
+tile       106  70             art\tiles\road02.frm
+tile       108  70             art\tiles\road02.frm
+tile       86   72             art\tiles\road02.frm
+tile       88   72             art\tiles\road02.frm
+tile       90   72             art\tiles\road02.frm
+tile       92   72             art\tiles\road02.frm
+tile       94   72             art\tiles\road02.frm
+tile       96   72             art\tiles\road02.frm
+tile       98   72             art\tiles\road02.frm
+tile       100  72             art\tiles\road02.frm
+tile       102  72             art\tiles\road02.frm
+tile       104  72             art\tiles\road02.frm
+tile       106  72             art\tiles\road02.frm
+tile       108  72             art\tiles\road02.frm
+tile       110  72             art\tiles\road02.frm
+tile       84   74             art\tiles\road02.frm
+tile       86   74             art\tiles\road02.frm
+tile       88   74             art\tiles\road02.frm
+tile       90   74             art\tiles\road02.frm
+tile       92   74             art\tiles\road02.frm
+tile       94   74             art\tiles\road02.frm
+tile       96   74             art\tiles\road02.frm
+tile       98   74             art\tiles\road02.frm
+tile       100  74             art\tiles\road02.frm
+tile       102  74             art\tiles\road02.frm
+tile       104  74             art\tiles\road02.frm
+tile       106  74             art\tiles\road02.frm
+tile       108  74             art\tiles\road02.frm
+tile       110  74             art\tiles\road02.frm
+tile       112  74             art\tiles\road02.frm
+tile       80   76             art\tiles\road02.frm
+tile       82   76             art\tiles\road02.frm
+tile       84   76             art\tiles\road02.frm
+tile       86   76             art\tiles\road02.frm
+tile       88   76             art\tiles\road02.frm
+tile       90   76             art\tiles\road02.frm
+tile       92   76             art\tiles\road02.frm
+tile       94   76             art\tiles\road02.frm
+tile       96   76             art\tiles\road02.frm
+tile       98   76             art\tiles\road02.frm
+tile       100  76             art\tiles\road02.frm
+tile       102  76             art\tiles\road02.frm
+tile       104  76             art\tiles\road02.frm
+tile       106  76             art\tiles\road02.frm
+tile       108  76             art\tiles\road02.frm
+tile       110  76             art\tiles\road02.frm
+tile       112  76             art\tiles\road02.frm
+tile       114  76             art\tiles\road02.frm
+tile       72   78             art\tiles\road02.frm
+tile       74   78             art\tiles\road02.frm
+tile       76   78             art\tiles\road02.frm
+tile       78   78             art\tiles\road02.frm
+tile       80   78             art\tiles\road02.frm
+tile       82   78             art\tiles\road02.frm
+tile       84   78             art\tiles\road02.frm
+tile       86   78             art\tiles\road02.frm
+tile       88   78             art\tiles\road02.frm
+tile       90   78             art\tiles\road02.frm
+tile       92   78             art\tiles\road02.frm
+tile       94   78             art\tiles\road02.frm
+tile       96   78             art\tiles\road02.frm
+tile       98   78             art\tiles\road02.frm
+tile       100  78             art\tiles\road02.frm
+tile       102  78             art\tiles\road02.frm
+tile       104  78             art\tiles\road02.frm
+tile       106  78             art\tiles\road02.frm
+tile       108  78             art\tiles\road02.frm
+tile       110  78             art\tiles\road02.frm
+tile       112  78             art\tiles\road02.frm
+tile       114  78             art\tiles\road02.frm
+tile       116  78             art\tiles\road02.frm
+tile       68   80             art\tiles\road02.frm
+tile       70   80             art\tiles\road02.frm
+tile       72   80             art\tiles\road02.frm
+tile       74   80             art\tiles\road02.frm
+tile       76   80             art\tiles\road02.frm
+tile       78   80             art\tiles\road02.frm
+tile       80   80             art\tiles\road02.frm
+tile       82   80             art\tiles\road02.frm
+tile       84   80             art\tiles\road02.frm
+tile       86   80             art\tiles\road02.frm
+tile       88   80             art\tiles\road02.frm
+tile       90   80             art\tiles\road02.frm
+tile       92   80             art\tiles\road02.frm
+tile       94   80             art\tiles\road02.frm
+tile       96   80             art\tiles\road02.frm
+tile       98   80             art\tiles\road02.frm
+tile       100  80             art\tiles\road02.frm
+tile       102  80             art\tiles\road02.frm
+tile       104  80             art\tiles\road02.frm
+tile       106  80             art\tiles\road02.frm
+tile       108  80             art\tiles\road02.frm
+tile       110  80             art\tiles\road02.frm
+tile       112  80             art\tiles\road02.frm
+tile       114  80             art\tiles\road02.frm
+tile       116  80             art\tiles\road02.frm
+tile       64   82             art\tiles\road02.frm
+tile       66   82             art\tiles\road02.frm
+tile       68   82             art\tiles\road02.frm
+tile       70   82             art\tiles\road02.frm
+tile       72   82             art\tiles\road02.frm
+tile       74   82             art\tiles\road02.frm
+tile       76   82             art\tiles\road02.frm
+tile       78   82             art\tiles\road02.frm
+tile       80   82             art\tiles\road02.frm
+tile       82   82             art\tiles\road02.frm
+tile       84   82             art\tiles\road02.frm
+tile       86   82             art\tiles\road02.frm
+tile       88   82             art\tiles\road02.frm
+tile       90   82             art\tiles\road02.frm
+tile       92   82             art\tiles\road02.frm
+tile       94   82             art\tiles\road02.frm
+tile       96   82             art\tiles\road02.frm
+tile       98   82             art\tiles\road02.frm
+tile       100  82             art\tiles\road02.frm
+tile       102  82             art\tiles\road02.frm
+tile       104  82             art\tiles\road02.frm
+tile       106  82             art\tiles\road02.frm
+tile       108  82             art\tiles\road02.frm
+tile       110  82             art\tiles\road02.frm
+tile       112  82             art\tiles\road02.frm
+tile       114  82             art\tiles\road02.frm
+tile       116  82             art\tiles\road02.frm
+tile       118  82             art\tiles\road02.frm
+tile       62   84             art\tiles\road02.frm
+tile       64   84             art\tiles\road02.frm
+tile       66   84             art\tiles\road02.frm
+tile       68   84             art\tiles\road02.frm
+tile       70   84             art\tiles\road02.frm
+tile       72   84             art\tiles\road02.frm
+tile       74   84             art\tiles\road02.frm
+tile       76   84             art\tiles\road02.frm
+tile       78   84             art\tiles\road02.frm
+tile       80   84             art\tiles\road02.frm
+tile       82   84             art\tiles\road02.frm
+tile       84   84             art\tiles\road02.frm
+tile       86   84             art\tiles\road02.frm
+tile       88   84             art\tiles\road02.frm
+tile       90   84             art\tiles\road02.frm
+tile       92   84             art\tiles\road02.frm
+tile       94   84             art\tiles\road02.frm
+tile       96   84             art\tiles\road02.frm
+tile       98   84             art\tiles\road02.frm
+tile       100  84             art\tiles\road02.frm
+tile       102  84             art\tiles\road02.frm
+tile       104  84             art\tiles\road02.frm
+tile       106  84             art\tiles\road02.frm
+tile       108  84             art\tiles\road02.frm
+tile       110  84             art\tiles\road02.frm
+tile       112  84             art\tiles\road02.frm
+tile       114  84             art\tiles\road02.frm
+tile       116  84             art\tiles\road02.frm
+tile       118  84             art\tiles\road02.frm
+tile       62   86             art\tiles\road02.frm
+tile       64   86             art\tiles\road02.frm
+tile       66   86             art\tiles\road02.frm
+tile       68   86             art\tiles\road02.frm
+tile       70   86             art\tiles\road02.frm
+tile       72   86             art\tiles\road02.frm
+tile       74   86             art\tiles\road02.frm
+tile       76   86             art\tiles\road02.frm
+tile       78   86             art\tiles\road02.frm
+tile       80   86             art\tiles\road02.frm
+tile       82   86             art\tiles\road02.frm
+tile       84   86             art\tiles\road02.frm
+tile       86   86             art\tiles\road02.frm
+tile       88   86             art\tiles\road02.frm
+tile       90   86             art\tiles\road02.frm
+tile       92   86             art\tiles\road02.frm
+tile       94   86             art\tiles\road02.frm
+tile       96   86             art\tiles\road02.frm
+tile       98   86             art\tiles\road02.frm
+tile       100  86             art\tiles\road02.frm
+tile       102  86             art\tiles\road02.frm
+tile       104  86             art\tiles\road02.frm
+tile       106  86             art\tiles\road02.frm
+tile       108  86             art\tiles\road02.frm
+tile       110  86             art\tiles\road02.frm
+tile       112  86             art\tiles\road02.frm
+tile       114  86             art\tiles\road02.frm
+tile       116  86             art\tiles\road02.frm
+tile       118  86             art\tiles\road02.frm
+tile       120  86             art\tiles\road02.frm
+tile       122  86             art\tiles\road02.frm
+tile       62   88             art\tiles\road02.frm
+tile       64   88             art\tiles\road02.frm
+tile       66   88             art\tiles\road02.frm
+tile       68   88             art\tiles\road02.frm
+tile       70   88             art\tiles\road02.frm
+tile       72   88             art\tiles\road02.frm
+tile       74   88             art\tiles\road02.frm
+tile       76   88             art\tiles\road02.frm
+tile       78   88             art\tiles\road02.frm
+tile       80   88             art\tiles\road02.frm
+tile       82   88             art\tiles\road02.frm
+tile       84   88             art\tiles\road02.frm
+tile       86   88             art\tiles\road02.frm
+tile       88   88             art\tiles\road02.frm
+tile       90   88             art\tiles\road02.frm
+tile       92   88             art\tiles\road02.frm
+tile       94   88             art\tiles\road02.frm
+tile       96   88             art\tiles\road02.frm
+tile       98   88             art\tiles\road02.frm
+tile       100  88             art\tiles\road02.frm
+tile       102  88             art\tiles\road02.frm
+tile       104  88             art\tiles\road02.frm
+tile       106  88             art\tiles\road02.frm
+tile       108  88             art\tiles\road02.frm
+tile       110  88             art\tiles\road02.frm
+tile       112  88             art\tiles\road02.frm
+tile       114  88             art\tiles\road02.frm
+tile       116  88             art\tiles\road02.frm
+tile       118  88             art\tiles\road02.frm
+tile       120  88             art\tiles\road02.frm
+tile       122  88             art\tiles\road02.frm
+tile       66   90             art\tiles\road02.frm
+tile       68   90             art\tiles\road02.frm
+tile       70   90             art\tiles\road02.frm
+tile       72   90             art\tiles\road02.frm
+tile       74   90             art\tiles\road02.frm
+tile       76   90             art\tiles\road02.frm
+tile       78   90             art\tiles\road02.frm
+tile       80   90             art\tiles\road02.frm
+tile       82   90             art\tiles\road02.frm
+tile       84   90             art\tiles\road02.frm
+tile       86   90             art\tiles\road02.frm
+tile       88   90             art\tiles\road02.frm
+tile       90   90             art\tiles\road02.frm
+tile       92   90             art\tiles\road02.frm
+tile       94   90             art\tiles\road02.frm
+tile       96   90             art\tiles\road02.frm
+tile       98   90             art\tiles\road02.frm
+tile       100  90             art\tiles\road02.frm
+tile       102  90             art\tiles\road02.frm
+tile       104  90             art\tiles\road02.frm
+tile       106  90             art\tiles\road02.frm
+tile       108  90             art\tiles\road02.frm
+tile       110  90             art\tiles\road02.frm
+tile       112  90             art\tiles\road02.frm
+tile       114  90             art\tiles\road02.frm
+tile       116  90             art\tiles\road02.frm
+tile       118  90             art\tiles\road02.frm
+tile       120  90             art\tiles\road02.frm
+tile       122  90             art\tiles\road02.frm
+tile       68   92             art\tiles\road02.frm
+tile       70   92             art\tiles\road02.frm
+tile       72   92             art\tiles\road02.frm
+tile       74   92             art\tiles\road02.frm
+tile       76   92             art\tiles\road02.frm
+tile       78   92             art\tiles\road02.frm
+tile       80   92             art\tiles\road02.frm
+tile       82   92             art\tiles\road02.frm
+tile       84   92             art\tiles\road02.frm
+tile       86   92             art\tiles\road02.frm
+tile       88   92             art\tiles\road02.frm
+tile       90   92             art\tiles\road02.frm
+tile       92   92             art\tiles\road02.frm
+tile       94   92             art\tiles\road02.frm
+tile       96   92             art\tiles\road02.frm
+tile       98   92             art\tiles\road02.frm
+tile       100  92             art\tiles\road02.frm
+tile       102  92             art\tiles\road02.frm
+tile       104  92             art\tiles\road02.frm
+tile       106  92             art\tiles\road02.frm
+tile       108  92             art\tiles\road02.frm
+tile       110  92             art\tiles\road02.frm
+tile       112  92             art\tiles\road02.frm
+tile       114  92             art\tiles\road02.frm
+tile       116  92             art\tiles\road02.frm
+tile       118  92             art\tiles\road02.frm
+tile       120  92             art\tiles\road02.frm
+tile       122  92             art\tiles\road02.frm
+tile       124  92             art\tiles\road02.frm
+tile       126  92             art\tiles\road02.frm
+tile       68   94             art\tiles\road02.frm
+tile       70   94             art\tiles\road02.frm
+tile       72   94             art\tiles\road02.frm
+tile       74   94             art\tiles\road02.frm
+tile       76   94             art\tiles\road02.frm
+tile       78   94             art\tiles\road02.frm
+tile       80   94             art\tiles\road02.frm
+tile       82   94             art\tiles\road02.frm
+tile       84   94             art\tiles\road02.frm
+tile       86   94             art\tiles\road02.frm
+tile       88   94             art\tiles\road02.frm
+tile       90   94             art\tiles\cabrik01.frm
+tile       92   94             art\tiles\cabrik01.frm
+tile       94   94             art\tiles\cabrik01.frm
+tile       96   94             art\tiles\cabrik01.frm
+tile       98   94             art\tiles\cabrik01.frm
+tile       100  94             art\tiles\cabrik01.frm
+tile       102  94             art\tiles\cabrik01.frm
+tile       104  94             art\tiles\cabrik01.frm
+tile       106  94             art\tiles\cabrik01.frm
+tile       108  94             art\tiles\cabrik01.frm
+tile       110  94             art\tiles\cabrik01.frm
+tile       112  94             art\tiles\cabrik01.frm
+tile       114  94             art\tiles\road02.frm
+tile       116  94             art\tiles\road02.frm
+tile       118  94             art\tiles\road02.frm
+tile       120  94             art\tiles\road02.frm
+tile       122  94             art\tiles\road02.frm
+tile       124  94             art\tiles\road02.frm
+tile       126  94             art\tiles\road02.frm
+tile       128  94             art\tiles\road02.frm
+tile       70   96             art\tiles\road02.frm
+tile       72   96             art\tiles\road02.frm
+tile       74   96             art\tiles\road02.frm
+tile       76   96             art\tiles\road02.frm
+tile       78   96             art\tiles\road02.frm
+tile       80   96             art\tiles\road02.frm
+tile       82   96             art\tiles\road02.frm
+tile       84   96             art\tiles\road02.frm
+tile       86   96             art\tiles\road02.frm
+tile       88   96             art\tiles\road02.frm
+tile       90   96             art\tiles\cabrik01.frm
+tile       92   96             art\tiles\cabrik01.frm
+tile       94   96             art\tiles\cabrik01.frm
+tile       96   96             art\tiles\cabrik01.frm
+tile       98   96             art\tiles\cabrik01.frm
+tile       100  96             art\tiles\cabrik01.frm
+tile       102  96             art\tiles\cabrik01.frm
+tile       104  96             art\tiles\cabrik01.frm
+tile       106  96             art\tiles\cabrik01.frm
+tile       108  96             art\tiles\cabrik01.frm
+tile       110  96             art\tiles\cabrik01.frm
+tile       112  96             art\tiles\cabrik01.frm
+tile       114  96             art\tiles\road02.frm
+tile       116  96             art\tiles\road02.frm
+tile       118  96             art\tiles\road02.frm
+tile       120  96             art\tiles\road02.frm
+tile       122  96             art\tiles\road02.frm
+tile       124  96             art\tiles\road02.frm
+tile       126  96             art\tiles\road02.frm
+tile       128  96             art\tiles\road02.frm
+tile       70   98             art\tiles\road02.frm
+tile       72   98             art\tiles\road02.frm
+tile       74   98             art\tiles\road02.frm
+tile       76   98             art\tiles\road02.frm
+tile       78   98             art\tiles\road02.frm
+tile       80   98             art\tiles\road02.frm
+tile       82   98             art\tiles\road02.frm
+tile       84   98             art\tiles\road02.frm
+tile       86   98             art\tiles\road02.frm
+tile       88   98             art\tiles\road02.frm
+tile       90   98             art\tiles\cabrik01.frm
+tile       92   98             art\tiles\cabrik01.frm
+tile       94   98             art\tiles\cabrik01.frm
+tile       96   98             art\tiles\cabrik01.frm
+tile       98   98             art\tiles\cabrik01.frm
+tile       100  98             art\tiles\cabrik01.frm
+tile       102  98             art\tiles\cabrik01.frm
+tile       104  98             art\tiles\cabrik01.frm
+tile       106  98             art\tiles\cabrik01.frm
+tile       108  98             art\tiles\cabrik01.frm
+tile       110  98             art\tiles\cabrik01.frm
+tile       112  98             art\tiles\cabrik01.frm
+tile       114  98             art\tiles\road02.frm
+tile       116  98             art\tiles\road02.frm
+tile       118  98             art\tiles\road02.frm
+tile       120  98             art\tiles\road02.frm
+tile       122  98             art\tiles\road02.frm
+tile       124  98             art\tiles\road02.frm
+tile       126  98             art\tiles\road02.frm
+tile       128  98             art\tiles\road02.frm
+tile       130  98             art\tiles\road02.frm
+tile       72   100            art\tiles\road02.frm
+tile       74   100            art\tiles\road02.frm
+tile       76   100            art\tiles\road02.frm
+tile       78   100            art\tiles\road02.frm
+tile       80   100            art\tiles\road02.frm
+tile       82   100            art\tiles\road02.frm
+tile       84   100            art\tiles\road02.frm
+tile       86   100            art\tiles\road02.frm
+tile       88   100            art\tiles\road02.frm
+tile       90   100            art\tiles\cabrik01.frm
+tile       92   100            art\tiles\cabrik01.frm
+tile       94   100            art\tiles\cabrik01.frm
+tile       96   100            art\tiles\cabrik01.frm
+tile       98   100            art\tiles\cabrik01.frm
+tile       100  100            art\tiles\cabrik01.frm
+tile       102  100            art\tiles\cabrik01.frm
+tile       104  100            art\tiles\cabrik01.frm
+tile       106  100            art\tiles\cabrik01.frm
+tile       108  100            art\tiles\cabrik01.frm
+tile       110  100            art\tiles\cabrik01.frm
+tile       112  100            art\tiles\cabrik01.frm
+tile       114  100            art\tiles\road02.frm
+tile       116  100            art\tiles\road02.frm
+tile       118  100            art\tiles\road02.frm
+tile       120  100            art\tiles\road02.frm
+tile       122  100            art\tiles\road02.frm
+tile       124  100            art\tiles\road02.frm
+tile       126  100            art\tiles\road02.frm
+tile       128  100            art\tiles\road02.frm
+tile       130  100            art\tiles\road02.frm
+tile       132  100            art\tiles\road02.frm
+tile       74   102            art\tiles\road02.frm
+tile       76   102            art\tiles\road02.frm
+tile       78   102            art\tiles\road02.frm
+tile       80   102            art\tiles\road02.frm
+tile       82   102            art\tiles\road02.frm
+tile       84   102            art\tiles\road02.frm
+tile       86   102            art\tiles\road02.frm
+tile       88   102            art\tiles\road02.frm
+tile       90   102            art\tiles\cabrik01.frm
+tile       92   102            art\tiles\cabrik01.frm
+tile       94   102            art\tiles\cabrik01.frm
+tile       96   102            art\tiles\cabrik01.frm
+tile       98   102            art\tiles\cabrik01.frm
+tile       100  102            art\tiles\cabrik01.frm
+tile       102  102            art\tiles\cabrik01.frm
+tile       104  102            art\tiles\cabrik01.frm
+tile       106  102            art\tiles\cabrik01.frm
+tile       108  102            art\tiles\cabrik01.frm
+tile       110  102            art\tiles\cabrik01.frm
+tile       112  102            art\tiles\cabrik01.frm
+tile       114  102            art\tiles\road02.frm
+tile       116  102            art\tiles\road02.frm
+tile       118  102            art\tiles\road02.frm
+tile       120  102            art\tiles\road02.frm
+tile       122  102            art\tiles\road02.frm
+tile       124  102            art\tiles\road02.frm
+tile       126  102            art\tiles\road02.frm
+tile       128  102            art\tiles\road02.frm
+tile       130  102            art\tiles\road02.frm
+tile       132  102            art\tiles\road02.frm
+tile       76   104            art\tiles\road02.frm
+tile       78   104            art\tiles\road02.frm
+tile       80   104            art\tiles\road02.frm
+tile       82   104            art\tiles\road02.frm
+tile       84   104            art\tiles\road02.frm
+tile       86   104            art\tiles\road02.frm
+tile       88   104            art\tiles\road02.frm
+tile       90   104            art\tiles\cabrik01.frm
+tile       92   104            art\tiles\cabrik01.frm
+tile       94   104            art\tiles\cabrik01.frm
+tile       96   104            art\tiles\cabrik01.frm
+tile       98   104            art\tiles\cabrik01.frm
+tile       100  104            art\tiles\cabrik01.frm
+tile       102  104            art\tiles\cabrik01.frm
+tile       104  104            art\tiles\cabrik01.frm
+tile       106  104            art\tiles\cabrik01.frm
+tile       108  104            art\tiles\cabrik01.frm
+tile       110  104            art\tiles\cabrik01.frm
+tile       112  104            art\tiles\cabrik01.frm
+tile       114  104            art\tiles\road02.frm
+tile       116  104            art\tiles\road02.frm
+tile       118  104            art\tiles\road02.frm
+tile       120  104            art\tiles\road02.frm
+tile       122  104            art\tiles\road02.frm
+tile       124  104            art\tiles\road02.frm
+tile       126  104            art\tiles\road02.frm
+tile       128  104            art\tiles\road02.frm
+tile       130  104            art\tiles\road02.frm
+tile       132  104            art\tiles\road02.frm
+tile       76   106            art\tiles\road02.frm
+tile       78   106            art\tiles\road02.frm
+tile       80   106            art\tiles\road02.frm
+tile       82   106            art\tiles\road02.frm
+tile       84   106            art\tiles\road02.frm
+tile       86   106            art\tiles\road02.frm
+tile       88   106            art\tiles\road02.frm
+tile       90   106            art\tiles\cabrik01.frm
+tile       92   106            art\tiles\cabrik01.frm
+tile       94   106            art\tiles\cabrik01.frm
+tile       96   106            art\tiles\cabrik01.frm
+tile       98   106            art\tiles\cabrik01.frm
+tile       100  106            art\tiles\cabrik01.frm
+tile       102  106            art\tiles\cabrik01.frm
+tile       104  106            art\tiles\cabrik01.frm
+tile       106  106            art\tiles\cabrik01.frm
+tile       108  106            art\tiles\cabrik01.frm
+tile       110  106            art\tiles\cabrik01.frm
+tile       112  106            art\tiles\cabrik01.frm
+tile       114  106            art\tiles\road02.frm
+tile       116  106            art\tiles\road02.frm
+tile       118  106            art\tiles\road02.frm
+tile       120  106            art\tiles\road02.frm
+tile       122  106            art\tiles\road02.frm
+tile       124  106            art\tiles\road02.frm
+tile       126  106            art\tiles\road02.frm
+tile       128  106            art\tiles\road02.frm
+tile       130  106            art\tiles\road02.frm
+tile       132  106            art\tiles\road02.frm
+tile       134  106            art\tiles\road02.frm
+tile       76   108            art\tiles\road02.frm
+tile       78   108            art\tiles\road02.frm
+tile       80   108            art\tiles\road02.frm
+tile       82   108            art\tiles\road02.frm
+tile       84   108            art\tiles\road02.frm
+tile       86   108            art\tiles\road02.frm
+tile       88   108            art\tiles\road02.frm
+tile       90   108            art\tiles\cabrik01.frm
+tile       92   108            art\tiles\cabrik01.frm
+tile       94   108            art\tiles\cabrik01.frm
+tile       96   108            art\tiles\cabrik01.frm
+tile       98   108            art\tiles\cabrik01.frm
+tile       100  108            art\tiles\cabrik01.frm
+tile       102  108            art\tiles\cabrik01.frm
+tile       104  108            art\tiles\cabrik01.frm
+tile       106  108            art\tiles\cabrik01.frm
+tile       108  108            art\tiles\cabrik01.frm
+tile       110  108            art\tiles\cabrik01.frm
+tile       112  108            art\tiles\cabrik01.frm
+tile       114  108            art\tiles\road02.frm
+tile       116  108            art\tiles\road02.frm
+tile       118  108            art\tiles\road02.frm
+tile       120  108            art\tiles\road02.frm
+tile       122  108            art\tiles\road02.frm
+tile       124  108            art\tiles\road02.frm
+tile       126  108            art\tiles\road02.frm
+tile       128  108            art\tiles\road02.frm
+tile       130  108            art\tiles\road02.frm
+tile       132  108            art\tiles\road02.frm
+tile       134  108            art\tiles\road02.frm
+tile       76   110            art\tiles\road02.frm
+tile       78   110            art\tiles\road02.frm
+tile       80   110            art\tiles\road02.frm
+tile       82   110            art\tiles\road02.frm
+tile       84   110            art\tiles\road02.frm
+tile       86   110            art\tiles\road02.frm
+tile       88   110            art\tiles\road02.frm
+tile       90   110            art\tiles\road02.frm
+tile       92   110            art\tiles\road02.frm
+tile       94   110            art\tiles\road02.frm
+tile       96   110            art\tiles\road02.frm
+tile       98   110            art\tiles\road02.frm
+tile       100  110            art\tiles\road02.frm
+tile       102  110            art\tiles\road02.frm
+tile       104  110            art\tiles\road02.frm
+tile       106  110            art\tiles\road02.frm
+tile       108  110            art\tiles\road02.frm
+tile       110  110            art\tiles\road02.frm
+tile       112  110            art\tiles\road02.frm
+tile       114  110            art\tiles\road02.frm
+tile       116  110            art\tiles\road02.frm
+tile       118  110            art\tiles\road02.frm
+tile       120  110            art\tiles\road02.frm
+tile       122  110            art\tiles\road02.frm
+tile       124  110            art\tiles\road02.frm
+tile       126  110            art\tiles\road02.frm
+tile       128  110            art\tiles\road02.frm
+tile       130  110            art\tiles\road02.frm
+tile       132  110            art\tiles\road02.frm
+tile       134  110            art\tiles\road02.frm
+tile       80   112            art\tiles\road02.frm
+tile       82   112            art\tiles\road02.frm
+tile       84   112            art\tiles\road02.frm
+tile       86   112            art\tiles\road02.frm
+tile       88   112            art\tiles\road02.frm
+tile       90   112            art\tiles\road02.frm
+tile       92   112            art\tiles\road02.frm
+tile       94   112            art\tiles\road02.frm
+tile       96   112            art\tiles\road02.frm
+tile       98   112            art\tiles\road02.frm
+tile       100  112            art\tiles\road02.frm
+tile       102  112            art\tiles\road02.frm
+tile       104  112            art\tiles\road02.frm
+tile       106  112            art\tiles\road02.frm
+tile       108  112            art\tiles\road02.frm
+tile       110  112            art\tiles\road02.frm
+tile       112  112            art\tiles\road02.frm
+tile       114  112            art\tiles\road02.frm
+tile       116  112            art\tiles\road02.frm
+tile       118  112            art\tiles\road02.frm
+tile       120  112            art\tiles\road02.frm
+tile       122  112            art\tiles\road02.frm
+tile       124  112            art\tiles\road02.frm
+tile       126  112            art\tiles\road02.frm
+tile       128  112            art\tiles\road02.frm
+tile       130  112            art\tiles\road02.frm
+tile       80   114            art\tiles\road02.frm
+tile       82   114            art\tiles\road02.frm
+tile       84   114            art\tiles\road02.frm
+tile       86   114            art\tiles\road02.frm
+tile       88   114            art\tiles\road02.frm
+tile       90   114            art\tiles\road02.frm
+tile       92   114            art\tiles\road02.frm
+tile       94   114            art\tiles\road02.frm
+tile       96   114            art\tiles\road02.frm
+tile       98   114            art\tiles\road02.frm
+tile       100  114            art\tiles\road02.frm
+tile       102  114            art\tiles\road02.frm
+tile       104  114            art\tiles\road02.frm
+tile       106  114            art\tiles\road02.frm
+tile       108  114            art\tiles\road02.frm
+tile       110  114            art\tiles\road02.frm
+tile       112  114            art\tiles\road02.frm
+tile       114  114            art\tiles\road02.frm
+tile       116  114            art\tiles\road02.frm
+tile       118  114            art\tiles\road02.frm
+tile       120  114            art\tiles\road02.frm
+tile       122  114            art\tiles\road02.frm
+tile       124  114            art\tiles\road02.frm
+tile       82   116            art\tiles\road02.frm
+tile       84   116            art\tiles\road02.frm
+tile       86   116            art\tiles\road02.frm
+tile       88   116            art\tiles\road02.frm
+tile       90   116            art\tiles\road02.frm
+tile       92   116            art\tiles\road02.frm
+tile       94   116            art\tiles\road02.frm
+tile       96   116            art\tiles\road02.frm
+tile       98   116            art\tiles\road02.frm
+tile       100  116            art\tiles\road02.frm
+tile       102  116            art\tiles\road02.frm
+tile       104  116            art\tiles\road02.frm
+tile       106  116            art\tiles\road02.frm
+tile       108  116            art\tiles\road02.frm
+tile       110  116            art\tiles\road02.frm
+tile       112  116            art\tiles\road02.frm
+tile       114  116            art\tiles\road02.frm
+tile       116  116            art\tiles\road02.frm
+tile       118  116            art\tiles\road02.frm
+tile       120  116            art\tiles\road02.frm
+tile       82   118            art\tiles\road02.frm
+tile       84   118            art\tiles\road02.frm
+tile       86   118            art\tiles\road02.frm
+tile       88   118            art\tiles\road02.frm
+tile       90   118            art\tiles\road02.frm
+tile       92   118            art\tiles\road02.frm
+tile       94   118            art\tiles\road02.frm
+tile       96   118            art\tiles\road02.frm
+tile       98   118            art\tiles\road02.frm
+tile       100  118            art\tiles\road02.frm
+tile       102  118            art\tiles\road02.frm
+tile       104  118            art\tiles\road02.frm
+tile       106  118            art\tiles\road02.frm
+tile       108  118            art\tiles\road02.frm
+tile       110  118            art\tiles\road02.frm
+tile       112  118            art\tiles\road02.frm
+tile       114  118            art\tiles\road02.frm
+tile       116  118            art\tiles\road02.frm
+tile       84   120            art\tiles\road02.frm
+tile       86   120            art\tiles\road02.frm
+tile       88   120            art\tiles\road02.frm
+tile       90   120            art\tiles\road02.frm
+tile       92   120            art\tiles\road02.frm
+tile       94   120            art\tiles\road02.frm
+tile       96   120            art\tiles\road02.frm
+tile       98   120            art\tiles\road02.frm
+tile       100  120            art\tiles\road02.frm
+tile       102  120            art\tiles\road02.frm
+tile       104  120            art\tiles\road02.frm
+tile       106  120            art\tiles\road02.frm
+tile       108  120            art\tiles\road02.frm
+tile       110  120            art\tiles\road02.frm
+tile       112  120            art\tiles\road02.frm
+tile       84   122            art\tiles\road02.frm
+tile       86   122            art\tiles\road02.frm
+tile       88   122            art\tiles\road02.frm
+tile       90   122            art\tiles\road02.frm
+tile       92   122            art\tiles\road02.frm
+tile       94   122            art\tiles\road02.frm
+tile       96   122            art\tiles\road02.frm
+tile       98   122            art\tiles\road02.frm
+tile       100  122            art\tiles\road02.frm
+tile       102  122            art\tiles\road02.frm
+tile       104  122            art\tiles\road02.frm
+tile       106  122            art\tiles\road02.frm
+tile       84   124            art\tiles\road02.frm
+tile       86   124            art\tiles\road02.frm
+tile       88   124            art\tiles\road02.frm
+tile       90   124            art\tiles\road02.frm
+tile       92   124            art\tiles\road02.frm
+tile       94   124            art\tiles\road02.frm
+tile       96   124            art\tiles\road02.frm
+tile       98   124            art\tiles\road02.frm
+tile       100  124            art\tiles\road02.frm
+tile       102  124            art\tiles\road02.frm
+tile       88   126            art\tiles\road02.frm
+tile       90   126            art\tiles\road02.frm
+tile       92   126            art\tiles\road02.frm
+tile       94   126            art\tiles\road02.frm
+tile       88   128            art\tiles\road02.frm
+tile       90   128            art\tiles\road02.frm
+tile       92   128            art\tiles\road02.frm
+tile       102  262            art\tiles\road02.frm
+tile       104  262            art\tiles\road02.frm
+tile       106  262            art\tiles\road02.frm
+tile       100  264            art\tiles\road02.frm
+tile       102  264            art\tiles\road02.frm
+tile       104  264            art\tiles\road02.frm
+tile       106  264            art\tiles\road02.frm
+tile       108  264            art\tiles\road02.frm
+tile       94   266            art\tiles\road02.frm
+tile       96   266            art\tiles\road02.frm
+tile       98   266            art\tiles\road02.frm
+tile       100  266            art\tiles\road02.frm
+tile       102  266            art\tiles\road02.frm
+tile       104  266            art\tiles\road02.frm
+tile       106  266            art\tiles\road02.frm
+tile       108  266            art\tiles\road02.frm
+tile       92   268            art\tiles\road02.frm
+tile       94   268            art\tiles\road02.frm
+tile       96   268            art\tiles\road02.frm
+tile       98   268            art\tiles\road02.frm
+tile       100  268            art\tiles\road02.frm
+tile       102  268            art\tiles\road02.frm
+tile       104  268            art\tiles\road02.frm
+tile       106  268            art\tiles\road02.frm
+tile       108  268            art\tiles\road02.frm
+tile       110  268            art\tiles\road02.frm
+tile       88   270            art\tiles\road02.frm
+tile       90   270            art\tiles\road02.frm
+tile       92   270            art\tiles\road02.frm
+tile       94   270            art\tiles\road02.frm
+tile       96   270            art\tiles\road02.frm
+tile       98   270            art\tiles\road02.frm
+tile       100  270            art\tiles\road02.frm
+tile       102  270            art\tiles\road02.frm
+tile       104  270            art\tiles\road02.frm
+tile       106  270            art\tiles\road02.frm
+tile       108  270            art\tiles\road02.frm
+tile       110  270            art\tiles\road02.frm
+tile       84   272            art\tiles\road02.frm
+tile       86   272            art\tiles\road02.frm
+tile       88   272            art\tiles\road02.frm
+tile       90   272            art\tiles\road02.frm
+tile       92   272            art\tiles\road02.frm
+tile       94   272            art\tiles\road02.frm
+tile       96   272            art\tiles\road02.frm
+tile       98   272            art\tiles\road02.frm
+tile       100  272            art\tiles\road02.frm
+tile       102  272            art\tiles\road02.frm
+tile       104  272            art\tiles\road02.frm
+tile       106  272            art\tiles\road02.frm
+tile       108  272            art\tiles\road02.frm
+tile       110  272            art\tiles\road02.frm
+tile       112  272            art\tiles\road02.frm
+tile       114  272            art\tiles\road02.frm
+tile       80   274            art\tiles\road02.frm
+tile       82   274            art\tiles\road02.frm
+tile       84   274            art\tiles\road02.frm
+tile       86   274            art\tiles\road02.frm
+tile       88   274            art\tiles\road02.frm
+tile       90   274            art\tiles\road02.frm
+tile       92   274            art\tiles\road02.frm
+tile       94   274            art\tiles\road02.frm
+tile       96   274            art\tiles\road02.frm
+tile       98   274            art\tiles\road02.frm
+tile       100  274            art\tiles\road02.frm
+tile       102  274            art\tiles\road02.frm
+tile       104  274            art\tiles\road02.frm
+tile       106  274            art\tiles\road02.frm
+tile       108  274            art\tiles\road02.frm
+tile       110  274            art\tiles\road02.frm
+tile       112  274            art\tiles\road02.frm
+tile       114  274            art\tiles\road02.frm
+tile       116  274            art\tiles\road02.frm
+tile       76   276            art\tiles\road02.frm
+tile       78   276            art\tiles\road02.frm
+tile       80   276            art\tiles\road02.frm
+tile       82   276            art\tiles\road02.frm
+tile       84   276            art\tiles\road02.frm
+tile       86   276            art\tiles\road02.frm
+tile       88   276            art\tiles\road02.frm
+tile       90   276            art\tiles\road02.frm
+tile       92   276            art\tiles\road02.frm
+tile       94   276            art\tiles\road02.frm
+tile       96   276            art\tiles\road02.frm
+tile       98   276            art\tiles\road02.frm
+tile       100  276            art\tiles\road02.frm
+tile       102  276            art\tiles\road02.frm
+tile       104  276            art\tiles\road02.frm
+tile       106  276            art\tiles\road02.frm
+tile       108  276            art\tiles\road02.frm
+tile       110  276            art\tiles\road02.frm
+tile       112  276            art\tiles\road02.frm
+tile       114  276            art\tiles\road02.frm
+tile       116  276            art\tiles\road02.frm
+tile       118  276            art\tiles\road02.frm
+tile       72   278            art\tiles\road02.frm
+tile       74   278            art\tiles\road02.frm
+tile       76   278            art\tiles\road02.frm
+tile       78   278            art\tiles\road02.frm
+tile       80   278            art\tiles\road02.frm
+tile       82   278            art\tiles\road02.frm
+tile       84   278            art\tiles\road02.frm
+tile       86   278            art\tiles\road02.frm
+tile       88   278            art\tiles\road02.frm
+tile       90   278            art\tiles\road02.frm
+tile       92   278            art\tiles\road02.frm
+tile       94   278            art\tiles\road02.frm
+tile       96   278            art\tiles\road02.frm
+tile       98   278            art\tiles\road02.frm
+tile       100  278            art\tiles\road02.frm
+tile       102  278            art\tiles\road02.frm
+tile       104  278            art\tiles\road02.frm
+tile       106  278            art\tiles\road02.frm
+tile       108  278            art\tiles\road02.frm
+tile       110  278            art\tiles\road02.frm
+tile       112  278            art\tiles\road02.frm
+tile       114  278            art\tiles\road02.frm
+tile       116  278            art\tiles\road02.frm
+tile       118  278            art\tiles\road02.frm
+tile       70   280            art\tiles\road02.frm
+tile       72   280            art\tiles\road02.frm
+tile       74   280            art\tiles\road02.frm
+tile       76   280            art\tiles\road02.frm
+tile       78   280            art\tiles\road02.frm
+tile       80   280            art\tiles\road02.frm
+tile       82   280            art\tiles\road02.frm
+tile       84   280            art\tiles\road02.frm
+tile       86   280            art\tiles\road02.frm
+tile       88   280            art\tiles\road02.frm
+tile       90   280            art\tiles\road02.frm
+tile       92   280            art\tiles\road02.frm
+tile       94   280            art\tiles\road02.frm
+tile       96   280            art\tiles\road02.frm
+tile       98   280            art\tiles\road02.frm
+tile       100  280            art\tiles\road02.frm
+tile       102  280            art\tiles\road02.frm
+tile       104  280            art\tiles\road02.frm
+tile       106  280            art\tiles\road02.frm
+tile       108  280            art\tiles\road02.frm
+tile       110  280            art\tiles\road02.frm
+tile       112  280            art\tiles\road02.frm
+tile       114  280            art\tiles\road02.frm
+tile       116  280            art\tiles\road02.frm
+tile       118  280            art\tiles\road02.frm
+tile       120  280            art\tiles\road02.frm
+tile       66   282            art\tiles\road02.frm
+tile       68   282            art\tiles\road02.frm
+tile       70   282            art\tiles\road02.frm
+tile       72   282            art\tiles\road02.frm
+tile       74   282            art\tiles\road02.frm
+tile       76   282            art\tiles\road02.frm
+tile       78   282            art\tiles\road02.frm
+tile       80   282            art\tiles\road02.frm
+tile       82   282            art\tiles\road02.frm
+tile       84   282            art\tiles\road02.frm
+tile       86   282            art\tiles\road02.frm
+tile       88   282            art\tiles\road02.frm
+tile       90   282            art\tiles\road02.frm
+tile       92   282            art\tiles\road02.frm
+tile       94   282            art\tiles\road02.frm
+tile       96   282            art\tiles\road02.frm
+tile       98   282            art\tiles\road02.frm
+tile       100  282            art\tiles\road02.frm
+tile       102  282            art\tiles\road02.frm
+tile       104  282            art\tiles\road02.frm
+tile       106  282            art\tiles\road02.frm
+tile       108  282            art\tiles\road02.frm
+tile       110  282            art\tiles\road02.frm
+tile       112  282            art\tiles\road02.frm
+tile       114  282            art\tiles\road02.frm
+tile       116  282            art\tiles\road02.frm
+tile       118  282            art\tiles\road02.frm
+tile       120  282            art\tiles\road02.frm
+tile       60   284            art\tiles\road02.frm
+tile       62   284            art\tiles\road02.frm
+tile       64   284            art\tiles\road02.frm
+tile       66   284            art\tiles\road02.frm
+tile       68   284            art\tiles\road02.frm
+tile       70   284            art\tiles\road02.frm
+tile       72   284            art\tiles\road02.frm
+tile       74   284            art\tiles\road02.frm
+tile       76   284            art\tiles\road02.frm
+tile       78   284            art\tiles\road02.frm
+tile       80   284            art\tiles\road02.frm
+tile       82   284            art\tiles\road02.frm
+tile       84   284            art\tiles\road02.frm
+tile       86   284            art\tiles\road02.frm
+tile       88   284            art\tiles\road02.frm
+tile       90   284            art\tiles\road02.frm
+tile       92   284            art\tiles\road02.frm
+tile       94   284            art\tiles\road02.frm
+tile       96   284            art\tiles\road02.frm
+tile       98   284            art\tiles\road02.frm
+tile       100  284            art\tiles\road02.frm
+tile       102  284            art\tiles\road02.frm
+tile       104  284            art\tiles\road02.frm
+tile       106  284            art\tiles\road02.frm
+tile       108  284            art\tiles\road02.frm
+tile       110  284            art\tiles\road02.frm
+tile       112  284            art\tiles\road02.frm
+tile       114  284            art\tiles\road02.frm
+tile       116  284            art\tiles\road02.frm
+tile       118  284            art\tiles\road02.frm
+tile       120  284            art\tiles\road02.frm
+tile       122  284            art\tiles\road02.frm
+tile       60   286            art\tiles\road02.frm
+tile       62   286            art\tiles\road02.frm
+tile       64   286            art\tiles\road02.frm
+tile       66   286            art\tiles\road02.frm
+tile       68   286            art\tiles\road02.frm
+tile       70   286            art\tiles\road02.frm
+tile       72   286            art\tiles\road02.frm
+tile       74   286            art\tiles\road02.frm
+tile       76   286            art\tiles\road02.frm
+tile       78   286            art\tiles\road02.frm
+tile       80   286            art\tiles\road02.frm
+tile       82   286            art\tiles\road02.frm
+tile       84   286            art\tiles\road02.frm
+tile       86   286            art\tiles\road02.frm
+tile       88   286            art\tiles\road02.frm
+tile       90   286            art\tiles\road02.frm
+tile       92   286            art\tiles\road02.frm
+tile       94   286            art\tiles\road02.frm
+tile       96   286            art\tiles\road02.frm
+tile       98   286            art\tiles\road02.frm
+tile       100  286            art\tiles\road02.frm
+tile       102  286            art\tiles\road02.frm
+tile       104  286            art\tiles\road02.frm
+tile       106  286            art\tiles\road02.frm
+tile       108  286            art\tiles\road02.frm
+tile       110  286            art\tiles\road02.frm
+tile       112  286            art\tiles\road02.frm
+tile       114  286            art\tiles\road02.frm
+tile       116  286            art\tiles\road02.frm
+tile       118  286            art\tiles\road02.frm
+tile       120  286            art\tiles\road02.frm
+tile       122  286            art\tiles\road02.frm
+tile       60   288            art\tiles\road02.frm
+tile       62   288            art\tiles\road02.frm
+tile       64   288            art\tiles\road02.frm
+tile       66   288            art\tiles\road02.frm
+tile       68   288            art\tiles\road02.frm
+tile       70   288            art\tiles\road02.frm
+tile       72   288            art\tiles\road02.frm
+tile       74   288            art\tiles\road02.frm
+tile       76   288            art\tiles\road02.frm
+tile       78   288            art\tiles\road02.frm
+tile       80   288            art\tiles\road02.frm
+tile       82   288            art\tiles\road02.frm
+tile       84   288            art\tiles\road02.frm
+tile       86   288            art\tiles\road02.frm
+tile       88   288            art\tiles\road02.frm
+tile       90   288            art\tiles\road02.frm
+tile       92   288            art\tiles\road02.frm
+tile       94   288            art\tiles\road02.frm
+tile       96   288            art\tiles\road02.frm
+tile       98   288            art\tiles\road02.frm
+tile       100  288            art\tiles\road02.frm
+tile       102  288            art\tiles\road02.frm
+tile       104  288            art\tiles\road02.frm
+tile       106  288            art\tiles\road02.frm
+tile       108  288            art\tiles\road02.frm
+tile       110  288            art\tiles\road02.frm
+tile       112  288            art\tiles\road02.frm
+tile       114  288            art\tiles\road02.frm
+tile       116  288            art\tiles\road02.frm
+tile       118  288            art\tiles\road02.frm
+tile       120  288            art\tiles\road02.frm
+tile       122  288            art\tiles\road02.frm
+tile       124  288            art\tiles\road02.frm
+tile       64   290            art\tiles\road02.frm
+tile       66   290            art\tiles\road02.frm
+tile       68   290            art\tiles\road02.frm
+tile       70   290            art\tiles\road02.frm
+tile       72   290            art\tiles\road02.frm
+tile       74   290            art\tiles\road02.frm
+tile       76   290            art\tiles\road02.frm
+tile       78   290            art\tiles\road02.frm
+tile       80   290            art\tiles\road02.frm
+tile       82   290            art\tiles\road02.frm
+tile       84   290            art\tiles\road02.frm
+tile       86   290            art\tiles\road02.frm
+tile       88   290            art\tiles\road02.frm
+tile       90   290            art\tiles\road02.frm
+tile       92   290            art\tiles\road02.frm
+tile       94   290            art\tiles\road02.frm
+tile       96   290            art\tiles\road02.frm
+tile       98   290            art\tiles\road02.frm
+tile       100  290            art\tiles\road02.frm
+tile       102  290            art\tiles\road02.frm
+tile       104  290            art\tiles\road02.frm
+tile       106  290            art\tiles\road02.frm
+tile       108  290            art\tiles\road02.frm
+tile       110  290            art\tiles\road02.frm
+tile       112  290            art\tiles\road02.frm
+tile       114  290            art\tiles\road02.frm
+tile       116  290            art\tiles\road02.frm
+tile       118  290            art\tiles\road02.frm
+tile       120  290            art\tiles\road02.frm
+tile       122  290            art\tiles\road02.frm
+tile       124  290            art\tiles\road02.frm
+tile       126  290            art\tiles\road02.frm
+tile       64   292            art\tiles\road02.frm
+tile       66   292            art\tiles\road02.frm
+tile       68   292            art\tiles\road02.frm
+tile       70   292            art\tiles\road02.frm
+tile       72   292            art\tiles\road02.frm
+tile       74   292            art\tiles\road02.frm
+tile       76   292            art\tiles\road02.frm
+tile       78   292            art\tiles\road02.frm
+tile       80   292            art\tiles\road02.frm
+tile       82   292            art\tiles\road02.frm
+tile       84   292            art\tiles\road02.frm
+tile       86   292            art\tiles\road02.frm
+tile       88   292            art\tiles\road02.frm
+tile       90   292            art\tiles\road02.frm
+tile       92   292            art\tiles\road02.frm
+tile       94   292            art\tiles\road02.frm
+tile       96   292            art\tiles\road02.frm
+tile       98   292            art\tiles\road02.frm
+tile       100  292            art\tiles\road02.frm
+tile       102  292            art\tiles\road02.frm
+tile       104  292            art\tiles\road02.frm
+tile       106  292            art\tiles\road02.frm
+tile       108  292            art\tiles\road02.frm
+tile       110  292            art\tiles\road02.frm
+tile       112  292            art\tiles\road02.frm
+tile       114  292            art\tiles\road02.frm
+tile       116  292            art\tiles\road02.frm
+tile       118  292            art\tiles\road02.frm
+tile       120  292            art\tiles\road02.frm
+tile       122  292            art\tiles\road02.frm
+tile       124  292            art\tiles\road02.frm
+tile       126  292            art\tiles\road02.frm
+tile       128  292            art\tiles\road02.frm
+tile       64   294            art\tiles\road02.frm
+tile       66   294            art\tiles\road02.frm
+tile       68   294            art\tiles\road02.frm
+tile       70   294            art\tiles\road02.frm
+tile       72   294            art\tiles\road02.frm
+tile       74   294            art\tiles\road02.frm
+tile       76   294            art\tiles\road02.frm
+tile       78   294            art\tiles\road02.frm
+tile       80   294            art\tiles\road02.frm
+tile       82   294            art\tiles\road02.frm
+tile       84   294            art\tiles\road02.frm
+tile       86   294            art\tiles\road02.frm
+tile       88   294            art\tiles\road02.frm
+tile       90   294            art\tiles\cabrik01.frm
+tile       92   294            art\tiles\cabrik01.frm
+tile       94   294            art\tiles\cabrik01.frm
+tile       96   294            art\tiles\cabrik01.frm
+tile       98   294            art\tiles\cabrik01.frm
+tile       100  294            art\tiles\cabrik01.frm
+tile       102  294            art\tiles\cabrik01.frm
+tile       104  294            art\tiles\cabrik01.frm
+tile       106  294            art\tiles\cabrik01.frm
+tile       108  294            art\tiles\cabrik01.frm
+tile       110  294            art\tiles\cabrik01.frm
+tile       112  294            art\tiles\cabrik01.frm
+tile       114  294            art\tiles\road02.frm
+tile       116  294            art\tiles\road02.frm
+tile       118  294            art\tiles\road02.frm
+tile       120  294            art\tiles\road02.frm
+tile       122  294            art\tiles\road02.frm
+tile       124  294            art\tiles\road02.frm
+tile       126  294            art\tiles\road02.frm
+tile       128  294            art\tiles\road02.frm
+tile       66   296            art\tiles\road02.frm
+tile       68   296            art\tiles\road02.frm
+tile       70   296            art\tiles\road02.frm
+tile       72   296            art\tiles\road02.frm
+tile       74   296            art\tiles\road02.frm
+tile       76   296            art\tiles\road02.frm
+tile       78   296            art\tiles\road02.frm
+tile       80   296            art\tiles\road02.frm
+tile       82   296            art\tiles\road02.frm
+tile       84   296            art\tiles\road02.frm
+tile       86   296            art\tiles\road02.frm
+tile       88   296            art\tiles\road02.frm
+tile       90   296            art\tiles\cabrik01.frm
+tile       92   296            art\tiles\cabrik01.frm
+tile       94   296            art\tiles\cabrik01.frm
+tile       96   296            art\tiles\cabrik01.frm
+tile       98   296            art\tiles\cabrik01.frm
+tile       100  296            art\tiles\cabrik01.frm
+tile       102  296            art\tiles\cabrik01.frm
+tile       104  296            art\tiles\cabrik01.frm
+tile       106  296            art\tiles\cabrik01.frm
+tile       108  296            art\tiles\cabrik01.frm
+tile       110  296            art\tiles\cabrik01.frm
+tile       112  296            art\tiles\cabrik01.frm
+tile       114  296            art\tiles\road02.frm
+tile       116  296            art\tiles\road02.frm
+tile       118  296            art\tiles\road02.frm
+tile       120  296            art\tiles\road02.frm
+tile       122  296            art\tiles\road02.frm
+tile       124  296            art\tiles\road02.frm
+tile       126  296            art\tiles\road02.frm
+tile       128  296            art\tiles\road02.frm
+tile       130  296            art\tiles\road02.frm
+tile       66   298            art\tiles\road02.frm
+tile       68   298            art\tiles\road02.frm
+tile       70   298            art\tiles\road02.frm
+tile       72   298            art\tiles\road02.frm
+tile       74   298            art\tiles\road02.frm
+tile       76   298            art\tiles\road02.frm
+tile       78   298            art\tiles\road02.frm
+tile       80   298            art\tiles\road02.frm
+tile       82   298            art\tiles\road02.frm
+tile       84   298            art\tiles\road02.frm
+tile       86   298            art\tiles\road02.frm
+tile       88   298            art\tiles\road02.frm
+tile       90   298            art\tiles\cabrik01.frm
+tile       92   298            art\tiles\cabrik01.frm
+tile       94   298            art\tiles\cabrik01.frm
+tile       96   298            art\tiles\cabrik01.frm
+tile       98   298            art\tiles\cabrik01.frm
+tile       100  298            art\tiles\cabrik01.frm
+tile       102  298            art\tiles\cabrik01.frm
+tile       104  298            art\tiles\cabrik01.frm
+tile       106  298            art\tiles\cabrik01.frm
+tile       108  298            art\tiles\cabrik01.frm
+tile       110  298            art\tiles\cabrik01.frm
+tile       112  298            art\tiles\cabrik01.frm
+tile       114  298            art\tiles\road02.frm
+tile       116  298            art\tiles\road02.frm
+tile       118  298            art\tiles\road02.frm
+tile       120  298            art\tiles\road02.frm
+tile       122  298            art\tiles\road02.frm
+tile       124  298            art\tiles\road02.frm
+tile       126  298            art\tiles\road02.frm
+tile       128  298            art\tiles\road02.frm
+tile       130  298            art\tiles\road02.frm
+tile       68   300            art\tiles\road02.frm
+tile       70   300            art\tiles\road02.frm
+tile       72   300            art\tiles\road02.frm
+tile       74   300            art\tiles\road02.frm
+tile       76   300            art\tiles\road02.frm
+tile       78   300            art\tiles\road02.frm
+tile       80   300            art\tiles\road02.frm
+tile       82   300            art\tiles\road02.frm
+tile       84   300            art\tiles\road02.frm
+tile       86   300            art\tiles\road02.frm
+tile       88   300            art\tiles\road02.frm
+tile       90   300            art\tiles\cabrik01.frm
+tile       92   300            art\tiles\cabrik01.frm
+tile       94   300            art\tiles\cabrik01.frm
+tile       96   300            art\tiles\cabrik01.frm
+tile       98   300            art\tiles\cabrik01.frm
+tile       100  300            art\tiles\cabrik01.frm
+tile       102  300            art\tiles\cabrik01.frm
+tile       104  300            art\tiles\cabrik01.frm
+tile       106  300            art\tiles\cabrik01.frm
+tile       108  300            art\tiles\cabrik01.frm
+tile       110  300            art\tiles\cabrik01.frm
+tile       112  300            art\tiles\cabrik01.frm
+tile       114  300            art\tiles\road02.frm
+tile       116  300            art\tiles\road02.frm
+tile       118  300            art\tiles\road02.frm
+tile       120  300            art\tiles\road02.frm
+tile       122  300            art\tiles\road02.frm
+tile       124  300            art\tiles\road02.frm
+tile       126  300            art\tiles\road02.frm
+tile       128  300            art\tiles\road02.frm
+tile       130  300            art\tiles\road02.frm
+tile       132  300            art\tiles\road02.frm
+tile       134  300            art\tiles\road02.frm
+tile       68   302            art\tiles\road02.frm
+tile       70   302            art\tiles\road02.frm
+tile       72   302            art\tiles\road02.frm
+tile       74   302            art\tiles\road02.frm
+tile       76   302            art\tiles\road02.frm
+tile       78   302            art\tiles\road02.frm
+tile       80   302            art\tiles\road02.frm
+tile       82   302            art\tiles\road02.frm
+tile       84   302            art\tiles\road02.frm
+tile       86   302            art\tiles\road02.frm
+tile       88   302            art\tiles\road02.frm
+tile       90   302            art\tiles\cabrik01.frm
+tile       92   302            art\tiles\cabrik01.frm
+tile       94   302            art\tiles\cabrik01.frm
+tile       96   302            art\tiles\cabrik01.frm
+tile       98   302            art\tiles\cabrik01.frm
+tile       100  302            art\tiles\cabrik01.frm
+tile       102  302            art\tiles\cabrik01.frm
+tile       104  302            art\tiles\cabrik01.frm
+tile       106  302            art\tiles\cabrik01.frm
+tile       108  302            art\tiles\cabrik01.frm
+tile       110  302            art\tiles\cabrik01.frm
+tile       112  302            art\tiles\cabrik01.frm
+tile       114  302            art\tiles\road02.frm
+tile       116  302            art\tiles\road02.frm
+tile       118  302            art\tiles\road02.frm
+tile       120  302            art\tiles\road02.frm
+tile       122  302            art\tiles\road02.frm
+tile       124  302            art\tiles\road02.frm
+tile       126  302            art\tiles\road02.frm
+tile       128  302            art\tiles\road02.frm
+tile       130  302            art\tiles\road02.frm
+tile       132  302            art\tiles\road02.frm
+tile       134  302            art\tiles\road02.frm
+tile       72   304            art\tiles\road02.frm
+tile       74   304            art\tiles\road02.frm
+tile       76   304            art\tiles\road02.frm
+tile       78   304            art\tiles\road02.frm
+tile       80   304            art\tiles\road02.frm
+tile       82   304            art\tiles\road02.frm
+tile       84   304            art\tiles\road02.frm
+tile       86   304            art\tiles\road02.frm
+tile       88   304            art\tiles\road02.frm
+tile       90   304            art\tiles\cabrik01.frm
+tile       92   304            art\tiles\cabrik01.frm
+tile       94   304            art\tiles\cabrik01.frm
+tile       96   304            art\tiles\cabrik01.frm
+tile       98   304            art\tiles\cabrik01.frm
+tile       100  304            art\tiles\cabrik01.frm
+tile       102  304            art\tiles\cabrik01.frm
+tile       104  304            art\tiles\cabrik01.frm
+tile       106  304            art\tiles\cabrik01.frm
+tile       108  304            art\tiles\cabrik01.frm
+tile       110  304            art\tiles\cabrik01.frm
+tile       112  304            art\tiles\cabrik01.frm
+tile       114  304            art\tiles\road02.frm
+tile       116  304            art\tiles\road02.frm
+tile       118  304            art\tiles\road02.frm
+tile       120  304            art\tiles\road02.frm
+tile       122  304            art\tiles\road02.frm
+tile       124  304            art\tiles\road02.frm
+tile       126  304            art\tiles\road02.frm
+tile       128  304            art\tiles\road02.frm
+tile       130  304            art\tiles\road02.frm
+tile       132  304            art\tiles\road02.frm
+tile       134  304            art\tiles\road02.frm
+tile       136  304            art\tiles\road02.frm
+tile       74   306            art\tiles\road02.frm
+tile       76   306            art\tiles\road02.frm
+tile       78   306            art\tiles\road02.frm
+tile       80   306            art\tiles\road02.frm
+tile       82   306            art\tiles\road02.frm
+tile       84   306            art\tiles\road02.frm
+tile       86   306            art\tiles\road02.frm
+tile       88   306            art\tiles\road02.frm
+tile       90   306            art\tiles\cabrik01.frm
+tile       92   306            art\tiles\cabrik01.frm
+tile       94   306            art\tiles\cabrik01.frm
+tile       96   306            art\tiles\cabrik01.frm
+tile       98   306            art\tiles\cabrik01.frm
+tile       100  306            art\tiles\cabrik01.frm
+tile       102  306            art\tiles\cabrik01.frm
+tile       104  306            art\tiles\cabrik01.frm
+tile       106  306            art\tiles\cabrik01.frm
+tile       108  306            art\tiles\cabrik01.frm
+tile       110  306            art\tiles\cabrik01.frm
+tile       112  306            art\tiles\cabrik01.frm
+tile       114  306            art\tiles\road02.frm
+tile       116  306            art\tiles\road02.frm
+tile       118  306            art\tiles\road02.frm
+tile       120  306            art\tiles\road02.frm
+tile       122  306            art\tiles\road02.frm
+tile       124  306            art\tiles\road02.frm
+tile       126  306            art\tiles\road02.frm
+tile       128  306            art\tiles\road02.frm
+tile       130  306            art\tiles\road02.frm
+tile       132  306            art\tiles\road02.frm
+tile       134  306            art\tiles\road02.frm
+tile       136  306            art\tiles\road02.frm
+tile       74   308            art\tiles\road02.frm
+tile       76   308            art\tiles\road02.frm
+tile       78   308            art\tiles\road02.frm
+tile       80   308            art\tiles\road02.frm
+tile       82   308            art\tiles\road02.frm
+tile       84   308            art\tiles\road02.frm
+tile       86   308            art\tiles\road02.frm
+tile       88   308            art\tiles\road02.frm
+tile       90   308            art\tiles\cabrik01.frm
+tile       92   308            art\tiles\cabrik01.frm
+tile       94   308            art\tiles\cabrik01.frm
+tile       96   308            art\tiles\cabrik01.frm
+tile       98   308            art\tiles\cabrik01.frm
+tile       100  308            art\tiles\cabrik01.frm
+tile       102  308            art\tiles\cabrik01.frm
+tile       104  308            art\tiles\cabrik01.frm
+tile       106  308            art\tiles\cabrik01.frm
+tile       108  308            art\tiles\cabrik01.frm
+tile       110  308            art\tiles\cabrik01.frm
+tile       112  308            art\tiles\cabrik01.frm
+tile       114  308            art\tiles\road02.frm
+tile       116  308            art\tiles\road02.frm
+tile       118  308            art\tiles\road02.frm
+tile       120  308            art\tiles\road02.frm
+tile       122  308            art\tiles\road02.frm
+tile       124  308            art\tiles\road02.frm
+tile       126  308            art\tiles\road02.frm
+tile       128  308            art\tiles\road02.frm
+tile       130  308            art\tiles\road02.frm
+tile       132  308            art\tiles\road02.frm
+tile       134  308            art\tiles\road02.frm
+tile       136  308            art\tiles\road02.frm
+tile       74   310            art\tiles\road02.frm
+tile       76   310            art\tiles\road02.frm
+tile       78   310            art\tiles\road02.frm
+tile       80   310            art\tiles\road02.frm
+tile       82   310            art\tiles\road02.frm
+tile       84   310            art\tiles\road02.frm
+tile       86   310            art\tiles\road02.frm
+tile       88   310            art\tiles\road02.frm
+tile       90   310            art\tiles\road02.frm
+tile       92   310            art\tiles\road02.frm
+tile       94   310            art\tiles\road02.frm
+tile       96   310            art\tiles\road02.frm
+tile       98   310            art\tiles\road02.frm
+tile       100  310            art\tiles\road02.frm
+tile       102  310            art\tiles\road02.frm
+tile       104  310            art\tiles\road02.frm
+tile       106  310            art\tiles\road02.frm
+tile       108  310            art\tiles\road02.frm
+tile       110  310            art\tiles\road02.frm
+tile       112  310            art\tiles\road02.frm
+tile       114  310            art\tiles\road02.frm
+tile       116  310            art\tiles\road02.frm
+tile       118  310            art\tiles\road02.frm
+tile       120  310            art\tiles\road02.frm
+tile       122  310            art\tiles\road02.frm
+tile       124  310            art\tiles\road02.frm
+tile       126  310            art\tiles\road02.frm
+tile       128  310            art\tiles\road02.frm
+tile       130  310            art\tiles\road02.frm
+tile       132  310            art\tiles\road02.frm
+tile       134  310            art\tiles\road02.frm
+tile       136  310            art\tiles\road02.frm
+tile       76   312            art\tiles\road02.frm
+tile       78   312            art\tiles\road02.frm
+tile       80   312            art\tiles\road02.frm
+tile       82   312            art\tiles\road02.frm
+tile       84   312            art\tiles\road02.frm
+tile       86   312            art\tiles\road02.frm
+tile       88   312            art\tiles\road02.frm
+tile       90   312            art\tiles\road02.frm
+tile       92   312            art\tiles\road02.frm
+tile       94   312            art\tiles\road02.frm
+tile       96   312            art\tiles\road02.frm
+tile       98   312            art\tiles\road02.frm
+tile       100  312            art\tiles\road02.frm
+tile       102  312            art\tiles\road02.frm
+tile       104  312            art\tiles\road02.frm
+tile       106  312            art\tiles\road02.frm
+tile       108  312            art\tiles\road02.frm
+tile       110  312            art\tiles\road02.frm
+tile       112  312            art\tiles\road02.frm
+tile       114  312            art\tiles\road02.frm
+tile       116  312            art\tiles\road02.frm
+tile       118  312            art\tiles\road02.frm
+tile       120  312            art\tiles\road02.frm
+tile       122  312            art\tiles\road02.frm
+tile       124  312            art\tiles\road02.frm
+tile       126  312            art\tiles\road02.frm
+tile       128  312            art\tiles\road02.frm
+tile       130  312            art\tiles\road02.frm
+tile       132  312            art\tiles\road02.frm
+tile       134  312            art\tiles\road02.frm
+tile       136  312            art\tiles\road02.frm
+tile       78   314            art\tiles\road02.frm
+tile       80   314            art\tiles\road02.frm
+tile       82   314            art\tiles\road02.frm
+tile       84   314            art\tiles\road02.frm
+tile       86   314            art\tiles\road02.frm
+tile       88   314            art\tiles\road02.frm
+tile       90   314            art\tiles\road02.frm
+tile       92   314            art\tiles\road02.frm
+tile       94   314            art\tiles\road02.frm
+tile       96   314            art\tiles\road02.frm
+tile       98   314            art\tiles\road02.frm
+tile       100  314            art\tiles\road02.frm
+tile       102  314            art\tiles\road02.frm
+tile       104  314            art\tiles\road02.frm
+tile       106  314            art\tiles\road02.frm
+tile       108  314            art\tiles\road02.frm
+tile       110  314            art\tiles\road02.frm
+tile       112  314            art\tiles\road02.frm
+tile       114  314            art\tiles\road02.frm
+tile       116  314            art\tiles\road02.frm
+tile       118  314            art\tiles\road02.frm
+tile       120  314            art\tiles\road02.frm
+tile       122  314            art\tiles\road02.frm
+tile       124  314            art\tiles\road02.frm
+tile       126  314            art\tiles\road02.frm
+tile       128  314            art\tiles\road02.frm
+tile       78   316            art\tiles\road02.frm
+tile       80   316            art\tiles\road02.frm
+tile       82   316            art\tiles\road02.frm
+tile       84   316            art\tiles\road02.frm
+tile       86   316            art\tiles\road02.frm
+tile       88   316            art\tiles\road02.frm
+tile       90   316            art\tiles\road02.frm
+tile       92   316            art\tiles\road02.frm
+tile       94   316            art\tiles\road02.frm
+tile       96   316            art\tiles\road02.frm
+tile       98   316            art\tiles\road02.frm
+tile       100  316            art\tiles\road02.frm
+tile       102  316            art\tiles\road02.frm
+tile       104  316            art\tiles\road02.frm
+tile       106  316            art\tiles\road02.frm
+tile       108  316            art\tiles\road02.frm
+tile       110  316            art\tiles\road02.frm
+tile       112  316            art\tiles\road02.frm
+tile       114  316            art\tiles\road02.frm
+tile       116  316            art\tiles\road02.frm
+tile       118  316            art\tiles\road02.frm
+tile       120  316            art\tiles\road02.frm
+tile       122  316            art\tiles\road02.frm
+tile       124  316            art\tiles\road02.frm
+tile       78   318            art\tiles\road02.frm
+tile       80   318            art\tiles\road02.frm
+tile       82   318            art\tiles\road02.frm
+tile       84   318            art\tiles\road02.frm
+tile       86   318            art\tiles\road02.frm
+tile       88   318            art\tiles\road02.frm
+tile       90   318            art\tiles\road02.frm
+tile       92   318            art\tiles\road02.frm
+tile       94   318            art\tiles\road02.frm
+tile       96   318            art\tiles\road02.frm
+tile       98   318            art\tiles\road02.frm
+tile       100  318            art\tiles\road02.frm
+tile       102  318            art\tiles\road02.frm
+tile       104  318            art\tiles\road02.frm
+tile       106  318            art\tiles\road02.frm
+tile       108  318            art\tiles\road02.frm
+tile       110  318            art\tiles\road02.frm
+tile       112  318            art\tiles\road02.frm
+tile       114  318            art\tiles\road02.frm
+tile       116  318            art\tiles\road02.frm
+tile       118  318            art\tiles\road02.frm
+tile       120  318            art\tiles\road02.frm
+tile       122  318            art\tiles\road02.frm
+tile       82   320            art\tiles\road02.frm
+tile       84   320            art\tiles\road02.frm
+tile       86   320            art\tiles\road02.frm
+tile       88   320            art\tiles\road02.frm
+tile       90   320            art\tiles\road02.frm
+tile       92   320            art\tiles\road02.frm
+tile       94   320            art\tiles\road02.frm
+tile       96   320            art\tiles\road02.frm
+tile       98   320            art\tiles\road02.frm
+tile       100  320            art\tiles\road02.frm
+tile       102  320            art\tiles\road02.frm
+tile       104  320            art\tiles\road02.frm
+tile       106  320            art\tiles\road02.frm
+tile       108  320            art\tiles\road02.frm
+tile       110  320            art\tiles\road02.frm
+tile       112  320            art\tiles\road02.frm
+tile       114  320            art\tiles\road02.frm
+tile       116  320            art\tiles\road02.frm
+tile       84   322            art\tiles\road02.frm
+tile       86   322            art\tiles\road02.frm
+tile       88   322            art\tiles\road02.frm
+tile       90   322            art\tiles\road02.frm
+tile       92   322            art\tiles\road02.frm
+tile       94   322            art\tiles\road02.frm
+tile       96   322            art\tiles\road02.frm
+tile       98   322            art\tiles\road02.frm
+tile       100  322            art\tiles\road02.frm
+tile       102  322            art\tiles\road02.frm
+tile       104  322            art\tiles\road02.frm
+tile       106  322            art\tiles\road02.frm
+tile       108  322            art\tiles\road02.frm
+tile       110  322            art\tiles\road02.frm
+tile       112  322            art\tiles\road02.frm
+tile       84   324            art\tiles\road02.frm
+tile       86   324            art\tiles\road02.frm
+tile       88   324            art\tiles\road02.frm
+tile       90   324            art\tiles\road02.frm
+tile       92   324            art\tiles\road02.frm
+tile       94   324            art\tiles\road02.frm
+tile       96   324            art\tiles\road02.frm
+tile       98   324            art\tiles\road02.frm
+tile       100  324            art\tiles\road02.frm
+tile       102  324            art\tiles\road02.frm
+tile       104  324            art\tiles\road02.frm
+tile       106  324            art\tiles\road02.frm
+tile       108  324            art\tiles\road02.frm
+tile       86   326            art\tiles\road02.frm
+tile       88   326            art\tiles\road02.frm
+tile       90   326            art\tiles\road02.frm
+tile       92   326            art\tiles\road02.frm
+tile       94   326            art\tiles\road02.frm
+tile       96   326            art\tiles\road02.frm
+tile       98   326            art\tiles\road02.frm
+tile       100  326            art\tiles\road02.frm
+tile       102  326            art\tiles\road02.frm
+tile       86   328            art\tiles\road02.frm
+tile       88   328            art\tiles\road02.frm
+tile       90   328            art\tiles\road02.frm
+tile       92   328            art\tiles\road02.frm
+tile       94   328            art\tiles\road02.frm
+tile       96   328            art\tiles\road02.frm
+tile       98   328            art\tiles\road02.frm
+tile       86   330            art\tiles\road02.frm
+tile       88   330            art\tiles\road02.frm
+tile       90   330            art\tiles\road02.frm
+tile       92   330            art\tiles\road02.frm
+tile       104  460            art\tiles\road02.frm
+tile       106  460            art\tiles\road02.frm
+tile       108  460            art\tiles\road02.frm
+tile       102  462            art\tiles\road02.frm
+tile       104  462            art\tiles\road02.frm
+tile       106  462            art\tiles\road02.frm
+tile       108  462            art\tiles\road02.frm
+tile       110  462            art\tiles\road02.frm
+tile       100  464            art\tiles\road02.frm
+tile       102  464            art\tiles\road02.frm
+tile       104  464            art\tiles\road02.frm
+tile       106  464            art\tiles\road02.frm
+tile       108  464            art\tiles\road02.frm
+tile       110  464            art\tiles\road02.frm
+tile       112  464            art\tiles\road02.frm
+tile       94   466            art\tiles\road02.frm
+tile       96   466            art\tiles\road02.frm
+tile       98   466            art\tiles\road02.frm
+tile       100  466            art\tiles\road02.frm
+tile       102  466            art\tiles\road02.frm
+tile       104  466            art\tiles\road02.frm
+tile       106  466            art\tiles\road02.frm
+tile       108  466            art\tiles\road02.frm
+tile       110  466            art\tiles\road02.frm
+tile       112  466            art\tiles\road02.frm
+tile       114  466            art\tiles\road02.frm
+tile       92   468            art\tiles\road02.frm
+tile       94   468            art\tiles\road02.frm
+tile       96   468            art\tiles\road02.frm
+tile       98   468            art\tiles\road02.frm
+tile       100  468            art\tiles\road02.frm
+tile       102  468            art\tiles\road02.frm
+tile       104  468            art\tiles\road02.frm
+tile       106  468            art\tiles\road02.frm
+tile       108  468            art\tiles\road02.frm
+tile       110  468            art\tiles\road02.frm
+tile       112  468            art\tiles\road02.frm
+tile       114  468            art\tiles\road02.frm
+tile       86   470            art\tiles\road02.frm
+tile       88   470            art\tiles\road02.frm
+tile       90   470            art\tiles\road02.frm
+tile       92   470            art\tiles\road02.frm
+tile       94   470            art\tiles\road02.frm
+tile       96   470            art\tiles\road02.frm
+tile       98   470            art\tiles\road02.frm
+tile       100  470            art\tiles\road02.frm
+tile       102  470            art\tiles\road02.frm
+tile       104  470            art\tiles\road02.frm
+tile       106  470            art\tiles\road02.frm
+tile       108  470            art\tiles\road02.frm
+tile       110  470            art\tiles\road02.frm
+tile       112  470            art\tiles\road02.frm
+tile       114  470            art\tiles\road02.frm
+tile       116  470            art\tiles\road02.frm
+tile       84   472            art\tiles\road02.frm
+tile       86   472            art\tiles\road02.frm
+tile       88   472            art\tiles\road02.frm
+tile       90   472            art\tiles\road02.frm
+tile       92   472            art\tiles\road02.frm
+tile       94   472            art\tiles\road02.frm
+tile       96   472            art\tiles\road02.frm
+tile       98   472            art\tiles\road02.frm
+tile       100  472            art\tiles\road02.frm
+tile       102  472            art\tiles\road02.frm
+tile       104  472            art\tiles\road02.frm
+tile       106  472            art\tiles\road02.frm
+tile       108  472            art\tiles\road02.frm
+tile       110  472            art\tiles\road02.frm
+tile       112  472            art\tiles\road02.frm
+tile       114  472            art\tiles\road02.frm
+tile       116  472            art\tiles\road02.frm
+tile       118  472            art\tiles\road02.frm
+tile       80   474            art\tiles\road02.frm
+tile       82   474            art\tiles\road02.frm
+tile       84   474            art\tiles\road02.frm
+tile       86   474            art\tiles\road02.frm
+tile       88   474            art\tiles\road02.frm
+tile       90   474            art\tiles\road02.frm
+tile       92   474            art\tiles\road02.frm
+tile       94   474            art\tiles\road02.frm
+tile       96   474            art\tiles\road02.frm
+tile       98   474            art\tiles\road02.frm
+tile       100  474            art\tiles\road02.frm
+tile       102  474            art\tiles\road02.frm
+tile       104  474            art\tiles\road02.frm
+tile       106  474            art\tiles\road02.frm
+tile       108  474            art\tiles\road02.frm
+tile       110  474            art\tiles\road02.frm
+tile       112  474            art\tiles\road02.frm
+tile       114  474            art\tiles\road02.frm
+tile       116  474            art\tiles\road02.frm
+tile       118  474            art\tiles\road02.frm
+tile       120  474            art\tiles\road02.frm
+tile       74   476            art\tiles\road02.frm
+tile       76   476            art\tiles\road02.frm
+tile       78   476            art\tiles\road02.frm
+tile       80   476            art\tiles\road02.frm
+tile       82   476            art\tiles\road02.frm
+tile       84   476            art\tiles\road02.frm
+tile       86   476            art\tiles\road02.frm
+tile       88   476            art\tiles\road02.frm
+tile       90   476            art\tiles\road02.frm
+tile       92   476            art\tiles\road02.frm
+tile       94   476            art\tiles\road02.frm
+tile       96   476            art\tiles\road02.frm
+tile       98   476            art\tiles\road02.frm
+tile       100  476            art\tiles\road02.frm
+tile       102  476            art\tiles\road02.frm
+tile       104  476            art\tiles\road02.frm
+tile       106  476            art\tiles\road02.frm
+tile       108  476            art\tiles\road02.frm
+tile       110  476            art\tiles\road02.frm
+tile       112  476            art\tiles\road02.frm
+tile       114  476            art\tiles\road02.frm
+tile       116  476            art\tiles\road02.frm
+tile       118  476            art\tiles\road02.frm
+tile       120  476            art\tiles\road02.frm
+tile       122  476            art\tiles\road02.frm
+tile       72   478            art\tiles\road02.frm
+tile       74   478            art\tiles\road02.frm
+tile       76   478            art\tiles\road02.frm
+tile       78   478            art\tiles\road02.frm
+tile       80   478            art\tiles\road02.frm
+tile       82   478            art\tiles\road02.frm
+tile       84   478            art\tiles\road02.frm
+tile       86   478            art\tiles\road02.frm
+tile       88   478            art\tiles\road02.frm
+tile       90   478            art\tiles\road02.frm
+tile       92   478            art\tiles\road02.frm
+tile       94   478            art\tiles\road02.frm
+tile       96   478            art\tiles\road02.frm
+tile       98   478            art\tiles\road02.frm
+tile       100  478            art\tiles\road02.frm
+tile       102  478            art\tiles\road02.frm
+tile       104  478            art\tiles\road02.frm
+tile       106  478            art\tiles\road02.frm
+tile       108  478            art\tiles\road02.frm
+tile       110  478            art\tiles\road02.frm
+tile       112  478            art\tiles\road02.frm
+tile       114  478            art\tiles\road02.frm
+tile       116  478            art\tiles\road02.frm
+tile       118  478            art\tiles\road02.frm
+tile       120  478            art\tiles\road02.frm
+tile       122  478            art\tiles\road02.frm
+tile       70   480            art\tiles\road02.frm
+tile       72   480            art\tiles\road02.frm
+tile       74   480            art\tiles\road02.frm
+tile       76   480            art\tiles\road02.frm
+tile       78   480            art\tiles\road02.frm
+tile       80   480            art\tiles\road02.frm
+tile       82   480            art\tiles\road02.frm
+tile       84   480            art\tiles\road02.frm
+tile       86   480            art\tiles\road02.frm
+tile       88   480            art\tiles\road02.frm
+tile       90   480            art\tiles\road02.frm
+tile       92   480            art\tiles\road02.frm
+tile       94   480            art\tiles\road02.frm
+tile       96   480            art\tiles\road02.frm
+tile       98   480            art\tiles\road02.frm
+tile       100  480            art\tiles\road02.frm
+tile       102  480            art\tiles\road02.frm
+tile       104  480            art\tiles\road02.frm
+tile       106  480            art\tiles\road02.frm
+tile       108  480            art\tiles\road02.frm
+tile       110  480            art\tiles\road02.frm
+tile       112  480            art\tiles\road02.frm
+tile       114  480            art\tiles\road02.frm
+tile       116  480            art\tiles\road02.frm
+tile       118  480            art\tiles\road02.frm
+tile       120  480            art\tiles\road02.frm
+tile       122  480            art\tiles\road02.frm
+tile       124  480            art\tiles\road02.frm
+tile       62   482            art\tiles\road02.frm
+tile       64   482            art\tiles\road02.frm
+tile       66   482            art\tiles\road02.frm
+tile       68   482            art\tiles\road02.frm
+tile       70   482            art\tiles\road02.frm
+tile       72   482            art\tiles\road02.frm
+tile       74   482            art\tiles\road02.frm
+tile       76   482            art\tiles\road02.frm
+tile       78   482            art\tiles\road02.frm
+tile       80   482            art\tiles\road02.frm
+tile       82   482            art\tiles\road02.frm
+tile       84   482            art\tiles\road02.frm
+tile       86   482            art\tiles\road02.frm
+tile       88   482            art\tiles\road02.frm
+tile       90   482            art\tiles\road02.frm
+tile       92   482            art\tiles\road02.frm
+tile       94   482            art\tiles\road02.frm
+tile       96   482            art\tiles\road02.frm
+tile       98   482            art\tiles\road02.frm
+tile       100  482            art\tiles\road02.frm
+tile       102  482            art\tiles\road02.frm
+tile       104  482            art\tiles\road02.frm
+tile       106  482            art\tiles\road02.frm
+tile       108  482            art\tiles\road02.frm
+tile       110  482            art\tiles\road02.frm
+tile       112  482            art\tiles\road02.frm
+tile       114  482            art\tiles\road02.frm
+tile       116  482            art\tiles\road02.frm
+tile       118  482            art\tiles\road02.frm
+tile       120  482            art\tiles\road02.frm
+tile       122  482            art\tiles\road02.frm
+tile       124  482            art\tiles\road02.frm
+tile       60   484            art\tiles\road02.frm
+tile       62   484            art\tiles\road02.frm
+tile       64   484            art\tiles\road02.frm
+tile       66   484            art\tiles\road02.frm
+tile       68   484            art\tiles\road02.frm
+tile       70   484            art\tiles\road02.frm
+tile       72   484            art\tiles\road02.frm
+tile       74   484            art\tiles\road02.frm
+tile       76   484            art\tiles\road02.frm
+tile       78   484            art\tiles\road02.frm
+tile       80   484            art\tiles\road02.frm
+tile       82   484            art\tiles\road02.frm
+tile       84   484            art\tiles\road02.frm
+tile       86   484            art\tiles\road02.frm
+tile       88   484            art\tiles\road02.frm
+tile       90   484            art\tiles\road02.frm
+tile       92   484            art\tiles\road02.frm
+tile       94   484            art\tiles\road02.frm
+tile       96   484            art\tiles\road02.frm
+tile       98   484            art\tiles\road02.frm
+tile       100  484            art\tiles\road02.frm
+tile       102  484            art\tiles\road02.frm
+tile       104  484            art\tiles\road02.frm
+tile       106  484            art\tiles\road02.frm
+tile       108  484            art\tiles\road02.frm
+tile       110  484            art\tiles\road02.frm
+tile       112  484            art\tiles\road02.frm
+tile       114  484            art\tiles\road02.frm
+tile       116  484            art\tiles\road02.frm
+tile       118  484            art\tiles\road02.frm
+tile       120  484            art\tiles\road02.frm
+tile       122  484            art\tiles\road02.frm
+tile       124  484            art\tiles\road02.frm
+tile       126  484            art\tiles\road02.frm
+tile       60   486            art\tiles\road02.frm
+tile       62   486            art\tiles\road02.frm
+tile       64   486            art\tiles\road02.frm
+tile       66   486            art\tiles\road02.frm
+tile       68   486            art\tiles\road02.frm
+tile       70   486            art\tiles\road02.frm
+tile       72   486            art\tiles\road02.frm
+tile       74   486            art\tiles\road02.frm
+tile       76   486            art\tiles\road02.frm
+tile       78   486            art\tiles\road02.frm
+tile       80   486            art\tiles\road02.frm
+tile       82   486            art\tiles\road02.frm
+tile       84   486            art\tiles\road02.frm
+tile       86   486            art\tiles\road02.frm
+tile       88   486            art\tiles\road02.frm
+tile       90   486            art\tiles\road02.frm
+tile       92   486            art\tiles\road02.frm
+tile       94   486            art\tiles\road02.frm
+tile       96   486            art\tiles\road02.frm
+tile       98   486            art\tiles\road02.frm
+tile       100  486            art\tiles\road02.frm
+tile       102  486            art\tiles\road02.frm
+tile       104  486            art\tiles\road02.frm
+tile       106  486            art\tiles\road02.frm
+tile       108  486            art\tiles\road02.frm
+tile       110  486            art\tiles\road02.frm
+tile       112  486            art\tiles\road02.frm
+tile       114  486            art\tiles\road02.frm
+tile       116  486            art\tiles\road02.frm
+tile       118  486            art\tiles\road02.frm
+tile       120  486            art\tiles\road02.frm
+tile       122  486            art\tiles\road02.frm
+tile       124  486            art\tiles\road02.frm
+tile       126  486            art\tiles\road02.frm
+tile       60   488            art\tiles\road02.frm
+tile       62   488            art\tiles\road02.frm
+tile       64   488            art\tiles\road02.frm
+tile       66   488            art\tiles\road02.frm
+tile       68   488            art\tiles\road02.frm
+tile       70   488            art\tiles\road02.frm
+tile       72   488            art\tiles\road02.frm
+tile       74   488            art\tiles\road02.frm
+tile       76   488            art\tiles\road02.frm
+tile       78   488            art\tiles\road02.frm
+tile       80   488            art\tiles\road02.frm
+tile       82   488            art\tiles\road02.frm
+tile       84   488            art\tiles\road02.frm
+tile       86   488            art\tiles\road02.frm
+tile       88   488            art\tiles\road02.frm
+tile       90   488            art\tiles\road02.frm
+tile       92   488            art\tiles\road02.frm
+tile       94   488            art\tiles\road02.frm
+tile       96   488            art\tiles\road02.frm
+tile       98   488            art\tiles\road02.frm
+tile       100  488            art\tiles\road02.frm
+tile       102  488            art\tiles\road02.frm
+tile       104  488            art\tiles\road02.frm
+tile       106  488            art\tiles\road02.frm
+tile       108  488            art\tiles\road02.frm
+tile       110  488            art\tiles\road02.frm
+tile       112  488            art\tiles\road02.frm
+tile       114  488            art\tiles\road02.frm
+tile       116  488            art\tiles\road02.frm
+tile       118  488            art\tiles\road02.frm
+tile       120  488            art\tiles\road02.frm
+tile       122  488            art\tiles\road02.frm
+tile       124  488            art\tiles\road02.frm
+tile       126  488            art\tiles\road02.frm
+tile       128  488            art\tiles\road02.frm
+tile       130  488            art\tiles\road02.frm
+tile       60   490            art\tiles\road02.frm
+tile       62   490            art\tiles\road02.frm
+tile       64   490            art\tiles\road02.frm
+tile       66   490            art\tiles\road02.frm
+tile       68   490            art\tiles\road02.frm
+tile       70   490            art\tiles\road02.frm
+tile       72   490            art\tiles\road02.frm
+tile       74   490            art\tiles\road02.frm
+tile       76   490            art\tiles\road02.frm
+tile       78   490            art\tiles\road02.frm
+tile       80   490            art\tiles\road02.frm
+tile       82   490            art\tiles\road02.frm
+tile       84   490            art\tiles\road02.frm
+tile       86   490            art\tiles\road02.frm
+tile       88   490            art\tiles\road02.frm
+tile       90   490            art\tiles\road02.frm
+tile       92   490            art\tiles\road02.frm
+tile       94   490            art\tiles\road02.frm
+tile       96   490            art\tiles\road02.frm
+tile       98   490            art\tiles\road02.frm
+tile       100  490            art\tiles\road02.frm
+tile       102  490            art\tiles\road02.frm
+tile       104  490            art\tiles\road02.frm
+tile       106  490            art\tiles\road02.frm
+tile       108  490            art\tiles\road02.frm
+tile       110  490            art\tiles\road02.frm
+tile       112  490            art\tiles\road02.frm
+tile       114  490            art\tiles\road02.frm
+tile       116  490            art\tiles\road02.frm
+tile       118  490            art\tiles\road02.frm
+tile       120  490            art\tiles\road02.frm
+tile       122  490            art\tiles\road02.frm
+tile       124  490            art\tiles\road02.frm
+tile       126  490            art\tiles\road02.frm
+tile       128  490            art\tiles\road02.frm
+tile       130  490            art\tiles\road02.frm
+tile       64   492            art\tiles\road02.frm
+tile       66   492            art\tiles\road02.frm
+tile       68   492            art\tiles\road02.frm
+tile       70   492            art\tiles\road02.frm
+tile       72   492            art\tiles\road02.frm
+tile       74   492            art\tiles\road02.frm
+tile       76   492            art\tiles\road02.frm
+tile       78   492            art\tiles\road02.frm
+tile       80   492            art\tiles\road02.frm
+tile       82   492            art\tiles\road02.frm
+tile       84   492            art\tiles\road02.frm
+tile       86   492            art\tiles\road02.frm
+tile       88   492            art\tiles\road02.frm
+tile       90   492            art\tiles\road02.frm
+tile       92   492            art\tiles\road02.frm
+tile       94   492            art\tiles\road02.frm
+tile       96   492            art\tiles\road02.frm
+tile       98   492            art\tiles\road02.frm
+tile       100  492            art\tiles\road02.frm
+tile       102  492            art\tiles\road02.frm
+tile       104  492            art\tiles\road02.frm
+tile       106  492            art\tiles\road02.frm
+tile       108  492            art\tiles\road02.frm
+tile       110  492            art\tiles\road02.frm
+tile       112  492            art\tiles\road02.frm
+tile       114  492            art\tiles\road02.frm
+tile       116  492            art\tiles\road02.frm
+tile       118  492            art\tiles\road02.frm
+tile       120  492            art\tiles\road02.frm
+tile       122  492            art\tiles\road02.frm
+tile       124  492            art\tiles\road02.frm
+tile       126  492            art\tiles\road02.frm
+tile       128  492            art\tiles\road02.frm
+tile       130  492            art\tiles\road02.frm
+tile       132  492            art\tiles\road02.frm
+tile       64   494            art\tiles\road02.frm
+tile       66   494            art\tiles\road02.frm
+tile       68   494            art\tiles\road02.frm
+tile       70   494            art\tiles\road02.frm
+tile       72   494            art\tiles\road02.frm
+tile       74   494            art\tiles\road02.frm
+tile       76   494            art\tiles\road02.frm
+tile       78   494            art\tiles\road02.frm
+tile       80   494            art\tiles\road02.frm
+tile       82   494            art\tiles\road02.frm
+tile       84   494            art\tiles\road02.frm
+tile       86   494            art\tiles\road02.frm
+tile       88   494            art\tiles\road02.frm
+tile       90   494            art\tiles\cabrik01.frm
+tile       92   494            art\tiles\cabrik01.frm
+tile       94   494            art\tiles\cabrik01.frm
+tile       96   494            art\tiles\cabrik01.frm
+tile       98   494            art\tiles\cabrik01.frm
+tile       100  494            art\tiles\cabrik01.frm
+tile       102  494            art\tiles\cabrik01.frm
+tile       104  494            art\tiles\cabrik01.frm
+tile       106  494            art\tiles\cabrik01.frm
+tile       108  494            art\tiles\cabrik01.frm
+tile       110  494            art\tiles\cabrik01.frm
+tile       112  494            art\tiles\cabrik01.frm
+tile       114  494            art\tiles\road02.frm
+tile       116  494            art\tiles\road02.frm
+tile       118  494            art\tiles\road02.frm
+tile       120  494            art\tiles\road02.frm
+tile       122  494            art\tiles\road02.frm
+tile       124  494            art\tiles\road02.frm
+tile       126  494            art\tiles\road02.frm
+tile       128  494            art\tiles\road02.frm
+tile       130  494            art\tiles\road02.frm
+tile       132  494            art\tiles\road02.frm
+tile       134  494            art\tiles\road02.frm
+tile       64   496            art\tiles\road02.frm
+tile       66   496            art\tiles\road02.frm
+tile       68   496            art\tiles\road02.frm
+tile       70   496            art\tiles\road02.frm
+tile       72   496            art\tiles\road02.frm
+tile       74   496            art\tiles\road02.frm
+tile       76   496            art\tiles\road02.frm
+tile       78   496            art\tiles\road02.frm
+tile       80   496            art\tiles\road02.frm
+tile       82   496            art\tiles\road02.frm
+tile       84   496            art\tiles\road02.frm
+tile       86   496            art\tiles\road02.frm
+tile       88   496            art\tiles\road02.frm
+tile       90   496            art\tiles\cabrik01.frm
+tile       92   496            art\tiles\cabrik01.frm
+tile       94   496            art\tiles\cabrik01.frm
+tile       96   496            art\tiles\cabrik01.frm
+tile       98   496            art\tiles\cabrik01.frm
+tile       100  496            art\tiles\cabrik01.frm
+tile       102  496            art\tiles\cabrik01.frm
+tile       104  496            art\tiles\cabrik01.frm
+tile       106  496            art\tiles\cabrik01.frm
+tile       108  496            art\tiles\cabrik01.frm
+tile       110  496            art\tiles\cabrik01.frm
+tile       112  496            art\tiles\cabrik01.frm
+tile       114  496            art\tiles\road02.frm
+tile       116  496            art\tiles\road02.frm
+tile       118  496            art\tiles\road02.frm
+tile       120  496            art\tiles\road02.frm
+tile       122  496            art\tiles\road02.frm
+tile       124  496            art\tiles\road02.frm
+tile       126  496            art\tiles\road02.frm
+tile       128  496            art\tiles\road02.frm
+tile       130  496            art\tiles\road02.frm
+tile       132  496            art\tiles\road02.frm
+tile       134  496            art\tiles\road02.frm
+tile       66   498            art\tiles\road02.frm
+tile       68   498            art\tiles\road02.frm
+tile       70   498            art\tiles\road02.frm
+tile       72   498            art\tiles\road02.frm
+tile       74   498            art\tiles\road02.frm
+tile       76   498            art\tiles\road02.frm
+tile       78   498            art\tiles\road02.frm
+tile       80   498            art\tiles\road02.frm
+tile       82   498            art\tiles\road02.frm
+tile       84   498            art\tiles\road02.frm
+tile       86   498            art\tiles\road02.frm
+tile       88   498            art\tiles\road02.frm
+tile       90   498            art\tiles\cabrik01.frm
+tile       92   498            art\tiles\cabrik01.frm
+tile       94   498            art\tiles\cabrik01.frm
+tile       96   498            art\tiles\cabrik01.frm
+tile       98   498            art\tiles\cabrik01.frm
+tile       100  498            art\tiles\cabrik01.frm
+tile       102  498            art\tiles\cabrik01.frm
+tile       104  498            art\tiles\cabrik01.frm
+tile       106  498            art\tiles\cabrik01.frm
+tile       108  498            art\tiles\cabrik01.frm
+tile       110  498            art\tiles\cabrik01.frm
+tile       112  498            art\tiles\cabrik01.frm
+tile       114  498            art\tiles\road02.frm
+tile       116  498            art\tiles\road02.frm
+tile       118  498            art\tiles\road02.frm
+tile       120  498            art\tiles\road02.frm
+tile       122  498            art\tiles\road02.frm
+tile       124  498            art\tiles\road02.frm
+tile       126  498            art\tiles\road02.frm
+tile       128  498            art\tiles\road02.frm
+tile       130  498            art\tiles\road02.frm
+tile       132  498            art\tiles\road02.frm
+tile       134  498            art\tiles\road02.frm
+tile       68   500            art\tiles\road02.frm
+tile       70   500            art\tiles\road02.frm
+tile       72   500            art\tiles\road02.frm
+tile       74   500            art\tiles\road02.frm
+tile       76   500            art\tiles\road02.frm
+tile       78   500            art\tiles\road02.frm
+tile       80   500            art\tiles\road02.frm
+tile       82   500            art\tiles\road02.frm
+tile       84   500            art\tiles\road02.frm
+tile       86   500            art\tiles\road02.frm
+tile       88   500            art\tiles\road02.frm
+tile       90   500            art\tiles\cabrik01.frm
+tile       92   500            art\tiles\cabrik01.frm
+tile       94   500            art\tiles\cabrik01.frm
+tile       96   500            art\tiles\cabrik01.frm
+tile       98   500            art\tiles\cabrik01.frm
+tile       100  500            art\tiles\cabrik01.frm
+tile       102  500            art\tiles\cabrik01.frm
+tile       104  500            art\tiles\cabrik01.frm
+tile       106  500            art\tiles\cabrik01.frm
+tile       108  500            art\tiles\cabrik01.frm
+tile       110  500            art\tiles\cabrik01.frm
+tile       112  500            art\tiles\cabrik01.frm
+tile       114  500            art\tiles\road02.frm
+tile       116  500            art\tiles\road02.frm
+tile       118  500            art\tiles\road02.frm
+tile       120  500            art\tiles\road02.frm
+tile       122  500            art\tiles\road02.frm
+tile       124  500            art\tiles\road02.frm
+tile       126  500            art\tiles\road02.frm
+tile       128  500            art\tiles\road02.frm
+tile       130  500            art\tiles\road02.frm
+tile       132  500            art\tiles\road02.frm
+tile       134  500            art\tiles\road02.frm
+tile       136  500            art\tiles\road02.frm
+tile       138  500            art\tiles\road02.frm
+tile       70   502            art\tiles\road02.frm
+tile       72   502            art\tiles\road02.frm
+tile       74   502            art\tiles\road02.frm
+tile       76   502            art\tiles\road02.frm
+tile       78   502            art\tiles\road02.frm
+tile       80   502            art\tiles\road02.frm
+tile       82   502            art\tiles\road02.frm
+tile       84   502            art\tiles\road02.frm
+tile       86   502            art\tiles\road02.frm
+tile       88   502            art\tiles\road02.frm
+tile       90   502            art\tiles\cabrik01.frm
+tile       92   502            art\tiles\cabrik01.frm
+tile       94   502            art\tiles\cabrik01.frm
+tile       96   502            art\tiles\cabrik01.frm
+tile       98   502            art\tiles\cabrik01.frm
+tile       100  502            art\tiles\cabrik01.frm
+tile       102  502            art\tiles\cabrik01.frm
+tile       104  502            art\tiles\cabrik01.frm
+tile       106  502            art\tiles\cabrik01.frm
+tile       108  502            art\tiles\cabrik01.frm
+tile       110  502            art\tiles\cabrik01.frm
+tile       112  502            art\tiles\cabrik01.frm
+tile       114  502            art\tiles\road02.frm
+tile       116  502            art\tiles\road02.frm
+tile       118  502            art\tiles\road02.frm
+tile       120  502            art\tiles\road02.frm
+tile       122  502            art\tiles\road02.frm
+tile       124  502            art\tiles\road02.frm
+tile       126  502            art\tiles\road02.frm
+tile       128  502            art\tiles\road02.frm
+tile       130  502            art\tiles\road02.frm
+tile       132  502            art\tiles\road02.frm
+tile       134  502            art\tiles\road02.frm
+tile       136  502            art\tiles\road02.frm
+tile       138  502            art\tiles\road02.frm
+tile       70   504            art\tiles\road02.frm
+tile       72   504            art\tiles\road02.frm
+tile       74   504            art\tiles\road02.frm
+tile       76   504            art\tiles\road02.frm
+tile       78   504            art\tiles\road02.frm
+tile       80   504            art\tiles\road02.frm
+tile       82   504            art\tiles\road02.frm
+tile       84   504            art\tiles\road02.frm
+tile       86   504            art\tiles\road02.frm
+tile       88   504            art\tiles\road02.frm
+tile       90   504            art\tiles\cabrik01.frm
+tile       92   504            art\tiles\cabrik01.frm
+tile       94   504            art\tiles\cabrik01.frm
+tile       96   504            art\tiles\cabrik01.frm
+tile       98   504            art\tiles\cabrik01.frm
+tile       100  504            art\tiles\cabrik01.frm
+tile       102  504            art\tiles\cabrik01.frm
+tile       104  504            art\tiles\cabrik01.frm
+tile       106  504            art\tiles\cabrik01.frm
+tile       108  504            art\tiles\cabrik01.frm
+tile       110  504            art\tiles\cabrik01.frm
+tile       112  504            art\tiles\cabrik01.frm
+tile       114  504            art\tiles\road02.frm
+tile       116  504            art\tiles\road02.frm
+tile       118  504            art\tiles\road02.frm
+tile       120  504            art\tiles\road02.frm
+tile       122  504            art\tiles\road02.frm
+tile       124  504            art\tiles\road02.frm
+tile       126  504            art\tiles\road02.frm
+tile       128  504            art\tiles\road02.frm
+tile       130  504            art\tiles\road02.frm
+tile       132  504            art\tiles\road02.frm
+tile       134  504            art\tiles\road02.frm
+tile       136  504            art\tiles\road02.frm
+tile       138  504            art\tiles\road02.frm
+tile       140  504            art\tiles\road02.frm
+tile       72   506            art\tiles\road02.frm
+tile       74   506            art\tiles\road02.frm
+tile       76   506            art\tiles\road02.frm
+tile       78   506            art\tiles\road02.frm
+tile       80   506            art\tiles\road02.frm
+tile       82   506            art\tiles\road02.frm
+tile       84   506            art\tiles\road02.frm
+tile       86   506            art\tiles\road02.frm
+tile       88   506            art\tiles\road02.frm
+tile       90   506            art\tiles\cabrik01.frm
+tile       92   506            art\tiles\cabrik01.frm
+tile       94   506            art\tiles\cabrik01.frm
+tile       96   506            art\tiles\cabrik01.frm
+tile       98   506            art\tiles\cabrik01.frm
+tile       100  506            art\tiles\cabrik01.frm
+tile       102  506            art\tiles\cabrik01.frm
+tile       104  506            art\tiles\cabrik01.frm
+tile       106  506            art\tiles\cabrik01.frm
+tile       108  506            art\tiles\cabrik01.frm
+tile       110  506            art\tiles\cabrik01.frm
+tile       112  506            art\tiles\cabrik01.frm
+tile       114  506            art\tiles\road02.frm
+tile       116  506            art\tiles\road02.frm
+tile       118  506            art\tiles\road02.frm
+tile       120  506            art\tiles\road02.frm
+tile       122  506            art\tiles\road02.frm
+tile       124  506            art\tiles\road02.frm
+tile       126  506            art\tiles\road02.frm
+tile       128  506            art\tiles\road02.frm
+tile       130  506            art\tiles\road02.frm
+tile       132  506            art\tiles\road02.frm
+tile       134  506            art\tiles\road02.frm
+tile       136  506            art\tiles\road02.frm
+tile       138  506            art\tiles\road02.frm
+tile       140  506            art\tiles\road02.frm
+tile       72   508            art\tiles\road02.frm
+tile       74   508            art\tiles\road02.frm
+tile       76   508            art\tiles\road02.frm
+tile       78   508            art\tiles\road02.frm
+tile       80   508            art\tiles\road02.frm
+tile       82   508            art\tiles\road02.frm
+tile       84   508            art\tiles\road02.frm
+tile       86   508            art\tiles\road02.frm
+tile       88   508            art\tiles\road02.frm
+tile       90   508            art\tiles\cabrik01.frm
+tile       92   508            art\tiles\cabrik01.frm
+tile       94   508            art\tiles\cabrik01.frm
+tile       96   508            art\tiles\cabrik01.frm
+tile       98   508            art\tiles\cabrik01.frm
+tile       100  508            art\tiles\cabrik01.frm
+tile       102  508            art\tiles\cabrik01.frm
+tile       104  508            art\tiles\cabrik01.frm
+tile       106  508            art\tiles\cabrik01.frm
+tile       108  508            art\tiles\cabrik01.frm
+tile       110  508            art\tiles\cabrik01.frm
+tile       112  508            art\tiles\cabrik01.frm
+tile       114  508            art\tiles\road02.frm
+tile       116  508            art\tiles\road02.frm
+tile       118  508            art\tiles\road02.frm
+tile       120  508            art\tiles\road02.frm
+tile       122  508            art\tiles\road02.frm
+tile       124  508            art\tiles\road02.frm
+tile       126  508            art\tiles\road02.frm
+tile       128  508            art\tiles\road02.frm
+tile       130  508            art\tiles\road02.frm
+tile       132  508            art\tiles\road02.frm
+tile       134  508            art\tiles\road02.frm
+tile       136  508            art\tiles\road02.frm
+tile       138  508            art\tiles\road02.frm
+tile       140  508            art\tiles\road02.frm
+tile       74   510            art\tiles\road02.frm
+tile       76   510            art\tiles\road02.frm
+tile       78   510            art\tiles\road02.frm
+tile       80   510            art\tiles\road02.frm
+tile       82   510            art\tiles\road02.frm
+tile       84   510            art\tiles\road02.frm
+tile       86   510            art\tiles\road02.frm
+tile       88   510            art\tiles\road02.frm
+tile       90   510            art\tiles\road02.frm
+tile       92   510            art\tiles\road02.frm
+tile       94   510            art\tiles\road02.frm
+tile       96   510            art\tiles\road02.frm
+tile       98   510            art\tiles\road02.frm
+tile       100  510            art\tiles\road02.frm
+tile       102  510            art\tiles\road02.frm
+tile       104  510            art\tiles\road02.frm
+tile       106  510            art\tiles\road02.frm
+tile       108  510            art\tiles\road02.frm
+tile       110  510            art\tiles\road02.frm
+tile       112  510            art\tiles\road02.frm
+tile       114  510            art\tiles\road02.frm
+tile       116  510            art\tiles\road02.frm
+tile       118  510            art\tiles\road02.frm
+tile       120  510            art\tiles\road02.frm
+tile       122  510            art\tiles\road02.frm
+tile       124  510            art\tiles\road02.frm
+tile       126  510            art\tiles\road02.frm
+tile       128  510            art\tiles\road02.frm
+tile       130  510            art\tiles\road02.frm
+tile       132  510            art\tiles\road02.frm
+tile       134  510            art\tiles\road02.frm
+tile       74   512            art\tiles\road02.frm
+tile       76   512            art\tiles\road02.frm
+tile       78   512            art\tiles\road02.frm
+tile       80   512            art\tiles\road02.frm
+tile       82   512            art\tiles\road02.frm
+tile       84   512            art\tiles\road02.frm
+tile       86   512            art\tiles\road02.frm
+tile       88   512            art\tiles\road02.frm
+tile       90   512            art\tiles\road02.frm
+tile       92   512            art\tiles\road02.frm
+tile       94   512            art\tiles\road02.frm
+tile       96   512            art\tiles\road02.frm
+tile       98   512            art\tiles\road02.frm
+tile       100  512            art\tiles\road02.frm
+tile       102  512            art\tiles\road02.frm
+tile       104  512            art\tiles\road02.frm
+tile       106  512            art\tiles\road02.frm
+tile       108  512            art\tiles\road02.frm
+tile       110  512            art\tiles\road02.frm
+tile       112  512            art\tiles\road02.frm
+tile       114  512            art\tiles\road02.frm
+tile       116  512            art\tiles\road02.frm
+tile       118  512            art\tiles\road02.frm
+tile       120  512            art\tiles\road02.frm
+tile       122  512            art\tiles\road02.frm
+tile       124  512            art\tiles\road02.frm
+tile       126  512            art\tiles\road02.frm
+tile       128  512            art\tiles\road02.frm
+tile       130  512            art\tiles\road02.frm
+tile       76   514            art\tiles\road02.frm
+tile       78   514            art\tiles\road02.frm
+tile       80   514            art\tiles\road02.frm
+tile       82   514            art\tiles\road02.frm
+tile       84   514            art\tiles\road02.frm
+tile       86   514            art\tiles\road02.frm
+tile       88   514            art\tiles\road02.frm
+tile       90   514            art\tiles\road02.frm
+tile       92   514            art\tiles\road02.frm
+tile       94   514            art\tiles\road02.frm
+tile       96   514            art\tiles\road02.frm
+tile       98   514            art\tiles\road02.frm
+tile       100  514            art\tiles\road02.frm
+tile       102  514            art\tiles\road02.frm
+tile       104  514            art\tiles\road02.frm
+tile       106  514            art\tiles\road02.frm
+tile       108  514            art\tiles\road02.frm
+tile       110  514            art\tiles\road02.frm
+tile       112  514            art\tiles\road02.frm
+tile       114  514            art\tiles\road02.frm
+tile       116  514            art\tiles\road02.frm
+tile       118  514            art\tiles\road02.frm
+tile       120  514            art\tiles\road02.frm
+tile       122  514            art\tiles\road02.frm
+tile       124  514            art\tiles\road02.frm
+tile       126  514            art\tiles\road02.frm
+tile       78   516            art\tiles\road02.frm
+tile       80   516            art\tiles\road02.frm
+tile       82   516            art\tiles\road02.frm
+tile       84   516            art\tiles\road02.frm
+tile       86   516            art\tiles\road02.frm
+tile       88   516            art\tiles\road02.frm
+tile       90   516            art\tiles\road02.frm
+tile       92   516            art\tiles\road02.frm
+tile       94   516            art\tiles\road02.frm
+tile       96   516            art\tiles\road02.frm
+tile       98   516            art\tiles\road02.frm
+tile       100  516            art\tiles\road02.frm
+tile       102  516            art\tiles\road02.frm
+tile       104  516            art\tiles\road02.frm
+tile       106  516            art\tiles\road02.frm
+tile       108  516            art\tiles\road02.frm
+tile       110  516            art\tiles\road02.frm
+tile       112  516            art\tiles\road02.frm
+tile       114  516            art\tiles\road02.frm
+tile       116  516            art\tiles\road02.frm
+tile       118  516            art\tiles\road02.frm
+tile       120  516            art\tiles\road02.frm
+tile       78   518            art\tiles\road02.frm
+tile       80   518            art\tiles\road02.frm
+tile       82   518            art\tiles\road02.frm
+tile       84   518            art\tiles\road02.frm
+tile       86   518            art\tiles\road02.frm
+tile       88   518            art\tiles\road02.frm
+tile       90   518            art\tiles\road02.frm
+tile       92   518            art\tiles\road02.frm
+tile       94   518            art\tiles\road02.frm
+tile       96   518            art\tiles\road02.frm
+tile       98   518            art\tiles\road02.frm
+tile       100  518            art\tiles\road02.frm
+tile       102  518            art\tiles\road02.frm
+tile       104  518            art\tiles\road02.frm
+tile       106  518            art\tiles\road02.frm
+tile       108  518            art\tiles\road02.frm
+tile       110  518            art\tiles\road02.frm
+tile       112  518            art\tiles\road02.frm
+tile       114  518            art\tiles\road02.frm
+tile       116  518            art\tiles\road02.frm
+tile       118  518            art\tiles\road02.frm
+tile       80   520            art\tiles\road02.frm
+tile       82   520            art\tiles\road02.frm
+tile       84   520            art\tiles\road02.frm
+tile       86   520            art\tiles\road02.frm
+tile       88   520            art\tiles\road02.frm
+tile       90   520            art\tiles\road02.frm
+tile       92   520            art\tiles\road02.frm
+tile       94   520            art\tiles\road02.frm
+tile       96   520            art\tiles\road02.frm
+tile       98   520            art\tiles\road02.frm
+tile       100  520            art\tiles\road02.frm
+tile       102  520            art\tiles\road02.frm
+tile       104  520            art\tiles\road02.frm
+tile       106  520            art\tiles\road02.frm
+tile       108  520            art\tiles\road02.frm
+tile       110  520            art\tiles\road02.frm
+tile       112  520            art\tiles\road02.frm
+tile       80   522            art\tiles\road02.frm
+tile       82   522            art\tiles\road02.frm
+tile       84   522            art\tiles\road02.frm
+tile       86   522            art\tiles\road02.frm
+tile       88   522            art\tiles\road02.frm
+tile       90   522            art\tiles\road02.frm
+tile       92   522            art\tiles\road02.frm
+tile       94   522            art\tiles\road02.frm
+tile       96   522            art\tiles\road02.frm
+tile       98   522            art\tiles\road02.frm
+tile       100  522            art\tiles\road02.frm
+tile       102  522            art\tiles\road02.frm
+tile       104  522            art\tiles\road02.frm
+tile       106  522            art\tiles\road02.frm
+tile       108  522            art\tiles\road02.frm
+tile       110  522            art\tiles\road02.frm
+tile       82   524            art\tiles\road02.frm
+tile       84   524            art\tiles\road02.frm
+tile       86   524            art\tiles\road02.frm
+tile       88   524            art\tiles\road02.frm
+tile       90   524            art\tiles\road02.frm
+tile       92   524            art\tiles\road02.frm
+tile       94   524            art\tiles\road02.frm
+tile       96   524            art\tiles\road02.frm
+tile       98   524            art\tiles\road02.frm
+tile       100  524            art\tiles\road02.frm
+tile       102  524            art\tiles\road02.frm
+tile       104  524            art\tiles\road02.frm
+tile       106  524            art\tiles\road02.frm
+tile       84   526            art\tiles\road02.frm
+tile       86   526            art\tiles\road02.frm
+tile       88   526            art\tiles\road02.frm
+tile       90   526            art\tiles\road02.frm
+tile       92   526            art\tiles\road02.frm
+tile       94   526            art\tiles\road02.frm
+tile       96   526            art\tiles\road02.frm
+tile       98   526            art\tiles\road02.frm
+tile       100  526            art\tiles\road02.frm
+tile       102  526            art\tiles\road02.frm
+tile       86   528            art\tiles\road02.frm
+tile       88   528            art\tiles\road02.frm
+tile       90   528            art\tiles\road02.frm
+tile       92   528            art\tiles\road02.frm
+tile       94   528            art\tiles\road02.frm
+tile       96   528            art\tiles\road02.frm
+tile       98   528            art\tiles\road02.frm
+tile       100  528            art\tiles\road02.frm
+tile       86   530            art\tiles\road02.frm
+tile       88   530            art\tiles\road02.frm
+tile       90   530            art\tiles\road02.frm
+tile       92   530            art\tiles\road02.frm
+tile       94   530            art\tiles\road02.frm
+tile       88   532            art\tiles\road02.frm
+tile       90   532            art\tiles\road02.frm
+tile       92   532            art\tiles\road02.frm
+
+[Objects]
+MapObjType           2
+ProtoId              3853
+MapX                 100
+MapY                 102
+Scenery_ToDir        0
+MapObjType           2
+ProtoId              2576
+MapX                 99
+MapY                 84
+
+MapObjType           2
+ProtoId              2577
+MapX                 86
+MapY                 90
+
+
+
+
+
+
+
+
+
+
+MapObjType           2
+ProtoId              5843
+MapX                 90
+MapY                 93
+
+MapObjType           2
+ProtoId              5502
+MapX                 91
+MapY                 93
+
+MapObjType           2
+ProtoId              5499
+MapX                 92
+MapY                 93
+
+MapObjType           2
+ProtoId              5505
+MapX                 93
+MapY                 93
+
+
+
+MapObjType           2
+ProtoId              5839
+MapX                 94
+MapY                 93
+
+
+MapObjType           2
+ProtoId              5502
+MapX                 95
+MapY                 93
+
+
+MapObjType           2
+ProtoId              5839
+MapX                 96
+MapY                 93
+
+
+MapObjType           2
+ProtoId              5505
+MapX                 97
+MapY                 93
+
+MapObjType           2
+ProtoId              5503
+MapX                 98
+MapY                 93
+
+MapObjType           2
+ProtoId              5502
+MapX                 99
+MapY                 93
+
+MapObjType           2
+ProtoId              5839
+MapX                 100
+MapY                 93
+
+
+MapObjType           2
+ProtoId              5505
+MapX                 101
+MapY                 93
+
+
+MapObjType           2
+ProtoId              5839
+MapX                 102
+MapY                 93
+
+MapObjType           2
+ProtoId              5502
+MapX                 103
+MapY                 93
+
+MapObjType           2
+ProtoId              5839
+MapX                 104
+MapY                 93
+
+MapObjType           2
+ProtoId              5505
+MapX                 105
+MapY                 93
+
+MapObjType           2
+ProtoId              5499
+MapX                 106
+MapY                 93
+
+MapObjType           2
+ProtoId              5502
+MapX                 107
+MapY                 93
+
+MapObjType           2
+ProtoId              5839
+MapX                 108
+MapY                 93
+
+MapObjType           2
+ProtoId              5505
+MapX                 109
+MapY                 93
+
+MapObjType           2
+ProtoId              5839
+MapX                 110
+MapY                 93
+
+MapObjType           2
+ProtoId              5502
+MapX                 111
+MapY                 93
+
+MapObjType           2
+ProtoId              5499
+MapX                 112
+MapY                 93
+
+MapObjType           2
+ProtoId              5505
+MapX                 113
+MapY                 93
+
+MapObjType           2
+ProtoId              5621
+MapX                 114
+MapY                 93
+
+MapObjType           2
+ProtoId              5621
+MapX                 90
+MapY                 94
+
+MapObjType           2
+ProtoId              5622
+MapX                 91
+MapY                 94
+
+
+MapObjType           2
+ProtoId              5622
+MapX                 93
+MapY                 94
+
+
+
+MapObjType           2
+ProtoId              2067
+MapX                 94
+MapY                 94
+
+MapObjType           2
+ProtoId              2356
+MapX                 94
+MapY                 94
+
+MapObjType           2
+ProtoId              5622
+MapX                 95
+MapY                 94
+
+
+MapObjType           2
+ProtoId              5622
+MapX                 97
+MapY                 94
+
+MapObjType           2
+ProtoId              5622
+MapX                 99
+MapY                 94
+
+MapObjType           2
+ProtoId              2348
+MapX                 100
+MapY                 94
+
+MapObjType           2
+ProtoId              5622
+MapX                 101
+MapY                 94
+
+
+MapObjType           2
+ProtoId              5622
+MapX                 103
+MapY                 94
+
+MapObjType           2
+ProtoId              5622
+MapX                 105
+MapY                 94
+
+MapObjType           2
+ProtoId              5622
+MapX                 107
+MapY                 94
+
+MapObjType           2
+ProtoId              5622
+MapX                 109
+MapY                 94
+
+MapObjType           2
+ProtoId              5622
+MapX                 111
+MapY                 94
+
+MapObjType           2
+ProtoId              5622
+MapX                 113
+MapY                 94
+
+MapObjType           2
+ProtoId              5837
+MapX                 114
+MapY                 94
+
+MapObjType           2
+ProtoId              5508
+MapX                 90
+MapY                 95
+
+
+
+MapObjType           2
+ProtoId              2355
+MapX                 94
+MapY                 95
+
+MapObjType           2
+ProtoId              2353
+MapX                 96
+MapY                 95
+
+MapObjType           2
+ProtoId              2351
+MapX                 98
+MapY                 95
+
+MapObjType           2
+ProtoId              2349
+MapX                 100
+MapY                 95
+
+
+MapObjType           2
+ProtoId              5508
+MapX                 114
+MapY                 95
+
+MapObjType           2
+ProtoId              5841
+MapX                 90
+MapY                 96
+
+
+MapObjType           2
+ProtoId              2354
+MapX                 95
+MapY                 96
+
+MapObjType           2
+ProtoId              2352
+MapX                 97
+MapY                 96
+
+MapObjType           2
+ProtoId              2350
+MapX                 99
+MapY                 96
+
+
+MapObjType           2
+ProtoId              2141
+MapX                 103
+MapY                 96
+LightDistance        8
+LightIntensity       65536
+
+
+MapObjType           2
+ProtoId              5509
+MapX                 114
+MapY                 96
+
+MapObjType           2
+ProtoId              5511
+MapX                 90
+MapY                 97
+
+
+
+MapObjType           2
+ProtoId              2141
+MapX                 95
+MapY                 97
+LightDistance        8
+LightIntensity       65536
+
+
+MapObjType           2
+ProtoId              5507
+MapX                 114
+MapY                 97
+
+MapObjType           2
+ProtoId              5508
+MapX                 90
+MapY                 98
+
+
+
+MapObjType           2
+ProtoId              5507
+MapX                 114
+MapY                 98
+
+MapObjType           2
+ProtoId              6083
+MapX                 90
+MapY                 99
+
+MapObjType           2
+ProtoId              5502
+MapX                 91
+MapY                 99
+
+MapObjType           2
+ProtoId              5833
+MapX                 92
+MapY                 99
+
+MapObjType           2
+ProtoId              2437
+MapX                 93
+MapY                 99
+
+MapObjType           2
+ProtoId              5830
+MapX                 94
+MapY                 99
+
+
+MapObjType           2
+ProtoId              5505
+MapX                 95
+MapY                 99
+
+MapObjType           2
+ProtoId              5499
+MapX                 96
+MapY                 99
+
+MapObjType           2
+ProtoId              5502
+MapX                 97
+MapY                 99
+
+MapObjType           2
+ProtoId              6081
+MapX                 98
+MapY                 99
+
+MapObjType           2
+ProtoId              5505
+MapX                 99
+MapY                 99
+
+MapObjType           2
+ProtoId              5833
+MapX                 100
+MapY                 99
+
+MapObjType           2
+ProtoId              2437
+MapX                 101
+MapY                 99
+
+MapObjType           2
+ProtoId              5830
+MapX                 102
+MapY                 99
+
+MapObjType           2
+ProtoId              5502
+MapX                 103
+MapY                 99
+
+MapObjType           2
+ProtoId              5503
+MapX                 104
+MapY                 99
+
+
+MapObjType           2
+ProtoId              5502
+MapX                 105
+MapY                 99
+
+
+MapObjType           2
+ProtoId              6081
+MapX                 106
+MapY                 99
+
+MapObjType           2
+ProtoId              5502
+MapX                 107
+MapY                 99
+
+MapObjType           2
+ProtoId              5833
+MapX                 108
+MapY                 99
+
+MapObjType           2
+ProtoId              2437
+MapX                 109
+MapY                 99
+
+MapObjType           2
+ProtoId              5830
+MapX                 110
+MapY                 99
+
+MapObjType           2
+ProtoId              5505
+MapX                 111
+MapY                 99
+
+MapObjType           2
+ProtoId              5499
+MapX                 112
+MapY                 99
+
+MapObjType           2
+ProtoId              5502
+MapX                 113
+MapY                 99
+
+MapObjType           2
+ProtoId              6086
+MapX                 114
+MapY                 99
+
+MapObjType           2
+ProtoId              5621
+MapX                 90
+MapY                 100
+
+MapObjType           2
+ProtoId              5622
+MapX                 91
+MapY                 100
+
+MapObjType           2
+ProtoId              2627
+MapX                 91
+MapY                 100
+
+MapObjType           2
+ProtoId              2067
+MapX                 92
+MapY                 100
+
+MapObjType           2
+ProtoId              5622
+MapX                 95
+MapY                 100
+
+
+
+MapObjType           2
+ProtoId              5622
+MapX                 97
+MapY                 100
+
+MapObjType           2
+ProtoId              5621
+MapX                 98
+MapY                 100
+
+MapObjType           2
+ProtoId              5622
+MapX                 99
+MapY                 100
+
+MapObjType           2
+ProtoId              2627
+MapX                 99
+MapY                 100
+
+MapObjType           2
+ProtoId              2067
+MapX                 100
+MapY                 100
+
+MapObjType           2
+ProtoId              5622
+MapX                 103
+MapY                 100
+
+MapObjType           1
+ProtoId              66
+MapX                 103
+MapY                 100
+
+
+MapObjType           2
+ProtoId              2053
+MapX                 104
+MapY                 100
+
+MapObjType           2
+ProtoId              5622
+MapX                 105
+MapY                 100
+
+
+MapObjType           2
+ProtoId              5621
+MapX                 106
+MapY                 100
+
+
+MapObjType           2
+ProtoId              5622
+MapX                 107
+MapY                 100
+
+MapObjType           2
+ProtoId              2627
+MapX                 107
+MapY                 100
+
+MapObjType           2
+ProtoId              2067
+MapX                 108
+MapY                 100
+
+MapObjType           2
+ProtoId              5622
+MapX                 111
+MapY                 100
+
+MapObjType           2
+ProtoId              5622
+MapX                 113
+MapY                 100
+
+MapObjType           2
+ProtoId              5621
+MapX                 114
+MapY                 100
+
+MapObjType           2
+ProtoId              5511
+MapX                 90
+MapY                 101
+
+MapObjType           2
+ProtoId              2067
+MapX                 92
+MapY                 101
+
+
+MapObjType           2
+ProtoId              5507
+MapX                 98
+MapY                 101
+
+MapObjType           2
+ProtoId              2067
+MapX                 100
+MapY                 101
+
+
+
+
+
+MapObjType           2
+ProtoId              5507
+MapX                 106
+MapY                 101
+
+MapObjType           2
+ProtoId              2067
+MapX                 108
+MapY                 101
+
+MapObjType           2
+ProtoId              5509
+MapX                 114
+MapY                 101
+
+MapObjType           2
+ProtoId              5841
+MapX                 90
+MapY                 102
+
+MapObjType           2
+ProtoId              2628
+MapX                 91
+MapY                 102
+
+MapObjType           2
+ProtoId              2067
+MapX                 92
+MapY                 102
+
+MapObjType           0
+ProtoId              12
+MapX                 94
+MapY                 102
+Dir                  5
+Critter_Cond         1
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  1
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  1
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+
+MapObjType           2
+ProtoId              2141
+MapX                 95
+MapY                 102
+LightDistance        8
+LightIntensity       65536
+
+
+MapObjType           2
+ProtoId              5511
+MapX                 98
+MapY                 102
+
+MapObjType           2
+ProtoId              2628
+MapX                 99
+MapY                 102
+
+
+MapObjType           2
+ProtoId              2067
+MapX                 100
+MapY                 102
+
+
+
+
+MapObjType           2
+ProtoId              2141
+MapX                 103
+MapY                 102
+LightDistance        8
+LightIntensity       65536
+
+MapObjType           2
+ProtoId              5508
+MapX                 106
+MapY                 102
+
+MapObjType           2
+ProtoId              2628
+MapX                 107
+MapY                 102
+
+MapObjType           2
+ProtoId              2067
+MapX                 108
+MapY                 102
+
+MapObjType           2
+ProtoId              2141
+MapX                 111
+MapY                 102
+LightDistance        8
+LightIntensity       65536
+
+MapObjType           2
+ProtoId              2578
+MapX                 114
+MapY                 102
+
+MapObjType           2
+ProtoId              5511
+MapX                 114
+MapY                 102
+
+MapObjType           2
+ProtoId              5508
+MapX                 90
+MapY                 103
+
+MapObjType           2
+ProtoId              2067
+MapX                 91
+MapY                 103
+
+
+
+MapObjType           2
+ProtoId              5508
+MapX                 98
+MapY                 103
+
+
+MapObjType           2
+ProtoId              2067
+MapX                 99
+MapY                 103
+
+
+
+MapObjType           2
+ProtoId              5511
+MapX                 106
+MapY                 103
+
+MapObjType           2
+ProtoId              2067
+MapX                 107
+MapY                 103
+
+MapObjType           0
+ProtoId              25
+MapX                 111
+MapY                 103
+Dir                  0
+Critter_Cond         1
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  1
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  6
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+
+MapObjType           2
+ProtoId              5507
+MapX                 114
+MapY                 103
+
+MapObjType           2
+ProtoId              5507
+MapX                 90
+MapY                 104
+
+
+MapObjType           2
+ProtoId              5507
+MapX                 98
+MapY                 104
+
+
+MapObjType           2
+ProtoId              5509
+MapX                 106
+MapY                 104
+
+MapObjType           2
+ProtoId              5508
+MapX                 114
+MapY                 104
+
+MapObjType           2
+ProtoId              5509
+MapX                 90
+MapY                 105
+
+MapObjType           2
+ProtoId              5511
+MapX                 98
+MapY                 105
+
+MapObjType           2
+ProtoId              5508
+MapX                 106
+MapY                 105
+
+MapObjType           2
+ProtoId              2627
+MapX                 107
+MapY                 105
+
+MapObjType           2
+ProtoId              2067
+MapX                 108
+MapY                 105
+
+MapObjType           2
+ProtoId              5511
+MapX                 114
+MapY                 105
+
+MapObjType           2
+ProtoId              5841
+MapX                 90
+MapY                 106
+
+MapObjType           2
+ProtoId              5509
+MapX                 98
+MapY                 106
+
+MapObjType           0
+ProtoId              25
+MapX                 103
+MapY                 106
+Dir                  5
+Critter_Cond         1
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  1
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  6
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+
+MapObjType           2
+ProtoId              5507
+MapX                 106
+MapY                 106
+
+MapObjType           2
+ProtoId              2067
+MapX                 108
+MapY                 106
+
+MapObjType           2
+ProtoId              5507
+MapX                 114
+MapY                 106
+
+MapObjType           2
+ProtoId              5511
+MapX                 90
+MapY                 107
+
+MapObjType           2
+ProtoId              5508
+MapX                 98
+MapY                 107
+
+MapObjType           2
+ProtoId              5509
+MapX                 106
+MapY                 107
+
+MapObjType           2
+ProtoId              2628
+MapX                 107
+MapY                 107
+
+MapObjType           2
+ProtoId              2067
+MapX                 108
+MapY                 107
+
+MapObjType           2
+ProtoId              5508
+MapX                 114
+MapY                 107
+
+MapObjType           2
+ProtoId              5507
+MapX                 90
+MapY                 108
+
+MapObjType           2
+ProtoId              5508
+MapX                 98
+MapY                 108
+
+MapObjType           2
+ProtoId              5508
+MapX                 106
+MapY                 108
+
+MapObjType           2
+ProtoId              2067
+MapX                 108
+MapY                 108
+
+MapObjType           2
+ProtoId              5507
+MapX                 114
+MapY                 108
+
+MapObjType           2
+ProtoId              5836
+MapX                 90
+MapY                 109
+
+MapObjType           2
+ProtoId              5505
+MapX                 91
+MapY                 109
+
+MapObjType           2
+ProtoId              5503
+MapX                 92
+MapY                 109
+
+MapObjType           2
+ProtoId              5502
+MapX                 93
+MapY                 109
+
+MapObjType           2
+ProtoId              5839
+MapX                 94
+MapY                 109
+
+MapObjType           2
+ProtoId              5505
+MapX                 95
+MapY                 109
+
+MapObjType           2
+ProtoId              2360
+MapX                 96
+MapY                 109
+
+MapObjType           2
+ProtoId              5839
+MapX                 96
+MapY                 109
+
+MapObjType           2
+ProtoId              5505
+MapX                 97
+MapY                 109
+
+MapObjType           2
+ProtoId              6085
+MapX                 98
+MapY                 109
+
+MapObjType           2
+ProtoId              5502
+MapX                 99
+MapY                 109
+
+MapObjType           2
+ProtoId              5839
+MapX                 100
+MapY                 109
+
+MapObjType           2
+ProtoId              5505
+MapX                 101
+MapY                 109
+
+MapObjType           2
+ProtoId              5839
+MapX                 102
+MapY                 109
+
+MapObjType           2
+ProtoId              5502
+MapX                 103
+MapY                 109
+
+MapObjType           2
+ProtoId              5839
+MapX                 104
+MapY                 109
+
+MapObjType           2
+ProtoId              5505
+MapX                 105
+MapY                 109
+
+MapObjType           2
+ProtoId              6085
+MapX                 106
+MapY                 109
+
+MapObjType           2
+ProtoId              5502
+MapX                 107
+MapY                 109
+
+MapObjType           2
+ProtoId              2359
+MapX                 108
+MapY                 109
+
+MapObjType           2
+ProtoId              5839
+MapX                 108
+MapY                 109
+
+MapObjType           2
+ProtoId              5505
+MapX                 109
+MapY                 109
+
+MapObjType           2
+ProtoId              5839
+MapX                 110
+MapY                 109
+
+MapObjType           2
+ProtoId              5502
+MapX                 111
+MapY                 109
+
+MapObjType           2
+ProtoId              5499
+MapX                 112
+MapY                 109
+
+MapObjType           2
+ProtoId              5835
+MapX                 113
+MapY                 109
+
+MapObjType           2
+ProtoId              5834
+MapX                 114
+MapY                 109
+
+MapObjType           2
+ProtoId              5622
+MapX                 91
+MapY                 110
+
+MapObjType           2
+ProtoId              5622
+MapX                 93
+MapY                 110
+
+MapObjType           2
+ProtoId              5622
+MapX                 95
+MapY                 110
+
+MapObjType           2
+ProtoId              5622
+MapX                 97
+MapY                 110
+
+MapObjType           2
+ProtoId              5622
+MapX                 99
+MapY                 110
+
+MapObjType           2
+ProtoId              5622
+MapX                 101
+MapY                 110
+
+MapObjType           2
+ProtoId              5622
+MapX                 103
+MapY                 110
+
+MapObjType           2
+ProtoId              5622
+MapX                 105
+MapY                 110
+
+MapObjType           2
+ProtoId              5622
+MapX                 107
+MapY                 110
+
+MapObjType           2
+ProtoId              5622
+MapX                 109
+MapY                 110
+
+MapObjType           2
+ProtoId              5622
+MapX                 111
+MapY                 110
+
+MapObjType           2
+ProtoId              5622
+MapX                 113
+MapY                 110
+
+MapObjType           2
+ProtoId              2579
+MapX                 114
+MapY                 110
+
+MapObjType           2
+ProtoId              2580
+MapX                 114
+MapY                 110
+
+MapObjType           2
+ProtoId              2576
+MapX                 100
+MapY                 285
+
+
+
+
+
+MapObjType           2
+ProtoId              2577
+MapX                 87
+MapY                 292
+
+
+
+
+
+
+MapObjType           2
+ProtoId              5843
+MapX                 90
+MapY                 293
+
+MapObjType           2
+ProtoId              5502
+MapX                 91
+MapY                 293
+
+MapObjType           2
+ProtoId              5499
+MapX                 92
+MapY                 293
+
+MapObjType           2
+ProtoId              5505
+MapX                 93
+MapY                 293
+
+
+MapObjType           2
+ProtoId              5839
+MapX                 94
+MapY                 293
+
+
+MapObjType           2
+ProtoId              5502
+MapX                 95
+MapY                 293
+
+
+MapObjType           2
+ProtoId              5839
+MapX                 96
+MapY                 293
+
+
+MapObjType           2
+ProtoId              5505
+MapX                 97
+MapY                 293
+
+MapObjType           2
+ProtoId              5503
+MapX                 98
+MapY                 293
+
+MapObjType           2
+ProtoId              5502
+MapX                 99
+MapY                 293
+
+MapObjType           2
+ProtoId              5839
+MapX                 100
+MapY                 293
+
+
+MapObjType           2
+ProtoId              5505
+MapX                 101
+MapY                 293
+
+
+MapObjType           2
+ProtoId              5839
+MapX                 102
+MapY                 293
+
+MapObjType           2
+ProtoId              5502
+MapX                 103
+MapY                 293
+
+MapObjType           2
+ProtoId              5839
+MapX                 104
+MapY                 293
+
+MapObjType           2
+ProtoId              5505
+MapX                 105
+MapY                 293
+
+MapObjType           2
+ProtoId              6081
+MapX                 106
+MapY                 293
+
+MapObjType           2
+ProtoId              5502
+MapX                 107
+MapY                 293
+
+MapObjType           2
+ProtoId              5839
+MapX                 108
+MapY                 293
+
+MapObjType           2
+ProtoId              5505
+MapX                 109
+MapY                 293
+
+MapObjType           2
+ProtoId              5839
+MapX                 110
+MapY                 293
+
+MapObjType           2
+ProtoId              5502
+MapX                 111
+MapY                 293
+
+MapObjType           2
+ProtoId              5499
+MapX                 112
+MapY                 293
+
+MapObjType           2
+ProtoId              5502
+MapX                 113
+MapY                 293
+
+MapObjType           2
+ProtoId              5621
+MapX                 114
+MapY                 293
+
+MapObjType           2
+ProtoId              5621
+MapX                 90
+MapY                 294
+
+MapObjType           2
+ProtoId              5622
+MapX                 91
+MapY                 294
+
+
+MapObjType           2
+ProtoId              5622
+MapX                 93
+MapY                 294
+
+
+MapObjType           2
+ProtoId              2067
+MapX                 94
+MapY                 294
+
+
+MapObjType           2
+ProtoId              2356
+MapX                 94
+MapY                 294
+
+MapObjType           2
+ProtoId              5622
+MapX                 95
+MapY                 294
+
+
+MapObjType           2
+ProtoId              5622
+MapX                 97
+MapY                 294
+
+MapObjType           2
+ProtoId              5622
+MapX                 99
+MapY                 294
+
+MapObjType           2
+ProtoId              2348
+MapX                 100
+MapY                 294
+
+MapObjType           2
+ProtoId              5622
+MapX                 101
+MapY                 294
+
+
+MapObjType           2
+ProtoId              5622
+MapX                 103
+MapY                 294
+
+MapObjType           2
+ProtoId              5622
+MapX                 105
+MapY                 294
+
+MapObjType           2
+ProtoId              5621
+MapX                 106
+MapY                 294
+
+MapObjType           2
+ProtoId              5622
+MapX                 107
+MapY                 294
+
+MapObjType           2
+ProtoId              2633
+MapX                 108
+MapY                 294
+
+MapObjType           2
+ProtoId              5622
+MapX                 109
+MapY                 294
+
+MapObjType           2
+ProtoId              2067
+MapX                 110
+MapY                 294
+
+MapObjType           1
+ProtoId              146
+MapX                 110
+MapY                 294
+
+MapObjType           2
+ProtoId              5622
+MapX                 111
+MapY                 294
+
+MapObjType           2
+ProtoId              2067
+MapX                 112
+MapY                 294
+
+MapObjType           2
+ProtoId              5622
+MapX                 113
+MapY                 294
+
+MapObjType           2
+ProtoId              5837
+MapX                 114
+MapY                 294
+
+MapObjType           2
+ProtoId              5507
+MapX                 90
+MapY                 295
+
+
+
+MapObjType           2
+ProtoId              2355
+MapX                 94
+MapY                 295
+
+MapObjType           2
+ProtoId              2353
+MapX                 96
+MapY                 295
+
+MapObjType           2
+ProtoId              2351
+MapX                 98
+MapY                 295
+
+MapObjType           2
+ProtoId              2349
+MapX                 100
+MapY                 295
+
+
+MapObjType           2
+ProtoId              5826
+MapX                 106
+MapY                 295
+
+MapObjType           2
+ProtoId              2067
+MapX                 111
+MapY                 295
+
+MapObjType           2
+ProtoId              2067
+MapX                 113
+MapY                 295
+
+MapObjType           2
+ProtoId              5507
+MapX                 114
+MapY                 295
+
+MapObjType           2
+ProtoId              5841
+MapX                 90
+MapY                 296
+
+
+MapObjType           2
+ProtoId              2354
+MapX                 95
+MapY                 296
+
+MapObjType           2
+ProtoId              2352
+MapX                 97
+MapY                 296
+
+MapObjType           2
+ProtoId              2350
+MapX                 99
+MapY                 296
+
+
+
+MapObjType           2
+ProtoId              2438
+MapX                 106
+MapY                 296
+
+MapObjType           2
+ProtoId              5508
+MapX                 114
+MapY                 296
+
+MapObjType           2
+ProtoId              5511
+MapX                 90
+MapY                 297
+
+
+
+MapObjType           2
+ProtoId              2141
+MapX                 95
+MapY                 297
+LightDistance        8
+LightIntensity       65536
+
+MapObjType           2
+ProtoId              2141
+MapX                 103
+MapY                 297
+LightDistance        8
+LightIntensity       65536
+
+
+MapObjType           2
+ProtoId              5829
+MapX                 106
+MapY                 297
+
+MapObjType           2
+ProtoId              5507
+MapX                 114
+MapY                 297
+
+MapObjType           2
+ProtoId              5507
+MapX                 90
+MapY                 298
+
+
+MapObjType           0
+ProtoId              25
+MapX                 103
+MapY                 298
+Dir                  0
+Critter_Cond         1
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  1
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  6
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+
+
+MapObjType           2
+ProtoId              5507
+MapX                 106
+MapY                 298
+
+MapObjType           2
+ProtoId              2141
+MapX                 109
+MapY                 298
+LightDistance        8
+LightIntensity       65536
+
+MapObjType           0
+ProtoId              25
+MapX                 112
+MapY                 298
+Dir                  5
+Critter_Cond         1
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  1
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  6
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+
+MapObjType           2
+ProtoId              5511
+MapX                 114
+MapY                 298
+
+MapObjType           2
+ProtoId              6083
+MapX                 90
+MapY                 299
+
+MapObjType           2
+ProtoId              5505
+MapX                 91
+MapY                 299
+
+MapObjType           2
+ProtoId              5503
+MapX                 92
+MapY                 299
+
+MapObjType           2
+ProtoId              5502
+MapX                 93
+MapY                 299
+
+MapObjType           2
+ProtoId              5833
+MapX                 94
+MapY                 299
+
+
+MapObjType           2
+ProtoId              2437
+MapX                 95
+MapY                 299
+
+MapObjType           2
+ProtoId              5830
+MapX                 96
+MapY                 299
+
+MapObjType           2
+ProtoId              5505
+MapX                 97
+MapY                 299
+
+MapObjType           2
+ProtoId              6081
+MapX                 98
+MapY                 299
+
+MapObjType           2
+ProtoId              5502
+MapX                 99
+MapY                 299
+
+MapObjType           2
+ProtoId              5833
+MapX                 100
+MapY                 299
+
+MapObjType           2
+ProtoId              2437
+MapX                 101
+MapY                 299
+
+MapObjType           2
+ProtoId              5830
+MapX                 102
+MapY                 299
+
+MapObjType           2
+ProtoId              5505
+MapX                 103
+MapY                 299
+
+MapObjType           2
+ProtoId              5499
+MapX                 104
+MapY                 299
+
+MapObjType           1
+ProtoId              60
+MapX                 104
+MapY                 299
+
+
+MapObjType           2
+ProtoId              5502
+MapX                 105
+MapY                 299
+
+
+MapObjType           2
+ProtoId              6086
+MapX                 106
+MapY                 299
+
+MapObjType           2
+ProtoId              2632
+MapX                 107
+MapY                 299
+
+MapObjType           2
+ProtoId              5508
+MapX                 114
+MapY                 299
+
+MapObjType           2
+ProtoId              5621
+MapX                 90
+MapY                 300
+
+MapObjType           2
+ProtoId              5622
+MapX                 91
+MapY                 300
+
+MapObjType           2
+ProtoId              2627
+MapX                 91
+MapY                 300
+
+MapObjType           2
+ProtoId              2067
+MapX                 92
+MapY                 300
+
+MapObjType           2
+ProtoId              5622
+MapX                 93
+MapY                 300
+
+
+
+MapObjType           2
+ProtoId              5622
+MapX                 97
+MapY                 300
+
+MapObjType           2
+ProtoId              5621
+MapX                 98
+MapY                 300
+
+MapObjType           2
+ProtoId              5622
+MapX                 99
+MapY                 300
+
+MapObjType           2
+ProtoId              2627
+MapX                 99
+MapY                 300
+
+MapObjType           2
+ProtoId              2067
+MapX                 100
+MapY                 300
+
+MapObjType           2
+ProtoId              5622
+MapX                 103
+MapY                 300
+
+
+MapObjType           2
+ProtoId              5622
+MapX                 105
+MapY                 300
+
+
+MapObjType           2
+ProtoId              5621
+MapX                 106
+MapY                 300
+
+
+MapObjType           2
+ProtoId              5507
+MapX                 114
+MapY                 300
+
+MapObjType           2
+ProtoId              5507
+MapX                 90
+MapY                 301
+
+MapObjType           2
+ProtoId              2067
+MapX                 92
+MapY                 301
+
+MapObjType           2
+ProtoId              2141
+MapX                 94
+MapY                 301
+LightDistance        8
+LightIntensity       65536
+
+
+MapObjType           2
+ProtoId              5507
+MapX                 98
+MapY                 301
+
+MapObjType           2
+ProtoId              2067
+MapX                 100
+MapY                 301
+
+
+MapObjType           2
+ProtoId              2141
+MapX                 102
+MapY                 301
+LightDistance        8
+LightIntensity       65536
+
+
+
+
+MapObjType           2
+ProtoId              5508
+MapX                 106
+MapY                 301
+
+MapObjType           2
+ProtoId              2632
+MapX                 107
+MapY                 301
+
+MapObjType           2
+ProtoId              5509
+MapX                 114
+MapY                 301
+
+MapObjType           2
+ProtoId              5841
+MapX                 90
+MapY                 302
+
+MapObjType           2
+ProtoId              2628
+MapX                 91
+MapY                 302
+
+MapObjType           2
+ProtoId              2067
+MapX                 92
+MapY                 302
+
+
+MapObjType           2
+ProtoId              5508
+MapX                 98
+MapY                 302
+
+MapObjType           2
+ProtoId              2628
+MapX                 99
+MapY                 302
+
+
+MapObjType           2
+ProtoId              2067
+MapX                 100
+MapY                 302
+
+
+
+
+MapObjType           2
+ProtoId              5507
+MapX                 106
+MapY                 302
+
+MapObjType           2
+ProtoId              2578
+MapX                 114
+MapY                 302
+
+MapObjType           2
+ProtoId              5508
+MapX                 114
+MapY                 302
+
+MapObjType           2
+ProtoId              5509
+MapX                 90
+MapY                 303
+
+MapObjType           2
+ProtoId              2067
+MapX                 91
+MapY                 303
+
+
+
+MapObjType           2
+ProtoId              5511
+MapX                 98
+MapY                 303
+
+
+MapObjType           2
+ProtoId              2067
+MapX                 99
+MapY                 303
+
+
+
+MapObjType           2
+ProtoId              5509
+MapX                 106
+MapY                 303
+
+MapObjType           2
+ProtoId              5507
+MapX                 114
+MapY                 303
+
+MapObjType           2
+ProtoId              5507
+MapX                 90
+MapY                 304
+
+
+MapObjType           2
+ProtoId              5509
+MapX                 98
+MapY                 304
+
+
+MapObjType           2
+ProtoId              5508
+MapX                 106
+MapY                 304
+
+MapObjType           2
+ProtoId              5511
+MapX                 114
+MapY                 304
+
+MapObjType           2
+ProtoId              5508
+MapX                 90
+MapY                 305
+
+MapObjType           2
+ProtoId              2067
+MapX                 91
+MapY                 305
+
+MapObjType           1
+ProtoId              63
+MapX                 91
+MapY                 305
+
+MapObjType           2
+ProtoId              5507
+MapX                 98
+MapY                 305
+
+MapObjType           2
+ProtoId              5511
+MapX                 106
+MapY                 305
+
+MapObjType           2
+ProtoId              5507
+MapX                 114
+MapY                 305
+
+MapObjType           2
+ProtoId              5841
+MapX                 90
+MapY                 306
+
+MapObjType           2
+ProtoId              2067
+MapX                 91
+MapY                 306
+
+MapObjType           2
+ProtoId              5508
+MapX                 98
+MapY                 306
+
+MapObjType           2
+ProtoId              5507
+MapX                 106
+MapY                 306
+
+MapObjType           2
+ProtoId              2141
+MapX                 110
+MapY                 306
+LightDistance        8
+LightIntensity       65536
+
+MapObjType           0
+ProtoId              25
+MapX                 111
+MapY                 306
+Dir                  0
+Critter_Cond         1
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  1
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  6
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+
+MapObjType           2
+ProtoId              5507
+MapX                 114
+MapY                 306
+
+MapObjType           2
+ProtoId              5507
+MapX                 90
+MapY                 307
+
+MapObjType           2
+ProtoId              2067
+MapX                 91
+MapY                 307
+
+MapObjType           2
+ProtoId              5511
+MapX                 98
+MapY                 307
+
+MapObjType           2
+ProtoId              5509
+MapX                 106
+MapY                 307
+
+MapObjType           2
+ProtoId              5511
+MapX                 114
+MapY                 307
+
+MapObjType           2
+ProtoId              5507
+MapX                 90
+MapY                 308
+
+MapObjType           2
+ProtoId              2067
+MapX                 91
+MapY                 308
+
+MapObjType           1
+ProtoId              131
+MapX                 91
+MapY                 308
+
+MapObjType           2
+ProtoId              5507
+MapX                 98
+MapY                 308
+
+MapObjType           2
+ProtoId              2067
+MapX                 99
+MapY                 308
+
+MapObjType           1
+ProtoId              8
+MapX                 0
+MapY                 200
+Item_AmmoPid         29
+Item_AmmoCount       12
+
+MapObjType           1
+ProtoId              5
+MapX                 0
+MapY                 200
+
+MapObjType           1
+ProtoId              20
+MapX                 0
+MapY                 200
+
+MapObjType           1
+ProtoId              29
+MapX                 0
+MapY                 200
+
+MapObjType           1
+ProtoId              131
+MapX                 99
+MapY                 308
+
+MapObjType           2
+ProtoId              5508
+MapX                 106
+MapY                 308
+
+MapObjType           2
+ProtoId              5507
+MapX                 114
+MapY                 308
+
+MapObjType           2
+ProtoId              5836
+MapX                 90
+MapY                 309
+
+MapObjType           2
+ProtoId              5505
+MapX                 91
+MapY                 309
+
+MapObjType           2
+ProtoId              5499
+MapX                 92
+MapY                 309
+
+MapObjType           2
+ProtoId              5502
+MapX                 93
+MapY                 309
+
+MapObjType           2
+ProtoId              5839
+MapX                 94
+MapY                 309
+
+MapObjType           2
+ProtoId              5505
+MapX                 95
+MapY                 309
+
+MapObjType           2
+ProtoId              2360
+MapX                 96
+MapY                 309
+
+MapObjType           2
+ProtoId              5839
+MapX                 96
+MapY                 309
+
+MapObjType           2
+ProtoId              5502
+MapX                 97
+MapY                 309
+
+MapObjType           2
+ProtoId              6085
+MapX                 98
+MapY                 309
+
+MapObjType           2
+ProtoId              5505
+MapX                 99
+MapY                 309
+
+MapObjType           2
+ProtoId              5839
+MapX                 100
+MapY                 309
+
+MapObjType           2
+ProtoId              5502
+MapX                 101
+MapY                 309
+
+MapObjType           2
+ProtoId              5839
+MapX                 102
+MapY                 309
+
+MapObjType           2
+ProtoId              5505
+MapX                 103
+MapY                 309
+
+MapObjType           2
+ProtoId              5839
+MapX                 104
+MapY                 309
+
+MapObjType           2
+ProtoId              5502
+MapX                 105
+MapY                 309
+
+MapObjType           2
+ProtoId              6085
+MapX                 106
+MapY                 309
+
+MapObjType           2
+ProtoId              5505
+MapX                 107
+MapY                 309
+
+MapObjType           2
+ProtoId              2359
+MapX                 108
+MapY                 309
+
+MapObjType           2
+ProtoId              5839
+MapX                 108
+MapY                 309
+
+MapObjType           2
+ProtoId              5502
+MapX                 109
+MapY                 309
+
+MapObjType           2
+ProtoId              5839
+MapX                 110
+MapY                 309
+
+MapObjType           2
+ProtoId              5505
+MapX                 111
+MapY                 309
+
+MapObjType           2
+ProtoId              5499
+MapX                 112
+MapY                 309
+
+MapObjType           2
+ProtoId              5835
+MapX                 113
+MapY                 309
+
+MapObjType           2
+ProtoId              5834
+MapX                 114
+MapY                 309
+
+MapObjType           2
+ProtoId              5622
+MapX                 91
+MapY                 310
+
+MapObjType           2
+ProtoId              5622
+MapX                 93
+MapY                 310
+
+MapObjType           2
+ProtoId              5622
+MapX                 95
+MapY                 310
+
+MapObjType           2
+ProtoId              5622
+MapX                 97
+MapY                 310
+
+MapObjType           2
+ProtoId              5622
+MapX                 99
+MapY                 310
+
+MapObjType           2
+ProtoId              5622
+MapX                 101
+MapY                 310
+
+MapObjType           2
+ProtoId              5622
+MapX                 103
+MapY                 310
+
+MapObjType           2
+ProtoId              5622
+MapX                 105
+MapY                 310
+
+MapObjType           2
+ProtoId              5622
+MapX                 107
+MapY                 310
+
+MapObjType           2
+ProtoId              5622
+MapX                 109
+MapY                 310
+
+MapObjType           2
+ProtoId              5622
+MapX                 111
+MapY                 310
+
+MapObjType           2
+ProtoId              5622
+MapX                 113
+MapY                 310
+
+MapObjType           2
+ProtoId              2579
+MapX                 114
+MapY                 310
+
+MapObjType           2
+ProtoId              2580
+MapX                 114
+MapY                 310
+
+MapObjType           2
+ProtoId              2576
+MapX                 101
+MapY                 487
+
+
+
+
+
+
+
+
+
+
+MapObjType           2
+ProtoId              2577
+MapX                 88
+MapY                 493
+
+MapObjType           2
+ProtoId              5843
+MapX                 90
+MapY                 493
+
+MapObjType           2
+ProtoId              5505
+MapX                 91
+MapY                 493
+
+MapObjType           2
+ProtoId              5499
+MapX                 92
+MapY                 493
+
+MapObjType           2
+ProtoId              5502
+MapX                 93
+MapY                 493
+
+
+MapObjType           2
+ProtoId              5839
+MapX                 94
+MapY                 493
+
+
+MapObjType           2
+ProtoId              5505
+MapX                 95
+MapY                 493
+
+
+MapObjType           2
+ProtoId              5839
+MapX                 96
+MapY                 493
+
+
+MapObjType           2
+ProtoId              5502
+MapX                 97
+MapY                 493
+
+MapObjType           2
+ProtoId              5503
+MapX                 98
+MapY                 493
+
+MapObjType           2
+ProtoId              5505
+MapX                 99
+MapY                 493
+
+MapObjType           2
+ProtoId              5839
+MapX                 100
+MapY                 493
+
+
+MapObjType           2
+ProtoId              5502
+MapX                 101
+MapY                 493
+
+
+MapObjType           2
+ProtoId              5839
+MapX                 102
+MapY                 493
+
+MapObjType           2
+ProtoId              5505
+MapX                 103
+MapY                 493
+
+MapObjType           2
+ProtoId              5839
+MapX                 104
+MapY                 493
+
+MapObjType           2
+ProtoId              5502
+MapX                 105
+MapY                 493
+
+MapObjType           2
+ProtoId              6081
+MapX                 106
+MapY                 493
+
+MapObjType           2
+ProtoId              5505
+MapX                 107
+MapY                 493
+
+MapObjType           2
+ProtoId              5839
+MapX                 108
+MapY                 493
+
+MapObjType           2
+ProtoId              5502
+MapX                 109
+MapY                 493
+
+MapObjType           2
+ProtoId              5839
+MapX                 110
+MapY                 493
+
+MapObjType           2
+ProtoId              5505
+MapX                 111
+MapY                 493
+
+MapObjType           2
+ProtoId              5499
+MapX                 112
+MapY                 493
+
+MapObjType           2
+ProtoId              5502
+MapX                 113
+MapY                 493
+
+MapObjType           2
+ProtoId              5621
+MapX                 114
+MapY                 493
+
+MapObjType           2
+ProtoId              5621
+MapX                 90
+MapY                 494
+
+MapObjType           2
+ProtoId              5622
+MapX                 91
+MapY                 494
+
+
+MapObjType           2
+ProtoId              5622
+MapX                 93
+MapY                 494
+
+
+MapObjType           2
+ProtoId              2067
+MapX                 94
+MapY                 494
+
+
+MapObjType           2
+ProtoId              2356
+MapX                 94
+MapY                 494
+
+MapObjType           2
+ProtoId              5622
+MapX                 95
+MapY                 494
+
+
+MapObjType           2
+ProtoId              5622
+MapX                 97
+MapY                 494
+
+MapObjType           2
+ProtoId              2067
+MapX                 98
+MapY                 494
+
+MapObjType           2
+ProtoId              5622
+MapX                 99
+MapY                 494
+
+MapObjType           2
+ProtoId              5622
+MapX                 101
+MapY                 494
+
+
+MapObjType           2
+ProtoId              5622
+MapX                 103
+MapY                 494
+
+MapObjType           2
+ProtoId              5622
+MapX                 105
+MapY                 494
+
+MapObjType           2
+ProtoId              5621
+MapX                 106
+MapY                 494
+
+MapObjType           2
+ProtoId              5622
+MapX                 107
+MapY                 494
+
+MapObjType           2
+ProtoId              2633
+MapX                 108
+MapY                 494
+
+MapObjType           2
+ProtoId              5622
+MapX                 109
+MapY                 494
+
+MapObjType           2
+ProtoId              5622
+MapX                 111
+MapY                 494
+
+MapObjType           1
+ProtoId              60
+MapX                 111
+MapY                 494
+
+MapObjType           2
+ProtoId              2067
+MapX                 112
+MapY                 494
+
+MapObjType           2
+ProtoId              5622
+MapX                 113
+MapY                 494
+
+MapObjType           2
+ProtoId              5837
+MapX                 114
+MapY                 494
+
+MapObjType           2
+ProtoId              5507
+MapX                 90
+MapY                 495
+
+
+
+MapObjType           2
+ProtoId              2067
+MapX                 94
+MapY                 495
+
+MapObjType           2
+ProtoId              2067
+MapX                 96
+MapY                 495
+
+MapObjType           2
+ProtoId              2067
+MapX                 98
+MapY                 495
+
+
+MapObjType           2
+ProtoId              5826
+MapX                 106
+MapY                 495
+
+MapObjType           2
+ProtoId              5507
+MapX                 114
+MapY                 495
+
+MapObjType           2
+ProtoId              5841
+MapX                 90
+MapY                 496
+
+
+MapObjType           2
+ProtoId              2141
+MapX                 94
+MapY                 496
+LightDistance        8
+LightIntensity       65536
+
+MapObjType           2
+ProtoId              2067
+MapX                 95
+MapY                 496
+
+MapObjType           2
+ProtoId              2067
+MapX                 97
+MapY                 496
+
+
+
+MapObjType           2
+ProtoId              2438
+MapX                 106
+MapY                 496
+
+MapObjType           2
+ProtoId              2141
+MapX                 108
+MapY                 496
+LightDistance        8
+LightIntensity       65536
+
+MapObjType           2
+ProtoId              5508
+MapX                 114
+MapY                 496
+
+MapObjType           2
+ProtoId              5511
+MapX                 90
+MapY                 497
+
+
+
+MapObjType           2
+ProtoId              2141
+MapX                 101
+MapY                 497
+LightDistance        8
+LightIntensity       65536
+
+MapObjType           0
+ProtoId              192
+MapX                 103
+MapY                 497
+Dir                  0
+Critter_Cond         1
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  1
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  1
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+
+
+MapObjType           2
+ProtoId              5829
+MapX                 106
+MapY                 497
+
+MapObjType           2
+ProtoId              5507
+MapX                 114
+MapY                 497
+
+MapObjType           2
+ProtoId              5509
+MapX                 90
+MapY                 498
+
+
+MapObjType           2
+ProtoId              2344
+MapX                 104
+MapY                 498
+
+
+MapObjType           2
+ProtoId              2344
+MapX                 105
+MapY                 498
+
+MapObjType           2
+ProtoId              5508
+MapX                 106
+MapY                 498
+
+MapObjType           0
+ProtoId              190
+MapX                 111
+MapY                 498
+Dir                  0
+Critter_Cond         1
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  1
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  1
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+
+MapObjType           2
+ProtoId              5511
+MapX                 114
+MapY                 498
+
+MapObjType           2
+ProtoId              6083
+MapX                 90
+MapY                 499
+
+MapObjType           2
+ProtoId              5502
+MapX                 91
+MapY                 499
+
+MapObjType           2
+ProtoId              5833
+MapX                 92
+MapY                 499
+
+MapObjType           2
+ProtoId              2437
+MapX                 93
+MapY                 499
+
+MapObjType           2
+ProtoId              5830
+MapX                 94
+MapY                 499
+
+
+MapObjType           2
+ProtoId              5505
+MapX                 95
+MapY                 499
+
+MapObjType           2
+ProtoId              5503
+MapX                 96
+MapY                 499
+
+MapObjType           2
+ProtoId              5502
+MapX                 97
+MapY                 499
+
+MapObjType           2
+ProtoId              6081
+MapX                 98
+MapY                 499
+
+MapObjType           2
+ProtoId              5505
+MapX                 99
+MapY                 499
+
+MapObjType           2
+ProtoId              5499
+MapX                 100
+MapY                 499
+
+MapObjType           2
+ProtoId              5502
+MapX                 101
+MapY                 499
+
+MapObjType           2
+ProtoId              5503
+MapX                 102
+MapY                 499
+
+MapObjType           2
+ProtoId              5505
+MapX                 103
+MapY                 499
+
+MapObjType           2
+ProtoId              5499
+MapX                 104
+MapY                 499
+
+
+MapObjType           2
+ProtoId              5835
+MapX                 105
+MapY                 499
+
+
+MapObjType           2
+ProtoId              5834
+MapX                 106
+MapY                 499
+
+MapObjType           2
+ProtoId              5507
+MapX                 114
+MapY                 499
+
+MapObjType           2
+ProtoId              5621
+MapX                 90
+MapY                 500
+
+MapObjType           2
+ProtoId              5622
+MapX                 91
+MapY                 500
+
+MapObjType           2
+ProtoId              2627
+MapX                 91
+MapY                 500
+
+MapObjType           2
+ProtoId              2067
+MapX                 92
+MapY                 500
+
+MapObjType           2
+ProtoId              5622
+MapX                 95
+MapY                 500
+
+
+
+MapObjType           2
+ProtoId              5622
+MapX                 97
+MapY                 500
+
+MapObjType           2
+ProtoId              5621
+MapX                 98
+MapY                 500
+
+MapObjType           2
+ProtoId              5622
+MapX                 99
+MapY                 500
+
+MapObjType           2
+ProtoId              2627
+MapX                 99
+MapY                 500
+
+MapObjType           2
+ProtoId              2067
+MapX                 100
+MapY                 500
+
+MapObjType           2
+ProtoId              5622
+MapX                 101
+MapY                 500
+
+MapObjType           1
+ProtoId              129
+MapX                 101
+MapY                 500
+
+MapObjType           2
+ProtoId              5622
+MapX                 103
+MapY                 500
+
+MapObjType           2
+ProtoId              2627
+MapX                 103
+MapY                 500
+
+
+MapObjType           2
+ProtoId              2067
+MapX                 104
+MapY                 500
+
+MapObjType           2
+ProtoId              5622
+MapX                 105
+MapY                 500
+
+
+
+MapObjType           2
+ProtoId              5507
+MapX                 114
+MapY                 500
+
+MapObjType           2
+ProtoId              5511
+MapX                 90
+MapY                 501
+
+MapObjType           2
+ProtoId              2067
+MapX                 92
+MapY                 501
+
+MapObjType           2
+ProtoId              2141
+MapX                 94
+MapY                 501
+LightDistance        8
+LightIntensity       65536
+
+
+MapObjType           2
+ProtoId              5507
+MapX                 98
+MapY                 501
+
+MapObjType           2
+ProtoId              2067
+MapX                 100
+MapY                 501
+
+
+MapObjType           2
+ProtoId              2141
+MapX                 102
+MapY                 501
+LightDistance        8
+LightIntensity       65536
+
+
+MapObjType           2
+ProtoId              2067
+MapX                 103
+MapY                 501
+
+
+
+MapObjType           2
+ProtoId              2067
+MapX                 104
+MapY                 501
+
+
+MapObjType           2
+ProtoId              5508
+MapX                 114
+MapY                 501
+
+MapObjType           2
+ProtoId              5841
+MapX                 90
+MapY                 502
+
+MapObjType           2
+ProtoId              2628
+MapX                 91
+MapY                 502
+
+MapObjType           2
+ProtoId              2067
+MapX                 92
+MapY                 502
+
+
+MapObjType           2
+ProtoId              5508
+MapX                 98
+MapY                 502
+
+MapObjType           2
+ProtoId              2628
+MapX                 99
+MapY                 502
+
+
+MapObjType           2
+ProtoId              2067
+MapX                 100
+MapY                 502
+
+
+
+
+MapObjType           2
+ProtoId              2628
+MapX                 103
+MapY                 502
+
+MapObjType           2
+ProtoId              2067
+MapX                 104
+MapY                 502
+
+MapObjType           2
+ProtoId              2578
+MapX                 114
+MapY                 502
+
+MapObjType           2
+ProtoId              5507
+MapX                 114
+MapY                 502
+
+MapObjType           2
+ProtoId              5507
+MapX                 90
+MapY                 503
+
+MapObjType           2
+ProtoId              2067
+MapX                 91
+MapY                 503
+
+
+
+MapObjType           2
+ProtoId              5511
+MapX                 98
+MapY                 503
+
+
+MapObjType           2
+ProtoId              2067
+MapX                 99
+MapY                 503
+
+
+
+MapObjType           2
+ProtoId              2067
+MapX                 103
+MapY                 503
+
+MapObjType           0
+ProtoId              192
+MapX                 108
+MapY                 503
+Dir                  5
+Critter_Cond         1
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  1
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  0
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  1
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+
+MapObjType           2
+ProtoId              5507
+MapX                 114
+MapY                 503
+
+MapObjType           2
+ProtoId              5511
+MapX                 90
+MapY                 504
+
+MapObjType           2
+ProtoId              2067
+MapX                 91
+MapY                 504
+
