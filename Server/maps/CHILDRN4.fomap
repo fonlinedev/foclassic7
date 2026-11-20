@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              120
 MaxHexY              120
-WorkHexX             64
-WorkHexY             61
+WorkHexX             56
+WorkHexY             35
 ScriptModule         map_cathedral
 ScriptFunc           map_init
 NoLogOut             0
@@ -61,6 +61,7 @@ tile       38   30             art\TILES\ROAD02.FRM
 tile       40   30             art\TILES\ROAD02.FRM
 tile       42   30             art\TILES\ROAD02.FRM
 tile       55   30             art\TILES\ROAD02.FRM
+tile       57   30             art\TILES\ROAD02.FRM
 tile       59   30             art\TILES\ROAD02.FRM
 tile       61   30             art\TILES\ROAD02.FRM
 tile       63   30             art\TILES\ROAD02.FRM
@@ -88,6 +89,7 @@ tile       47   31             art\TILES\ROAD02.FRM
 tile       49   31             art\TILES\ROAD02.FRM
 tile       51   31             art\TILES\ROAD02.FRM
 tile       53   31             art\TILES\ROAD02.FRM
+tile       55   31             art\TILES\ROAD02.FRM
 tile       59   31             art\TILES\ROAD02.FRM
 tile       61   31             art\TILES\ROAD02.FRM
 tile       62   31             art\TILES\ROAD02.FRM
@@ -103,6 +105,7 @@ tile       79   31             art\TILES\ROAD02.FRM
 tile       80   31             art\TILES\ROAD02.FRM
 tile       51   32             art\TILES\ROAD02.FRM
 tile       51   32             art\TILES\ROAD02.FRM
+tile       57   32             art\TILES\ROAD02.FRM
 tile       59   32             art\TILES\ROAD02.FRM
 tile       61   32             art\TILES\ROAD02.FRM
 tile       28   33             art\TILES\ROAD02.FRM
@@ -117,6 +120,7 @@ tile       43   33             art\TILES\ROAD02.FRM
 tile       45   33             art\TILES\ROAD02.FRM
 tile       47   33             art\TILES\ROAD02.FRM
 tile       49   33             art\TILES\ROAD02.FRM
+tile       53   33             art\TILES\ROAD02.FRM
 tile       55   33             art\TILES\ROAD02.FRM
 tile       57   33             art\TILES\ROAD02.FRM
 tile       59   33             art\TILES\ROAD02.FRM
@@ -133,6 +137,8 @@ tile       77   33             art\TILES\ROAD02.FRM
 tile       79   33             art\TILES\ROAD02.FRM
 tile       80   33             art\TILES\ROAD02.FRM
 tile       47   34             art\TILES\ROAD02.FRM
+tile       51   34             art\TILES\ROAD02.FRM
+tile       51   34             art\TILES\ROAD02.FRM
 tile       61   34             art\TILES\ROAD02.FRM
 tile       61   34             art\TILES\ROAD02.FRM
 tile       63   34             art\TILES\ROAD02.FRM
@@ -147,6 +153,9 @@ tile       40   35             art\TILES\ROAD02.FRM
 tile       41   35             art\TILES\ROAD02.FRM
 tile       43   35             art\TILES\ROAD02.FRM
 tile       45   35             art\TILES\ROAD02.FRM
+tile       49   35             art\TILES\ROAD02.FRM
+tile       49   35             art\TILES\ROAD02.FRM
+tile       51   35             art\TILES\ROAD02.FRM
 tile       51   35             art\TILES\ROAD02.FRM
 tile       53   35             art\TILES\ROAD02.FRM
 tile       55   35             art\TILES\ROAD02.FRM
@@ -175,6 +184,7 @@ tile       40   36             art\TILES\ROAD02.FRM
 tile       41   36             art\TILES\ROAD02.FRM
 tile       43   36             art\TILES\ROAD02.FRM
 tile       43   36             art\TILES\ROAD02.FRM
+tile       47   36             art\TILES\ROAD02.FRM
 tile       63   36             art\TILES\ROAD02.FRM
 tile       63   36             art\TILES\ROAD02.FRM
 tile       63   36             art\TILES\ROAD02.FRM
@@ -197,8 +207,12 @@ tile       36   37             art\TILES\ROAD02.FRM
 tile       38   37             art\TILES\ROAD02.FRM
 tile       40   37             art\TILES\ROAD02.FRM
 tile       41   37             art\TILES\ROAD02.FRM
+tile       43   37             art\TILES\ROAD02.FRM
+tile       45   37             art\TILES\ROAD02.FRM
 tile       47   37             art\TILES\ROAD02.FRM
 tile       49   37             art\TILES\ROAD02.FRM
+tile       50   37             art\TILES\ROAD02.FRM
+tile       50   37             art\TILES\ROAD02.FRM
 tile       51   37             art\TILES\ROAD02.FRM
 tile       53   37             art\TILES\ROAD02.FRM
 tile       55   37             art\TILES\ROAD02.FRM
@@ -236,6 +250,8 @@ tile       79   38             art\TILES\ROAD02.FRM
 tile       80   38             art\TILES\ROAD02.FRM
 tile       28   39             art\TILES\ROAD02.FRM
 tile       30   39             art\TILES\ROAD02.FRM
+tile       39   39             art\TILES\ROAD02.FRM
+tile       41   39             art\TILES\ROAD02.FRM
 tile       43   39             art\TILES\ROAD02.FRM
 tile       45   39             art\TILES\ROAD02.FRM
 tile       47   39             art\TILES\ROAD02.FRM
@@ -252,6 +268,7 @@ tile       66   39             art\TILES\ROAD02.FRM
 tile       32   40             art\TILES\ROAD02.FRM
 tile       34   40             art\TILES\ROAD02.FRM
 tile       35   40             art\TILES\ROAD02.FRM
+tile       37   40             art\TILES\ROAD02.FRM
 tile       65   40             art\TILES\ROAD02.FRM
 tile       65   40             art\TILES\ROAD02.FRM
 tile       67   40             art\TILES\ROAD02.FRM
@@ -265,6 +282,8 @@ tile       79   40             art\TILES\ROAD02.FRM
 tile       80   40             art\TILES\ROAD02.FRM
 tile       28   41             art\TILES\ROAD02.FRM
 tile       30   41             art\TILES\ROAD02.FRM
+tile       36   41             art\TILES\ROAD02.FRM
+tile       37   41             art\TILES\ROAD02.FRM
 tile       39   41             art\TILES\ROAD02.FRM
 tile       41   41             art\TILES\ROAD02.FRM
 tile       43   41             art\TILES\ROAD02.FRM
@@ -278,11 +297,17 @@ tile       57   41             art\TILES\ROAD02.FRM
 tile       59   41             art\TILES\ROAD02.FRM
 tile       61   41             art\TILES\ROAD02.FRM
 tile       63   41             art\TILES\ROAD02.FRM
+tile       65   41             art\TILES\ROAD02.FRM
 tile       66   41             art\TILES\ROAD02.FRM
+tile       66   41             art\TILES\ROAD02.FRM
+tile       66   41             art\TILES\ROAD02.FRM
+tile       67   41             art\TILES\ROAD02.FRM
 tile       68   41             art\TILES\ROAD02.FRM
 tile       28   42             art\TILES\ROAD02.FRM
 tile       30   42             art\TILES\ROAD02.FRM
 tile       31   42             art\TILES\ROAD02.FRM
+tile       32   42             art\TILES\ROAD02.FRM
+tile       34   42             art\TILES\ROAD02.FRM
 tile       67   42             art\TILES\ROAD02.FRM
 tile       67   42             art\TILES\ROAD02.FRM
 tile       69   42             art\TILES\ROAD02.FRM
@@ -294,6 +319,9 @@ tile       77   42             art\TILES\ROAD02.FRM
 tile       79   42             art\TILES\ROAD02.FRM
 tile       80   42             art\TILES\ROAD02.FRM
 tile       28   43             art\TILES\ROAD02.FRM
+tile       31   43             art\TILES\ROAD02.FRM
+tile       33   43             art\TILES\ROAD02.FRM
+tile       35   43             art\TILES\ROAD02.FRM
 tile       35   43             art\TILES\ROAD02.FRM
 tile       37   43             art\TILES\ROAD02.FRM
 tile       39   43             art\TILES\ROAD02.FRM
@@ -314,6 +342,7 @@ tile       68   43             art\TILES\ROAD02.FRM
 tile       70   43             art\TILES\ROAD02.FRM
 tile       28   44             art\TILES\ROAD02.FRM
 tile       29   44             art\TILES\ROAD02.FRM
+tile       57   44             art\TILES\ROAD02.FRM
 tile       67   44             art\TILES\ROAD02.FRM
 tile       67   44             art\TILES\ROAD02.FRM
 tile       69   44             art\TILES\ROAD02.FRM
@@ -327,6 +356,7 @@ tile       80   44             art\TILES\ROAD02.FRM
 tile       28   45             art\TILES\ROAD02.FRM
 tile       30   45             art\TILES\ROAD02.FRM
 tile       31   45             art\TILES\ROAD02.FRM
+tile       33   45             art\TILES\ROAD02.FRM
 tile       33   45             art\TILES\ROAD02.FRM
 tile       35   45             art\TILES\ROAD02.FRM
 tile       37   45             art\TILES\ROAD02.FRM
@@ -347,6 +377,7 @@ tile       65   45             art\TILES\ROAD02.FRM
 tile       67   45             art\TILES\ROAD02.FRM
 tile       68   45             art\TILES\ROAD02.FRM
 tile       70   45             art\TILES\ROAD02.FRM
+tile       32   46             art\TILES\ROAD02.FRM
 tile       69   46             art\TILES\ROAD02.FRM
 tile       69   46             art\TILES\ROAD02.FRM
 tile       71   46             art\TILES\ROAD02.FRM
@@ -379,7 +410,11 @@ tile       61   47             art\TILES\ROAD02.FRM
 tile       63   47             art\TILES\ROAD02.FRM
 tile       65   47             art\TILES\ROAD02.FRM
 tile       67   47             art\TILES\ROAD02.FRM
+tile       69   47             art\TILES\ROAD02.FRM
 tile       70   47             art\TILES\ROAD02.FRM
+tile       70   47             art\TILES\ROAD02.FRM
+tile       70   47             art\TILES\ROAD02.FRM
+tile       71   47             art\TILES\ROAD02.FRM
 tile       72   47             art\TILES\ROAD02.FRM
 tile       80   47             art\TILES\ROAD02.FRM
 tile       80   47             art\TILES\ROAD02.FRM
@@ -459,6 +494,8 @@ tile       76   51             art\TILES\ROAD02.FRM
 tile       78   51             art\TILES\ROAD02.FRM
 tile       80   51             art\TILES\ROAD02.FRM
 tile       28   52             art\TILES\ROAD02.FRM
+tile       36   52             art\TILES\ROAD02.FRM
+tile       36   52             art\TILES\ROAD02.FRM
 tile       73   52             art\TILES\ROAD02.FRM
 tile       75   52             art\TILES\ROAD02.FRM
 tile       78   52             art\TILES\ROAD02.FRM
@@ -467,6 +504,7 @@ tile       30   53             art\TILES\ROAD02.FRM
 tile       32   53             art\TILES\ROAD02.FRM
 tile       32   53             art\TILES\ROAD02.FRM
 tile       34   53             art\TILES\ROAD02.FRM
+tile       37   53             art\TILES\ROAD02.FRM
 tile       37   53             art\TILES\ROAD02.FRM
 tile       39   53             art\TILES\ROAD02.FRM
 tile       41   53             art\TILES\ROAD02.FRM
@@ -485,6 +523,8 @@ tile       65   53             art\TILES\CABRIK01.FRM
 tile       67   53             art\TILES\CABRIK01.FRM
 tile       69   53             art\TILES\CABRIK01.FRM
 tile       71   53             art\TILES\ROAD02.FRM
+tile       73   53             art\TILES\ROAD02.FRM
+tile       74   53             art\TILES\ROAD02.FRM
 tile       74   53             art\TILES\ROAD02.FRM
 tile       76   53             art\TILES\ROAD02.FRM
 tile       76   53             art\TILES\ROAD02.FRM
@@ -502,6 +542,7 @@ tile       32   55             art\TILES\ROAD02.FRM
 tile       32   55             art\TILES\ROAD02.FRM
 tile       34   55             art\TILES\ROAD02.FRM
 tile       36   55             art\TILES\ROAD02.FRM
+tile       37   55             art\TILES\ROAD02.FRM
 tile       37   55             art\TILES\ROAD02.FRM
 tile       39   55             art\TILES\ROAD02.FRM
 tile       41   55             art\TILES\ROAD02.FRM
@@ -524,6 +565,7 @@ tile       73   55             art\TILES\ROAD02.FRM
 tile       76   55             art\TILES\ROAD02.FRM
 tile       78   55             art\TILES\ROAD02.FRM
 tile       28   56             art\TILES\ROAD02.FRM
+tile       37   56             art\TILES\ROAD02.FRM
 tile       37   56             art\TILES\ROAD02.FRM
 tile       75   56             art\TILES\ROAD02.FRM
 tile       77   56             art\TILES\ROAD02.FRM
@@ -566,11 +608,13 @@ tile       30   59             art\TILES\ROAD02.FRM
 tile       30   59             art\TILES\ROAD02.FRM
 tile       32   59             art\TILES\ROAD02.FRM
 tile       32   59             art\TILES\ROAD02.FRM
+tile       33   59             art\TILES\ROAD02.FRM
 tile       34   59             art\TILES\ROAD02.FRM
 tile       34   59             art\TILES\ROAD02.FRM
 tile       36   59             art\TILES\ROAD02.FRM
 tile       36   59             art\TILES\ROAD02.FRM
 tile       38   59             art\TILES\ROAD02.FRM
+tile       39   59             art\TILES\ROAD02.FRM
 tile       41   59             art\TILES\ROAD02.FRM
 tile       43   59             art\TILES\ROAD02.FRM
 tile       45   59             art\TILES\ROAD02.FRM
@@ -589,6 +633,7 @@ tile       69   59             art\TILES\CABRIK01.FRM
 tile       71   59             art\TILES\ROAD02.FRM
 tile       73   59             art\TILES\ROAD02.FRM
 tile       75   59             art\TILES\ROAD02.FRM
+tile       76   59             art\TILES\ROAD02.FRM
 tile       78   59             art\TILES\ROAD02.FRM
 tile       80   59             art\TILES\ROAD02.FRM
 tile       28   60             art\TILES\ROAD02.FRM
@@ -623,6 +668,7 @@ tile       69   61             art\TILES\CABRIK01.FRM
 tile       71   61             art\TILES\ROAD02.FRM
 tile       73   61             art\TILES\ROAD02.FRM
 tile       75   61             art\TILES\ROAD02.FRM
+tile       77   61             art\TILES\ROAD02.FRM
 tile       77   61             art\TILES\ROAD02.FRM
 tile       80   61             art\TILES\ROAD02.FRM
 tile       28   62             art\TILES\ROAD02.FRM
@@ -664,6 +710,7 @@ tile       79   63             art\TILES\ROAD02.FRM
 tile       80   63             art\TILES\ROAD02.FRM
 tile       28   64             art\TILES\ROAD02.FRM
 tile       28   64             art\TILES\ROAD02.FRM
+tile       44   64             art\TILES\ROAD02.FRM
 tile       28   65             art\TILES\ROAD02.FRM
 tile       30   65             art\TILES\ROAD02.FRM
 tile       30   65             art\TILES\ROAD02.FRM
@@ -675,6 +722,7 @@ tile       36   65             art\TILES\ROAD02.FRM
 tile       36   65             art\TILES\ROAD02.FRM
 tile       38   65             art\TILES\ROAD02.FRM
 tile       40   65             art\TILES\ROAD02.FRM
+tile       42   65             art\TILES\ROAD02.FRM
 tile       42   65             art\TILES\ROAD02.FRM
 tile       45   65             art\TILES\ROAD02.FRM
 tile       47   65             art\TILES\CABRIK01.FRM
@@ -693,6 +741,7 @@ tile       71   65             art\TILES\ROAD02.FRM
 tile       73   65             art\TILES\ROAD02.FRM
 tile       75   65             art\TILES\ROAD02.FRM
 tile       77   65             art\TILES\ROAD02.FRM
+tile       78   65             art\TILES\ROAD02.FRM
 tile       79   65             art\TILES\ROAD02.FRM
 tile       80   65             art\TILES\ROAD02.FRM
 tile       43   66             art\TILES\ROAD02.FRM
@@ -727,12 +776,14 @@ tile       71   67             art\TILES\ROAD02.FRM
 tile       73   67             art\TILES\ROAD02.FRM
 tile       75   67             art\TILES\ROAD02.FRM
 tile       76   67             art\TILES\ROAD02.FRM
+tile       77   67             art\TILES\ROAD02.FRM
 tile       78   67             art\TILES\ROAD02.FRM
 tile       78   67             art\TILES\ROAD02.FRM
 tile       78   67             art\TILES\ROAD02.FRM
 tile       80   67             art\TILES\ROAD02.FRM
 tile       80   67             art\TILES\ROAD02.FRM
 tile       45   68             art\TILES\ROAD02.FRM
+tile       73   68             art\TILES\ROAD02.FRM
 tile       75   68             art\TILES\ROAD02.FRM
 tile       77   68             art\TILES\ROAD02.FRM
 tile       77   68             art\TILES\ROAD02.FRM
@@ -768,6 +819,7 @@ tile       72   69             art\TILES\ROAD02.FRM
 tile       74   69             art\TILES\ROAD02.FRM
 tile       74   69             art\TILES\ROAD02.FRM
 tile       74   69             art\TILES\ROAD02.FRM
+tile       75   69             art\TILES\ROAD02.FRM
 tile       76   69             art\TILES\ROAD02.FRM
 tile       76   69             art\TILES\ROAD02.FRM
 tile       78   69             art\TILES\ROAD02.FRM
@@ -777,6 +829,7 @@ tile       78   69             art\TILES\ROAD02.FRM
 tile       80   69             art\TILES\ROAD02.FRM
 tile       80   69             art\TILES\ROAD02.FRM
 tile       28   70             art\TILES\ROAD02.FRM
+tile       48   70             art\TILES\ROAD02.FRM
 tile       71   70             art\TILES\ROAD02.FRM
 tile       73   70             art\TILES\ROAD02.FRM
 tile       28   71             art\TILES\ROAD02.FRM
@@ -804,6 +857,7 @@ tile       63   71             art\TILES\ROAD02.FRM
 tile       65   71             art\TILES\ROAD02.FRM
 tile       67   71             art\TILES\ROAD02.FRM
 tile       68   71             art\TILES\ROAD02.FRM
+tile       69   71             art\TILES\ROAD02.FRM
 tile       70   71             art\TILES\ROAD02.FRM
 tile       70   71             art\TILES\ROAD02.FRM
 tile       70   71             art\TILES\ROAD02.FRM
@@ -822,8 +876,10 @@ tile       78   71             art\TILES\ROAD02.FRM
 tile       80   71             art\TILES\ROAD02.FRM
 tile       80   71             art\TILES\ROAD02.FRM
 tile       47   72             art\TILES\ROAD02.FRM
+tile       65   72             art\TILES\ROAD02.FRM
 tile       67   72             art\TILES\ROAD02.FRM
 tile       69   72             art\TILES\ROAD02.FRM
+tile       71   72             art\TILES\ROAD02.FRM
 tile       77   72             art\TILES\ROAD02.FRM
 tile       77   72             art\TILES\ROAD02.FRM
 tile       79   72             art\TILES\ROAD02.FRM
@@ -854,6 +910,7 @@ tile       61   73             art\TILES\ROAD02.FRM
 tile       63   73             art\TILES\ROAD02.FRM
 tile       64   73             art\TILES\ROAD02.FRM
 tile       66   73             art\TILES\ROAD02.FRM
+tile       67   73             art\TILES\ROAD02.FRM
 tile       70   73             art\TILES\ROAD02.FRM
 tile       70   73             art\TILES\ROAD02.FRM
 tile       72   73             art\TILES\ROAD02.FRM
@@ -910,6 +967,7 @@ tile       55   75             art\TILES\ROAD02.FRM
 tile       57   75             art\TILES\ROAD02.FRM
 tile       59   75             art\TILES\ROAD02.FRM
 tile       60   75             art\TILES\ROAD02.FRM
+tile       61   75             art\TILES\ROAD02.FRM
 tile       62   75             art\TILES\ROAD02.FRM
 tile       64   75             art\TILES\ROAD02.FRM
 tile       64   75             art\TILES\ROAD02.FRM
@@ -955,10 +1013,12 @@ tile       44   77             art\TILES\ROAD02.FRM
 tile       46   77             art\TILES\ROAD02.FRM
 tile       48   77             art\TILES\ROAD02.FRM
 tile       50   77             art\TILES\ROAD02.FRM
+tile       51   77             art\TILES\ROAD02.FRM
 tile       53   77             art\TILES\ROAD02.FRM
 tile       55   77             art\TILES\ROAD02.FRM
 tile       56   77             art\TILES\ROAD02.FRM
 tile       56   77             art\TILES\ROAD02.FRM
+tile       57   77             art\TILES\ROAD02.FRM
 tile       58   77             art\TILES\ROAD02.FRM
 tile       58   77             art\TILES\ROAD02.FRM
 tile       60   77             art\TILES\ROAD02.FRM
@@ -991,6 +1051,7 @@ tile       80   77             art\TILES\ROAD02.FRM
 tile       28   78             art\TILES\ROAD02.FRM
 tile       29   78             art\TILES\ROAD02.FRM
 tile       51   78             art\TILES\ROAD02.FRM
+tile       53   78             art\TILES\ROAD02.FRM
 tile       55   78             art\TILES\ROAD02.FRM
 tile       57   78             art\TILES\ROAD02.FRM
 tile       57   78             art\TILES\ROAD02.FRM
