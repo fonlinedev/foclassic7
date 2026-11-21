@@ -2084,4 +2084,7 @@ bool d_IsBetweenHour(Critter& player, Critter@ npc, int begin, int end) {
     return (hour >= begin && hour < end);
 }
 
+bool d_IsNotBetweenHour(Critter& player, Critter@ npc, int begin, int end) {
+    return !d_IsBetweenHour(player, npc, begin, end);
+}
 #endif // __DIALOG__ //

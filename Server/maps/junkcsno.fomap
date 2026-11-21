@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              200
 MaxHexY              200
-WorkHexX             94
-WorkHexY             81
+WorkHexX             123
+WorkHexY             78
 ScriptModule         map_junktown
 ScriptFunc           map_init
 NoLogOut             0
@@ -21729,40 +21729,6 @@ ProtoId              4012
 MapX                 161
 MapY                 85
 
-MapObjType           0
-ProtoId              439
-MapX                 123
-MapY                 85
-Dir                  2
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  1736
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  22
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  354
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-Critter_ParamIndex6  ST_FACTION_RANK
-Critter_ParamValue6  0
-Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
-Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
-Critter_ParamValue8  78
-Critter_ParamIndex9  ST_LEVEL
-Critter_ParamValue9  0
-
-MapObjType           1
-ProtoId              214
-MapX                 123
-MapY                 82
-
 MapObjType           2
 ProtoId              4031
 MapX                 95
@@ -22815,5 +22781,34 @@ ProtoId              3853
 MapX                 92
 MapY                 84
 Scenery_ToEntire     30
+
+MapObjType           0
+ProtoId              5008
+MapX                 123
+MapY                 82
+Dir                  3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  1736
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  1
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  354
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  0
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  131
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  0
 
 

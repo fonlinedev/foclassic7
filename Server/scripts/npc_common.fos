@@ -745,6 +745,16 @@ uint GetCrittersLoc(Location& loc, uint16 pid, uint findType, array<Critter@>@ c
 }
 
 
+Critter@ GetCritterAtEntire(uint entireId, Map@ map)
+{
+    uint16 x = 0;
+    uint16 y = 0;
+    map.GetEntireCoords(entireId, 0, x, y);
+    Critter@ cr = map.GetCritter(x, y);
+    return cr;
+}
+
+
 Critter@ SpawnStaticNpc(
     Map@ map,
     uint coord,

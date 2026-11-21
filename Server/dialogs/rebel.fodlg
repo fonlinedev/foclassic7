@@ -1,95 +1,83 @@
 [comment]
 
+
 [data]
 lang=engl
 
 [dialog]
 &
-1 1009 None 1 #
-2 1010 #
-3 1011 #
-4 1012 #
-5 1013 @
-2 1000 None 0 #
-0 1014 @
-3 1001 None 0 #
-0 1015 @
-4 1002 None 0 #
-6 1016 #
-7 1017 #
-8 1018 @
-6 1004 None 0 #
-0 1022 @
-7 1005 None 0 #
-0 1023 #
-9 1024 #
-10 1025 @
-9 1007 None 0 #
-0 1027 #
-0 1028 @
-10 1008 None 0 #
-0 1029 #
-9 1030 @
-8 1006 None 0 #
-0 1026 @
-5 1003 None 0 #
-0 1019 #
-0 1020 #
-0 1021 @
+1 1000 None 1 #
+2 1010 D _var p quest_water_chip = 3 D _var p quest_vault13_rebels ! 3 #
+4 1020 D _var p quest_water_chip ! 3 D _var p quest_vault13_rebels ! 3 #
+5 1030 D _var p quest_vault13_rebels = 3 @
+2 2000 None 0 #
+0 2010 @
+3 3000 None 0 #
+0 3010 @
+4 4000 None 0 #
+6 4010 #
+7 4020 D _var p quest_vault13_rebels = 0 #
+11 4030 D _var p quest_vault13_rebels = 3 #
+8 4040 @
+6 5000 None 0 #
+0 5010 @
+7 6000 None 0 #
+0 6010 #
+9 6020 #
+10 6030 @
+9 7000 None 0 #
+0 7010 R _var p quest_vault13_rebels = 1 #
+0 7020 @
+10 8000 None 0 #
+0 8010 #
+9 8020 @
+8 9000 None 0 #
+0 9010 @
+5 10000 None 0 #
+0 10010 #
+0 10020 #
+0 10030 @
+11 11000 None 0 &
 
 [engl]
 {100}{}{Rebel}
 {200}{}{You see: Upset Vault Dweller.}
 {210}{}{You see: Vault Dweller.}
-{1000}{}{Thank you for saving us.
----
-I was a little unsure that you could do it, but I trust you now.
----
-Thank you! Thank you!
----
-You are a hero. My little Bobby wants to be just like you when he grows up. I don't know
-if I like that.
----
-You are a heroine. My little Bobby wants to be just like you when he grows up. I don't
-know if I like that.
----
-You are a swell guy!
----
-You are a swell gal!}
-{1001}{}{[MANUAL: add NPC dialogue for diagram node 'Rebel02']}
-{1002}{}{Hello! How goes the search?}
-{1003}{}{Don't you have a job to do? Hurry and find the chip!}
-{1004}{}{Well, that's good to hear. Keep up the good work, I guess.}
-{1005}{}{We knew that there was no hope. I don't think we'll get a new chip in time. I think that
-some of us should move outside before it's too late.
----
-Please hurry.}
-{1006}{}{Why did the Overseer pick you? It's obvious you couldn't find your shoelaces, much less
-a new water chip. Oh well.}
-{1007}{}{Maybe you should come to one of our meetings. Theresa has some good ideas. We meet in
-her room on the second level, at five o'clock each evening.}
-{1008}{}{That's what Theresa thinks. She's got it all worked out. We're thinking of leaving the
-Vault soon.}
-{1009}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
 conditions.]}
-{1010}{}{[MANUAL: initial branch condition/greeting -> Rebel01]}
-{1011}{}{[MANUAL: initial branch condition/greeting -> Rebel02]}
-{1012}{}{[MANUAL: initial branch condition/greeting -> Rebel03]}
-{1013}{}{[MANUAL: initial branch condition/greeting -> Rebel09]}
-{1014}{}{[Done.]}
-{1015}{}{[Done.]}
-{1016}{}{Pretty well.}
-{1017}{}{Not so good.}
-{1018}{}{Ugh.}
-{1019}{}{Fine! Some people.}
-{1020}{}{Gdorf!}
-{1021}{}{Don't tell me what to do, loser boy!}
-{1022}{}{No problem.}
-{1023}{}{Don't worry, I'll find the chip.}
-{1024}{}{I don't think that's a good idea.}
-{1025}{}{Hmm. That might be best.}
-{1026}{}{Urgh.}
-{1027}{}{I'll think about it.}
-{1028}{}{No thanks. I have work to do.}
-{1029}{}{Good luck.}
-{1030}{}{I don't think you should leave just yet.}
+{1010}{}{water chip done}
+{1020}{}{water chip ongoing}
+{1030}{}{rebellion is over}
+{2000}{}{Thank you for saving us. @@ I was a little unsure that you could do it, but I trust you now. @@Thank you! Thank you!
+@@You are a hero. My little Bobby wants to be just like you when he grows up. I don't know
+if I like that.}
+{2010}{}{[Done.]}
+{3000}{}{[MANUAL: add NPC dialogue for diagram node 'Rebel02']}
+{3010}{}{[Done.]}
+{4000}{}{Hello! How goes the search?}
+{4010}{}{Pretty well.}
+{4020}{}{Not so good.}
+{4030}{}{Not so good.}
+{4040}{}{Ugh.}
+{5000}{}{Well, that's good to hear. Keep up the good work, I guess.}
+{5010}{}{No problem.}
+{6000}{}{We knew that there was no hope. I don't think we'll get a new chip in time. I think that some of us should move outside before it's too late.}
+{6010}{}{Don't worry, I'll find the chip.}
+{6020}{}{I don't think that's a good idea.}
+{6030}{}{Hmm. That might be best.}
+{7000}{}{Maybe you should come to one of our meetings. Theresa has some good ideas. We meet in
+her room on the second level, at five o'clock each evening.}
+{7010}{}{I'll think about it.}
+{7020}{}{No thanks. I have work to do.}
+{8000}{}{That's what Theresa thinks. She's got it all worked out. We're thinking of leaving the Vault soon.}
+{8010}{}{Good luck.}
+{8020}{}{I don't think you should leave just yet.}
+{9000}{}{Why did the Overseer pick you? It's obvious you couldn't find your shoelaces, much less
+a new water chip. Oh well.}
+{9010}{}{Urgh.}
+{10000}{}{Don't you have a job to do? Hurry and find the chip!}
+{10010}{}{Fine! Some people.}
+{10020}{}{Gdorf!}
+{10030}{}{Don't tell me what to do, loser boy!}
+{11000}{}{Please hurry.}
+

@@ -726,7 +726,6 @@ In order to do this, I have to find new electronic parts with that I can repair 
 
 :: Quest Failed ::}
 
-:: Quest Completed ::}
 {7221101}{}{Junktown: Steal Neal's Urn}
 {7221102}{}{QUEST:Steal Neal's Urn}
 
@@ -783,7 +782,6 @@ In order to do this, I have to find new electronic parts with that I can repair 
 {7327101}{}{Vault 13: Find the Water Chip}
 {7327102}{}{QUEST:Find the Water Chip}
 
-
 #=========================================================================================================================
 # 7328 / q_shady_tandi			Quest giver: Aradesh
 # Shady Sands, Rescue Tandi
@@ -823,6 +821,23 @@ In order to do this, I have to find new electronic parts with that I can repair 
 
 {7331101}{}{Vault 13: Water Thief}
 {7331102}{}{QUEST:Water Thief}
+
+
+#=========================================================================================================================
+# 7332 / quest_vault13_rebels
+# Vault 13, Rebels
+#=========================================================================================================================
+{7332001}{}{I discovered that a group of Vault 13 residents are planning to rebel against the Overseer and leave the Vault. I should investigate their intentions and see if I can convince them to abandon their plans.}
+{7332002}{}{I found the rebels and learned that Theresa is leading the movement. I need to speak with her and try to convince her that leaving the Vault is not the answer.}
+
+{7332003}{}{HARD_COMPLETED: I convinced Theresa to abandon the rebellion, preventing the group from leaving Vault 13.
+:: Quest Completed ::}
+
+{7332004}{}{The rebellion was not stopped, and Theresa and her followers went through with their plans.
+:: Quest Failed ::}
+
+{7332101}{}{Vault 13: Stop the Rebellion}
+{7332102}{}{QUEST:Stop the Rebellion}
 
 #####################
 #		KLAMATH		#

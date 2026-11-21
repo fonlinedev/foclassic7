@@ -912,8 +912,10 @@
 {19061}{}{A piece of used armor strapped to two poles.}
 {19070}{}{Training dummy}
 {19071}{}{A piece of used armor strapped to two poles.}
-{19080}{}{Training dummy}
-{19081}{}{A piece of used armor strapped to two poles.}
+{19080}{}{Vault Overseer}
+{19081}{}{Vault Overseer}
+{19130}{}{Vault Overseer}
+{19131}{}{Vault Overseer}
 {20000}{}{Champion Molerat}
 {20010}{}{Champion Dead Beat}
 {20020}{}{Champion Hub Thug}
@@ -935,3 +937,5 @@
 {50030}{}{Vault 24 Dweller}
 {50050}{}{Burrow}
 {50060}{}{Burrow Magistrate}
+{50070}{}{Overseer}
+{50080}{}{Gizmo}
