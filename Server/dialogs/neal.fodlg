@@ -1,116 +1,115 @@
 [comment]
 
+
 [data]
 lang=engl
 
 [dialog]
 &
-1 1012 None 1 #
-2 1013 @
-2 1000 None 0 #
-0 1014 #
-3 1015 #
-4 1016 #
-5 1017 #
-5 1018 #
-0 1019 #
-6 1020 @
-3 1001 None 0 #
-0 1021 #
-7 1022 #
-8 1023 #
-9 1024 @
-7 1005 None 0 #
-0 1031 @
-8 1006 None 0 #
-0 1032 @
-9 1007 None 0 #
-0 1033 @
-4 1002 None 0 #
-0 1025 #
-10 1026 #
-11 1027 #
-12 1028 @
-10 1008 None 0 #
-3 1034 #
-13 1035 @
-13 1011 None 0 #
-3 1040 #
-4 1041 #
-0 1042 @
-11 1009 None 0 #
-0 1036 #
-4 1037 @
-12 1010 None 0 #
-0 1038 #
-4 1039 @
-5 1003 None 0 #
-13 1029 @
-6 1004 None 0 #
-0 1030 @
+1 1000 None 1 #
+2 1010 D _script map_junktown@d_SkumpittOpen 0  #
+16 1020 D _script map_junktown@d_SkumpittClosed 0  @
+2 2000 None 0 #
+0 2010 D _param p ST_INTELLECT } 5 D _param p ST_INTELLECT } 5 #
+3 2020 D _param p ST_INTELLECT } 5 #
+4 2030 D _param p ST_INTELLECT } 5 #
+5 2040 D _var p q_jt_steal_neal_urn = 0 D _param p ST_INTELLECT } 5 #
+5 2050 D _var p q_jt_steal_neal_urn = 2 D _param p ST_INTELLECT } 5 #
+0 2060 D _param p ST_INTELLECT < 5 #
+6 2070 D _var p q_jt_steal_neal_urn = 2 D or D _var p q_jt_steal_neal_urn = 3 @
+3 3000 None 0 #
+0 3010 #
+7 3020 #
+8 3030 #
+9 3040 @
+7 4000 None 0 #
+0 4010 @
+8 5000 None 0 #
+0 5010 @
+9 6000 None 0 #
+0 6010 @
+4 7000 None 0 #
+0 7010 #
+10 7020 #
+11 7030 #
+12 7040 @
+10 8000 None 0 #
+3 8010 #
+13 8020 @
+13 9000 None 0 #
+3 9010 #
+4 9020 #
+0 9030 @
+11 10000 None 0 #
+0 10010 #
+4 10020 @
+12 11000 None 0 #
+0 11010 #
+4 11020 @
+5 12000 None 0 #
+13 12010 @
+6 13000 None 0 #
+0 13010 @
+14 14000 None 0 #
+0 14010 @
+16 15000 None 0 #
+0 15010 &
 
 [engl]
 {100}{}{Neal}
 {200}{}{You see Neal, the bartender.}
 {210}{}{You see a bartender.}
 {220}{}{He looks overworked.}
-{1000}{}{Welcome to the Skum Pitt. What can I do ya for?
----
-My name's
----
-. What is this place?}
-{1001}{}{Great. Whaddya want?}
-{1002}{}{Okay, so whaddya wanna know?}
-{1003}{}{That's not a trophy, it's an urn. It contains my wife's ashes - besides this bar, it is
-the most important thing in my life.
----
-Some slime stole it. It wasn't a trophy, it was an urn. It contained my wife's ashes -
-besides this bar, it was the most important thing in my life.}
-{1004}{}{Thank you. You can't know what this means to me. You'll never pay for a drink in this
-bar again.}
-{1005}{}{Come back when you've got some money.}
-{1006}{}{Come back when you've got some money.}
-{1007}{}{Come back when you've got some money.}
-{1008}{}{Well, just over there to the west of us is Gizmo's casino. I'd be surprised if you
-didn't know about it; most of the people here are the ones who just finished losing
-their money there. Over in the other part of town you got Killian's general store, and
-Marcelles's Crash House. Killian's a good guy, runs a straight joint, carries everything
-you need. The Crash House is where you sleep it off when you've been in here for too
-long. [Neal chuckles.]}
-{1009}{}{Fella's called Tycho. Apparently a ranger from back east or something. Pretty nasty
-fighter, from what I hear, but a straight-up character.}
-{1010}{}{Oh, them. They're the Skulz. They're a local gang. All the riff-raff. Sometimes they
-start fights or cause a little trouble. Usually Killian keeps them in line, though.}
-{1011}{}{Anything else?}
-{1012}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
 conditions.]}
-{1013}{}{[MANUAL: initial branch condition/greeting -> Neal01]}
-{1014}{}{[MANUAL: add player response/transition -> Goodbyes]}
-{1015}{}{Uh, I'll have a drink.}
-{1016}{}{I'm looking for information.}
-{1017}{}{What’s that trophy on the shelf?}
-{1018}{}{What happened to that trophy you used to have up there?}
-{1019}{}{Gaa hnnngh!}
-{1020}{}{I've got your urn back for you.}
-{1021}{}{[MANUAL: add player response/transition -> Goodbyes]}
-{1022}{}{Nuka-cola, 3 caps.}
-{1023}{}{Beer, 5 caps.}
-{1024}{}{The hard stuff, 20 caps.}
-{1025}{}{[MANUAL: add player response/transition -> Goodbyes]}
-{1026}{}{What's the scoop on this town?}
-{1027}{}{Who's the dangerous-looking stranger in the corner?}
-{1028}{}{Who're the jerks?}
-{1029}{}{Oh.}
-{1030}{}{[Done.]}
-{1031}{}{[Done.]}
-{1032}{}{[Done.]}
-{1033}{}{[Done.]}
-{1034}{}{Thanks. Can I get a drink?}
-{1035}{}{Thanks for the information. See you around.}
-{1036}{}{[MANUAL: add player response/transition -> Goodbyes]}
-{1037}{}{Mind if I ask some other questions?}
-{1038}{}{[MANUAL: add player response/transition -> Goodbyes]}
-{1039}{}{Mind if I ask some other questions?}
-{1040}{}{Yeah, I'll have a drink.}
-{1041}{}{Looking for some more information.}
-{1042}{}{No thanks.}
+{1010}{}{skum pitt is open}
+{1020}{}{skump pitt is closed}
+{2000}{}{Welcome to the Skum Pitt. What can I do ya for?}
+{2010}{}{Nothing, bye.}
+{2020}{}{Uh, I'll have a drink.}
+{2030}{}{I'm looking for information.}
+{2040}{}{What’s that trophy on the shelf?}
+{2050}{}{What happened to that trophy you used to have up there?}
+{2060}{}{Gaa hnnngh!}
+{2070}{}{I've got your urn back for you.}
+{3000}{}{Great. Whaddya want?}
+{3010}{}{Bye.}
+{3020}{}{Nuka-cola, 3 caps.}
+{3030}{}{Beer, 5 caps.}
+{3040}{}{The hard stuff, 20 caps.}
+{4000}{}{Come back when you've got some money.}
+{4010}{}{[Done.]}
+{5000}{}{Come back when you've got some money.}
+{5010}{}{[Done.]}
+{6000}{}{Come back when you've got some money.}
+{6010}{}{[Done.]}
+{7000}{}{Okay, so whaddya wanna know?}
+{7010}{}{Nothing else, see you around.}
+{7020}{}{What's the scoop on this town?}
+{7030}{}{Who's the dangerous-looking stranger in the corner?}
+{7040}{}{Who're the jerks?}
+{8000}{}{Well, just over there to the west of us is Gizmo's casino. I'd be surprised if you didn't know about it; most of the people here are the ones who just finished losing
+their money there. Over in the other part of town you got Killian's general store, and Marcelles's Crash House. Killian's a good guy, runs a straight joint, carries everything you need. The Crash House is where you sleep it off when you've been in here for too long. [Neal chuckles.]}
+{8010}{}{Thanks. Can I get a drink?}
+{8020}{}{Thanks for the information. See you around.}
+{9000}{}{Anything else?}
+{9010}{}{Yeah, I'll have a drink.}
+{9020}{}{Looking for some more information.}
+{9030}{}{No thanks.}
+{10000}{}{Fella's called Tycho. Apparently a ranger from back east or something. Pretty nasty fighter, from what I hear, but a straight-up character.}
+{10010}{}{Bye.}
+{10020}{}{Mind if I ask some other questions?}
+{11000}{}{Oh, them. They're the Skulz. They're a local gang. All the riff-raff. Sometimes they start fights or cause a little trouble. Usually Killian keeps them in line, though.}
+{11010}{}{Bye.}
+{11020}{}{Mind if I ask some other questions?}
+{12000}{}{That's not a trophy, it's an urn. It contains my wife's ashes - besides this bar, it is the most important thing in my life.}
+{12010}{}{Oh.}
+{13000}{}{Thank you. You can't know what this means to me. You'll never pay for a drink in this bar again.}
+{13010}{}{[Done.]}
+{14000}{}{Some slime stole it. It wasn't a trophy, it was an urn. It contained my wife's ashes - besides this bar, it was the most important thing in my life.
+}
+{14010}{}{Ok, bye.}
+{15000}{}{Bar is closed, leave now!}
+{15010}{}{Ok, bye.}
+{100000001}{}{Hey! Stay away from there!}
+

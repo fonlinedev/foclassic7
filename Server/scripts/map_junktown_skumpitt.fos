@@ -3,7 +3,7 @@
 // FOnline: 2238
 // Rotators
 //
-// junktown_skumpitt.fos
+// map_junktown_skumpitt.fos
 //
 
 #include "_macros.fos"
@@ -174,7 +174,7 @@ void RemoveSkumpittPatrons()
 
 
     // Add Neal to the room
-    SpawnStaticNpc(map, 10, 58, 1759, 349, 0, 0, 0, 2, "", "");
+    SpawnStaticNpc(map, 10, 58, 1759, 349, 0, 0, 0, 2, "neal@critter_init", "");
 
     for(uint i = 11; i <= 19; i++)
     {

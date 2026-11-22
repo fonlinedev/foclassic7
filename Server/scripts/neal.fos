@@ -1,0 +1,44 @@
+//
+// FOnline: 2238
+// Rotators
+//
+// razlo.fos
+//
+
+#include "_macros.fos"
+#include "npc_common_h.fos"
+#include "messages_h.fos"
+#include "npc_planes_h.fos"
+#include "_maps.fos"
+
+#define NEAL_DIALOG   (1759)
+#define NEAL_WARNING1_ID (1)
+
+void critter_init(Critter& critter, bool firstTime)
+{
+    critter.SetEvent(CRITTER_EVENT_MESSAGE, "_OnPlayerOpenLocker");
+}
+
+void _OnPlayerOpenLocker(Critter& critter, Critter& player, int num, int val)
+{
+    if(num == MSG_JNK_URN_LOCKER)
+    {        
+        AddWalkPlane(critter, AI_PLANE_WALK, player.HexX, player.HexY, 3, false, 0);
+        critter.SayMsg(SAY_SHOUT_ON_HEAD, TEXTMSG_DLG, DLGSTR(NEAL_DIALOG, NEAL_WARNING1_ID));
+    }
+}
+
+uint e_NeilShoutPlayer(array<uint>@ values)
+{
+    Map@ map = GetMapByPid(MAP_JunktownNorth, 0);
+    if(!valid(map))
+        return 0;
+
+    Critter@ crNeil = GetCritter(values[0]);
+    if(valid(crNeil))
+    {
+        // Say message over his head
+        crNeil.SayMsg(SAY_SHOUT_ON_HEAD, TEXTMSG_DLG, DLGSTR(NEAL_DIALOG, NEAL_WARNING1_ID));
+    }
+    return 0;
+}

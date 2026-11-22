@@ -47,6 +47,7 @@
 // Junktown
 #define MSG_JNK_PLAYER_ENTRANCE              (1)
 #define MSG_JNK_PLAYER_ENTRANCE_ENTER        (2)
+#define MSG_JNK_URN_LOCKER                   (3)
 
 // Hub
 #define MSG_HUB_PLAYER_NEAR_PARKING_ENTRANCE        (1)
