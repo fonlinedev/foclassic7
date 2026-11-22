@@ -93,10 +93,7 @@ void initLockersOnce(Map@ map)
             Log("No lockers found on Shady Sands West.");
             return;
         }
-
-        Log("initLockersOnce: shelves found " + count);
         
-
         // Guard house
         LockerLoot@[] westLocker0;
         westLocker0.insertLast(LockerLoot(PID_223_FMJ, uint(Random(0, 60))));        
@@ -128,7 +125,6 @@ void initLockersOnce(Map@ map)
             return;
         }
         
-        Log("initLockersOnce: shelves found " + count);
         // Guard house
         LockerLoot@[] westLocker0;
         westLocker0.insertLast(LockerLoot(PID_SCOUT_HANDBOOK, 1));
@@ -169,7 +165,6 @@ void respawnLockers(uint mapPid) {
             Log("No lockers found on Shady Sands West.");
             return;
         }
-        Log("shelves found " + count);      
         
         // Guard house
         LockerLoot@[] westLocker0;

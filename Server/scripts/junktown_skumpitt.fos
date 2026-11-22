@@ -19,11 +19,7 @@
 #include "reinforcements_h.fos"
 
 #include "msgstr.h"
-#include "entire.fos"
-#include "utils_h.fos"
 #include "tasks.fos"
-
-#include "npc_common_h.fos"
 #include "npc_roles_h.fos"
 
 
@@ -117,15 +113,6 @@ uint e_OpenSkumpitt(array<uint>@ values)
     SetBarState(SP_OPENED, map);
 
     _ReturnTime(17, 0);
-}
-
-Critter@ GetCritterAtEntire(uint entireId, Map@ map)
-{
-    uint16 x = 0;
-    uint16 y = 0;
-    map.GetEntireCoords(entireId, 0, x, y);
-    Critter@ cr = map.GetCritter(x, y);
-    return cr;
 }
 
 // Spawn the Skumpitt bar patrons.

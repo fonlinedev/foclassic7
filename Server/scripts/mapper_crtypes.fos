@@ -29,6 +29,7 @@ void SetUnarmoredCrtypes()
     UnarmoredTypesMale.insertLast(104);
     UnarmoredTypesMale.insertLast(126);
     UnarmoredTypesMale.insertLast(119);
+    UnarmoredTypesMale.insertLast(167); // <-- Add Overseer CrType 167
     UnarmoredTypesFemale.insertLast(61);
     UnarmoredTypesFemale.insertLast(63);
 }

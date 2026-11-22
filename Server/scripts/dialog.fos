@@ -523,6 +523,10 @@ bool d_IsPoison(Critter& player, Critter@ npc)
     return player.Stat[ST_POISONING_LEVEL] > 0;
 }
 
+bool d_IsRadiated(Critter& player, Critter@ npc)
+{
+    return player.Stat[ST_RADIATION_LEVEL] > 0;
+}
 
 bool d_NotIsPoison(Critter& player, Critter@ npc)
 {
@@ -2070,4 +2074,17 @@ bool d_NotHasCompanion(Critter& player, Critter@ npc, int pid)
     return !d_HasCompanion(player, npc, pid);
 }
 
+// check if the game time is between a time window
+bool d_IsBetweenHour(Critter& player, Critter@ npc, int begin, int end) {
+    uint16 year = 0, month = 0, day = 0, dayofweek = 0;
+    uint16 hour = 0, minute = 0, second = 0;
+
+    GetGameTime(__FullSecond, year, month, day, dayofweek, hour, minute, second);
+
+    return (hour >= begin && hour < end);
+}
+
+bool d_IsNotBetweenHour(Critter& player, Critter@ npc, int begin, int end) {
+    return !d_IsBetweenHour(player, npc, begin, end);
+}
 #endif // __DIALOG__ //

@@ -371,11 +371,6 @@
 {925}{}{06Vault}
 {926}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
 
-# Map 92, base 930
-{930}{}{Vault 13 Level 3}
-{935}{}{06Vault}
-{936}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
-
 # Map 93, base 940
 {940}{}{Vault 13 Level 4}
 {945}{}{06Vault}

@@ -726,7 +726,6 @@ In order to do this, I have to find new electronic parts with that I can repair 
 
 :: Quest Failed ::}
 
-:: Quest Completed ::}
 {7221101}{}{Junktown: Steal Neal's Urn}
 {7221102}{}{QUEST:Steal Neal's Urn}
 
@@ -765,6 +764,7 @@ In order to do this, I have to find new electronic parts with that I can repair 
 {7229101}{}{The Hub: Blackmail Iguana Bob}
 {7229102}{}{QUEST:Blackmail Iguana Bob}
 
+
 #=========================================================================================================================
 # 7327 / quest_water_chip
 # Vault 13, Water Chip
@@ -775,13 +775,12 @@ In order to do this, I have to find new electronic parts with that I can repair 
 {7327003}{}{HARD_COMPLETED: I found the water chip and restored the vault 13 water treatment.
 :: Quest Completed ::}
 
-{7327004}{}{HARD_FAILED:I'm not welcome at vault 13 anymore.
+{7327004}{}{I'm not welcome at vault 13 anymore.
 
 :: Quest Failed ::}
 
 {7327101}{}{Vault 13: Find the Water Chip}
 {7327102}{}{QUEST:Find the Water Chip}
-
 
 #=========================================================================================================================
 # 7328 / q_shady_tandi			Quest giver: Aradesh
@@ -801,6 +800,44 @@ In order to do this, I have to find new electronic parts with that I can repair 
 
 {7328101}{}{Shady Sands: Rescue Tandi}
 {7328102}{}{QUEST:Rescue Tandi}
+
+
+#=========================================================================================================================
+# 7331 / quest_water_thief
+# Vault 13, Water Thief
+#=========================================================================================================================
+{7331001}{}{I heard that someone has been stealing water from Vault 13's water storage. The Vault guards suspect that one of the inhabitants is responsible, but they haven't managed to catch the thief.}
+{7331002}{}{I was told that the thefts happen during the night. I should investigate the water storage room around midnight and see if I can catch the thief in the act.}
+{7331003}{}{I caught the suspicious Vault Dweller leaving the water storage room. I should confront him and find out why he has been stealing water.}
+{7331004}{}{The thief admitted to stealing water. I managed to convince him to surrender peacefully, and the Vault guard will deal with him.}
+{7331005}{}{The water thief refused to surrender and attacked me. I had no choice but to kill him. I should report what happened to the Vault guard.}
+{7331006}{}{HARD_COMPLETED: I discovered the water thief and resolved the situation in Vault 13.
+
+:: Quest Completed ::}
+
+{7331007}{}{I failed to resolve the water theft investigation in Vault 13.
+
+:: Quest Failed ::}
+
+{7331101}{}{Vault 13: Water Thief}
+{7331102}{}{QUEST:Water Thief}
+
+
+#=========================================================================================================================
+# 7332 / quest_vault13_rebels
+# Vault 13, Rebels
+#=========================================================================================================================
+{7332001}{}{I discovered that a group of Vault 13 residents are planning to rebel against the Overseer and leave the Vault. I should investigate their intentions and see if I can convince them to abandon their plans.}
+{7332002}{}{I found the rebels and learned that Theresa is leading the movement. I need to speak with her and try to convince her that leaving the Vault is not the answer.}
+
+{7332003}{}{HARD_COMPLETED: I convinced Theresa to abandon the rebellion, preventing the group from leaving Vault 13.
+:: Quest Completed ::}
+
+{7332004}{}{The rebellion was not stopped, and Theresa and her followers went through with their plans.
+:: Quest Failed ::}
+
+{7332101}{}{Vault 13: Stop the Rebellion}
+{7332102}{}{QUEST:Stop the Rebellion}
 
 #####################
 #		KLAMATH		#

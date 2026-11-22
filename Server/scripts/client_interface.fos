@@ -2401,7 +2401,23 @@ void critter_in(CritterCl& cr)
 			RestoreWallRoofTransparency();
 
             MoveScreen(GetMapWidth()/2, GetMapHeight()/2, 0);
-            SetZoom(MapZoom);
+
+            // --- ADD THIS CHECK ---
+            uint16 currentMap = GetCurrentMapPid();
+            if( currentMap == MAP_Cathedral_Enter 
+            || currentMap == MAP_Cathedral_Level1 
+            || currentMap == MAP_Cathedral_Level2
+            || currentMap == MAP_Cathedral_Level3) // Replace with your exact map constant
+            {
+                MapZoom = 0.55f; // Set your desired zoom in (< 1.0 zooms in closer)
+            }
+            else
+            {
+                MapZoom = 1.0f;  // Default for all other maps
+            }
+            // ----------------------
+
+            SetZoom(MapZoom);          
             MoveScreen(cr.HexX, cr.HexY, 0);
             OnMapLoadInventoryTracker();
 		}

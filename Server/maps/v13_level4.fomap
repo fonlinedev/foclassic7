@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              400
 MaxHexY              400
-WorkHexX             110
-WorkHexY             110
+WorkHexX             75
+WorkHexY             111
 ScriptModule         map_vault13
 ScriptFunc           map_init
 NoLogOut             1
@@ -11962,8 +11962,6 @@ MapObjType           1
 ProtoId              2023
 MapX                 98
 MapY                 114
-Item_LockerDoorId    1399
-Item_LockerComplexity 300
 Item_Val1            1399
 Item_Val2            19660800
 
@@ -18122,11 +18120,6 @@ ScriptName           map_vault13
 FuncName             t_Elevator
 
 MapObjType           2
-ProtoId              3468
-MapX                 62
-MapY                 105
-
-MapObjType           2
 ProtoId              3853
 MapX                 92
 MapY                 104
@@ -18153,7 +18146,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  234
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -18161,7 +18154,7 @@ Critter_ParamValue5  30
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  74
 Critter_ParamIndex9  ST_LEVEL
@@ -18242,7 +18235,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  277
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -18250,7 +18243,7 @@ Critter_ParamValue5  30
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  8
 Critter_ParamIndex9  ST_LEVEL
@@ -18271,7 +18264,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -18279,7 +18272,7 @@ Critter_ParamValue5  30
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  69
 Critter_ParamIndex9  ST_LEVEL
@@ -18300,7 +18293,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -18308,7 +18301,7 @@ Critter_ParamValue5  30
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  69
 Critter_ParamIndex9  ST_LEVEL
@@ -18328,7 +18321,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -18336,7 +18329,7 @@ Critter_ParamValue5  30
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  69
 Critter_ParamIndex9  ST_LEVEL
@@ -18357,7 +18350,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -18365,7 +18358,7 @@ Critter_ParamValue5  30
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  69
 Critter_ParamIndex9  ST_LEVEL
@@ -18386,7 +18379,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  277
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -18394,7 +18387,7 @@ Critter_ParamValue5  30
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  8
 Critter_ParamIndex9  ST_LEVEL
@@ -18414,7 +18407,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  304
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -18422,7 +18415,7 @@ Critter_ParamValue5  30
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  38
 Critter_ParamIndex9  ST_LEVEL
@@ -18443,7 +18436,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -18451,7 +18444,7 @@ Critter_ParamValue5  30
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  38
 Critter_ParamIndex9  ST_LEVEL
@@ -18472,7 +18465,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -18480,7 +18473,7 @@ Critter_ParamValue5  30
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  38
 Critter_ParamIndex9  ST_LEVEL
@@ -18500,7 +18493,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -18508,7 +18501,7 @@ Critter_ParamValue5  30
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  8
 Critter_ParamIndex9  ST_LEVEL
@@ -18529,7 +18522,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -18537,7 +18530,7 @@ Critter_ParamValue5  30
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  74
 Critter_ParamIndex9  ST_LEVEL
@@ -18558,7 +18551,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -18566,7 +18559,7 @@ Critter_ParamValue5  30
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  8
 Critter_ParamIndex9  ST_LEVEL
@@ -18587,7 +18580,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -18595,7 +18588,7 @@ Critter_ParamValue5  30
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  8
 Critter_ParamIndex9  ST_LEVEL
@@ -18616,7 +18609,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -18624,7 +18617,7 @@ Critter_ParamValue5  30
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  8
 Critter_ParamIndex9  ST_LEVEL
@@ -18645,7 +18638,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -18653,7 +18646,7 @@ Critter_ParamValue5  30
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  38
 Critter_ParamIndex9  ST_LEVEL
@@ -18674,7 +18667,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -18682,7 +18675,7 @@ Critter_ParamValue5  30
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  38
 Critter_ParamIndex9  ST_LEVEL
@@ -18703,7 +18696,7 @@ Critter_ParamValue1  14
 Critter_ParamIndex2  ST_BAG_ID
 Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -18711,7 +18704,7 @@ Critter_ParamValue5  30
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  74
 Critter_ParamIndex9  ST_LEVEL
@@ -18792,33 +18785,39 @@ MapY                 107
 Scenery_ToMapPid     93
 Scenery_ToEntire     3
 
+MapObjType           2
+ProtoId              3853
+MapX                 103
+MapY                 113
+Scenery_ToEntire     10
+
 MapObjType           0
-ProtoId              882
-MapX                 64
-MapY                 110
-Dir                  2
+ProtoId              5007
+MapX                 62
+MapY                 105
+Dir                  3
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
 Critter_ParamIndex0  ST_DIALOG_ID
 Critter_ParamValue0  3000
 Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  24
+Critter_ParamValue1  1
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  315
+Critter_ParamValue2  0
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  94
+Critter_ParamValue3  34
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  30
+Critter_ParamValue5  0
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
+Critter_ParamValue7  1
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
-Critter_ParamValue8  26
+Critter_ParamValue8  167
 Critter_ParamIndex9  ST_LEVEL
-Critter_ParamValue9  100
+Critter_ParamValue9  99
 
 

@@ -1,86 +1,86 @@
 [comment]
 
+
 [data]
 lang=engl
 
 [dialog]
 &
-1 1012 None 1 #
-2 1013 @
-2 1000 None 0 #
-3 1014 #
-0 1015 @
-3 1001 None 0 #
-4 1016 #
-5 1017 #
-6 1018 @
-4 1002 None 0 #
-0 1019 @
-5 1003 None 0 #
-6 1020 #
-7 1021 @
-6 1004 None 0 #
-8 1022 #
-9 1023 @
-8 1006 None 0 #
-0 1025 #
-10 1026 @
-10 1008 None 0 #
-11 1028 #
-12 1029 @
-11 1009 None 0 #
-0 1030 @
-12 1010 None 0 #
-13 1031 @
-13 1011 None 0 #
-0 1032 #
-0 1033 @
-9 1007 None 0 #
-0 1027 @
-7 1005 None 0 #
-4 1024 @
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+3 2010 D _var p quest_water_thief > 0 D _var p quest_water_thief { 2 #
+0 2020 @
+3 3000 None 0 #
+4 3010 #
+5 3020 #
+8 3030 @
+4 4000 None 0 #
+0 4010 @
+5 5000 None 0 #
+8 5010 #
+7 5020 @
+6 6000 None 0 #
+8 6010 #
+9 6020 @
+8 7000 None 0 #
+0 7010 #
+11 7020 @
+10 8000 None 0 #
+11 8010 #
+12 8020 @
+11 9000 None 0 #
+0 9010 R _var p quest_water_thief = 4 @
+12 10000 None 0 #
+0 10010 R _var p quest_water_thief = 5 @
+13 11000 None 0 #
+0 11010 #
+0 11020 @
+9 12000 None 0 #
+0 12010 @
+7 13000 None 0 #
+4 13010 &
 
 [engl]
 {100}{}{Wtrthief}
 {200}{}{You see a sleepy vault dweller.}
 {210}{}{You see a vault dweller acting suspiciously.}
 {220}{}{He seems to be avoiding your gaze.}
-{1000}{}{Hello,
----
-.}
-{1001}{}{I was worried about the vault and had a nightmare. I couldn't get back to sleep so I
-thought I'd take a walk to relax.}
-{1002}{}{Well, good night.}
-{1003}{}{Yeah, some guy was acting suspicious back near the water ration room. He scared me. I
-hope he didn't see me.}
-{1004}{}{[MANUAL: add NPC dialogue for diagram node 'WtrThief05']}
-{1005}{}{I didn't get a good look at him because I ran.}
-{1006}{}{Don't touch me! I don't have anything. Now leave me alone!}
-{1007}{}{Sure. I've got nothing to hide.}
-{1008}{}{[MANUAL: add NPC dialogue for diagram node 'WtrThief09']}
-{1009}{}{I stole the water. I'm sorry. Please don't hurt me!}
-{1010}{}{Okay, okay. I've got nothing to hide. Look for yourself.}
-{1011}{}{[MANUAL: add NPC dialogue for diagram node 'WtrThief11a']}
-{1012}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
 conditions.]}
-{1013}{}{[MANUAL: initial branch condition/greeting -> WtrThief01]}
-{1014}{}{Hello. What are you doing here at this time?}
-{1015}{}{Eaah!}
-{1016}{}{Okay.}
-{1017}{}{Have you seen anyone else around here?}
-{1018}{}{I'm sorry, but I'm looking for the water thief and I need to see what you're carrying.}
-{1019}{}{Good night.}
-{1020}{}{I'm sorry, but I still need to see what you're carrying.}
-{1021}{}{What did he look like?}
-{1022}{}{[MANUAL: add player response/transition -> WtrThief08]}
-{1023}{}{[MANUAL: add player response/transition -> WtrThief06]}
-{1024}{}{Okay. Thanks anyway.}
-{1025}{}{Okay. Sorry.}
-{1026}{}{Would you rather have a bullet in your head?}
-{1027}{}{[Search him]}
-{1028}{}{[MANUAL: add player response/transition -> WtrThief10]}
-{1029}{}{[MANUAL: add player response/transition -> WtrThief11]}
-{1030}{}{I'm taking you to the officer.}
-{1031}{}{[Search him]}
-{1032}{}{[MANUAL: add player response/transition -> finish_quest]}
-{1033}{}{[MANUAL: add player response/transition -> WtrThiefCombat]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> WtrThief01]}
+{2000}{}{Hello.}
+{2010}{}{Hello. What are you doing here at this time?}
+{2020}{}{Eaah!}
+{3000}{}{I was worried about the vault and had a nightmare. I couldn't get back to sleep so I
+thought I'd take a walk to relax.}
+{3010}{}{Okay.}
+{3020}{}{Have you seen anyone else around here?}
+{3030}{}{I'm sorry, but I'm looking for the water thief and I need to see what you're carrying.}
+{4000}{}{Well, good night.}
+{4010}{}{Good night.}
+{5000}{}{Yeah, some guy was acting suspicious back near the water ration room. He scared me. I
+hope he didn't see me.}
+{5010}{}{I'm sorry, but I still need to see what you're carrying.}
+{5020}{}{What did he look like?}
+{6000}{}{[MANUAL: add NPC dialogue for diagram node 'WtrThief05']}
+{6010}{}{[MANUAL: add player response/transition -> WtrThief08]}
+{6020}{}{[MANUAL: add player response/transition -> WtrThief06]}
+{7000}{}{Don't touch me! I don't have anything. Now leave me alone!}
+{7010}{}{Okay. Sorry.}
+{7020}{}{Would you rather have a bullet in your head?}
+{8000}{}{[MANUAL: add NPC dialogue for diagram node 'WtrThief09']}
+{8010}{}{[MANUAL: add player response/transition -> WtrThief10]}
+{8020}{}{[MANUAL: add player response/transition -> WtrThief11]}
+{9000}{}{I stole the water. I'm sorry. Please don't hurt me!}
+{9010}{}{I'm taking you to the officer.}
+{10000}{}{Okay, okay. I've got nothing to hide. Look for yourself.}
+{10010}{}{[Search him]}
+{11000}{}{[MANUAL: add NPC dialogue for diagram node 'WtrThief11a']}
+{11010}{}{[MANUAL: add player response/transition -> finish_quest]}
+{11020}{}{[MANUAL: add player response/transition -> WtrThiefCombat]}
+{12000}{}{Sure. I've got nothing to hide.}
+{12010}{}{[Search him]}
+{13000}{}{I didn't get a good look at him because I ran.}
+{13010}{}{Okay. Thanks anyway.}
+

@@ -1,0 +1,125 @@
+//
+// FOnline: 2238
+// Rotators
+//
+// map_vault13_waterthief.fos
+//
+
+#include "_macros.fos"
+#include "_maps.fos"
+#include "mapdata_h.fos"
+
+#include "msgstr.h"
+#include "entire.fos"
+#include "utils_h.fos"
+#include "tasks.fos"
+
+#define THIEF_KILLED 5
+
+void critter_init(Critter& cr, bool firstTime)
+{    
+    cr.SetEvent(CRITTER_EVENT_DEAD, "_Dead");
+}
+
+void _Dead(Critter& cr, Critter@ player)
+{
+    Map@ map = player.GetMap();        
+    GameVar@ thiefVar = GetLocalVar(LVAR_quest_water_thief, player.Id);
+    if(valid(thiefVar) && (thiefVar.GetValue() == 1 || thiefVar.GetValue() == 2))
+    {
+        thiefVar = THIEF_KILLED;
+        player.Say(SAY_NETMSG, "You killed the water chief, report to the water guard to claim your reward.");
+    }
+}
+
+void UpdateWaterThiefState()
+{
+    Map@ map = GetMapByPid(MAP_Vault13Level4, 0);
+
+    if(map is null)
+        return;
+
+    uint16 year = 0, month = 0, day = 0, dayofweek = 0;
+    uint16 hour = 0, minute = 0, second = 0;
+
+    GetGameTime(__FullSecond, year, month, day, dayofweek, hour, minute, second);
+
+    array<uint> values;
+
+    if(hour == 0 && (minute >= 0 && minute <= 59) )
+    {
+        Log("UpdateWaterThiefState: Time: " + hour + " : " + minute);
+        e_SpawnWaterThief(values);
+    }
+    else
+    {
+        Log("UpdateWaterThiefState: Time: " + hour + " : " + minute);
+        e_RemoveWaterThief(values);
+    }
+}
+
+void InitWaterThiefEvents()
+{
+    Log("Creating water thief events");
+
+    // Synchronize immediately with the current in-game time.
+    UpdateWaterThiefState();
+
+    // Schedule daily opening and closing.
+    CreateTimeEvent(GetNearFullSecond(0, 0, 0, 1, 0, 0), "e_RemoveWaterThief", false);   
+
+    CreateTimeEvent(GetNearFullSecond(0, 0, 0, 0, 0, 0), "e_SpawnWaterThief", false);
+
+}
+
+uint e_RemoveWaterThief(array<uint>@ values)
+{
+    Map@ map = GetMapByPid(MAP_Vault13Level4, 0);
+
+    if(!valid(map)) {
+        Log("Invalid map " + MAP_Vault13Level4);
+        return 0;
+    }
+    
+    RemoveWaterThief();
+
+    _ReturnTime(1, 0);
+}
+
+uint e_SpawnWaterThief(array<uint>@ values)
+{
+    Map@ map = GetMapByPid(MAP_Vault13Level4, 0);
+
+     if(!valid(map)) {
+        Log("Invalid map " + MAP_Vault13Level4);
+        return 0;
+    }
+
+    SpawnWaterThief();
+
+    _ReturnTime(0, 0);
+}
+
+void SpawnWaterThief()
+{
+    Map@ map = GetMapByPid(MAP_Vault13Level4, 0);
+
+    if(!valid(map))
+        return;
+    Critter@ thief = SpawnStaticNpc(map, 10, 92, 3011, 150, 0, 0, 0, 3, "map_vault13_waterthief@critter_init", "");
+    thief.StatBase[ST_REPLICATION_TIME] = REPLICATION_MINUTE(1);
+}
+
+void RemoveWaterThief()
+{
+    Map@ map = GetMapByPid(MAP_Vault13Level4, 0);
+
+    if(!valid(map))
+        return;
+
+    // remove thief from the map.
+    Critter@ cr = GetCritterAtEntire(10, map);
+    if(valid(cr))
+        DeleteNpc(cr);
+    
+}

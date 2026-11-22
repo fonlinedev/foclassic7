@@ -1,43 +1,45 @@
 [comment]
 
+
 [data]
 lang=engl
 
 [dialog]
 &
-1 1004 None 1 #
-2 1005 @
-2 1000 None 0 #
-3 1006 #
-0 1007 @
-3 1001 None 0 #
-4 1008 #
-5 1009 @
-4 1002 None 0 #
-0 1010 @
-5 1003 None 0 #
-0 1011 @
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 #
+3 2010 D _param p ST_INTELLECT } 5 D _var p quest_water_thief = 0 #
+6 2020 D _var p quest_water_thief > 0 #
+0 2030 D _param p ST_INTELLECT < 5 @
+3 3000 None 0 #
+4 3010 #
+5 3020 R _var p quest_water_thief = 1 @
+4 4000 None 0 #
+0 4010 @
+5 5000 None 0 #
+0 5010 @
+6 6000 None 0 #
+0 6010 &
 
 [engl]
 {100}{}{Lyle}
 {200}{}{You see Lyle.}
-{1000}{}{Hello,
----
-.}
-{1001}{}{Not so good. Ever since I had one of my water rations stolen the other day, things have
-been going downhill. Everybody is getting scared and nobody knows what to do.
----
-We're doing all right here. But I hope that you find the water chip soon. Everybody's on
-edge and we don't have much time.}
-{1002}{}{Yeah, I hope so too.}
-{1003}{}{Thanks. I sure hope you can get to the bottom of this. And please hurry and find a new
-water chip. This craziness wouldn't have happened at all if we had a working chip!}
-{1004}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
 conditions.]}
-{1005}{}{[MANUAL: initial branch condition/greeting -> Lyle01]}
-{1006}{}{Hello, Lyle. How are you holding up?}
-{1007}{}{Wahnnnngh!}
-{1008}{}{That's too bad. I hope things get better.}
-{1009}{}{I'll take a look and see what I can do.}
-{1010}{}{[Done.]}
-{1011}{}{[Done.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> Lyle01]}
+{2000}{}{Hello.}
+{2010}{}{Hello, Lyle. How are you holding up?}
+{2020}{}{Hello, Lyle. How are you holding up?}
+{2030}{}{Wahnnnngh!}
+{3000}{}{Not so good. Ever since I had one of my water rations stolen the other day, things have been going downhill. Everybody is getting scared and nobody knows what to do.}
+{3010}{}{That's too bad. I hope things get better.}
+{3020}{}{I'll take a look and see what I can do.}
+{4000}{}{Yeah, I hope so too.}
+{4010}{}{[Done.]}
+{5000}{}{Thanks. I sure hope you can get to the bottom of this. And please hurry and find a new water chip. This craziness wouldn't have happened at all if we had a working chip!}
+{5010}{}{[Done.]}
+{6000}{}{We're doing all right here. But I hope that you find the water chip soon. Everybody's on edge and we don't have much time.
+}
+{6010}{}{[Done.]}
+

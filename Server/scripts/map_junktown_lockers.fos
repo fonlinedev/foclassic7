@@ -26,7 +26,7 @@ void spawnLockers(Map@ map)
         if(valid(locker))
         {
             // HexX and HexY print the map coordinates. GetProtoId() helps identify the container graphic/type.
-            Log("Container found -> X: " + locker.HexX + " | Y: " + locker.HexY + " | Item PID: " + locker.GetProtoId());
+            // Log("Container found -> X: " + locker.HexX + " | Y: " + locker.HexY + " | Item PID: " + locker.GetProtoId());
         }
     }
     
@@ -38,7 +38,6 @@ void spawnLockers(Map@ map)
             Log("ERROR MAP_JunktownNorth: Expected 11 containers, found " + count);
             return;
         }
-        Log("initLockersOnce: MAP_JunktownNorth - containers found: " + count);       
 
         LockerLoot@[] northLocker0;        
         ResetLockerLoot(lockers[0], LOCKER_PROTECTED_ITEMS, northLocker0); 
@@ -93,8 +92,6 @@ void spawnLockers(Map@ map)
             return;
         }
         
-        Log("initLockersOnce: MAP_JunktownSouth - containers found: " + count);
-
         LockerLoot@[] southLocker0;
         southLocker0.insertLast(LockerLoot(PID_ROCK, 5));
         southLocker0.insertLast(LockerLoot(PID_FRAG_GRENADE, 3));
@@ -123,8 +120,6 @@ void spawnLockers(Map@ map)
             Log("ERROR MAP_Junktownhotel: Expected 21 containers, found " + count);
             return;
         }
-        Log("initLockersOnce: MAP_Junktownhotel - containers found: " + count);
-
         LockerLoot@[] hotelLocker0;        
         ResetLockerLoot(lockers[0], LOCKER_PROTECTED_ITEMS, hotelLocker0);
 

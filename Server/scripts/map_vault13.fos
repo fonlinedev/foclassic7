@@ -10,19 +10,19 @@
 #include "elevators_h.fos"
 #include "factions_h.fos"
 #include "mapdata_h.fos"
-
-
+#include "map_vault13_waterthief.fos"
+#include "map_vault13_lockers.fos"
 //
-// Initialize map, and indicates this map belong to Unity
+// Initialize map, and indicates this map belong to Vault 13
 //
 
 //
 // Map Data:
-// 0 - faction id (Unity)
+// 0 - faction id
 //
 
 // elevator 1-2-3
-CElevator Elevator(ELEVATOR_BOS_1234);
+CElevator Elevator(ELEVATOR_VAULT_123);
 
 
 #define PID_SKELETON       211
@@ -39,7 +39,6 @@ void map_init(Map& map, bool firstTime)
     {
         // this map belongs to that faction
         map.SetData(MAP_DATA_FACTION, FACTION_VAULT_13);
-        map.SetTurnBasedAvailability(true);
         _MapSetMode(map, MAP_MODE_NO_LOOT_DROP);
         _MapSetMode(map, MAP_MODE_NO_PVP);
     
@@ -65,13 +64,17 @@ void map_init(Map& map, bool firstTime)
     // parse elevators floors (only for vault levels)
     if(map.GetProtoId() == MAP_Vault13Level1 ||
        map.GetProtoId() == MAP_Vault13Level2 ||
-       map.GetProtoId() == MAP_Vault13Level3 ||
        map.GetProtoId() == MAP_Vault13Level4)
     {
         uint16 x = 0, y = 0;
         // num1 for outside elevator
         if(map.GetEntireCoords(1, 0, x, y))
             Elevator.AddFloor(map.Id, 1);
+        if(map.GetProtoId() == MAP_Vault13Level4)
+            InitWaterThiefEvents();
+        uint[] values = { map.GetProtoId() };
+        CreateTimeEvent(__FullSecond + REAL_HOUR(1), "e_RespawnLoot", values, false);
+        spawnLockers(map);
     }
 
 }

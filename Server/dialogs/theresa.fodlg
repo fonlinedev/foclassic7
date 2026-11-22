@@ -1,207 +1,188 @@
 [comment]
 
+
 [data]
 lang=engl
 
 [dialog]
 &
-1 1025 None 1 #
-2 1026 #
-3 1027 #
-4 1028 #
-5 1029 #
-6 1030 @
-2 1000 None 0 #
-0 1031 @
-3 1001 None 0 #
-0 1032 #
-0 1033 @
-4 1002 None 0 #
-0 1034 #
-7 1035 #
-8 1036 #
-9 1037 @
-7 1005 None 0 #
-0 1042 #
-13 1043 @
-13 1011 None 0 #
-8 1055 #
-15 1056 @
-8 1006 None 0 #
-14 1044 #
-15 1045 @
-14 1012 None 0 #
-0 1057 #
-0 1058 @
-15 1013 None 0 #
-20 1059 #
-0 1060 #
-0 1061 @
-20 1018 None 0 #
-0 1070 @
-9 1007 None 0 #
-14 1046 #
-15 1047 @
-5 1003 None 0 #
-10 1038 #
-11 1039 #
-12 1040 @
-10 1008 None 0 #
-16 1048 #
-17 1049 #
-18 1050 #
-19 1051 @
-16 1014 None 0 #
-19 1062 #
-21 1063 @
-19 1017 None 0 #
-24 1067 #
-21 1068 #
-20 1069 @
-24 1022 None 0 #
-25 1077 #
-0 1078 @
-25 1023 None 0 #
-0 1079 @
-21 1019 None 0 #
-0 1071 @
-17 1015 None 0 #
-0 1064 @
-18 1016 None 0 #
-22 1065 #
-23 1066 @
-22 1020 None 0 #
-19 1072 #
-0 1073 @
-23 1021 None 0 #
-25 1074 #
-26 1075 #
-26 1076 @
-26 1024 None 0 #
-0 1080 @
-11 1009 None 0 #
-17 1052 #
-18 1053 @
-12 1010 None 0 #
-0 1054 @
-6 1004 None 0 #
-0 1041 @
+1 1000 None 1 #
+2 1010 D _var p quest_vault13_rebels = 3 D _var p quest_water_chip = 3 #
+3 1020 D _var p quest_vault13_rebels = 3 D _var p quest_water_chip < 3 #
+4 1030 D _var p quest_vault13_rebels = 1 D _script dialog@d_IsBetweenHour 2 16 18 #
+5 1040 D _var p quest_vault13_rebels = 0 #
+6 1050 D _var p quest_vault13_rebels = 4 #
+27 1060 D _var p quest_vault13_rebels = 1 D _script dialog@d_IsNotBetweenHour 2 16 18 @
+2 2000 None 0 #
+0 2010 @
+3 3000 None 0 #
+0 3010 #
+0 3020 @
+4 4000 None 0 #
+0 4010 #
+7 4020 D _param p ST_INTELLECT < 6 #
+8 4030 D _param p ST_INTELLECT < 6 #
+9 4040 D _param p ST_INTELLECT } 6 @
+7 5000 None 0 #
+0 5010 R _var p quest_vault13_rebels = 4 #
+13 5020 @
+13 6000 None 0 #
+8 6010 #
+15 6020 @
+8 7000 None 0 #
+14 7010 #
+15 7020 @
+14 8000 None 0 #
+0 8010 #
+0 8020 R _var p quest_vault13_rebels = 4 @
+15 9000 None 0 #
+0 9010 #
+0 9020 R _var p quest_vault13_rebels = 4 @
+20 10000 None 0 #
+0 10010 @
+9 11000 None 0 #
+14 11010 #
+15 11020 @
+5 12000 None 0 #
+10 12010 #
+11 12020 #
+12 12030 @
+10 13000 None 0 #
+16 13010 #
+17 13020 #
+18 13030 #
+24 13040 D _var p quest_vault13_rebels = 1 @
+16 14000 None 0 #
+21 14010 #
+20 14020 D _param p ST_INTELLECT < 6 #
+24 14030 D _param p ST_INTELLECT } 6 @
+19 15000 None 0 #
+24 15010 #
+21 15020 #
+20 15030 @
+24 16000 None 0 #
+0 16010 R _var p quest_vault13_rebels = 3 @
+25 17000 None 0 #
+0 17010 @
+21 18000 None 0 #
+0 18010 R _var p quest_vault13_rebels = 4 @
+17 19000 None 0 #
+0 19010 @
+18 20000 None 0 #
+22 20010 #
+23 20020 @
+22 21000 None 0 #
+20 21010 #
+0 21020 @
+23 22000 None 0 #
+26 22010 #
+26 22020 #
+0 22030 @
+26 23000 None 0 #
+0 23010 @
+11 24000 None 0 #
+17 24010 #
+18 24020 @
+12 25000 None 0 #
+0 25010 @
+6 26000 None 0 #
+0 26010 @
+27 27000 None 0 &
 
 [engl]
 {100}{}{Theresa}
 {200}{}{You see Theresa.}
-{1000}{}{I didn't think you would succeed, but you did a good job. Thank you for saving us all.}
-{1001}{}{Please hurry and find the water chip. We cannot wait much longer.}
-{1002}{}{Welcome to our meeting! As you have been picked by the Overseer to go outside, perhaps
-you can give us some advice before our move to the outdoors as well.}
-{1003}{}{Hello,
----
-. How fares your journey?}
-{1004}{}{Oh, just go away! We don't need the help of one of the Overseer's pawns!}
-{1005}{}{Thank you so much. I can see you're going to be a big help. Why don't you just leave?}
-{1006}{}{Really? Considering our position, our lack of water, and the original purpose of this
-Vault, why do you think that we should stay?}
-{1007}{}{Well, considering that you have some experience with the outside, perhaps you have some
-valuable points to make.}
-{1008}{}{It's good to hear that. I knew that the outside world couldn't be as bad as everyone
-says. I mean, our ancestors lived outside, right? But that paranoid Overseer won't let
-us leave.}
-{1009}{}{Oh, I'm sorry to hear that. I hope that you're able to find the chip soon.}
-{1010}{}{Hmm. I suppose it was too much to hope that the outside world had taught you to
-communicate. Oh well.}
-{1011}{}{It's only a matter of time before we run out of water here. But the Vault was never
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+conditions.]}
+{1010}{}{water chip done}
+{1020}{}{water chip ongoing}
+{1030}{}{rebels initiated -  meeting time}
+{1040}{}{rebels not started}
+{1050}{}{rebellion quest failed}
+{1060}{}{rebels initiated -  meeting out of time}
+{2000}{}{I didn't think you would succeed, but you did a good job. Thank you for saving us all.}
+{2010}{}{[Done.]}
+{3000}{}{Please hurry and find the water chip. We cannot wait much longer.}
+{3010}{}{Don't worry, I will.}
+{3020}{}{Hoooot!}
+{4000}{}{Welcome to our meeting! As you have been picked by the Overseer to go outside, perhaps you can give us some advice before our move to the outdoors as well.}
+{4010}{}{Hoooot!}
+{4020}{}{Don't drink glowing water.}
+{4030}{}{Yeah . . . don't go.}
+{4040}{}{I think that your plans to leave are ill-advised.}
+{5000}{}{Thank you so much. I can see you're going to be a big help. Why don't you just leave?}
+{5010}{}{Fine then.}
+{5020}{}{Sorry, I'm here to hear all of this.}
+{6000}{}{It's only a matter of time before we run out of water here. But the Vault was never
 meant to keep people inside forever! We have the people and the supplies to move outside
 now. We have a better chance.}
-{1012}{}{If you can't give us good reasons why we shouldn't leave, then we're not going to wait
-here and die of water poisoning. Please don't get in our way.}
-{1013}{}{We're well-prepared now. We have equipment and simulator training. A few hazards outside
-are better than dying slowly of thirst!
----
-Hmm. Perhaps you're right. There are probably other survivors out there, and they could
-be hostile, too. I guess we will need to wait for everyone else to be ready.}
-{1014}{}{And I suppose he chose you to go outside because he knew that you were under his thumb!
-He really just doesn't want to give up his control over us.}
-{1015}{}{Hmm. From what I've read, the outside isn't really all that dangerous. But I suppose
-that you would know better than I, wouldn't you?}
-{1016}{}{I knew that the outside couldn't be too bad. That's why I've been trying to convince
-some people to come outside with me. I think that we have a better chance of survival
-out there.}
-{1017}{}{[MANUAL: add NPC dialogue for diagram node 'Theresa02a']}
-{1018}{}{We've been over this before. Leave us alone.}
-{1019}{}{Oh, come on! Wake up! If he thinks the outside is so dangerous, then how come he sent
-you out there? The man just has a control complex. You're a stupid tool and you don't
-even know it!}
-{1020}{}{Oh, get real! Do you really think that we can live in this Vault generation after
-generation? Maybe you can find a new chip, but what happens when the next thing breaks
-down? And the next?}
-{1021}{}{A lot of us think so. That's why we're planning to take some supplies and head out in a
-few days. Say, do you have any advice for us?}
-{1022}{}{I suppose. I always figured that he just had some sort of power trip. But I guess that
-he wouldn't be the Overseer if he wasn't really concerned about our welfare, would he? I
-guess we should just wait and see if you can find the chip.}
-{1023}{}{[MANUAL: add NPC dialogue for diagram node 'UpReact']}
-{1024}{}{Okay. Well, thanks.}
-{1025}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
-conditions.]}
-{1026}{}{[MANUAL: initial branch condition/greeting -> Theresa24]}
-{1027}{}{[MANUAL: initial branch condition/greeting -> Theresa23]}
-{1028}{}{[MANUAL: initial branch condition/greeting -> Theresa15]}
-{1029}{}{[MANUAL: initial branch condition/greeting -> Theresa01]}
-{1030}{}{[MANUAL: initial branch condition/greeting -> Theresa14]}
-{1031}{}{[Done.]}
-{1032}{}{Don't worry, I will.}
-{1033}{}{Hoooot!}
-{1034}{}{Hoooot!}
-{1035}{}{Don't drink glowing water.}
-{1036}{}{Yeah . . . don't go.}
-{1037}{}{I think that your plans to leave are ill-advised.}
-{1038}{}{It's going pretty well, thanks.}
-{1039}{}{Not very well.}
-{1040}{}{Hoogh!}
-{1041}{}{[Done.]}
-{1042}{}{Fine then.}
-{1043}{}{Sorry, I'm here to hear all of this.}
-{1044}{}{It's just a bad idea, is all.}
-{1045}{}{The outside world is too dangerous to the unprepared. It's best to have time to make
+{6010}{}{Outside is too dangerous.}
+{6020}{}{The Vault was made to release its inhabitants together as a group, not as a small band
+that will be quickly overwhelmed.}
+{7000}{}{Really? Considering our position, our lack of water, and the original purpose of this Vault, why do you think that we should stay?}
+{7010}{}{It's just a bad idea, is all.}
+{7020}{}{The outside world is too dangerous to the unprepared. It's best to have time to make
 proper preparations before going. The Overseer is trying to give the Vault that needed
 time.}
-{1046}{}{I just need a little more time to find the water chip.}
-{1047}{}{The outside is too dangerous and hostile. You wouldn't last long.}
-{1048}{}{The Overseer probably has his reasons.}
-{1049}{}{Actually, it's pretty bad out there.}
-{1050}{}{You're right; the outside world isn't all that bad.}
-{1051}{}{The Overseer is simply trying to protect us. The outside world is dangerous to the
+{8000}{}{If you can't give us good reasons why we shouldn't leave, then we're not going to wait here and die of water poisoning. Please don't get in our way.}
+{8010}{}{Very well. It's your choice.}
+{8020}{}{Sorry, folks, I can't let you do this.}
+{9000}{}{We're well-prepared now. We have equipment and simulator training. A few hazards outside are better than dying slowly of thirst!}
+{9010}{}{Well, good luck then.}
+{9020}{}{Sorry, I can't let you leave now.}
+{10000}{}{We've been over this before. Leave us alone.}
+{10010}{}{[Done.]}
+{11000}{}{Well, considering that you have some experience with the outside, perhaps you have some
+valuable points to make.}
+{11010}{}{I just need a little more time to find the water chip.}
+{11020}{}{The outside is too dangerous and hostile. You wouldn't last long.}
+{12000}{}{Hello, how fares your journey?}
+{12010}{}{It's going pretty well, thanks.}
+{12020}{}{Not very well.}
+{12030}{}{Hoogh!}
+{13000}{}{It's good to hear that. I knew that the outside world couldn't be as bad as everyone says. I mean, our ancestors lived outside, right? But that paranoid Overseer won't let us leave.}
+{13010}{}{The Overseer probably has his reasons.}
+{13020}{}{Actually, it's pretty bad out there.}
+{13030}{}{You're right; the outside world isn't all that bad.}
+{13040}{}{The Overseer is simply trying to protect us. The outside world is dangerous to the 
 unprepared.}
-{1052}{}{With all of the hazards I've been running in to, it may take some time.}
-{1053}{}{Shouldn't be a problem.}
-{1054}{}{[Done.]}
-{1055}{}{Outside is too dangerous.}
-{1056}{}{The Vault was made to release its inhabitants together as a group, not as a small band
-that will be quickly overwhelmed.}
-{1057}{}{Very well. It's your choice.}
-{1058}{}{Sorry, folks, I can't let you do this.}
-{1059}{}{[MANUAL: add player response/transition -> Theresa25]}
-{1060}{}{Well, good luck then.}
-{1061}{}{Sorry, I can't let you leave now.}
-{1062}{}{Actually, I think he believes that there's no reason to risk survival outside while it's
-still safe in here.}
-{1063}{}{I resent that remark!}
-{1064}{}{[Done.]}
-{1065}{}{What are you smoking!?}
-{1066}{}{That's probably a good idea.}
-{1067}{}{[MANUAL: add player response/transition -> Theresa08]}
-{1068}{}{[MANUAL: add player response/transition -> Theresa09]}
-{1069}{}{[MANUAL: add player response/transition -> Theresa25]}
-{1070}{}{[Done.]}
-{1071}{}{[Done.]}
-{1072}{}{Maybe we can't stay here forever. But rushing out into the world without preparation and
+{14000}{}{And I suppose he chose you to go outside because he knew that you were under his thumb! He really just doesn't want to give up his control over us.}
+{14010}{}{I resent that remark!}
+{14020}{}{Actually, I think he believes that there's no reason to risk survival outside while it's still safe in here.}
+{14030}{}{Actually, I think he believes that there's no reason to risk survival outside while it's still safe in here.}
+{15000}{}{[MANUAL: add NPC dialogue for diagram node 'Theresa02a']}
+{15010}{}{[MANUAL: add player response/transition -> Theresa08]}
+{15020}{}{[MANUAL: add player response/transition -> Theresa09]}
+{15030}{}{[MANUAL: add player response/transition -> Theresa25]}
+{16000}{}{I suppose. I always figured that he just had some sort of power trip. But I guess that he wouldn't be the Overseer if he wasn't really concerned about our welfare, would he? I guess we should just wait and see if you can find the chip.}
+{16010}{}{Don't worry, I'll take care of it.}
+{17000}{}{[MANUAL: add NPC dialogue for diagram node 'UpReact']}
+{17010}{}{[Done.]}
+{18000}{}{Oh, come on! Wake up! If he thinks the outside is so dangerous, then how come he sent you out there? The man just has a control complex. You're a stupid tool and you don't
+even know it!}
+{18010}{}{[Done.]}
+{19000}{}{Hmm. From what I've read, the outside isn't really all that dangerous. But I suppose that you would know better than I, wouldn't you?}
+{19010}{}{[Done.]}
+{20000}{}{I knew that the outside couldn't be too bad. That's why I've been trying to convince some people to come outside with me. I think that we have a better chance of survival out there.}
+{20010}{}{What are you smoking!?}
+{20020}{}{That's probably a good idea.}
+{21000}{}{Oh, get real! Do you really think that we can live in this Vault generation after generation? Maybe you can find a new chip, but what happens when the next thing breaks down? And the next?}
+{21010}{}{Maybe we can't stay here forever. But rushing out into the world without preparation and
 without the consent of the group isn't the answer.}
-{1073}{}{Huh. I guess you're right.}
-{1074}{}{[MANUAL: add player response/transition -> UpReact]}
-{1075}{}{Sorry, I haven't really found much out there.}
-{1076}{}{You could head to this little village called Shady Sands, a few days east. They might
+{21020}{}{Huh. I guess you're right.}
+{22000}{}{A lot of us think so. That's why we're planning to take some supplies and head out in a few days. Say, do you have any advice for us?}
+{22010}{}{Sorry, I haven't really found much out there.}
+{22020}{}{You could head to this little village called Shady Sands, a few days east. They might 
 help.}
-{1077}{}{[MANUAL: add player response/transition -> UpReact]}
-{1078}{}{Don't worry, I'll take care of it.}
-{1079}{}{[Done.]}
-{1080}{}{[Done.]}
+{22030}{}{[Done.]}
+{23000}{}{Okay. Well, thanks.}
+{23010}{}{[Done.]}
+{24000}{}{Oh, I'm sorry to hear that. I hope that you're able to find the chip soon.}
+{24010}{}{With all of the hazards I've been running in to, it may take some time.}
+{24020}{}{Shouldn't be a problem.}
+{25000}{}{Hmm. I suppose it was too much to hope that the outside world had taught you to communicate. Oh well.}
+{25010}{}{[Done.]}
+{26000}{}{Oh, just go away! We don't need the help of one of the Overseer's pawns!}
+{26010}{}{[Done.]}
+{27000}{}{Come back later, we have a lot to discuss...}
+

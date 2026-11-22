@@ -1,0 +1,244 @@
+#include "_defines.fos"
+#include "_macros.fos"
+#include "_maps.fos"
+#include "lockers_utils.fos"
+#include "ITEMPID.H"
+
+uint[] LOCKER_PROTECTED_ITEMS = { PID_PURPLE_ROBE, PID_SCOUT_HANDBOOK, PID_RAD_X, PID_BACKPACK, PID_RADAWAY };
+
+
+// First init the lockers, only run once.
+void spawnLockers(Map@ map)
+{
+    if(!valid(map))
+    {
+        Log("initLockersOnce failed, map not found.");
+        return;
+    }
+
+    array<Item@> lockers;
+    uint count = map.GetItemsByType(ITEM_TYPE_CONTAINER, lockers);
+
+
+    
+    // level 1
+    if(map.GetProtoId() == MAP_Vault13Level1)
+    {
+        Log("Level 1 lockers");
+        // Loop through the populated array and log the coordinates of each container
+        for(uint i = 0; i < count; i++)
+        {
+            Item@ locker = lockers[i];
+            if(valid(locker))
+            {
+                // HexX and HexY print the map coordinates. GetProtoId() helps identify the container graphic/type.
+                Log("Container found -> X: " + locker.HexX + " | Y: " + locker.HexY + " | Item PID: " + locker.GetProtoId());
+            }
+        }
+
+    }
+
+    // level 2
+    else if(map.GetProtoId() == MAP_Vault13Level2)
+    {
+        Log("Level 2 lockers");
+        // Loop through the populated array and log the coordinates of each container
+        for(uint i = 0; i < count; i++)
+        {
+            Item@ locker = lockers[i];
+            if(valid(locker))
+            {
+                // HexX and HexY print the map coordinates. GetProtoId() helps identify the container graphic/type.
+                Log("Container found -> X: " + locker.HexX + " | Y: " + locker.HexY + " | Item PID: " + locker.GetProtoId());
+            }
+        }
+
+                // [0] X: 89, Y: 84 - Basic Clothes & Caps
+        LockerLoot@[] lvl2Locker0;
+        if(Chance(1))
+            lvl2Locker0.insertLast(LockerLoot(PID_PURPLE_ROBE, 1));
+        lvl2Locker0.insertLast(LockerLoot(PID_BOTTLE_CAPS, 35));
+        ResetLockerLoot(lockers[0], LOCKER_PROTECTED_ITEMS, lvl2Locker0);
+
+        // [1] X: 87, Y: 84 - Empty
+        LockerLoot@[] lvl2Locker1;
+        ResetLockerLoot(lockers[1], LOCKER_PROTECTED_ITEMS, lvl2Locker1);
+
+        // [2] X: 91, Y: 120 - Snacks & Water
+        LockerLoot@[] lvl2Locker2;
+        lvl2Locker2.insertLast(LockerLoot(PID_NUKA_COLA, 2));
+        lvl2Locker2.insertLast(LockerLoot(PID_WATER_FLASK, 1));
+        ResetLockerLoot(lockers[2], LOCKER_PROTECTED_ITEMS, lvl2Locker2);
+
+        // [3] X: 89, Y: 120 - First Aid Supplies
+        LockerLoot@[] lvl2Locker3;
+        lvl2Locker3.insertLast(LockerLoot(PID_STIMPAK, 2));
+        lvl2Locker3.insertLast(LockerLoot(PID_ANTIDOTE, 1));
+        ResetLockerLoot(lockers[3], LOCKER_PROTECTED_ITEMS, lvl2Locker3);
+
+        // [4] X: 125, Y: 84 - Empty
+        LockerLoot@[] lvl2Locker4;
+        ResetLockerLoot(lockers[4], LOCKER_PROTECTED_ITEMS, lvl2Locker4);
+
+        // [5] X: 123, Y: 84 - Beginner Skill Book
+        LockerLoot@[] lvl2Locker5;
+        if(Chance(10))
+            lvl2Locker5.insertLast(LockerLoot(PID_SCOUT_HANDBOOK, 1));
+        lvl2Locker5.insertLast(LockerLoot(PID_LIGHTER, 1));
+        ResetLockerLoot(lockers[5], LOCKER_PROTECTED_ITEMS, lvl2Locker5);
+
+        // [6] X: 125, Y: 120 - Personal Stash
+        LockerLoot@[] lvl2Locker6;
+        lvl2Locker6.insertLast(LockerLoot(PID_BOTTLE_CAPS, 50));
+        lvl2Locker6.insertLast(LockerLoot(PID_BEER, 2));
+        ResetLockerLoot(lockers[6], LOCKER_PROTECTED_ITEMS, lvl2Locker6);
+
+        // [7] X: 127, Y: 120 - Empty
+        LockerLoot@[] lvl2Locker7;
+        ResetLockerLoot(lockers[7], LOCKER_PROTECTED_ITEMS, lvl2Locker7);
+
+        // [8] X: 113, Y: 84 - Melee & Utility
+        LockerLoot@[] lvl2Locker8;
+        lvl2Locker8.insertLast(LockerLoot(PID_KNIFE, 1));
+        lvl2Locker8.insertLast(LockerLoot(PID_FLARE, 2));
+        ResetLockerLoot(lockers[8], LOCKER_PROTECTED_ITEMS, lvl2Locker8);
+
+        // [9] X: 111, Y: 84 - Spare Vault Suit
+        LockerLoot@[] lvl2Locker9;
+        lvl2Locker9.insertLast(LockerLoot(PID_VAULT_SUIT, 1));
+        ResetLockerLoot(lockers[9], LOCKER_PROTECTED_ITEMS, lvl2Locker9);
+
+        // [10] X: 113, Y: 120 - Empty
+        LockerLoot@[] lvl2Locker10;
+        ResetLockerLoot(lockers[10], LOCKER_PROTECTED_ITEMS, lvl2Locker10);
+
+        // [11] X: 115, Y: 120 - Food Rations
+        LockerLoot@[] lvl2Locker11;
+        lvl2Locker11.insertLast(LockerLoot(PID_IGUANA_ON_A_STICK, 2));
+        lvl2Locker11.insertLast(LockerLoot(PID_MUTATED_FRUIT, 2));
+        ResetLockerLoot(lockers[11], LOCKER_PROTECTED_ITEMS, lvl2Locker11);
+
+        // [12] X: 101, Y: 84 - Radiation Prep
+        LockerLoot@[] lvl2Locker12;
+        if(Chance(5))
+            lvl2Locker12.insertLast(LockerLoot(PID_RAD_X, 1));
+        if(Chance(5))
+            lvl2Locker12.insertLast(LockerLoot(PID_RADAWAY, 1));
+        ResetLockerLoot(lockers[12], LOCKER_PROTECTED_ITEMS, lvl2Locker12);
+
+        // [13] X: 99, Y: 84 - Empty
+        LockerLoot@[] lvl2Locker13;
+        ResetLockerLoot(lockers[13], LOCKER_PROTECTED_ITEMS, lvl2Locker13);
+
+        // [14] X: 101, Y: 120 - Sidearm & Ammo
+        LockerLoot@[] lvl2Locker14;
+        lvl2Locker14.insertLast(LockerLoot(PID_10MM_JHP, 24));
+        lvl2Locker14.insertLast(LockerLoot(PID_BOTTLE_CAPS, 25));
+        ResetLockerLoot(lockers[14], LOCKER_PROTECTED_ITEMS, lvl2Locker14);
+
+        // [15] X: 103, Y: 120 - Tool & Backpack
+        LockerLoot@[] lvl2Locker15;
+        if(Chance(10))
+            lvl2Locker15.insertLast(LockerLoot(PID_BACKPACK, 1));
+        lvl2Locker15.insertLast(LockerLoot(PID_ROPE, 1));
+        ResetLockerLoot(lockers[15], LOCKER_PROTECTED_ITEMS, lvl2Locker15);
+
+
+    } else if(map.GetProtoId() == MAP_Vault13Level4)
+    {
+        Log("Level 3 lockers");
+        // Loop through the populated array and log the coordinates of each container
+        for(uint i = 0; i < count; i++)
+        {
+            Item@ locker = lockers[i];
+            if(valid(locker))
+            {
+                // HexX and HexY print the map coordinates. GetProtoId() helps identify the container graphic/type.
+                Log("Container found -> X: " + locker.HexX + " | Y: " + locker.HexY + " | Item PID: " + locker.GetProtoId());
+            }
+        }
+
+        // X: 88, Y: 102 (PID: 128) - 4x Knife
+        LockerLoot@[] lvl3Locker0;
+        lvl3Locker0.insertLast(LockerLoot(PID_KNIFE, 4));
+        ResetLockerLoot(lockers[0], LOCKER_PROTECTED_ITEMS, lvl3Locker0);
+
+        // X: 92, Y: 102 (PID: 128) - 1x 10mm Pistol, 4x 10mm JHP
+        LockerLoot@[] lvl3Locker1;
+        lvl3Locker1.insertLast(LockerLoot(PID_10MM_PISTOL, 1));
+        lvl3Locker1.insertLast(LockerLoot(PID_10MM_JHP, 4));
+        ResetLockerLoot(lockers[1], LOCKER_PROTECTED_ITEMS, lvl3Locker1);
+
+        // X: 97, Y: 102 (PID: 132) - 2x Stimpak
+        LockerLoot@[] lvl3Locker2;
+        lvl3Locker2.insertLast(LockerLoot(PID_STIMPAK, 2));
+        ResetLockerLoot(lockers[2], LOCKER_PROTECTED_ITEMS, lvl3Locker2);
+
+        // X: 99, Y: 102 (PID: 132) - Empty
+        LockerLoot@[] lvl3Locker3;
+        ResetLockerLoot(lockers[3], LOCKER_PROTECTED_ITEMS, lvl3Locker3);
+
+        // X: 101, Y: 102 (PID: 132) - 1x First Aid Kit, 1x Mentats
+        LockerLoot@[] lvl3Locker4;
+        lvl3Locker4.insertLast(LockerLoot(PID_FIRST_AID_KIT, 1));
+        lvl3Locker4.insertLast(LockerLoot(PID_MENTATS, 1));
+        ResetLockerLoot(lockers[4], LOCKER_PROTECTED_ITEMS, lvl3Locker4);
+
+        // X: 104, Y: 102 (PID: 128) - 2x Water Flask
+        LockerLoot@[] lvl3Locker5;
+        lvl3Locker5.insertLast(LockerLoot(PID_WATER_FLASK, 2));
+        ResetLockerLoot(lockers[5], LOCKER_PROTECTED_ITEMS, lvl3Locker5);
+
+        // X: 106, Y: 102 (PID: 128) - 40x Water Flask
+        LockerLoot@[] lvl3Locker6;
+        lvl3Locker6.insertLast(LockerLoot(PID_WATER_FLASK, 40));
+        ResetLockerLoot(lockers[6], LOCKER_PROTECTED_ITEMS, lvl3Locker6);
+
+        // X: 85, Y: 104 (PID: 130) - 1x Shotgun, 2x 12ga Ammo
+        LockerLoot@[] lvl3Locker7;
+        lvl3Locker7.insertLast(LockerLoot(PID_SHOTGUN, 1));
+        lvl3Locker7.insertLast(LockerLoot(PID_SHOTGUN_SHELLS, 2));
+        ResetLockerLoot(lockers[7], LOCKER_PROTECTED_ITEMS, lvl3Locker7);
+
+        // X: 97, Y: 104 (PID: 134) - Empty
+        LockerLoot@[] lvl3Locker8;
+        ResetLockerLoot(lockers[8], LOCKER_PROTECTED_ITEMS, lvl3Locker8);
+
+        // X: 97, Y: 106 (PID: 134) - Empty
+        LockerLoot@[] lvl3Locker9;
+        ResetLockerLoot(lockers[9], LOCKER_PROTECTED_ITEMS, lvl3Locker9);
+
+        // X: 105, Y: 108 (PID: 130) - 2x Water Flask
+        LockerLoot@[] lvl3Locker10;
+        lvl3Locker10.insertLast(LockerLoot(PID_WATER_FLASK, 2));
+        ResetLockerLoot(lockers[10], LOCKER_PROTECTED_ITEMS, lvl3Locker10);
+
+        // X: 107, Y: 108 (PID: 130) - 2x Water Flask
+        LockerLoot@[] lvl3Locker11;
+        lvl3Locker11.insertLast(LockerLoot(PID_WATER_FLASK, 2));
+        ResetLockerLoot(lockers[11], LOCKER_PROTECTED_ITEMS, lvl3Locker11);
+
+    } else {
+        Log("ERROR unknown map PID cant load lockers");
+    }
+
+}
+
+uint e_RespawnLoot(uint[]@ values)
+{
+    if(values is null || values.length() == 0) return 0;
+    uint mapId = values[0];
+    Map@ map = GetMapByPid(mapId, 0);
+    if(!valid(map))
+    {
+        Log("e_RespawnLoot failed, map not found.");
+        return 0;
+    }
+    spawnLockers(map);
+    return REAL_HOUR(1);
+}
+
+bool Chance(uint percent)
+{
+    return uint(Random(0, 99)) < percent;
+}
