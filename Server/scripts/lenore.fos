@@ -1,0 +1,35 @@
+
+#include "_macros.fos"
+#include "_defines.fos"
+
+#define DIALOG_ID    (1755)
+
+void critter_init(Critter& critter, bool firstTime)
+{
+    critter.SetEvent(CRITTER_EVENT_IDLE, "_Idle");
+}
+
+void _Idle(Critter& critter)
+{
+    // Random movement
+    if(Random(0, 2) == 0)
+    {
+        critter.MoveRandom();
+    }
+
+    // 50% chance to say something
+    if(Random(0, 2) == 0)
+    {
+        // Select exactly one phrase: 1, 2 or 3
+        int phrase = Random(1, 3);
+
+        critter.SayMsg(
+            SAY_NORM_ON_HEAD,
+            TEXTMSG_DLG,
+            DLGSTR(DIALOG_ID, phrase)
+        );
+    }
+
+    // Wait before the next idle action
+    critter.Wait(Random(5000, 12000));
+}

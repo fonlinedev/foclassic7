@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              200
 MaxHexY              200
-WorkHexX             123
-WorkHexY             78
+WorkHexX             97
+WorkHexY             151
 ScriptModule         map_junktown
 ScriptFunc           map_init
 NoLogOut             0
@@ -14809,6 +14809,8 @@ MapObjType           0
 ProtoId              20
 MapX                 91
 MapY                 116
+ScriptName           peasant_random
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -17936,8 +17938,9 @@ MapY                 153
 MapObjType           2
 ProtoId              2141
 MapX                 87
-MapY                 153
+MapY                 152
 LightDistance        6
+LightIntensity       -10
 
 MapObjType           2
 ProtoId              5114
@@ -18415,38 +18418,11 @@ MapY                 60
 Scenery_ToDir        2
 
 MapObjType           0
-ProtoId              9
-MapX                 87
-MapY                 153
-Dir                  3
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  1757
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  21
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-Critter_ParamIndex6  ST_FACTION_RANK
-Critter_ParamValue6  0
-Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
-Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
-Critter_ParamValue8  16
-Critter_ParamIndex9  ST_LEVEL
-Critter_ParamValue9  0
-
-MapObjType           0
 ProtoId              220
 MapX                 95
 MapY                 156
+ScriptName           peasant_random
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -18475,6 +18451,8 @@ MapObjType           0
 ProtoId              70
 MapX                 96
 MapY                 155
+ScriptName           lenore
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -19012,6 +18990,8 @@ ProtoId              198
 MapX                 83
 MapY                 77
 Dir                  3
+ScriptName           peasant_random
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -19074,7 +19054,7 @@ Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
 Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  1760
+Critter_ParamValue0  1761
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  18
 Critter_ParamIndex2  ST_BAG_ID
@@ -19328,6 +19308,8 @@ MapObjType           0
 ProtoId              54
 MapX                 135
 MapY                 124
+ScriptName           peasant_random
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -19356,6 +19338,8 @@ MapObjType           0
 ProtoId              54
 MapX                 131
 MapY                 126
+ScriptName           peasant_random
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -22775,5 +22759,11 @@ Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  131
 Critter_ParamIndex9  ST_LEVEL
 Critter_ParamValue9  0
+
+MapObjType           2
+ProtoId              3853
+MapX                 87
+MapY                 153
+Scenery_ToEntire     31
 
 

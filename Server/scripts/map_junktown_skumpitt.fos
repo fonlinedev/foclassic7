@@ -141,7 +141,7 @@ void AddSkumpittPatrons()
     SpawnStaticNpc(map, 19, 142, 1758, 0, 0, 0, 0, 2, "", "");
 
     // Add Saul to the ring
-    SpawnStaticNpc(map, 30, 69, 1753, 350, 0, 0, 0, 1, "", "");
+    SpawnStaticNpc(map, 30, 69, 1751, 0, 0, 0, 0, 1, "", "");
 
     // Remove Trish at Crash hotel
     Map@ mapHotel = GetMapByPid(MAP_Junktownhotel, 0);

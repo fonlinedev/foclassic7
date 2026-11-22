@@ -1,0 +1,22 @@
+#include "_macros.fos"
+#include "_defines.fos"
+#include "ITEMPID.H"
+#include "factions_h.fos"
+
+#include "_vars.fos"
+#include "messages_h.fos"
+
+#define DIALOG_ID    (1757)
+
+void critter_init(Critter& critter, bool firstTime)
+{
+   critter.SetEvent(CRITTER_EVENT_IDLE, "_Idle");
+}
+
+void _Idle(Critter& critter)
+{
+    if(Random(0, 3) == 0)
+        critter.SayMsg(SAY_NORM_ON_HEAD, TEXTMSG_DLG, DLGSTR(DIALOG_ID, 1));
+    // till next move
+    critter.Wait(Random(500, 20000));
+}

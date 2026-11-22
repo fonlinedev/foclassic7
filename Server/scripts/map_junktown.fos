@@ -19,18 +19,14 @@
 #include "npc_junktown_tasks.fos"
 #include "map_junktown_skumpitt.fos"
 #include "map_junktown_lockers.fos"
+#include "companion_h.fos"
 
 void map_init(Map& map, bool firstTime)
 {
     // certainly
-
-    if(firstTime)
-    {
-        uint[] maxes = { 20, 20 };
-        SetAlertMap(map, maxes);
-    }
-
+    
     uint proto = map.GetProtoId();
+    uint[] values = { proto };
     _MapSetMode(map, MAP_MODE_NO_LOOT_DROP);
     _MapSetMode(map, MAP_MODE_NO_PVP);
     if (proto == MAP_JunktownSouth) {
@@ -39,9 +35,56 @@ void map_init(Map& map, bool firstTime)
     if (proto == MAP_JunktownNorth) {
         InitSkumpittEvents();
     }
-    uint[] values = { map.GetProtoId() };
+    CreateTimeEvent(AFTER(REAL_MINUTE(1)), "cte_SpawnDogMeat", values, false);
     CreateTimeEvent(__FullSecond + REAL_HOUR(1), "e_RespawnLoot", values, false);
     spawnLockers(map);
+    if(firstTime)
+    {
+       cte_SpawnDogMeat(values);
+    }
+}
+
+uint cte_SpawnDogMeat(array<uint>@ values) {
+    if (values[0] != MAP_JunktownNorth)
+        return 0;
+    Map@ map = GetMapByPid(MAP_JunktownNorth, 0);
+    if(!valid(map))
+    {
+        Log("cte_SpawnDogMeat failed, map " + MAP_JunktownNorth + " not found.");
+        return 0;
+    }
+    uint16 x = 0;
+    uint16 y = 0;
+    map.GetEntireCoords(31, 0, x, y);
+    Log("entire x : y" + x + " : " + y);
+
+    Critter@ cr = map.GetCritter(x, y);
+    if (!valid(cr)) {
+        Log("Dog meat not found, spawning back");
+        spawnDogmeat(map);
+    } else {
+        Log("dog meat found at entire");
+    }
+    return REAL_MINUTE(1);
+}
+
+void spawnDogmeat(Map& map)
+{
+    Critter@ cr = SpawnStaticNpc(
+        map,
+        31,                 // entire id
+        DOGMEAT_PID,
+        1757,
+        1,                // bag
+        0,
+        0,                  // faction mode
+        0,                  // faction rank
+        3,                  // direction
+        "dogmeat@critter_init",
+        "dogmeat"
+    );
+    if (!valid(cr))
+        Log("Error at dogmeat spawning");
 }
 
 // Entrance at gates

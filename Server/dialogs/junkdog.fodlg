@@ -1,21 +1,36 @@
 [comment]
 
+
 [data]
 lang=engl
 
 [dialog]
 &
-1 1001 None 1 #
-2 1002 @
-2 1000 None 0 #
-0 1003 @
+1 1000 None 1 #
+3 1010 @
+2 2000 None 0 #
+0 2010 @
+3 3000 None 0 #
+4 3010 D _var p quest_jk_dogmeat = 1 D _item p PID_IGUANA_ON_A_STICK > 0 #
+0 3020 #
+0 3030 @
+4 4000 None 0 #
+0 4010 R _var p quest_jk_dogmeat = 2 R _item p PID_IGUANA_ON_A_STICK - 1 R _script companion@r_BefriendCompanion 0  &
 
 [engl]
-{100}{}{Junkdog}
+{100}{}{Meat dog}
 {200}{}{You see a dog. He seems to be following you.}
 {210}{}{You see a dog.}
-{1000}{}{You gain 100 experience points for helping Phil solve his canine conundrum.}
-{1001}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
+{1000}{}{[AUTO-GENERATED SKELETON: replace this entry with the NPC's initial greeting and
 conditions.]}
-{1002}{}{[MANUAL: initial branch condition/greeting -> dog_joins_dude]}
-{1003}{}{[Done.]}
+{1010}{}{[MANUAL: initial branch condition/greeting -> dog_joins_dude]}
+{2000}{}{You gain 100 experience points for helping Phil solve his canine conundrum.}
+{2010}{}{[Done.]}
+{3000}{}{Grrrr. . .}
+{3010}{}{[Give him a iguana-on-stick]}
+{3020}{}{[Leave it alone]}
+{3030}{}{[Try pet the dog.]}
+{4000}{}{[Dogmeat is now a companion]}
+{4010}{}{[Done.]}
+{100000001}{}{Grrrrr . . .}
+

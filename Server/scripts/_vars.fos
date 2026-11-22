@@ -269,6 +269,7 @@
 #define LVAR_q_raiders_locid                    (7330)
 #define LVAR_quest_water_thief                  (7331)
 #define LVAR_quest_vault13_rebels               (7332)
+#define LVAR_quest_jk_dogmeat                   (7333)
 
 //	KLAMATH										#7600
 #define LVAR_q_klam_aldobooze                   (7601)
@@ -1916,6 +1917,14 @@ Shared Hub state:
    2 == rebels discovered
    3 == quest completed (rebellion stopped)
    4 == quest failed
+**********
+
+   $    7333    1    quest_jk_dogmeat    0    0    2    1
+**********
+   0 == inactive
+   1 == active
+   2 == quest finished
+   
 **********
 
 

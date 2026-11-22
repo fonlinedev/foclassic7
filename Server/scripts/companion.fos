@@ -403,7 +403,7 @@ void r_BefriendCompanion(Critter& player, Critter@ npc)
         Log("init companion Tandi");
         npc.StatBase[ST_LEVEL] = player.StatBase[ST_LEVEL];
         npc.StatBase[ST_BAG_ID] = TANDI_BAG_ID;
-        npc.StatBase[ST_AI_ID] = AIPACKET_2238_MERC_MELEE;        
+        npc.StatBase[ST_AI_ID] = AIPACKET_2238_MERC_MELEE;
         npc.SkillBase[SK_UNARMED] = Random(150, 250);
         npc.StatBase[0] = Random(8, 10); // ST
         npc.StatBase[1] = Random(4, 6); // PE
@@ -417,6 +417,27 @@ void r_BefriendCompanion(Critter& player, Critter@ npc)
             FOLLOWER_TYPE_COMPANION,
             "follower@FollowerBaseInit",
             TANDI_DIALOGID,
+            player,
+            true
+        );
+    } else if (npcId == DOGMEAT_PID) {
+        Log("dogmeat init");
+        npc.StatBase[ST_LEVEL] = player.StatBase[ST_LEVEL];
+        npc.StatBase[ST_BAG_ID] = 1;
+        npc.StatBase[ST_AI_ID] = AIPACKET_FO1_DOG;
+        npc.SkillBase[SK_UNARMED] = Random(150, 250);
+        npc.StatBase[0] = Random(8, 10); // ST
+        npc.StatBase[1] = Random(4, 6); // PE
+        npc.StatBase[2] = Random(6, 10); // EN
+        npc.StatBase[3] = 1; // CH
+        npc.StatBase[4] = 1; // IN
+        npc.StatBase[5] = Random(6, 10);// AG
+        npc.StatBase[6] = Random(8, 10);// LK
+        MakeFollower(
+            npc,
+            FOLLOWER_TYPE_DOG,
+            "follower@FollowerBaseInit",
+            DOGMEAT_DIALOGID,
             player,
             true
         );

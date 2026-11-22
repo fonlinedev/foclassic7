@@ -1,0 +1,15 @@
+#include "_macros.fos"
+#include "_defines.fos"
+
+void critter_init(Critter& critter, bool firstTime)
+{
+    critter.SetEvent(CRITTER_EVENT_IDLE, "_Idle");
+}
+
+void _Idle(Critter& critter)
+{
+    if(Random(0, 2) == 0)
+        critter.MoveRandom();
+    // till next move
+    critter.Wait(Random(500, 20000));
+}

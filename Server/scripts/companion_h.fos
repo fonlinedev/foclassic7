@@ -17,6 +17,8 @@
 #define IAN_BAG_ID           (7)
 #define TANDI_BAG_ID         (3)
 #define TANDI_DIALOGID       (4046)
+#define DOGMEAT_PID            (9)
+#define DOGMEAT_DIALOGID      (9311)
 
 #define COMPANION_DIALOG_PRE_ID       (9321)
 #define COMPANION_INITIAL_SPAWNS      (35)

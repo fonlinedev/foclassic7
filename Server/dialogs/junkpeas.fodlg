@@ -6,11 +6,15 @@ lang=engl
 
 [dialog]
 &
-1 1000 None 1 &
+1 1000 None 1 #
+2 1010 @
+2 2000 None 0 &
 
 [engl]
-{100}{}{none}
+{100}{}{Junktown peasant}
 {1000}{}{Predialogue installations}
+{1010}{}{answers}
+{2000}{}{I'm busy. Leave me alone.@@Where did I put that thing . . .@@What are you doing here?@@Ain't Junktown a sight for sore eyes?}
 {100000001}{}{I'm busy. Leave me alone.}
 {100000002}{}{Where did I put that thing . . .}
 {100000003}{}{What are you doing here?}
