@@ -10742,18 +10742,8 @@ MapX                 121
 MapY                 80
 
 MapObjType           2
-ProtoId              2067
-MapX                 122
-MapY                 80
-
-MapObjType           2
 ProtoId              5622
 MapX                 123
-MapY                 80
-
-MapObjType           2
-ProtoId              2067
-MapX                 124
 MapY                 80
 
 MapObjType           2
@@ -10824,16 +10814,6 @@ MapY                 81
 MapObjType           2
 ProtoId              5114
 MapX                 118
-MapY                 81
-
-MapObjType           2
-ProtoId              2067
-MapX                 122
-MapY                 81
-
-MapObjType           2
-ProtoId              2067
-MapX                 124
 MapY                 81
 
 MapObjType           2
@@ -10925,21 +10905,6 @@ LightDistance        8
 MapObjType           2
 ProtoId              5115
 MapX                 118
-MapY                 82
-
-MapObjType           2
-ProtoId              2067
-MapX                 122
-MapY                 82
-
-MapObjType           2
-ProtoId              2067
-MapX                 123
-MapY                 82
-
-MapObjType           2
-ProtoId              2067
-MapX                 124
 MapY                 82
 
 MapObjType           2
